@@ -9,7 +9,7 @@ public class CreateBMSDb
 {
    public static void main(String args[])
    {
-      Connection c = null;
+      Connection connection = null;
       Statement statement;
       String id;
       String name;
@@ -24,11 +24,11 @@ public class CreateBMSDb
       try
       {
          Class.forName("org.sqlite.JDBC");
-         c = DriverManager.getConnection("jdbc:sqlite:BMSLoadDB.db");
-         c.setAutoCommit(false);
+         connection = DriverManager.getConnection("jdbc:sqlite:BMSLoadDB.db");
+         connection.setAutoCommit(false);
          System.out.println("opened database successfully");
          
-         statement = c.createStatement();
+         statement = connection.createStatement();
          String sql = "create table Ordinance " + 
                       "(id integer primary key, name text, " + 
                       "weight integer, drag integer, damage_type text, " +
@@ -63,7 +63,7 @@ public class CreateBMSDb
             info = nextLine[8];
             
          
-            statement = c.createStatement();
+            statement = connection.createStatement();
             sql = "insert into Ordinance (id, name, weight, drag, " +
                   "damage_type, guidance, range_km, blast_radius, info) " + 
                   "values (" + id + ", '" + name + "', " + weight + 
@@ -72,8 +72,8 @@ public class CreateBMSDb
             statement.executeUpdate(sql);
          }
          statement.close();
-         c.commit();
-         c.close();
+         connection.commit();
+         connection.close();
       }
       catch (Exception e)
       {
