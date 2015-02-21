@@ -5,6 +5,11 @@ import java.util.Scanner;
 
 import au.com.bytecode.opencsv.CSVReader;
 
+/*
+ * Used to create a SQLite3 database.   
+ * Uses the OpenCSV library http://opencsv.sourceforge.net/.
+ * 
+ */
 public class CreateBMSDb 
 {
    public static void main(String args[])
