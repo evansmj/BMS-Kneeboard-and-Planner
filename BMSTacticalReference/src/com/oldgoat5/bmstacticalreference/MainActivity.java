@@ -66,7 +66,7 @@ public class MainActivity extends FragmentActivity
         actionBar.addTab(actionBar.newTab().setText(
                 "Tactical Reference").setTabListener(this));
         actionBar.addTab(actionBar.newTab().setText(
-                "Missions Reference").setTabListener(this));
+                "Aircraft Manuals").setTabListener(this));
         
         viewPager.setAdapter(fragmentPageAdapter);
         

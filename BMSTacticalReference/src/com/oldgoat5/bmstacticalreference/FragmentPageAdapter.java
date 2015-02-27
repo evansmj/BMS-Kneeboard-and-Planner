@@ -24,7 +24,7 @@ public class FragmentPageAdapter extends FragmentPagerAdapter
             case 2:
                 return new TacticalReferenceFragment();
             case 3:
-                return new FragmentFourFragment();
+                return new AircraftManualsFragment();
             default:
                 break;
         }

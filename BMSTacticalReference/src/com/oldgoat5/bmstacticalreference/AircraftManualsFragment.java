@@ -6,7 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class FragmentFourFragment extends Fragment
+public class AircraftManualsFragment extends Fragment
 {
   //TODO 
     
