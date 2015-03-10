@@ -20,7 +20,7 @@ public class FragmentPageAdapter extends FragmentPagerAdapter
             case 0: 
                 return new LoadCardFragment();
             case 1:
-                return new WeightAndBalanceFragment();
+                return new LoadoutFragment();
             case 2:
                 return new TacticalReferenceFragment();
             case 3:
@@ -28,22 +28,8 @@ public class FragmentPageAdapter extends FragmentPagerAdapter
             default:
                 break;
         }
+        
         return null;
-        /*switch(position)
-        {
-            case 0:
-                return LoadCardFragment.newInstance(
-                        "LoadCardFragment, Instance 1");
-            case 1:
-                return WeightAndBalanceFragment.newInstance(
-                        "WeightAndBalanceFragment, Instance 1");
-            case 2:
-                return TacticalReferenceFragment(
-                        "TacticalReferenceFragment, Instance 1");
-            case 3: 
-                return FragmentFour(
-                        "FragmentFour, Instance 1");
-        }*/
     }
 
     @Override

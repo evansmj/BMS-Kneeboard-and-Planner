@@ -20,15 +20,15 @@ import android.widget.RadioButton;
  * @author Michael Evans
  * @version 1/15/2015
  *
- * Initializes the fragment page for Weight and Balance.
  * Allows user to specify F-16CJ load out on selected hard points.  
  *********************************************************************/
-public class WeightAndBalanceFragment extends Fragment
+public class LoadoutFragment extends Fragment
 {
     final String[] items = new String[] {"android", "hello", "world", "test"}; //testing
     
     boolean asymmetricMode;
     
+    DBTools dbHelper;
     ListItemAdapter adapter; //testing
     CheckBox asymmetricCheckBox;
     ImageView f16Image;
@@ -49,10 +49,10 @@ public class WeightAndBalanceFragment extends Fragment
             Bundle savedInstanceState)
     {
         view = inflater.inflate(
-                R.layout.weight_and_balance_fragment_layout, container, false);
+                R.layout.loadout_fragment_layout, container, false);
         
-        /*adapter = new ListItemAdapter<ListItem>(
-                getActivity(), android.R.layout.simple_list_item_1, items);*/    //testing
+        dbHelper = new DBTools(this.getActivity());
+        
         adapter = new ListItemAdapter(
                 this.getActivity(), generateData());
         
@@ -63,7 +63,7 @@ public class WeightAndBalanceFragment extends Fragment
         
         f16Image = (ImageView) view.findViewById(R.id.f16_image);
         
-        listView = (ListView) view.findViewById(R.id.listViewOrdinance);
+        listView = (ListView) view.findViewById(R.id.listViewLoadout);
         
         radioButton1 = (RadioButton) view.findViewById(R.id.radioButton1);
         radioButton2 = (RadioButton) view.findViewById(R.id.radioButton2);
@@ -222,18 +222,14 @@ public class WeightAndBalanceFragment extends Fragment
             }
         });
         
-        //stick the database into the scroll view....
-        
         return view;
     }
 
     private ArrayList<RowItem> generateData()
     {
         ArrayList<RowItem> items = new ArrayList<RowItem>();
-        items.add(new RowItem(0, "item 1"));
-        items.add(new RowItem(1, "These are placeholder items"));
-        items.add(new RowItem(2, "will be changed to get from sqlite"));
-        items.add(new RowItem(3, "throw salami at your mommy"));
+        items.add(new RowItem("0", "item 1", "999"));
+        
         return items;
     }
     

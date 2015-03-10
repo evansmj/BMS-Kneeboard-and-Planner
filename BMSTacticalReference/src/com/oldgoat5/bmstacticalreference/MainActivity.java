@@ -46,6 +46,7 @@ public class MainActivity extends FragmentActivity
         {
             throw new Error("Unable to create database");
         }
+        
         try
         {
             dbHelper.openDataBase();
@@ -61,10 +62,13 @@ public class MainActivity extends FragmentActivity
         
         actionBar.addTab(actionBar.newTab().setText(
                 "Load Card").setTabListener(this));
+        
         actionBar.addTab(actionBar.newTab().setText(
-                "Weight and Balance").setTabListener(this));
+                "Loadout").setTabListener(this));
+        
         actionBar.addTab(actionBar.newTab().setText(
                 "Tactical Reference").setTabListener(this));
+        
         actionBar.addTab(actionBar.newTab().setText(
                 "Aircraft Manuals").setTabListener(this));
         
