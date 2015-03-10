@@ -34,25 +34,26 @@ public class CreateBMSDb
          System.out.println("opened database successfully");
          
          statement = connection.createStatement();
-         String sql = "create table Ordinance " + 
-                      "(id integer primary key, name text, " + 
-                      "weight integer, drag integer, damage_type text, " +
-                      "guidance text, range_km integer, " + 
-                      "blast_radius integer, " + "info text);";
+         String sql = "CREATE TABLE ordinance " + 
+                      "(id INTEGER PRIMARY KEY, name TEXT, " + 
+                      "weight INTEGER, drag INTEGER, damage_type TEXT, " +
+                      "guidance TEXT, range_km INTEGER, " + 
+                      "blast_radius INTEGER, " + "info TEXT);";
                       
          statement.executeUpdate(sql);
+         System.out.print("after executeUpdate");
          statement.close();
          
          //now fill the table
          CSVReader reader = new CSVReader(new FileReader(
-                                          "loadout database csv.csv"));
+                                          "loadout database csv no labels.csv"));
          File file;
          Scanner scanner;
          String[] nextLine;
          
-         file = new File("loadout database csv.csv");
+         file = new File("loadout database csv no labels.csv");
          scanner = new Scanner(file);
-         
+         System.out.print("\nbefore the for loop");
          for (int i = 0; i < 103; i++)
          {
             nextLine = reader.readNext();
@@ -67,15 +68,17 @@ public class CreateBMSDb
             blast = nextLine[7];
             info = nextLine[8];
             
+            System.out.println(id + name + weight + drag + damage + guidance + range + blast + info);
          
             statement = connection.createStatement();
-            sql = "insert into Ordinance (id, name, weight, drag, " +
+            sql = "INSERT INTO ordinance (id, name, weight, drag, " +
                   "damage_type, guidance, range_km, blast_radius, info) " + 
                   "values (" + id + ", '" + name + "', " + weight + 
                   ", " + drag + ", '" + damage + "', '" + guidance + "', " + 
                   range + ", " + blast + ", '" + info + "');";
             statement.executeUpdate(sql);
          }
+         System.out.print("\nafter the for loop\n.");
          statement.close();
          connection.commit();
          connection.close();
