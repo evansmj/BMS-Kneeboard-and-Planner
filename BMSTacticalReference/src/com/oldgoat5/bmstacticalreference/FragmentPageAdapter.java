@@ -20,7 +20,7 @@ public class FragmentPageAdapter extends FragmentPagerAdapter
             case 0: 
                 return new LoadCardFragment();
             case 1:
-                return new LoadoutFragment();
+                return new LoadOutFragment();
             case 2:
                 return new TacticalReferenceFragment();
             case 3:

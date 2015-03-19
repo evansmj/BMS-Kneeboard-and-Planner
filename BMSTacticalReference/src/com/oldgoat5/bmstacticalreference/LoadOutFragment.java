@@ -22,16 +22,16 @@ import android.widget.RadioButton;
  *
  * Allows user to specify F-16CJ load out on selected hard points.  
  *********************************************************************/
-public class LoadoutFragment extends Fragment
+public class LoadOutFragment extends Fragment
 {
     final String[] items = new String[] {"android", "hello", "world", "test"}; //testing
     
     boolean asymmetricMode;
     
     DBTools dbHelper;
-    ListItemAdapter adapter; //testing
     CheckBox asymmetricCheckBox;
     ImageView f16Image;
+    ListItemAdapter adapter; //testing
     ListView listView;
     RadioButton radioButton1;
     RadioButton radioButton2;
@@ -77,6 +77,7 @@ public class LoadoutFragment extends Fragment
         
         listView.setAdapter(adapter);
         
+        //TODO radio button logic
         radioButton1.setOnClickListener(new RadioButton.OnClickListener()
         {
             @Override
@@ -225,9 +226,16 @@ public class LoadoutFragment extends Fragment
         return view;
     }
 
+    /*****************************************************************
+     * Shows all data for start of app.
+     * 
+     * @return Returns an ArrayList of all database 
+     *****************************************************************/
     private ArrayList<RowItem> generateData()
     {
         ArrayList<RowItem> items = new ArrayList<RowItem>();
+        
+
         items.add(new RowItem("0", "item 1", "999"));
         
         return items;

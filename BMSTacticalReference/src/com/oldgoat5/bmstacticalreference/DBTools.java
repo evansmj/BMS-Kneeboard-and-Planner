@@ -14,11 +14,12 @@ import android.util.Log;
 
 public class DBTools extends SQLiteOpenHelper
 {
+    private final Context myContext;
+    
     private static String DB_PATH = "/data/data/com.oldgoat5.bmstacticalreference"
             + "/databases/";
     private static String DB_NAME = "BMSLoadDB";
     private SQLiteDatabase myDataBase;
-    private final Context myContext;
     
     public DBTools (Context context)
     {

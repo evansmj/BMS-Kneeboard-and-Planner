@@ -91,6 +91,7 @@ public class ListViewPopulateDataBase extends ListActivity
         }
     }
     
+    //not used for now
     public void writeToListView()
     {
         TextView tView = new TextView(this);
