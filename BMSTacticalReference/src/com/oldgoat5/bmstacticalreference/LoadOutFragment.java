@@ -1,6 +1,7 @@
 package com.oldgoat5.bmstacticalreference;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import android.app.ListFragment;
 import android.app.LauncherActivity.ListItem;
@@ -28,7 +29,7 @@ public class LoadOutFragment extends Fragment
     
     boolean asymmetricMode;
     
-    DBTools dbHelper;
+    DBTools dbTools;
     CheckBox asymmetricCheckBox;
     ImageView f16Image;
     ListItemAdapter adapter; //testing
@@ -51,7 +52,7 @@ public class LoadOutFragment extends Fragment
         view = inflater.inflate(
                 R.layout.loadout_fragment_layout, container, false);
         
-        dbHelper = new DBTools(this.getActivity());
+        dbTools = new DBTools(this.getActivity());
         
         adapter = new ListItemAdapter(
                 this.getActivity(), generateData());
@@ -227,18 +228,37 @@ public class LoadOutFragment extends Fragment
     }
 
     /*****************************************************************
-     * Shows all data for start of app.
+     * Generates all loadout data for start of app for the listview
+     * items.
      * 
      * @return Returns an ArrayList of all database 
      *****************************************************************/
-    private ArrayList<RowItem> generateData()
+    private ArrayList<OrdinanceObject> generateData()
     {
-        ArrayList<RowItem> items = new ArrayList<RowItem>();
+        //ArrayList<RowItem> items;
+        ArrayList<OrdinanceObject> dataList;
         
-
-        items.add(new RowItem("0", "item 1", "999"));
+        dataList = dbTools.getAllRows();
         
-        return items;
+        /*items = new ArrayList<RowItem>();
+        
+        //or call method from dbtools get all rows
+        
+        dataList = dbTools.getAllRows();
+        
+        
+        //hashData format HashMap<String, String> :: <attribute, 
+        for (int i = 0; i < dataList.size(); i++)
+        {
+            items.add(new OrdinanceObject(dataList.get(i).getId(), 
+                    dataList.get(i).getName(), dataList.get(i).getWeight(), 
+                    dataList.get(i).getDrag(), dataList.get(i).getDamage(),
+                    dataList.get(i).getGuidance(), dataList.get(i).getRange(),
+                    dataList.get(i).getBlast(), dataList.get(i).getInfo());
+        }
+        items.add(new RowItem("0", "item 1", "999"));*/
+        
+        return dataList;
     }
     
 }

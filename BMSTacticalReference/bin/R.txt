@@ -252,12 +252,15 @@ int id activity_chooser_view_content 0x7f050025
 int id always 0x7f05000b
 int id asymmetricCheckBox 0x7f050040
 int id beginning 0x7f050011
+int id blast_list_item 0x7f05005a
 int id checkbox 0x7f05002d
 int id collapseActionView 0x7f05000d
+int id damage_list_item 0x7f050057
 int id default_activity_button 0x7f050028
 int id dialog 0x7f05000e
 int id disableHome 0x7f050008
 int id dragTextView 0x7f05003e
+int id drag_list_item 0x7f050056
 int id dropdown 0x7f05000f
 int id edit_query 0x7f050030
 int id end 0x7f050013
@@ -265,11 +268,13 @@ int id expand_activities_button 0x7f050026
 int id expanded_menu 0x7f05002c
 int id f16_image 0x7f05003f
 int id grossWeightTextView 0x7f05003d
+int id guidance_list_item 0x7f050058
 int id home 0x7f050014
 int id homeAsUp 0x7f050005
 int id icon 0x7f05002a
 int id ifRoom 0x7f05000a
 int id image 0x7f050027
+int id info_list_item 0x7f05005b
 int id listMode 0x7f050001
 int id listViewLoadout 0x7f050053
 int id list_item 0x7f050029
@@ -290,6 +295,7 @@ int id radioButton6 0x7f050049
 int id radioButton7 0x7f050048
 int id radioButton8 0x7f050047
 int id radioButton9 0x7f050046
+int id range_list_item 0x7f050059
 int id search_badge 0x7f050032
 int id search_bar 0x7f050031
 int id search_button 0x7f050033
@@ -352,7 +358,7 @@ int layout activity_main 0x7f030018
 int layout loadcard_fragment_layout 0x7f030019
 int layout loadout_fragment_layout 0x7f03001a
 int layout missions_fragment_layout 0x7f03001b
-int layout row_item 0x7f03001c
+int layout ordinance_object 0x7f03001c
 int layout support_simple_spinner_dropdown_item 0x7f03001d
 int layout tactical_reference_fragment_layout 0x7f03001e
 int string abc_action_bar_home_description 0x7f0a0001

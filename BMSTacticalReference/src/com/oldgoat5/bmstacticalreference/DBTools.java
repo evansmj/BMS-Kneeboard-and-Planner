@@ -4,8 +4,11 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.util.ArrayList;
+import java.util.HashMap;
 
 import android.content.Context;
+import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
@@ -90,6 +93,63 @@ public class DBTools extends SQLiteOpenHelper
         myDataBase = SQLiteDatabase.openDatabase(
                 myPath, null, SQLiteDatabase.OPEN_READONLY);
     }
+    
+    /*****************************************************************
+     * Gets all rows from the database and orders them by id.  
+     * 
+     * @return Returns a HashMap of all rows in the database.
+     *****************************************************************/
+    public ArrayList<OrdinanceObject> getAllRows()
+    {
+        //ArrayList<HashMap<String, String>> rowsArrayList;
+        ArrayList<OrdinanceObject> rowsArrayList;
+        //HashMap<String, String> rowMap = new HashMap<String, String>();
+        
+        //rowsArrayList = new ArrayList<HashMap<String, String>>();
+        rowsArrayList = new ArrayList<OrdinanceObject>();
+        
+        String selectQuery = "SELECT * FROM ordinance ORDER BY id";
+        SQLiteDatabase database = this.getWritableDatabase();
+        Cursor cursor = database.rawQuery(selectQuery, null);
+        
+        
+        //make an object type of ordinance.  stick these into array list.  
+        if (cursor.moveToFirst())
+        {
+            do
+            {
+                rowsArrayList.add(new OrdinanceObject(cursor.getInt(0),
+                        cursor.getString(1), cursor.getInt(2), 
+                        cursor.getInt(3), cursor.getString(4),
+                        cursor.getString(5), cursor.getInt(6),
+                        cursor.getInt(7), cursor.getString(8)));
+                //
+            } while (cursor.moveToNext());
+        }
+        
+        
+        /*if (cursor.moveToFirst())
+        {
+            do
+            {
+                rowMap = new HashMap<String, String>();
+                rowMap.put("id", cursor.getString(0));
+                rowMap.put("name", cursor.getString(1));
+                rowMap.put("weight", cursor.getString(2));
+                rowMap.put("drag", cursor.getString(3));
+                rowMap.put("damage", cursor.getString(4));
+                rowMap.put("guidance", cursor.getString(5));
+                rowMap.put("range", cursor.getString(6));
+                rowMap.put("blast", cursor.getString(7));
+                rowMap.put("info", cursor.getString(8));
+                rowsArrayList.add(rowMap);
+            }while (cursor.moveToNext());
+        }*/
+        
+        return rowsArrayList;
+    }
+    
+    
 
     @Override
     public synchronized void close()
