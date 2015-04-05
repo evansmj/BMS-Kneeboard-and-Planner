@@ -38,7 +38,7 @@ public class MainActivity extends FragmentActivity
         fragmentPageAdapter = new FragmentPageAdapter(
                 getSupportFragmentManager());
         //dbHelper = new DBTools(this);
-        Log.d("MainActivity", "after dhHelper = new DBTools(this)");
+        //Log.d("MainActivity", "after dhHelper = new DBTools(this)");
         
         /*try
         {

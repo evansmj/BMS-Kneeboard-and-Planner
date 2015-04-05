@@ -55,11 +55,12 @@ public class LoadOutFragment extends Fragment
         view = inflater.inflate(
                 R.layout.loadout_fragment_layout, container, false);
         
+        Log.d("LoadOutFragment", "getactivity=" + getActivity().toString());
         dbTools = new DBTools(getActivity());
         
         try
         {
-            dbTools.createDataBase();
+            dbTools.createDatabase();
         }
         catch (IOException e)
         {
@@ -69,7 +70,7 @@ public class LoadOutFragment extends Fragment
         try
         {
             Log.d("loadoutfragment", "openDataBase() try");
-            dbTools.openDataBase();
+            dbTools.openDatabase();
         }
         catch (SQLiteException sqle)
         {
@@ -101,7 +102,7 @@ public class LoadOutFragment extends Fragment
         radioButton8 = (RadioButton) view.findViewById(R.id.radioButton8);  
         radioButton9 = (RadioButton) view.findViewById(R.id.radioButton9);
         
-        listView.setAdapter(adapter);
+        //listView.setAdapter(adapter);
         
         //TODO radio button logic
         radioButton1.setOnClickListener(new RadioButton.OnClickListener()
@@ -251,7 +252,7 @@ public class LoadOutFragment extends Fragment
         
         return view;
     }
-
+    
     /*****************************************************************
      * Generates all loadout data for start of app for the listview
      * items.
