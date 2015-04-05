@@ -9,14 +9,14 @@ package com.oldgoat5.bmstacticalreference;
  *****************************************************************/
 public class OrdinanceObject
 {
-    private int id;
+    private String id;
     private String name;
-    private int weight;
-    private int drag;
+    private String weight;
+    private String drag;
     private String damage;
     private String guidance;
-    private int range;
-    private int blast;
+    private String range;
+    private String blast;
     private String info;
     
     /*****************************************************************
@@ -32,8 +32,8 @@ public class OrdinanceObject
      * @param blast
      * @param info
      *****************************************************************/
-    public OrdinanceObject(int id, String name, int weight, int drag, 
-            String damage, String guidance, int range, int blast, String info)
+    public OrdinanceObject(String id, String name, String weight, String drag, 
+            String damage, String guidance, String range, String blast, String info)
     {
         this.id = id;
         this.name = name;
@@ -46,7 +46,7 @@ public class OrdinanceObject
         this.info = info;
     }
     
-    public int getId()
+    public String getId()
     {
         return this.id;
     }
@@ -56,12 +56,12 @@ public class OrdinanceObject
         return this.name;
     }
     
-    public int getWeight()
+    public String getWeight()
     {
         return this.weight;
     }
     
-    public int getDrag()
+    public String getDrag()
     {
         return this.drag;
     }
@@ -73,15 +73,15 @@ public class OrdinanceObject
     
     public String getGuidance()
     {
-        return this.damage;
+        return this.guidance;
     }
     
-    public int getRange()
+    public String getRange()
     {
         return this.range;
     }
     
-    public int getBlast()
+    public String getBlast()
     {
         return this.blast;
     }

@@ -198,11 +198,11 @@ public class DBTools extends SQLiteOpenHelper
         {
             do
             {
-                rowsArrayList.add(new OrdinanceObject(cursor.getInt(0),
-                        cursor.getString(1), cursor.getInt(2), 
-                        cursor.getInt(3), cursor.getString(4),
-                        cursor.getString(5), cursor.getInt(6),
-                        cursor.getInt(7), cursor.getString(8)));
+                rowsArrayList.add(new OrdinanceObject(cursor.getString(0),
+                        cursor.getString(1), cursor.getString(2), 
+                        cursor.getString(3), cursor.getString(4),
+                        cursor.getString(5), cursor.getString(6),
+                        cursor.getString(7), cursor.getString(8)));
                 //
             } while (cursor.moveToNext());
         }
