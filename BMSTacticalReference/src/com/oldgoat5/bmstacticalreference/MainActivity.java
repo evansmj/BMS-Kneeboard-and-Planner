@@ -10,6 +10,7 @@ import android.database.sqlite.SQLiteException;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.view.Window;
@@ -23,7 +24,7 @@ public class MainActivity extends FragmentActivity
     int totalDrag;
     
     ActionBar actionBar;
-    DBTools dbHelper;
+    //DBTools dbHelper;
     FragmentPageAdapter fragmentPageAdapter;
     ViewPager viewPager;
     
@@ -32,13 +33,14 @@ public class MainActivity extends FragmentActivity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        
+        Log.d("MainActivity", "begin onCreate()");
         viewPager = (ViewPager) findViewById(R.id.pager);
         fragmentPageAdapter = new FragmentPageAdapter(
                 getSupportFragmentManager());
-        dbHelper = new DBTools(this);
+        //dbHelper = new DBTools(this);
+        Log.d("MainActivity", "after dhHelper = new DBTools(this)");
         
-        try
+        /*try
         {
             dbHelper.createDataBase();
         }
@@ -54,7 +56,7 @@ public class MainActivity extends FragmentActivity
         catch (SQLiteException sqle)
         {
             throw sqle;
-        }
+        }*/
         
         actionBar = getActionBar();
         
@@ -95,6 +97,7 @@ public class MainActivity extends FragmentActivity
             }
         });
     }
+    
     
     @Override
     public void onTabSelected(Tab tab, FragmentTransaction ft)

@@ -1,12 +1,15 @@
 package com.oldgoat5.bmstacticalreference;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
 import android.app.ListFragment;
 import android.app.LauncherActivity.ListItem;
+import android.database.sqlite.SQLiteException;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -52,11 +55,33 @@ public class LoadOutFragment extends Fragment
         view = inflater.inflate(
                 R.layout.loadout_fragment_layout, container, false);
         
-        dbTools = new DBTools(this.getActivity());
+        dbTools = new DBTools(getActivity());
+        
+        try
+        {
+            dbTools.createDataBase();
+        }
+        catch (IOException e)
+        {
+            throw new Error("LoadoutFragment: Unable to create database ");
+        }
+        
+        try
+        {
+            Log.d("loadoutfragment", "openDataBase() try");
+            dbTools.openDataBase();
+        }
+        catch (SQLiteException sqle)
+        {
+            throw sqle;
+        }
+        
+        Log.d("loadoutfragment", "before adapter");
         
         adapter = new ListItemAdapter(
                 this.getActivity(), generateData());
         
+        Log.d("loadoutfragment", "after adapter");
         asymmetricCheckBox = (CheckBox) view.findViewById(
                 R.id.asymmetricCheckBox);
         
@@ -235,11 +260,13 @@ public class LoadOutFragment extends Fragment
      *****************************************************************/
     private ArrayList<OrdinanceObject> generateData()
     {
+        Log.d("loadoutfragment", "begin generateData()");
         //ArrayList<RowItem> items;
         ArrayList<OrdinanceObject> dataList;
         
         dataList = dbTools.getAllRows();
         
+        Log.d("loadoutfragment", "after db.getAllRows()");
         /*items = new ArrayList<RowItem>();
         
         //or call method from dbtools get all rows

@@ -1,5 +1,6 @@
 package com.oldgoat5.bmstacticalreference;
 
+import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -17,42 +18,59 @@ import android.util.Log;
 
 public class DBTools extends SQLiteOpenHelper
 {
-    private final Context myContext;
+    private final Context CONTEXT;
     
-    private static String DB_PATH = "/data/data/com.oldgoat5.bmstacticalreference"
-            + "/databases/";
+    //private static String DB_PATH = "/data/data/com.oldgoat5.bmstacticalreference"
+      //      + "/databases/";
+    private static String DB_PATH;
     private static String DB_NAME = "BMSLoadDB";
+    
     private SQLiteDatabase myDataBase;
     
     public DBTools (Context context)
     {
         super(context, DB_NAME, null, 1);
-        this.myContext = context;
+        Log.d("DBTools", "constructor");
+        this.CONTEXT = context;
+        DB_PATH = context.getApplicationInfo().dataDir + "/databases/";
     }
     
     public void createDataBase() throws IOException
     {
-        boolean dbExists = checkDataBase();
+        //boolean dbExists = checkDataBase();
+        Log.d("dbtools", "createDataBase()");
         
-        if (!dbExists)
+        checkDataBase();
+        /*if (!dbExists)
         {
             this.getReadableDatabase();
+            this.close();
             try
             {
-                copyDataBase();
+                checkDataBase();
             }
             catch (IOException e)
             {
                 throw new Error("Error copying database");
             }
-        }
+        }*/
     }
     
-    private boolean checkDataBase()
+    private void checkDataBase() throws IOException
     {
-        SQLiteDatabase checkDb = null;
+        //SQLiteDatabase checkDb = null;
+        File dbFile = new File(DB_PATH);
         
-        try
+        if (dbFile.exists())
+        {
+            Log.d("DBTools.java", "checkdb() if!dbFile.exists called");
+            dbFile.getParentFile().mkdirs();
+            copyDataBase(CONTEXT.getAssets().open(DB_PATH), 
+            new FileOutputStream(DB_PATH));
+        }
+        
+        
+        /*try
         {
             String myPath = DB_PATH + DB_NAME;
             checkDb = SQLiteDatabase.openDatabase(
@@ -67,12 +85,35 @@ public class DBTools extends SQLiteOpenHelper
         {
             checkDb.close();
         }
-        return checkDb != null ? true : false;
+        return checkDb != null ? true : false;*/
     }
     
-    private void copyDataBase() throws IOException
+    private void copyDataBase(InputStream inputStream, 
+            OutputStream outputStream) throws IOException
     {
-        InputStream myInput = myContext.getAssets().open(DB_NAME);
+        boolean repeat = true;
+        byte buffer[] = new byte[1024];
+        int length = 0;
+        
+        while (repeat)
+        {
+            length = inputStream.read(buffer);
+            
+            if (length == -1)
+            {
+                repeat = false;
+            }
+            else
+            {
+                outputStream.write(buffer, 0, length);
+            }
+            
+            inputStream.close();
+            outputStream.flush();
+            outputStream.close();
+        }
+        
+        /*InputStream myInput = myContext.getAssets().open(DB_NAME);
         String outFileName = DB_PATH + DB_NAME;
         OutputStream myOutput = new FileOutputStream(outFileName);
         
@@ -84,7 +125,8 @@ public class DBTools extends SQLiteOpenHelper
         }
         myOutput.flush();
         myOutput.close();
-        myInput.close();
+        myInput.close();*/
+        
     }
     
     public void openDataBase() throws SQLException
@@ -101,6 +143,10 @@ public class DBTools extends SQLiteOpenHelper
      *****************************************************************/
     public ArrayList<OrdinanceObject> getAllRows()
     {
+        Log.d("dbtools", "begin getAllRows()");
+        Log.d("myDataBase path", myDataBase.getPath());
+        Log.d("myDataBase version", Integer.toString(myDataBase.getVersion()));
+        
         //ArrayList<HashMap<String, String>> rowsArrayList;
         ArrayList<OrdinanceObject> rowsArrayList;
         //HashMap<String, String> rowMap = new HashMap<String, String>();
@@ -109,8 +155,19 @@ public class DBTools extends SQLiteOpenHelper
         rowsArrayList = new ArrayList<OrdinanceObject>();
         
         String selectQuery = "SELECT * FROM ordinance ORDER BY id";
-        SQLiteDatabase database = this.getWritableDatabase();
-        Cursor cursor = database.rawQuery(selectQuery, null);
+        
+        //SQLiteDatabase database = this.getReadableDatabase();
+        myDataBase = this.getReadableDatabase();
+        
+        Log.d("dbtools", "before cursor = db.rawQuery");
+        
+        //////////it is breaking here.  check the myDataBase stuff. ////////////////////////////////// 
+        Log.d("my DataBase test", myDataBase.toString());
+        
+        Cursor cursor = myDataBase.rawQuery(selectQuery, null);
+        //Cursor cursor = myDataBase.rawQuery(selectQuery, null);
+        
+        Log.d("dbtools", "after cursor raw query");
         
         
         //make an object type of ordinance.  stick these into array list.  
@@ -162,9 +219,10 @@ public class DBTools extends SQLiteOpenHelper
     }
     
     @Override
-    public void onCreate (SQLiteDatabase db)
+    public void onCreate(SQLiteDatabase db)
     {
         //TODO
+        Log.d("DBTools", "onCreate(db)");
     }
 
     @Override
