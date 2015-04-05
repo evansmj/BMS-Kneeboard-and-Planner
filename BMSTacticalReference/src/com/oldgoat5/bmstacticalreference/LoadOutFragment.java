@@ -102,7 +102,7 @@ public class LoadOutFragment extends Fragment
         radioButton8 = (RadioButton) view.findViewById(R.id.radioButton8);  
         radioButton9 = (RadioButton) view.findViewById(R.id.radioButton9);
         
-        //listView.setAdapter(adapter);
+        listView.setAdapter(adapter);
         
         //TODO radio button logic
         radioButton1.setOnClickListener(new RadioButton.OnClickListener()

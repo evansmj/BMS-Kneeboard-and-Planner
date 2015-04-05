@@ -36,7 +36,7 @@ public class ListItemAdapter extends ArrayAdapter<OrdinanceObject>
                 R.id.weapon_name_list_item);
         nameView.setText((itemsArrayList).get(position).getName());
         
-        TextView weightView = (TextView) rowView.findViewById(
+        /*TextView weightView = (TextView) rowView.findViewById(
                 R.id.weight_list_item);
         weightView.setText((itemsArrayList).get(position).getWeight());
         
@@ -62,7 +62,7 @@ public class ListItemAdapter extends ArrayAdapter<OrdinanceObject>
 
         TextView infoView = (TextView) rowView.findViewById(
                 R.id.info_list_item);
-        infoView.setText((itemsArrayList).get(position).getInfo());
+        infoView.setText((itemsArrayList).get(position).getInfo());*/
         
         return rowView;
     }
