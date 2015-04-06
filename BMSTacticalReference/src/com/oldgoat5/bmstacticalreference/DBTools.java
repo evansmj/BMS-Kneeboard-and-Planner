@@ -207,30 +207,9 @@ public class DBTools extends SQLiteOpenHelper
             } while (cursor.moveToNext());
         }
         
-        
-        /*if (cursor.moveToFirst())
-        {
-            do
-            {
-                rowMap = new HashMap<String, String>();
-                rowMap.put("id", cursor.getString(0));
-                rowMap.put("name", cursor.getString(1));
-                rowMap.put("weight", cursor.getString(2));
-                rowMap.put("drag", cursor.getString(3));
-                rowMap.put("damage", cursor.getString(4));
-                rowMap.put("guidance", cursor.getString(5));
-                rowMap.put("range", cursor.getString(6));
-                rowMap.put("blast", cursor.getString(7));
-                rowMap.put("info", cursor.getString(8));
-                rowsArrayList.add(rowMap);
-            }while (cursor.moveToNext());
-        }*/
-        
         return rowsArrayList;
     }
     
-    
-
     @Override
     public synchronized void close()
     {
