@@ -104,20 +104,60 @@ public class LoadOutFragment extends Fragment
         
         listView.setAdapter(adapter);
         
-        //TODO radio button logic
-        radioButton1.setOnClickListener(new RadioButton.OnClickListener()
+        asymmetricCheckBox.setOnClickListener(new CheckBox.OnClickListener()
         {
             @Override
             public void onClick(View v)
             {
                 if (asymmetricMode)
                 {
-                    radioButton1.toggle();
+                    asymmetricMode = false;
                 }
                 else
                 {
-                    radioButton1.toggle();
-                    radioButton9.toggle();
+                    asymmetricMode = true;
+                }
+            }
+        });
+        
+        radioButton1.setOnClickListener(new RadioButton.OnClickListener()
+        {
+            
+            @Override
+            public void onClick(View v)
+            {
+                //radioButton1.setSelected(!radioButton1.isChecked());
+                if (asymmetricMode)
+                {
+                    Log.d("loudout button1", "true");
+                    //radioButton1.toggle();
+                    if (radioButton1.isChecked())
+                    {
+                        radioButton1.setChecked(false);
+                    }
+                    else
+                    {
+                        radioButton1.setChecked(true);
+                    }
+                    
+                    //radioButton1.setChecked(false);
+                }
+                else
+                {
+                    Log.d("loudout button1", "false");
+                    //radioButton1.toggle();
+                    //radioButton9.toggle();
+                    if (radioButton1.isChecked())
+                    {
+                        Log.d("loudout button1", "ischecked true");
+                        radioButton1.setChecked(true);
+                    }
+                    if (!radioButton1.isSelected())
+                    {
+                        Log.d("loudout button1", "ischecked false");
+                        radioButton1.setChecked(true);
+                        radioButton9.setChecked(true);
+                    }
                 }
             }
         });
@@ -129,10 +169,12 @@ public class LoadOutFragment extends Fragment
             {
                 if (asymmetricMode)
                 {
+                    Log.d("loudout button2", "true");
                     radioButton2.toggle();
                 }
                 else
                 {
+                    Log.d("loudout button2", "false");
                     radioButton2.toggle();
                     radioButton8.toggle();
                 }
@@ -146,10 +188,12 @@ public class LoadOutFragment extends Fragment
             {
                 if (asymmetricMode)
                 {
+                    Log.d("loudout button3", "true");
                     radioButton3.toggle();
                 }
                 else
                 {
+                    Log.d("loudout button3", "false");
                     radioButton3.toggle();
                     radioButton7.toggle();
                 }
@@ -163,10 +207,12 @@ public class LoadOutFragment extends Fragment
             {
                 if (asymmetricMode)
                 {
+                    Log.d("loudout button4", "true");
                     radioButton4.toggle();
                 }
                 else
                 {
+                    Log.d("loudout button4", "false");
                     radioButton4.toggle();
                     radioButton6.toggle();
                 }
@@ -189,10 +235,12 @@ public class LoadOutFragment extends Fragment
             {
                 if (asymmetricMode)
                 {
+                    Log.d("loudout button6", "true");
                     radioButton6.toggle();
                 }
                 else
                 {
+                    Log.d("loudout button6", "false");
                     radioButton6.toggle();
                     radioButton4.toggle();
                 }
@@ -206,10 +254,12 @@ public class LoadOutFragment extends Fragment
             {
                 if (asymmetricMode)
                 {
+                    Log.d("loudout button7", "true");
                     radioButton7.toggle();
                 }
                 else
                 {
+                    Log.d("loudout button7", "false");
                     radioButton7.toggle();
                     radioButton3.toggle();
                 }
@@ -223,10 +273,12 @@ public class LoadOutFragment extends Fragment
             {
                 if (asymmetricMode)
                 {
+                    Log.d("loudout button8", "true");
                     radioButton8.toggle();
                 }
                 else
                 {
+                    Log.d("loudout button8", "false");
                     radioButton8.toggle();
                     radioButton2.toggle();
                 }
@@ -240,10 +292,12 @@ public class LoadOutFragment extends Fragment
             {
                 if (asymmetricMode)
                 {
+                    Log.d("loudout button9", "true");
                     radioButton9.toggle();
                 }
                 else
                 {
+                    Log.d("loudout button9", "false");
                     radioButton9.toggle();
                     radioButton1.toggle();
                 }
