@@ -1,5 +1,6 @@
 package com.oldgoat5.bmstacticalreference;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -47,6 +48,7 @@ public class NavigationChartsFragment extends Fragment
      *****************************************************************/
     public void showKoreaNavigation()
     {
-
+        Intent intent = new Intent(getActivity(), koreaNavigation.class);
+        startActivity(intent);
     }
 }
