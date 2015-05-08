@@ -16,7 +16,7 @@ import android.widget.Button;
  *********************************************************************/
 public class NavigationChartsFragment extends Fragment
 {
-    Button koreaSelectButton;
+    private Button koreaSelectButton;
 
     View view;
     public View OnCreateView(LayoutInflater inflater,
