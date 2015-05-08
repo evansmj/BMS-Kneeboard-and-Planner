@@ -1,53 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent">
+<TabHost
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/korea_navigation_tab_host"
+    android:layout_alignParentTop="true"
+    android:layout_centerHorizontal="true"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <SearchView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/search_view_korea"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/china"
-        android:id="@+id/china_select_button"
-        android:layout_below="@+id/search_view_korea"
-        android:layout_centerHorizontal="true"/>
+            <TabWidget
+                android:id="@android:id/tabs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            </TabWidget>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/north_korea"
-        android:id="@+id/north_korea_select_button"
-        android:layout_below="@+id/japan_select_button"
-        android:layout_centerHorizontal="true"/>
+            <FrameLayout
+                android:id="@android:id/tabcontent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/russia"
-        android:id="@+id/russia_select_button"
-        android:layout_below="@+id/north_korea_select_button"
-        android:layout_centerHorizontal="true"/>
+                <LinearLayout
+                    android:id="@+id/china_korea_tab"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                </LinearLayout>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/japan"
-        android:id="@+id/japan_select_button"
-        android:layout_below="@+id/china_select_button"
-        android:layout_centerHorizontal="true"/>
+                <LinearLayout
+                    android:id="@+id/japan_korea_tab"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                </LinearLayout>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/south_korea"
-        android:id="@+id/south_korea_select_button"
-        android:layout_below="@+id/russia_select_button"
-        android:layout_centerHorizontal="true"/>
+                <LinearLayout
+                    android:id="@+id/north_korea_korea_tab"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/russia_korea_tab"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/south_korea_tab"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                </LinearLayout>
 
 
-</RelativeLayout>
+
+            </FrameLayout>
+        </LinearLayout>
+    </TabHost>
