@@ -25,7 +25,7 @@ public class MainActivity extends FragmentActivity
 
     private ActionBar actionBar;
     //DBTools dbHelper;
-    private FragmentPageAdapter fragmentPageAdapter;
+    private MainFragmentPageAdapter fragmentPageAdapter;
     private ViewPager viewPager;
     
     @Override
@@ -35,7 +35,7 @@ public class MainActivity extends FragmentActivity
         setContentView(R.layout.activity_main);
         Log.d("MainActivity", "begin onCreate()");
         viewPager = (ViewPager) findViewById(R.id.pager);
-        fragmentPageAdapter = new FragmentPageAdapter(
+        fragmentPageAdapter = new MainFragmentPageAdapter(
                 getSupportFragmentManager());
         //dbHelper = new DBTools(this);
         //Log.d("MainActivity", "after dhHelper = new DBTools(this)");
@@ -64,16 +64,12 @@ public class MainActivity extends FragmentActivity
         
         actionBar.addTab(actionBar.newTab().setText(
                 "Load Card").setTabListener(this));
-        
         actionBar.addTab(actionBar.newTab().setText(
                 "Loadout").setTabListener(this));
-        
         actionBar.addTab(actionBar.newTab().setText(
                 "Tactical Reference").setTabListener(this));
-        
         actionBar.addTab(actionBar.newTab().setText(
                 "Aircraft Manuals").setTabListener(this));
-
         actionBar.addTab(actionBar.newTab().setText(
                 "Navigation Charts").setTabListener(this));
         

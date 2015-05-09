@@ -4,10 +4,10 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
-public class FragmentPageAdapter extends FragmentPagerAdapter
+public class MainFragmentPageAdapter extends FragmentPagerAdapter
 {
     
-    public FragmentPageAdapter(FragmentManager fm)
+    public MainFragmentPageAdapter(FragmentManager fm)
     {
         super(fm);
     }

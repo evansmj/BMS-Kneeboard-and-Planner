@@ -23,8 +23,9 @@
 
 	<!--Navigation Activity -->
 	<string name="korea_navigation_activity">Korea Navigation</string>
+	<string name="korea_theater_title">Korean Theater of Operations</string>
 	<string name="china">China</string>
-	<string name="china_tab_title">Chinese Bases in Korean Theater of Operations.</string>
+	<string name="china_tab_title">Chinese Bases - Korean Theater of Operations</string>
 	<string name="japan">Japan</string>
 	<string name="north_korea">North Korea</string>
     <string name="south_korea">South Korea</string>
