@@ -6,6 +6,6 @@ package com.oldgoat5.bmstacticalreference;
  * @author Michael Evans
  * @since 5/8/2015
  *********************************************************************/
-public class SouthKoreaTabActivity
+public class SouthKoreaChartFragment
 {
 }

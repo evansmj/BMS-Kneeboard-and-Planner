@@ -36,14 +36,14 @@ public class ChinaKoreaChartFragment extends Fragment
             Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        view = inflater.inflate(R.layout.china_korea_chart_activity_layout, container, false);
+        view = inflater.inflate(R.layout.china_korea_chart_fragment_layout, container, false);
 
         airbases = new String[] {"Liuhe Airport Diagram", "Shenyang Airport Diagram"};
 
         adapter = new ArrayAdapter<String>(this.getActivity(), android.R.layout.simple_list_item_1,
                 airbases);
         //imageView = (ImageView) view.findViewById(R.id.chart_image_view);
-        listView = (ListView) view.findViewById(R.id.china_korea_tab_list_view);
+        listView = (ListView) view.findViewById(R.id.china_korea_fragment_list_view);
 
         if (this.isAdded())
         {
@@ -79,14 +79,14 @@ public class ChinaKoreaChartFragment extends Fragment
                     case 0:
                         imageView.setImageResource(R.drawable.liuhe_airport_diagram);
                         dialog.setContentView(imageView);
-                        dialog.setTitle("Liuhe Airport Diagram");
+                        dialog.setTitle(airbases[0]);
                         dialog.show();
                         break;
 
                     case 1:
                         imageView.setImageResource(R.drawable.shenyang_airport_diagram);
                         dialog.setContentView(imageView);
-                        dialog.setTitle("Shenyang Airport Diagram");
+                        dialog.setTitle(airbases[1]);
                         dialog.show();
                         break;
                 }

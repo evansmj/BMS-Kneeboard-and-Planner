@@ -8,13 +8,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/china_tab_title"
-        android:id="@+id/china_korea_title_tab"
+        android:text="@string/japan_fragment_title"
+        android:id="@+id/japan_korea_title_fragment"
         android:layout_gravity="center_horizontal"/>
 
     <ListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/china_korea_tab_list_view"
+        android:id="@+id/japan_korea_fragment_list_view"
         />
+
 </LinearLayout>

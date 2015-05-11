@@ -22,11 +22,11 @@
 	<string name="image_content_description">F-16 front profile</string>
 
 	<!--Navigation Activity -->
-	<string name="korea_navigation_activity">Korea Navigation</string>
 	<string name="korea_theater_title">Korean Theater of Operations</string>
 	<string name="china">China</string>
-	<string name="china_tab_title">Chinese Bases - Korean Theater of Operations</string>
+	<string name="china_fragment_title">Chinese Bases - Korean Theater of Operations</string>
 	<string name="japan">Japan</string>
+	<string name="japan_fragment_title">Japanese Bases - Korean Theater of Operations</string>
 	<string name="north_korea">North Korea</string>
     <string name="south_korea">South Korea</string>
     <string name="russia">Russia</string>
