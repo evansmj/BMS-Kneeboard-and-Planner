@@ -19,6 +19,7 @@ import android.util.Log;
 
 public class DBTools extends SQLiteOpenHelper
 {
+    //TODO rename ordinance table to ordnance.  or rename to load.
     private final Context CONTEXT;
     
     private static String DB_PATH;

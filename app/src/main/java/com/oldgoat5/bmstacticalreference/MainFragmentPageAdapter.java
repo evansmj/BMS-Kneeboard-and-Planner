@@ -4,6 +4,12 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
+/*********************************************************************
+ * Handles the main page fragments.
+ *
+ * @author Michael Evans
+ *
+ *********************************************************************/
 public class MainFragmentPageAdapter extends FragmentPagerAdapter
 {
     
@@ -27,6 +33,8 @@ public class MainFragmentPageAdapter extends FragmentPagerAdapter
                 return new AircraftManualsFragment();
             case 4:
                 return new NavigationChartsFragment();
+            case 5:
+                return new BrevityDictionaryFragment();
             default:
                 break;
         }
@@ -36,7 +44,7 @@ public class MainFragmentPageAdapter extends FragmentPagerAdapter
     @Override
     public int getCount()
     {
-        return 5;
+        return 6;
     }
     
 }

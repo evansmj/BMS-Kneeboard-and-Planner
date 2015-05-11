@@ -72,6 +72,8 @@ public class MainActivity extends FragmentActivity
                 "Aircraft Manuals").setTabListener(this));
         actionBar.addTab(actionBar.newTab().setText(
                 "Navigation Charts").setTabListener(this));
+        actionBar.addTab(actionBar.newTab().setText(
+                "Brevity Dictionary").setTabListener(this));
         
         viewPager.setAdapter(fragmentPageAdapter);
         
