@@ -32,7 +32,19 @@
             android:name="com.oldgoat5.bmstacticalreference.KoreaNavigationActivity"
             android:label="@string/korea_theater_title" >
         </activity>
-        
+
+        <activity
+            android:name="com.oldgoat5.bmstacticalreference.BrevityDictionaryActivity"
+            android:label="@string/brevity_dictionary_title" >
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+            </intent-filter>
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@xml/searchable" >
+            </meta-data>
+        </activity>
+
     </application>
 
 </manifest>

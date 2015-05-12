@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/brevity_dictionary_word_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="5dp"
+        android:text="@string/abc_searchview_description_submit"
+        android:textSize="12sp" >
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/brevity_dictionary_definition_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/brevity_dictionary_word_text_view"
+        android:paddingLeft="5dp"
+        android:text="@string/abc_searchview_description_query"
+        android:textSize="12sp" />
+</RelativeLayout>
