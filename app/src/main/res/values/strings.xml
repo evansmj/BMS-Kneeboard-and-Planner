@@ -21,7 +21,7 @@
 	
 	<string name="image_content_description">F-16 front profile</string>
 
-	<!--Navigation Activity -->
+	<!-- Navigation Activity -->
 	<string name="korea_theater_title">Korean Theater of Operations</string>
 	<string name="china">China</string>
 	<string name="china_fragment_title">Chinese Bases - Korean Theater of Operations</string>
@@ -30,6 +30,10 @@
 	<string name="north_korea">North Korea</string>
     <string name="south_korea">South Korea</string>
     <string name="russia">Russia</string>
+
+	<!-- Brevity Dictionary Activity -->
+	<string name="brevity_dictionary_title">Brevity Dictionary</string>
+
 
 
 </resources>
