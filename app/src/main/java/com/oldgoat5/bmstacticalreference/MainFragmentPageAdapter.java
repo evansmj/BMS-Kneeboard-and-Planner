@@ -33,8 +33,6 @@ public class MainFragmentPageAdapter extends FragmentPagerAdapter
                 return new AircraftManualsFragment();
             case 4:
                 return new NavigationChartsFragment();
-            case 5:
-                return new BrevityDictionaryFragment();
             default:
                 break;
         }
@@ -44,7 +42,7 @@ public class MainFragmentPageAdapter extends FragmentPagerAdapter
     @Override
     public int getCount()
     {
-        return 6;
+        return 5;
     }
     
 }

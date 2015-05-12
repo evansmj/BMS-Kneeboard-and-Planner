@@ -14,7 +14,7 @@ public class TacticalReferenceFragment extends Fragment
             Bundle savedInstanceState)
     {
         view = inflater.inflate(R.layout.tactical_reference_fragment_layout , 
-            container, false); // TODO add tactical formation reference pictures.  
+            container, false); // TODO add tactical formation reference pictures.
         return view;
     }
     
