@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
+import android.widget.Toast;
 
 /*********************************************************************
  * @author Michael Evans
@@ -69,6 +70,9 @@ public class KoreaNavigationActivity extends FragmentActivity implements ActionB
                 // TODO Auto-generated method stub
             }
         });
+
+        Toast toast = Toast.makeText(this, "Long Press for Chart", Toast.LENGTH_LONG);
+        toast.show();
     }
 
     @Override

@@ -121,9 +121,8 @@ public class BrevityDictionaryActivity extends Activity
             {
                 Log.d("breviyyDict", "null cursor no search match found");
                 generateAllRows();
-                //make no matches found toast todo
-                Toast toast = Toast.makeText(this, "No Match Found", Toast.LENGTH_LONG);
 
+                Toast toast = Toast.makeText(this, "No Match Found", Toast.LENGTH_LONG);
                 toast.setDuration(Toast.LENGTH_LONG);
                 toast.show();
             }

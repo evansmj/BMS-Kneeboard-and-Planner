@@ -49,6 +49,7 @@ public class JapanKoreaChartFragment extends Fragment
         {
             CONTEXT = getActivity();
         }
+
         dialog = new Dialog(CONTEXT);
         imageView = new ImageView(CONTEXT);
         listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener()
