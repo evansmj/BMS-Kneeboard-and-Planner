@@ -33,7 +33,7 @@
 
 	<!-- Brevity Dictionary Activity -->
 	<string name="brevity_dictionary_title">Brevity Dictionary</string>
-	<string name="menu_search">Search,.m</string>
+	<string name="menu_search">Search</string>
 	<string name="no_results">No Results Found.</string>
 
 	<!-- Tactical Formation Reference Activity -->

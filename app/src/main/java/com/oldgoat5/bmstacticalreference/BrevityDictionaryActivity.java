@@ -7,10 +7,12 @@ import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.widget.ListView;
 import android.widget.SearchView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -25,7 +27,7 @@ public class BrevityDictionaryActivity extends Activity
     // http://fas.org/man/dod-101/usaf/docs/mcm3-1-a1.htm
 
     private ArrayList<WordDefinitionObject> rowsArrayList;
-    private BrevityDictionaryTable database = new BrevityDictionaryTable(this);
+    private BrevityDictionaryTable database;
     private DictionaryItemAdapter adapter;
     private ListView listView;
 
@@ -35,14 +37,20 @@ public class BrevityDictionaryActivity extends Activity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.brevity_dictionary_activity_layout);
 
+        database = new BrevityDictionaryTable(this);
         listView = (ListView) findViewById(R.id.brevity_dictionary_list_view);
         rowsArrayList = new ArrayList<WordDefinitionObject>();
 
+        generateAllRows();
+
         handleIntent(getIntent());
 
+        Log.d("brevdict", "before adapter=");
         adapter = new DictionaryItemAdapter(getApplication(), rowsArrayList);
 
+        Log.d("brevdict", "before .setadapter");
         listView.setAdapter(adapter);
+        Log.d("brevdict", "after.ser adapter");
     }
 
     @Override
@@ -65,14 +73,13 @@ public class BrevityDictionaryActivity extends Activity
         handleIntent(intent);
     }
 
-    private void handleIntent(Intent intent)
+    private void generateAllRows()
     {
-        if (Intent.ACTION_SEARCH.equals(intent.getAction()))
+        Cursor cursor = database.getAllWordsAndDefinitions();
+        rowsArrayList.clear();
+
+        try
         {
-            String query = intent.getStringExtra(SearchManager.QUERY);
-            Cursor cursor = database.getWordMatches(query, null);
-            //do stuff with the cursor /display results
-            //put them in listview
             if (cursor.moveToFirst())
             {
                 do
@@ -80,6 +87,45 @@ public class BrevityDictionaryActivity extends Activity
                     rowsArrayList.add(new WordDefinitionObject(cursor.getString(0),
                             cursor.getString(1)));
                 } while (cursor.moveToNext());
+            }
+        }
+        catch (NullPointerException e)
+        {
+            Log.d("BrevDict", "no getall words to add");
+        }
+
+    }
+
+    private void handleIntent(Intent intent)
+    {
+        if (Intent.ACTION_SEARCH.equals(intent.getAction()))
+        {
+            String query = intent.getStringExtra(SearchManager.QUERY);
+            Cursor cursor = database.getWordMatches(query, null);
+
+            rowsArrayList.clear();
+            //do stuff with the cursor /display results
+            //put them in listview
+            try
+            {
+                if (cursor.moveToFirst())
+                {
+                    do
+                    {
+                        rowsArrayList.add(new WordDefinitionObject(cursor.getString(0),
+                                cursor.getString(1)));
+                    } while (cursor.moveToNext());
+                }
+            }
+            catch (NullPointerException e)
+            {
+                Log.d("breviyyDict", "null cursor no search match found");
+                generateAllRows();
+                //make no matches found toast todo
+                Toast toast = Toast.makeText(this, "No Match Found", Toast.LENGTH_LONG);
+
+                toast.setDuration(Toast.LENGTH_LONG);
+                toast.show();
             }
         }
     }

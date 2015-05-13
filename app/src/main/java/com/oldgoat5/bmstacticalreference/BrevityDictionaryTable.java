@@ -45,6 +45,33 @@ public class BrevityDictionaryTable
         return query(selection, args, columns);
     }
 
+    public Cursor getAllWordsAndDefinitions()
+    {
+        SQLiteQueryBuilder builder = new SQLiteQueryBuilder();
+        builder.setTables(FTS_VIRTUAL_TABLE);
+
+        Cursor cursor = builder.query(helper.getReadableDatabase(),
+                new String[] {C_WORD, C_DEFINITION}, null, null, null, null, null);
+
+        //Cursor cursor = helper.getReadableDatabase().rawQuery("SELECT * FROM FTS", null);
+
+        //cursor.moveToFirst();
+        //Log.d("testtest", cursor.getString(0));
+
+        if(cursor == null)
+        {
+            return null;
+        }
+        else if (!cursor.moveToFirst())
+        {
+            cursor.close();
+
+            return null;
+        }
+
+        return cursor;
+    }
+
     private Cursor query(String selection, String[] args, String[] columns)
     {
         SQLiteQueryBuilder builder = new SQLiteQueryBuilder();
@@ -66,11 +93,6 @@ public class BrevityDictionaryTable
 
         return cursor;
     }
-
-
-
-
-
 
 
     /*****************************************************************
@@ -124,7 +146,6 @@ public class BrevityDictionaryTable
                 }
             }).start();
         }
-
 
         private void loadWords() throws IOException
         {
