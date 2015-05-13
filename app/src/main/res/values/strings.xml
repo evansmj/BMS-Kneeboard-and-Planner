@@ -3,41 +3,41 @@
 
     <string name="app_name">BMS Tactical Reference</string>
     <string name="asymmetric_checkbox">Asymmetric?</string>
-	<string name="one">1</string>
+    <string name="one">1</string>
     <string name="two">2</string>
-	<string name="three">3</string>
-	<string name="four">4</string>
-	<string name="five">5</string>
-	<string name="six">6</string>
-	<string name="seven">7</string>
-	<string name="eight">8</string>
-	<string name="nine">9</string>
-	<string name="ten">10</string>
-	<string name="eleven">11</string>
-	<string name="twelve">12</string>
-	
-	<string name="loadcard_gross_weight">Gross Weight: </string>
-	<string name="loadcard_drag">Drag: </string>
-	
-	<string name="image_content_description">F-16 front profile</string>
+    <string name="three">3</string>
+    <string name="four">4</string>
+    <string name="five">5</string>
+    <string name="six">6</string>
+    <string name="seven">7</string>
+    <string name="eight">8</string>
+    <string name="nine">9</string>
+    <string name="ten">10</string>
+    <string name="eleven">11</string>
+    <string name="twelve">12</string>
 
-	<!-- Navigation Activity -->
-	<string name="korea_theater_title">Korean Theater of Operations</string>
-	<string name="china">China</string>
-	<string name="china_fragment_title">Chinese Bases - Korean Theater of Operations</string>
-	<string name="japan">Japan</string>
-	<string name="japan_fragment_title">Japanese Bases - Korean Theater of Operations</string>
-	<string name="north_korea">North Korea</string>
+    <string name="loadcard_gross_weight">Gross Weight: </string>
+    <string name="loadcard_drag">Drag: </string>
+
+    <string name="image_content_description">F-16 front profile</string>
+
+    <!-- Navigation Activity -->
+    <string name="korea_theater_title">Korean Theater of Operations</string>
+    <string name="china">China</string>
+    <string name="china_fragment_title">Chinese Bases - Korean Theater of Operations</string>
+    <string name="japan">Japan</string>
+    <string name="japan_fragment_title">Japanese Bases - Korean Theater of Operations</string>
+    <string name="north_korea">North Korea</string>
     <string name="south_korea">South Korea</string>
     <string name="russia">Russia</string>
-	<string name="russia_fragment_title">Russian Bases - Korean Theater of Operations</string>
+    <string name="russia_fragment_title">Russian Bases - Korean Theater of Operations</string>
 
-	<!-- Brevity Dictionary Activity -->
-	<string name="brevity_dictionary_title">Brevity Dictionary</string>
-	<string name="menu_search">Search</string>
-	<string name="no_results">No Results Found.</string>
+    <!-- Brevity Dictionary Activity -->
+    <string name="brevity_dictionary_title">Brevity Dictionary</string>
+    <string name="menu_search">Search</string>
+    <string name="no_results">No Results Found.</string>
 
-	<!-- Tactical Formation Reference Activity -->
+    <!-- Tactical Formation Reference Activity -->
     <string name="tactical_formation_reference_title">Tactical Formation Reference</string>
 
 </resources>
