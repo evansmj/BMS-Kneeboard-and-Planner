@@ -1,244 +1,18 @@
-NATO UNCLASSIFIED
-
- APP-7(E)  ORIGINAL NATO UNCLASSIFIED
-
-
-
-  JOINT BREVITY WORDS PUBLICATION  APP-7(E)
-
-
-
-
-NATO UNCLASSIFIED
-
- APP-7(E)  ORIGINAL NATO UNCLASSIFIED
-
-                      THIS PAGE WAS INTENTIONALLY LEFT BLANK
-
-
-
-
-NATO UNCLASSIFIED
-
- APP-7(E) i ORIGINAL NATO UNCLASSIFIED
-
-
-
-  JOINT BREVITY WORDS PUBLICATION  APP-7(E)  APRIL 2010
-
-
-
-
-NATO UNCLASSIFIED
-
- APP-7(E) ii ORIGINAL NATO UNCLASSIFIED
-
-                       THIS PAGE WAS INTENTIONALLY LEFT BLANK
-
-
-
-
-NATO UNCLASSIFIED
- APP-7(E) NORTH ATLANTIC TREATY ORGANIZATION
- NATO STANDARDIZATION AGENCY (NSA)
- NATO LETTER OF PROMULGATION
- 8 April 2010 1. APP-7(E) -ALLIED JOINT BREVITY WORDS PUBLICATION is a NATO/PfP UNCLASSIFIED publication. The agreement of NATO nations to use this publication is recorded in STANAG 1401. 2. APP-7(E) is effective on a date to be promulgated by the NSA. When made effective it shall supersede APP-7(D), which shall be destroyed in accordance with the local procedures for the destruction of documents.
-
-ua . MORENO
-
-Vic Admiral ESP(N) Dir ctor, NATO Standardization A ency iii ORIGINAL NATO UNCLASSIFIED
-
-
-
-
-NATO UNCLASSIFIED
-
- APP-7(E) iv ORIGINAL NATO UNCLASSIFIED
-
-                       THIS PAGE WAS INTENTIONALLY LEFT BLANK
-
-
-
-
-NATO UNCLASSIFIED
-
- APP-7(E) v ORIGINAL NATO UNCLASSIFIED
-
-                      RESERVED FOR NATIONAL LETTER OF PROMULGATION
-
-
-
-
-NATO UNCLASSIFIED
-
- APP-7(E) vi ORIGINAL NATO UNCLASSIFIED
-
-                      THIS PAGE WAS INTENTIONALLY LEFT BLANK
-
-
-
-
-NATO UNCLASSIFIED
-
- APP-7(E) vii ORIGINAL NATO UNCLASSIFIED
-
- RECORD OF CHANGES
-
-    CHANGE   DATE ENTERED    BY WHOM ENTERED
-
-
-
-
-
-
-
-
-NATO UNCLASSIFIED
-
- APP-7(E) viii ORIGINAL NATO UNCLASSIFIED
-
-                      THIS PAGE WAS INTENTIONALLY LEFT BLANK
-
-
-
-
-NATO UNCLASSIFIED
-
- APP-7(E) ix ORIGINAL NATO UNCLASSIFIED
-
- RECORD OF RESERVATIONS BY NATIONS
-
-  CHAPTER RECORD OF RESERVATIONS BY NATIONS
-
-General  USA
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-NATO UNCLASSIFIED
-
- APP-7(E) x ORIGINAL NATO UNCLASSIFIED
-
- RECORD OF SPECIFIC RESERVATIONS
-
-  NATION SPECIFIC RESERVATIONS
-
-USA  The United States does not subscribe to the ommision of the term "Cleared to Engage" as identified in this and the pervious ratification draft of APP-7 in 2006. Rationale.  The term "Cleared to Engage" is used for Type 3 terminal attack control.  It grants a "blanket" weapons release clearance to an aircraft of flight attacking a target or targets, which meet the prescribed restrictions by a joint terminal attack controller.  The term "Cleared Hot" (which is in AAP-7(E)) is used for Types 1 and 2 terminal attack controls.  Additionally, the term "Attack Complete" is in APP-7(E) and is the mandatory call from the attack aircraft, to the terminal controller during Type 3 control, indicating completion of ordnance release.  All of these are standard terms in United States joint doctrine and part of the milti-Service brevity codes publication.  This omission leaves a void in weapons release clearance for Type 3 control.  ATP-3.3.2.1 list the term "Cleared to Engage" in its proper use as well.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-NATO UNCLASSIFIED
-
- APP-7(E) xi ORIGINAL NATO UNCLASSIFIED
-
- TABLE OF CONTENTS
-
-  GENERAL DECODE  Brevity words starting with letter:  A………………………………………………………………………………………….. 3 B………………………………………………………………………………………….. 6 C…………………………………………………………………………………………  11 D…………………………………………………………………………………………  18 E………………………………………………………………………………………….. 22 F………………………………………………………………………………………… . 24 G…………………………………………………………………………………………. 27 H…………………………………………………………………………………………  30 I………………………………………………………………………………………….   33 J………………………………………………………………………………………….  35 K…………………………………………………………………………………………   36 L………………………………………………………………………………………….   37 M………………………………………………………………………………………… 40 N…………………………………………………………………………………………. 44 O…………………………………………………………………………………………. 46 P………………………………………………………………………………………….. 48 Q………………………………………………………………………………………….. 54 R………………………………………………………………………………………….. 55 S…………………………………………………………………………………………... 59 T………………………………………………………………………………………….. 71 U………………………………………………………………………………………….. 75 V………………………………………………………………………………………….. 76 W…………………………………………………………………………………………. 78 Y………………………………………………………………………………………….. 81 Z………………………………………………………………………………………….. 82  ANNEX A               EXPLANATION OF SOME BREVITY WORDS.....................       A-1
-
-
-
-
-NATO UNCLASSIFIED
-
- APP-7(E) xii ORIGINAL NATO UNCLASSIFIED
-
-                        THIS PAGE WAS INTENTIONALLY LEFT BLANK
-
-
-
-
-NATO UNCLASSIFIED
-
- APP-7(E) xiii ORIGINAL NATO UNCLASSIFIED
-
- PREFACE
-
-   1. This publication serves the Maritime-, Land- and Air forces.   2. Abbreviations are explained in the AAP-15 or relevant publication.  3. The column “operations” describes the type of operation(s) the brevity word is meant for.  4. Type of operations are:  a. AIR-GEN - Air Operations General b. AIR-AAO - Air Operations Air to Air c. AIR-AGO - Air Operations Air to Ground d. AIR-AAR - Air Operations Air to Air Refueling e. AIR-MAR - Air Operations Maritime f. MAR-GEN - Maritime Operations General g. MAR-ASW - Maritime Operations Anti-Submarine Warfare h. MAR-ASUW - Maritime Operations Anti-Surface Warfare i. MAR-PIC - Maritime Operations Picture Compilation j. EW  - Electronic Warfare k. LAND-…. - Land Operations  5. The responsibility (operational sponsor) for the brevity words is the IERHWG.   5. Changes to brevity words can only be made by (or with the approval of) the operational sponsor.  a. AIR OPERATIONAL WORKING GROUP (AOWG): (1) AIR-GEN (2) AIR-AAO (3) AIR-AGO (4) AIR-AAR (5) AIR-MAR  b. MARITIME OPERATIONS WORKING GROUP (MAROPSWG): (1) MAR-GEN (2) MAR-ASW (3) MAR-ASUW (4) MAR-PIC (5) EW  c. LAND OPERATIONAL WORKING GROUP (LOWG):
-
-
-
-
-NATO UNCLASSIFIED
-
- APP-7(E) xiv ORIGINAL NATO UNCLASSIFIED
-
-                        THIS PAGE WAS INTENTIONALLY LEFT BLANK
-
-
-
-
-NATO UNCLASSIFIED
-
- APP-7(E) 1 ORIGINAL NATO UNCLASSIFIED
-
-                       GENERAL DECODE
-
-
-
-
-NATO UNCLASSIFIED
-
- APP-7(E) 2 ORIGINAL NATO UNCLASSIFIED
-
-                      THIS PAGE WAS INTENTIONALLY LEFT BLANK                         WORD: MEANING: OPERATIONS:
-
-
-
-
-NATO UNCLASSIFIED
-
- APP-7(E) 3 ORIGINAL NATO UNCLASSIFIED
-
-
-
-ABORT(ABORT CODE) ABORT(ABORT CODE) ABORT  (ABORT CODE) - Cease action/ attack/ event/ mission FAC directs aircrew to abort the attack. This is a mandatory instruction.
+﻿ABORT(ABORT CODE) ABORT(ABORT CODE) ABORT  (ABORT CODE) - Cease action/ attack/ event/ mission FAC directs aircrew to abort the attack. This is a mandatory instruction.
 ABORTING(ED) - Action/ attack/ event/ mission has ceased.
 ACTION - Initiate a briefed attack sequence or manoeuvre.
 ACTIVATE/ ACTIVE - Radiate(ing) on electronic equipment, specify type if desired.
-AFFIRM DOWN - I (or ship whose callsign follows) am below 130 ft-keel depth.
+AFFIRM DOWN - I (or ship whose callsign follows) am below 130 ft keel depth.
 AFFIRM UP - I (or ship whose callsign follows) am at periscope depth.
 AGNES - Tactical data systems keyset control.
 AIRBORNE ALERT - Combat equipped aircraft are airborne and ready for immediate action.
-AIRMAIL - In AIR/SUB co-operation, a method used by a shore station to pass a message.
+AIRMAIL - In AIR/SUB co operation, a method used by a shore station to pass a message.
 AJAX - Landing zone/pick up zone is clear of threats.
 ALARM - Indicates the termination of emcon procedures.
 ALERT_____ - Weapons can be launched, fired or be airborne within ___ minutes.
-ALFA CHECK - Confirm/verify position of BULLSEYE or other specified point relative to the friendly aircrafts position.  (“GN 55 ALFA CHECK - 045/20”- i.e. BULLSEYE in use is 20 NM north-east of fighter position).
+ALFA CHECK - Confirm/verify position of BULLSEYE or other specified point relative to the friendly aircrafts position.  (“GN 55 ALFA CHECK   045/20”  i.e. BULLSEYE in use is 20 NM north east of fighter position).
 ALLIGATOR - Automatic computer controlled digital data link between units equipped with computerised tactical data systems (link 11).
 ALTERNATE - The attacker will attack the alternate target.
-
-
-
-
-NATO UNCLASSIFIED
-
- APP-7(E) 4 ORIGINAL NATO UNCLASSIFIED
-
-  WORD: MEANING: OPERATIONS:
-
 ALTITUDE - Height of contact reported in hundreds of ft in three digits (e.g. “ALTITUDE zero zero five” equals 500 ft).
 ANAPROP - Conditions for abnormal propagation of electronic emissions.
 ANCHOR(ED) - 1. Involved in a visual fight and unable to leave. 2. Orbit about a specific point; refuelling track flown by tanker.
@@ -247,7 +21,7 @@ ANGUS - Bearing of contact determined by submarine.
 ANTEATER - Automatic tracking equipment that uses IFF rather than radar as its input.
 ANYFACE - Friendly GCI/AEW&CS/C2 agency when callsign is not known.
 ARCTIC_____ - Polarisation of signal is ______.
-ARIZONA - No anti-radiation missile ordnance remaining.
+ARIZONA - No anti radiation missile ordnance remaining.
 (__) ARM - (north/south/east/west/lead/trail) CONTACT(s) within a group that manoeuvre outside GROUP criteria.
 ARM (SAFE/HOT) - Order/ Command to switch select armament to safe/ hot.
 ARMED (SAFE/HOT) - Confirmation select armament is switched safe/ hot.
@@ -255,32 +29,12 @@ AS FRAGGED - Unit or element will be performing exactly as stated by the air tas
 ASH CAN - High explosive depth charge.
 ASREP - ASW report.
 ASSUME DECK - Carrier prepare deck for possible emergency landing of aircraft as soon as possible.
-
-
-
-
-NATO UNCLASSIFIED
-
- APP-7(E) 5 ORIGINAL NATO UNCLASSIFIED
-
-  WORD: MEANING: OPERATIONS:
-
 ATTACK(ING) - Attack or am commencing attacking run with weapon indicated. Direction/bearing from which the weapon will be coming may be given.
 ATTACK COMPLETE (A/S) - Mandatory call from the attack aircraft to the FAC during type III control indicating completion of ordnance release.
 AUTHENTICATE - To request or provide a response for a coded challenge.
 AUTOCAT - Any communications relay using automatic retransmissions.
 ____AWAY - Weapon indicated has been fired or released.
 AZIMUTH - A picture label describing two groups separated laterally. Group names will be referenced by cardinal directions (e.g. NORTH GROUP, SOUTH GROUP, EAST GROUP, WEST GROUP).
-
-
-
-
-NATO UNCLASSIFIED
-
- APP-7(E) 6 ORIGINAL NATO UNCLASSIFIED
-
-  WORD: MEANING: OPERATIONS:
-
 BACKPACKER - Unit smuggling weapons
 BACK STOP - Unit stationed between the contact and the protected force.
 BALL - ASW helicopter transducer.
@@ -296,20 +50,10 @@ BATTLEFIELD - MCCIS equipment.
 BAY - Carry out deception plan indicated or in accordance with previous orders.
 BAY RUM - HOSTILE chemical attack (e.g. Warning BAY RUM).
 BEADWINDOW - Your last transmission disclosed an essential element of friendly information.
-BEAM  (w/sub-cardinal direction) - CONTACT stabilized within 70 and 110 degrees. (see Annex A for details and definition).
+BEAM  (w/sub-cardinal direction)   CONTACT stabilized within 70 and 110 degrees. (see Annex A for details and definition).
 BENT - Equipment indicated is inoperative (Cancelled by OKAY).
 BERTHA - AEW Search radar equipment.
-
-WORD: MEANING: OPERATIONS:
-
-
-
-
-NATO UNCLASSIFIED
-
- APP-7(E) 7 ORIGINAL NATO UNCLASSIFIED
-
-BEWARE - The cautionary report made by an ASROC-fitted ship or a nuclear ASW weapon delivery aircraft about 30 seconds prior to weapon firing/release.
+BEWARE - The cautionary report made by an ASROC fitted ship or a nuclear ASW weapon delivery aircraft about 30 seconds prior to weapon firing/release.
 BIF - Bomb in face. Informative or directive call to indicate dropping a bomb as a defensive action (“Blue lead, BIF”).
 BIG BERTHA - AEW search radar transmitter.
 BIG DIPPER - Radar and sonar fitted helicopter.
@@ -321,63 +65,45 @@ BIRD(S) NEGATE HOSTILE_____ (see NOCAN) - Information call indicating unit is un
 BIRD(S) AWAY HOSTILE_____ - Missile has been fired on designated target (is used for SAM as well).
 BIRDIE - Aircraft radio relay of sonobuoy information. May be amplified by MATED signature received and correlates. UNWED signature deceived and does not correlate.
 BITTER - Anti Surface Ship Missile state report.
-BLEMISH - Notification of possible blue-on-blue (fratricide) or blue-on-neutral situation.
+BLEMISH - Notification of possible blue on blue (fratricide) or blue on neutral situation.
 BLIND - Aircraft has lost visual contact with another friendly aircraft or ground position (opposite of VISUAL).
 BLOODHOUND - ASW torpedo.
-
-
-
-
-NATO UNCLASSIFIED
-
- APP-7(E) 8 ORIGINAL NATO UNCLASSIFIED
-
-  WORD: MEANING: OPERATIONS:
-
-BLOODHOUND LOOSE I have launched an ASW torpedo in this area (or area indicated); keep clear.  MAR-ASW
+BLOODHOUND LOOSE I have launched an ASW torpedo in this area (or area indicated); keep clear.
 BLOTTER - ECM receiver.
-BLOW THROUGH - Aircraft will continue straight ahead at the merge and not turn with target(s).  AIR-GEN
+BLOW THROUGH - Aircraft will continue straight ahead at the merge and not turn with target(s).
 BOGEY - Unidentified aircraft.
 BOGEY DOPE - Request target information (BRAA) to the specified target. If a threat is not specified Bearing/Range will be given to the closest threat.
 BOUNCER - Employ bottom bounce detection techniques or contact believed bottom bounce detection.
-BOWWAVE - Long form weather report giving.  (See also VAT”B”) B. Below or Base of cloud in thousands of ft. If below one thousand ft, use hundreds of ft but add the word “hundred”.  O. Over or Top of cloud level in thousands of ft. If unknown, use the word “unknown”. NOTE: If there is more than one cloud layer, report the base and top of the lower formation, followed by the base and top of progressively higher layers (e.g. two, twelve, seventeen, twenty-five).    W. Wind. (8 points, N, NE ,E, SE, S, SW, W, NW) plus the velocity in knots.  When wind is missing, omit or use the word “unknown”.    W. Weather.  General description of weather in plain language; such as clear, partly cloudy, cloudy, overcast light, moderate or heavy rain, mist, haze, thunderstorm and distant-lighting. Amplification of the weather should be made at the end of the report under “E”.    A. Amount of clouds in eights.    V. Visibility in miles. Use a fraction if less than one mile.   E. Extra phenomena of significance such as turbulence
+BOWWAVE - Long form weather report giving.  (See also VAT”B”) B. Below or Base of cloud in thousands of ft. If below one thousand ft, use hundreds of ft but add the word “hundred”.  O. Over or Top of cloud level in thousands of ft. If unknown, use the word “unknown”. NOTE: If there is more than one cloud layer, report the base and top of the lower formation, followed by the base and top of progressively higher layers (e.g. two, twelve, seventeen, twenty five).    W. Wind. (8 points, N, NE ,E, SE, S, SW, W, NW) plus the velocity in knots.  When wind is missing, omit or use the word “unknown”.    W. Weather.  General description of weather in plain language; such as clear, partly cloudy, cloudy, overcast light, moderate or heavy rain, mist, haze, thunderstorm and distant lighting. Amplification of the weather should be made at the end of the report under “E”.    A. Amount of clouds in eights.    V. Visibility in miles. Use a fraction if less than one mile.   E. Extra phenomena of significance such as turbulence
 BOX - Picture label with groups in square or offset square (see CHAMPAGNE and VIC for group names).
 BRAA - 1. Following formation is in tactical control format providing target bearing, range altitude and aspect relative to the specified friendly aircraft.  2. Switch to tactical BRAA control format for a specific group/contact.
-BRACKET - Aircraft will manoeuvre to a position on opposing sides, either laterally and/or vertically from target(s).  AIR-AAO BREAK (Direction) Perform “An immediate maximum performance turn in the direction indicated”.  AIR-GEN BREAK(ING) DIP Helicopter raises the transducer clear of the water. MAR-ASW BREAK AWAY Tanker or receiver call indicating that an immediate disconnect and vertical and nose or tail separation between tanker and receiver is required.  AIR-AAR BREAK OFF Discontinue approach but maintain contactunless otherwise indicated.  AIR-MAR BRIDGE Pulse width in microseconds.  EW BROKE LOCK Intentional termination of radar/IR lock-on  AIR-GEN BROTHER Attacking ship of surface ASW-unit.  MAR-ASW BROWNIE Photographic devices.  MAR-GEN BRUISER Air Launched Anti Ship Missile.  AIR-MAR BRUSH Antenna rotation rate in seconds per revolution. (SPR). EW WORD: MEANING: OPERATIONS:
-
-
-
-
-NATO UNCLASSIFIED
-
- APP-7(E) 10 ORIGINAL NATO UNCLASSIFIED
-
+BRACKET - Aircraft will manoeuvre to a position on opposing sides, either laterally and/or vertically from target(s).
+BREAK (Direction) - Perform “An immediate maximum performance turn in the direction indicated”.
+BREAK(ING) - Call for turn away from current heading.
+BREAK AWAY - Tanker or receiver call indicating that an immediate disconnect and vertical and nose or tail separation between tanker and receiver is required.
+BREAK OFF - Discontinue approach but maintain contact unless otherwise indicated.
+BRIDGE - Pulse width in microseconds.
+BROKE LOCK - Intentional termination of radar/IR lock on.
+BROTHER - Attacking ship of surface ASW unit.
+BROWNIE - Photographic devices.
+BRUISER - Air Launched Anti Ship Missile.
+BRUSH - Antenna rotation rate in seconds per revolution. (SPR).
 BUBBLE - I am (or submarine is) releasing an air bubble for identification, localization or evasion purposes.
 BUDDY (LASE/GUIDE) - To have guidance of a weapon from a source other than delivering aircraft.
 BUDDY LOCK - Fighter has radar locked to a known friendly aircraft. Normally a response to a SPIKE or BUDDY SPIKE call.
-BUDDY SPIKE - RWR indication of a friendly AI-radar lock-on (“RED 3, BUDDY SPIKED, BULLSEYE 240/15”).
-BUG OUT (direction) - Separation from that particular engagement/attack/ operations; no intent to re-engage/return.
+BUDDY SPIKE - RWR indication of a friendly AI radar lock on (“RED 3, BUDDY SPIKED, BULLSEYE 240/15”).
+BUG OUT (direction) - Separation from that particular engagement/attack/ operations; no intent to re engage/return.
 BUGSY - Unit/entity conducting terrorist or asymmetric warfare activities.
-BULLDOG - Surface/Sub-surface Launched Anti Ship Missile.
+BULLDOG - Surface/Sub surface Launched Anti Ship Missile.
 BULLPEN - A submarine generated search area. (SGSA).
 BULLRING - Aircraft patrol zone.
 BULLS EYE - A common reference point Position of an object will be established by bearing (magnetic) and range (NM) from this point.
 BULLY - Concentrate attack on my target or target designated.
-BUMP/BUMP-UP - A fly-up to acquire LOS to the target or laser designation.
+BUMP/BUMP-UP   A fly up to acquire LOS to the target or laser designation.
 BURN EO/IR - illuminator is being used to provide illumination of surface points of interest.
 BUSTER - Fly at maximum  continuous speed (mil power).
 BUTTON - Radio channel setting.
 BUZZARD - Missile used in the land attack mode.
-
-
-
-
-NATO UNCLASSIFIED
-
- APP-7(E) 11 ORIGINAL NATO UNCLASSIFIED
-
-  WORD: MEANING: OPERATIONS:
-
 CADDILAC - Directional active sonobuoy
 CAESAR - Unit acting as force over_the_horizon track coordinator (FOTC) in a MCCIS organization
 CAKE - ASW weapon state report.
@@ -395,16 +121,6 @@ CAPTURED - Aircrew has identified and is able to track a specified A/G target wi
 CAVOK - Cloud and Visibility Okay (International Civil Aviation Organization(ICAO) term meaning no significant clouds below 5,000 ft, visibility at least six miles, no precipitation or storms).
 ____ CEASED - Subject emitter has stopped radiating.
 CEASE ENGAGEMENT - In air defence, break the engagement on the target specified and prepare to engage another target. Missiles in flight will continue to intercept.
-
-
-
-
-NATO UNCLASSIFIED
-
- APP-7(E) 12 ORIGINAL NATO UNCLASSIFIED
-
-  WORD: MEANING: OPERATIONS:
-
 CEASE FIRE - Do not open fire/cease firing (missiles in flight continue to intercept).
 CEASE REPORTING - Contact is no longer to be reported but plotting and assessment of classification, course, speed, altitude, identification and closest point of approach is to be continued. Reporting is to recommence automatically for changes in classification or alterations of course, speed or altitude.
 CERTSUB - Contact classified as certain submarine.
@@ -417,18 +133,10 @@ CHARTER - Activate daily changing callsigns ordered for current period (or key c
 CHATTER - Communications jamming.
 CHATTERMARK - Commence briefed radio procedures to counter communication jamming.
 CHEAPSHOT - Active radar missile data link is supported to high PRF, but not to medium PRF active.
-
-
-
-
-NATO UNCLASSIFIED
-
- APP-7(E) 13 ORIGINAL NATO UNCLASSIFIED
-
 CHECK ( __ ) - Directive to momentarily monitor (specified items/systems). No response is required if status is normal.
 CHECK CAPTURE - Informative call from FAC to the aircrew that target appears to be no longer tracked by the targeting pod.
 CHECK FOCUS - Informative call from FAC to the aircrew that FLIR image appears to be out of focus.
-CHECK PORT (LEFT)/STAR- BOARD(RIGHT) - Turn (___ ) degrees left/right and maintain new heading.
+CHECK PORT (LEFT)/STAR- BOARD(RIGHT)   Turn (___ ) degrees left/right and maintain new heading.
 CHECKPRINT - 1. Request by an Air Defence Commander for unit(s) to provide amplifying information on a specific track.  2. Reply/informative to Air Defence Commander  followed by positive track information using format specified in applicable OPTASK document.
 CHECK SQUAWK/FOUR - Ensure emitting current crypto period key setting.
 CHERUBS - Height of friendly aircraft in hundreds of ft above surface.
@@ -439,42 +147,22 @@ CINDER - Off board infra red decoy.
 CIPHER - UHF/HF voice encrypt/decrypt device.
 CLAM - Cease emissions on specified equipment.
 CLANKING - Cavitating or making machinery noise.
-
-
-
-
-NATO UNCLASSIFIED
-
- APP-7(E) 14 ORIGINAL NATO UNCLASSIFIED
-
-  WORD: MEANING: OPERATIONS:
-
 CLARA (maritime) - Radar scope is clear of contacts other than those known to be friendly.
 CLARA (air) - The radar scope is clear of enemy contacts (“BLUE 1, CONTACT, BULLSEYE 270/20, BLUE 2, CLARA”).
 CLEAN (maritime) - Broadcast is encrypted. May be used as a report or order and must be followed by a frequency or station designator.
 CLEAN (air) - No radar contacts on BANDITS, BOGIES or aircraft of interest. No visible battle damage. Aircraft not carrying external stores.
 CLEARED - Requested action is authorized (no engaged or support roles are assumed).
 CLEARED HOT - Type 1 and 2 close air support terminal control clearance to release ordnance on this pass. Training range operations: range control officer/range safety officer authorizes ordnance release.
-CLEOPATRA - Unit acting as a non-participant in a MCCIS organization.
-CLOSING - Decreasing in range or azimuth AIR-GEN COBRA LOOSE_____ ASW-torpedo with Gyro Angle Snake Search (GASS) released and running on heading____.
+CLEOPATRA - Unit acting as a non participant in a MCCIS organization.
+CLOSING - Decreasing in range or azimuth AIR GEN COBRA LOOSE_____ ASW torpedo with Gyro Angle Snake Search (GASS) released and running on heading____.
 COCKROACH - HOSTILE biological attack, as designated (e.g. Warning COCKROACH).
 COLD (maritime) - I have lost sonar contact or sonar contact is not held.
 COLD (air) - (a) Start of the CAP leg away from the threat. (b) Low Attack geometry will result in a pass or roll out behind the target. Threat group heading away from fighters.
 COLD PIPE - Stop snorkeling or I am not snorkeling.
-
-
-
-
-NATO UNCLASSIFIED
-
- APP-7(E) 15 ORIGINAL NATO UNCLASSIFIED
-
-  WORD: MEANING: OPERATIONS:
-
 COLOUR (system/position) - Request for information on a type (system) at stated location; implies a request for ambiguity resolution.
 COMEBACK (LEFT/RIGHT) - Directive to reverse course.
-COME OFF (direction/ instruction) - 1. Regain mutual support or de-conflict flight paths.  Implies both VISUAL and TALLY.  2. Manoeuvre or execute a specific direction/instruction (e.g. quote COME OFF DRY unquote).
-COMING LEFT/RIGHT - ASW-unit is altering course in direction indicated. (to course indicated).
+COME OFF (direction/ instruction) - 1. Regain mutual support or de conflict flight paths.  Implies both VISUAL and TALLY.  2. Manoeuvre or execute a specific direction/instruction (e.g. quote COME OFF DRY unquote).
+COMING LEFT/RIGHT - ASW unit is altering course in direction indicated. (to course indicated).
 COMMENCING - I have left final approach fix on an instrument approach for landing.
 COMMIT(TED) (BULLSEYE position) - The intention to conduct an intercept against BOGEY(S)/ BANDIT(S).
 CONDITION HAIRY - All units may be required to prosecute an unidentified submarine contact.
@@ -484,16 +172,6 @@ CONFIRM - Verify the existence of the contact designated.
 CONS/CONNING - Threat/bogey aircraft leaving contrails.
 CONTACT (air) - 1.  Sensor contact at the stated position. 2.  Acknowledges sighting of a specific reference point. 3.  Individual radar returns within a GROUP or ARM.
 CONTACT (maritime) - Initial and subsequent detections of any object obtained by any detecting device.
-
-
-
-
-NATO UNCLASSIFIED
-
- APP-7(E) 16 ORIGINAL NATO UNCLASSIFIED
-
-  WORD: MEANING: OPERATIONS:
-
 CONTACT POSITION - Receiver position where the receptacle of the aircraft makes contact with the drogue or boom.
 CONTAINER - Inner group formation with four contacts oriented in a square or offset square.
 CONTINUE - Continue present manoeuvre, does not imply clearance to engage or expend ordnance.
@@ -504,20 +182,10 @@ CONTROL - The unit designated as EWC.
 COUNTDOWN - I am about to open fire within ____ seconds.
 COUNTERMARKER - A unit maintaining contact on a marker from a position which enables it to counter the threat presented by the marker.
 COVEC - A procedure for passing reports of positions on uncovered circuits.
-
-
-
-
-NATO UNCLASSIFIED
-
- APP-7(E) 17 ORIGINAL NATO UNCLASSIFIED
-
-  WORD: MEANING: OPERATIONS:
-
 COVER_____ - 1. Keep fighters between force/base and contact designated at distance stated from force/base(e.g. Cover HOSTILE 27 to 30 miles).  2. An order from the AAWC to a MRSAM/LRSAM equipped ship to initiate an engagement on specified track up to but not including the point of firing. This procedure allows a track to be designated to more than one firing unit without multi engagement of the track. 3. Directive/informative to take surface to air action or establish an air to air posture that will allow engagement of a specified target or threat. 4.   An order from the ASUWC to an ASM fitted platform to initiate an engagement on a specific track up to but not including the point of firing.
 COWBOY(S) - Ship(s) of search attack unit (SAU).
 CRACKERS - Sound Underwater Signal (SUS) or Practice Depth Charge (PDC) explosives.
-CRANK (direction) - An F/A-Pole manoeuvre in a specific direction (RED 1, crank south).
+CRANK (direction) - An F/A Pole manoeuvre in a specific direction (RED 1, crank south).
 CRASH START - Start main engines and get underway as quickly as possible.
 CRISS CROSS - A position or track derived from the plotting of DF bearings.
 CROSSING - When two groups initially separated in azimuth decrease azimuth separation to pass each other.
@@ -526,16 +194,6 @@ CURVE - Deception signal.
 CUT - Stop main engines.
 CUTOFF - Intercept using cutoff geometry.
 CYCLOPS - Unmanned Aerial Vehicle.
-
-
-
-
-NATO UNCLASSIFIED
-
- APP-7(E) 18 ORIGINAL NATO UNCLASSIFIED
-
-  WORD: MEANING: OPERATIONS:
-
 DANCE - Shift all lines to complan (__) (column codeword/ designator).
 DART - Aircraft rocket/aerial gunnery target.
 DASH - Aircraft position within a flight. Use if specific callsign is unknown.
@@ -549,26 +207,16 @@ DECLARE - Inquiry by fighter to AEW/GCI or capable aircraft as to the identifica
 DECLUTTER - FAC requests the pilot/operator to remove targeting symbology to allow the FAC to see a better picture of the target area.
 DEEP - 1. Contact is below layer depth.  2.  Indicates separation between the nearest and farthest groups in range in a relative formation of three or more groups, used to describe a LADDER/VIC/CHAMPAGNE/BOX
 DEFENDING (w/direction) - Aircraft is in a defensive position and maneuvering with reference to a surface to air threat.
-
-
-
-
-NATO UNCLASSIFIED
-
- APP-7(E) 19 ORIGINAL NATO UNCLASSIFIED
-
-  WORD: MEANING: OPERATIONS:
-
 DEFENSIVE - Aircraft is under attack, manoeuvring defensively, and unable to ensure deconfliction or mutual support.
 DELAY - The signal is to be retransmitted as soon as possible as ordered.
 DELOUSE (air) - Detect, identify and engage (if required) unknown platform trailing friendly platform.
 DELTA (__)(__) - Hold and conserve fuel at ALTITUDE and position indicated.
 DEMONS - Depth in metres.
 DEPLOY - Manoeuvre to briefed positioning.
-DETAILS - Request for a modified 9-line/15-line brief.
+DETAILS - Request for a modified 9 line/15 line brief.
 DEVILS - Submarine depth in tens of ft.
 DIAMONDS (w/position) - A surface IR event location.
-DIKE - In AIR/SUB co-operation, a mark-on-top rendezvous procedure.
+DIKE - In AIR/SUB co operation, a mark on top rendezvous procedure.
 DIP - Conduct search with helicopter sonar (may be followed by transducer depth in ft).
 DIP BOSS - ASW helicopter flight leader.
 DIP GANG - Collective callsign for all helicopters on net.
@@ -576,16 +224,6 @@ DIP MASTER - ASW helicopter air coordinator.
 DIP WATCHER - ASW helicopter control unit.
 DIPPER - An ASW helicopter capable of conducting both sonar search and attack.
 DIRTY - Link is not encrypted. May be used as a report or order and must be followed by a frequency or station designator.
-
-
-
-
-NATO UNCLASSIFIED
-
- APP-7(E) 20 ORIGINAL NATO UNCLASSIFIED
-
-  WORD: MEANING: OPERATIONS:
-
 DISCONNECT - Command by tanker or receiver that boom/drogue will be disconnected.
 DISTANT - In AIR/SUB cooperation, used in abbreviated contact reporting
 DITCHING - The forced alighting of an aircraft on water.
@@ -601,37 +239,17 @@ DRAWING - I have a LOFAR contact on a sonobuoy. Sonobuoy number or position is _
 DROP - 1. TRACK. The order to inhibit the release of the track to the link and relinquish reporting responsibility.  2. Stop monitoring of specified emitter/target/contact and resume search responsibilities.   3. Remove a specific system or EOB category from search responsibilities.
 DROP KING - Unit controlling weapon release time.
 DROP POINT - Position of weapon release.
-
-
-
-
-NATO UNCLASSIFIED
-
- APP-7(E) 21 ORIGINAL NATO UNCLASSIFIED
-
- WORD: MEANING: OPERATIONS:
-
 DROPPING - Fighter has discontinued tracking responsibility. GCI is responsible for further monitoring of the respective target
 DROP TRACK___ - Remove the emitter/target from tactical picture/track stores.
 DRY CONTACT - AAR contact during which no fuel is transferred.
 DUCK - Descend and increase speed.
 DUCKBUTT - Aircraft assigned to perform precautionary SAR. Performs secondary role as NAVAID to passing aircraft providing tracking, homing and steering information as well as position and weather reports when required.
 DUFFER - DF equipped unit.
-
-
-
-
-NATO UNCLASSIFIED
-
- APP-7(E) 22 ORIGINAL NATO UNCLASSIFIED
-
-  WORD: MEANING: OPERATIONS:
-
 EAGLE NET - The air attack safety net.
 EAGLE - The air safety cell callsign established in ships with a full control capability, during an exercise involving simulated attacks on the fleet, either by carrier or land based aircraft.
-EARDRUM - In AIR/SUB co-operation a generic callsign for aircraft.
+EARDRUM - In AIR/SUB co operation a generic callsign for aircraft.
 EARLY___ - Your wave is early indicated minutes.
-ECHELON (sub-cardinal direction) - Fill in to a picture label describing groups aligned behind and to the side of the closest group.
+ECHELON (sub-cardinal direction)   Fill in to a picture label describing groups aligned behind and to the side of the closest group.
 ECHO - Positive SEESAW/EWWS/System M/ Mode X reply.
 EDISON - Submarine turn on upward beamed diver’s lights and/ or anchor lights.
 EEL - Submarine floating antenna.
@@ -641,17 +259,6 @@ EMERGENCY BREAK OFF - Discontinue ASW action, manoeuvre to avoid collision, resu
 EMERGENCY FOUL - Unable to land aircraft within their safe endurance limits, followed by numbers and types of planes needing bases (Other carriers report with EMERGENCY SPACE).
 EMERGENCY LAUNCH - Carrier(s) addressed_launch all aircraft as quickly as possible.
 EMERGENCY PREP CHARLIE - Carrier(s) addressed_recall and land all aircraft as soon as possible.
-
-
-
-
-NATO UNCLASSIFIED
-
- APP-7(E) 23 ORIGINAL N
-ATO UNCLASSIFIED
-
-  WORD: MEANING: OPERATIONS:
-
 EMERGENCY SCRAMBLE - Carrier(s) addressed~immediately launch all available fighter aircraft as CAP. If all available aircraft are not required, numerals/type may be added.
 EMERGENCY SPACE - I am able to land aircraft in addition to own, followed by numbers and types.
 EMERGENCY STREAMER - Helicopter in forward flight effecting in flight recovery of up to 450 ft of sonar cable.
@@ -662,19 +269,9 @@ ESTIMATE - Provide a quick estimate of the height/depth/range/size of designated
 EXECUTE (maritime) - Carry out search ordered.
 EXECUTE (air) - Carry out briefed action.
 EXIDE - Submarine contact is using battery propulsion.
-EXTEND (Direction) - Short term manoeuvre to gain energy, distance or separation normally with the intent of re-engaging.
+EXTEND (Direction) - Short term manoeuvre to gain energy, distance or separation normally with the intent of re engaging.
 EXPECT HOLLOW - Informative call from the aircrew to the Full Motion Video(FMV) operator that a condition will likely exist momentarily that limits FMV reception (manoeuvres, terrain, etc.)
 EYEBALL - 1.  Fighter with primary visual identification responsibility. 2.  EO/IR/NVD acquisition of an aircraft. Normally followed by ( ) number of aircraft observed.
-
-
-
-
-NATO UNCLASSIFIED
-
- APP-7(E) 24 ORIGINAL NATO UNCLASSIFIED
-
-  WORD: MEANING: OPERATIONS:
-
 FADED - Radar contact is lost on unknown/non friendly contact.
 FAKER - A friendly track acting as a HOSTILE for exercise purposes.
 FALCON - The air safety contact cell callsign established in ships that do not have a full control capability, during an exercise involving simulated attacks on the fleet either by carrier or land based aircraft.
@@ -691,30 +288,22 @@ FENCE IN/OUT - Set cockpit switches as appropriate prior to entering/exiting the
 FERRET - Airborne electronic reconnaissance activity or aircraft.
 FEW - 2 to 7 aircraft.
 FIELD - The area occupied by sonobuoys operating in the LOFAR mode.
-FILLY - In AIR/SUB co-operation, an ESM homing method (submarine as transmitting unit).
-
-
-
-
-NATO UNCLASSIFIED
-
- APP-7(E) 25 ORIGINAL NATO UNCLASSIFIED
-
-  WORD: MEANING: OPERATIONS:
-
-FLANK  Contact stabilized within 110 and 150 degrees aspect. (see Annex A for details and definition).  AIR-AAO FLARES Deploy flares.  AIR-GEN FLASH(
-
-) Temporarily activate specified system for ID purpose. (e.g. IFF/Afterburner/flare/chaff/etc.)  AIR-GEN FLASHLIGHT  Directive term for helicopter to turn on IR floodlight (pointed at ground to aid visual acquisition by escort aircraft).  AIR-AGO FLAVOUR Visually identified nationality of a contact  MAR-PIC FLIGHT LEVEL ICAO term giving height in hundreds of ft (e.g. FLIGHT LEVEL 250 equals 25.000 ft MSL).  MAR-PIC/ AIR-GEN FLOAT Expand the formation laterally within visual limits to maintain a radar contact or prepare for a defensive response.  AIR-AAO FLOP Shift the air patrol zone to the opposite side of the submarine patrol zone.  MAR-ASW FLOW (direction)  Fly stated heading. AIR-AAO FLUSH (ING)  In AIR/SUB co-operation, I am going deep MAR-ASW FOOTPAD In AIR/SUB co-operation, a visual radar homing method.  MAR-ASW FORCE CAP Combat Air Patrol over friendly forces.  AIR-MAR FORD Assume intercept guard/watch on band or guard indicated  EW FOX  (NUMBER) Simulated/actual launch of air to air weapons. ONE   Semi active Radar-guided missile. TWO   Infrared - guided missile. THREE  Active radar-guided missile.  AIR-GEN FOX MIKE VHF/FM radio.  AIR-GEN FOX THREE/TWO (X) SHIP  Valid missile shot against (x) separate targets (assumes one missile per target).  AIR-AAO
-
-
-
-
-NATO UNCLASSIFIED
-
- APP-7(E) 26 ORIGINAL NATO UNCLASSIFIED
-
-  WORD: MEANING: OPERATIONS:
-
+FILLY - In AIR/SUB co operation, an ESM homing method (submarine as transmitting unit).
+FLANK - Contact stabilized within 110 and 150 degrees aspect.
+FLARES - Deploy flares.
+FLASH() - Temporarily activate specified system for ID purpose. (e.g. IFF/Afterburner/flare/chaff/etc.)
+FLASHLIGHT - Directive term for helicopter to turn on IR floodlight (pointed at ground to aid visual acquisition by escort aircraft).
+FLAVOUR - Visually identified nationality of a contact.
+FLIGHT LEVEL - ICAO term giving height in hundreds of ft (e.g. FLIGHT LEVEL 250 equals 25.000 ft MSL).
+FLOAT - Expand the formation laterally within visual limits to maintain a radar contact or prepare for a defensive response.
+FLOP - Shift the air patrol zone to the opposite side of the submarine patrol zone.
+FLOW (direction) - Fly stated heading.
+FLUSH (ING) - In AIR/SUB co operation, I am going deep MAR ASW FOOTPAD In AIR/SUB co operation, a visual radar homing method.
+FORCE CAP - Combat Air Patrol over friendly forces.
+FORD - Assume intercept guard/watch on band or guard indicated
+FOX (NUMBER) - Simulated/actual launch of air to air weapons. ONE   Semi active Radar guided missile. TWO   Infrared   guided missile. THREE  Active radar guided missile.
+FOX MIKE - VHF/FM radio.
+FOX THREE/TWO (X) SHIP  - Valid missile shot against (x) separate targets (assumes one missile per target).
 FREAK - Frequency in MHertz.
 FREDDIE - Callsign for ACU.
 _____FREE - Fire may be opened on any target(s) that has (have) not been identified as FRIEND. Weapon control status; prefixed by the appropriate weapon brevity word or general term WEAPON.
@@ -722,19 +311,9 @@ FREEWHEEL - Confirm cancellation of a submarine generated search area.
 FREEZE - Execute order to designated helicopter(s) to remain hovering in present position (cancelled only by MELT).
 FREEZE BURN - Freeze the EO/IR illuminator position in the present location.
 FUEL STATE - A helicopter’s fuel quantity, expressed in hours and minutes before having to make a controlled emergency landing.
-FURBALL - Non-friendly aircraft and friendly aircraft are in close proximity to each other. Can be response to a DECLARE ~ request.
-
-
-
-
-NATO UNCLASSIFIED
-
- APP-7(E) 27 ORIGINAL NATO UNCLASSIFIED
-
-  WORD: MEANING: OPERATIONS:
-
+FURBALL - Non friendly aircraft and friendly aircraft are in close proximity to each other. Can be response to a DECLARE ~ request.
 GADABOUT__|__ - The upper limit of height sanctuary for fighters in the MEZ. (“GADABOUT 25” means the upper limit of the height sanctuary is 25,000 ft; “GADABOUT 16 to 24” means the height sanctuary is between 16,000 to 24,000 ft).
-GADGET - Radar or emitter equipment (type of equipment may be indicated by a letter as listed in OPORD or APP-1).
+GADGET - Radar or emitter equipment (type of equipment may be indicated by a letter as listed in OPORD or APP 1).
 GATE - Fly at maximum speed (afterburner).
 GEIGER CHASE - A radio activity monitoring operation.
 GEIGER (numerals) - Radiation intensity in roentgens.
@@ -747,19 +326,9 @@ GERTRUDE - Underwater telephone equipment.
 GIMBALS (W/BRAA) - Call indicating radar target is approaching azimuth or elevation limits, implies a request to flight lead to modify intercept geometry, or direct PRESS/SPLIT/DROP.
 GINGERBREAD - Voice imitative deception is suspected on this net.
 GLADIATOR - MCCIS operator
-GLOBAL - In AIR/SUB co-operation a plotlock procedure.
+GLOBAL - In AIR/SUB co operation a plotlock procedure.
 ____GO____ (either / or) (directive) - preceded/ followed by a frequency or radio channel. To be acknowledged by all flight members.
 GO ACTIVE - Initiate Have Quick communications.
-
-
-
-
-NATO UNCLASSIFIED
-
- APP-7(E) 28 ORIGINAL NATO UNCLASSIFIED
-
-  WORD: MEANING: OPERATIONS:
-
 GOALKEEPER - A ship stationed for close defense of a marked unit.
 GOBLIN - Submerged object detected.
 GO BROADCAST - Quest or directive call to switch to broadcast control.
@@ -776,16 +345,6 @@ GREYHOUND - Friendly ground attack cruise missile (e.g. TLAM).
 GRIDIRON - Jamming signal appears on my PPI scope or jamming signal prevents determination of range and bearing_____% of time.
 GRIDLOCK POSITIVE/ NEGATIVE - Satisfactory GRIDLOCK has/has not been achieved.
 GRIDLOCK - The process of matching the relative positions of locally held tracks with the positions of the reported tracks of the grid reference unit.
-
-
-
-
-NATO UNCLASSIFIED
-
- APP-7(E) 29 ORIGINAL NATO UNCLASSIFIED
-
-  WORD: MEANING: OPERATIONS:
-
 GRIDPOSIT CHARLIE____ - You are in centre of  boat lane ______yards from____ beach.
 GRIDPOSIT LIMA LIMA/ROMEO ROMEO - You are outside of boat lane to left/right_____ yards from the beach.
 GRIDPOSIT LIMA/ROMEO - Left/right of boat lane _____yards from beach.
@@ -795,47 +354,27 @@ GROWLER - LF beacon.
 GUERRILLA - Submarine has high precedence traffic to communicate (brevity word to be repeated three times).
 GUIDEDOG - Lead through vessel.
 GUINEA PIG - Radar simulator.
-GUNS - An air-to-air or air-to-surface gunshot.
+GUNS - An air to air or air to surface gunshot.
 GURF - Guns up ready to fire report. In naval gunfire support, made by a ship when coming onto NGS station. Summarizes NGS capability when it may be unknown to NGS agencies
-
-
-
-
-NATO UNCLASSIFIED
-
- APP-7(E) 30 ORIGINAL NATO UNCLASSIFIED
-
-  WORD: MEANING: OPERATIONS:
-
 HANDSHAKE - 1. Link 16 Air Control NPG initiation between air control unit and controlled aircraft.  2. Usable downlink to FMV
 HANDYMAN - Helicopter in the ASUW support role. (no weapons).
 HARD HOSE - A hose condition that is likely to damage receiver’s probe.
-HARD PORT/LEFT STBD/RIGHT - High-G, energy sustaining turn.
+HARD PORT/LEFT STBD/RIGHT - High G, energy sustaining turn.
 HAWK - Friendly aircraft whose callsign is not known.
 HAYRAKE (MEDIUM/ HIGH/ ULTRA) - Homing signals in radio frequency band indicated.
 HEAD ON - BOGEY/BANDIT which is closing a reporting aircraft from ahead.
 HEADS DOWN - Leader or wingman is head down in the cockpit and wingman or leader is responsible for clearing.
 HEADS UP - Alert of an activity of interest. (Normally followed by amplifying information).
 HEATER(____) - I have detected an unidentified IR source bearing (____).
-HEATWAVE - In AIR/SUB co-operation, a VHF homing method. (Submarine as transmitting unit).
+HEATWAVE - In AIR/SUB co operation, a VHF homing method. (Submarine as transmitting unit).
 HEAVY - A group known to contain three or more individual entities.
 HECKLERS - Night strike group.
 HELOT - AEW surface terminal equipment.
 HEY RUBE - Need support. Come to my assistance.
 HIGH - Target altitude is above 40.000’ MSL.
-
-
-
-
-NATO UNCLASSIFIED
-
- APP-7(E) 31 ORIGINAL NATO UNCLASSIFIED
-
-  WORD: MEANING: OPERATIONS:
-
 HIGHDRINK - Helicopter in flight refueling from a surface vessel.
 HIGHWAY___ - Conduct Jezebel line of bearing search degrees from ___(point of reference).
-HIMALAYAS - In AIR/SUB co-operation, the aircraft approaches the contact area directly without homing assistance from the co-operating submarine.
+HIMALAYAS - In AIR/SUB co operation, the aircraft approaches the contact area directly without homing assistance from the co operating submarine.
 HIT(s) - 1.  (A/A) momentary radar return(s) in search. (Indicates approximate altitude information from fighter). 2.  (A/G) Weapons impact within lethal distance.
 HOLD DOWN - Key transmitter for DF steer.
 HOLD FIRE - Do not open fire/cease firing (missiles in flight must be destroyed). The direction to hold fire should be repeated at the end of a transmission
@@ -845,19 +384,9 @@ HOMEPLATE - Home airfield/carrier.
 HOMER - Any homing beacon equipment. Type may be specified (e.g. LF, VHF, radar etc.).
 HOMING - Friends returning for recovery.
 HONEY - New target report. In naval gunfire support, made by spotters to the supporting arms coordination centre (SACC) as soon as possible as new targets are discovered or when known targets are given a correct location.
-
-
-
-
-NATO UNCLASSIFIED
-
- APP-7(E) 32 ORIGINAL NATO UNCLASSIFIED
-
-  WORD: MEANING: OPERATIONS:
-
-HOOK -      1. (direction) Perform an in-place 180-degree turn.  2. (descriptor) Datalink to cue sensors to described A/S point (point of interest/SAM/mark point/TN/etc.).
+HOOK -      1. (direction) Perform an in place 180 degree turn.  2. (descriptor) Datalink to cue sensors to described A/S point (point of interest/SAM/mark point/TN/etc.).
 HOOKER - Fishing or other small craft.
-HOOK LOCKER - The unit specified has been entered as a participant on Link 11 but is not active on the net (the (PU)-symbol appears in a separate location known as the HOOK LOCKER for systems so programmed)
+HOOK LOCKER - The unit specified has been entered as a participant on Link 11 but is not active on the net (the (PU) symbol appears in a separate location known as the HOOK LOCKER for systems so programmed)
 HOOTER - Friendly jammer.
 HOPPER - Hovercraft/Air Cushion/Ground effect machines.
 HOT (maritime) - Sonar contact is held.
@@ -868,39 +397,19 @@ HOVERTAC - An attack conducted by a dipping helo on its own target, while mainta
 HUFFDUFF - HFDF equipment or unit fitted with HFDF equipment.
 HUSH - Execute emission control in accordance with emission control policy or the emission policy in force as indicated.
 HUSKY - Active radar missile is at high PRF active.
-
-
-
-
-NATO UNCLASSIFIED
-
- APP-7(E) 33 ORIGINAL NATO UNCLASSIFIED
-
-  WORD: MEANING: OPERATIONS:
-
 ID - Intercept and identify the target or ID accomplished, followed by type of aircraft.
-IDENTIFY SQUAWK FOUR - Re-identify target/HOSTILE aircraft.
+IDENTIFY SQUAWK FOUR - Re identify target/HOSTILE aircraft.
 IDENT A~F - Perform relevant identification action.
 I GO (___) - I am leaving my patrol mission in _____ minutes.
 I HOLD - This may be used when a unit reports a track.
 IDLE - Surface vehicles are stationary.
 I MAKE____ - My information to amplify or clarify the appropriate plot, which differs from that reported previously is ____.
-IN (Direction) - 1. Indicating a turn towards a known threat. Opposite of OUT.  2. Indicating entering terminal phase of an air-to-ground attack. Opposite of OFF.
+IN (Direction) - 1. Indicating a turn towards a known threat. Opposite of OUT.  2. Indicating entering terminal phase of an air to ground attack. Opposite of OFF.
 INDIA - Mode IV.
 INDIANS - Ships of a Surface Action Group (SAG).
 INDICATE(ING) - A command to set (or have set) a particular speed. May be in knots indicated or in Mach, depending upon the controlled aircraft expressed as follows; knots indicated in three digits, i.e. three five zero (350); Mach ~ two or three digits with the word point separated whole numbers from tenths and hundreds, i.e. one point one three (1.13) or point nine three (.93).
 INFOTAC - A type of vectored attack, used when the directing unit broadcasts sonar contact information and the attacking aircraft must solve his own fire control solution.
 IN HOT/DRY - Aircrew has begun final attack run and intends to expend ordnance (hot) or to conduct a simulated attack without expending ordnance (dry).
-
-
-
-
-NATO UNCLASSIFIED
-
- APP-7(E) 34 ORIGINAL NATO UNCLASSIFIED
-
-  WORD: MEANING: OPERATIONS:
-
 IN PLACE (direction) - Perform indicated manoeuvre simultaneously.
 INSTANT - The signal is to be retransmitted as soon as possible.
 INTEL - Information or source that is of a higher classification than can be discussed or revealed on this circuit.
@@ -911,18 +420,8 @@ INTRUDER - An individual, unit or weapon system in or near an operational or exe
 INVESTIGATE - Verify specified element(s) of ROE, positive identification(PID), collateral damage estimate(CDE) and/or coordination of forces on the referenced target/track.
 I STAY(____) - I am remaining with you on patrol/mission_____ hours.
 I WANT - Originator requires reporting responsibility of nominated track.
-
-
-
-
-NATO UNCLASSIFIED
-
- APP-7(E) 35 ORIGINAL NATO UNCLASSIFIED
-
-  WORD: MEANING: OPERATIONS:
-
-JACKAL - Surveillance network participating group (NPG) of link-16/TADIL J.
-JAMMER - Non-friendly jammer.
+JACKAL - Surveillance network participating group (NPG) of link 16/TADIL J.
+JAMMER - Non friendly jammer.
 JELLO - Inverse synthetic aperture radar.
 JEZEBEL - JEZEBEL operations.
 JEZEBEL KIT - JEZEBEL equipment.
@@ -931,21 +430,11 @@ JINKING - Unpredictable manoeuvres, i.e. to negate a weapons tracking solution.
 JOE - AEW IFF equipment.
 JOINING - Aircraft joining or rejoining the formation.
 JOKER - Fuel state above BINGO at which separation/bugout/ event termination should begin.
-JUDY ANGLE - I have a contact and am tracking over intercept by angle lock-on; continue to give frequent range data.
+JUDY ANGLE - I have a contact and am tracking over intercept by angle lock on; continue to give frequent range data.
 JUDY - AD fighter has radar/ visual contact and is taking control of the intercept within a close control mission.
 JUG - Submarine communications buoy (not trailing antenna).
 JULIE - Explosive Echo Ranging (EER).
 JUMP(ING) - Break(ing) DIP and proceed(ing) in direction or to position indicated to DIP again.
-
-
-
-
-NATO UNCLASSIFIED
-
- APP-7(E) 36 ORIGINAL NATO UNCLASSIFIED
-
-  WORD: MEANING: OPERATIONS:
-
 KE - GOBLIN detected by electronic surveillance.
 KEEP CLEAR - Keep clear of contact bearing_____degrees (true or magnetic)_____miles from me or reference point.
 KEY - Communication signal.
@@ -959,16 +448,6 @@ KK - Two letter general type designator for GOBLIN.
 KNOCK IT OFF - Safety directive to cease air combat exercise manoeuvres/attacks/activities
 KNUCKLE - Disturbed water caused by manoeuvring submarine or surface craft.
 KOBOLD - MEZ is not active. (Opposite of OILFIELD).
-
-
-
-
-NATO UNCLASSIFIED
-
- APP-7(E) 37 ORIGINAL NATO UNCLASSIFIED
-
-  WORD: MEANING: OPERATIONS:
-
 LADDER - Picture label with three or more groups on the same azimuth but separated by range. Group names should be LEAD GROUP, MIDDLE GROUP, TRAIL GROUP.
 LAME DUCK - An aircraft in a minor state of emergency resulting from ordnance or radio failure, oxygen leak, or other cause.
 LAMPS - Lighting is to be restricted as indicated. BLACK: No lights to be visible. MODIFIED: As specified by operation orders, instructions or signals. BRIGHT: No restrictions imposed on the use of illumination.
@@ -984,16 +463,6 @@ LAST - Command and control (C2) term that provides the last contact altitude fro
 LATE____ - Your wave is late indicated minutes.
 LAZY - Equipment indicated is at standby.
 LEAD TRAIL - Inner group, formation of two or more contacts separated in range.
-
-
-
-
-NATO UNCLASSIFIED
-
- APP-7(E) 38 ORIGINAL NATO UNCLASSIFIED
-
-  WORD: MEANING: OPERATIONS:
-
 LEAKER - Airborne threat has passed through a defensive layer.
 LEAN (direction) - Offset/offsetting in the specified direction to avoid a threat.
 LEASH - Wire guided torpedo.
@@ -1001,47 +470,27 @@ LEVEL - Contact designated is at your ANGELS.
 LIFEGUARD - Submarine or surface ship designated for SAR operations or a submarine or surface ship stationed geographically for precautionary SAR assistance. Also the name of the units designated to recover a man overboard for vessels conducting alongside operations.
 LIGHTBULB - Turn all position lights to bright.
 LIGHTS ON/OFF - Turn on/off exterior lights.
-LINE ABREAST - Two contacts within a group side-by-side.
+LINE ABREAST - Two contacts within a group side by side.
 LINER - Fly at speed giving maximum cruising range.
 LISTEN - Cease echo ranging and commence passive search.
 LISTENER - Passive search/attack sonar.
 LITTLE BERTHA - AEW search radar receiver
 LITTLE JOE - AEW IFF transponder.
-LOCKED () - Final radar/IR lock-on. 1. With group label: radar lock-on, sort is not assumed 2. With position: radar lock-on, correct targeting is not assumed
+LOCKED () - Final radar/IR lock on. 1. With group label: radar lock on, sort is not assumed 2. With position: radar lock on, correct targeting is not assumed
 LOFAR - Jezebel operations in LOFAR mode.
-
-
-
-
-NATO UNCLASSIFIED
-
- APP-7(E) 39 ORIGINAL NATO UNCLASSIFIED
-
-  WORD: MEANING: OPERATIONS:
-
 LONG RIFLE (Report launch location in BULLSEYE format and weapons track direction) - Friendly, long range air to surface missile launch (e.g. AGM 130, SLAM ER)
 LONG SHOT - Submarine is believed to have fired from outside the screen.
 LONG STOP - Standby to assist in attacking raid indicated.
 LOOKING - Aircrew has not got the ground object, reference point, target in sight (opposite of CONTACT).
 LOOSE CONTROL - A form of aircraft mission control in which the aircraft commander selects his own speed, altitude, heading and appropriate tactics required to accomplish the assigned task.
 LOST CONTACT - 1. Previous contact is lost, provide target information.  2. Sensor information on a friendly aircraft is lost.
-LOST LOCK - Loss of radar/IR lock-on. GCI is to provide target information.
+LOST LOCK - Loss of radar/IR lock on. GCI is to provide target information.
 LOST___ - Reporting unit doesn’t hold contact anymore for which it has reporting responsibility.
 LOW - Target altitude is between 500 and 1000’ MSD.
-
-
-
-
-NATO UNCLASSIFIED
-
- APP-7(E) 40 ORIGINAL NATO UNCLASSIFIED
-
-  WORD: MEANING: OPERATIONS:
-
 MACK NO - I have reached maximum speed and am not closing my target.
 MACK YES - I have reached maximum speed and am closing my target.
 MADCAT - MAD fitted helicopters.
-MADDOG - Visual AIM-120 launch.
+MADDOG - Visual AIM 120 launch.
 MADMAN - I have a MAD contact.
 MADVEC - Vectored MAD verification run.
 MAGNUM - (H)ARM launch.
@@ -1055,16 +504,6 @@ MARK(ING) DIP - Helicopter come (coming) to hover and commence (commencing) sona
 MARK(ING) HOOVER - Helicopter come(ing) to hover.
 MARK GATE - Helicopter is proper distance downwind from dip point. Commence(ing) automatic transition to hover.
 MARKPOINT - Datalink non designated geographic point of interest.
-
-
-
-
-NATO UNCLASSIFIED
-
- APP-7(E) 41 ORIGINAL NATO UNCLASSIFIED
-
-  WORD: MEANING: OPERATIONS:
-
 MARRIAGE - LST is connected to seaward end of pier.
 MARRY - Assisting ship may attack in concert with attacking ship as opportunity offers.
 MARSHAL(ING) - Establish(ed) holding at a specific point.
@@ -1081,17 +520,7 @@ MIDDLEMAN - Communication relay which requires receipt and subsequent manual ret
 MIDGET - A very small submarine which has pressure hull and which accommodates a small crew.
 MIDNIGHT - Informative Early Warning functions are no longer available (opposite of SUNRISE).
 MIKEDUFF - MFDF equipment or unit fitted with MFDF equipment.
-
-
-
-
-NATO UNCLASSIFIED
-
- APP-7(E) 42 ORIGINAL NATO UNCLASSIFIED
-
-  WORD: MEANING: OPERATIONS:
-
-MILLER TIME - (A-S)  Completion of air-ground ordnance delivery. Generally used by the last striker in conjunction with a pre-coordinated egress plan.
+MILLER TIME - (A~S)  Completion of air ground ordnance delivery. Generally used by the last striker in conjunction with a pre coordinated egress plan.
 MINIMIZE - Radio frequency is becoming saturated, degraded or jammed and briefer transmissions must follow (see ZIPLIP).
 MISFIT - Continue using daily changing callsigns currently in use (or encrypted by means of key card identification) until further notice. (Promulgated simultaneously on all circuits affected and to be authenticated). Cancelled by CHARTER.
 MIX UP - Mixture of FRIENDLY and HOSTILE aircraft.
@@ -1105,73 +534,33 @@ MOVER(S) - Unidentified surface vehicle(s) in motion.
 MUD (type w/direction/range if able) - RWR ground threat displayed with no launch indication.
 MUGGER - A unit detailed to harass a MARKER from close quarters.
 MULTIPLE - There are a number of stations on the same frequency.
-
-
-
-
-NATO UNCLASSIFIED
-
- APP-7(E) 43 ORIGINAL NATO UNCLASSIFIED
-
-  WORD: MEANING: OPERATIONS:
-
 MUSHROOM - Nuclear weapon detonation. May also be used with WARNING to denote enemy nuclear attack.
 MUSIC - Electronic jamming.
 MUSTANG - An ASUW weapon carrying helicopter.
-
-
-
-
-NATO UNCLASSIFIED
-
- APP-7(E) 44 ORIGINAL NATO UNCLASSIFIED
-
-  WORD: MEANING: OPERATIONS:
-
-NAILS - RWR indication of AI-radar in search.
+NAILS - RWR indication of AI radar in search.
 NAKED - No RWR indications on the RWR scope.
 NANCY - Infrared equipment.
 NEAR - In AIR/SUB cooperation, used in abbreviated contact reporting
-NEAR-FAR - Fighter term describing a radar apparent description of two or more contacts within a group separated in range.
+NEAR-FAR   Fighter term describing a radar apparent description of two or more contacts within a group separated in range.
 NEGATIVE CONTACT - No sensor information is available on a friendly aircraft.
 NEGATIVE LASER - Aircraft has not acquired laser energy.
 NEGATIVE TROUT - Transmitted to control when the racket to which a Duffer has been assigned is detected but bearing cannot be obtained.
 NET BALL - In AIR/SUB cooperation, a method to perform identification.
-NEW PICTURE - Used by controller or aircrew when tactical picture has changed. Supersedes all previous calls and re-establishes picture for all players.
+NEW PICTURE - Used by controller or aircrew when tactical picture has changed. Supersedes all previous calls and re establishes picture for all players.
 NOCAN - Unable to comply (with your instructions).
 NOCOP - Unable to communicate due to exercise or mission in progress.
 NO FACTOR - Not a threat.
 NO JOY - Aircrew does not have visual contact with the target/bandit/bogey/landmark or enemy position.
 NONSUB - Contact is classified non submarine.
-
-
-
-
-NATO UNCLASSIFIED
-
- APP-7(E) 45 ORIGINAL NATO UNCLASSIFIED
-
-  WORD: MEANING: OPERATIONS:
-
 NORMAL - Target ground speed is between 200 and 600 kts.
 NOTACK - Directive by/request to a FRIENDLY submarine to establish an area in which no air or surface launched asw weapon may be employed.
 NOTCH(ING) (direction) - Directive / Descriptive that an aircraft is manoeuvring defensively to position the bandit on the aircraft’s wingline (“WHITE 2, NOTCHING south”).
-
-
-
-
-NATO UNCLASSIFIED
-
- APP-7(E) 46 ORIGINAL NATO UNCLASSIFIED
-
-  WORD: MEANING: OPERATIONS:
-
 OBSERVATION POSITION - Initial formation position of a receiver joining a tanker which is echelon right for all receivers.
 OCCUPIED - Ground equipment present at tasked target location. Opposite of VACANT.
 ___O’CLOCK___ - In clock code section and at range indicated (heading of own aircraft or unit being twelve o’clock).
 OCTOPUS - Tactical data system computer.
 OFF (direction) - Attack is terminated and manoeuvring to the indicated direction.
-OFF LOAD - Tanker fuel assigned for off-load to receiver(s) during a AAR mission.
+OFF LOAD - Tanker fuel assigned for off load to receiver(s) during a AAR mission.
 OFF SET (direction) - Manoeuvre in a specific direction (“BLACK is OFFSETTING north, WHITE is OFFSETTING south”, or “WHITE OFFSET south,  BLACK is OFFSETTING north”).
 OILFIELD - MEZ is active (opposite of KOBOLD).
 OKAY - Equipment indicated is operative (cancels BENT).
@@ -1183,27 +572,7 @@ ORBIT(ING) - Hold on current or indicated position.
 OUT (direction) - A turn to a cold aspect relative to a target/threat. (Opposite of IN).
 OUTHOUSE - My position in true bearing/miles from my reference point (assigned station).
 OUTLAW - Contact has met point of origin criteria for ROE.
-
-
-
-
-NATO UNCLASSIFIED
-
- APP-7(E) 47 ORIGINAL NATO UNCLASSIFIED
-
-  WORD: MEANING: OPERATIONS:
-
 OYSTER - Authentication policy in force.
-
-
-
-
-NATO UNCLASSIFIED
-
- APP-7(E) 48 ORIGINAL NATO UNCLASSIFIED
-
-  WORD: MEANING: OPERATIONS:
-
 PACKAGE - Geographically isolated collection of groups/contacts/ formations.
 PACMAN - Fighters have found the end of the threat formation and are converting; given in range and bearing from the FAOR BULLSEYE (“BLUE 4 is PACMAN 290/5”).
 PADLOCKED - Aircrew cannot take his eyes off another aircraft without losing tally or visual.
@@ -1219,36 +588,17 @@ PEEPSHOW - Perform non traditional ISR on the referenced target/track.
 PEGASUS - Unit acting as participant in a MCCIS organization
 PELICAN - Long range patrol maritime aircraft capable of both search and attack.
 PENDING - Tracks which have not been subject to the identification process but are available for reporting.
-
-
-
-
-NATO UNCLASSIFIED
-
- APP-7(E) 49 ORIGINAL NATO UNCLASSIFIED
-
-  WORD: MEANING: OPERATIONS:
-
 PENTHOUSE - The range safety cell callsign established in the target towing ship and responsible for the safety conduct of all live/dummy attacks against a towed target during an exercise involving simulated attacks on the fleet, either by carrier or landbased aircraft.
 PEPPER - Nonscheduled firing mission report. In naval gunfire support, made by a ship to SACC as soon as possible after firing
 PHANTOM - A position or track derived from the triangulation of Spikes originating from HOSTILE jamming.
 PHASE - Send a 1000 Hertz modulation on both sidebands of HF radio frequency carrier for one minute beginning in (__) minutes, frequency locking and radio receiver tuning purposes.
 PICKET - A unit operating outside the outer limits of screen sectors.
 PICTURE - Request for/Informative to provide tactical situation status pertinent to mission. (picture CLARA north).
-PIER MADE UP - Connecting of causeway section’s end to end completed.  MAR-GEN PIGEONS Bearing and distance to base (or specified destination) Bearing is to be suffixed. True or magnetic.
+PIER MADE UP - Connecting of causeway section’s end to end completed.
+PIGEONS - Bearing and distance to base (or specified destination) Bearing is to be suffixed. True or magnetic.
 PIGS - (note: Report  launch location in BULLSEYE format and weapon direction)  Friendly glide weapon (i.e. JSOW).
 PILLOW - Pulse Repetition Interval in microseconds.
 PINCE/PINCER - Threat manoeuvring for a bracket attack.
-
-
-
-
-NATO UNCLASSIFIED
-
- APP-7(E) 50 ORIGINAL NATO UNCLASSIFIED
-
-  WORD: MEANING: OPERATIONS:
-
 PING PONG - Exchange of LINK 11 information used in conjunction with an adjective to describe the status of LINK 11 operations.
 PINNACLE - An emission believed to originate from a platform assumed FRIENDLY.
 PIRATE - Fast moving surface radar contact assumed to be a fast patrol boat or fast attack craft
@@ -1257,23 +607,13 @@ PITCH - Broad pulse repetition rate in thousands of units, e.g. 1.5 is equivalen
 PITCH/ PITCHBACK (LEFT/RIGHT) - Fighter or flight to execute a nose high heading reversal.
 PLANE GUARD - Combatant assigned to steam in wake of carrier conducting flight operations.
 PLAYBOY - Tactical air coordinator: Airborne.
-PLAYMATE - Friendly ship, submarine or aircraft with which I am co-operating.
+PLAYMATE - Friendly ship, submarine or aircraft with which I am co operating.
 PLAYPEN - Submarine patrol area in a barrier.
 PLAYTIME - Amount of time aircraft can remain on station, given in hours plus minutes (e.g. ONE PLUS THIRTY equals one hour and thirty minutes).
 ___POGO___ - Switch to communications channel number preceding POGO. If unable to establish communications, switch to channel number following POGO. If no channel number is following POGO return to this channel.
 POINT - Datalink sensor/point track of interest.
 POINTER - Directional passive sonobuoy.
 POINTING___ - I hold directional sonobuoy or Codar bearing on contact___ degrees (it must be understood whether bearings are magnetic, true or relative to Codar plant road).
-
-
-
-
-NATO UNCLASSIFIED
-
- APP-7(E) 51 ORIGINAL NATO UNCLASSIFIED
-
-  WORD: MEANING: OPERATIONS:
-
 POLAR - Friendly nuclear submarine.
 POLAR BEAR (direction) - Friendly aircraft has visual/contact on the Friendly package and is joining.
 POND - Carry out jamming plan indicated or in accordance with previous orders.
@@ -1286,16 +626,6 @@ POSIT - Friendly aircraft current position from a fixed reference point (i.e. CA
 POSITIVE CONTROL - The controlling unit is responsible for taking actions for collision avoidance, such as ordering the necessary alterations to heading, SPEED and altitude to maintain separation criteria.
 POSSUB (LOW/HIGH/ CONFIDENCE) - Contact classified as possible submarine.
 POST ATTACK - Desired direction after completion of intercept/engagement.
-
-
-
-
-NATO UNCLASSIFIED
-
- APP-7(E) 52 ORIGINAL NATO UNCLASSIFIED
-
-  WORD: MEANING: OPERATIONS:
-
 POSTBOX - In AIR/SUB cooperation, a method used by submarine to rerouting message by communications relay.
 POSTHOLE - Rapid descending spiral.
 POUNCER - A unit stationed to provide defence in depth and mutual support for the screening units.
@@ -1310,15 +640,6 @@ PROBE - Any aircraft which carries out the visual identification/ recognition of
 PROBSUB - Contact classified as probable submarine.PULSE  Illuminate/illuminating an enemy position with flashing energy.
 PUMP - The fighters are manoeuvring up to 180 degrees away from the threat with the intention of recommitting, depending on the  tactical situation.
 PUMPKIN - In AIR/SUB cooperation, an ESM homing method. (Aircraft as transmitting unit).
-
-
-
-NATO UNCLASSIFIED
-
- APP-7(E) 53 ORIGINAL NATO UNCLASSIFIED
-
-  WORD: MEANING: OPERATIONS:
-
 PUPPIES - Emission control plan (EMCON plan) is modified as follows ___.
 PURE - Pure pursuit is being used or directive to go pure pursuit.
 PURPLE - Unit indicated is suspected of carrying nuclear weapons.
@@ -1326,35 +647,15 @@ PUSH (FREQ/ CHANNEL/TAD) - Switch to designated frequency, channel or TAD. Witho
 PUSHING - Departing designated point.
 PUSHING (GROUP/ DESCRIPTION) - Group(s) have turned cold and will continue to be monitored.
 PYRAMID - Any ship launched torpedo weapon system. May be prefixed with torpedo brevity word (BASSET, COBRA, etc.).
-
-
-
-
-NATO UNCLASSIFIED
-
- APP-7(E) 54 ORIGINAL NATO UNCLASSIFIED
-
-  WORD: MEANING: OPERATIONS:
-
 QUAIL - Enemy air/surface launched cruise missile
-
-
-
-
-NATO UNCLASSIFIED
-
- APP-7(E) 55 ORIGINAL NATO UNCLASSIFIED
-
-  WORD: MEANING: OPERATIONS:
-
 RACKET - Intercepted electronic emission which has been assigned to a number of the trackblock.
 RANGE - 1. The range to an object or target in hundreds of yards normally limited to less than 10,000 yards. 2. A picture label describing two groups separated in distance along the same line of bearing. Group names will be LEAD GROUP/ TRAIL GROUP.
-RANGER - An active non-directional sonobuoy giving target range.
+RANGER - An active non directional sonobuoy giving target range.
 RAT - HOSTILE fighter.
 RATFINK - HOSTILE bomber.
 RATTLER -Automatic Identification System (AIS).
 RAVEN - Airborne ECM operator.
-RAYGUN (Position/ Heading/  Altitude) - 1.  Indicates a radar lock-on to unknown aircraft that is presumed to be a threat. 2.  A request for a BUDDY SPIKE reply from friendly aircraft meeting these parameters.
+RAYGUN (Position/ Heading/  Altitude) - 1.  Indicates a radar lock on to unknown aircraft that is presumed to be a threat. 2.  A request for a BUDDY SPIKE reply from friendly aircraft meeting these parameters.
 READINESS - A two digit group denoting time (in minutes) required to get airborne.
 READY - The alert state READY orders the immediate readiness of the indicated Force Weapon System.
 READY-  CAP Fighter aircraft in condition of STANDBY.
@@ -1363,39 +664,20 @@ RECKON___ - The contact is in a fade area. Its dead reckoning position is_____(b
 REDEYE - In AIR/SUB cooperation, a visual homing method.
 REDHEAD - Pulsating red light.
 RED LIGHT - Time when search and rescue (SAR) aircraft is no longer SAR capable.
-
-
-
-
-NATO UNCLASSIFIED
-
- APP-7(E) 56 ORIGINAL NATO UNCLASSIFIED
-
-  WORD: MEANING: OPERATIONS:
-
 REFERENCE (direction) - Assume stated heading.
 RENEGADE - A civil platform that is assessed as operation in such a manner as to raise suspicion that it might be used as a weapon to perpetrate a terrorist attack.
 RENT - Report of characteristics of an intercepted signal.
 REPORT() - Report contact designated frequently (every___minutes).
-REPORTED (information) - Information provided is derived from an off-board source.
+REPORTED (information) - Information provided is derived from an off board source.
 REPTILE - National link system or link system not defined by other brevity word.
 RESCAP - Rescue Combat Air Patrol. Provides protection to rescue vehicles from HOSTILE forces during all phases of SAR.
 RESET - Proceed to pre briefed position or area of operations.
 RESTAKE__ | __  - Request for FAC to drive a new STAKE at the target centroid reported with direction of travel and distance (units/ yardstick) from the old stake. Initiated by aircrew.
-RESUME - Resume last formation/station/mission ordered. MAR-GEN/ AIR-GEN  RESUMED Emission resumed and is identified as previous intercept.
+RESUME - Resume last formation/station/mission ordered.
+RESUMED - Emission resumed and is identified as previous intercept.
 RETROGADE - Withdraw/withdrawing in response to a threat, continue mission as able, may RESET/RESUME if threat is negated.
 REVERT - Resume search on the previously assigned intercept guard (watch).
-REVTAC - Type of vectored attack used when the directive unit broadcasts sonar contact information. The delivery unit solves his firing solution, using own radar for plotting or reported data. MAR-ASW
-
-
-
-
-NATO UNCLASSIFIED
-
- APP-7(E) 57 ORIGINAL NATO UNCLASSIFIED
-
-  WORD: MEANING: OPERATIONS:
-
+REVTAC - Type of vectored attack used when the directive unit broadcasts sonar contact information. The delivery unit solves his firing solution, using own radar for plotting or reported data.
 RHINO - A FRIENDLY aircraft with a nuclear weapon on board (RHINO may be used as a suffix to an aircrafts callsign to indicate which aircraft have NDB’s on board).
 RIDER - A BOGEY that is complying with ACO/safe passage procedures.
 RIFLE - AGM 65 MAVERICK launch.
@@ -1410,32 +692,12 @@ ROLEX____ - Time change in minutes from a given datum. The term “plus” will 
 ROMAN CANDLE - A nuclear missile is about to be exploded in the area indicated.
 ROMEO SQUARED - Reporting responsibility
 ROMPER - Any ship which is unable to remain with the convoy and has moved more than 10 miles ahead of the convoy.
-
-
-
-
-NATO UNCLASSIFIED
-
- APP-7(E) 58 ORIGINAL NATO UNCLASSIFIED
-
-  WORD: MEANING: OPERATIONS:
-
 RONSON - The unit addressed is to carry out an individual Gridlock with the GRU (or the PU as indicated within parenthesis).
 ROPE - Illumination of an aircraft with an IR pointer.
 ROTATOR - MTI returns that signifies a high probability of a rotating antenna.
 ROUTE - Bellhop channel indicated or AEW channel in use.
 ROVER - Platform is video downlink transmit/receive capable.
 RUMBA - Own ship manoeuvring for ranging.
-
-
-
-
-NATO UNCLASSIFIED
-
- APP-7(E) 59 ORIGINAL NATO UNCLASSIFIED
-
-  WORD: MEANING: OPERATIONS:
-
 SADDLED - Informative from wingman/element indicating the return to briefed formation position.
 SAFE/HOT - Select armament (SAFE/HOT) or armament is SAFE/HOT
 ____SAFE - Do not open fire/cease firing. Fire may be opened only in self defence or in response to a formal order. Weapon control status; prefixed by the appropriate weapon codeword or general term WEAPON.
@@ -1451,16 +713,6 @@ SCRAPPER - Attack or localisation aircraft of ASW air search and attack team.
 SCRUB - MTI return that signifies a low slow airborne target.
 SCUD - Any threat TBM.
 SEADOG(s) - Friendly Fast Patrol Boat(s).
-
-
-
-
-NATO UNCLASSIFIED
-
- APP-7(E) 60 ORIGINAL NATO UNCLASSIFIED
-
-  WORD: MEANING: OPERATIONS:
-
 SEA LION - Underwater interrogation equipment.
 SEA PRINT(ER) - Underwater teletype transmission/equipment.
 SEARCHER - Unit having intercept equipment without DF capability. All references to duffers are applicable to searchers within their capabilities.
@@ -1469,20 +721,10 @@ SEA RETURN___ - Sea return obscures sonar or radar display to distance indicated
 SEA TALK - Underwater voice transmission.
 SECOND FOX THREE - Simulated or actual launch of multiple missiles on the same target.
 SELFTACK - An attack conducted by a dipping helicopter on its own target after the helicopter has broken DIP.
-SEPARATE - Leaving a specific engagement; may or may not re-enter.
+SEPARATE - Leaving a specific engagement; may or may not re enter.
 SEPARATION - Request for separation between two groups. Response will include the follow on group’s separation, altitude and fill ins.
 SERPENT - A towed array system (TAS) which is towed by surface ships or submarines.
 SET___ - 1. A command to set (or have set) a particular speed. May be in knots/indicated or in Mach, depending upon the controlled aircraft expressed as follows: knots indicated in three digits, i.e. THREE FIVE ZERO (350); Mach: two or three digits with the word POINT separating whole numbers from tenths and hundreds i.e. ONE POINT ONE THREE (1.13) or POINT NINE THREE (.93).  2. Informative call from the aircrew to FMV operator indicating no longer slewing the targeting pod and waiting for further updates.
-
-
-
-
-NATO UNCLASSIFIED
-
- APP-7(E) 61 ORIGINAL NATO UNCLASSIFIED
-
-  WORD: MEANING: OPERATIONS:
-
 SHACKLE - One weave; a single crossing of flight paths; manoeuvre to adjust or regain formation parameters.
 SHADOW(ING) - Follow indicated target.
 SHALLOW - Contact is above layer depth.
@@ -1499,39 +741,23 @@ SHORT SKATE - Informative or directive call to execute launch and leave tactics 
 SHOTGUN - Pre briefed weapons state.
 SIDE~SIDE - Fighter term describing a radarapparent description of two or more contacts within a group separated in azimuth.
 SIDEWALL___ - An offset RV in AIR/SUB cooperation at time____
-
-
-
-
-NATO UNCLASSIFIED
-
- APP-7(E) 62 ORIGINAL NATO UNCLASSIFIED
-
-  WORD: MEANING: OPERATIONS:
-
 SILENT - 1. (time) System will be unavailable for time indicated.  2. Datalink is, or should be placed, in receive only.  3. Broadcast station is not transmitting. May also  be used as an order and must be followed by a  frequency or station designator. If possible it should be followed by an estimated time of return to the air.
 SINGER (type/direction) - RWR indication of SAM launch.
 SINGLE - One object.  One aircraft.
 SINKER - A radar contact that later disappeared.
 SISTER - Assisting ship of surface ASW unit.
-SIXGUN - In AIR/SUB co-operation, a method to achieve plotlock.
+SIXGUN - In AIR/SUB co operation, a method to achieve plotlock.
 SKATE - Informative or directive call to execute launch and leave tactics and to be out no later than desired out range (DOR)/ minimum out range (MOR).
-SKIMMER - Search aircraft of ASW air search and attack team. MAR-ASW SKINNY  Current survivor coordinates. AIR-GEN SKIP IT(maritime)                                             (air) Do not attack, cease attack, cease interception.  Veto of fighter commit, usually followed with further directions.  MAR-GEN  AIR-AAO SKOSH Aircraft is out of/or unable to employ active radar missiles.
+SKIMMER - Search aircraft of ASW air search and attack team.
+SKINNY - Current survivor coordinates.
+SKIP IT - Veto of fighter commit, usually followed with further directions.
+SKOSH - Aircraft is out of/or unable to employ active radar missiles.
 SKUNK - A surface contact detected by radar.
-SKYROCKET Am about to fire AA shells to burst at HOSTILE’s estimated ALTITUDE and direction to indicate his approach. AIR-MAR
-
-
-
-
-NATO UNCLASSIFIED
-
- APP-7(E) 63 ORIGINAL NATO UNCLASSIFIED
-
-  WORD: MEANING: OPERATIONS:
-
+SKYROCKET - Am about to fire AA shells to burst at HOSTILE’s estimated ALTITUDE and direction to indicate his approach.
 SLAM____ - A submarine in the process of missile launch has been detected. The position of the launch is to be given immediately after SLAM.
 SLAMEYE___ - A visual bearing of the missile, missile vapor track, or missile exhaust. The bearing of the launch from the reporting unit and the position of the reporting unit are given immediately after SLAMEYE.
-SLAPSHOT - (type/bearing) Employ a range unknown HARM against a specified threat at the specified bearing.  AIR-AGO SLICE/ SLICEBACK Perform a high-G descending turn in the direction stated usually 180-degree turn.
+SLAPSHOT - (type/bearing) Employ a range unknown HARM against a specified threat at the specified bearing.
+SLICE/ SLICEBACK - Perform a high G descending turn in the direction stated usually 180 degree turn.
 SLIDE - To/from HVAA to continue present mission while flowing from station in response to perceived threat, implies intent to RESET.
 SLINGSHOT - Launch by catapult.
 SLIP - 1. The attacker will attack the target at the  alternate TOT.  2. Time delay to individual flight/element event.
@@ -1542,16 +768,6 @@ SMASH - Turn on/off anti collision lights.
 SMOKE - Smoke marker used to mark a position or datum.
 SMUGGLER - HOSTILE fast patrol boat, fast torpedo boat or fast attack craft.
 SNAKE - Oscillate an IR pointer about a target.
-
-
-
-
-NATO UNCLASSIFIED
-
- APP-7(E) 64 ORIGINAL NATO UNCLASSIFIED
-
-  WORD: MEANING: OPERATIONS:
-
 SNAP - 1. Fighter request for immediate BRAA call (with appropriate fill ins) to the group described. Indicated fighter intent to intercept/join.  2. (heading) Urgent directive call to turn to a heading.
 SNAPLOCK (BRAA) - Fighter has obtained a radar lock inside pre briefed threat range.
 SNEAKER - An intelligence gathering vessel.
@@ -1569,37 +785,17 @@ SOLO - Aircraft proceed on independent operations.
 SONGBIRD In AIR/SUB cooperation, a radio homing method (Aircraft as transmitting unit).
 SORT - Assign responsibility within a group; criteria can be met visually, electronically (radar) or on basis of datalink systems.
 SORTED - Sort responsibilities within Group have been met.
-
-
-
-
-NATO UNCLASSIFIED
-
- APP-7(E) 65 ORIGINAL NATO UNCLASSIFIED
-
-  WORD: MEANING: OPERATIONS:
-
 SOUR - 1. Equipment indicated is not operating efficiently       (opposite of SWEET).  2. (mode type) Invalid/no responses to an administrative IFF/SIF check.  3. (link name) (E.g. TIMBER SOUR) indicates there are potential problems with net entry and initiates premission link troubleshooting.
 SPADES - An interrogated group/radar contact which lacks the Air Tasking Order (ATO) established (or equivalent) IFF modes and codes required for the ID criteria.
 SPARKLE - 1. Target marking by infrared pointer.   2. Target marking by gunship or airborne forward      air controller using incendiary rounds.  3. Platform is IR point capable.
-SPIKED (direction) - RWR indication of a HOSTILE AI radar lock-on (“RED 4, SPIKED, right 2 o’clock”).
+SPIKED (direction) - RWR indication of a HOSTILE AI radar lock on (“RED 4, SPIKED, right 2 o’clock”).
 SPIN - Execute a prebriefed timing/ spacing manoeuvre.
 SPIT(TING) - Lay/launch(ing) buoys.
 SPITTER (direction) - An aircraft that has departed from the engagement or is departing the engaged fighters targeting responsibility.
 SPLASH(ED) (air) - HOSTILE aircraft shot down. Weapons impact (A/G)(A/A).
 SPLASH POINT - Water entry point of an airborne ASW weapon.
-SPLIT - Request to engage a threat visual will not be maintained requires flight lead acknowledgement (air-to-air).
+SPLIT - Request to engage a threat visual will not be maintained requires flight lead acknowledgement (air to air).
 SPLITTING - Contact is dividing.
-
-
-
-
-NATO UNCLASSIFIED
-
- APP-7(E) 66 ORIGINAL NATO UNCLASSIFIED
-
-  WORD: MEANING: OPERATIONS:
-
 SPOKE - Bearing of a single jamming transmission is___ degrees T.
 SPOKED - The receiver has damaged the drogue.
 SPOOFER - A contact employing electronic or tactical deception measures.
@@ -1616,16 +812,6 @@ SQUAWK FOUR - Turn mode 4 switch on.
 SQUAWK IDENT - Activate IFF transponder I/P switch.
 SQUAWK LOW - Turn IFF master control to the low sensitivity position.
 SQUAWK MAYDAY - Turn IFF master control to emergency.
-
-
-
-
-NATO UNCLASSIFIED
-
- APP-7(E) 67 ORIGINAL NATO UNCLASSIFIED
-
-  WORD: MEANING: OPERATIONS:
-
 SQUAWK MIKE - Place IFF master control to MIC. Make short radio transmission.
 SQUAWK NORMAL - Turn IFF master control to NORMAL.
 SQUAWK STANDBY - Turn IFF master control to STANDBY.
@@ -1638,20 +824,10 @@ STATE TIGER - I have sufficient fuel to complete my mission as assigned.
 STATE TIGER SLOW - I have sufficient fuel to complete a subsonic interception and return to base.
 STATUS - 1. Request for an individual’s tactical situation.  2. (group) Request for a full positional update in digital BULLSEYE format on the specific group.
 STEADY - Stop oscillation of IR pointer.
-STEER___ , Set magnetic heading indicated to reach me (or___).
+STEER___ - Set magnetic heading indicated to reach me (or___).
 STERN - Intercept using STERN geometry.
 STICK - A number of A/C weapons dropped one after another at a predetermined time interval.
-
-
-
-
-NATO UNCLASSIFIED
-
- APP-7(E) 68 ORIGINAL NATO UNCLASSIFIED
-
-  WORD: MEANING: OPERATIONS:
-
-STINGER - Three-ship inner group formation with two lead contacts line abreast and a single contact in trail.
+STINGER - Three ship inner group formation with two lead contacts line abreast and a single contact in trail.
 STOP - 1. Stop IR illumination of a target.  2. (BURN) Directive call to stop IR/EO illumination of a target.
 STOVEPIPE - A predesignated area in which a designated submarine may operate and other submarines are to keep clear.
 STRAGGLER - A ship separated from its convoy.
@@ -1665,16 +841,6 @@ STROBE - Radar indications of noise jamming.
 SUCAP - Surveillance Combat Air Patrol.
 SUGAR - Surface to air missile (SAM) state report.
 SUNLAMP - In AIR/SUB cooperation, a radio homing method (Submarine as transmitting unit).
-
-
-
-
-NATO UNCLASSIFIED
-
- APP-7(E) 69 ORIGINAL NATO UNCLASSIFIED
-
-  WORD: MEANING: OPERATIONS:
-
 SUNRISE - Early Warning C2 functions are available (opposite of MIDNIGHT).
 SUNSHINE - (A/S) Illumination of target is being conducted with artificial illumination.
 SUPERDUFF - SHFDF equipment or unit fitted with SHFDF equipment.
@@ -1684,33 +850,13 @@ SUZY - Message handling system.
 SWAP - Executive order for change of Scene of Action Commander.
 SWEEP - Keep all round search and report any new contacts.
 SWEET - 1. Equipment indicated is operating efficiently.  (Opposite of SOUR).  2. (mode type) Valid response to an administrative     IFF/SIF check request.  3. (link name) (E.g. TIMBER SWEET) confirms      receipt of datalink information.
-SWEPT (w/sub-cardinal direction) - Inner group formation with the trailer displaced approximately 45 degrees behind the leader.
+SWEPT (w/sub-cardinal direction)   Inner group formation with the trailer displaced approximately 45 degrees behind the leader.
 SWITCH - Cease general searching and shift to the frequency of the specified racket, whether or not the racket is within the DUFFER’s intercept search responsibility.
 SWITCH(ED) - Indicates an attacker is changing from one aircraft to another.
 SWITCH FIELD OF VIEW - Switch between wide (filed of view) FOV or narrow FOV.
-
-
-
-
-NATO UNCLASSIFIED
-
- APP-7(E) 70 ORIGINAL NATO UNCLASSIFIED
-
-  WORD: MEANING: OPERATIONS:
-
 SWITCH POLARITY - Request from the FMV operator to ask the aircrew to switch the FLIR polarity.
 SWITCH SENSOR - Request from the FMV operator to ask the aircrew to switch to CCD (TV) mode or FLIR (IR) mode.
 SYNCHRO - Carry out a netsync procedure for terminal clock synchronisation purposes, beginning in (___) minutes.
-
-
-
-
-NATO UNCLASSIFIED
-
- APP-7(E) 71 ORIGINAL NATO UNCLASSIFIED
-
-  WORD: MEANING: OPERATIONS:
-
 ___system___ TRACKING   -  Enemy air defence system is maintaining situational awareness on friendly.
 TAG (system location) - Response to an emitter ambiguity resolution request (COLOUR).
 TAKE(ING)___ WITH___ - Engage/am engaging target (indicated) with weapon (indicated).
@@ -1722,189 +868,96 @@ TARGETED () - Group responsibility has been met.
 TATTLETALE - A unit maintaining contact on a target from a position which enables it to pass targeting information to other units.
 TATTOO - A reference number, other than a track number, unique to a class of vessel or an individual vessel of a class used to describe the identity of a contact (also known as personal identifier (PI code))
 TEN SECONDS - Directive to terminal controller to standby for Laser on call in approximately ten seconds.
-TERMINATE - 1.  Cease local engagement without affecting the overall exercise. 2.  Stop laser illumination of a target.  AIR-GEN THREAT Untargeted bandit/bogey with prebriefed range/aspect of a friendly. AIR-AAO
-
-
-
-
-NATO UNCLASSIFIED
-
- APP-7(E) 72 ORIGINAL NATO UNCLASSIFIED
-
-  WORD: MEANING: OPERATIONS:
-
-THROTTLES  Reduction in power to decrease IR signature.  AIR-AAO THUNDER  One minute prior to A/S weapons impact. AIR-AGO TIED Positive radar contact with element/aircraft.  AIR-GEN TIED ON Number two or other formation aircraft has established contact on leader and will maintain appropriate position.  AIR-GEN TIGER Enough fuel and ordnance to accept a commit.  AIR-AAO ___TIGHT Do not open fire unless target(s) has (have) been identified as HOSTILE. Weapon control status; prefixed by the appropriate weapon codeword or general term WEAPON.  MAR-GEN TIMBER LINK 16 network.  AIR-GEN TIMBER CHANNEL  Stacked net within a Link 16 network. AIR-MAR TIMECHECK Check/change IFF code.  AIR-GEN TIT FOR TAT One or more countermarking units overtly stationed for immediate retaliation against the marker.  MAR-ASUW TOGGLE  Execute a briefed change of an avionic setting. AIR-GEN TOMCAT A surface picket or picket group which is responsible for early identification of friendly aircraft returning and for acting as reference point for such aircraft when they proceed through the AAW area.  AIR-MAR TOOL Friendly surface vessel whose callsign is not known.  MAR-PIC TOOL SHED Airborne VHF homing equipment.  MAR-GEN TOUCHDOWN Boats have contacted the beach.  MAR-GEN TOY  HARM targeting system (HTS) pod. AIR-AAO
-
-
-
-
-NATO UNCLASSIFIED
-
- APP-7(E) 73 ORIGINAL NATO UNCLASSIFIED
-
-  WORD: MEANING: OPERATIONS:
-
-TRACKING 1.  Stabilized gun solution. 2.  Continuous illumination of a target. 3.  Group/contact direction of flight/movement. AIR-GEN TRACKING ___SPEED___ By my evaluation, contact is steering true course and at speed indicated.  MAR-PIC/ AIR-AAO TRACK NUMBER (number)  Datalink information file. AIR-GEN TRACTORS Towing aircraft.  AIR-MAR TRADE HOSTILE surface raiders are in the offing (this is a warning message and is followed by the general direction of the approach of the raiders e.g. TRADE south).  MAR-ASUW TRAIL Track (or shadow) (The words “landward” or “seaward” may be used to indicate from which side of enemy unit to shadow).  MAR-ASUW TRANSLATE (ING) Move point of origin of barrier (point of origin is moving) at course and speed indicated. Time to start and stop may be specified also.  MAR-ASW TRASHED Missile has been defeated.  AIR-AAO TRAVEL Change radar frequency.  EW TRAVELLER A suspect surface track following a recognised traffic route.  MAR-PIC TREMBLE Modulation/rate of conical scan in Hertz.  EW TRESPASS (POSITION) Flight is entering surface to air threat ring of a specific system at the stated location.  AIR-MAR TROUT Take a DF bearing on transmission indicated.  EW TUCKER Main gun armament.  AIR-MAR TUMBLEWEED Limited situation awareness; no joy; blind; a request for information.  AIR-GEN
-
-
-
-
-NATO UNCLASSIFIED
-
- APP-7(E) 74 ORIGINAL NATO UNCLASSIFIED
-
-  WORD: MEANING: OPERATIONS:
-
-TUNE Send a continuous signal on the central radio frequency for 30 seconds, beginning in (___) minutes for radio receiver frequency tuning purposes.  MAR-PIC TWO-BLOCKED Causeway is completely against upper hold shelf (of LST) and ready to be lashed.  MAR-GEN
-
-
-
-
-NATO UNCLASSIFIED
-
- APP-7(E) 75 ORIGINAL NATO UNCLASSIFIED
-
-  WORD: MEANING: OPERATIONS:
-
-ULTRADUFF UHFDF equipment or unit fitted with UHFDF receiver.  EW UNABLE Cannot comply as requested or directed.  AIR-GEN UNIFORM UHF/AM radio.  AIR-GEN UNIT OF MEASURE/YARDSTICK The suggested length is from the centre of the crosshairs to the outer edge of a horizontal leg. The screen size can also be utilized (i.e. SLEW right ½ screen). Traditional methods for defining this may also be used.  AIR-AGO
-
-
-
-
-NATO UNCLASSIFIED
-
- APP-7(E) 76 ORIGINAL NATO UNCLASSIFIED
-
-  WORD: MEANING: OPERATIONS:
-
-VACANT  Ground equipment not present at tasked target location. Opposite of OCCUPIED.  AIR-AGO VALLEY Interfere with threat communications frequency indicated or in accordance with previous orders. May be modified by JULIETT to indicate jamming or SIERRA  to indicate spoofing. With proword AM VALLEY indicates activity is taking place.  EW VAMPIRE HOSTILE anti ship guided missile.  AIR-MAR VAT”B” (See also BOWWAVE) Short form weather report giving  V - Visibility in miles. A - Amount of clouds in eighths. T - Height of cloud top in thousands of ft. B - Height of cloud base in thousands of ft.  AIR-MAR VECTAC Vectored attack. Type may  be specified as RADAR, VISUAL - or REVERSE VECTAC  MAR-ASW VECTOR Alter heading to magnetic heading indicated. (Use of true headings to be established before operation commences).   AIR-GEN VECTOR LEFT/RIGHT Alter course to left/right of present course.   AIR-AAO VERY FAST  Target ground speed is greater than 900 kts/1.5M. AIR-GEN VERY LOW    Target altitude less than 500 ft MSD  AIR-GEN          VIC Picture label with three groups with the single closest in range and two groups, azimuth split, in trail. Group names should be LEAD GROUP, NORTH TRAIL GROUP, SOUTH TRAIL GROUP, EAST TRAIL GROUP and WEST TRAIL GROUP.  AIR-AAO VICTOR VHF/AM radio.  AIR-GEN VICTORDUFF VHFDF equipment or unit fitted with VHFDF receiver.  EW VISEGRIP Bearing and range between barrier submarine and co-ordinating aircraft has been established.  MAR-ASW VISUAL Sighting of a friendly aircraft ground position; opposite of BLIND. AIR-GEN
-
-
-
-
-NATO UNCLASSIFIED
-
- APP-7(E) 77 ORIGINAL NATO UNCLASSIFIED
-
-  WORD: MEANING: OPERATIONS:
-
-VOICE The signal is to be retransmitted as soon as the aircraft is in UHF/VHF contact with its shore base.  AIR-MAR VOLCANO HOSTILE anti ship guided missile signal.  EW
-
-
-
-
-NATO UNCLASSIFIED
-
- APP-7(E) 78 ORIGINAL NATO UNCLASSIFIED
-
-  WORD: MEANING: OPERATIONS:
-
-WALL Picture label with three or more groups primarily split in azimuth. Group names should be NORTH GROUP, MIDDLE GROUP, SOUTH GROUP, WEST GROUP and EAST GROUP.  AIR-AAO WALTZ The unit(s) indicated commence parallel keying on current circuit(s) and ordered circuit(s). (To be used with DANCE or KICK for ordering anti-jam countermeasure two).  EW WARNING RED Attack is imminent or has already commenced.  MAR-GEN WARNING WHITE  Attack unlikely without adequate warning.  MAR-GEN WARNING YELLOW  Attack is probable. MAR-GEN WATCH Continue to sweep as directed and concentrate on the contact designated but do not report unless there is a material change in this contact.  MAR-PIC WATCHDOG A surface picket whose main task is AAW.  AIR-MAR WATCHER Helicopter sub-control unit.  AIR-MAR WATCHTOWER Command and Control Information System.  MAR-PIC WAVE OFF Do not land. Further approach dangerous. Clear ship.  AIR-MAR WEAPONS ___-___-__-__-__ I have ___ active, ___semi-active, ___IR missiles, gun ammunitions (PLUS/MINUS/ZERO) remaining, and chaff and/or  flares.  PLUS    – guns fitted and sufficient ammunition for a gun attack. MINUS – guns fitted but not sufficientammunition    for a gun attack. ZERO   –  no guns fitted.  AIR-GEN WEAVE Continuous crossing of flight paths.  AIR-GEN
-
-
-
-
-NATO UNCLASSIFIED
-
- APP-7(E) 79 ORIGINAL NATO UNCLASSIFIED
-
-  WORD: MEANING: OPERATIONS:
-
-WEDGE  Three ship inner group formation with a single contact closest in range and two trail contacts line abreast.  AIR-GEN WHEELBARROW Unit conducting clandestine immigration activities.  MAR-ASUW WEIGHTED (cardinal direction)  Multiple group formation (WALL/LADDER/ VIC/CHAMPAGNE) that is offset in one direction. AIR-AAO WHAT LUCK Request for results of assigned mission or task. AIR-GEN  WHAT STATE Request for amount of fuel and missiles remaining. Response to WHAT STATE is given as follows: (1st number) Number of active radar missiles remaining. (2nd number) Number of semi-active missiles remaining. (3rd number) Number of IR missiles remaining. “MINUS” No gun / not sufficient ammunition for a gun attack. (4th number) Thousands of pounds of fuel (given to one decimal point), or playtime.  Example response to WHAT STATE: BLUE TWO IS 3-1-2 “MINUS” BY 7 POINT 5 is equivalent to 3 AIM-120/1 AIM-7/2 AIM-9/ no ammunition/ 7,500lbs of fuel remaining.   Oxygen are reported only when specifically requested or critical.   AIR-GEN/ AIR-MAR WHAT WEAPONS Report number of semi-active and passive homing missiles/gun ammunition remaining (See WEAPONS for methodology).  AIR-MAR WHAT’s UP Is anything the matter.  AIR-MAR WHISPER(__) Slow to below cavitation speed or speed indicated. MAR-ASW WIDE  Separation between the farthest group in azimuth in a relative formation of three or more groups, used to describe a WALL/VIC/CHAMPAGNE/BOX.  AIR-AAO
-
-
-
-
-NATO UNCLASSIFIED
-
- APP-7(E) 80 ORIGINAL NATO UNCLASSIFIED
-
-  WORD: MEANING: OPERATIONS:
-
-WILCO Will comply with received instructions.  AIR-GEN WINCHESTER Aircraft is out of ordnance.  AIR-GEN WOLF Visually identified surfaced HOSTILE submarine.  MAR-ASW/ MAR-PIC  WOLFHOUND Visually identified surfaced HOSTILE submarine with a missile firing capability.  MAR-ASW/ MAR-PIC WOODPECKER Close In Weapon System (CIWS).  AIR-MAR WOOFER Off board active radar decoy.  EW WORDS Directive or interrogative regarding further information or directives pertinent to mission.  AIR-GEN WORKING    (air)                               (maritime) 1.  SEAD aircraft is gathering EOB on a signal of interest. Generally followed by signal type, bearing and range if able. 2.  A/A aircraft executing EID on a specific aircraft group to obtain identification necessary for BVR employment (air).  I am working with another submarine    AIR-GEN       MAR-ASW
-
-
-
-
-NATO UNCLASSIFIED
-
- APP-7(E) 81 ORIGINAL NATO UNCLASSIFIED
-
-  WORD: MEANING: OPERATIONS:
-
-YARDSTICK Directive to use A/A TACAN for ranging. AIR-GEN  YUKON In AIR/SUB co-operation the prefix used by the submarine to pass homing information to the aircraft. MAR-ASW
-
-
-
-
-NATO UNCLASSIFIED
-
- APP-7(E) 82 ORIGINAL NATO UNCLASSIFIED
-
-   WORD: MEANING: OPERATIONS:
-
-ZAP  Request for datalink information. AIR-GEN ZERO POSITION References position for navigational systems of tactical fighter aircraft.  AIR-MAR ZIPLIP Limit transmissions to critical information only (see MINIMIZE).   AIR-GEN ZIPPO Alerts units that a missile attack is imminent or in progress. Suffix letters/numbers indicated the type of threat and reactions required.  AIR-MAR ZIPPO LOOSE Cancels ZIPPO TIGHT.  AIR-MAR ZIPPO TIGHT Inhibits all reactions to threats. ZIPPO’s should not be called.  AIR-MAR ZOOM (IN/OUT) Use the zoom feature to examine target detail. AIR-AGO
-
-
-
-
-NATO UNCLASSIFIED
-
- APP-7(E) A - 1 ORIGINAL NATO UNCLASSIFIED
-
- ANNEX A EXPLANATION OF SOME BREVITY WORDS  Definition: The angle between the longitudinal axis of the target (projected rearward) and the line of sight to the interceptor measured from the tail of the target.  BB = BOGEY/BANDIT  RA = REPORTING AIRCRAFT       BEAM
-
-
-
-
-
-
-NATO UNCLASSIFIED
-
- APP-7(E) A - 2 ORIGINAL NATO UNCLASSIFIED
-
- BB = BOGEY/BANDIT  RA = REPORTING AIRCRAFT          DRAG
-
-
-
-
-
-
-NATO UNCLASSIFIED
-
- APP-7(E) A - 3 ORIGINAL NATO UNCLASSIFIED
-
- BB = BOGEY/BANDIT  RA = REPORTING AIRCRAFT          FLANK
-
-
-
-
-
-
-NATO UNCLASSIFIED
-
- APP-7(E) A - 4 ORIGINAL NATO UNCLASSIFIED
-
- BB = BOGEY/BANDIT  RA = REPORTING AIRCRAFT       HEAD ON / HOT
-
-
-
-
-
-
-
-
-NATO UNCLASSIFIED
-
- APP-7(E)  ORIGINAL NATO UNCLASSIFIED
-
-                      THIS PAGE WAS INTENTIONALLY LEFT BLANK
-
-
-
-
-NATO UNCLASSIFIED
-
- APP-7(E)  ORIGINAL NATO UNCLASSIFIED
-
-                     APP-7(E)
+TERMINATE - 1.  Cease local engagement without affecting the overall exercise. 2.  Stop laser illumination of a target.
+THREAT - Untargeted bandit/bogey with prebriefed range/aspect of a friendly.
+THROTTLES - Reduction in power to decrease IR signature.
+THUNDER - One minute prior to A/S weapons impact.
+TIED - Positive radar contact with element/aircraft.
+TIED ON - Number two or other formation aircraft has established contact on leader and will maintain appropriate position.
+TIGER - Enough fuel and ordnance to accept a commit.
+___TIGHT - Do not open fire unless target(s) has (have) been identified as HOSTILE. Weapon control status; prefixed by the appropriate weapon codeword or general term WEAPON.
+TIMBER - LINK 16 network.
+TIMBER CHANNEL - Stacked net within a Link 16 network.
+TIMECHECK - Check/change IFF code.
+TIT FOR TAT - One or more countermarking units overtly stationed for immediate retaliation against the marker.
+TOGGLE - Execute a briefed change of an avionic setting.
+TOMCAT - A surface picket or picket group which is responsible for early identification of friendly aircraft returning and for acting as reference point for such aircraft when they proceed through the AAW area.
+TOOL - Friendly surface vessel whose callsign is not known.
+TOOL SHED - Airborne VHF homing equipment.
+TOUCHDOWN - Boats have contacted the beach.
+TOY - HARM targeting system (HTS) pod.
+TRACKING - 1.  Stabilized gun solution. 2.  Continuous illumination of a target. 3.  Group/contact direction of flight/movement.
+TRACKING ___SPEED___ - By my evaluation, contact is steering true course and at speed indicated.
+TRACK NUMBER (number) - Datalink information file.
+TRACTORS - Towing aircraft.
+TRADE HOSTILE - surface raiders are in the offing (this is a warning message and is followed by the general direction of the approach of the raiders e.g. TRADE south).
+TRAIL - Track (or shadow) (The words “landward” or “seaward” may be used to indicate from which side of enemy unit to shadow).
+TRANSLATE (ING) - Move point of origin of barrier (point of origin is moving) at course and speed indicated. Time to start and stop may be specified also.
+TRASHED - Missile has been defeated.
+TRAVEL - Change radar frequency.
+TRAVELLER - A suspect surface track following a recognised traffic route.
+TREMBLE - Modulation/rate of conical scan in Hertz.
+TRESPASS (POSITION) - Flight is entering surface to air threat ring of a specific system at the stated location.
+TROUT - Take a DF bearing on transmission indicated.
+TUCKER - Main gun armament.
+TUMBLEWEED - Limited situation awareness; no joy; blind; a request for information.
+TUNE - Send a continuous signal on the central radio frequency for 30 seconds, beginning in (___) minutes for radio receiver frequency tuning purposes.
+TWO BLOCKED - Causeway is completely against upper hold shelf (of LST) and ready to be lashed.
+ULTRADUFF - UHFDF equipment or unit fitted with UHFDF receiver.
+UNABLE - Cannot comply as requested or directed.
+UNIFORM - UHF/AM radio.
+UNIT OF MEASURE/YARDSTICK - The suggested length is from the centre of the crosshairs to the outer edge of a horizontal leg. The screen size can also be utilized (i.e. SLEW right ½ screen). Traditional methods for defining this may also be used.
+VACANT - Ground equipment not present at tasked target location. Opposite of OCCUPIED.
+VALLEY - Interfere with threat communications frequency indicated or in accordance with previous orders. May be modified by JULIETT to indicate jamming or SIERRA  to indicate spoofing. With proword AM VALLEY indicates activity is taking place.
+VAMPIRE - HOSTILE anti ship guided missile.
+VAT”B” - (See also BOWWAVE) Short form weather report giving  V: Visibility in miles. A: Amount of clouds in eighths. T: Height of cloud top in thousands of ft. B: Height of cloud base in thousands of ft.
+VECTAC - Vectored attack. Type may  be specified as RADAR, VISUAL or REVERSE VECTAC
+VECTOR - Alter heading to magnetic heading indicated. (Use of true headings to be established before operation commences).
+VECTOR LEFT/RIGHT - Alter course to left/right of present course.
+VERY FAST - Target ground speed is greater than 900 kts/1.5M.
+VERY LOW - Target altitude less than 500 ft MSD
+VIC - Picture label with three groups with the single closest in range and two groups, azimuth split, in trail. Group names should be LEAD GROUP, NORTH TRAIL GROUP, SOUTH TRAIL GROUP, EAST TRAIL GROUP and WEST TRAIL GROUP.
+VICTOR - VHF/AM radio.
+VICTORDUFF - VHFDF equipment or unit fitted with VHFDF receiver.
+VISEGRIP - Bearing and range between barrier submarine and coordinating aircraft has been established.
+VISUAL - Sighting of a friendly aircraft ground position; opposite of BLIND.
+VOICE - The signal is to be retransmitted as soon as the aircraft is in UHF/VHF contact with its shore base.
+VOLCANO - HOSTILE anti ship guided missile signal.
+WALL - Picture label with three or more groups primarily split in azimuth. Group names should be NORTH GROUP, MIDDLE GROUP, SOUTH GROUP, WEST GROUP and EAST GROUP.
+WALTZ - The unit(s) indicated commence parallel keying on current circuit(s) and ordered circuit(s). (To be used with DANCE or KICK for ordering anti jam countermeasure two).
+WARNING RED - Attack is imminent or has already commenced.
+WARNING WHITE - Attack unlikely without adequate warning.
+WARNING YELLOW - Attack is probable.
+WATCH - Continue to sweep as directed and concentrate on the contact designated but do not report unless there is a material change in this contact.
+WATCHDOG - A surface picket whose main task is AAW.
+WATCHER - Helicopter sub control unit.
+WATCHTOWER - Command and Control Information System.
+WAVE OFF - Do not land. Further approach dangerous. Clear ship.
+WEAPONS ___|___|__|__|__ - I have ___ active, ___semi active, ___IR missiles, gun ammunitions (PLUS/MINUS/ZERO) remaining, and chaff and/or  flares.  PLUS: guns fitted and sufficient ammunition for a gun attack. MINUS: guns fitted but not sufficient ammunition for a gun attack. ZERO:  no guns fitted.
+WEAVE - Continuous crossing of flight paths.
+WEDGE - Three ship inner group formation with a single contact closest in range and two trail contacts line abreast.
+WHEELBARROW - Unit conducting clandestine immigration activities.
+WEIGHTED (cardinal direction) -  Multiple group formation (WALL/LADDER/ VIC/CHAMPAGNE) that is offset in one direction.
+WHAT LUCK - Request for results of assigned mission or task.
+WHAT STATE - Request for amount of fuel and missiles remaining. Response to WHAT STATE is given as follows: (1st number) Number of active radar missiles remaining. (2nd number) Number of semi active missiles remaining. (3rd number) Number of IR missiles remaining. “MINUS” No gun / not sufficient ammunition for a gun attack. (4th number) Thousands of pounds of fuel (given to one decimal point), or playtime.  Example response to WHAT STATE: BLUE TWO IS 3 1 2 “MINUS” BY 7 POINT 5 is equivalent to 3 AIM 120/1 AIM 7/2 AIM 9/ no ammunition/ 7,500lbs of fuel remaining.   Oxygen are reported only when specifically requested or critical.
+WHAT WEAPONS - Report number of semi active and passive homing missiles/gun ammunition remaining (See WEAPONS for methodology).
+WHAT’s UP - Is anything the matter.
+WHISPER(__) - Slow to below cavitation speed or speed indicated.
+WIDE - Separation between the farthest group in azimuth in a relative formation of three or more groups, used to describe a WALL/VIC/CHAMPAGNE/BOX.
+WILCO - Will comply with received instructions.
+WINCHESTER - Aircraft is out of ordnance.
+WOLF - Visually identified surfaced HOSTILE submarine.
+WOLFHOUND - Visually identified surfaced HOSTILE submarine with a missile firing capability.
+WOODPECKER - Close In Weapon System (CIWS).
+WOOFER - Off board active radar decoy.
+WORDS - Directive or interrogative regarding further information or directives pertinent to mission.
+WORKING - 1.  SEAD aircraft is gathering EOB on a signal of interest. Generally followed by signal type, bearing and range if able. 2.  A/A aircraft executing EID on a specific aircraft group to obtain identification necessary for BVR employment (air).
+YARDSTICK - Directive to use A/A TACAN for ranging.
+YUKON - In AIR/SUB co operation the prefix used by the submarine to pass homing information to the aircraft.
+ZAP - Request for datalink information.
+ZERO POSITION -  References position for navigational systems of tactical fighter aircraft.
+ZIPLIP - Limit transmissions to critical information only (see MINIMIZE).
+ZIPPO - Alerts units that a missile attack is imminent or in progress. Suffix letters/numbers indicated the type of threat and reactions required.
+ZIPPO LOOSE - Cancels ZIPPO TIGHT.
+ZIPPO TIGHT - Inhibits all reactions to threats. ZIPPO’s should not be called.
+ZOOM (IN/OUT) - Use the zoom feature to examine target detail.
