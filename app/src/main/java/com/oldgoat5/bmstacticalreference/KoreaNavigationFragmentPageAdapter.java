@@ -29,7 +29,7 @@ public class KoreaNavigationFragmentPageAdapter extends FragmentPagerAdapter
                 return new JapanKoreaChartFragment();
 
             case 2:
-                return new ChinaKoreaChartFragment();
+                return new NorthKoreaChartFragment();
 
             case 3:
                 return new RussiaKoreaChartFragment();

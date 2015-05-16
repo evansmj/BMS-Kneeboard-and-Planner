@@ -28,6 +28,7 @@
     <string name="japan">Japan</string>
     <string name="japan_fragment_title">Japanese Bases - Korean Theater of Operations</string>
     <string name="north_korea">North Korea</string>
+    <string name="north_korea_fragment_title">North Korean Bases - Korean Theater of Operations</string>
     <string name="south_korea">South Korea</string>
     <string name="russia">Russia</string>
     <string name="russia_fragment_title">Russian Bases - Korean Theater of Operations</string>
