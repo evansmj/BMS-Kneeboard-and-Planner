@@ -1,4 +1,4 @@
-﻿ABORT(ABORT CODE) ABORT(ABORT CODE) ABORT  (ABORT CODE) - Cease action/ attack/ event/ mission FAC directs aircrew to abort the attack. This is a mandatory instruction.
+﻿ABORT(ABORT CODE) ABORT(ABORT CODE) ABORT (ABORT CODE) - Cease action/ attack/ event/ mission FAC directs aircrew to abort the attack. This is a mandatory instruction.
 ABORTING(ED) - Action/ attack/ event/ mission has ceased.
 ACTION - Initiate a briefed attack sequence or manoeuvre.
 ACTIVATE/ ACTIVE - Radiate(ing) on electronic equipment, specify type if desired.

@@ -34,6 +34,9 @@ public class KoreaNavigationFragmentPageAdapter extends FragmentPagerAdapter
             case 3:
                 return new RussiaKoreaChartFragment();
 
+            case 4:
+                return new SouthKoreaChartFragment();
+
             default:
                 break;
         }
@@ -44,9 +47,6 @@ public class KoreaNavigationFragmentPageAdapter extends FragmentPagerAdapter
     @Override
     public int getCount()
     {
-        return 4;
+        return 5;
     }
-
-
-
 }

@@ -73,14 +73,14 @@ public class NorthKoreaChartFragment extends Fragment
                 switch (position)
                 {
                     case 0:
-                        imageView.setImageResource(R.drawable.east_west_airstrips);
+                        imageView.setImageResource(R.drawable.north_korea_east_west_airstrips);
                         dialog.setContentView(imageView);
                         dialog.setTitle(airbases[0]);
                         dialog.show();
                         break;
 
                     case 1:
-                        imageView.setImageResource(R.drawable.northsouth_airstrips);
+                        imageView.setImageResource(R.drawable.north_korea_north_south_airstrips);
                         dialog.setContentView(imageView);
                         dialog.setTitle(airbases[1]);
                         dialog.show();
