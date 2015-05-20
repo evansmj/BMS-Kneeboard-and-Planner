@@ -194,6 +194,7 @@ CURVE - Deception signal.
 CUT - Stop main engines.
 CUTOFF - Intercept using cutoff geometry.
 CYCLOPS - Unmanned Aerial Vehicle.
+DAKOTA - Out of Air to Ground Ordnance.
 DANCE - Shift all lines to complan (__) (column codeword/ designator).
 DART - Aircraft rocket/aerial gunnery target.
 DASH - Aircraft position within a flight. Use if specific callsign is unknown.
