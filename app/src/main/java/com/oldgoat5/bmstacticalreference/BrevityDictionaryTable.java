@@ -47,6 +47,8 @@ public class BrevityDictionaryTable
 
     public Cursor getAllWordsAndDefinitions()
     {
+        Log.d("brevTable", "inside getAllWords");
+
         SQLiteQueryBuilder builder = new SQLiteQueryBuilder();
         builder.setTables(FTS_VIRTUAL_TABLE);
 
@@ -57,6 +59,8 @@ public class BrevityDictionaryTable
 
         //cursor.moveToFirst();
         //Log.d("testtest", cursor.getString(0));
+        //cursor.moveToNext();
+        //Log.d("movetonext", cursor.getString(0));
 
         if(cursor == null)
         {

@@ -41,7 +41,11 @@ public class BrevityDictionaryActivity extends Activity
         listView = (ListView) findViewById(R.id.brevity_dictionary_list_view);
         rowsArrayList = new ArrayList<WordDefinitionObject>();
 
-        generateAllRows();
+        //generateAllRows();
+        //Log.d("brevDict::", "rowsArrayList before intent call:");
+        //Log.d("brevDict::", rowsArrayList.get(0).getWord());
+        //Log.d("brevDict::", rowsArrayList.get(1).getWord());
+        //Log.d("brevDict::", rowsArrayList.get(2).getWord());
 
         handleIntent(getIntent());
 
@@ -75,6 +79,8 @@ public class BrevityDictionaryActivity extends Activity
 
     private void generateAllRows()
     {
+        Log.d("brevDictActivity", "inside generateAllRows()");
+
         Cursor cursor = database.getAllWordsAndDefinitions();
         rowsArrayList.clear();
 
@@ -82,8 +88,10 @@ public class BrevityDictionaryActivity extends Activity
         {
             if (cursor.moveToFirst())
             {
+                Log.d("brevDictAct", "inside if cursor.moveToFirst()");
                 do
                 {
+                    Log.d("brevDictAct", "inside do");
                     rowsArrayList.add(new WordDefinitionObject(cursor.getString(0),
                             cursor.getString(1)));
                 } while (cursor.moveToNext());
