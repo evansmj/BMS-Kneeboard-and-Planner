@@ -30,7 +30,7 @@ public class MainFragmentPageAdapter extends FragmentPagerAdapter
             case 2:
                 return new TacticalReferenceFragment();
             case 3:
-                return new AircraftManualsFragment();
+                return new FuelCalculatorFragment();
             case 4:
                 return new NavigationChartsFragment();
             default:
