@@ -9,5 +9,5 @@
         android:layout_height="match_parent"
         android:id="@+id/brevity_dictionary_list_view"
         android:layout_gravity="center_horizontal"/>
-    
+
 </LinearLayout>
