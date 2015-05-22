@@ -43,5 +43,16 @@
     <string name="tactical_formation_reference_title">Tactical Formation Reference</string>
 
     <!-- Fuel Calculator Fragment -->
+    <string name="trip_nm_text_view">Trip Nautical Miles:</string>
+    <string name="distance_to_alternate">Homeplate to Alternate:</string>
+    <string name="low_level">Low Alt (&lt; 5,000ft)</string>
+    <string name="med_level">Med Alt</string>
+    <string name="hi_level">Hi Alt (&gt; 25,000)</string>
+    <string name="joker">Joker</string>
+    <string name="bingo">Bingo</string>
+    <string name="total">Total Fuel</string>
+    <string name="result">Result</string>
+
+
 
 </resources>

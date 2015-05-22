@@ -69,7 +69,7 @@ public class MainActivity extends FragmentActivity
         actionBar.addTab(actionBar.newTab().setText(
                 "Reference").setTabListener(this));
         actionBar.addTab(actionBar.newTab().setText(
-                "Aircraft Manuals").setTabListener(this));
+                "Fuel Calculator").setTabListener(this));
         actionBar.addTab(actionBar.newTab().setText(
                 "Navigation Charts").setTabListener(this));
         
