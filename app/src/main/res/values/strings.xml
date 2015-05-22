@@ -47,10 +47,10 @@
     <string name="distance_to_alternate">Homeplate to Alternate:</string>
     <string name="low_level">Low Alt (&lt; 5,000ft)</string>
     <string name="med_level">Med Alt</string>
-    <string name="hi_level">Hi Alt (&gt; 25,000)</string>
+    <string name="hi_level">Hi Alt (&gt; 25,000ft)</string>
     <string name="joker">Joker</string>
     <string name="bingo">Bingo</string>
-    <string name="total">Total Fuel</string>
+    <string name="total">Trip Fuel Burn</string>
     <string name="result">Result</string>
 
 

@@ -165,7 +165,6 @@ public class FuelCalculatorFragment extends Fragment
                 calculateFuel();
             }
         });
-
         return view;
     }
 
@@ -198,6 +197,4 @@ public class FuelCalculatorFragment extends Fragment
         jokerFuelTextView.setText(Integer.toString(total + 2000));
         totalFuelTextView.setText(Integer.toString(total));
     }
-
-    
 }
