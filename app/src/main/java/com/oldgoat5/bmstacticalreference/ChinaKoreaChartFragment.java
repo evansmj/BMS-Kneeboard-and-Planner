@@ -27,7 +27,7 @@ public class ChinaKoreaChartFragment extends Fragment
 
     private ArrayAdapter<String> adapter;
     private Dialog dialog;
-    private ImageView imageView;
+    private ZoomImageView imageView;
     private ListView listView;
     private String[] airbases;
     private View view;
@@ -51,7 +51,7 @@ public class ChinaKoreaChartFragment extends Fragment
         }
 
         dialog = new Dialog(CONTEXT);
-        imageView = new ImageView(CONTEXT);
+        imageView = new ZoomImageView(CONTEXT);
 
         listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener()
         {

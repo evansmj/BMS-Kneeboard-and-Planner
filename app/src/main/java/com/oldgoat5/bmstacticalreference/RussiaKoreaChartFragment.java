@@ -1,11 +1,14 @@
 package com.oldgoat5.bmstacticalreference;
 
 import android.app.Dialog;
+import android.graphics.Matrix;
+import android.graphics.PointF;
 import android.support.v4.app.Fragment;
 import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -25,11 +28,14 @@ public class RussiaKoreaChartFragment extends Fragment
 
     private ArrayAdapter<String> adapter;
     private Dialog dialog;
-    private ImageView imageView;
+    private ZoomImageView imageView;
     private ListView listView;
+    private Matrix matrix;
+    private Matrix savedMatrix;
+    private Object mode;
+    private PointF start;
     private String[] airbases;
     private View view;
-
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState)
@@ -49,7 +55,7 @@ public class RussiaKoreaChartFragment extends Fragment
         }
 
         dialog = new Dialog(CONTEXT);
-        imageView = new ImageView(CONTEXT);
+        imageView = new ZoomImageView(CONTEXT);
 
         listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener()
         {
@@ -78,5 +84,6 @@ public class RussiaKoreaChartFragment extends Fragment
 
         return view;
     }
+
 
 }
