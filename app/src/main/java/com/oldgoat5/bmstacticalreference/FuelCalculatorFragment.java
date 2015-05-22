@@ -193,8 +193,8 @@ public class FuelCalculatorFragment extends Fragment
                 break;
         }
 
-        bingoFuelTextView.setText(Integer.toString(total + 1000));
-        jokerFuelTextView.setText(Integer.toString(total + 2000));
-        totalFuelTextView.setText(Integer.toString(total));
+        bingoFuelTextView.setText(Integer.toString(total + 1000) + " lbs");
+        jokerFuelTextView.setText(Integer.toString(total + 2000) + " lbs");
+        totalFuelTextView.setText(Integer.toString(total) + " lbs");
     }
 }
