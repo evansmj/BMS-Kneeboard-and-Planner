@@ -53,6 +53,8 @@
     <string name="total">Trip Fuel Burn</string>
     <string name="result">Result</string>
 
+    <!-- Reference Fragment -->
+    <string name="steerpoints">Navigation Steerpoints</string>
 
 
 </resources>

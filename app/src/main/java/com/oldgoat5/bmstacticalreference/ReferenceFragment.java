@@ -8,7 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-public class TacticalReferenceFragment extends Fragment
+public class ReferenceFragment extends Fragment
 {
     private Button brevityDictionaryStartButton;
     private View view;

@@ -28,7 +28,7 @@ public class MainFragmentPageAdapter extends FragmentPagerAdapter
             case 1:
                 return new LoadOutFragment();
             case 2:
-                return new TacticalReferenceFragment();
+                return new ReferenceFragment();
             case 3:
                 return new FuelCalculatorFragment();
             case 4:
