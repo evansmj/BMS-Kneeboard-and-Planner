@@ -20,22 +20,22 @@ public class KoreaNavigationFragmentPageAdapter extends FragmentPagerAdapter
     @Override
     public Fragment getItem(int position)
     {
-        switch (position)
+        switch (position) //south korea, north korea, japan, china, russia
         {
             case 0:
-                return new ChinaKoreaChartFragment();
+                return new SouthKoreaChartFragment();
 
             case 1:
-                return new JapanKoreaChartFragment();
-
-            case 2:
                 return new NorthKoreaChartFragment();
 
+            case 2:
+                return new JapanKoreaChartFragment();
+
             case 3:
-                return new RussiaKoreaChartFragment();
+                return new ChinaKoreaChartFragment();
 
             case 4:
-                return new SouthKoreaChartFragment();
+                return new RussiaKoreaChartFragment();
 
             default:
                 break;

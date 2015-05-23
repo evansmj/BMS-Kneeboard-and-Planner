@@ -37,15 +37,15 @@ public class KoreaNavigationActivity extends FragmentActivity implements ActionB
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
 
         actionBar.addTab(actionBar.newTab().setText(
-                "China").setTabListener(this));
-        actionBar.addTab(actionBar.newTab().setText(
-                "Japan").setTabListener(this));
+                "South Korea").setTabListener(this));
         actionBar.addTab(actionBar.newTab().setText(
                 "North Korea").setTabListener(this));
         actionBar.addTab(actionBar.newTab().setText(
-                "Russia").setTabListener(this));
+                "Japan").setTabListener(this));
         actionBar.addTab(actionBar.newTab().setText(
-                "South Korea").setTabListener(this));
+                "China").setTabListener(this));
+        actionBar.addTab(actionBar.newTab().setText(
+                "Russia").setTabListener(this));
 
         viewPager.setAdapter(fragmentPageAdapter);
 
