@@ -115,6 +115,13 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:text="@string/team"
+                android:id="@+id/team_text_view"
+                android:layout_gravity="center_horizontal"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:text="@string/guard"
                 android:id="@+id/guard_text_view"
                 android:layout_gravity="center_horizontal"/>
@@ -211,7 +218,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:id="@+id/flight5_uhf_text_view"
-                android:text="@string/flight_5_vhf"/>
+                android:text="@string/flight_5_uhf"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -261,6 +268,13 @@
                 android:id="@+id/proximity_uhf_text_view"
                 android:layout_gravity="center_horizontal"
                 android:text="@string/proximity_uhf"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/team_uhf_text_view"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/team_uhf"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -414,6 +428,13 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:text="@string/team_preset"
+                android:layout_gravity="center_horizontal"
+                android:id="@+id/team_preset_text_view"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:text="@string/guard_preset"
                 android:layout_gravity="center_horizontal"
                 android:id="@+id/guard_preset_text_view"/>
@@ -563,6 +584,13 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:text="@string/team_vhf"
+                android:id="@+id/team_vhf_text_view"
+                android:layout_gravity="center_horizontal"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:text="@string/guard_vhf"
                 android:id="@+id/guard_vhf_text_view"
                 android:layout_gravity="center_horizontal"/>
@@ -605,7 +633,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/open_1_vhf"
+                android:text="@string/open_6_vhf"
                 android:id="@+id/open_6_vhf_text_view"
                 android:layout_gravity="center_horizontal"/>
         </LinearLayout>
