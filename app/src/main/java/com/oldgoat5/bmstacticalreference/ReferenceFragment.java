@@ -14,8 +14,10 @@ public class ReferenceFragment extends Fragment
 {
     Context CONTEXT;
 
+    private Dialog defaultFrequenciesDialog;
     private Dialog navigationSteerpointsDialog;
     private Button brevityDictionaryStartButton;
+    private Button defaultFrequenciesButton;
     private Button navigationSteerpointsButton;
     private View view;
 
@@ -28,6 +30,8 @@ public class ReferenceFragment extends Fragment
 
         brevityDictionaryStartButton = (Button) view.findViewById(
                 R.id.brevity_dictionary_select_button);
+        defaultFrequenciesButton = (Button) view.findViewById(
+                R.id.default_frequencies_select_button);
         navigationSteerpointsButton = (Button) view.findViewById(
                 R.id.navigation_steerpoints_select_button);
 
@@ -37,6 +41,7 @@ public class ReferenceFragment extends Fragment
         }
 
         navigationSteerpointsDialog = new Dialog(CONTEXT);
+        defaultFrequenciesDialog = new Dialog(CONTEXT);
 
         brevityDictionaryStartButton.setOnClickListener(new View.OnClickListener()
         {
@@ -44,6 +49,17 @@ public class ReferenceFragment extends Fragment
             public void onClick(View view)
             {
                 startBrevityDictionaryActivity();
+            }
+        });
+
+        defaultFrequenciesButton.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                defaultFrequenciesDialog.setContentView(R.layout.default_frequencies_view);
+                defaultFrequenciesDialog.setTitle("Default Frequencies");
+                defaultFrequenciesDialog.show();
             }
         });
 

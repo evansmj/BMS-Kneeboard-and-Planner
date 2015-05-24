@@ -20,4 +20,12 @@
         android:layout_below="@+id/brevity_dictionary_select_button"
         android:layout_centerHorizontal="true"/>
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/default_frequencies"
+        android:id="@+id/default_frequencies_select_button"
+        android:layout_below="@+id/navigation_steerpoints_select_button"
+        android:layout_centerHorizontal="true"/>
+
 </RelativeLayout>
