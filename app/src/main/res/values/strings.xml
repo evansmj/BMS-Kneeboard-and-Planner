@@ -727,7 +727,360 @@
     <string name="slovenj_elev">1645</string>
     <string name="slovenj_gps">N45&#x2103;42.00'&#10;E16&#x2103;23.66'</string>
 
+    <!-- Montenegro -->
+    <string name="montenegro">Montenegro</string>
+
+    <string name="danilovgrad">Danilovgrad Airstrip</string>
+    <string name="danilovgrad_twr">233.7/127.7</string>
+    <string name="danilovgrad_tacan">R328&#x2103; 076X DME 11</string>
+    <string name="danilovgrad_range"></string>
+    <string name="danilovgrad_ils"></string>
+    <string name="danilovgrad_rwy">09/27</string>
+    <string name="danilovgrad_elev">180</string>
+    <string name="danilovgrad_gps">N42&#x2103;02.15'&#10;E21&#x2103;06.88'</string>
+
+    <string name="gorazde">Gorazde Airstrip</string>
+    <string name="gorazde_twr">233.7/127.7</string>
+    <string name="gorazde_tacan">R290&#x2103; 144X DME 42</string>
+    <string name="gorazde_range"></string>
+    <string name="gorazde_ils"></string>
+    <string name="gorazde_rwy">09/27</string>
+    <string name="gorazde_elev">2480</string>
+    <string name="gorazde_gps">N42&#x2103;59.81'&#10;E21&#x2103;08.92'</string>
+
+    <string name="ivangrad">Ivangrad</string>
+    <string name="ivangrad_twr">230.15/118.1</string>
+    <string name="ivangrad_tacan">R055&#x2103; 076X DME 41</string>
+    <string name="ivangrad_range"></string>
+    <string name="ivangrad_ils"></string>
+    <string name="ivangrad_rwy">01/19</string>
+    <string name="ivangrad_elev">2270</string>
+    <string name="ivangrad_gps">N42&#x2103;16.70'&#10;E22&#x2103;00.92'</string>
     
+    <string name="podgorica">Podgorica</string>
+    <string name="podgorica_twr">305.4/118.2</string>
+    <string name="podgorica_tacan">076X</string>
+    <string name="podgorica_range">80</string>
+    <string name="podgorica_ils">111.0(23R)</string>
+    <string name="podgorica_rwy">05/23 L/R</string>
+    <string name="podgorica_elev">121</string>
+    <string name="podgorica_gps">N41&#x2103;52.99'&#10;E21&#x2103;12.66'</string>
+
+    <string name="tivat">Tivat</string>
+    <string name="tivat_twr">324.15/118.0</string>
+    <string name="tivat_tacan">R275&#x2103; 076X DME 29</string>
+    <string name="tivat_range"></string>
+    <string name="tivat_ils">110.3(32)</string>
+    <string name="tivat_rwy">14/32</string>
+    <string name="tivat_elev">20</string>
+    <string name="tivat_gps">N41&#x2103;55.15'&#10;E20&#x2103;33.90'</string>
+    
+    <!-- Serbia -->
+    <string name="serbia">Serbia</string>
+    
+    <string name="batajnica">Batajnica</string>
+    <string name="batajnica_twr">230.15/118.15</string>
+    <string name="batajnica_tacan">R324&#x2103; 070X DME 7</string>
+    <string name="batajnica_range"></string>
+    <string name="batajnica_ils"></string>
+    <string name="batajnica_rwy">16/34 L/R</string>
+    <string name="batajnica_elev">265</string>
+    <string name="batajnica_gps">N44&#x2103;15.79'&#10;E22&#x2103;57.85'</string>
+    
+    <string name="beograd">Beograd</string>
+    <string name="beograd_twr">275.195/118.1</string>
+    <string name="beograd_tacan">070X</string>
+    <string name="beograd_range">150</string>
+    <string name="beograd_ils">110.3(12)&#10;109.9(30)</string>
+    <string name="beograd_rwy">12/30</string>
+    <string name="beograd_elev">335</string>
+    <string name="beograd_gps">N44&#x2103;10.40'&#10;E22&#x2103;57.85'</string>
+
+    <string name="kovin">Kovin</string>
+    <string name="kovin_twr">230.15/118.1</string>
+    <string name="kovin_tacan">R096&#x2103; 070X DME 33</string>
+    <string name="kovin_range"></string>
+    <string name="kovin_ils"></string>
+    <string name="kovin_rwy">12/30</string>
+    <string name="kovin_elev">280</string>
+    <string name="kovin_gps">N44&#x2103;07.26'&#10;E23&#x2103;42.23'</string>
+    
+    <string name="kraljevo">Kraljevo</string>
+    <string name="kraljevo_twr">230.15/118.1</string>
+    <string name="kraljevo_tacan">R165&#x2103; 070X DME 59</string>
+    <string name="kraljevo_range"></string>
+    <string name="kraljevo_rwy">14/32</string>
+    <string name="kraljevo_elev">680</string>
+    <string name="kraljevo_gps">N43&#x2103;14.36'&#10;E23&#x2103;06.72'</string>
+
+    <string name="lepa">Lepa Glava</string>
+    <string name="lepa_twr">230.15</string>
+    <string name="lepa_tacan">R213&#x2103; 070X DME 65</string>
+    <string name="lepa_range"></string>
+    <string name="lepa_ils"></string>
+    <string name="lepa_rwy">12/30</string>
+    <string name="lepa_elev">2733</string>
+    <string name="lepa_gps">N43&#x2103;15.15'&#10;E21&#x2103;59.16'</string>
+    
+    <string name="sabac">Sabac Airstrip</string>
+    <string name="sabac_twr">233.7/127.7</string>
+    <string name="sabac_tacan">R267&#x2103; 070X DME 38</string>
+    <string name="sabac_range"></string>
+    <string name="sabac_rwy">18/36</string>
+    <string name="sabac_elev">210</string>
+    <string name="sabac_gps">N44&#x2103;08.78'&#10;E22&#x2103;04.96'</string>
+
+    <string name="sjenica">Sjenica</string>
+    <string name="sjenica_twr">230.15/118.1</string>
+    <string name="sjenica_tacan">R190&#x2103; 070X DME 90</string>
+    <string name="sjenica_range"></string>
+    <string name="sjenica_ils"></string>
+    <string name="sjenica_rwy">12/30</string>
+    <string name="sjenica_elev">3285</string>
+    <string name="sjenica_gps">N42&#x2103;43.10'&#10;E22&#x2103;19.52'</string>
+
+    <string name="sombor">Sombor</string>
+    <string name="sombor_twr">230.15/118.1</string>
+    <string name="sombor_tacan">R305&#x2103; 070X DME 86</string>
+    <string name="sombor_range"></string>
+    <string name="sombor_ils"></string>
+    <string name="sombor_rwy">14/32</string>
+    <string name="sombor_elev">290</string>
+    <string name="sombor_gps">N45&#x2103;00.51'&#10;E21&#x2103;29.92'</string>
+    
+    <!-- Bosnia Herzegovnia -->
+    <string name="bosnia">Bosnia Herzegovia</string>
+
+    <string name="banja">Banja Luka</string>
+    <string name="banja_twr">295.4/118.95</string>
+    <string name="banja_tacan">R316&#x2103; 114X DME 86</string>
+    <string name="banja_range"></string>
+    <string name="banja_ils">108.7(16)</string>
+    <string name="banja_rwy">16/34</string>
+    <string name="banja_elev">400</string>
+    <string name="banja_gps">N44&#x2103;16.32'&#10;E19&#x2103;04.26'</string>
+
+    <string name="bihac">Bihac</string>
+    <string name="bihac_twr">230.15/118.1</string>
+    <string name="bihac_tacan">R291&#x2103; 114X DME 156</string>
+    <string name="bihac_range"></string>
+    <string name="bihac_ils"></string>
+    <string name="bihac_rwy">12/30</string>
+    <string name="bihac_elev">1120</string>
+    <string name="bihac_gps">N44&#x2103;11.47'&#10;E17&#x2103;03.36'</string>
+    
+    <string name="brcko">Brcko Airstrip</string>
+    <string name="brcko_twr">233.8/122.8</string>
+    <string name="brcko_tacan">R347&#x2103; 069X DME 28</string>
+    <string name="brcko_range"></string>
+    <string name="brcko_ils"></string>
+    <string name="brcko_rwy">09/27</string>
+    <string name="brcko_elev">290</string>
+    <string name="brcko_gps">N44&#x2103;17.40'&#10;E20&#x2103;46.79'</string>
+    
+    <string name="mostar">Mostar</string>
+    <string name="mostar_twr">365.4/124.2</string>
+    <string name="mostar_tacan">096X</string>
+    <string name="mostar_range">25</string>
+    <string name="mostar_ils">-</string>
+    <string name="mostar_rwy">16/34 L/R</string>
+    <string name="mostar_elev">174</string>
+    <string name="mostar_gps">N42&#x2103;43.10'&#10;E19&#x2103;34.50'</string>
+
+    <string name="sarajevo">Sarajevo Intl.</string>
+    <string name="sarajevo_twr">234.15/118.25</string>
+    <string name="sarajevo_tacan">114X</string>
+    <string name="sarajevo_range">150</string>
+    <string name="sarajevo_ils">110.7(12)</string>
+    <string name="sarajevo_rwy">12/30</string>
+    <string name="sarajevo_elev">1707</string>
+    <string name="sarajevo_gps">N43&#x2103;14.90'&#10;E20&#x2103;18.16'</string>
+    
+    <string name="slavonski">Slavonski Brod Airstrip</string>
+    <string name="slavonski_twr">233.8/122.8</string>
+    <string name="slavonski_tacan">R267&#x2103; 070X DME 38</string>
+    <string name="slavonski_range"></string>
+    <string name="slavonski_ils"></string>
+    <string name="slavonski_rwy">09/27</string>
+    <string name="slavonski_elev">210</string>
+    <string name="slavonski_gps">N44&#x2103;08.78'&#10;E22&#x2103;04.96'</string>
+    
+    <string name="tuzla">Tuzla</string>
+    <string name="tuzla_twr">379.5/130.85</string>
+    <string name="tuzla_tacan">069X</string>
+    <string name="tuzla_range">25</string>
+    <string name="tuzla_ils">109.7(12)</string>
+    <string name="tuzla_rwy">12/30</string>
+    <string name="tuzla_elev">785</string>
+    <string name="tuzla_gps">N44&#x2103;50.46'&#10;E20&#x2103;50.57'</string>
+
+    <string name="trebinje">Trebinje Airstrip</string>
+    <string name="trebinje_twr">233.8/122.8</string>
+    <string name="trebinje_tacan">R179&#x2103; 144X DME 59</string>
+    <string name="trebinje_range"></string>
+    <string name="trebinje_ils"></string>
+    <string name="trebinje_rwy">18/36</string>
+    <string name="trebinje_elev">2030</string>
+    <string name="trebinje_gps">N42&#x2103;16.16'&#10;E20&#x2103;10.87'</string>
+
+    <!-- Croatia -->
+    <string name="croatia">Croatia</string>
+
+    <string name="bjelovar">Bjelovar Airstrip</string>
+    <string name="bjelovar_twr">233.8/122.8</string>
+    <string name="bjelovar_tacan">R080&#x2103; 084X DME 43</string>
+    <string name="bjelovar_range"></string>
+    <string name="bjelovar_ils"></string>
+    <string name="bjelovar_rwy">18/36</string>
+    <string name="bjelovar_elev">310</string>
+    <string name="bjelovar_gps">N45&#x2103;07.51'&#10;E18&#x2103;37.08'</string>
+
+    <string name="dubrovnic">Dubrovnic Intl.</string>
+    <string name="dubrovnic_twr">305.15/118.5</string>
+    <string name="dubrovnic_tacan">101X</string>
+    <string name="dubrovnic_range">100</string>
+    <string name="dubrovnic_ils">110.1(30)</string>
+    <string name="dubrovnic_rwy">12/30</string>
+    <string name="dubrovnic_elev">527</string>
+    <string name="dubrovnic_gps">N42&#x2103;04.31'&#10;E19&#x2103;34.50'</string>
+    
+    <string name="karlovac">Karlovac Airstrip</string>
+    <string name="kalovac_twr">233.8/122.8</string>
+    <string name="kalovac_tacan">R235&#x2103; 084X DME 33</string>
+    <string name="karlovac_range"></string>
+    <string name="karlovac_ils"></string>
+    <string name="karlovac_rwy">18/36</string>
+    <string name="karlovac_elev">550</string>
+    <string name="karlovac_gps">N44&#x2103;42.19'&#10;E16&#x2103;57.46'</string>
+    
+    <string name="osijek">Osijek</string>
+    <string name="osijek_twr">230.15/118.8</string>
+    <string name="osijek_tacan">R015&#x2103; 114X DME 94</string>
+    <string name="osijek_range"></string>
+    <string name="osijek_ils"></string>
+    <string name="osijek_rwy">02/20 L/R</string>
+    <string name="osijek_elev">292</string>
+    <string name="osijek_gps">N44&#x2103;44.88'&#10;E21&#x2103;05.83'</string>
+
+    <string name="pula">Pula</string>
+    <string name="pula_twr">366.4/120.0</string>
+    <string name="pula_tacan">049X</string>
+    <string name="pula_range">100</string>
+    <string name="pula_ils">111.5(26)</string>
+    <string name="pula_rwy">08/26</string>
+    <string name="pula_elev">276</string>
+    <string name="pula_gps">N44&#x2103;13.09'&#10;E14&#x2103;45.18'</string>
+
+    <string name="rijeka">Rijeka</string>
+    <string name="rijeka_twr">308.8/119.9</string>
+    <string name="rijeka_tacan">125X</string>
+    <string name="rijeka_range">100</string>
+    <string name="rijeka_ils">108.5(08)</string>
+    <string name="rijeka_rwy">08/26</string>
+    <string name="rijeka_elev">279</string>
+    <string name="rijeka_gps">N44&#x2103;37.88'&#10;E15&#x2103;32.97'</string>
+
+    <string name="split">Split</string>
+    <string name="split_twr">230.15/118.1</string>
+    <string name="split_tacan">104X</string>
+    <string name="split_range">100</string>
+    <string name="split_ils">110.5(03)</string>
+    <string name="split_rwy">03/21</string>
+    <string name="split_elev">79</string>
+    <string name="split_gps">N42&#x2103;59.27'&#10;E17&#x2103;39.62'</string>
+
+    <string name="udbina">Udbina</string>
+    <string name="udbina_twr">230.15/118.1</string>
+    <string name="udbina_tacan">R331&#x2103; 104X DME 65</string>
+    <string name="udbina_range"></string>
+    <string name="udbina_ils"></string>
+    <string name="udbina_rwy">12/30</string>
+    <string name="udbina_elev">2462</string>
+    <string name="udbina_gps">N43&#x2103;55.85'&#10;E17&#x2103;04.01'</string>
+
+    <string name="varazdin">Varazdin</string>
+    <string name="varazdin_twr">230.15/118.1</string>
+    <string name="varazdin_tacan">R030&#x2103; 084X DME 35</string>
+    <string name="varazdin_range"></string>
+    <string name="varazdin_ils"></string>
+    <string name="varazdin_rwy">02/20</string>
+    <string name="varzdin_elev">548</string>
+    <string name="varazdin_gps">N45&#x2103;30.15'&#10;E18&#x2103;04.00'</string>
+    
+    <string name="zadar">Zadar</string>
+    <string name="zadar_twr">236.6/123.7</string>
+    <string name="zadar_tacan">023X</string>
+    <string name="zadar_range">70</string>
+    <string name="zadar_ils">-</string>
+    <string name="zadar_rwy">08/26</string>
+    <string name="zadar_elev">289</string>
+    <string name="zadar_gps">N43&#x2103;29.98'&#10;E16&#x2103;32.43'</string>
+
+    <string name="zagreb">Zagreb</string>
+    <string name="zagreb_twr">370.2/118.3</string>
+    <string name="zagreb_tacan">084X</string>
+    <string name="zagreb_range">100</string>
+    <string name="zagreb_ils">109.5(05R)&#10;109.1(23R)</string>
+    <string name="zagreb_rwy">05/23 L/R</string>
+    <string name="zagreb_elev">351</string>
+    <string name="zagreb_gps">N45&#x2103;00.51'&#10;E17&#x2103;36.70'</string>
+    
+    <!-- Hungary -->
+    <string name="hungary">Hungary</string>
+    
+    <string name="nagykanisza">Nagykanisza</string>
+    <string name="nagykanisza_twr">230.15/118.1</string>
+    <string name="nagykanisza_tacan">R053&#x2103; 084X DME 63</string>
+    <string name="nagykanisza_range"></string>
+    <string name="nagykanisza_ils"></string>
+    <string name="nagykanisza_rwy">16/34</string>
+    <string name="nagykanisza_elev">470</string>
+    <string name="nagykanisza_gps">N45&#x2103;37.69'&#10;E18&#x2103;51.95'</string>
+
+    <string name="ocseny">Ocseny</string>
+    <string name="ocseny_twr">230.15/118.1</string>
+    <string name="ocseny_tacan">R010&#x2103; 114X DME 19</string>
+    <string name="ocseny_range"></string>
+    <string name="ocseny_ils"></string>
+    <string name="ocseny_rwy">16/34</string>
+    <string name="ocseny_elev">295</string>
+    <string name="ocseny_gps">N45&#x2103;30.69'&#10;E21&#x2103;10.92'</string>
+
+    <string name="pecs">Pecs East</string>
+    <string name="pecs_twr">230.15/126.9</string>
+    <string name="pecs_tacan">R356&#x2103; 114X DME 124</string>
+    <string name="pecs_range"></string>
+    <string name="pecs_ils"></string>
+    <string name="pecs_rwy">16/34</string>
+    <string name="pecs_elev">350</string>
+    <string name="pecs_gps">N45&#x2103;15.60'&#10;E20&#x2103;26.11'</string>
+
+    <string name="satorhely">Satorhely</string>
+    <string name="satorhely_twr">230.15/118.1</string>
+    <string name="satorhely_tacan">R005&#x2103; 114X DME 118</string>
+    <string name="satorhely_range"></string>
+    <string name="satorhely_ils"></string>
+    <string name="satorhely_rwy">08/26</string>
+    <string name="satorhely_elev">410</string>
+    <string name="satorhely_gps">N45&#x2103;10.75'&#10;E20&#x2103;55.11'</string>
+
+    <string name="szeged">Szeged</string>
+    <string name="szeged_twr">230.15/118.1</string>
+    <string name="szeged_tacan">R350&#x2103; 070X DME 78</string>
+    <string name="szeged_range"></string>
+    <string name="szeged_ils"></string>
+    <string name="szeged_rwy">02/20 L/R</string>
+    <string name="szeged_elev">259</string>
+    <string name="szeged_gps">N45&#x2103;26.91'&#10;E22&#x2103;56.23'</string>
+
+    <string name="taszar">Taszar</string>
+    <string name="taszar_twr">230.15</string>
+    <string name="taszar_tacan">089X</string>
+    <string name="taszar_range">50</string>
+    <string name="taszar_ils">-</string>
+    <string name="taszar_rwy">16/34 L/R</string>
+    <string name="taszar_elev">526</string>
+    <string name="taszar_gps">N45&#x2103;37.15'&#10;E20&#x2103;04.30'</string>
 
     <!-- Brevity Dictionary Activity -->
     <string name="brevity_dictionary_title">Brevity Dictionary</string>
