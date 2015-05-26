@@ -572,7 +572,99 @@
     <string name="elbasan_elev">440</string>
     <string name="elbasan_gps">N40&#x2103;40.25'&#10;E21&#x2103;56.80'</string>
 
+    <string name="gjirokaster">Gjirokaster</string>
+    <string name="gjirokaster_twr">230.15/126.2</string>
+    <string name="gjirokaster_tacan">R302&#x2103; 023X DME 43</string>
+    <string name="gjirokaster_range"></string>
+    <string name="gjirokaster_ils"></string>
+    <string name="gjirokaster_rwy">16/34</string>
+    <string name="gjirokaster_elev">666</string>
+    <string name="gjirokaster_gps">N39&#x2103;46.90'&#10;E21&#x2103;57.35'</string>
     
+    <string name="gramsh">Gramsh</string>
+    <string name="gramsh_twr">230.15/129.5</string>
+    <string name="gramsh_tacan">R142&#x2103; 076X DME 32</string>
+    <string name="gramsh_range"></string>
+    <string name="gramsh_ils"></string>
+    <string name="gramsh_rwy">16/34</string>
+    <string name="gramsh_elev">23</string>
+    <string name="gramsh_gps">N41&#x2103;28.20'&#10;E21&#x2103;34.63'</string>
+    
+    <string name="korce">Korce North</string>
+    <string name="korce_twr">230.15/126.2</string>
+    <string name="korce_tacan">R357&#x2103; 023X DME 55</string>
+    <string name="korce_range"></string>
+    <string name="korce_ils"></string>
+    <string name="korce_rwy">02/20</string>
+    <string name="korce_elev">665</string>
+    <string name="korce_gps">N40&#x2103;18.69'&#10;E22&#x2103;45.59'</string>
+
+    <string name="kukes">Kukes</string>
+    <string name="kukes_twr">230.15/126.2</string>
+    <string name="kukes_tacan">R105&#x2103; 076X DME 68</string>
+    <string name="kukes_range"></string>
+    <string name="kukes_ils"></string>
+    <string name="kukes_rwy">14/32</string>
+    <string name="kukes_elev">1120</string>
+    <string name="kukes_gps">N41&#x2103;35.75'&#10;E22&#x2103;35.67'</string>
+
+    <string name="lushnje">Lushnje Airstrip</string>
+    <string name="lushjne_twr">231.4/123.4</string>
+    <string name="lushnje_tacan">R163&#x2103; 076X DME 78</string>
+    <string name="lushnje_range"></string>
+    <string name="lushnje_ils"></string>
+    <string name="lushnje_rwy">18/36</string>
+    <string name="lushnje_elev">60</string>
+    <string name="lushnje_gps">N40&#x2103;39.17'&#10;E21&#x2103;31.06'</string>
+
+    <string name="mifol">Mifol</string>
+    <string name="mifol_twr">230.15/126.2</string>
+    <string name="mifol_tacan">R175&#x2103; 076X DME 98</string>
+    <string name="mifol_range"></string>
+    <string name="mifol_ils"></string>
+    <string name="mifol_rwy">02/20</string>
+    <string name="mifol_elev">110</string>
+    <string name="mifol_gps">N40&#x2103;17.08'&#10;E21&#x2103;09.24'</string>
+    
+    <string name="peshkopi">Peshkopi Airstrip</string>
+    <string name="peshkopi_twr">231.4/123.4</string>
+    <string name="peshkopi_tacan">R120&#x2103; 076X DME 77</string>
+    <string name="peshkopi_range"></string>
+    <string name="peshkopi_ils"></string>
+    <string name="peshkopi_rwy">18/36</string>
+    <string name="peshkopi_elev">2500</string>
+    <string name="peshkopi_gps">N41&#x2103;15.27'&#10;E22&#x2103;34.18'</string>
+
+    <string name="shkoder">Shkoder</string>
+    <string name="shkoder_twr">230.15/126.2</string>
+    <string name="shkoder_tacan">R135&#x2103; 076X DME 23</string>
+    <string name="shkoder_range"></string>
+    <string name="shkoder_ils"></string>
+    <string name="shkoder_rwy">14/32</string>
+    <string name="shkoder_elev">80</string>
+    <string name="shkoder_gps">N41&#x2103;36.83'&#10;E21&#x2103;31.72'</string>
+
+    <string name="tirane">Tirance Lapranka</string>
+    <string name="tirane_twr">230.15/126.2</string>
+    <string name="tirane_tacan">R154&#x2103; 076X DME 63</string>
+    <string name="tirane_range"></string>
+    <string name="tirane_ils"></string>
+    <string name="tirane_rwy">12/30</string>
+    <string name="tirane_elev">295</string>
+    <string name="tirane_gps">N40&#x2103;56.95'&#10;E21&#x2103;42.02'</string>
+
+    <string name="tirane_rinas">Tirane Rinas</string>
+    <string name="tirane_rinas_twr">230.15/122.5</string>
+    <string name="tirane_rinas_tacan">R154&#x2103; 076X DME 58</string>
+    <string name="tirane_rinas_range"></string>
+    <string name="tirane_rinas_ils"></string>
+    <string name="tirane_rinas_rwy">02/20</string>
+    <string name="tirane_rinas_elev">125</string>
+    <string name="tirane_rinas_gps">N41&#x2103;02.34'&#10;E21&#x2103;38.32'</string>
+    <!-- Slovenia -->
+    <string name="slovenia">Slovenia</string>
+
+
 
     <!-- Brevity Dictionary Activity -->
     <string name="brevity_dictionary_title">Brevity Dictionary</string>
