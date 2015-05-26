@@ -31,13 +31,14 @@
 
         <activity
             android:name="com.oldgoat5.bmstacticalreference.KoreaNavigationActivity"
-            android:label="@string/korea_theater_title" >
+            android:label="@string/korea_theater_title"
+            android:theme="@style/BlueTheme">
         </activity>
 
         <activity
             android:name="com.oldgoat5.bmstacticalreference.BrevityDictionaryActivity"
             android:label="@string/brevity_dictionary_title"
-            android:theme="@style/CustomTheme">
+            android:theme="@style/BlueTheme">
             <intent-filter>
                 <action android:name="android.intent.action.SEARCH" />
             </intent-filter>

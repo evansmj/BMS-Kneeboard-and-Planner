@@ -34,6 +34,546 @@
     <string name="russia">Russia</string>
     <string name="russia_fragment_title">Russian Bases - Korean Theater of Operations</string>
 
+    <!-- Battle For Balkans -->
+    <string name="balkans">Battle For Balkans</string>
+    <string name="airport">Airport</string>
+    <string name="tower">TOWER(UHF/VHF)</string>
+    <string name="tacan">TACAN</string>
+    <string name="tacan_range">TACAN RANGE</string>
+    <string name="ils">ILS(RWY)</string>
+    <string name="rwy">RWY</string>
+    <string name="elev">ELEV</string>
+    <string name="gps">GPS COORD</string>
+
+    <!-- Italy -->
+    <string name="italy">Italy</string>
+
+    <string name="amendola">Amendola</string>
+    <string name="amendola_twr">257.8/118.2</string>
+    <string name="amendola_tacan">054X</string>
+    <string name="amendola_range">40</string>
+    <string name="amendola_ils">-</string>
+    <string name="amendola_rwy">11/29</string>
+    <string name="amendola_elev">160</string>
+    <string name="amendola_gps">N41&#x2103;07.44'&#10;E16&#x2103;47.02'</string>
+
+    <string name="ampugnano">Ampugnano</string>
+    <string name="ampugnano_twr">359.15/122.1</string>
+    <string name="ampugnano_tacan">039X</string>
+    <string name="ampugnano_range">50</string>
+    <string name="ampugnano_ils">-</string>
+    <string name="ampugnano_rwy">18/36</string>
+    <string name="ampugnano_elev">638</string>
+    <string name="ampugnano_gps">N42&#x2103;42.03'&#10;E11&#x2103;19.43'</string>
+
+    <string name="asiago">Asiago</string>
+    <string name="asiago_twr">334.2/122.6</string>
+    <string name="asiago_tacan">R353&#x2103; 081X DME 17</string>
+    <string name="asiago_range"></string>
+    <string name="asiago_ils"></string>
+    <string name="asiago_rwy">05/23 L/R</string>
+    <string name="asiago_elev">3409</string>
+    <string name="asiago_gps">N45&#x2103;08.59'&#10;E11&#x2103;39.34'</string>
+    
+    <string name="aviano">Aviano</string>
+    <string name="aviano_twr">284.65/142.05</string>
+    <string name="aviano_tacan">111X</string>
+    <string name="aviano_range">25</string>
+    <string name="aviano_ils">109.5(03)</string>
+    <string name="aviano_rwy">03/21</string>
+    <string name="aviano_elev">418</string>
+    <string name="aviano_gps">N45&#x2103;16.71'&#10;E13&#x2103;05.20'</string>
+    
+    <string name="bologna">Bologna</string>
+    <string name="bologna_twr">257.8/120.8</string>
+    <string name="bologna_tacan">059X</string>
+    <string name="bologna_range">50</string>
+    <string name="bologna_ils">108.9(12)</string>
+    <string name="bologna_rwy">12/30</string>
+    <string name="bologna_elev">122</string>
+    <string name="bologna_gps">N45&#x2103;54.23'&#10;E11&#x2103;21.31'</string>
+    
+    <string name="bolzano">Bolzano</string>
+    <string name="bolzano_twr">257.8/120.6</string>
+    <string name="bolzano_tacan">117X</string>
+    <string name="bolzano_range">25</string>
+    <string name="bolzano_ils">ILS</string>
+    <string name="bolzano_rwy">02/20 L/R</string>
+    <string name="bolzano_elev">784</string>
+    <string name="bolzano_gps">N45&#x2103;38.77'&#10;E11&#x2103;23.51'</string>
+
+    <string name="brindisi">Brindisi-Casale</string>
+    <string name="brindisi_twr">257.8/118.1</string>
+    <string name="brindisi_tacan">079X</string>
+    <string name="brindisi_range">50</string>
+    <string name="brindisi_ils">109.5(33)</string>
+    <string name="brindisi_rwy">01/19&#10;15/33</string>
+    <string name="brindisi_elev">48</string>
+    <string name="brindisi_gps">N40&#x2103;19.77'&#10;E19&#x2103;23.62'</string>
+
+    <string name="capodichino">Cappodichino</string>
+    <string name="capodichino_twr">235.15/118.5</string>
+    <string name="capodichino_tacan">125X</string>
+    <string name="capodichino_range">25</string>
+    <string name="capodichino_ils">109.5(26)</string>
+    <string name="capodichino_rwy">08/26</string>
+    <string name="capodichino_elev">298</string>
+    <string name="capodichino_gps">N40&#x2103;34.86'&#10;E14&#x2103;58.03'</string>
+
+    <string name="cervia">Cervia</string>
+    <string name="cervia_twr">338.225/122.1</string>
+    <string name="cervia_tacan">045X</string>
+    <string name="cervia_range">40</string>
+    <string name="cervia_ils"></string>
+    <string name="cervia_rwy">12/30</string>
+    <string name="cervia_elev">19</string>
+    <string name="cervia_gps">N43&#x2103;36.99'&#10;E12&#x2103;40.85'</string>
+    
+    <string name="ciampino">Ciampino</string>
+    <string name="ciampino_twr">308.775/120.5</string>
+    <string name="ciampino_tacan">045X</string>
+    <string name="ciampino_range">40</string>
+    <string name="ciampino_ils">109.9(16)</string>
+    <string name="ciampino_rwy">16/34</string>
+    <string name="ciampino_elev">426</string>
+    <string name="ciampino_gps">N41&#x2103;23.35'&#10;E12&#x2103;57.83'</string>
+
+    <string name="crotone">Crotone</string>
+    <string name="crotone_twr">257.8/119.1</string>
+    <string name="crotone_tacan">R085&#x2103; 072X DME 46</string>
+    <string name="crotone_range"></string>
+    <string name="crotone_ils"></string>
+    <string name="crotone_rwy">02/20</string>
+    <string name="crotone_elev">520</string>
+    <string name="crotone_gps">N38&#x2103;47.63'&#10;E18&#x2103;10.37'</string>
+    
+    <string name="falconara">Falconara</string>
+    <string name="falconara_twr">257.8/119.8</string>
+    <string name="falconara_tacan">035X</string>
+    <string name="falconara_range">25</string>
+    <string name="falconara_ils">111.9(20)</string>
+    <string name="falconara_rwy">02/20</string>
+    <string name="falconara_elev">50</string>
+    <string name="falconara_gps">N43&#x2103;01.43'&#10;E13&#x2103;59.48'</string>
+
+    <string name="fiumicino">Fiuicino Intl.</string>
+    <string name="fiumicino_twr">305.5/118.7</string>
+    <string name="fiumicino_tacan">096X</string>
+    <string name="fiumicino_range">80</string>
+    <string name="fiumicino_ils">109.7(14R)&#10;108.1(14L)</string>
+    <string name="fiumicino_rwy">16/34 L/R</string>
+    <string name="fiumicino_elev">14</string>
+    <string name="fiumicino_gps">N41&#x2103;22.28'</string>
+
+    <string name="forli">Forli</string>
+    <string name="forli_twr">257.8/118.95</string>
+    <string name="forli_tacan">R262&#x2103; 083X DME 15</string>
+    <string name="forli_range"></string>
+    <string name="forli_ils"></string>
+    <string name="forli_rwy">12/30</string>
+    <string name="forli_elev">98</string>
+    <string name="forli_gps">N43&#x2103;35.37'&#10;E12&#x2103;20.72'</string>
+
+    <string name="frosinone">Frosinone</string>
+    <string name="frosinone_twr">360.4/122.1</string>
+    <string name="frosinone_tacan">R096&#x2103; 096X DME 55</string>
+    <string name="frosinone_range"></string>
+    <string name="frosinone_ils"></string>
+    <string name="frosinone_rwy">16/34</string>
+    <string name="frosinone_elev">594</string>
+    <string name="frosinone_gps">N41&#x2103;16.35'&#10;E13&#x2103;43.11'</string>
+
+    <string name="ginolisa">Ginolisa</string>
+    <string name="ginolisa_twr">362.3/118.85</string>
+    <string name="ginolisa_tacan">R246&#x2103;  054X DME 12</string>
+    <string name="ginolisa_range"></string>
+    <string name="ginolisa_ils"></string>
+    <string name="ginolisa_rwy">16/34</string>
+    <string name="ginolisa_elev">266</string>
+    <string name="ginolisa_gps">N41&#x2103;08.88'&#10;E16&#x2103;31.88'</string>
+    
+    <string name="gioia">Gioia Del Colle</string>
+    <string name="gioia_twr">275.325/122.1</string>
+    <string name="gioia_tacan">124X</string>
+    <string name="gioia_range">50</string>
+    <string name="gioia_ils">-</string>
+    <string name="gioia_rwy">16/34 L/R</string>
+    <string name="gioia_elev">1187</string>
+    <string name="gioia_gps">N40&#x2103;26.24'&#10;E18&#x2103;10.09'</string>
+    
+    <string name="grazzanise">Grazzanise</string>
+    <string name="grazzanise_twr">324.65/118.025</string>
+    <string name="grazzanise_tacan">122X</string>
+    <string name="grazzanise_range">25</string>
+    <string name="grazzanise_ils">-</string>
+    <string name="grazzanise_rwy">08/26</string>
+    <string name="grazzanise_elev">29</string>
+    <string name="grazzanise_gps">N40&#x2103;42.94'&#10;E14&#x2103;43.58'</string>
+
+    <string name="grosseto">Grosseto</string>
+    <string name="grosseto_twr">264.75/122.1</string>
+    <string name="grosseto_tacan">028X</string>
+    <string name="grosseto_range">25</string>
+    <string name="grosseto_ils">-</string>
+    <string name="grosseto_rwy">02/20</string>
+    <string name="grosseto_elev">15</string>
+    <string name="grosseto_gps">N42&#x2103;16.70'&#10;E11&#x2103;05.46'</string>
+    
+    <string name="grottaglie">Grottaglie</string>
+    <string name="grottaglie_twr">257.8/118.7</string>
+    <string name="grottaglie_tacan">115X</string>
+    <string name="grottaglie_range">40</string>
+    <string name="grottaglie_ils">-</string>
+    <string name="grottaglie_rwy">02/20</string>
+    <string name="grottaglie_elev">216</string>
+    <string name="grottaglie_gps">N40&#x2103;11.69'&#10;E18&#x2103;43.12'</string>
+
+    <string name="guidogna">Guidogna</string>
+    <string name="guidogna_twr">257.8/122.1</string>
+    <string name="guidogna_tacan">R066&#x2103; 096X DME 30</string>
+    <string name="guidogna_range"></string>
+    <string name="guidogna_ils"></string>
+    <string name="guidogna_rwy">16/34&#10;18/36</string>
+    <string name="guidogna_elev">289</string>
+    <string name="guidogna_gps">N41&#x2103;34.13'&#10;E13&#x2103;08.56;</string>
+
+    <string name="istrana">Istrana</string>
+    <string name="istrana_twr">234.1/122.1</string>
+    <string name="istrana_tacan">054X</string>
+    <string name="istrana_range">25</string>
+    <string name="istrana_ils">-</string>
+    <string name="istrana_rwy">08/26</string>
+    <string name="istrana_elev">143</string>
+    <string name="istrana_gps">N44&#x2103;58.30'&#10;E12&#x2103;25.01'</string>
+
+    <string name="lamezia">Lamezia Terme</string>
+    <string name="lamezia_twr">257.8/119.7</string>
+    <string name="lamezia_tacan">072X</string>
+    <string name="lamezia_range">50</string>
+    <string name="lamezia_ils">110.3(02)</string>
+    <string name="lamezia_rwy">02/20</string>
+    <string name="lamezia_elev">40</string>
+    <string name="lamezia_gps">N38&#x2103;43.88'&#10;E17&#x2103;12.66'</string>
+    
+    <string name="latina">Latina</string>
+    <string name="latina_twr">261.0/119.15</string>
+    <string name="latina_tacan">049X</string>
+    <string name="latina_range">50</string>
+    <string name="latina_ils">-</string>
+    <string name="latina_rwy">12/30</string>
+    <string name="latina_elev">93</string>
+    <string name="latina_gps">N41&#x2103;08.27'&#10;E13&#x2103;18.44'</string>
+    
+    <string name="lecce">Lecce</string>
+    <string name="lecce_twr">234.65/119.55</string>
+    <string name="lecce_tacan">075X</string>
+    <string name="lecce_range">50</string>
+    <string name="lecce_ils">-</string>
+    <string name="lecce_rwy">14/32</string>
+    <string name="lecce_elev">N39&#x2103;27.14'&#10;E19&#x2103;34.19'</string>
+
+    <string name="matera">Matera</string>
+    <string name="matera_twr">230.95/126.2</string>
+    <string name="matera_tacan">R227&#x2103; 124X DME 27</string>
+    <string name="matera_range"></string>
+    <string name="matera_ils"></string>
+    <string name="matera_rwy">14/32</string>
+    <string name="matera_elev">360</string>
+    <string name="matera_gps">N40&#x2103;07.92'&#10;E17&#x2103;42.08'</string>
+
+    <string name="mattarello">Mattarello</string>
+    <string name="mattarello_twr">220.1/119.65</string>
+    <string name="mattarello_tacan">R315&#x2103; 081X DME 35</string>
+    <string name="mattarello_range"></string>
+    <string name="mattarello_ils"></string>
+    <string name="mattarello_rwy">08/26</string>
+    <string name="mattarello_elev">607</string>
+    <string name="mattarello_gps">N45&#x2103;16.68'&#10;E11&#x2103;08.81'</string>
+
+    <string name="padova">Padova</string>
+    <string name="padova_twr">257.8/123.25</string>
+    <string name="padova_tacan">R125&#x2103;081X DME 17</string>
+    <string name="padova_range"></string>
+    <string name="padova_ils"></string>
+    <string name="padova_rwy">05/23 L/R</string>
+    <string name="padova_elev">44</string>
+    <string name="padova_gps">N44&#x2103;42.73'&#10;E12&#x2103;01.80'</string>
+
+    <string name="palese">Palese Macchie</string>
+    <string name="palese_twr">302.5/118.3</string>
+    <string name="palese_tacan">100X</string>
+    <string name="palese_range">50</string>
+    <string name="palese_ils">109.3(08)&#10;111.3(26)</string>
+    <string name="palese_rwy">08/26</string>
+    <string name="palese_elev">176</string>
+    <string name="palese_gps">N40&#x2103;45.64'&#10;E17&#x2103;59.57'</string>
+
+    <string name="peretola">Peretola</string>
+    <string name="peretola_twr">230.15/118.3</string>
+    <string name="peretola_tacan">072X</string>
+    <string name="peretola_range">50</string>
+    <string name="peretola_ils">110.3(03)</string>
+    <string name="peretola_rwy">03/21</string>
+    <string name="peretola_elev">144</string>
+    <string name="peretola_gps">N43&#x2103;14.36'&#10;E11&#x2103;15.16'</string>
+
+    <string name="perugia">Perugia</string>
+    <string name="perugia_twr">325.15/118.1</string>
+    <string name="perugia_tacan">031X</string>
+    <string name="perugia_range">50</string>
+    <string name="perugia_ils">110.95(01)</string>
+    <string name="perugia_rwy">01/19</string>
+    <string name="perugia_elev">693</string>
+    <string name="perugia_gps">N42&#x2103;35.56'&#10;E12&#x2103;53.09'</string>
+
+    <string name="pescara">Pescara</string>
+    <string name="pescara_twr">257.8/118.45</string>
+    <string name="pescara_tacan">106X</string>
+    <string name="pescara_range">50</string>
+    <string name="pescara_ils">110.7(20)</string>
+    <string name="pescara_rwy">02/20</string>
+    <string name="pescara_elev">48</string>
+    <string name="pescara_gps">N41&#x2103;57.03'&#10;E14&#x2103;55.13'</string>
+    
+    <string name="practica">Practica Di Mare</string>
+    <string name="practica_twr">358.9/122.1</string>
+    <string name="practica_tacan">024X</string>
+    <string name="practica_range">40</string>
+    <string name="practica_ils">108.5(30)</string>
+    <string name="practica_rwy">12/30</string>
+    <string name="practica_elev">41</string>
+    <string name="practica_gps">N41&#x2103;14.73'&#10;E12&#x2103;48.57'</string>
+    
+    <string name="ravenna">Ravenna</string>
+    <string name="ravenna_twr">230.15/123.5</string>
+    <string name="ravenna_tacan">R323&#x2103; 083X DME 10</string>
+    <string name="ravenna_range"></string>
+    <string name="ravenna_ils"></string>
+    <string name="ravenna_rwy"></string>
+    <string name="ravenna_elev">08/26</string>
+    <string name="ravenna_gps">N43&#x2103;45.07'&#10;E12&#x2103;32.87'</string>
+
+    <string name="reggio">Reggio Calabria</string>
+    <string name="reggio_twr">257.8/118.25</string>
+    <string name="reggio_tacan">047X</string>
+    <string name="reggio_range">50</string>
+    <string name="reggio_ils">109.3(14R)&#10;111.0(14L)</string>
+    <string name="reggio_rwy">14/32 L/R</string>
+    <string name="reggio_elev">95</string>
+    <string name="reggio_gps">N37&#x2103;55.36'&#10;E16&#x2103;26.17'</string>
+
+    <string name="rimini">Rimini</string>
+    <string name="rimini_twr">278.1/119.1</string>
+    <string name="rimini_tacan">109X</string>
+    <string name="rimini_range">50</string>
+    <string name="rimini_ils">109.3(30)</string>
+    <string name="rimini_rwy">12/30</string>
+    <string name="rimini_elev">41</string>
+    <string name="rimini_gps">N43&#x2103;24.60'&#10;E13&#x2103;02.02'</string>
+
+    <string name="rivolto">Rivolto</string>
+    <string name="rivolto_twr">234.15/122.1</string>
+    <string name="rivolto_tacan">037X</string>
+    <string name="rivolto_range">50</string>
+    <string name="rivolto_ils">-</string>
+    <string name="rivolto_rwy">08/26</string>
+    <string name="rivolto_elev">184</string>
+    <string name="rivolto_gps">N45&#x2103;13.44'&#10;E13&#x2103;39.51'</string>
+    
+    <string name="roma">Roma Urbe</string>
+    <string name="roma_twr">257.8/123.8</string>
+    <string name="roma_tacan">R063&#x2103; 096X DME 19</string>
+    <string name="roma_range"></string>
+    <string name="roma_ils"></string>
+    <string name="roma_rwy">16/34</string>
+    <string name="roma_elev">55</string>
+    <string name="roma_gps">N41&#x2103;34.44'&#10;E12&#x2103;53.36</string>
+    
+    <string name="ronchi">Ronchi Legionari</string>
+    <string name="ronchi_twr">257.8/130.2</string>
+    <string name="ronchi_tacan">089X</string>
+    <string name="ronchi_range">40</string>
+    <string name="ronchi_ils">109.7(11)</string>
+    <string name="ronchi_rwy">11/29</string>
+    <string name="ronchi_elev">37</string>
+    <string name="ronchi_gps">N45&#x2103;06.36'&#10;E14&#x2103;13.48'</string>
+
+    <string name="pancrazio">San Pancrazio</string>
+    <string name="pancrazio_twr">230.15/118.1</string>
+    <string name="pancrazio_tacan">R205&#x2103; 079X DME 15</string>
+    <string name="pancrazio_range"></string>
+    <string name="pancrazio_ils"></string>
+    <string name="pancrazio_rwy">02/20</string>
+    <string name="pancrazio_elev">160</string>
+    <string name="pancrazio_gps">N40&#x2103;07.92'&#10;E19&#x2103;15.11'</string>
+
+    <string name="treviso">Treviso</string>
+    <string name="treviso_twr">278.2/118.7</string>
+    <string name="treviso_tacan">R086&#x2103; 081X DME 35</string>
+    <string name="treviso_range"></string>
+    <string name="treviso_ils"></string>
+    <string name="treviso_rwy">08/26</string>
+    <string name="treviso_elev">57</string>
+    <string name="treviso_gps">N44&#x2103;55.12'&#10;E12&#x2103;31.70'</string>
+    
+    <string name="venezia">Venezia Tessera</string>
+    <string name="venezia_twr">257.8/120.2</string>
+    <string name="venezia_tacan">100X</string>
+    <string name="venezia_range">40</string>
+    <string name="venezia_ils">110.3(05R)</string>
+    <string name="venezia_rwy">05/23 L/R</string>
+    <string name="venezia_elev">7</string>
+    <string name="venezia_gps">N44&#x2103;47.58'&#10;E12&#x2103;45.92'</string>
+
+    <string name="vicenca">Vicenca</string>
+    <string name="vicenca_twr">389.25/130.4</string>
+    <string name="vicenca_tacan">081X</string>
+    <string name="vicenca_range">50</string>
+    <string name="vicenca_ils">-</string>
+    <string name="vicenca_rwy">18/36</string>
+    <string name="vicenca_elev">128</string>
+    <string name="vicenca_gps">N44&#x2103;52.43'&#10;E11&#x2103;43.72'</string>
+
+    <!-- Sicily -->
+    <string name="sicily">Sicily</string>
+
+    <string name="catania">Catania Fontanarossa</string>
+    <string name="catania_twr">234.5/118.7</string>
+    <string name="catania_tacan">058X</string>
+    <string name="catania_range">50</string>
+    <string name="catania_ils">109.9(08)</string>
+    <string name="catania_rwy">08/26</string>
+    <string name="catania_elev">40</string>
+    <string name="catania_gps">N37&#x2103;26.26'&#10;E15&#x2103;39.26'</string>
+
+    <string name="palermo">Palermo</string>
+    <string name="palermo_twr">257.8/119.05</string>
+    <string name="palermo_tacan">077X</string>
+    <string name="palermo_range">50</string>
+    <string name="palermo_ils">109.9(23L)&#10;109.5(23R)</string>
+    <string name="palermo_rwy">05/23 L/R</string>
+    <string name="palermo_elev">64</string>
+    <string name="palermo_gps">N38&#x2103;02.80'&#10;E13&#x2103;27.46'</string>
+
+    <string name="pantelleria">Pantelleria</string>
+    <string name="pantelleria_twr">279.125/118.45</string>
+    <string name="pantelleria_tacan">108X</string>
+    <string name="pantelleria_range">50</string>
+    <string name="pantelleria_ils">-</string>
+    <string name="pantelleria_rwy">02/20 L/R</string>
+    <string name="pantelleria_elev">636</string>
+    <string name="pantelleria_gps">N36&#x2103;48.54'&#10;E12&#x2103;06.29'</string>
+
+    <string name="sigonella">Sigonella</string>
+    <string name="sigonella_twr">337.6/118.05</string>
+    <string name="sigonella_tacan">053X</string>
+    <string name="sigonella_range">50</string>
+    <string name="sigonella_ils">-</string>
+    <string name="sigonella_rwy">14/32 L/R</string>
+    <string name="sigonella_elev">81</string>
+    <string name="sigonella_gps">N37&#x2103;19.80'&#10;E15&#x2103;30.73'</string>
+
+    <string name="trapani">Trapani Birgi</string>
+    <string name="trapani_twr">339.45/119.7</string>
+    <string name="trapani_tacan">025X</string>
+    <string name="trapani_range">50</string>
+    <string name="trapani_ils">-</string>
+    <string name="trapani_rwy">16/34 L/R</string>
+    <string name="trapani_elev">25</string>
+    <string name="trapani_gps">N37&#x2103;48.36'&#10;E12&#x2103;45.37'</string>
+    
+    <!-- Greece -->
+    <string name="greece">Greece</string>
+    
+    <string name="ioannina">Ioaninna</string>
+    <string name="ioannina_twr">257.8/132.2</string>
+    <string name="ioannina_tacan">023X</string>
+    <string name="ioannina_range">50</string>
+    <string name="ioannina_ils">-</string>
+    <string name="ioannina_rwy">14/32</string>
+    <string name="ioannina_elev">1563</string>
+    <string name="ioannina_gps">N39&#x2103;24.81'&#10;E22&#x2103;40.60'</string>
+    
+    <string name="kefallinia">Kefallinia</string>
+    <string name="kefallinia_twr">257.8/122.25</string>
+    <string name="kefallinia_tacan">047X</string>
+    <string name="kefallinia_range">50</string>
+    <string name="kefallinia_ils">-</string>
+    <string name="kefallinia_rwy">03/21</string>
+    <string name="kefallinia_elev">60</string>
+    <string name="kefallinia_gps">N38&#x2103;00.75'&#10;E22&#x2103;05.80'</string>
+
+    <string name="preveza">Preveza</string>
+    <string name="preveza_twr">257.8/122.1</string>
+    <string name="preveza_tacan">029X</string>
+    <string name="preveza_range">50</string>
+    <string name="preveza_ils">110.9(08)</string>
+    <string name="preveza_rwy">08/26</string>
+    <string name="preveza_elev">13</string>
+    <string name="preveza_gps">N38&#x2103;43.32'&#10;E22&#x2103;31.70'</string>
+
+    <string name="zakinthos">Zakinthos</string>
+    <string name="zakinthos_twr">257.8/125.5</string>
+    <string name="zakinthos_tacan">045X</string>
+    <string name="zakinthos_range">50</string>
+    <string name="zakinthos_ils">-</string>
+    <string name="zakinthos_rwy">02/20</string>
+    <string name="zakinthos_elev">14</string>
+    <string name="zakinthos_gps">N37&#x2103;39.73'&#10;E22&#x2103;27.83'</string>
+
+    <!-- Macedonia -->
+    <string name="macedonia">Macedonia</string>
+
+    <string name="ohrid">Ohrid</string>
+    <string name="ohrid_twr">250.2/119.2</string>
+    <string name="ohrid_tacan">072X</string>
+    <string name="ohrid_range">25</string>
+    <string name="ohrid_ils">108.9(02)</string>
+    <string name="ohrid_rwy">02/20</string>
+    <string name="ohrid_elev">2313</string>
+    <string name="ohrid_gps">N40&#x2103;48.33'&#10;E22&#x2103;50.10'</string>
+
+    <!-- Albania -->
+    <string name="albania">Albania</string>
+
+    <string name="berat">Berat</string>
+    <string name="berat_twr">230.15/119.2</string>
+    <string name="berat_tacan">R160&#x2103; 076X DME 93</string>
+    <string name="berat_range"></string>
+    <string name="berat_ils"></string>
+    <string name="berat_rwy">02/20</string>
+    <string name="berat_elev">420</string>
+    <string name="berat_gps">N40&#x2103;26.78'&#10;E21&#x2103;42.57</string>
+
+    <string name="cerrik">Cerrik Airstrip</string>
+    <string name="cerrik_twr">231.4/123.4</string>
+    <string name="cerrik_tacan">R146&#x2103; 076X DME 103</string>
+    <string name="cerrik_range"></string>
+    <string name="cerrik_ils"></string>
+    <string name="cerrik_rwy">18/36</string>
+    <string name="cerrik_elev">920</string>
+    <string name="cerrik_gps">N40&#x2103;27.85'&#10;E22&#x2103;13.19'</string>
+
+    <string name="durres">Durres Airstrip</string>
+    <string name="durres_twr">231.4/123.4</string>
+    <string name="durres_tacan">R167&#x2103; 076X DME 56</string>
+    <string name="durres_range"></string>
+    <string name="durres_ils"></string>
+    <string name="durres_rwy">18/36</string>
+    <string name="durres_elev">40</string>
+    <string name="durres_gps">N40&#x2103;59.11'&#10;E21&#x2103;19.95'</string>
+
+    <string name="elbasan">Elbasan</string>
+    <string name="elbasan_twr">230.15/119.15</string>
+    <string name="elbasan_tacan">R150&#x2103; 076X DME 86</string>
+    <string name="elbasan_range"></string>
+    <string name="elbasan_ils"></string>
+    <string name="elbasan_rwy">05//23 L/R</string>
+    <string name="elbasan_elev">440</string>
+    <string name="elbasan_gps">N40&#x2103;40.25'&#10;E21&#x2103;56.80'</string>
+
+    
+
     <!-- Brevity Dictionary Activity -->
     <string name="brevity_dictionary_title">Brevity Dictionary</string>
     <string name="menu_search">Search</string>

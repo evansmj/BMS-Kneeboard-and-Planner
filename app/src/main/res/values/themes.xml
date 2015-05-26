@@ -2,7 +2,7 @@
 <resources>
 
     <!-- the theme applied to the application or activity -->
-    <style name="CustomTheme"
+    <style name="BlueTheme"
            parent="@style/AppTheme">
         <item name="android:actionBarStyle">@style/MyActionBar</item>
 
@@ -22,7 +22,7 @@
     </style>
 
     <!-- TitleTextStyle for MyActionBar -->
-    <style name="CustomTheme.MyActionBar.TitleTextStyle"
+    <style name="BlueTheme.MyActionBar.TitleTextStyle"
            parent="@android:style/TextAppearance">
         <item name="android:textColor">@color/silver</item>
 
