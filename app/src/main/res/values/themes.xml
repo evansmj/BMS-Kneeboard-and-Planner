@@ -14,11 +14,11 @@
     <style name="MyActionBar"
            parent="@style/Widget.AppCompat.Light.ActionBar.Solid.Inverse">
         <item name="android:background">@color/dark_blue</item>
-        <item name="android:titleTextStyle">@style/CustomTheme.MyActionBar.TitleTextStyle</item>
+        <item name="android:titleTextStyle">@style/BlueTheme.MyActionBar.TitleTextStyle</item>
 
         <!-- Support library compatibility -->
         <item name="background">@color/dark_blue</item>
-        <item name="titleTextStyle">@style/CustomTheme.MyActionBar.TitleTextStyle</item>
+        <item name="titleTextStyle">@style/BlueTheme.MyActionBar.TitleTextStyle</item>
     </style>
 
     <!-- TitleTextStyle for MyActionBar -->

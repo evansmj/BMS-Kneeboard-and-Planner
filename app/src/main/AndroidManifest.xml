@@ -36,6 +36,11 @@
         </activity>
 
         <activity
+            android:name="com.oldgoat5.bmstacticalreference.BattleForBalkansNavigationActivity"
+            android:label="@string/balkans" >
+        </activity>
+
+        <activity
             android:name="com.oldgoat5.bmstacticalreference.BrevityDictionaryActivity"
             android:label="@string/brevity_dictionary_title"
             android:theme="@style/BlueTheme">

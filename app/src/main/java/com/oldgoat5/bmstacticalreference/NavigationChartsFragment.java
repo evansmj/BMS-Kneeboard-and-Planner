@@ -17,6 +17,7 @@ import android.widget.Button;
  *********************************************************************/
 public class NavigationChartsFragment extends Fragment
 {
+    private Button battleForBalkansSelectButton;
     private Button koreaSelectButton;
     private View view;
 
@@ -28,8 +29,19 @@ public class NavigationChartsFragment extends Fragment
                 R.layout.navigation_chart_fragment_layout, container, false);
 
         Log.d("NavChartsFragment", "inside onCreateView()");
+
+        battleForBalkansSelectButton = (Button) view.findViewById(
+                R.id.battle_for_balkans_navigation_select_button);
         koreaSelectButton = (Button) view.findViewById(R.id.korea_navigation_select_button);
 
+        battleForBalkansSelectButton.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                showBattleForBalkansNavigation();
+            }
+        });
 
         koreaSelectButton.setOnClickListener(new Button.OnClickListener()
         {
@@ -41,6 +53,15 @@ public class NavigationChartsFragment extends Fragment
         });
 
         return view;
+    }
+
+    /*****************************************************************
+     * Starts the battle for balkans activity.
+     *****************************************************************/
+    public void showBattleForBalkansNavigation()
+    {
+        Intent intent = new Intent(getActivity(), BattleForBalkansNavigationActivity.class);
+        startActivity(intent);
     }
 
     /*****************************************************************
