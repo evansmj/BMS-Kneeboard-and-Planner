@@ -664,7 +664,70 @@
     <!-- Slovenia -->
     <string name="slovenia">Slovenia</string>
 
+    <string name="bloska">Bloska Polica Airstrip</string>
+    <string name="bloska_twr">236.6/122.6</string>
+    <string name="bloska_tacan">R165&#x2103; 074X DME 27</string>
+    <string name="bloska_range"></string>
+    <string name="bloksa_ils"></string>
+    <string name="bloksa_rwy">09/27</string>
+    <string name="bloska_elev">2550</string>
+    <string name="bloska_gps">N45&#x2103;45.01'&#10;E15&#x2103;39.37'</string>
 
+    <string name="cerklje_airstrip">Cerklje Airstrip</string>
+    <string name="cerklje_airstrip_twr">236.6/122.6</string>
+    <string name="cerklje_airstrip_tacan">R279&#x2103; 084X DME 41</string>
+    <string name="cerklje_airstrip_range"></string>
+    <string name="cerklje_airstrip_ils"></string>
+    <string name="cerklje_airstrip_rwy">09/27</string>
+    <string name="cerklje_airstrip_elev">510</string>
+    <string name="cerklje_airstrip_gps">N45&#x2103;06.98'&#10;E16&#x2103;40.18'</string>
+    
+    <string name="cerklje">Cerklje</string>
+    <string name="cerklje_twr">230.15/126.2</string>
+    <string name="cerklje_tacan">R106&#x2103; 074X DME 62</string>
+    <string name="cerklje_range"></string>
+    <string name="cerklje_ils"></string>
+    <string name="cerklje_rwy">08/26</string>
+    <string name="cerklje_elev">510</string>
+    <string name="cerklje_gps">N45&#x2103;09.67'&#10;E16&#x2103;53.44'</string>
+    
+    <string name="ljubljana">Ljubljana</string>
+    <string name="ljubljana_twr">385.15/118.1</string>
+    <string name="ljubljana_tacan">074X</string>
+    <string name="ljubljana_range">100</string>
+    <string name="ljubljana_ils">110.5(30)</string>
+    <string name="ljubljana_rwy">12/30</string>
+    <string name="ljubljana_elev">1273</string>
+    <string name="ljubljana_gps">N45&#x2103;26.91'&#10;E15&#x2103;31.52'</string>
+
+    <string name="maribor">Maribor</string>
+    <string name="maribor_twr">375.15/119.2</string>
+    <string name="maribor_tacan">R079&#x2103; 074X DME 70</string>
+    <string name="maribor_range"></string>
+    <string name="maribor_ils">110.1(34)</string>
+    <string name="maribor_rwy">16/34</string>
+    <string name="maribor_elev">876</string>
+    <string name="maribor_gps">N45&#x2103;40.92'&#10;E17&#x2103;10.60'</string>
+    
+    <string name="portoroz">Portoroz</string>
+    <string name="portoroz_twr">230.15/129.325</string>
+    <string name="portoroz_tacan">R227&#x2103; 074X DME 65</string>
+    <string name="portoroz_range"></string>
+    <string name="portoroz_ils"></string>
+    <string name="portoroz_rwy">16/34</string>
+    <string name="portoroz_elev">7</string>
+    <string name="portoroz_gps">N44&#x2103;44.34'&#10;E15&#x2103;32.97'</string>
+
+    <string name="slovenj">Slovenj Gradec</string>
+    <string name="slovenj_twr">205.2/123.5</string>
+    <string name="slovenj_tacan">R069&#x2103; 074X DME 39</string>
+    <string name="slovenj_range"></string>
+    <string name="slovenj_ils"></string>
+    <string name="slovenj_rwy">16/34</string>
+    <string name="slovenj_elev">1645</string>
+    <string name="slovenj_gps">N45&#x2103;42.00'&#10;E16&#x2103;23.66'</string>
+
+    
 
     <!-- Brevity Dictionary Activity -->
     <string name="brevity_dictionary_title">Brevity Dictionary</string>
