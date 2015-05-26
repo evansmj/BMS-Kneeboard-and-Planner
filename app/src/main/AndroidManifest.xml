@@ -36,7 +36,8 @@
 
         <activity
             android:name="com.oldgoat5.bmstacticalreference.BrevityDictionaryActivity"
-            android:label="@string/brevity_dictionary_title" >
+            android:label="@string/brevity_dictionary_title"
+            android:theme="@style/CustomTheme">
             <intent-filter>
                 <action android:name="android.intent.action.SEARCH" />
             </intent-filter>
