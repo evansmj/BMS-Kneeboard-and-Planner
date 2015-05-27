@@ -17,7 +17,5 @@ public class BattleForBalkansNavigationActivity extends Activity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.battle_for_balkans_navigation_activity);
 
-        
-
     }
 }

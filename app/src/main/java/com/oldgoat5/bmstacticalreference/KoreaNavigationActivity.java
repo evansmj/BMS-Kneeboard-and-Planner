@@ -16,10 +16,11 @@ import android.widget.Toast;
  * @author Michael Evans
  * @version 5/8/2015
  *********************************************************************/
-public class KoreaNavigationActivity extends FragmentActivity implements ActionBar.TabListener
+public class KoreaNavigationActivity extends FragmentActivity //implements ActionBar.TabListener
 {
     private ActionBar actionBar;
     private KoreaNavigationFragmentPageAdapter fragmentPageAdapter;
+    private SlidingTabLayout slidingTabLayout;
     private ViewPager viewPager;
 
     @Override
@@ -31,12 +32,21 @@ public class KoreaNavigationActivity extends FragmentActivity implements ActionB
         Log.d("KoreaNavigationActivity", "inside onCreate()");
 
         viewPager = (ViewPager) findViewById(R.id.korea_navigation_pager);
-        fragmentPageAdapter = new KoreaNavigationFragmentPageAdapter(getSupportFragmentManager());
-        actionBar = getActionBar();
+        viewPager.setAdapter(new KoreaNavigationFragmentPageAdapter(getSupportFragmentManager(),
+                KoreaNavigationActivity.this));
 
-        actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
+        //fragmentPageAdapter = new KoreaNavigationFragmentPageAdapter(getSupportFragmentManager());
 
-        actionBar.addTab(actionBar.newTab().setText(
+        //sliding tab layout
+        slidingTabLayout = (SlidingTabLayout) findViewById(R.id.korea_sliding_tabs);
+        slidingTabLayout.setDistributeEvenly(true);
+        slidingTabLayout.setViewPager(viewPager);
+
+        //actionBar = getActionBar();
+
+        //actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
+
+        /*actionBar.addTab(actionBar.newTab().setText(
                 "South Korea").setTabListener(this));
         actionBar.addTab(actionBar.newTab().setText(
                 "North Korea").setTabListener(this));
@@ -45,9 +55,9 @@ public class KoreaNavigationActivity extends FragmentActivity implements ActionB
         actionBar.addTab(actionBar.newTab().setText(
                 "China").setTabListener(this));
         actionBar.addTab(actionBar.newTab().setText(
-                "Russia").setTabListener(this));
+                "Russia").setTabListener(this));  */
 
-        viewPager.setAdapter(fragmentPageAdapter);
+        /*viewPager.setAdapter(fragmentPageAdapter);
 
 
         viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener()
@@ -69,13 +79,13 @@ public class KoreaNavigationActivity extends FragmentActivity implements ActionB
             {
                 // TODO Auto-generated method stub
             }
-        });
+        });*/
 
         Toast toast = Toast.makeText(this, "Long Press for Chart", Toast.LENGTH_LONG);
         toast.show();
     }
 
-    @Override
+    /*@Override
     public void onTabSelected(ActionBar.Tab tab, FragmentTransaction fragmentTransaction)
     {
             viewPager.setCurrentItem(tab.getPosition());
@@ -91,5 +101,5 @@ public class KoreaNavigationActivity extends FragmentActivity implements ActionB
     public void onTabReselected(ActionBar.Tab tab, FragmentTransaction fragmentTransaction)
     {
 
-    }
+    }*/
 }
