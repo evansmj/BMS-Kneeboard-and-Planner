@@ -15,12 +15,10 @@
            parent="@style/Widget.AppCompat.Light.ActionBar.Solid.Inverse">
         <item name="android:background">@color/dark_blue</item>
         <item name="android:titleTextStyle">@style/BlueTheme.MyActionBar.TitleTextStyle</item>
-        <item name="android:actionBarTabStyle">@style/BlueTheme.MyActionBar.TabView</item>
 
         <!-- Support library compatibility -->
         <item name="background">@color/dark_blue</item>
         <item name="titleTextStyle">@style/BlueTheme.MyActionBar.TitleTextStyle</item>
-        <item name="actionBarTabStyle">@style/BlueTheme.MyActionBar.TabView</item>
     </style>
 
     <!-- TitleTextStyle for MyActionBar -->
@@ -29,15 +27,6 @@
         <item name="android:textColor">@color/silver</item>
 
         <!-- Support library compatibility-->
-        <item name="textColor">@color/silver</item>
-    </style>
-
-    <!-- TabBarStyle-->
-    <style name="BlueTheme.MyActionBar.TabView"
-           parent="@style/Widget.AppCompat.Light.ActionBar.TabView">
-        <item name="android:textColor">@color/silver</item>
-
-        <!-- Support library compatibility -->
         <item name="textColor">@color/silver</item>
     </style>
 </resources>
