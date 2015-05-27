@@ -6,11 +6,15 @@ import android.app.FragmentTransaction;
 import android.app.Notification;
 import android.app.TabActivity;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.widget.Toast;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /*********************************************************************
  * @author Michael Evans
@@ -20,6 +24,7 @@ public class KoreaNavigationActivity extends FragmentActivity //implements Actio
 {
     private ActionBar actionBar;
     private KoreaNavigationFragmentPageAdapter fragmentPageAdapter;
+    private ArrayList<PagerItem> tabsList;
     private SlidingTabLayout slidingTabLayout;
     private ViewPager viewPager;
 
@@ -31,6 +36,14 @@ public class KoreaNavigationActivity extends FragmentActivity //implements Actio
 
         Log.d("KoreaNavigationActivity", "inside onCreate()");
 
+        tabsList = new ArrayList<PagerItem>();
+
+        tabsList.add(new PagerItem("South Korea", Color.BLUE, Color.GRAY));
+        tabsList.add(new PagerItem("North Korea", Color.RED, Color.GRAY));
+        tabsList.add(new PagerItem("Japan", Color.GRAY, Color.GRAY));
+        tabsList.add(new PagerItem("China",Color.GRAY, Color.GRAY)); //TODO fix colors
+        tabsList.add(new PagerItem("Russia", Color.GRAY, Color.GRAY));
+
         viewPager = (ViewPager) findViewById(R.id.korea_navigation_pager);
         viewPager.setAdapter(new KoreaNavigationFragmentPageAdapter(getSupportFragmentManager(),
                 KoreaNavigationActivity.this));
@@ -41,6 +54,21 @@ public class KoreaNavigationActivity extends FragmentActivity //implements Actio
         slidingTabLayout = (SlidingTabLayout) findViewById(R.id.korea_sliding_tabs);
         slidingTabLayout.setDistributeEvenly(true);
         slidingTabLayout.setViewPager(viewPager);
+
+        slidingTabLayout.setCustomTabColorizer(new SlidingTabLayout.TabColorizer()
+        {
+            @Override
+            public int getIndicatorColor(int position)
+            {
+                return tabsList.get(position).getIndicatorColor();
+            }
+
+            public int getDividerColor(int position)
+            {
+                return tabsList.get(position).getDividerColor();
+            }
+
+        });
 
         //actionBar = getActionBar();
 
