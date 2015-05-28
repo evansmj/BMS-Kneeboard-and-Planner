@@ -17,6 +17,7 @@
 package com.oldgoat5.bmstacticalreference;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Build;
 import android.support.v4.view.PagerAdapter;
@@ -235,6 +236,7 @@ public class SlidingTabLayout extends HorizontalScrollView {
 
             tabTitleView.setText(adapter.getPageTitle(i));
             tabView.setOnClickListener(tabClickListener);
+            tabTitleView.setTextColor(Color.parseColor("#D5DADD"));
 
             mTabStrip.addView(tabView);
             if (i == mViewPager.getCurrentItem())

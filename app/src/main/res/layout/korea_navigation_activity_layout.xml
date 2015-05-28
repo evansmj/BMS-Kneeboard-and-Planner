@@ -6,6 +6,7 @@
 
     <com.oldgoat5.bmstacticalreference.SlidingTabLayout
         android:id="@+id/korea_sliding_tabs"
+        android:background="@color/tab_blue"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 

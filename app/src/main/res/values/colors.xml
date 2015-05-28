@@ -5,4 +5,6 @@
     <color name="medium_blue">#7A99AD</color>
     <color name="dark_blue">#2C3F50</color>
     <color name="silver">#D5DADD</color>
+    <color name="tab_blue">#345166</color>
+    <color name="text_blue">#417394</color>
 </resources>
