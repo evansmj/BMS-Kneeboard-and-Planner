@@ -1,7 +1,6 @@
-package com.oldgoat5.bmstacticalreference;
+package com.oldgoat5.bmstacticalreference.Reference;
 
 import android.app.Activity;
-import android.app.LauncherActivity;
 import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
@@ -13,6 +12,8 @@ import android.view.MenuInflater;
 import android.widget.ListView;
 import android.widget.SearchView;
 import android.widget.Toast;
+
+import com.oldgoat5.bmstacticalreference.R;
 
 import java.util.ArrayList;
 

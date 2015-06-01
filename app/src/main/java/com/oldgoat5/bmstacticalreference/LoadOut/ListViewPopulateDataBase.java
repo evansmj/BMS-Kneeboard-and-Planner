@@ -1,4 +1,4 @@
-package com.oldgoat5.bmstacticalreference;
+package com.oldgoat5.bmstacticalreference.LoadOut;
 
 import java.util.ArrayList;
 

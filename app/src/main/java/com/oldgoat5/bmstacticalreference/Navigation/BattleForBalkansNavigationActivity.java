@@ -1,9 +1,12 @@
-package com.oldgoat5.bmstacticalreference;
+package com.oldgoat5.bmstacticalreference.Navigation;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
+
+import com.oldgoat5.bmstacticalreference.SlidingTabs.PagerItem;
+import com.oldgoat5.bmstacticalreference.R;
+import com.oldgoat5.bmstacticalreference.SlidingTabs.SlidingTabLayout;
 
 import java.util.ArrayList;
 

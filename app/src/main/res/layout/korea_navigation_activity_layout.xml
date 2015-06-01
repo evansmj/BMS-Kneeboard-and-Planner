@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
-    <com.oldgoat5.bmstacticalreference.SlidingTabLayout
+    <com.oldgoat5.bmstacticalreference.SlidingTabs.SlidingTabLayout
         android:id="@+id/korea_sliding_tabs"
         android:background="@color/tab_blue"
         android:layout_width="match_parent"

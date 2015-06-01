@@ -1,4 +1,4 @@
-package com.oldgoat5.bmstacticalreference;
+package com.oldgoat5.bmstacticalreference.Navigation;
 
 import android.app.Dialog;
 import android.content.Context;
@@ -10,8 +10,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.ImageView;
 import android.widget.ListView;
+
+import com.oldgoat5.bmstacticalreference.R;
 
 /*********************************************************************
  * Shows a list of Japanese charts in the KTO theater.

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.oldgoat5.bmstacticalreference;
+package com.oldgoat5.bmstacticalreference.SlidingTabs;
 
 import android.content.Context;
 import android.graphics.Color;

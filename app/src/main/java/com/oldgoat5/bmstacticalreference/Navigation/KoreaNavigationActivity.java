@@ -1,11 +1,6 @@
-package com.oldgoat5.bmstacticalreference;
+package com.oldgoat5.bmstacticalreference.Navigation;
 
 import android.app.ActionBar;
-import android.app.Activity;
-import android.app.FragmentTransaction;
-import android.app.Notification;
-import android.app.TabActivity;
-import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
@@ -13,8 +8,11 @@ import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.oldgoat5.bmstacticalreference.SlidingTabs.PagerItem;
+import com.oldgoat5.bmstacticalreference.R;
+import com.oldgoat5.bmstacticalreference.SlidingTabs.SlidingTabLayout;
+
 import java.util.ArrayList;
-import java.util.List;
 
 /*********************************************************************
  * @author Michael Evans

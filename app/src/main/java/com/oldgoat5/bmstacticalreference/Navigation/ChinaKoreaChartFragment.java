@@ -1,28 +1,26 @@
-package com.oldgoat5.bmstacticalreference;
+package com.oldgoat5.bmstacticalreference.Navigation;
 
 import android.app.Dialog;
-import android.graphics.Matrix;
-import android.graphics.PointF;
-import android.support.v4.app.Fragment;
 import android.content.Context;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.ImageView;
 import android.widget.ListView;
 
+import com.oldgoat5.bmstacticalreference.R;
+
 /*********************************************************************
- * Shows a list of Russian charts in the KTO theater.
+ * Shows a list of Chinese charts in the KTO theater.
  *
  * @author Michael Evans
  * @since 5/8/2015
  *********************************************************************/
-public class RussiaKoreaChartFragment extends Fragment
+public class ChinaKoreaChartFragment extends Fragment
 {
     Context CONTEXT;
 
@@ -30,24 +28,21 @@ public class RussiaKoreaChartFragment extends Fragment
     private Dialog dialog;
     private ZoomImageView imageView;
     private ListView listView;
-    private Matrix matrix;
-    private Matrix savedMatrix;
-    private Object mode;
-    private PointF start;
     private String[] airbases;
     private View view;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState)
+            Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        view = inflater.inflate(R.layout.russia_korea_chart_fragment_layout, container, false);
+        view = inflater.inflate(R.layout.china_korea_chart_fragment_layout, container, false);
 
-        airbases = new String[] {"Nachodka Airport Diagram"};
+        airbases = new String[] {"Liuhe Airport Diagram", "Shenyang Airport Diagram"};
 
         adapter = new ArrayAdapter<String>(this.getActivity(), android.R.layout.simple_list_item_1,
                 airbases);
-        listView = (ListView) view.findViewById(R.id.russia_korea_fragment_list_view);
+        //imageView = (ImageView) view.findViewById(R.id.chart_image_view);
+        listView = (ListView) view.findViewById(R.id.china_korea_fragment_list_view);
 
         if (this.isAdded())
         {
@@ -63,14 +58,36 @@ public class RussiaKoreaChartFragment extends Fragment
             public boolean onItemLongClick(AdapterView<?> parent, View view,
                                            int position, long id)
             {
-                Log.d("Russia position: ", Integer.toString(position));
+
+                /*AlertDialog dialog = new AlertDialog.Builder(getActivity())
+                        .setView(imageView)
+                        //.setPositiveButton("ok", new DialogInterface.OnClickListener() {
+                        //    @Override
+                        //    public void onClick(DialogInterface dialog, int which) {
+                         //       dialog.dismiss();
+                         //   }
+                        .create();*/
+                /*AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                AlertDialog dialog = builder.create();
+                dialog.setView(imageView,0,0,0,0);
+
+
+                dialog.show();*/
+                Log.d("China position: ", Integer.toString(position));
 
                 switch(position)
                 {
                     case 0:
-                        imageView.setImageResource(R.drawable.nachodka_airport_diagram);
+                        imageView.setImageResource(R.drawable.liuhe_airport_diagram);
                         dialog.setContentView(imageView);
                         dialog.setTitle(airbases[0]);
+                        dialog.show();
+                        break;
+
+                    case 1:
+                        imageView.setImageResource(R.drawable.shenyang_airport_diagram);
+                        dialog.setContentView(imageView);
+                        dialog.setTitle(airbases[1]);
                         dialog.show();
                         break;
                 }
@@ -84,6 +101,4 @@ public class RussiaKoreaChartFragment extends Fragment
 
         return view;
     }
-
-
 }

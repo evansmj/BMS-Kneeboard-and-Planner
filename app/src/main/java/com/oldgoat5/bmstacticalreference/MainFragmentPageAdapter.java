@@ -4,6 +4,10 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
+import com.oldgoat5.bmstacticalreference.LoadOut.LoadOutFragment;
+import com.oldgoat5.bmstacticalreference.Navigation.NavigationChartsFragment;
+import com.oldgoat5.bmstacticalreference.Reference.ReferenceFragment;
+
 /*********************************************************************
  * Handles the main page fragments.
  *

@@ -1,4 +1,4 @@
-package com.oldgoat5.bmstacticalreference;
+package com.oldgoat5.bmstacticalreference.Reference;
 
 /*********************************************************************
  * Object that represents a word and its definition.

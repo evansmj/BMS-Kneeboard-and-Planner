@@ -1,4 +1,4 @@
-package com.oldgoat5.bmstacticalreference;
+package com.oldgoat5.bmstacticalreference.Reference;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -9,6 +9,8 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.database.sqlite.SQLiteQueryBuilder;
 import android.text.TextUtils;
 import android.util.Log;
+
+import com.oldgoat5.bmstacticalreference.R;
 
 import java.io.BufferedReader;
 import java.io.IOException;

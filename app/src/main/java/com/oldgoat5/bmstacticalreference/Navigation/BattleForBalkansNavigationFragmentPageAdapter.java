@@ -1,25 +1,22 @@
-package com.oldgoat5.bmstacticalreference;
+package com.oldgoat5.bmstacticalreference.Navigation;
 
 import android.content.Context;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.view.PagerAdapter;
-import android.view.View;
-import android.view.ViewGroup;
 
 /*********************************************************************
- * Pager adapter for Korean Theater of Operations.
+ * Fragment pager adapter for falcon-online.org Balkans theater.
  *
  * @author Michael Evans
- * @since 5/8/2015
+ * @since 5/28/2015
  *********************************************************************/
-public class KoreaNavigationFragmentPageAdapter extends FragmentPagerAdapter
+public class BattleForBalkansNavigationFragmentPageAdapter extends FragmentPagerAdapter
 {
-    private final int COUNT = 5;
+    private final int COUNT = 11;
     private Context context;
 
-    public KoreaNavigationFragmentPageAdapter(FragmentManager fm, Context context)
+    public BattleForBalkansNavigationFragmentPageAdapter(FragmentManager fm, Context context)
     {
         super(fm);
         this.context = context;
@@ -55,22 +52,40 @@ public class KoreaNavigationFragmentPageAdapter extends FragmentPagerAdapter
     @Override
     public CharSequence getPageTitle(int position)
     {
-        switch (position) //south korea, north korea, japan, china, russia
+        switch (position) //italy Sicily Slovenia Albania Bosnia Greece Macedonia Montenegro Serbia Croatia Hungary
         {
             case 0:
-                return "South Korea";
+                return "Italy"; //blue
 
             case 1:
-                return "North Korea";
+                return "Sicily"; //blue
 
             case 2:
-                return "Japan";
+                return "Slovenia"; //blue
 
             case 3:
-                return "China";
+                return "Albania"; //red
 
             case 4:
-                return "Russia";
+                return "Bosnia Herzegovnia"; //red
+
+            case 5:
+                return "Greece"; //blue
+
+            case 6:
+                return "Macedonia"; //red
+
+            case 7:
+                return "Montenegro"; //red
+
+            case 8:
+                return "Serbia"; //red
+
+            case 9:
+                return "Croatia"; //gray
+
+            case 10:
+                return "Hungary"; //gray
 
             default:
                 break;

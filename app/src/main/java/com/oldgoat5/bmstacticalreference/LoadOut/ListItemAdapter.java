@@ -1,4 +1,4 @@
-package com.oldgoat5.bmstacticalreference;
+package com.oldgoat5.bmstacticalreference.LoadOut;
 
 import java.util.ArrayList;
 
@@ -8,6 +8,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
+
+import com.oldgoat5.bmstacticalreference.R;
 
 public class ListItemAdapter extends ArrayAdapter<OrdinanceObject>
 {
