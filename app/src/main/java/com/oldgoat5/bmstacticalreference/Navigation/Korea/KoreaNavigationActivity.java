@@ -51,6 +51,7 @@ public class KoreaNavigationActivity extends FragmentActivity //implements Actio
         //sliding tab layout
         slidingTabLayout = (SlidingTabLayout) findViewById(R.id.korea_sliding_tabs);
         slidingTabLayout.setDistributeEvenly(true);
+        slidingTabLayout.setTabTitleTextColor("#D5DADD");
         slidingTabLayout.setViewPager(viewPager);
 
         slidingTabLayout.setCustomTabColorizer(new SlidingTabLayout.TabColorizer()

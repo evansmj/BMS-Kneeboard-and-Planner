@@ -84,6 +84,8 @@ public class SlidingTabLayout extends HorizontalScrollView {
 
     private boolean mDistributeEvenly;
 
+    private String tabTitleTextColor = "#000000"; //default Black
+
     public SlidingTabLayout(Context context) {
         this(context, null);
     }
@@ -125,8 +127,23 @@ public class SlidingTabLayout extends HorizontalScrollView {
         mTabStrip.setSelectedIndicatorColors(colors);
     }
 
+    /**
+     * Distributes the tabs evenly across the screen regardless of orientation.
+     *
+     * @param distributeEvenly true distributes evenly.
+     */
     public void setDistributeEvenly(boolean distributeEvenly) {
         mDistributeEvenly = distributeEvenly;
+    }
+
+    /**
+     * Sets the title text color of this sliding tab layout.
+     *
+     * @param color The color to set the text as.
+     */
+    public void setTabTitleTextColor(String color)
+    {
+        tabTitleTextColor = color;
     }
 
     /**
@@ -236,7 +253,7 @@ public class SlidingTabLayout extends HorizontalScrollView {
 
             tabTitleView.setText(adapter.getPageTitle(i));
             tabView.setOnClickListener(tabClickListener);
-            tabTitleView.setTextColor(Color.parseColor("#D5DADD"));
+            tabTitleView.setTextColor(Color.parseColor(tabTitleTextColor));
 
             mTabStrip.addView(tabView);
             if (i == mViewPager.getCurrentItem())
