@@ -13,6 +13,8 @@ import android.widget.ImageView;
 
 /*********************************************************************
  * Extends ImageView to allow zoom and panning.
+ *
+ * mostly from http://www.c-sharpcorner.com/UploadFile/88b6e5/multi-touch-panning-pinch-zoom-image-view-in-android-using/
  *********************************************************************/
 public class ZoomImageView extends ImageView
 {

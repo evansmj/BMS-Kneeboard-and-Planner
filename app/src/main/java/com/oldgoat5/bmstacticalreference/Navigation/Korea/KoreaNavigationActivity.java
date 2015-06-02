@@ -1,4 +1,4 @@
-package com.oldgoat5.bmstacticalreference.Navigation;
+package com.oldgoat5.bmstacticalreference.Navigation.Korea;
 
 import android.app.ActionBar;
 import android.graphics.Color;
@@ -39,7 +39,7 @@ public class KoreaNavigationActivity extends FragmentActivity //implements Actio
         tabsList.add(new PagerItem("South Korea", Color.BLUE, Color.GRAY));
         tabsList.add(new PagerItem("North Korea", Color.RED, Color.GRAY));
         tabsList.add(new PagerItem("Japan", Color.GRAY, Color.GRAY));
-        tabsList.add(new PagerItem("China",Color.GRAY, Color.GRAY)); //TODO fix colors
+        tabsList.add(new PagerItem("China",Color.GRAY, Color.GRAY));
         tabsList.add(new PagerItem("Russia", Color.GRAY, Color.GRAY));
 
         viewPager = (ViewPager) findViewById(R.id.korea_navigation_pager);

@@ -9,8 +9,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-import com.oldgoat5.bmstacticalreference.Navigation.BattleForBalkansNavigationActivity;
-import com.oldgoat5.bmstacticalreference.Navigation.KoreaNavigationActivity;
+import com.oldgoat5.bmstacticalreference.Navigation.Balkans.BattleForBalkansNavigationActivity;
+import com.oldgoat5.bmstacticalreference.Navigation.Korea.KoreaNavigationActivity;
 import com.oldgoat5.bmstacticalreference.R;
 
 /*********************************************************************

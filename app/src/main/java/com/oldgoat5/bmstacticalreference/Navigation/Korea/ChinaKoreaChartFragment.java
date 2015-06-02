@@ -1,4 +1,4 @@
-package com.oldgoat5.bmstacticalreference.Navigation;
+package com.oldgoat5.bmstacticalreference.Navigation.Korea;
 
 import android.app.Dialog;
 import android.content.Context;
@@ -12,6 +12,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.oldgoat5.bmstacticalreference.Navigation.ZoomImageView;
 import com.oldgoat5.bmstacticalreference.R;
 
 /*********************************************************************

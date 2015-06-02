@@ -30,13 +30,13 @@
         </activity>
 
         <activity
-            android:name=".Navigation.KoreaNavigationActivity"
+            android:name=".Navigation.Korea.KoreaNavigationActivity"
             android:label="@string/korea_theater_title"
             android:theme="@style/BlueTheme">
         </activity>
 
         <activity
-            android:name=".Navigation.BattleForBalkansNavigationActivity"
+            android:name=".Navigation.Balkans.BattleForBalkansNavigationActivity"
             android:label="@string/balkans" >
         </activity>
 

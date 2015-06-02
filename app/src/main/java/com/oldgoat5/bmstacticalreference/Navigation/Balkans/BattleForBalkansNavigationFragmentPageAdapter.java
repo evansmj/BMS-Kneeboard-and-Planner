@@ -1,9 +1,15 @@
-package com.oldgoat5.bmstacticalreference.Navigation;
+package com.oldgoat5.bmstacticalreference.Navigation.Balkans;
 
 import android.content.Context;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+
+import com.oldgoat5.bmstacticalreference.Navigation.Korea.ChinaKoreaChartFragment;
+import com.oldgoat5.bmstacticalreference.Navigation.Korea.JapanKoreaChartFragment;
+import com.oldgoat5.bmstacticalreference.Navigation.Korea.NorthKoreaChartFragment;
+import com.oldgoat5.bmstacticalreference.Navigation.Korea.RussiaKoreaChartFragment;
+import com.oldgoat5.bmstacticalreference.Navigation.Korea.SouthKoreaChartFragment;
 
 /*********************************************************************
  * Fragment pager adapter for falcon-online.org Balkans theater.
@@ -28,7 +34,7 @@ public class BattleForBalkansNavigationFragmentPageAdapter extends FragmentPager
         switch (position) //south korea, north korea, japan, china, russia
         {
             case 0:
-                return new SouthKoreaChartFragment();
+                return new ItalyBalkansChartFragment();
 
             case 1:
                 return new NorthKoreaChartFragment();

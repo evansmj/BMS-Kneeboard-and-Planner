@@ -1,4 +1,4 @@
-package com.oldgoat5.bmstacticalreference.Navigation;
+package com.oldgoat5.bmstacticalreference.Navigation.Korea;
 
 import android.content.Context;
 import android.support.v4.app.Fragment;
