@@ -20,12 +20,12 @@ import com.oldgoat5.bmstacticalreference.Navigation.Korea.SouthKoreaChartFragmen
 public class BattleForBalkansNavigationFragmentPageAdapter extends FragmentPagerAdapter
 {
     private final int COUNT = 11;
-    private Context context;
+    private Context CONTEXT;
 
     public BattleForBalkansNavigationFragmentPageAdapter(FragmentManager fm, Context context)
     {
         super(fm);
-        this.context = context;
+        CONTEXT = context;
     }
 
     @Override
@@ -37,7 +37,7 @@ public class BattleForBalkansNavigationFragmentPageAdapter extends FragmentPager
                 return new ItalyBalkansChartFragment();
 
             case 1:
-                return new NorthKoreaChartFragment();
+                return new SicilyBalkansChartFragment();
 
             case 2:
                 return new JapanKoreaChartFragment();

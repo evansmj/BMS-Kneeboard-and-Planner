@@ -23,13 +23,13 @@ public class ItalyBalkansChartFragment extends Fragment
 {
     Context CONTEXT;
 
-    private ArrayAdapter<String> adapter;
+    /*private ArrayAdapter<String> adapter;
     private Dialog dialog;
     private ZoomImageView imageView1;
     private ZoomImageView imageView2;
     private ZoomImageView imageView3;
     private ListView listView;
-    private String[][] airbases;
+    private String[][] airbases;*/
     private View view;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -44,6 +44,9 @@ public class ItalyBalkansChartFragment extends Fragment
         {
             CONTEXT = getActivity();
         }
+
+        //TODO add - if infochart ImageView onClick(), show ZoomImageView dialog with chart to allow easy zooming.
+
 /*
         imageView1 = new ZoomImageView(CONTEXT);
         imageView1.setImageResource(R.drawable.italy_1_airbases);
