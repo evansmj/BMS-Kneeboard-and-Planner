@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.oldgoat5.bmstacticalreference.Navigation.ZoomImageView;
 import com.oldgoat5.bmstacticalreference.R;
 
 public class ReferenceFragment extends Fragment
@@ -18,9 +19,12 @@ public class ReferenceFragment extends Fragment
 
     private Dialog defaultFrequenciesDialog;
     private Dialog navigationSteerpointsDialog;
+    private Dialog tacanIlsCheckListDialog;
     private Button brevityDictionaryStartButton;
     private Button defaultFrequenciesButton;
     private Button navigationSteerpointsButton;
+    private Button tacanIlsCheckListButton;
+    private ZoomImageView tacanIlsCheckListImageView;
     private View view;
 
     @Override
@@ -36,6 +40,8 @@ public class ReferenceFragment extends Fragment
                 R.id.default_frequencies_select_button);
         navigationSteerpointsButton = (Button) view.findViewById(
                 R.id.navigation_steerpoints_select_button);
+        tacanIlsCheckListButton = (Button) view.findViewById(
+                R.id.tacan_ils_checklist_select_button);
 
         if (this.isAdded())
         {
@@ -44,6 +50,9 @@ public class ReferenceFragment extends Fragment
 
         navigationSteerpointsDialog = new Dialog(CONTEXT);
         defaultFrequenciesDialog = new Dialog(CONTEXT);
+        tacanIlsCheckListDialog = new Dialog(CONTEXT);
+
+        tacanIlsCheckListImageView = new ZoomImageView(CONTEXT);
 
         brevityDictionaryStartButton.setOnClickListener(new View.OnClickListener()
         {
@@ -75,6 +84,19 @@ public class ReferenceFragment extends Fragment
                 navigationSteerpointsDialog.show();
             }
         });
+
+        tacanIlsCheckListButton.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                tacanIlsCheckListImageView.setImageResource(R.drawable.tacan_ils_checklist);
+                tacanIlsCheckListDialog.setContentView(tacanIlsCheckListImageView);
+                tacanIlsCheckListDialog.setTitle("Tacan ILS Checklist");
+                tacanIlsCheckListDialog.show();
+            }
+        });
+
 
         // TODO add tactical formation reference pictures.
         return view;

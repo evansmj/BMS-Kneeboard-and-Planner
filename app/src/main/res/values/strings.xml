@@ -1101,6 +1101,9 @@
     <string name="total">Trip Fuel Burn</string>
     <string name="result">Result</string>
 
+    <!-- Reference Fragment -->
+    <string name="tacan_ils_checklist">TACAN ILS Checklist</string>
+
     <!-- Reference Fragment Steerpoints Dialog-->
     <string name="steerpoints">Navigation Steerpoints</string>
     <string name="stpts">STPT#</string>

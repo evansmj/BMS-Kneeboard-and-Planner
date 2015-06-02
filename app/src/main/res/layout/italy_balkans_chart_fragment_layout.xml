@@ -3,33 +3,34 @@
     android:id="@+id/scrollView"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:layout_gravity="center">
 
     <LinearLayout
         android:layout_width="wrap_content"
-        android:orientation="vertical"
-        android:layout_height="wrap_content">
-
-    <ImageView
-        android:id="@+id/italy_balkans_image_view1"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:src="@drawable/italy_1_airbases"/>
+        android:orientation="vertical">
 
-    <ImageView
-        android:id="@+id/italy_balkans_image_view2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:src="@drawable/italy_2_airbases"/>
+        <ImageView
+            android:id="@+id/italy_balkans_image_view1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/italy_1_airbases"/>
 
-    <ImageView
-        android:id="@+id/italy_balkans_image_view3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:src="@drawable/italy_3_airbases"/>
+        <ImageView
+            android:id="@+id/italy_balkans_image_view2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/italy_2_airbases"/>
+
+        <ImageView
+            android:id="@+id/italy_balkans_image_view3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/italy_3_airbases"/>
 
     </LinearLayout>
 </ScrollView>
