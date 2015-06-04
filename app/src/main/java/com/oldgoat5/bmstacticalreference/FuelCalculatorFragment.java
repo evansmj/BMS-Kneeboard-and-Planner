@@ -26,7 +26,8 @@ public class FuelCalculatorFragment extends Fragment
     private RadioButton lowRadioButton;
     private RadioButton medRadioButton;
     private RadioButton hiRadioButton;
-    private RadioGroup radioGroup;
+    private RadioGroup altitudeRadioGroup;
+    private RadioGroup weatherRadioGroup;
     private TextView homeAltTextView;
     private TextView bingoFuelTextView;
     private TextView jokerFuelTextView;
@@ -34,12 +35,10 @@ public class FuelCalculatorFragment extends Fragment
     private TextView tripTextView;
     private View view;
 
-    private int homeAltFuel;
-    private int jokerFuel;
-    private int bingoFuel;
-    private int totalFuel;
-    private int tripFuel;
+    private int homeAltMiles;
+    private int tripMiles;
     private int selectedAltitude;
+    private int weatherConditions;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -55,7 +54,8 @@ public class FuelCalculatorFragment extends Fragment
         medRadioButton = (RadioButton) view.findViewById(R.id.med_radio_button);
         hiRadioButton = (RadioButton) view.findViewById(R.id.hi_radio_button);
 
-        radioGroup = (RadioGroup) view.findViewById(R.id.radioGroup);
+        altitudeRadioGroup = (RadioGroup) view.findViewById(R.id.alt_radio_group);
+        weatherRadioGroup = (RadioGroup) view.findViewById(R.id.weather_radio_group);
 
         bingoFuelTextView = (TextView) view.findViewById(R.id.bingo_result_text_view);
         jokerFuelTextView = (TextView) view.findViewById(R.id.joker_result_text_view);
@@ -64,6 +64,8 @@ public class FuelCalculatorFragment extends Fragment
         tripTextView = (TextView) view.findViewById(R.id.trip_nm_text_view);
 
         selectedAltitude = 1;
+        weatherConditions = 0; //TODO make radio buttons be selected by default
+        //TODO get rid of total fuel burn result.
 
         homeAltEditText.addTextChangedListener(new TextWatcher()
         {
@@ -89,7 +91,7 @@ public class FuelCalculatorFragment extends Fragment
                 {
                     try
                     {
-                        homeAltFuel = Integer.parseInt(editable.toString());
+                        homeAltMiles = Integer.parseInt(editable.toString());
                         calculateFuel();
                     }
                     catch (NumberFormatException e)
@@ -98,7 +100,7 @@ public class FuelCalculatorFragment extends Fragment
                     }
                 }
                 else
-                    homeAltFuel = 0;
+                    homeAltMiles = 0;
             }
         });
 
@@ -126,7 +128,7 @@ public class FuelCalculatorFragment extends Fragment
                 {
                     try
                     {
-                        tripFuel = Integer.parseInt(editable.toString());
+                        tripMiles = Integer.parseInt(editable.toString());
                         calculateFuel();
                     }
                     catch (NumberFormatException e)
@@ -135,16 +137,16 @@ public class FuelCalculatorFragment extends Fragment
                     }
                 }
                 else
-                    tripFuel = 0;
+                    tripMiles = 0;
             }
         });
 
-        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
+        altitudeRadioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
         {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i)
             {
-                Log.d("fuelCalc","radioG.changed");
+                Log.d("fuelCalc", "radioG.changed");
                 Log.d("fuelCalc", "i = " + Integer.toString(i));
                 switch (i)
                 {
@@ -158,10 +160,34 @@ public class FuelCalculatorFragment extends Fragment
                         selectedAltitude = 2; //high
                         break;
                     default:
-                       selectedAltitude = 1;
+                        selectedAltitude = 1;
                         break;
                 }
                 Log.d("fuelCalc", "radioGChanged selAlt = " + Integer.toString(selectedAltitude));
+                calculateFuel();
+            }
+        });
+
+        weatherRadioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
+        {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i)
+            {
+                switch (i)
+                {
+                    case R.id.vmc_radio_button:
+                        weatherConditions = 400;
+                        break;
+
+                    case R.id.imc_radio_button:
+                        weatherConditions = 800;
+                        break;
+
+                    default:
+                        weatherConditions = 0;
+                        break;
+                }
+
                 calculateFuel();
             }
         });
@@ -173,28 +199,31 @@ public class FuelCalculatorFragment extends Fragment
         int total;
 
         Log.d("fuelCalc", "calcFuel called");
-        Log.d("fuelCalc", "tripFuel = " + Integer.toString(tripFuel));
-        Log.d("fuelCalc", "homeAltFuel = " + Integer.toString(tripFuel));
+        Log.d("fuelCalc", "tripFuel = " + Integer.toString(tripMiles));
+        Log.d("fuelCalc", "homeAltFuel = " + Integer.toString(tripMiles));
         Log.d("fuelCalc", "selectedAltitude= " + Integer.toString(selectedAltitude));
 
         switch (selectedAltitude)
         {
             case 0:
-                total = 1200 + (tripFuel * 20) + (homeAltFuel * 15); //low
+                total = 1200 + weatherConditions + (tripMiles * 20) + (homeAltMiles * 10); //low
                 break;
+
             case 1:
-                total = 1200 + (tripFuel * 15) + (homeAltFuel * 15); //med
+                total = 1200 + weatherConditions + (tripMiles * 15) + (homeAltMiles * 10); //med
                 break;
+
             case 2:
-                total = 1200 + (tripFuel * 10) + (homeAltFuel * 15); //high
+                total = 1200 + weatherConditions + (tripMiles * 10) + (homeAltMiles * 10); //high
                 break;
+
             default:
                 total = 0;
                 break;
         }
 
-        bingoFuelTextView.setText(Integer.toString(total + 1000) + " lbs");
-        jokerFuelTextView.setText(Integer.toString(total + 2000) + " lbs");
-        totalFuelTextView.setText(Integer.toString(total) + " lbs");
+        bingoFuelTextView.setText(Integer.toString(total) + " lbs");
+        jokerFuelTextView.setText(Integer.toString(total + 1000) + " lbs");
+        totalFuelTextView.setText(Integer.toString(5) + " lbs");
     }
 }

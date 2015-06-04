@@ -12,6 +12,7 @@ import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.os.Environment;
 import android.util.Log;
 
 public class DBTools extends SQLiteOpenHelper
@@ -30,6 +31,7 @@ public class DBTools extends SQLiteOpenHelper
         Log.d("DBTools", "constructor");
         this.CONTEXT = context;
         DB_PATH = context.getApplicationInfo().dataDir + "/databases/";
+        //DB_PATH = Environment.getExternalStorageDirectory();
         Log.d("constructor, DB_PATH=", DB_PATH);
         Log.d("cnstructor, context=", context.toString());
     }
@@ -43,7 +45,7 @@ public class DBTools extends SQLiteOpenHelper
         {
             Log.d("DBTools", "if !dbExists called");
      
-            this.getReadableDatabase();
+            database = this.getReadableDatabase();
             
             try
             {

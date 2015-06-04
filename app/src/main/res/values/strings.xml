@@ -1091,8 +1091,9 @@
     <string name="tactical_formation_reference_title">Tactical Formation Reference</string>
 
     <!-- Fuel Calculator Fragment -->
-    <string name="trip_nm_text_view">Trip Nautical Miles:</string>
-    <string name="distance_to_alternate">Homeplate to Alternate:</string>
+    <string name="trip_nm_text_view">Return Leg Nautical Miles:</string>
+    <string name="distance_to_alternate">Home to Alternate Nautical Miles:</string>
+    <string name="altitude">Altitude:</string>
     <string name="low_level">Low Alt (&lt; 5,000ft)</string>
     <string name="med_level">Med Alt</string>
     <string name="hi_level">Hi Alt (&gt; 25,000ft)</string>
@@ -1100,6 +1101,9 @@
     <string name="bingo">Bingo</string>
     <string name="total">Trip Fuel Burn</string>
     <string name="result">Result</string>
+    <string name="weather">Weather:</string>
+    <string name="vmc">Visual Meteorological Conditions</string>
+    <string name="imc">Instrument Meteorological Conditions</string>
 
     <!-- Reference Fragment -->
     <string name="tacan_ils_checklist">TACAN ILS Checklist</string>

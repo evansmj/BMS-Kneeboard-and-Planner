@@ -44,12 +44,21 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"/>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/altitude_text_view"
+        android:layout_alignParentLeft="true"
+        android:text="@string/altitude"
+        android:layout_below="@+id/distance_to_alternate_edit_text"
+        android:textAppearance="?android:attr/textAppearanceLarge"/>
+
     <RadioGroup
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/distance_to_alternate_edit_text"
+        android:layout_below="@+id/altitude_text_view"
         android:layout_alignParentLeft="true"
-        android:id="@+id/radioGroup">
+        android:id="@+id/alt_radio_group">
 
         <RadioButton
             android:layout_width="wrap_content"
@@ -73,11 +82,39 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/alt_radio_group"
+        android:id="@+id/weather_text_view"
+        android:text="@string/weather"
+        android:textAppearance="?android:attr/textAppearanceLarge"/>
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/weather_text_view"
+        android:id="@+id/weather_radio_group">
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/vmc"
+            android:id="@+id/vmc_radio_button"/>
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/imc"
+            android:id="@+id/imc_radio_button"/>
+    </RadioGroup>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="@string/total"
         android:id="@+id/total_fuel_text_view"
-        android:layout_centerVertical="true"
         android:layout_alignParentLeft="true"
+        android:layout_below="@+id/weather_radio_group"
         android:layout_alignParentStart="true"/>
 
     <TextView
