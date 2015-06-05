@@ -25,23 +25,23 @@
         </activity>
         
         <activity
-            android:name=".LoadOut.ListViewPopulateDataBase"
+            android:name=".loadout.ListViewPopulateDataBase"
             android:label="@string/app_name" >
         </activity>
 
         <activity
-            android:name=".Navigation.Korea.KoreaNavigationActivity"
+            android:name=".navigation.korea.KoreaNavigationActivity"
             android:label="@string/korea_theater_title"
             android:theme="@style/BlueTheme">
         </activity>
 
         <activity
-            android:name=".Navigation.Balkans.BattleForBalkansNavigationActivity"
+            android:name=".navigation.balkans.BattleForBalkansNavigationActivity"
             android:label="@string/balkans" >
         </activity>
 
         <activity
-            android:name=".Reference.BrevityDictionaryActivity"
+            android:name=".reference.BrevityDictionaryActivity"
             android:label="@string/brevity_dictionary_title"
             android:noHistory="true"
             android:theme="@style/BlueTheme">

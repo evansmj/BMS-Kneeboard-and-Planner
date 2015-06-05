@@ -1,4 +1,4 @@
-package com.oldgoat5.bmstacticalreference.LoadOut;
+package com.oldgoat5.bmstacticalreference.loadout;
 
 import java.io.File;
 import java.io.FileOutputStream;

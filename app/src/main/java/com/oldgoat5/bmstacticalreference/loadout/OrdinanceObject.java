@@ -1,4 +1,4 @@
-package com.oldgoat5.bmstacticalreference.LoadOut;
+package com.oldgoat5.bmstacticalreference.loadout;
 
 /*****************************************************************
  * Contains a class for containing ordinance objects from the 
