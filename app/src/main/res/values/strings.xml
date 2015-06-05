@@ -1097,8 +1097,8 @@
     <string name="low_level">Low Alt (&lt; 5,000ft)</string>
     <string name="med_level">Med Alt</string>
     <string name="hi_level">Hi Alt (&gt; 25,000ft)</string>
-    <string name="joker">Joker</string>
-    <string name="bingo">Bingo</string>
+    <string name="joker">Joker: </string>
+    <string name="bingo">Bingo: </string>
     <string name="total">Trip Fuel Burn</string>
     <string name="result">Result</string>
     <string name="weather">Weather:</string>

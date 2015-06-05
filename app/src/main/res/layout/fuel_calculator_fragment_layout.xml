@@ -111,30 +111,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/total"
-        android:id="@+id/total_fuel_text_view"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/weather_radio_group"
-        android:layout_alignParentStart="true"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text=""
-        android:id="@+id/total_fuel_result_text_view"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="@string/joker"
         android:id="@+id/joker_text_view"
-        android:layout_below="@+id/total_fuel_text_view"
-        android:layout_alignRight="@+id/total_fuel_text_view"
-        android:layout_alignEnd="@+id/total_fuel_text_view"/>
+        android:layout_below="@+id/weather_radio_group"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -153,8 +132,7 @@
         android:text=""
         android:id="@+id/joker_result_text_view"
         android:layout_above="@+id/bingo_text_view"
-        android:layout_alignLeft="@+id/total_fuel_result_text_view"
-        android:layout_alignStart="@+id/total_fuel_result_text_view"/>
+        android:layout_centerHorizontal="true"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -163,7 +141,6 @@
         android:text=""
         android:id="@+id/bingo_result_text_view"
         android:layout_alignBottom="@+id/bingo_text_view"
-        android:layout_alignLeft="@+id/joker_result_text_view"
-        android:layout_alignStart="@+id/joker_result_text_view"/>
+        android:layout_centerHorizontal="true"/>
 
 </RelativeLayout>

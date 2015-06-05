@@ -60,8 +60,11 @@ public class FuelCalculatorFragment extends Fragment
         bingoFuelTextView = (TextView) view.findViewById(R.id.bingo_result_text_view);
         jokerFuelTextView = (TextView) view.findViewById(R.id.joker_result_text_view);
         homeAltTextView = (TextView) view.findViewById(R.id.distance_to_alternate_text_view);
-        totalFuelTextView = (TextView) view.findViewById(R.id.total_fuel_result_text_view);
-        tripTextView = (TextView) view.findViewById(R.id.trip_nm_text_view);
+        //totalFuelTextView = (TextView) view.findViewById(R.id.total_fuel_result_text_view);
+        //tripTextView = (TextView) view.findViewById(R.id.trip_nm_text_view);
+
+        altitudeRadioGroup.check(R.id.med_radio_button);
+        weatherRadioGroup.check(R.id.vmc_radio_button);
 
         selectedAltitude = 1;
         weatherConditions = 0; //TODO make radio buttons be selected by default
@@ -224,6 +227,6 @@ public class FuelCalculatorFragment extends Fragment
 
         bingoFuelTextView.setText(Integer.toString(total) + " lbs");
         jokerFuelTextView.setText(Integer.toString(total + 1000) + " lbs");
-        totalFuelTextView.setText(Integer.toString(5) + " lbs");
+        //totalFuelTextView.setText(Integer.toString(5) + " lbs");
     }
 }
