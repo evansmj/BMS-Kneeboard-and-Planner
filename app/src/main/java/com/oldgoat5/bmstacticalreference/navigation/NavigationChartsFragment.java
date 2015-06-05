@@ -1,4 +1,4 @@
-package com.oldgoat5.bmstacticalreference.Navigation;
+package com.oldgoat5.bmstacticalreference.navigation;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,8 +9,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-import com.oldgoat5.bmstacticalreference.Navigation.Balkans.BattleForBalkansNavigationActivity;
-import com.oldgoat5.bmstacticalreference.Navigation.Korea.KoreaNavigationActivity;
+import com.oldgoat5.bmstacticalreference.navigation.balkans.BattleForBalkansNavigationActivity;
+import com.oldgoat5.bmstacticalreference.navigation.korea.KoreaNavigationActivity;
 import com.oldgoat5.bmstacticalreference.R;
 
 /*********************************************************************

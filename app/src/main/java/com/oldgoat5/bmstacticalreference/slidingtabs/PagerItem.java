@@ -1,4 +1,4 @@
-package com.oldgoat5.bmstacticalreference.SlidingTabs;
+package com.oldgoat5.bmstacticalreference.slidingtabs;
 
 /*********************************************************************
  * A tab object for sliding tab layout.

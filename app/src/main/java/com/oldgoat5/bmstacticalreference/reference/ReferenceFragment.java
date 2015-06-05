@@ -1,4 +1,4 @@
-package com.oldgoat5.bmstacticalreference.Reference;
+package com.oldgoat5.bmstacticalreference.reference;
 
 import android.app.Dialog;
 import android.content.Context;
@@ -10,7 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-import com.oldgoat5.bmstacticalreference.Navigation.ZoomImageView;
+import com.oldgoat5.bmstacticalreference.navigation.ZoomImageView;
 import com.oldgoat5.bmstacticalreference.R;
 
 public class ReferenceFragment extends Fragment

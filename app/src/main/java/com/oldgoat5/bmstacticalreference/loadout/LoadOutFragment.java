@@ -1,8 +1,5 @@
 package com.oldgoat5.bmstacticalreference.loadout;
 
-import java.io.IOException;
-import java.util.ArrayList;
-
 import android.database.sqlite.SQLiteException;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -16,6 +13,9 @@ import android.widget.ListView;
 import android.widget.RadioButton;
 
 import com.oldgoat5.bmstacticalreference.R;
+
+import java.io.IOException;
+import java.util.ArrayList;
 
 /*********************************************************************
  * @author Michael Evans

@@ -1,7 +1,5 @@
 package com.oldgoat5.bmstacticalreference.loadout;
 
-import java.util.ArrayList;
-
 import android.app.ListActivity;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -10,6 +8,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
+
+import java.util.ArrayList;
 
 public class ListViewPopulateDataBase extends ListActivity
 {

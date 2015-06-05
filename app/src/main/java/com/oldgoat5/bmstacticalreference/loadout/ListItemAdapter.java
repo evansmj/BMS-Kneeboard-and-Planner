@@ -1,7 +1,5 @@
 package com.oldgoat5.bmstacticalreference.loadout;
 
-import java.util.ArrayList;
-
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +8,8 @@ import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 import com.oldgoat5.bmstacticalreference.R;
+
+import java.util.ArrayList;
 
 public class ListItemAdapter extends ArrayAdapter<OrdinanceObject>
 {

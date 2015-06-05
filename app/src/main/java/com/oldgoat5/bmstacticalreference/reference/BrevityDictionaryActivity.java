@@ -1,4 +1,4 @@
-package com.oldgoat5.bmstacticalreference.Reference;
+package com.oldgoat5.bmstacticalreference.reference;
 
 import android.app.Activity;
 import android.app.SearchManager;
@@ -7,7 +7,6 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.widget.ListView;
