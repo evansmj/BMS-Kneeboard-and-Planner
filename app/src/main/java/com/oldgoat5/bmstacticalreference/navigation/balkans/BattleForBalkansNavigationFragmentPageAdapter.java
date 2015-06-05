@@ -1,15 +1,15 @@
-package com.oldgoat5.bmstacticalreference.Navigation.Balkans;
+package com.oldgoat5.bmstacticalreference.navigation.balkans;
 
 import android.content.Context;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
-import com.oldgoat5.bmstacticalreference.Navigation.Korea.ChinaKoreaChartFragment;
-import com.oldgoat5.bmstacticalreference.Navigation.Korea.JapanKoreaChartFragment;
-import com.oldgoat5.bmstacticalreference.Navigation.Korea.NorthKoreaChartFragment;
-import com.oldgoat5.bmstacticalreference.Navigation.Korea.RussiaKoreaChartFragment;
-import com.oldgoat5.bmstacticalreference.Navigation.Korea.SouthKoreaChartFragment;
+import com.oldgoat5.bmstacticalreference.navigation.korea.ChinaKoreaChartFragment;
+import com.oldgoat5.bmstacticalreference.navigation.korea.JapanKoreaChartFragment;
+import com.oldgoat5.bmstacticalreference.navigation.korea.NorthKoreaChartFragment;
+import com.oldgoat5.bmstacticalreference.navigation.korea.RussiaKoreaChartFragment;
+import com.oldgoat5.bmstacticalreference.navigation.korea.SouthKoreaChartFragment;
 
 /*********************************************************************
  * Fragment pager adapter for falcon-online.org Balkans theater.

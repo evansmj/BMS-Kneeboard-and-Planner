@@ -1,4 +1,4 @@
-package com.oldgoat5.bmstacticalreference.Reference;
+package com.oldgoat5.bmstacticalreference.reference;
 
 import android.app.Activity;
 import android.app.SearchManager;

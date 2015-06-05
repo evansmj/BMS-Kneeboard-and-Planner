@@ -1,6 +1,4 @@
-package com.oldgoat5.bmstacticalreference.LoadOut;
-
-import java.util.ArrayList;
+package com.oldgoat5.bmstacticalreference.loadout;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -11,13 +9,15 @@ import android.widget.TextView;
 
 import com.oldgoat5.bmstacticalreference.R;
 
-public class ListItemAdapter extends ArrayAdapter<OrdinanceObject>
+import java.util.ArrayList;
+
+public class ListItemAdapter extends ArrayAdapter<OrdnanceObject>
 {
     private final Context context;
-    private final ArrayList<OrdinanceObject> itemsArrayList;
+    private final ArrayList<OrdnanceObject> itemsArrayList;
     
     public ListItemAdapter(Context context, 
-            ArrayList<OrdinanceObject> itemsArrayList)
+            ArrayList<OrdnanceObject> itemsArrayList)
     {
         super(context, R.layout.ordinance_object, itemsArrayList);
         

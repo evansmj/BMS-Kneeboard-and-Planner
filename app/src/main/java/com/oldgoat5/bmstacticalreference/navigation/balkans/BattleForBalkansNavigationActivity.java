@@ -1,14 +1,14 @@
-package com.oldgoat5.bmstacticalreference.Navigation.Balkans;
+package com.oldgoat5.bmstacticalreference.navigation.balkans;
 
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
 
-import com.oldgoat5.bmstacticalreference.Navigation.Korea.KoreaNavigationFragmentPageAdapter;
-import com.oldgoat5.bmstacticalreference.SlidingTabs.PagerItem;
+import com.oldgoat5.bmstacticalreference.navigation.korea.KoreaNavigationFragmentPageAdapter;
+import com.oldgoat5.bmstacticalreference.slidingtabs.PagerItem;
 import com.oldgoat5.bmstacticalreference.R;
-import com.oldgoat5.bmstacticalreference.SlidingTabs.SlidingTabLayout;
+import com.oldgoat5.bmstacticalreference.slidingtabs.SlidingTabLayout;
 
 import java.util.ArrayList;
 

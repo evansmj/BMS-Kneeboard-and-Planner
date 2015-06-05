@@ -1,4 +1,4 @@
-package com.oldgoat5.bmstacticalreference.Navigation;
+package com.oldgoat5.bmstacticalreference.navigation;
 
 import android.content.Context;
 import android.graphics.Matrix;

@@ -1,4 +1,4 @@
-package com.oldgoat5.bmstacticalreference.Navigation.Balkans;
+package com.oldgoat5.bmstacticalreference.navigation.balkans;
 
 import android.content.Context;
 import android.os.Bundle;

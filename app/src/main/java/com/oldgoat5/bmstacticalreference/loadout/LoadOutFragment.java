@@ -1,4 +1,4 @@
-package com.oldgoat5.bmstacticalreference.LoadOut;
+package com.oldgoat5.bmstacticalreference.loadout;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -310,11 +310,11 @@ public class LoadOutFragment extends Fragment
      * 
      * @return Returns an ArrayList of all database 
      *****************************************************************/
-    private ArrayList<OrdinanceObject> generateData()
+    private ArrayList<OrdnanceObject> generateData()
     {
         Log.d("loadoutfragment", "begin generateData()");
         //ArrayList<RowItem> items;
-        ArrayList<OrdinanceObject> dataList;
+        ArrayList<OrdnanceObject> dataList;
         
         dataList = dbTools.getAllRows();
         

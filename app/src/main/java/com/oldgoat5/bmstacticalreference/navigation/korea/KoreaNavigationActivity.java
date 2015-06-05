@@ -1,4 +1,4 @@
-package com.oldgoat5.bmstacticalreference.Navigation.Korea;
+package com.oldgoat5.bmstacticalreference.navigation.korea;
 
 import android.app.ActionBar;
 import android.graphics.Color;
@@ -8,9 +8,9 @@ import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.widget.Toast;
 
-import com.oldgoat5.bmstacticalreference.SlidingTabs.PagerItem;
+import com.oldgoat5.bmstacticalreference.slidingtabs.PagerItem;
 import com.oldgoat5.bmstacticalreference.R;
-import com.oldgoat5.bmstacticalreference.SlidingTabs.SlidingTabLayout;
+import com.oldgoat5.bmstacticalreference.slidingtabs.SlidingTabLayout;
 
 import java.util.ArrayList;
 

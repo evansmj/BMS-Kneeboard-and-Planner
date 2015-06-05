@@ -1,4 +1,4 @@
-package com.oldgoat5.bmstacticalreference.LoadOut;
+package com.oldgoat5.bmstacticalreference.loadout;
 
 /*****************************************************************
  * Contains a class for containing ordinance objects from the 
@@ -7,7 +7,7 @@ package com.oldgoat5.bmstacticalreference.LoadOut;
  * @author Michael Evans
  * 
  *****************************************************************/
-public class OrdinanceObject
+public class OrdnanceObject
 {
     private String id;
     private String name;
@@ -32,7 +32,7 @@ public class OrdinanceObject
      * @param blast
      * @param info
      *****************************************************************/
-    public OrdinanceObject(String id, String name, String weight, String drag, 
+    public OrdnanceObject(String id, String name, String weight, String drag,
             String damage, String guidance, String range, String blast, String info)
     {
         this.id = id;

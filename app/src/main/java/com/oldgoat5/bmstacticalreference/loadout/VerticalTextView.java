@@ -1,4 +1,4 @@
-package com.oldgoat5.bmstacticalreference.LoadOut;
+package com.oldgoat5.bmstacticalreference.loadout;
 
 import android.content.Context;
 import android.graphics.Canvas;

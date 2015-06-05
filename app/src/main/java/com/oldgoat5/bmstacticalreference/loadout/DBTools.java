@@ -1,4 +1,11 @@
-package com.oldgoat5.bmstacticalreference.LoadOut;
+package com.oldgoat5.bmstacticalreference.loadout;
+
+import android.content.Context;
+import android.database.Cursor;
+import android.database.SQLException;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -6,14 +13,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.ArrayList;
-
-import android.content.Context;
-import android.database.Cursor;
-import android.database.SQLException;
-import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteOpenHelper;
-import android.os.Environment;
-import android.util.Log;
 
 public class DBTools extends SQLiteOpenHelper
 {
@@ -164,18 +163,18 @@ public class DBTools extends SQLiteOpenHelper
      * 
      * @return Returns a HashMap of all rows in the database.
      *****************************************************************/
-    public ArrayList<OrdinanceObject> getAllRows()
+    public ArrayList<OrdnanceObject> getAllRows()
     {
         Log.d("dbtools", "begin getAllRows()");
         Log.d("myDataBase path", database.getPath());
         Log.d("myDataBase version", Integer.toString(database.getVersion()));
         
         //ArrayList<HashMap<String, String>> rowsArrayList;
-        ArrayList<OrdinanceObject> rowsArrayList;
+        ArrayList<OrdnanceObject> rowsArrayList;
         //HashMap<String, String> rowMap = new HashMap<String, String>();
         
         //rowsArrayList = new ArrayList<HashMap<String, String>>();
-        rowsArrayList = new ArrayList<OrdinanceObject>();
+        rowsArrayList = new ArrayList<OrdnanceObject>();
         
         String selectQuery = "SELECT * FROM ordinance ORDER BY _id";
         
@@ -198,7 +197,7 @@ public class DBTools extends SQLiteOpenHelper
         {
             do
             {
-                rowsArrayList.add(new OrdinanceObject(cursor.getString(0),
+                rowsArrayList.add(new OrdnanceObject(cursor.getString(0),
                         cursor.getString(1), cursor.getString(2), 
                         cursor.getString(3), cursor.getString(4),
                         cursor.getString(5), cursor.getString(6),
