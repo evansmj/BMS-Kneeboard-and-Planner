@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.widget.ListView;
@@ -27,6 +28,7 @@ public class BrevityDictionaryActivity extends Activity
 {
     // http://fas.org/man/dod-101/usaf/docs/mcm3-1-a1.htm
 
+    //TODO make back button destroy activity instead of backtrack queries.
     private ArrayList<WordDefinitionObject> rowsArrayList;
     private BrevityDictionaryTable database;
     private DictionaryItemAdapter adapter;
@@ -42,7 +44,7 @@ public class BrevityDictionaryActivity extends Activity
         listView = (ListView) findViewById(R.id.brevity_dictionary_list_view);
         rowsArrayList = new ArrayList<WordDefinitionObject>();
 
-        //generateAllRows();
+        generateAllRows();
         //Log.d("brevDict::", "rowsArrayList before intent call:");
         //Log.d("brevDict::", rowsArrayList.get(0).getWord());
         //Log.d("brevDict::", rowsArrayList.get(1).getWord());
