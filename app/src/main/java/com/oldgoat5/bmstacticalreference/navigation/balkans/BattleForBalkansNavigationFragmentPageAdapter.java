@@ -40,7 +40,7 @@ public class BattleForBalkansNavigationFragmentPageAdapter extends FragmentPager
                 return new SicilyBalkansChartFragment();
 
             case 2:
-                return new JapanKoreaChartFragment();
+                return new SloveniaBalkansChartFragment();
 
             case 3:
                 return new ChinaKoreaChartFragment();

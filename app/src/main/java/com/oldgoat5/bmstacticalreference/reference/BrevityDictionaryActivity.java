@@ -28,7 +28,6 @@ public class BrevityDictionaryActivity extends Activity
 {
     // http://fas.org/man/dod-101/usaf/docs/mcm3-1-a1.htm
 
-    //TODO make back button destroy activity instead of backtrack queries.
     private ArrayList<WordDefinitionObject> rowsArrayList;
     private BrevityDictionaryTable database;
     private DictionaryItemAdapter adapter;

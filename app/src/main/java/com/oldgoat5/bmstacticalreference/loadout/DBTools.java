@@ -222,13 +222,12 @@ public class DBTools extends SQLiteOpenHelper
     @Override
     public void onCreate(SQLiteDatabase db)
     {
-        //TODO
         Log.d("DBTools", "onCreate(db)");
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion)
     {
-        // TODO Auto-generated method stub
+        // TODO Auto-generated method stub add functionality
     }
 }

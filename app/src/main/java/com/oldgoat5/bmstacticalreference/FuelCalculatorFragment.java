@@ -67,8 +67,7 @@ public class FuelCalculatorFragment extends Fragment
         weatherRadioGroup.check(R.id.vmc_radio_button);
 
         selectedAltitude = 1;
-        weatherConditions = 0; //TODO make radio buttons be selected by default
-        //TODO get rid of total fuel burn result.
+        weatherConditions = 0;
 
         homeAltEditText.addTextChangedListener(new TextWatcher()
         {

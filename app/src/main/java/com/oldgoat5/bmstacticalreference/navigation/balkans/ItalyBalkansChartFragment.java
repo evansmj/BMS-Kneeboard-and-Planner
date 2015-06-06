@@ -1,14 +1,18 @@
 package com.oldgoat5.bmstacticalreference.navigation.balkans;
 
+import android.app.Dialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import com.oldgoat5.bmstacticalreference.R;
+import com.oldgoat5.bmstacticalreference.navigation.ZoomImageView;
 
 /*********************************************************************
  * @author Michael Evans
@@ -18,14 +22,12 @@ public class ItalyBalkansChartFragment extends Fragment
 {
     Context CONTEXT;
 
-    /*private ArrayAdapter<String> adapter;
     private Dialog dialog;
-    private ZoomImageView imageView1;
-    private ZoomImageView imageView2;
-    private ZoomImageView imageView3;
-    private ListView listView;
-    private String[][] airbases;*/
+    private ImageView imageView1;
+    private ImageView imageView2;
+    private ImageView imageView3;
     private View view;
+    private ZoomImageView zoomImageView;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState)
@@ -42,15 +44,58 @@ public class ItalyBalkansChartFragment extends Fragment
 
         //TODO add - if infochart ImageView onClick(), show ZoomImageView dialog with chart to allow easy zooming.
 
-/*
-        imageView1 = new ZoomImageView(CONTEXT);
-        imageView1.setImageResource(R.drawable.italy_1_airbases);
+        dialog = new Dialog(CONTEXT);
+        zoomImageView = new ZoomImageView(CONTEXT);
+        imageView1 = (ImageView) view.findViewById(R.id.italy_balkans_image_view1);
+        imageView2 = (ImageView) view.findViewById(R.id.italy_balkans_image_view2);
+        imageView3 = (ImageView) view.findViewById(R.id.italy_balkans_image_view3);
 
-        imageView2 = new ZoomImageView(CONTEXT);
-        imageView2.setImageResource(R.drawable.italy_2_airbases);
+        /*imageView1.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                ((ViewGroup) view.getParent()).removeView(view);
+                zoomImageView.setImageResource(R.drawable.italy_1_airbases);
+                dialog.setContentView(imageView1);
+                dialog.setTitle("Italy Airbases");
+                dialog.show();
+                dialog.setOnDismissListener(new DialogInterface.OnDismissListener()
+                {
+                    @Override
+                    public void onDismiss(DialogInterface dialogInterface)
+                    {
 
-        imageView3 = new ZoomImageView(CONTEXT);
-        imageView3.setImageResource(R.drawable.italy_3_airbases);*/
+                    }
+                });
+            }
+        });
+
+        imageView2.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                ((ViewGroup) view.getParent()).removeView(view);
+                zoomImageView.setImageResource(R.drawable.italy_2_airbases);
+                dialog.setContentView(imageView2);
+                dialog.setTitle("Italy Airbases");
+                dialog.show();
+            }
+        });
+
+        imageView3.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                ((ViewGroup) view.getParent()).removeView(view);
+                zoomImageView.setImageResource(R.drawable.italy_3_airbases);
+                dialog.setContentView(imageView3);
+                dialog.setTitle("Italy Airbases");
+                dialog.show();
+            }
+        });*/
 
         return view;
     }
