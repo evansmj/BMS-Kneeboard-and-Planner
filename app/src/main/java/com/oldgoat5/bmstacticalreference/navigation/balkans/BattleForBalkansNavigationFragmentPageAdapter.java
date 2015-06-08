@@ -5,12 +5,6 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
-import com.oldgoat5.bmstacticalreference.navigation.korea.ChinaKoreaChartFragment;
-import com.oldgoat5.bmstacticalreference.navigation.korea.JapanKoreaChartFragment;
-import com.oldgoat5.bmstacticalreference.navigation.korea.NorthKoreaChartFragment;
-import com.oldgoat5.bmstacticalreference.navigation.korea.RussiaKoreaChartFragment;
-import com.oldgoat5.bmstacticalreference.navigation.korea.SouthKoreaChartFragment;
-
 /*********************************************************************
  * Fragment pager adapter for falcon-online.org Balkans theater.
  *
@@ -47,6 +41,9 @@ public class BattleForBalkansNavigationFragmentPageAdapter extends FragmentPager
 
             case 4:
                 return new BosniaBalkansChartFragment();
+
+            case 5:
+                return new GreeceBalkansChartFragment();
 
             default:
                 return new Fragment();
