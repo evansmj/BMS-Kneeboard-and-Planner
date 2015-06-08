@@ -98,18 +98,16 @@ public class KoreaNavigationActivity extends FragmentActivity //implements Actio
             @Override
             public void onPageScrolled(int arg0, float arg1, int arg2)
             {
-                // TODO Auto-generated method stub
             }
 
             @Override
             public void onPageScrollStateChanged(int arg0)
             {
-                // TODO Auto-generated method stub
             }
         });*/
 
-        Toast toast = Toast.makeText(this, "Long Press for Chart", Toast.LENGTH_LONG);
-        toast.show();
+        //Toast toast = Toast.makeText(this, "Long Press for Chart", Toast.LENGTH_LONG);
+        //toast.show();
     }
 
     /*@Override

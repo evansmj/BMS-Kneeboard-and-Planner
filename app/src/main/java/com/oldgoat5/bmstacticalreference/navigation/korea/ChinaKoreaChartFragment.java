@@ -53,10 +53,10 @@ public class ChinaKoreaChartFragment extends Fragment
         dialog = new Dialog(CONTEXT);
         imageView = new ZoomImageView(CONTEXT);
 
-        listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener()
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener()
         {
             @Override
-            public boolean onItemLongClick(AdapterView<?> parent, View view,
+            public void onItemClick(AdapterView<?> parent, View view,
                                            int position, long id)
             {
 
@@ -94,7 +94,7 @@ public class ChinaKoreaChartFragment extends Fragment
                 }
                 // Return true to consume the click event. In this case the
                 // onListItemClick listener is not called anymore.
-                return false;
+                //return false;
             }
         });
 
