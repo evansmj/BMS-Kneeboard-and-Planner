@@ -46,13 +46,13 @@ public class BattleForBalkansNavigationFragmentPageAdapter extends FragmentPager
                 return new AlbaniaBalkansChartFragment();
 
             case 4:
-                return new RussiaKoreaChartFragment();
+                return new BosniaBalkansChartFragment();
 
             default:
-                break;
+                return new Fragment();
         }
 
-        return null;
+        //return null;
     }
 
     @Override

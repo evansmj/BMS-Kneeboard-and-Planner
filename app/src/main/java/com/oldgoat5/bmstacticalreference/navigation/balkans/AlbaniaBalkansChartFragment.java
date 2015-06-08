@@ -26,7 +26,7 @@ public class AlbaniaBalkansChartFragment extends Fragment
         super.onCreate(savedInstanceState);
         view = inflater.inflate(R.layout.albania_balkans_chart_fragment_layout, container, false);
 
-        Log.d("SicilyBalkans", "onCreateView()");
+        Log.d("AlbaniaBalkans", "onCreateView()");
 
         if (this.isAdded())
         {

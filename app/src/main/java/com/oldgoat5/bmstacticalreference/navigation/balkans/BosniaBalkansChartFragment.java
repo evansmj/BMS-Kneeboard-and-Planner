@@ -10,11 +10,11 @@ import android.view.ViewGroup;
 
 import com.oldgoat5.bmstacticalreference.R;
 
-/*********************************************************************
+/********************************************************************
  * @author Michael Evans
- * @since 6/6/2015
- *********************************************************************/
-public class SloveniaBalkansChartFragment extends Fragment
+ * @since 6/7/2015
+ ********************************************************************/
+public class BosniaBalkansChartFragment extends Fragment
 {
     Context CONTEXT;
 
@@ -24,9 +24,9 @@ public class SloveniaBalkansChartFragment extends Fragment
                              Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        view = inflater.inflate(R.layout.slovenia_balkans_chart_fragment_layout, container, false);
+        view = inflater.inflate(R.layout.bosnia_balkans_chart_fragment_layout, container, false);
 
-        Log.d("SloveniaBalkans", "onCreateView()");
+        Log.d("BosniaBalkans", "onCreateView()");
 
         if (this.isAdded())
         {
