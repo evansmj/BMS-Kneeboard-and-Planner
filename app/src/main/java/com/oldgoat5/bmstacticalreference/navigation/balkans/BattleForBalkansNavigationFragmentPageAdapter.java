@@ -47,6 +47,10 @@ public class BattleForBalkansNavigationFragmentPageAdapter extends FragmentPager
 
             case 6:
                 return new MacedoniaBalkansChartFragment();
+
+            case 7:
+                return new MontenegroBalkansChartFragment();
+
             default:
                 return new Fragment();
         }
