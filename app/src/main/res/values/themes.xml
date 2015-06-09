@@ -25,8 +25,11 @@
     <style name="BlueTheme.MyActionBar.TitleTextStyle"
            parent="@android:style/TextAppearance">
         <item name="android:textColor">@color/silver</item>
+        <item name="android:textSize">@dimen/abc_action_bar_title_text_size</item>
+        <item name="android:textStyle">bold</item>
 
         <!-- Support library compatibility-->
         <item name="textColor">@color/silver</item>
+        <item name="textSize">@dimen/abc_action_bar_title_text_size</item>
     </style>
 </resources>

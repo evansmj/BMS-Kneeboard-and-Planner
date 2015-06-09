@@ -51,8 +51,7 @@ public class NorthKoreaChartFragment extends Fragment
                 "T`aech`on Airport Diagram", "Taetan Airport Diagram", "Toksan Airport Diagram",
                 "Uiju Airport Diagram", "Wonsan Airport Diagram"};
 
-        adapter = new ArrayAdapter<String>(this.getActivity(), android.R.layout.simple_list_item_1,
-                airbases);
+        adapter = new KoreaAirbaseArrayAdapter(this.getActivity(), airbases);
 
         listView = (ListView) view.findViewById(R.id.north_korea_fragment_list_view);
 

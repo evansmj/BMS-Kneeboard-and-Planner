@@ -40,8 +40,7 @@ public class ChinaKoreaChartFragment extends Fragment
 
         airbases = new String[] {"Liuhe Airport Diagram", "Shenyang Airport Diagram"};
 
-        adapter = new ArrayAdapter<String>(this.getActivity(), android.R.layout.simple_list_item_1,
-                airbases);
+        adapter = new KoreaAirbaseArrayAdapter(this.getActivity(), airbases);
         //imageView = (ImageView) view.findViewById(R.id.chart_image_view);
         listView = (ListView) view.findViewById(R.id.china_korea_fragment_list_view);
 

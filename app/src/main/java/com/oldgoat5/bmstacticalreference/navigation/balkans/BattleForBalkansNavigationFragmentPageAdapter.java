@@ -85,7 +85,7 @@ public class BattleForBalkansNavigationFragmentPageAdapter extends FragmentPager
                 return "Albania"; //red
 
             case 4:
-                return "Bosnia Herzegovnia"; //red
+                return "Bosnia Herzegovina"; //red
 
             case 5:
                 return "Greece"; //blue

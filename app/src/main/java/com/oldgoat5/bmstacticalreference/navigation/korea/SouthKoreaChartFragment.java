@@ -90,8 +90,7 @@ public class SouthKoreaChartFragment extends Fragment
                 "Yechon Airport Diagram", "Yechon Solty 5A Departure",
                 "Yechon ILS RWY 26", "Yechon TACAN RWY 8"};
 
-        adapter = new ArrayAdapter<String>(this.getActivity(), android.R.layout.simple_list_item_1,
-                airbases);
+        adapter = new KoreaAirbaseArrayAdapter(this.getActivity(), airbases);
 
         listView = (ListView) view.findViewById(R.id.south_korea_fragment_list_view);
 

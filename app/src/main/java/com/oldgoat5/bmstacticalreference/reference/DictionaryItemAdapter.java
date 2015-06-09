@@ -1,6 +1,7 @@
 package com.oldgoat5.bmstacticalreference.reference;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,6 +23,11 @@ public class DictionaryItemAdapter extends ArrayAdapter<WordDefinitionObject>
     private final Context CONTEXT;
     private final ArrayList<WordDefinitionObject> itemsArrayList;
 
+    private LayoutInflater inflater;
+    private TextView wordView;
+    private TextView definitionView;
+    private View rowView;
+
     public DictionaryItemAdapter(Context context, ArrayList<WordDefinitionObject> itemsArrayList)
     {
         super(context, R.layout.word_definition_object_layout, itemsArrayList);
@@ -33,17 +39,26 @@ public class DictionaryItemAdapter extends ArrayAdapter<WordDefinitionObject>
     @Override
     public View getView(int position, View convertView, ViewGroup parent)
     {
-        LayoutInflater inflater = (LayoutInflater) CONTEXT.getSystemService(
+        inflater = (LayoutInflater) CONTEXT.getSystemService(
                 Context.LAYOUT_INFLATER_SERVICE);
 
-        View rowView = inflater.inflate(R.layout.word_definition_object_layout, parent, false);
+        rowView = inflater.inflate(R.layout.word_definition_object_layout, parent, false);
 
-        TextView wordView = (TextView) rowView.findViewById(R.id.brevity_dictionary_word_text_view);
+        wordView = (TextView) rowView.findViewById(R.id.brevity_dictionary_word_text_view);
         wordView.setText((itemsArrayList).get(position).getWord());
 
-        TextView definitionView = (TextView) rowView.findViewById(
+        definitionView = (TextView) rowView.findViewById(
                 R.id.brevity_dictionary_definition_text_view);
         definitionView.setText((itemsArrayList).get(position).getDefinition());
+
+        if ((position % 2) == 0)
+        {
+            rowView.setBackgroundColor(Color.parseColor("#E8F2FE"));
+        }
+        else
+        {
+            // odd color
+        }
 
         return rowView;
     }

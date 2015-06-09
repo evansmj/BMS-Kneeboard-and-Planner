@@ -46,8 +46,7 @@ public class RussiaKoreaChartFragment extends Fragment
 
         airbases = new String[] {"Nachodka Airport Diagram"};
 
-        adapter = new ArrayAdapter<String>(this.getActivity(), android.R.layout.simple_list_item_1,
-                airbases);
+        adapter = new KoreaAirbaseArrayAdapter(this.getActivity(), airbases);
         listView = (ListView) view.findViewById(R.id.russia_korea_fragment_list_view);
 
         if (this.isAdded())
