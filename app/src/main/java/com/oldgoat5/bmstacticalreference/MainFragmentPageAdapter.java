@@ -9,6 +9,8 @@ import com.oldgoat5.bmstacticalreference.navigation.NavigationChartsFragment;
 import com.oldgoat5.bmstacticalreference.reference.ReferenceFragment;
 
 /*********************************************************************
+ * Copyright © Michael Evans - All Rights Reserved.
+ *
  * Handles the main page fragments.
  *
  * @author Michael Evans

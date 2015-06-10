@@ -13,6 +13,8 @@ import com.oldgoat5.bmstacticalreference.slidingtabs.SlidingTabLayout;
 import java.util.ArrayList;
 
 /*********************************************************************
+ * Copyright © Michael Evans - All Rights Reserved.
+ *
  * Airport information for falcon-online Battle For Balkans Theater.
  *
  * @author Michael Evans

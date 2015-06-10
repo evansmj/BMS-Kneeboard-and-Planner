@@ -15,6 +15,8 @@ import com.oldgoat5.bmstacticalreference.R;
 import com.oldgoat5.bmstacticalreference.navigation.ZoomImageView;
 
 /*********************************************************************
+ * Copyright © Michael Evans - All Rights Reserved.
+ *
  * @author Michael Evans
  * @since 6/1/2015
  *********************************************************************/

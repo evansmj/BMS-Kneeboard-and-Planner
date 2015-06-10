@@ -19,6 +19,8 @@ import com.oldgoat5.bmstacticalreference.R;
 import java.util.ArrayList;
 
 /*********************************************************************
+ * Copyright © Michael Evans - All Rights Reserved.
+ *
  * Contains a searchable brevity dictionary.
  *
  * @author Michael Evans

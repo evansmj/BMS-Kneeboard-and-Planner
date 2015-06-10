@@ -7,6 +7,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+/********************************************************************
+ *Copyright © Michael Evans - All Rights Reserved.
+ *
+ * @author Michael Evans
+ ********************************************************************/
 public class LoadCardFragment extends Fragment
 {
     private TextView grossWeightTextView;

@@ -15,6 +15,8 @@ import com.oldgoat5.bmstacticalreference.slidingtabs.SlidingTabLayout;
 import java.util.ArrayList;
 
 /*********************************************************************
+ * Copyright © Michael Evans - All Rights Reserved.
+ *
  * @author Michael Evans
  * @version 5/8/2015
  *********************************************************************/

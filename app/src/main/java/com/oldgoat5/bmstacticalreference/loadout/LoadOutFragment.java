@@ -18,6 +18,8 @@ import android.widget.RadioButton;
 import com.oldgoat5.bmstacticalreference.R;
 
 /*********************************************************************
+ * Copyright © Michael Evans - All Rights Reserved.
+ *
  * @author Michael Evans
  * @version 1/15/2015
  *

@@ -16,6 +16,8 @@ import com.oldgoat5.bmstacticalreference.navigation.ZoomImageView;
 import com.oldgoat5.bmstacticalreference.R;
 
 /*********************************************************************
+ * Copyright © Michael Evans - All Rights Reserved.
+ *
  * Shows a list of South Korean charts in the KTO theater.
  *
  * @author Michael Evans

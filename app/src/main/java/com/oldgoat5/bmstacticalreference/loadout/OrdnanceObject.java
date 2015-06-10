@@ -1,11 +1,12 @@
 package com.oldgoat5.bmstacticalreference.loadout;
 
 /*****************************************************************
+ * Copyright © Michael Evans - All Rights Reserved.
+ *
  * Contains a class for containing ordinance objects from the 
  * BMSLoadDb ordinance table.
  * 
  * @author Michael Evans
- * 
  *****************************************************************/
 public class OrdnanceObject
 {

@@ -14,6 +14,8 @@ import com.oldgoat5.bmstacticalreference.navigation.balkans.BattleForBalkansNavi
 import com.oldgoat5.bmstacticalreference.R;
 
 /*********************************************************************
+ * Copyright © Michael Evans - All Rights Reserved.
+ *
  * @author Michael Evans
  * @version 5/7/2015
  *

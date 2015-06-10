@@ -13,6 +13,11 @@ import android.widget.Button;
 import com.oldgoat5.bmstacticalreference.navigation.ZoomImageView;
 import com.oldgoat5.bmstacticalreference.R;
 
+/********************************************************************
+ * Copyright © Michael Evans - All Rights Reserved.
+ *
+ * @author Michael Evans
+ ********************************************************************/
 public class ReferenceFragment extends Fragment
 {
     Context CONTEXT;

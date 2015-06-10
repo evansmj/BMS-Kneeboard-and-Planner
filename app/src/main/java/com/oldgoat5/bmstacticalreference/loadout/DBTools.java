@@ -18,7 +18,7 @@ public class DBTools extends SQLiteOpenHelper
 {
     //TODO add damage_type table
     //TODO add guidance_type table
-    //TODO add use cases for weapons.  
+    //TODO add use cases for weapons.
     private final Context CONTEXT;
     
     private static String DB_PATH;

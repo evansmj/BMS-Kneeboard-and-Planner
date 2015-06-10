@@ -12,6 +12,8 @@ import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 /********************************************************************
+ * Copyright © Michael Evans - All Rights Reserved.
+ *
  * @author Michael Evans
  * @since 6/9/2015
  ********************************************************************/

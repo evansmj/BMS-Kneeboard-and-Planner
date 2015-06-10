@@ -18,6 +18,8 @@ import com.oldgoat5.bmstacticalreference.navigation.ZoomImageView;
 import com.oldgoat5.bmstacticalreference.R;
 
 /*********************************************************************
+ * Copyright © Michael Evans - All Rights Reserved.
+ *
  * Shows a list of Russian charts in the KTO theater.
  *
  * @author Michael Evans

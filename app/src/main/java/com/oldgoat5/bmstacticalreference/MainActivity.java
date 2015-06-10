@@ -8,6 +8,9 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
 
+/********************************************************************
+ * Copyright © Michael Evans - All Rights Reserved.
+ ********************************************************************/
 public class MainActivity extends FragmentActivity 
     implements ActionBar.TabListener
 {

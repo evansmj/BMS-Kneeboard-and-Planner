@@ -1,6 +1,8 @@
 package com.oldgoat5.bmstacticalreference.slidingtabs;
 
 /*********************************************************************
+ * Copyright © Michael Evans - All Rights Reserved.
+ *
  * A tab object for sliding tab layout.
  *
  * @author Michael Evans

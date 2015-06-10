@@ -13,6 +13,8 @@ import com.oldgoat5.bmstacticalreference.R;
 import java.util.ArrayList;
 
 /*********************************************************************
+ * Copyright © Michael Evans - All Rights Reserved.
+ *
  * Item adapter for the list view of brevity dictionary search results.
  *
  * @author Michael Evans

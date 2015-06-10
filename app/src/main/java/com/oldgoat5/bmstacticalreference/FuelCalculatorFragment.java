@@ -14,6 +14,8 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 
 /*********************************************************************
+ * Copyright © Michael Evans - All Rights Reserved.
+ *
  * Fuel calculator for the F-16 using ROT.
  *
  * @author Michael Evans

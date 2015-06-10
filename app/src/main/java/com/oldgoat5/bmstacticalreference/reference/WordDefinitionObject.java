@@ -1,6 +1,8 @@
 package com.oldgoat5.bmstacticalreference.reference;
 
 /*********************************************************************
+ * Copyright © Michael Evans - All Rights Reserved.
+ *
  * Object that represents a word and its definition.
  *
  * @author Michael Evans

@@ -11,6 +11,8 @@ import android.view.ViewGroup;
 import com.oldgoat5.bmstacticalreference.R;
 
 /********************************************************************
+ * Copyright © Michael Evans - All Rights Reserved.
+ *
  * @author Michael Evans
  * @since 6/8/2015
  *********************************************************************/
