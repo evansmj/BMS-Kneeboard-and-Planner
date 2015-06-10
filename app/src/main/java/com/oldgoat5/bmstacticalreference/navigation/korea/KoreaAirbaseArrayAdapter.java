@@ -32,7 +32,6 @@ public class KoreaAirbaseArrayAdapter extends ArrayAdapter<String>
         this.airbases = airbases;
     }
 
-
     @Override
     public View getView(int position, View convertView, ViewGroup parent)
     {

@@ -16,7 +16,9 @@ import java.util.ArrayList;
 
 public class DBTools extends SQLiteOpenHelper
 {
-    //TODO rename ordinance table to ordnance.  or rename to load.
+    //TODO add damage_type table
+    //TODO add guidance_type table
+    //TODO add use cases for weapons.  
     private final Context CONTEXT;
     
     private static String DB_PATH;
