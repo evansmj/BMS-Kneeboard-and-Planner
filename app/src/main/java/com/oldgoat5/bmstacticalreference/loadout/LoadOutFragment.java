@@ -55,8 +55,9 @@ public class LoadOutFragment extends Fragment
                 R.layout.loadout_fragment_layout, container, false);
         
         Log.d("LoadOutFragment", "getactivity=" + getActivity().toString());
+        //Log.d("LoadOutFragment", "Before dbTools = new DBTools()");
         dbTools = new DBTools(getActivity());
-        
+
         try
         {
             dbTools.createDatabase();

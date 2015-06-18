@@ -23,12 +23,13 @@ public class DBTools extends SQLiteOpenHelper
     
     private static String DB_PATH;
     private static String DB_NAME = "BMSLoadDB.db";
-    
+    private static int DB_VERSION = 1; //increment version every time database is updated.
+
     private SQLiteDatabase database;
     
     public DBTools(Context context)
     {
-        super(context, DB_NAME, null, 1);
+        super(context, DB_NAME, null, DB_VERSION);
         Log.d("DBTools", "constructor");
         this.CONTEXT = context;
         DB_PATH = context.getApplicationInfo().dataDir + "/databases/";
@@ -45,9 +46,9 @@ public class DBTools extends SQLiteOpenHelper
         if (!dbExists)
         {
             Log.d("DBTools", "if !dbExists called");
-     
+
             database = this.getReadableDatabase();
-            
+
             try
             {
                 copyDatabase();
@@ -224,6 +225,7 @@ public class DBTools extends SQLiteOpenHelper
     @Override
     public void onCreate(SQLiteDatabase db)
     {
+        //called when app .getReadableDatabase() is called
         Log.d("DBTools", "onCreate(db)");
     }
 
