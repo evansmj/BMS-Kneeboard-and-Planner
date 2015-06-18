@@ -14,7 +14,7 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.ArrayList;
 
-public class DBTools extends SQLiteOpenHelper
+public class DBTools extends SQLiteAssetHelper
 {
     //TODO add damage_type table
     //TODO add guidance_type table
@@ -34,6 +34,7 @@ public class DBTools extends SQLiteOpenHelper
         this.CONTEXT = context;
         DB_PATH = context.getApplicationInfo().dataDir + "/databases/";
         //DB_PATH = Environment.getExternalStorageDirectory();
+        setForcedUpgrade();
         Log.d("constructor, DB_PATH=", DB_PATH);
         Log.d("cnstructor, context=", context.toString());
     }
@@ -47,7 +48,7 @@ public class DBTools extends SQLiteOpenHelper
         {
             Log.d("DBTools", "if !dbExists called");
 
-            database = this.getReadableDatabase();
+            database = this.getWritableDatabase();
 
             try
             {
@@ -158,7 +159,7 @@ public class DBTools extends SQLiteOpenHelper
     {
         String path = DB_PATH + DB_NAME;
         database = SQLiteDatabase.openDatabase(
-                path, null, SQLiteDatabase.OPEN_READONLY);
+                path, null, SQLiteDatabase.OPEN_READWRITE);
     }
     
     /*****************************************************************
@@ -182,7 +183,7 @@ public class DBTools extends SQLiteOpenHelper
         String selectQuery = "SELECT * FROM ordinance ORDER BY _id";
         
         //SQLiteDatabase database = this.getReadableDatabase();
-        database = this.getReadableDatabase();
+        database = this.getWritableDatabase();
         
         Log.d("dbtools", "before cursor = db.rawQuery");
         
@@ -222,16 +223,33 @@ public class DBTools extends SQLiteOpenHelper
         super.close();
     }
     
-    @Override
+    /*@Override
     public void onCreate(SQLiteDatabase db)
     {
         //called when app .getReadableDatabase() is called
         Log.d("DBTools", "onCreate(db)");
-    }
+    }*/
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion)
     {
-        // TODO Auto-generated method stub add functionality
+        if (oldVersion < newVersion)
+        {
+            try
+            {
+                // delete existing?
+                database.close();
+                this.getWritableDatabase().close();
+                CONTEXT.deleteDatabase(DB_NAME);
+                // Copy the db from assests
+                copyDatabase();
+
+                Log.d("DBTools", "onUpgrade success");
+            }
+            catch (IOException e)
+            {
+                Log.d("DBtools", "onUpgrade failed");
+            }
+        }
     }
 }
