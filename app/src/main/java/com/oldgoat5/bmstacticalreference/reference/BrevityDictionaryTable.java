@@ -64,7 +64,7 @@ public class BrevityDictionaryTable
         //cursor.moveToNext();
         //Log.d("movetonext", cursor.getString(0));
 
-        if(cursor == null)
+        if (cursor == null)
         {
             return null;
         }
@@ -136,11 +136,15 @@ public class BrevityDictionaryTable
 
         private void loadDictionary()
         {
-            new Thread(new Runnable()
-            {
-                @Override
-                public void run()
-                {
+            /**
+             * keep out of separate thread for now, otherwise listview only partially loads on first
+             * run.
+             */
+            //new Thread(new Runnable()
+           // {
+             //   @Override
+             //   public void run()
+             //   {
                     try
                     {
                         loadWords();
@@ -149,8 +153,8 @@ public class BrevityDictionaryTable
                     {
                         throw new RuntimeException(e);
                     }
-                }
-            }).start();
+             //   }
+            //}).start();
         }
 
         private void loadWords() throws IOException

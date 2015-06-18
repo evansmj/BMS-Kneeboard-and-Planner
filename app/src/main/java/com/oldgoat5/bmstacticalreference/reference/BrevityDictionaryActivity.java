@@ -84,27 +84,35 @@ public class BrevityDictionaryActivity extends Activity
     private void generateAllRows()
     {
         Log.d("brevDictActivity", "inside generateAllRows()");
+        boolean cursorIsNotNull = false;
 
         Cursor cursor = database.getAllWordsAndDefinitions();
         rowsArrayList.clear();
 
-        try
+        do
         {
-            if (cursor.moveToFirst())
+
+            try
             {
-                Log.d("brevDictAct", "inside if cursor.moveToFirst()");
-                do
+                if (cursor.moveToFirst())
                 {
-                    Log.d("brevDictAct", "inside do");
-                    rowsArrayList.add(new WordDefinitionObject(cursor.getString(0),
-                            cursor.getString(1)));
-                } while (cursor.moveToNext());
+                    Log.d("brevDictAct", "inside if cursor.moveToFirst()");
+                    do
+                    {
+                        Log.d("brevDictAct", "inside do");
+                        rowsArrayList.add(new WordDefinitionObject(cursor.getString(0),
+                                cursor.getString(1)));
+                    } while (cursor.moveToNext());
+                }
+
+                cursorIsNotNull = true;
             }
-        }
-        catch (NullPointerException e)
-        {
-            Log.d("BrevDict", "no getall words to add");
-        }
+            catch (NullPointerException e)
+            {
+                Log.d("BrevDict", "no getall words to add");
+            }
+
+        } while (!cursorIsNotNull);
 
     }
 
