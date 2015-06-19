@@ -1,4 +1,4 @@
-package com.oldgoat5.bmstacticalreference.loadout;
+package com.oldgoat5.bmstacticalreference.tacticalreference;
 
 /*****************************************************************
  * Copyright © Michael Evans - All Rights Reserved.

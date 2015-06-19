@@ -86,7 +86,7 @@
 	    android:layout_below="@+id/f16_image"
 	    android:layout_toRightOf="@+id/radioButton7" />
 
-	<com.oldgoat5.bmstacticalreference.loadout.VerticalTextView
+	<com.oldgoat5.bmstacticalreference.tacticalreference.VerticalTextView
 	    android:id="@+id/verticalTextView5"
 	    android:layout_width="wrap_content"
 	    android:layout_height="wrap_content"
@@ -94,7 +94,7 @@
 	    android:layout_centerHorizontal="true"
 	    android:text="@string/five" />
 
-	<com.oldgoat5.bmstacticalreference.loadout.VerticalTextView
+	<com.oldgoat5.bmstacticalreference.tacticalreference.VerticalTextView
 	    android:id="@+id/verticalTextView2"
 	    android:layout_width="wrap_content"
 	    android:layout_height="wrap_content"
@@ -102,7 +102,7 @@
 	    android:layout_below="@+id/radioButton2"
 	    android:text="@string/two" />
 
-	<com.oldgoat5.bmstacticalreference.loadout.VerticalTextView
+	<com.oldgoat5.bmstacticalreference.tacticalreference.VerticalTextView
 	    android:id="@+id/verticalTextView1"
 	    android:layout_width="wrap_content"
 	    android:layout_height="wrap_content"
@@ -110,7 +110,7 @@
 	    android:layout_below="@+id/radioButton1"
 	    android:text="@string/one" />
 
-	<com.oldgoat5.bmstacticalreference.loadout.VerticalTextView
+	<com.oldgoat5.bmstacticalreference.tacticalreference.VerticalTextView
 	    android:id="@+id/verticalTextView6"
 	    android:layout_width="wrap_content"
 	    android:layout_height="wrap_content"
@@ -118,7 +118,7 @@
 	    android:layout_below="@+id/radioButton6"
 	    android:text="@string/six" />
 
-	<com.oldgoat5.bmstacticalreference.loadout.VerticalTextView
+	<com.oldgoat5.bmstacticalreference.tacticalreference.VerticalTextView
 	    android:id="@+id/verticalTextView7"
 	    android:layout_width="wrap_content"
 	    android:layout_height="wrap_content"
@@ -126,7 +126,7 @@
 	    android:layout_below="@+id/radioButton7"
 	    android:text="@string/seven" />
 
-	<com.oldgoat5.bmstacticalreference.loadout.VerticalTextView
+	<com.oldgoat5.bmstacticalreference.tacticalreference.VerticalTextView
 	    android:id="@+id/verticalTextView8"
 	    android:layout_width="wrap_content"
 	    android:layout_height="wrap_content"
@@ -134,7 +134,7 @@
 	    android:layout_below="@+id/radioButton8"
 	    android:text="@string/eight" />
 
-	<com.oldgoat5.bmstacticalreference.loadout.VerticalTextView
+	<com.oldgoat5.bmstacticalreference.tacticalreference.VerticalTextView
 	    android:id="@+id/verticalTextView9"
 	    android:layout_width="wrap_content"
 	    android:layout_height="wrap_content"
@@ -142,7 +142,7 @@
 	    android:layout_below="@+id/radioButton9"
 	    android:text="@string/nine" />
 
-	<com.oldgoat5.bmstacticalreference.loadout.VerticalTextView
+	<com.oldgoat5.bmstacticalreference.tacticalreference.VerticalTextView
 	    android:id="@+id/verticalTextView4"
 	    android:layout_width="wrap_content"
 	    android:layout_height="wrap_content"
@@ -150,7 +150,7 @@
 	    android:layout_below="@+id/radioButton4"
 	    android:text="@string/four" />
 
-	<com.oldgoat5.bmstacticalreference.loadout.VerticalTextView
+	<com.oldgoat5.bmstacticalreference.tacticalreference.VerticalTextView
 	    android:id="@+id/verticalTextView3"
 	    android:layout_width="wrap_content"
 	    android:layout_height="wrap_content"

@@ -4,7 +4,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
-import com.oldgoat5.bmstacticalreference.loadout.LoadOutFragment;
+import com.oldgoat5.bmstacticalreference.tacticalreference.TacticalReferenceFragment;
 import com.oldgoat5.bmstacticalreference.navigation.NavigationChartsFragment;
 import com.oldgoat5.bmstacticalreference.reference.ReferenceFragment;
 
@@ -32,7 +32,7 @@ public class MainFragmentPageAdapter extends FragmentPagerAdapter
             case 0:
                 return new LoadCardFragment();
             case 1:
-                return new LoadOutFragment();
+                return new TacticalReferenceFragment();
             case 2:
                 return new ReferenceFragment();
             case 3:

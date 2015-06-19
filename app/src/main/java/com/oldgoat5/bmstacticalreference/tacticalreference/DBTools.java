@@ -1,10 +1,9 @@
-package com.oldgoat5.bmstacticalreference.loadout;
+package com.oldgoat5.bmstacticalreference.tacticalreference;
 
 import android.content.Context;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
 import java.io.File;
@@ -16,14 +15,14 @@ import java.util.ArrayList;
 
 public class DBTools extends SQLiteAssetHelper
 {
-    //TODO add damage_type table
-    //TODO add guidance_type table
-    //TODO add use cases for weapons.
     private final Context CONTEXT;
     
     private static String DB_PATH;
     private static String DB_NAME = "BMSLoadDB.db";
-    private static int DB_VERSION = 1; //increment version every time database is updated.
+    /**
+     * //TODO Increment DB_VERSION after database updates before release.
+     */
+    private static int DB_VERSION = 1;
 
     private SQLiteDatabase database;
     

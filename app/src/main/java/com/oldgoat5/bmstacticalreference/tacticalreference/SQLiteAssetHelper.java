@@ -1,4 +1,4 @@
-package com.oldgoat5.bmstacticalreference.loadout;
+package com.oldgoat5.bmstacticalreference.tacticalreference;
 
 /*
  * Copyright (C) 2011 readyState Software Ltd, 2007 The Android Open Source Project
@@ -23,8 +23,7 @@ import android.database.sqlite.SQLiteException;
         import android.content.Context;
         import android.database.sqlite.SQLiteDatabase;
         import android.database.sqlite.SQLiteDatabase.CursorFactory;
-        import android.database.sqlite.SQLiteException;
-        import android.database.sqlite.SQLiteOpenHelper;
+import android.database.sqlite.SQLiteOpenHelper;
         import android.util.Log;
 
         import java.io.File;

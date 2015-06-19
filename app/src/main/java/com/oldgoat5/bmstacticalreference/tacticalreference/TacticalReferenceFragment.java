@@ -1,4 +1,4 @@
-package com.oldgoat5.bmstacticalreference.loadout;
+package com.oldgoat5.bmstacticalreference.tacticalreference;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -25,7 +25,7 @@ import com.oldgoat5.bmstacticalreference.R;
  *
  * Allows user to specify F-16CJ load out on selected hard points.  
  *********************************************************************/
-public class LoadOutFragment extends Fragment
+public class TacticalReferenceFragment extends Fragment
 {
     private final String[] items = new String[] {"android", "hello", "world", "test"}; //testing
     
@@ -308,7 +308,7 @@ public class LoadOutFragment extends Fragment
     }
     
     /*****************************************************************
-     * Generates all loadout data for start of app for the listview
+     * Generates all tacticalreference data for start of app for the listview
      * items.
      * 
      * @return Returns an ArrayList of all database 

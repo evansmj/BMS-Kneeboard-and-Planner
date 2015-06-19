@@ -1,4 +1,4 @@
-package com.oldgoat5.bmstacticalreference.loadout;
+package com.oldgoat5.bmstacticalreference.tacticalreference;
 
 import java.util.Scanner;
 
@@ -11,8 +11,7 @@ import java.util.Scanner;
         import java.io.OutputStream;
         import java.util.ArrayList;
         import java.util.List;
-        import java.util.Scanner;
-        import java.util.zip.ZipEntry;
+import java.util.zip.ZipEntry;
         import java.util.zip.ZipInputStream;
 
 class Utils {

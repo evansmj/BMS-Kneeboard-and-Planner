@@ -1,4 +1,4 @@
-package com.oldgoat5.bmstacticalreference.loadout;
+package com.oldgoat5.bmstacticalreference.tacticalreference;
 
 import android.content.Context;
 import android.view.LayoutInflater;
