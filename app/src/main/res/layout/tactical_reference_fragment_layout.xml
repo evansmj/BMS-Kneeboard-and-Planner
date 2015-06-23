@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" 
+    tools:context=".MainActivity"
+    >
+
+	<ListView
+	    android:id="@+id/listViewLoadout"
+	    android:layout_width="fill_parent"
+	    android:layout_height="180dp"
+        android:layout_alignParentBottom="true"
+	   	android:fillViewport="true"
+        android:layout_below="@+id/weapon_type_spinner">
+
+	</ListView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/load_type"
+        android:id="@+id/load_type_text_view"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"/>
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:spinnerMode="dropdown"
+        android:id="@+id/load_type_spinner"
+        android:layout_below="@+id/load_type_text_view"
+        android:layout_alignParentStart="true"
+        android:layout_toStartOf="@+id/space"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Weapon Type"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:id="@+id/weapon_type_text_view"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/space"/>
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:spinnerMode="dropdown"
+        android:id="@+id/weapon_type_spinner"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/weapon_type_text_view"
+        android:layout_toEndOf="@+id/space"/>
+
+    <Space
+        android:layout_width="20px"
+        android:layout_height="20px"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/space"/>
+
+</RelativeLayout>

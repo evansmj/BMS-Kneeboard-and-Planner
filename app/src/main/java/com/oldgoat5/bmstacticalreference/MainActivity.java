@@ -59,7 +59,7 @@ public class MainActivity extends FragmentActivity
         actionBar.addTab(actionBar.newTab().setText(
                 "Load Card").setTabListener(this));
         actionBar.addTab(actionBar.newTab().setText(
-                "Loadout").setTabListener(this));
+                "Tactical Reference").setTabListener(this));
         actionBar.addTab(actionBar.newTab().setText(
                 "Reference").setTabListener(this));
         actionBar.addTab(actionBar.newTab().setText(

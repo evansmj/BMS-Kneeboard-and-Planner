@@ -21,6 +21,9 @@
 
     <string name="image_content_description">F-16 front profile</string>
 
+    <!-- Tactical Reference Fragment -->
+    <string name="load_type">Load Type</string>
+
     <!-- Navigation Activity -->
     <string name="korea_theater_title">Korean Theater of Operations</string>
     <string name="china">China</string>

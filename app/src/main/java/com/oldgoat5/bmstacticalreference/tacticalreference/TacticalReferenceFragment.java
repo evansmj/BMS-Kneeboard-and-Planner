@@ -10,10 +10,14 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.RadioButton;
+import android.widget.Spinner;
+import android.widget.TextView;
 
 import com.oldgoat5.bmstacticalreference.R;
 
@@ -27,35 +31,94 @@ import com.oldgoat5.bmstacticalreference.R;
  *********************************************************************/
 public class TacticalReferenceFragment extends Fragment
 {
-    private final String[] items = new String[] {"android", "hello", "world", "test"}; //testing
-    
-    private boolean asymmetricMode;
-    
+    private final String[] loadTypeItems = new String[] {"---", "Weapons", "Stores"};
+    private final String[] weaponTypeItems = new String[] {"---", "A-G Missiles", "A-A Missiles",
+            "Bombs", "Rockets"};
+
     private DBTools dbTools;
-    private CheckBox asymmetricCheckBox;
-    private ImageView f16Image;
-    private ListItemAdapter adapter; //testing
+    private ListItemAdapter databaseAdapter;
     private ListView listView;
-    private RadioButton radioButton1;
-    private RadioButton radioButton2;
-    private RadioButton radioButton3;
-    private RadioButton radioButton4;
-    private RadioButton radioButton5;
-    private RadioButton radioButton6;
-    private RadioButton radioButton7;
-    private RadioButton radioButton8;
-    private RadioButton radioButton9;
+    private ArrayAdapter<String> loadTypeArrayAdapter;
+    private ArrayAdapter<String> weaponTypeArrayAdapter;
+    private Spinner loadTypeSpinner;
+    private Spinner weaponTypeSpinner;
+    private TextView loadTypeTextView;
+    private TextView weaponTypeTextView;
     private View view;
-    
+    //TODO on click of list view item, bringup page with full item info.
+    //TODO toggle to show name and uses, or name and info.
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, 
             Bundle savedInstanceState)
     {
         view = inflater.inflate(
-                R.layout.loadout_fragment_layout, container, false);
-        
+                R.layout.tactical_reference_fragment_layout, container, false);
+
+        loadTypeTextView = (TextView) view.findViewById(R.id.load_type_text_view);
+        weaponTypeTextView = (TextView) view.findViewById(R.id.weapon_type_text_view);
+
+        loadTypeSpinner = (Spinner) view.findViewById(R.id.load_type_spinner);
+        weaponTypeSpinner = (Spinner) view.findViewById(R.id.weapon_type_spinner);
+
+        loadTypeArrayAdapter = new ArrayAdapter<String>(this.getActivity(),
+                android.R.layout.simple_list_item_1, loadTypeItems);
+        weaponTypeArrayAdapter= new ArrayAdapter<String>(this.getActivity(),
+                android.R.layout.simple_list_item_1, weaponTypeItems);
+
+        loadTypeSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
+        {
+            public void onItemSelected(AdapterView<?> parent, View view,
+                                       int pos, long id)
+            {
+                switch(pos)
+                {
+                    case 0:
+                        //hide all menus.
+                        weaponTypeTextView.setVisibility(View.GONE);
+                        weaponTypeSpinner.setVisibility(View.GONE);
+                        break;
+                    case 1:
+                        //show weapons menu
+                        weaponTypeTextView.setVisibility(View.VISIBLE);
+                        weaponTypeSpinner.setVisibility(View.VISIBLE);
+                        break;
+                    case 2:
+                        //show stores  menu
+                        weaponTypeTextView.setVisibility(View.GONE);
+                        weaponTypeSpinner.setVisibility(View.GONE);
+                        break;
+                }
+            }
+
+            public void onNothingSelected(AdapterView<?> parent)
+            {
+                //hide menus.
+            }
+        });
+
+        weaponTypeSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
+        {
+            public void onItemSelected(AdapterView<?> parent, View view,
+                                       int pos, long id)
+            {
+                switch(pos)
+                {
+                    ///select ag, aa, bombs, rockets
+                }
+            }
+
+            public void onNothingSelected(AdapterView<?> parent)
+            {
+                //select nothing
+            }
+        });
+
+        listView = (ListView) view.findViewById(R.id.listViewLoadout);
+
+        loadTypeSpinner.setAdapter(loadTypeArrayAdapter);
+        weaponTypeSpinner.setAdapter(weaponTypeArrayAdapter);
+
         Log.d("LoadOutFragment", "getactivity=" + getActivity().toString());
-        //Log.d("LoadOutFragment", "Before dbTools = new DBTools()");
         dbTools = new DBTools(getActivity());
 
         try
@@ -76,234 +139,12 @@ public class TacticalReferenceFragment extends Fragment
         {
             throw sqle;
         }
-        
-        Log.d("loadoutfragment", "before adapter");
-        
-        adapter = new ListItemAdapter(
+
+        databaseAdapter = new ListItemAdapter(
                 this.getActivity(), generateData());
-        
-        Log.d("loadoutfragment", "after adapter");
-        asymmetricCheckBox = (CheckBox) view.findViewById(
-                R.id.asymmetricCheckBox);
-        
-        asymmetricMode = false;
-        
-        f16Image = (ImageView) view.findViewById(R.id.f16_image);
-        
-        listView = (ListView) view.findViewById(R.id.listViewLoadout);
-        
-        radioButton1 = (RadioButton) view.findViewById(R.id.radioButton1);
-        radioButton2 = (RadioButton) view.findViewById(R.id.radioButton2);
-        radioButton3 = (RadioButton) view.findViewById(R.id.radioButton3);
-        radioButton4 = (RadioButton) view.findViewById(R.id.radioButton4);
-        radioButton5 = (RadioButton) view.findViewById(R.id.radioButton5);
-        radioButton6 = (RadioButton) view.findViewById(R.id.radioButton6);        
-        radioButton7 = (RadioButton) view.findViewById(R.id.radioButton7);        
-        radioButton8 = (RadioButton) view.findViewById(R.id.radioButton8);  
-        radioButton9 = (RadioButton) view.findViewById(R.id.radioButton9);
-        
-        listView.setAdapter(adapter);
-        
-        asymmetricCheckBox.setOnClickListener(new CheckBox.OnClickListener()
-        {
-            @Override
-            public void onClick(View v)
-            {
-                if (asymmetricMode)
-                {
-                    asymmetricMode = false;
-                }
-                else
-                {
-                    asymmetricMode = true;
-                }
-            }
-        });
-        
-        radioButton1.setOnClickListener(new RadioButton.OnClickListener()
-        {
-            
-            @Override
-            public void onClick(View v)
-            {
-                //radioButton1.setSelected(!radioButton1.isChecked());
-                if (asymmetricMode)
-                {
-                    Log.d("loudout button1", "true");
-                    //radioButton1.toggle();
-                    if (radioButton1.isChecked())
-                    {
-                        radioButton1.setChecked(false);
-                    }
-                    else
-                    {
-                        radioButton1.setChecked(true);
-                    }
-                    
-                    //radioButton1.setChecked(false);
-                }
-                else
-                {
-                    Log.d("loudout button1", "false");
-                    //radioButton1.toggle();
-                    //radioButton9.toggle();
-                    if (radioButton1.isChecked())
-                    {
-                        Log.d("loudout button1", "ischecked true");
-                        radioButton1.setChecked(true);
-                    }
-                    if (!radioButton1.isSelected())
-                    {
-                        Log.d("loudout button1", "ischecked false");
-                        radioButton1.setChecked(true);
-                        radioButton9.setChecked(true);
-                    }
-                }
-            }
-        });
-        
-        radioButton2.setOnClickListener(new RadioButton.OnClickListener()
-        {
-            @Override
-            public void onClick(View v)
-            {
-                if (asymmetricMode)
-                {
-                    Log.d("loudout button2", "true");
-                    radioButton2.toggle();
-                }
-                else
-                {
-                    Log.d("loudout button2", "false");
-                    radioButton2.toggle();
-                    radioButton8.toggle();
-                }
-            }
-        });
-        
-        radioButton3.setOnClickListener(new RadioButton.OnClickListener()
-        {
-            @Override
-            public void onClick(View v)
-            {
-                if (asymmetricMode)
-                {
-                    Log.d("loudout button3", "true");
-                    radioButton3.toggle();
-                }
-                else
-                {
-                    Log.d("loudout button3", "false");
-                    radioButton3.toggle();
-                    radioButton7.toggle();
-                }
-            }
-        });
-        
-        radioButton4.setOnClickListener(new RadioButton.OnClickListener()
-        {
-            @Override
-            public void onClick(View v)
-            {
-                if (asymmetricMode)
-                {
-                    Log.d("loudout button4", "true");
-                    radioButton4.toggle();
-                }
-                else
-                {
-                    Log.d("loudout button4", "false");
-                    radioButton4.toggle();
-                    radioButton6.toggle();
-                }
-            }
-        });
-        
-        radioButton5.setOnClickListener(new RadioButton.OnClickListener()
-        {
-            @Override
-            public void onClick(View v)
-            {
-                radioButton5.toggle();
-            }
-        });
-        
-        radioButton6.setOnClickListener(new RadioButton.OnClickListener()
-        {
-            @Override
-            public void onClick(View v)
-            {
-                if (asymmetricMode)
-                {
-                    Log.d("loudout button6", "true");
-                    radioButton6.toggle();
-                }
-                else
-                {
-                    Log.d("loudout button6", "false");
-                    radioButton6.toggle();
-                    radioButton4.toggle();
-                }
-            }
-        });
-        
-        radioButton7.setOnClickListener(new RadioButton.OnClickListener()
-        {
-            @Override
-            public void onClick(View v)
-            {
-                if (asymmetricMode)
-                {
-                    Log.d("loudout button7", "true");
-                    radioButton7.toggle();
-                }
-                else
-                {
-                    Log.d("loudout button7", "false");
-                    radioButton7.toggle();
-                    radioButton3.toggle();
-                }
-            }
-        });
-        
-        radioButton8.setOnClickListener(new RadioButton.OnClickListener()
-        {
-            @Override
-            public void onClick(View v)
-            {
-                if (asymmetricMode)
-                {
-                    Log.d("loudout button8", "true");
-                    radioButton8.toggle();
-                }
-                else
-                {
-                    Log.d("loudout button8", "false");
-                    radioButton8.toggle();
-                    radioButton2.toggle();
-                }
-            }
-        });
-        
-        radioButton9.setOnClickListener(new RadioButton.OnClickListener()
-        {
-            @Override
-            public void onClick(View v)
-            {
-                if (asymmetricMode)
-                {
-                    Log.d("loudout button9", "true");
-                    radioButton9.toggle();
-                }
-                else
-                {
-                    Log.d("loudout button9", "false");
-                    radioButton9.toggle();
-                    radioButton1.toggle();
-                }
-            }
-        });
-        
+
+        listView.setAdapter(databaseAdapter);
+
         return view;
     }
     
@@ -342,5 +183,4 @@ public class TacticalReferenceFragment extends Fragment
         
         return dataList;
     }
-    
 }
