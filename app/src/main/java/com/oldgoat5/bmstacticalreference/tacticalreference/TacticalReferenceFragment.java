@@ -46,7 +46,7 @@ public class TacticalReferenceFragment extends Fragment
     private TextView weaponTypeTextView;
     private View view;
     //TODO on click of list view item, bringup page with full item info.
-    //TODO toggle to show name and uses, or name and info.
+    //TODO weaponitem shows name, usages.  click for more.
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, 
             Bundle savedInstanceState)

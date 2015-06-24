@@ -11,7 +11,9 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class DBTools extends SQLiteAssetHelper
 {
@@ -164,7 +166,7 @@ public class DBTools extends SQLiteAssetHelper
     /*****************************************************************
      * Gets all rows from the database and orders them by id.  
      * 
-     * @return Returns a HashMap of all rows in the database.
+     * @return Returns an ArrayList of all rows in the database.
      *****************************************************************/
     public ArrayList<OrdnanceObject> getAllRows()
     {
@@ -210,6 +212,79 @@ public class DBTools extends SQLiteAssetHelper
         }
         
         return rowsArrayList;
+    }
+
+    /*****************************************************************
+     * Gets Air to Ground Missiles
+     *
+     * @return Returns an ArrayList of the results.
+     *****************************************************************/
+    public WeaponUseList getAGMissiles()
+    {
+        /*final String query = "SELECT name, use" +
+                             "FROM load" +
+                             "  JOIN load_uses ON load._id = load_uses._id" +
+                             "  JOIN weapon_type ON load._id = weapon_type._id" +
+                             "WHERE load_type_id = 0" +
+                             "  AND type = \"Air-Ground Missile\"" +
+                             "ORDER BY name, use";*/
+
+        final String queryGetDistinctNames = "SELECT DISTINCT name" +
+                                             "FROM load" +
+                                             "  JOIN weapon_type ON load._id = weapon_type._id" +
+                                             "WHERE type = \"Air-Ground Missile\"" +
+                                             "ORDER BY name";
+
+        WeaponUseList weaponUseList;
+        ArrayList<String> weaponNames;
+        Cursor cursorGetDistinctNames;
+        HashMap<String, ArrayList<String>> weaponUseMap;
+
+        weaponNames = new ArrayList<String>();
+        weaponUseList = new WeaponUseList();
+        weaponUseMap = new HashMap<String, ArrayList<String>>();
+        database = this.getWritableDatabase();
+
+        cursorGetDistinctNames = database.rawQuery(queryGetDistinctNames, null);
+
+        //get list of distinct agm weapons.
+        if (cursorGetDistinctNames.moveToFirst())
+        {
+            do
+            {
+                weaponNames.add(cursorGetDistinctNames.getString(0));
+            } while (cursorGetDistinctNames.moveToNext());
+        }
+
+        //get list of uses for each weapon.
+        for (String name : weaponNames)
+        {
+            //get list
+            ArrayList<String> usesList = new ArrayList<String>();
+
+            String query = "SELECT use" +
+                           "FROM load" +
+                           "  JOIN load_uses ON load._id = load_uses._id" +
+                           "WHERE name = " + name +
+                           "ORDER BY use";
+
+            database = this.getWritableDatabase();
+
+            Cursor cursor = database.rawQuery(query, null);
+
+            weaponUseList.setWeaponName(name);
+
+            if (cursor.moveToNext())
+            {
+                do
+                {
+                    weaponUseList.add(cursor.getString(0));
+                } while (cursor.moveToNext());
+            }
+
+        }
+
+        return weaponUseList;
     }
     
     @Override
