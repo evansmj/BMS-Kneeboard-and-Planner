@@ -10,29 +10,40 @@ import java.util.ArrayList;
  * @author Michael Evans
  * @since 6/24/2015
  *********************************************************************/
-public class WeaponUseList extends ArrayList
+public class WeaponUseList
 {
     private ArrayList<String> useList;
     private String weaponName;
+
+    public WeaponUseList()
+    {
+        this.useList = new ArrayList<String>();
+        this.weaponName = "";
+    }
 
     public void addUse(String use)
     {
         useList.add(use);
     }
 
-    public String getName()
+    public String getWeaponName()
     {
-        return weaponName;
+        return this.weaponName;
     }
 
-    public ArrayList<String> getUses()
+    public String[] getUses()
     {
-        return useList;
+        return this.useList.toArray(new String[useList.size()]);
     }
 
     public void setWeaponName(String name)
     {
-        weaponName = name;
+        this.weaponName = name;
+    }
+
+    public int size()
+    {
+        return useList.size();
     }
 
 }

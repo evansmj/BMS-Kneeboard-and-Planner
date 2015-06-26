@@ -4,41 +4,58 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.oldgoat5.bmstacticalreference.R;
 
+import java.util.ArrayList;
+
 /*********************************************************************
+ * Copyright © Michael Evans - All Rights Reserved.
+ *
  * @author Michael Evans
- * @since 6/24/2015
+ * @since 6/25/2015
  *********************************************************************/
-public class WeaponUseListItemAdapter extends ArrayAdapter<WeaponUseList>
+public class WeaponUseListItemAdapter extends WeaponUseListArrayAdapter<WeaponUseList>
 {
     private Context CONTEXT;
-    private WeaponUseList weaponUseList;
-    public WeaponUseListItemAdapter(Context context,
-                           WeaponUseList weaponUseList)
+    private ArrayList<WeaponUseList> list;
+
+    public WeaponUseListItemAdapter(Context context, ArrayList<WeaponUseList> list)
     {
-        super(context, R.layout.ordinance_object, weaponUseList);
+        super(context, R.layout.weapon_item_layout, list);
 
         this.CONTEXT = context;
-        this.weaponUseList = weaponUseList;
+        this.list = list;
     }
 
-    @Override
     public View getView(int position, View convertView, ViewGroup parent)
     {
         LayoutInflater inflater = (LayoutInflater) CONTEXT.getSystemService(
                 Context.LAYOUT_INFLATER_SERVICE);
+        //TODO use view holder
+        View rowView = inflater.inflate(R.layout.weapon_item_layout, parent, false);
 
-        View rowView = inflater.inflate(
-                R.layout.ordinance_object, parent, false);
+        Button weaponName = (Button) rowView.findViewById(R.id.weapon_name_button);
+        weaponName.setText(list.get(position).getWeaponName());
 
-        TextView nameView = (TextView) rowView.findViewById(
-                R.id.weapon_name_list_item);
-        nameView.setText((weaponUseList).get(position).getName());
+        TextView usesTextView = (TextView) rowView.findViewById(R.id.uses_text_view);
+
+        String[] uses = list.get(position).getUses();
+        String usesText = "";
+
+        for (int i = 0; i < list.get(position).size(); i++)
+        {
+            usesText += uses[i] + "\n";
+        }
+
+        usesTextView.setText(usesText);
+
+        //TODO button click listener to show all information.
 
         return rowView;
     }
+
+
 }

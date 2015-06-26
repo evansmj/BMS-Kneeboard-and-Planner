@@ -36,14 +36,15 @@ public class TacticalReferenceFragment extends Fragment
             "Bombs", "Rockets"};
 
     private DBTools dbTools;
-    private ListItemAdapter databaseAdapter;
-    private ListView listView;
     private ArrayAdapter<String> loadTypeArrayAdapter;
     private ArrayAdapter<String> weaponTypeArrayAdapter;
+    private ListItemAdapter databaseAdapter;
+    private ListView listView;
     private Spinner loadTypeSpinner;
     private Spinner weaponTypeSpinner;
     private TextView loadTypeTextView;
     private TextView weaponTypeTextView;
+    private WeaponUseListItemAdapter adapter;
     private View view;
     //TODO on click of list view item, bringup page with full item info.
     //TODO weaponitem shows name, usages.  click for more.
@@ -104,6 +105,14 @@ public class TacticalReferenceFragment extends Fragment
                 switch(pos)
                 {
                     ///select ag, aa, bombs, rockets
+                    case 0:
+                        break;
+
+                    case 1:
+                        //show ag weapons
+                        adapter = new WeaponUseListItemAdapter(getActivity(), generateAGM());
+                        listView.setAdapter(adapter);
+                        break;
                 }
             }
 
@@ -113,7 +122,7 @@ public class TacticalReferenceFragment extends Fragment
             }
         });
 
-        listView = (ListView) view.findViewById(R.id.listViewLoadout);
+        listView = (ListView) view.findViewById(R.id.loadout_list_view);
 
         loadTypeSpinner.setAdapter(loadTypeArrayAdapter);
         weaponTypeSpinner.setAdapter(weaponTypeArrayAdapter);
@@ -140,10 +149,10 @@ public class TacticalReferenceFragment extends Fragment
             throw sqle;
         }
 
-        databaseAdapter = new ListItemAdapter(
-                this.getActivity(), generateData());
+        //databaseAdapter = new ListItemAdapter(
+        //        this.getActivity(), generateData());
 
-        listView.setAdapter(databaseAdapter);
+        //listView.setAdapter(databaseAdapter);
 
         return view;
     }
@@ -182,5 +191,10 @@ public class TacticalReferenceFragment extends Fragment
         items.add(new RowItem("0", "item 1", "999"));*/
         
         return dataList;
+    }
+
+    private ArrayList<WeaponUseList> generateAGM()
+    {
+        return dbTools.getAGMissiles();
     }
 }

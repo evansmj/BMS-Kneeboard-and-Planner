@@ -219,7 +219,7 @@ public class DBTools extends SQLiteAssetHelper
      *
      * @return Returns an ArrayList of the results.
      *****************************************************************/
-    public WeaponUseList getAGMissiles()
+    public ArrayList<WeaponUseList> getAGMissiles()
     {
         /*final String query = "SELECT name, use" +
                              "FROM load" +
@@ -229,20 +229,20 @@ public class DBTools extends SQLiteAssetHelper
                              "  AND type = \"Air-Ground Missile\"" +
                              "ORDER BY name, use";*/
 
-        final String queryGetDistinctNames = "SELECT DISTINCT name" +
-                                             "FROM load" +
-                                             "  JOIN weapon_type ON load._id = weapon_type._id" +
-                                             "WHERE type = \"Air-Ground Missile\"" +
+        final String queryGetDistinctNames = "SELECT DISTINCT name " +
+                                             "FROM load " +
+                                             "  JOIN weapon_type ON load._id = weapon_type._id " +
+                                             "WHERE type = \"Air-Ground Missile\" " +
                                              "ORDER BY name";
 
-        WeaponUseList weaponUseList;
+        ArrayList<WeaponUseList> masterUseList;
         ArrayList<String> weaponNames;
         Cursor cursorGetDistinctNames;
-        HashMap<String, ArrayList<String>> weaponUseMap;
+        //HashMap<String, ArrayList<String>> weaponUseMap;
 
         weaponNames = new ArrayList<String>();
-        weaponUseList = new WeaponUseList();
-        weaponUseMap = new HashMap<String, ArrayList<String>>();
+        masterUseList = new ArrayList<WeaponUseList>();
+        //weaponUseMap = new HashMap<String, ArrayList<String>>();
         database = this.getWritableDatabase();
 
         cursorGetDistinctNames = database.rawQuery(queryGetDistinctNames, null);
@@ -256,35 +256,42 @@ public class DBTools extends SQLiteAssetHelper
             } while (cursorGetDistinctNames.moveToNext());
         }
 
+        cursorGetDistinctNames.close();
+
         //get list of uses for each weapon.
         for (String name : weaponNames)
         {
-            //get list
-            ArrayList<String> usesList = new ArrayList<String>();
+            WeaponUseList tempUseList = new WeaponUseList();
 
-            String query = "SELECT use" +
-                           "FROM load" +
-                           "  JOIN load_uses ON load._id = load_uses._id" +
-                           "WHERE name = " + name +
+            //get list
+
+            String query = "SELECT use " +
+                           "FROM load " +
+                           "  JOIN load_uses ON load._id = load_uses._id " +
+                           "WHERE name = \"" + name + "\" " +
                            "ORDER BY use";
 
             database = this.getWritableDatabase();
 
             Cursor cursor = database.rawQuery(query, null);
 
-            weaponUseList.setWeaponName(name);
+            tempUseList.setWeaponName(name);
 
             if (cursor.moveToNext())
             {
                 do
                 {
-                    weaponUseList.add(cursor.getString(0));
+                    tempUseList.addUse(cursor.getString(0));
                 } while (cursor.moveToNext());
             }
 
+            cursor.close();
+            //add the weaponlist to the arraylist (weaponUseList).
+
+            masterUseList.add(tempUseList);
         }
 
-        return weaponUseList;
+        return masterUseList;
     }
     
     @Override
