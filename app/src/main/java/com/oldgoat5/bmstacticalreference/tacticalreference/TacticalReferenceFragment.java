@@ -32,22 +32,25 @@ import com.oldgoat5.bmstacticalreference.R;
 public class TacticalReferenceFragment extends Fragment
 {
     private final String[] loadTypeItems = new String[] {"---", "Weapons", "Stores"};
+    private final String[] referenceTypeItems = new String[] {"---", "Munitions", "Aircraft"};
     private final String[] weaponTypeItems = new String[] {"---", "A-G Missiles", "A-A Missiles",
             "Bombs", "Rockets"};
 
     private DBTools dbTools;
     private ArrayAdapter<String> loadTypeArrayAdapter;
+    private ArrayAdapter<String> referenceTypeArrayAdapter;
     private ArrayAdapter<String> weaponTypeArrayAdapter;
     private ListItemAdapter databaseAdapter;
     private ListView listView;
     private Spinner loadTypeSpinner;
+    private Spinner referenceTypeSpinner;
     private Spinner weaponTypeSpinner;
     private TextView loadTypeTextView;
     private TextView weaponTypeTextView;
     private WeaponUseListItemAdapter adapter;
     private View view;
     //TODO on click of list view item, bringup page with full item info.
-    //TODO weaponitem shows name, usages.  click for more.
+    //TODO weaponitem shows name, usages.  click for more
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, 
             Bundle savedInstanceState)
@@ -61,9 +64,13 @@ public class TacticalReferenceFragment extends Fragment
         loadTypeSpinner = (Spinner) view.findViewById(R.id.load_type_spinner);
         weaponTypeSpinner = (Spinner) view.findViewById(R.id.weapon_type_spinner);
 
+        referenceTypeSpinner = (Spinner) view.findViewById(R.id.reference_type_spinner);
+
         loadTypeArrayAdapter = new ArrayAdapter<String>(this.getActivity(),
                 android.R.layout.simple_list_item_1, loadTypeItems);
-        weaponTypeArrayAdapter= new ArrayAdapter<String>(this.getActivity(),
+        referenceTypeArrayAdapter = new ArrayAdapter<String>(this.getActivity(),
+                android.R.layout.simple_list_item_1, referenceTypeItems);
+        weaponTypeArrayAdapter = new ArrayAdapter<String>(this.getActivity(),
                 android.R.layout.simple_list_item_1, weaponTypeItems);
 
         loadTypeSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
@@ -97,12 +104,36 @@ public class TacticalReferenceFragment extends Fragment
             }
         });
 
+        referenceTypeSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
+        {
+
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l)
+            {
+                switch (i)
+                {
+                    case 0:
+                        break;
+
+                    case 1:
+                        //show weapons menus
+                        break;
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView)
+            {
+                //select nothing
+            }
+        });
+
         weaponTypeSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
         {
             public void onItemSelected(AdapterView<?> parent, View view,
                                        int pos, long id)
             {
-                switch(pos)
+                switch (pos)
                 {
                     ///select ag, aa, bombs, rockets
                     case 0:
@@ -125,6 +156,7 @@ public class TacticalReferenceFragment extends Fragment
         listView = (ListView) view.findViewById(R.id.loadout_list_view);
 
         loadTypeSpinner.setAdapter(loadTypeArrayAdapter);
+        referenceTypeSpinner.setAdapter(referenceTypeArrayAdapter);
         weaponTypeSpinner.setAdapter(weaponTypeArrayAdapter);
 
         Log.d("LoadOutFragment", "getactivity=" + getActivity().toString());

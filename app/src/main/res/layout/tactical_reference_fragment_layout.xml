@@ -22,7 +22,7 @@
         android:text="@string/load_type"
         android:id="@+id/load_type_text_view"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:layout_alignParentTop="true"
+        android:layout_below="@+id/reference_type_spinner"
         android:layout_alignParentStart="true"/>
 
     <Spinner
@@ -40,7 +40,7 @@
         android:text="Weapon Type"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:id="@+id/weapon_type_text_view"
-        android:layout_alignParentTop="true"
+        android:layout_below="@+id/reference_type_spinner"
         android:layout_toEndOf="@+id/space"/>
 
     <Spinner
@@ -55,8 +55,16 @@
     <Space
         android:layout_width="20px"
         android:layout_height="20px"
-        android:layout_alignParentTop="true"
+        android:layout_below="@+id/reference_type_spinner"
         android:layout_centerHorizontal="true"
         android:id="@+id/space"/>
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:spinnerMode="dropdown"
+        android:id="@+id/reference_type_spinner"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"/>
 
 </RelativeLayout>
