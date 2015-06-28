@@ -258,7 +258,7 @@ public class NorthKoreaChartFragment extends Fragment
                         break;
 
                     case 26:
-                        imageView.setImageResource(R.drawable.toksan_airport_diagram);
+                        imageView.setImageResource(R.drawable.wonsan_airport_diagram);
                         dialog.setContentView(imageView);
                         dialog.setTitle(airbases[26]);
                         dialog.show();
