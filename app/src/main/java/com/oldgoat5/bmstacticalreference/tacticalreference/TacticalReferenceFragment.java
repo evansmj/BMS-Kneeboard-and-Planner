@@ -32,7 +32,7 @@ import com.oldgoat5.bmstacticalreference.R;
 public class TacticalReferenceFragment extends Fragment
 {
     private final String[] loadTypeItems = new String[] {"---", "Weapons", "Stores"};
-    private final String[] referenceTypeItems = new String[] {"---", "Munitions", "Aircraft"};
+    private final String[] referenceTypeItems = new String[] {"---", "Munitions", "Surface-Air Threats"};
     private final String[] weaponTypeItems = new String[] {"---", "A-G Missiles", "A-A Missiles",
             "Bombs", "Rockets"};
 
@@ -113,10 +113,26 @@ public class TacticalReferenceFragment extends Fragment
                 switch (i)
                 {
                     case 0:
+                        loadTypeTextView.setVisibility(View.GONE);
+                        loadTypeSpinner.setVisibility(View.GONE);
+                        weaponTypeTextView.setVisibility(View.GONE);
+                        weaponTypeSpinner.setVisibility(View.GONE);
+                        listView.setAdapter(null);
                         break;
 
                     case 1:
                         //show weapons menus
+                        loadTypeTextView.setVisibility(View.VISIBLE);
+                        loadTypeSpinner.setVisibility(View.VISIBLE);
+                        listView.setAdapter(null);
+                        break;
+                    case 2:
+                        //use surface-air threats
+                        loadTypeTextView.setVisibility(View.GONE);
+                        loadTypeSpinner.setVisibility(View.GONE);
+                        weaponTypeTextView.setVisibility(View.GONE);
+                        weaponTypeSpinner.setVisibility(View.GONE);
+                        listView.setAdapter(null);
                         break;
                 }
             }
