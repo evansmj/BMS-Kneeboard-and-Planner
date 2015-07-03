@@ -9,6 +9,8 @@ import android.widget.TextView;
 
 import com.oldgoat5.bmstacticalreference.R;
 
+import org.w3c.dom.Text;
+
 import java.util.ArrayList;
 
 /*********************************************************************
@@ -37,7 +39,7 @@ public class WeaponUseListItemAdapter extends WeaponUseListArrayAdapter<WeaponUs
         //TODO use view holder
         View rowView = inflater.inflate(R.layout.weapon_item_layout, parent, false);
 
-        Button weaponName = (Button) rowView.findViewById(R.id.weapon_name_button);
+        TextView weaponName = (TextView) rowView.findViewById(R.id.weapon_name_text_view);
         weaponName.setText(list.get(position).getWeaponName());
 
         TextView usesTextView = (TextView) rowView.findViewById(R.id.uses_text_view);

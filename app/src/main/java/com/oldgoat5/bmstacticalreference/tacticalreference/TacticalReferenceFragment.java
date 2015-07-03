@@ -18,6 +18,7 @@ import android.widget.ListView;
 import android.widget.RadioButton;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.oldgoat5.bmstacticalreference.R;
 
@@ -34,7 +35,7 @@ public class TacticalReferenceFragment extends Fragment
     private final String[] loadTypeItems = new String[] {"---", "Weapons", "Stores"};
     private final String[] referenceTypeItems = new String[] {"---", "Munitions", "Surface-Air Threats"};
     private final String[] weaponTypeItems = new String[] {"---", "A-G Missiles", "A-A Missiles",
-            "Bombs", "Rockets"};
+            "Cluster Bombs", "Guided Bombs", "Other"};
 
     private DBTools dbTools;
     private ArrayAdapter<String> loadTypeArrayAdapter;
@@ -126,6 +127,7 @@ public class TacticalReferenceFragment extends Fragment
                         loadTypeSpinner.setVisibility(View.VISIBLE);
                         listView.setAdapter(null);
                         break;
+
                     case 2:
                         //use surface-air threats
                         loadTypeTextView.setVisibility(View.GONE);
@@ -156,8 +158,32 @@ public class TacticalReferenceFragment extends Fragment
                         break;
 
                     case 1:
-                        //show ag weapons
-                        adapter = new WeaponUseListItemAdapter(getActivity(), generateAGM());
+                        //show agm
+                        adapter = new WeaponUseListItemAdapter(getActivity(), dbTools.getAGMissiles());
+                        listView.setAdapter(adapter);
+                        break;
+
+                    case 2:
+                        //show as missiles
+                        adapter = new WeaponUseListItemAdapter(getActivity(), dbTools.getAAMissiles());
+                        listView.setAdapter(adapter);
+                        break;
+
+                    case 3:
+                        //show cbu
+                        adapter = new WeaponUseListItemAdapter(getActivity(), dbTools.getClusterBombs());
+                        listView.setAdapter(adapter);
+                        break;
+
+                    case 4:
+                        //show gbu
+                        adapter = new WeaponUseListItemAdapter(getActivity(), dbTools.getGuidedBombs());
+                        listView.setAdapter(adapter);
+                        break;
+
+                    case 5:
+                        //other
+                        adapter = new WeaponUseListItemAdapter(getActivity(), dbTools.getOtherWeapons());
                         listView.setAdapter(adapter);
                         break;
                 }
@@ -170,6 +196,20 @@ public class TacticalReferenceFragment extends Fragment
         });
 
         listView = (ListView) view.findViewById(R.id.loadout_list_view);
+
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener()
+        {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id)
+            {
+                Toast toast = Toast.makeText(getActivity(), "click", Toast.LENGTH_LONG);
+                toast.show();
+
+                Log.d("tacref", "onclick");
+            }
+        });
+
 
         loadTypeSpinner.setAdapter(loadTypeArrayAdapter);
         referenceTypeSpinner.setAdapter(referenceTypeArrayAdapter);
@@ -241,8 +281,4 @@ public class TacticalReferenceFragment extends Fragment
         return dataList;
     }
 
-    private ArrayList<WeaponUseList> generateAGM()
-    {
-        return dbTools.getAGMissiles();
-    }
 }

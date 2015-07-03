@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
@@ -63,6 +64,8 @@ public class NorthKoreaChartFragment extends Fragment
         }
 
         dialog = new Dialog(CONTEXT);
+        dialog.getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+
         imageView = new ZoomImageView(CONTEXT);
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener()
