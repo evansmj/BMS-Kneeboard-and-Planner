@@ -26,11 +26,11 @@ Reference - need nicer UI
 - steerpoints - done
 
 Tactical Reference
-Munitions - database done, 
+- Munitions - database done, 
 - wip, make queries for UI
-Surface-Air - wip, gathering data
-Aircraft - ns
-Vehicles - ns
+- Surface-Air - wip, gathering data
+- Aircraft - ns
+- Vehicles - ns
 
 Checklists
 - instrument landing - done
