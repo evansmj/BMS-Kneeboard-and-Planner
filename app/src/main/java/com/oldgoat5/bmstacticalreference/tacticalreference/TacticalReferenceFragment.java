@@ -166,6 +166,8 @@ public class TacticalReferenceFragment extends Fragment
                 {
                     ///select ag, aa, bombs, rockets
                     case 0:
+                        adapter = null;
+                        listView.setAdapter(adapter);
                         break;
 
                     case 1:
@@ -226,6 +228,8 @@ public class TacticalReferenceFragment extends Fragment
                 listDialog.show();
 
                 //with custom view of all info.
+
+
 
             }
         });

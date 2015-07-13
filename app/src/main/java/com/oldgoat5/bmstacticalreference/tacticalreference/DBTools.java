@@ -231,8 +231,8 @@ public class DBTools extends SQLiteAssetHelper
 
         final String queryGetDistinctNames = "SELECT DISTINCT name " +
                 "FROM load " +
-                "  JOIN weapon_type ON load._id = weapon_type._id " +
-                "WHERE type = \"Air Intercept Missile\" " +
+                "  JOIN weapon_info ON load._id = weapon_info._id " +
+                "WHERE weapon_type_id = 1 " +
                 "ORDER BY name";
 
         ArrayList<WeaponUseList> masterUseList;
@@ -311,8 +311,8 @@ public class DBTools extends SQLiteAssetHelper
 
         final String queryGetDistinctNames = "SELECT DISTINCT name " +
                                              "FROM load " +
-                                             "  JOIN weapon_type ON load._id = weapon_type._id " +
-                                             "WHERE type = \"Air-Ground Missile\" " +
+                                             "  JOIN weapon_info ON load._id = weapon_info._id " +
+                                             "WHERE weapon_type_id = 0 " +
                                              "ORDER BY name";
 
         ArrayList<WeaponUseList> masterUseList;
@@ -391,8 +391,8 @@ public class DBTools extends SQLiteAssetHelper
 
         final String queryGetDistinctNames = "SELECT DISTINCT name " +
                 "FROM load " +
-                "  JOIN weapon_type ON load._id = weapon_type._id " +
-                "WHERE type = \"Cluster Bomb Unit\" " +
+                "  JOIN weapon_info ON load._id = weapon_info._id " +
+                "WHERE weapon_type_id = 4 " +
                 "ORDER BY name";
 
         ArrayList<WeaponUseList> masterUseList;
@@ -471,8 +471,8 @@ public class DBTools extends SQLiteAssetHelper
 
         final String queryGetDistinctNames = "SELECT DISTINCT name " +
                 "FROM load " +
-                "  JOIN weapon_type ON load._id = weapon_type._id " +
-                "WHERE type = \"Guided Bomb Unit\" " +
+                "  JOIN weapon_info ON load._id = weapon_info._id " +
+                "WHERE weapon_type_id = 5 " +
                 "ORDER BY name";
 
         ArrayList<WeaponUseList> masterUseList;
@@ -551,12 +551,12 @@ public class DBTools extends SQLiteAssetHelper
 
         final String queryGetDistinctNames = "SELECT DISTINCT name " +
                 "FROM load " +
-                "  JOIN weapon_type ON load._id = weapon_type._id " +
-                "WHERE type = \"Bomb, Dummy Unit\"" +
-                "  OR type = \"Bomb, Live Unit\"" +
-                "  OR type = \"Mark (General Purpose Bomb)\"" +
-                "  OR type = \"Nuclear Bomb\"" +
-                "  OR type = \"Launcher Unit\"" +
+                "  JOIN weapon_info ON load._id = weapon_info._id " +
+                "WHERE weapon_type_id = 2 " +
+                "  OR weapon_type_id = 3 " +
+                "  OR weapon_type_id = 6 " +
+                "  OR weapon_type_id = 7 " +
+                "  OR weapon_type_id = 8 " +
                 "ORDER BY name";
 
         ArrayList<WeaponUseList> masterUseList;
