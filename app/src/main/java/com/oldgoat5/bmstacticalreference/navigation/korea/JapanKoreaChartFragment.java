@@ -26,7 +26,7 @@ import com.oldgoat5.bmstacticalreference.R;
  *********************************************************************/
 public class JapanKoreaChartFragment extends Fragment
 {
-    Context CONTEXT;
+    private Context CONTEXT;
 
     private ArrayAdapter<String> adapter;
     private Dialog dialog;

@@ -1214,6 +1214,14 @@
     <string name="open_6_preset">20</string>
     <string name="open_6_vhf">121.70</string>
 
-
+    <!-- Tactical Reference -->
+    <string name="weight">Weight: </string>
+    <string name="drag">Drag: </string>
+    <string name="range">Range: </string>
+    <string name="blast_radius">Blast Radius: </string>
+    <string name="damage">Damage: </string>
+    <string name="guidance">Guidance: </string>
+    <string name="release_brevity">Release Brevity: </string>
+    <string name="type">Type: </string>
 
 </resources>

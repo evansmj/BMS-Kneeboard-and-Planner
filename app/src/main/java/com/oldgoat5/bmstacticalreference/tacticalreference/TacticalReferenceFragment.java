@@ -3,6 +3,8 @@ package com.oldgoat5.bmstacticalreference.tacticalreference;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import android.app.Dialog;
+import android.content.Context;
 import android.database.sqlite.SQLiteException;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -36,8 +38,10 @@ public class TacticalReferenceFragment extends Fragment
     private final String[] referenceTypeItems = new String[] {"---", "Munitions", "Surface-Air Threats"};
     private final String[] weaponTypeItems = new String[] {"---", "A-G Missiles", "A-A Missiles",
             "Cluster Bombs", "Guided Bombs", "Other"};
+    private Context CONTEXT;
 
     private DBTools dbTools;
+    private Dialog listDialog;
     private ArrayAdapter<String> loadTypeArrayAdapter;
     private ArrayAdapter<String> referenceTypeArrayAdapter;
     private ArrayAdapter<String> weaponTypeArrayAdapter;
@@ -50,14 +54,21 @@ public class TacticalReferenceFragment extends Fragment
     private TextView weaponTypeTextView;
     private WeaponUseListItemAdapter adapter;
     private View view;
+
     //TODO on click of list view item, bringup page with full item info.
     //TODO weaponitem shows name, usages.  click for more
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, 
             Bundle savedInstanceState)
     {
         view = inflater.inflate(
                 R.layout.tactical_reference_fragment_layout, container, false);
+
+        if (this.isAdded())
+        {
+            CONTEXT = getActivity();
+        }
 
         loadTypeTextView = (TextView) view.findViewById(R.id.load_type_text_view);
         weaponTypeTextView = (TextView) view.findViewById(R.id.weapon_type_text_view);
@@ -92,7 +103,7 @@ public class TacticalReferenceFragment extends Fragment
                         weaponTypeSpinner.setVisibility(View.VISIBLE);
                         break;
                     case 2:
-                        //show stores  menu
+                        //show stores menu
                         weaponTypeTextView.setVisibility(View.GONE);
                         weaponTypeSpinner.setVisibility(View.GONE);
                         break;
@@ -207,6 +218,15 @@ public class TacticalReferenceFragment extends Fragment
                 toast.show();
 
                 Log.d("tacref", "onclick");
+
+                //make a dialog
+                listDialog = new Dialog(CONTEXT);
+                listDialog.setContentView(R.layout.weapon_dialog_layout);
+                listDialog.setTitle("placehold");
+                listDialog.show();
+
+                //with custom view of all info.
+
             }
         });
 
