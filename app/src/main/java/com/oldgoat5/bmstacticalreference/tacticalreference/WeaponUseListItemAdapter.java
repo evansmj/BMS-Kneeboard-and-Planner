@@ -49,7 +49,7 @@ public class WeaponUseListItemAdapter extends WeaponUseListArrayAdapter<WeaponUs
 
         for (int i = 0; i < list.get(position).size(); i++)
         {
-            usesText += uses[i] + "\n";
+            usesText += "\n" + uses[i];
         }
 
         usesTextView.setText(usesText);

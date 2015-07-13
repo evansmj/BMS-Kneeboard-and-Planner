@@ -56,7 +56,6 @@ public class TacticalReferenceFragment extends Fragment
     private View view;
 
     //TODO on click of list view item, bringup page with full item info.
-    //TODO weaponitem shows name, usages.  click for more
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, 
@@ -210,7 +209,6 @@ public class TacticalReferenceFragment extends Fragment
 
         listView = (ListView) view.findViewById(R.id.loadout_list_view);
 
-
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener()
         {
             @Override
@@ -221,15 +219,18 @@ public class TacticalReferenceFragment extends Fragment
 
                 Log.d("tacref", "onclick");
 
+                //TextView nameTextView = (TextView) view.findViewById(R.id.weapon_name_list_item);
+
                 //make a dialog
                 listDialog = new Dialog(CONTEXT);
                 listDialog.setContentView(R.layout.weapon_dialog_layout);
-                listDialog.setTitle("placehold");
-                listDialog.show();
+                //todo make method to switch between dialog types and populate them
 
                 //with custom view of all info.
+                listDialog.setTitle(((TextView) view.findViewById(
+                        R.id.weapon_name_text_view)).getText().toString());
 
-
+                listDialog.show();
 
             }
         });

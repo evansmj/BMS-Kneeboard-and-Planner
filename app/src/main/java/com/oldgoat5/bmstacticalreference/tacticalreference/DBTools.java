@@ -611,6 +611,7 @@ public class DBTools extends SQLiteAssetHelper
 
             cursor.close();
             //add the weaponlist to the arraylist (weaponUseList).
+            //Log.d("DBTools otherlist", " " + tempUseList.size());
 
             masterUseList.add(tempUseList);
         }
