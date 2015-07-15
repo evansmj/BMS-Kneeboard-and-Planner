@@ -96,8 +96,10 @@ public class TacticalReferenceFragment extends Fragment
                 {
                     case 0:
                         //hide all menus.
+                        listView.setAdapter(null);
                         weaponTypeTextView.setVisibility(View.GONE);
                         weaponTypeSpinner.setVisibility(View.GONE);
+                        weaponTypeSpinner.setSelection(0);
                         break;
                     case 1:
                         //show weapons menu
@@ -129,8 +131,10 @@ public class TacticalReferenceFragment extends Fragment
                     case 0:
                         loadTypeTextView.setVisibility(View.GONE);
                         loadTypeSpinner.setVisibility(View.GONE);
+                        loadTypeSpinner.setSelection(0);
                         weaponTypeTextView.setVisibility(View.GONE);
                         weaponTypeSpinner.setVisibility(View.GONE);
+                        weaponTypeSpinner.setSelection(0);
                         listView.setAdapter(null);
                         break;
 
@@ -168,8 +172,7 @@ public class TacticalReferenceFragment extends Fragment
                 {
                     ///select ag, aa, bombs, rockets
                     case 0:
-                        adapter = null;
-                        listView.setAdapter(adapter);
+                        listView.setAdapter(null);
                         break;
 
                     case 1:
