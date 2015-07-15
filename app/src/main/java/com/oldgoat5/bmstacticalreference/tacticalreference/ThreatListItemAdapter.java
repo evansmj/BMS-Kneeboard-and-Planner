@@ -44,7 +44,8 @@ public class ThreatListItemAdapter extends ArrayAdapter<ThreatObject>
         TextView guidanceTextView = (TextView) rowView.findViewById(R.id.threat_guidance_text_view);
 
         nameTextView.setText((itemsArrayList).get(position).getName());
-        minEngRangeTextView.setText("\nMinEngRange: " + Integer.toString((itemsArrayList).get(position).getMinEngRange()));
+        minEngRangeTextView.setText("\nMinEngRange: " + Integer.toString(
+                (itemsArrayList).get(position).getMinEngRange()) + " ft.");
         guidanceTextView.setText("Guidance: " + (itemsArrayList).get(position).getGuidance());
 
         if ((position % 2) == 0)

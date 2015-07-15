@@ -392,14 +392,14 @@ public class TacticalReferenceFragment extends Fragment
         TextView releaseTextView = (TextView) listDialogView.findViewById(R.id.release_dialog_text_view);
         TextView typeTextView = (TextView) listDialogView.findViewById(R.id.type_dialog_text_view);
 
-        weightTextView.setText(weightTextView.getText().toString() + " " + weaponInfo[0]);
+        weightTextView.setText(weightTextView.getText().toString() + " " + weaponInfo[0] + " lbs.");
         dragTextView.setText(dragTextView.getText().toString() + " " + weaponInfo[1]);
-        blastRadiusTextView.setText(blastRadiusTextView.getText().toString() + " " + weaponInfo[2]);
+        blastRadiusTextView.setText(blastRadiusTextView.getText().toString() + " " + weaponInfo[2] + " ft.");
 
         int mileRange = Integer.parseInt(weaponInfo[3]);
         mileRange = (int) Math.ceil(mileRange * 0.539957); //convert km to nm then round up.
 
-        rangeTextView.setText(rangeTextView.getText().toString() + " " + Integer.toString(mileRange));
+        rangeTextView.setText(rangeTextView.getText().toString() + " " + Integer.toString(mileRange) + " ft.");
         damageTextView.setText(damageTextView.getText().toString() + " " + weaponInfo[4]);
         guidanceTextView.setText(guidanceTextView.getText().toString() + " " + weaponInfo[5]);
         releaseTextView.setText(releaseTextView.getText().toString() + " " + weaponInfo[6]);
