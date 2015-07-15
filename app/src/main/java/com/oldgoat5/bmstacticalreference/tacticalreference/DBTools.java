@@ -620,6 +620,37 @@ public class DBTools extends SQLiteAssetHelper
     }
 
     /*****************************************************************
+     * Gets stores.
+     *
+     * @return Returns an array of the results.
+     *****************************************************************/
+    public ArrayList<StoreObject> getStores()
+    {
+        ArrayList<StoreObject> storeList;
+
+        String query = "SELECT name, weight, drag " +
+                       "FROM load " +
+                       "WHERE load_type_id = 1";
+
+        database = getWritableDatabase();
+        storeList = new ArrayList<StoreObject>();
+
+        Cursor cursor = database.rawQuery(query, null);
+
+        if (cursor.moveToFirst())
+        {
+            do
+            {
+                storeList.add(new StoreObject(cursor.getString(0), cursor.getInt(1),
+                        cursor.getInt(2)));
+            } while (cursor.moveToNext());
+        }
+
+        return storeList;
+    }
+
+
+    /*****************************************************************
      * Gets weapon info
      *
      * @param weaponName - the name of the weapon to get info for.

@@ -55,8 +55,6 @@ public class WeaponUseListItemAdapter extends WeaponUseListArrayAdapter<WeaponUs
 
         usesTextView.setText(usesText);
 
-        //TODO button click listener to show all information.
-
         if ((position % 2) == 0)
         {
             rowView.setBackgroundColor(Color.parseColor("#E8F2FE"));

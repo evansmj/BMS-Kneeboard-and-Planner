@@ -56,9 +56,10 @@ public class TacticalReferenceFragment extends Fragment
     private Spinner loadTypeSpinner;
     private Spinner referenceTypeSpinner;
     private Spinner weaponTypeSpinner;
+    private StoreListItemAdapter storeAdapter;
     private TextView loadTypeTextView;
     private TextView weaponTypeTextView;
-    private WeaponUseListItemAdapter adapter;
+    private WeaponUseListItemAdapter weaponAdapter;
     private View listDialogView;
     private View view;
 
@@ -116,7 +117,8 @@ public class TacticalReferenceFragment extends Fragment
                     case 2:
                         //show stores menu
                         dialogViewType = DialogViewType.STORE;
-                        listView.setAdapter(null);
+                        storeAdapter = new StoreListItemAdapter(CONTEXT, dbTools.getStores());
+                        listView.setAdapter(storeAdapter);
                         weaponTypeTextView.setVisibility(View.GONE);
                         weaponTypeSpinner.setVisibility(View.GONE);
                         break;
@@ -189,32 +191,32 @@ public class TacticalReferenceFragment extends Fragment
 
                     case 1:
                         //show agm
-                        adapter = new WeaponUseListItemAdapter(getActivity(), dbTools.getAGMissiles());
-                        listView.setAdapter(adapter);
+                        weaponAdapter = new WeaponUseListItemAdapter(getActivity(), dbTools.getAGMissiles());
+                        listView.setAdapter(weaponAdapter);
                         break;
 
                     case 2:
                         //show as missiles
-                        adapter = new WeaponUseListItemAdapter(getActivity(), dbTools.getAAMissiles());
-                        listView.setAdapter(adapter);
+                        weaponAdapter = new WeaponUseListItemAdapter(getActivity(), dbTools.getAAMissiles());
+                        listView.setAdapter(weaponAdapter);
                         break;
 
                     case 3:
                         //show cbu
-                        adapter = new WeaponUseListItemAdapter(getActivity(), dbTools.getClusterBombs());
-                        listView.setAdapter(adapter);
+                        weaponAdapter = new WeaponUseListItemAdapter(getActivity(), dbTools.getClusterBombs());
+                        listView.setAdapter(weaponAdapter);
                         break;
 
                     case 4:
                         //show gbu
-                        adapter = new WeaponUseListItemAdapter(getActivity(), dbTools.getGuidedBombs());
-                        listView.setAdapter(adapter);
+                        weaponAdapter = new WeaponUseListItemAdapter(getActivity(), dbTools.getGuidedBombs());
+                        listView.setAdapter(weaponAdapter);
                         break;
 
                     case 5:
                         //other
-                        adapter = new WeaponUseListItemAdapter(getActivity(), dbTools.getOtherWeapons());
-                        listView.setAdapter(adapter);
+                        weaponAdapter = new WeaponUseListItemAdapter(getActivity(), dbTools.getOtherWeapons());
+                        listView.setAdapter(weaponAdapter);
                         break;
                 }
             }
