@@ -42,8 +42,11 @@ public class TacticalReferenceFragment extends Fragment
             "Cluster Bombs", "Guided Bombs", "Other"};
     private Context CONTEXT;
 
+    private enum DialogViewType {NONE, WEAPON, SURFACE, STORE};
+
     private DBTools dbTools;
     private Dialog listDialog;
+    private DialogViewType dialogViewType;
     private ArrayAdapter<String> loadTypeArrayAdapter;
     private ArrayAdapter<String> referenceTypeArrayAdapter;
     private ArrayAdapter<String> weaponTypeArrayAdapter;
@@ -96,6 +99,7 @@ public class TacticalReferenceFragment extends Fragment
                 {
                     case 0:
                         //hide all menus.
+                        dialogViewType = DialogViewType.NONE;
                         listView.setAdapter(null);
                         weaponTypeTextView.setVisibility(View.GONE);
                         weaponTypeSpinner.setVisibility(View.GONE);
@@ -103,11 +107,15 @@ public class TacticalReferenceFragment extends Fragment
                         break;
                     case 1:
                         //show weapons menu
+                        dialogViewType = DialogViewType.WEAPON;
+                        listView.setAdapter(null);
                         weaponTypeTextView.setVisibility(View.VISIBLE);
                         weaponTypeSpinner.setVisibility(View.VISIBLE);
                         break;
                     case 2:
                         //show stores menu
+                        dialogViewType = DialogViewType.STORE;
+                        listView.setAdapter(null);
                         weaponTypeTextView.setVisibility(View.GONE);
                         weaponTypeSpinner.setVisibility(View.GONE);
                         break;
@@ -129,6 +137,7 @@ public class TacticalReferenceFragment extends Fragment
                 switch (i)
                 {
                     case 0:
+                        dialogViewType = DialogViewType.NONE;
                         loadTypeTextView.setVisibility(View.GONE);
                         loadTypeSpinner.setVisibility(View.GONE);
                         loadTypeSpinner.setSelection(0);
@@ -139,14 +148,16 @@ public class TacticalReferenceFragment extends Fragment
                         break;
 
                     case 1:
-                        //show weapons menus
+                        //show munitions menus
                         loadTypeTextView.setVisibility(View.VISIBLE);
                         loadTypeSpinner.setVisibility(View.VISIBLE);
+                        loadTypeSpinner.setSelection(0);
                         listView.setAdapter(null);
                         break;
 
                     case 2:
                         //use surface-air threats
+                        dialogViewType = DialogViewType.SURFACE;
                         loadTypeTextView.setVisibility(View.GONE);
                         loadTypeSpinner.setVisibility(View.GONE);
                         weaponTypeTextView.setVisibility(View.GONE);
@@ -223,41 +234,25 @@ public class TacticalReferenceFragment extends Fragment
                 //make a dialog
                 listDialog = new Dialog(CONTEXT);
                 listDialog.setContentView(R.layout.weapon_dialog_layout);
-                listDialogView = listDialog.findViewById(R.id.weapon_dialog);
+
                 //todo make method to switch between dialog types and populate them
 
-                //with custom view of all info.
-                listDialog.setTitle(((TextView) view.findViewById(
-                        R.id.weapon_name_text_view)).getText().toString());
+                switch (dialogViewType)
+                {
+                    case WEAPON:
+                       populateWeaponDialog();
+                       break;
 
-                Log.d("TacRef", "weaponInfo name = " + ((TextView) view.findViewById(
-                        R.id.weapon_name_text_view)).getText().toString());
+                    case SURFACE:
+                        //populateSurfaceDialog();
+                        break;
 
-                String[] weaponInfo = dbTools.getWeaponInfo(((TextView) view.findViewById(
-                        R.id.weapon_name_text_view)).getText().toString());
+                    case STORE:
+                        break;
+                }
 
-                TextView weightTextView = (TextView) listDialogView.findViewById(R.id.weight_dialog_text_view);
-                TextView dragTextView  = (TextView) listDialog.findViewById(R.id.drag_dialog_text_view);
-                TextView blastRadiusTextView = (TextView) listDialogView.findViewById(R.id.blast_dialog_text_view);
-                TextView rangeTextView = (TextView) listDialogView.findViewById(R.id.range_dialog_text_view);
-                TextView damageTextView = (TextView) listDialogView.findViewById(R.id.damage_dialog_text_view);
-                TextView guidanceTextView = (TextView) listDialogView.findViewById(R.id.guidance_dialog_text_view);
-                TextView releaseTextView = (TextView) listDialogView.findViewById(R.id.release_dialog_text_view);
-                TextView typeTextView = (TextView) listDialogView.findViewById(R.id.type_dialog_text_view);
-
-                weightTextView.setText(weightTextView.getText().toString() + " " + weaponInfo[0]);
-                dragTextView.setText(dragTextView.getText().toString() + " " + weaponInfo[1]);
-                blastRadiusTextView.setText(blastRadiusTextView.getText().toString() + " " + weaponInfo[2]);
-                int mileRange = Integer.parseInt(weaponInfo[3]);
-                mileRange = (int) Math.ceil(mileRange);
-                rangeTextView.setText(rangeTextView.getText().toString() + " " + Integer.toString(mileRange));
-                damageTextView.setText(damageTextView.getText().toString() + " " + weaponInfo[4]);
-                guidanceTextView.setText(guidanceTextView.getText().toString() + " " + weaponInfo[5]);
-                releaseTextView.setText(releaseTextView.getText().toString() + " " + weaponInfo[6]);
-                typeTextView.setText(typeTextView.getText().toString() + " " + weaponInfo[7]);
 
                 listDialog.show();
-
             }
         });
 
@@ -332,4 +327,42 @@ public class TacticalReferenceFragment extends Fragment
         return dataList;
     }
 
+    /*****************************************************************
+     * Populates the listview dialog with weapon info.
+     *****************************************************************/
+    private void populateWeaponDialog()
+    {
+        listDialogView = listDialog.findViewById(R.id.weapon_dialog);
+
+        listDialog.setTitle(((TextView) view.findViewById(
+                R.id.weapon_name_text_view)).getText().toString());
+
+        Log.d("TacRef", "weaponInfo name = " + ((TextView) view.findViewById(
+                R.id.weapon_name_text_view)).getText().toString());
+
+        String[] weaponInfo = dbTools.getWeaponInfo(((TextView) view.findViewById(
+                R.id.weapon_name_text_view)).getText().toString());
+
+        TextView weightTextView = (TextView) listDialogView.findViewById(R.id.weight_dialog_text_view);
+        TextView dragTextView  = (TextView) listDialog.findViewById(R.id.drag_dialog_text_view);
+        TextView blastRadiusTextView = (TextView) listDialogView.findViewById(R.id.blast_dialog_text_view);
+        TextView rangeTextView = (TextView) listDialogView.findViewById(R.id.range_dialog_text_view);
+        TextView damageTextView = (TextView) listDialogView.findViewById(R.id.damage_dialog_text_view);
+        TextView guidanceTextView = (TextView) listDialogView.findViewById(R.id.guidance_dialog_text_view);
+        TextView releaseTextView = (TextView) listDialogView.findViewById(R.id.release_dialog_text_view);
+        TextView typeTextView = (TextView) listDialogView.findViewById(R.id.type_dialog_text_view);
+
+        weightTextView.setText(weightTextView.getText().toString() + " " + weaponInfo[0]);
+        dragTextView.setText(dragTextView.getText().toString() + " " + weaponInfo[1]);
+        blastRadiusTextView.setText(blastRadiusTextView.getText().toString() + " " + weaponInfo[2]);
+
+        int mileRange = Integer.parseInt(weaponInfo[3]);
+        mileRange = (int) Math.ceil(mileRange * 0.539957); //convert km to nm
+
+        rangeTextView.setText(rangeTextView.getText().toString() + " " + Integer.toString(mileRange));
+        damageTextView.setText(damageTextView.getText().toString() + " " + weaponInfo[4]);
+        guidanceTextView.setText(guidanceTextView.getText().toString() + " " + weaponInfo[5]);
+        releaseTextView.setText(releaseTextView.getText().toString() + " " + weaponInfo[6]);
+        typeTextView.setText(typeTextView.getText().toString() + " " + weaponInfo[7]);
+    }
 }
