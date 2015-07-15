@@ -234,15 +234,26 @@ public class TacticalReferenceFragment extends Fragment
             @Override
             public void onItemClick(AdapterView<?> adapterView, View rowView, int position, long id)
             {
-                listDialog = new Dialog(CONTEXT);
-                listDialog.setContentView(R.layout.weapon_dialog_layout);
-                view = rowView;
-
                 switch (dialogViewType)
                 {
                     case WEAPON:
-                       populateWeaponDialog();
-                       break;
+                        listDialog = new Dialog(CONTEXT);
+                        listDialog.setContentView(R.layout.weapon_dialog_layout);
+                        view = rowView;
+
+                        populateWeaponDialog();
+
+                        listDialog.show();
+
+                        listDialog.setOnDismissListener(new DialogInterface.OnDismissListener()
+                        {
+                            @Override
+                            public void onDismiss(DialogInterface dialogInterface)
+                            {
+                                clearWeaponDialog();
+                            }
+                        });
+                        break;
 
                     case SURFACE:
                         //populateSurfaceDialog();
@@ -251,20 +262,8 @@ public class TacticalReferenceFragment extends Fragment
                     case STORE:
                         break;
                 }
-
-                listDialog.show();
-
-                listDialog.setOnDismissListener(new DialogInterface.OnDismissListener()
-                {
-                    @Override
-                    public void onDismiss(DialogInterface dialogInterface)
-                    {
-                        clearWeaponDialog();
-                    }
-                });
             }
         });
-
 
         loadTypeSpinner.setAdapter(loadTypeArrayAdapter);
         referenceTypeSpinner.setAdapter(referenceTypeArrayAdapter);
