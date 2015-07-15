@@ -51,7 +51,7 @@ public class TacticalReferenceFragment extends Fragment
     private ArrayAdapter<String> loadTypeArrayAdapter;
     private ArrayAdapter<String> referenceTypeArrayAdapter;
     private ArrayAdapter<String> weaponTypeArrayAdapter;
-    private ListItemAdapter databaseAdapter;
+    //private ListItemAdapter databaseAdapter;
     private ListView listView;
     private Spinner loadTypeSpinner;
     private Spinner referenceTypeSpinner;
@@ -59,6 +59,7 @@ public class TacticalReferenceFragment extends Fragment
     private StoreListItemAdapter storeAdapter;
     private TextView loadTypeTextView;
     private TextView weaponTypeTextView;
+    private ThreatListItemAdapter threatAdapter;
     private WeaponUseListItemAdapter weaponAdapter;
     private View listDialogView;
     private View view;
@@ -107,13 +108,16 @@ public class TacticalReferenceFragment extends Fragment
                         weaponTypeSpinner.setVisibility(View.GONE);
                         weaponTypeSpinner.setSelection(0);
                         break;
+
                     case 1:
                         //show weapons menu
                         dialogViewType = DialogViewType.WEAPON;
                         listView.setAdapter(null);
                         weaponTypeTextView.setVisibility(View.VISIBLE);
                         weaponTypeSpinner.setVisibility(View.VISIBLE);
+                        weaponTypeSpinner.setSelection(0);
                         break;
+
                     case 2:
                         //show stores menu
                         dialogViewType = DialogViewType.STORE;
@@ -165,7 +169,8 @@ public class TacticalReferenceFragment extends Fragment
                         loadTypeSpinner.setVisibility(View.GONE);
                         weaponTypeTextView.setVisibility(View.GONE);
                         weaponTypeSpinner.setVisibility(View.GONE);
-                        listView.setAdapter(null);
+                        threatAdapter = new ThreatListItemAdapter(CONTEXT, dbTools.getThreats());
+                        listView.setAdapter(threatAdapter);
                         break;
                 }
             }
@@ -228,7 +233,7 @@ public class TacticalReferenceFragment extends Fragment
         });
 
         listView = (ListView) view.findViewById(R.id.loadout_list_view);
-
+        //TODO after 1.0 add advanced search dialog popup
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener()
         {
             @Override
@@ -240,11 +245,8 @@ public class TacticalReferenceFragment extends Fragment
                         listDialog = new Dialog(CONTEXT);
                         listDialog.setContentView(R.layout.weapon_dialog_layout);
                         view = rowView;
-
                         populateWeaponDialog();
-
                         listDialog.show();
-
                         listDialog.setOnDismissListener(new DialogInterface.OnDismissListener()
                         {
                             @Override
@@ -256,6 +258,9 @@ public class TacticalReferenceFragment extends Fragment
                         break;
 
                     case SURFACE:
+                        listDialog = new Dialog(CONTEXT);
+                        listDialog.setContentView(R.layout.threat_dialog_layout);
+                        view = rowView;
                         //populateSurfaceDialog();
                         break;
 
@@ -392,12 +397,20 @@ public class TacticalReferenceFragment extends Fragment
         blastRadiusTextView.setText(blastRadiusTextView.getText().toString() + " " + weaponInfo[2]);
 
         int mileRange = Integer.parseInt(weaponInfo[3]);
-        mileRange = (int) Math.ceil(mileRange * 0.539957); //convert km to nm
+        mileRange = (int) Math.ceil(mileRange * 0.539957); //convert km to nm then round up.
 
         rangeTextView.setText(rangeTextView.getText().toString() + " " + Integer.toString(mileRange));
         damageTextView.setText(damageTextView.getText().toString() + " " + weaponInfo[4]);
         guidanceTextView.setText(guidanceTextView.getText().toString() + " " + weaponInfo[5]);
         releaseTextView.setText(releaseTextView.getText().toString() + " " + weaponInfo[6]);
         typeTextView.setText(typeTextView.getText().toString() + " " + weaponInfo[7]);
+    }
+
+    /*****************************************************************
+     * Populates the threat dialog.
+     *****************************************************************/
+    public void populateThreatDialog()
+    {
+
     }
 }

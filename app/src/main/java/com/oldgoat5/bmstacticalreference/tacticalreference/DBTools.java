@@ -630,7 +630,8 @@ public class DBTools extends SQLiteAssetHelper
 
         String query = "SELECT name, weight, drag " +
                        "FROM load " +
-                       "WHERE load_type_id = 1";
+                       "WHERE load_type_id = 1 " +
+                       "ORDER BY name ";
 
         database = getWritableDatabase();
         storeList = new ArrayList<StoreObject>();
@@ -649,6 +650,39 @@ public class DBTools extends SQLiteAssetHelper
         return storeList;
     }
 
+    /*****************************************************************
+     * Get surface threats.
+     *
+     * @return Returns an ArrayList of ThreatObjects.
+     *****************************************************************/
+    public ArrayList<ThreatObject> getThreats()
+    {
+        ArrayList<ThreatObject> threatList;
+
+        threatList = new ArrayList<ThreatObject>();
+
+        String query = "SELECT name, maxtof, weight, min_eng_range, min_eng_alt, g.type, f.firecontrol " +
+                "FROM threat " +
+                "  JOIN guidance_type AS g ON threat.guidance_id = g._id " +
+                "  JOIN firecontrol_type AS f ON threat.firecontrol_id = f._id " +
+                "ORDER BY name";
+
+        database = getWritableDatabase();
+
+        Cursor cursor = database.rawQuery(query, null);
+
+        if (cursor.moveToFirst())
+        {
+            do
+            {
+                threatList.add(new ThreatObject(cursor.getString(0), cursor.getInt(1),
+                        cursor.getInt(2), cursor.getInt(3), cursor.getInt(4), cursor.getString(5),
+                        cursor.getString(6)));
+            } while (cursor.moveToNext());
+        }
+
+        return threatList;
+    }
 
     /*****************************************************************
      * Gets weapon info

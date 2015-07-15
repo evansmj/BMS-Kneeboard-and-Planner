@@ -18,14 +18,14 @@ import java.util.ArrayList;
  * @author Michael Evans
  * @since 7/15/2015
  *********************************************************************/
-public class StoreListItemAdapter extends ArrayAdapter<StoreObject>
+public class ThreatListItemAdapter extends ArrayAdapter<ThreatObject>
 {
     private final Context CONTEXT;
-    private final ArrayList<StoreObject> itemsArrayList;
+    private final ArrayList<ThreatObject> itemsArrayList;
 
-    public StoreListItemAdapter(Context context, ArrayList<StoreObject> itemsArrayList)
+    public ThreatListItemAdapter(Context context, ArrayList<ThreatObject> itemsArrayList)
     {
-        super(context, R.layout.store_object_layout, itemsArrayList);
+        super(context, R.layout.threat_object_layout, itemsArrayList);
 
         this.CONTEXT = context;
         this.itemsArrayList = itemsArrayList;
@@ -37,27 +37,24 @@ public class StoreListItemAdapter extends ArrayAdapter<StoreObject>
                 Context.LAYOUT_INFLATER_SERVICE);
 
         View rowView = inflater.inflate(
-                R.layout.store_object_layout, parent, false);
+                R.layout.threat_object_layout, parent, false);
 
-        TextView nameTextView = (TextView) rowView.findViewById(R.id.store_name_text_view);
-        TextView weightTextView = (TextView) rowView.findViewById(R.id.store_weight_text_view);
-        TextView dragTextView = (TextView) rowView.findViewById(R.id.store_drag_text_view);
+        TextView nameTextView = (TextView) rowView.findViewById(R.id.threat_name_text_view);
+        TextView minEngRangeTextView = (TextView) rowView.findViewById(R.id.threat_min_eng_range_text_view);
+        TextView guidanceTextView = (TextView) rowView.findViewById(R.id.threat_guidance_text_view);
 
         nameTextView.setText((itemsArrayList).get(position).getName());
-        weightTextView.setText("\nWeight: " + Integer.toString((itemsArrayList).get(position).getWeight()));
-        dragTextView.setText("Drag: " + Integer.toString((itemsArrayList).get(position).getDrag()));
+        minEngRangeTextView.setText("\nMinEngRange: " + Integer.toString((itemsArrayList).get(position).getMinEngRange()));
+        guidanceTextView.setText("Guidance: " + (itemsArrayList).get(position).getGuidance());
 
         if ((position % 2) == 0)
         {
-            rowView.setBackgroundColor(Color.parseColor("#E8F2FE"));
-        }
-        else
+            rowView.setBackgroundColor(Color.parseColor("#F7E1E1"));
+        } else
         {
             // odd color
         }
 
         return rowView;
     }
-
-
 }
