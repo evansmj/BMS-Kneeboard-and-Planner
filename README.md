@@ -14,10 +14,10 @@ Calibrated/True airspeed conversion - rp5 manual p86
 - release AboveGroundLevel
 
 Joker/Bingo fuel calculator
-- use equation from manual - done, need UI
+- use equation from manual - done, need better UI
 
 Charts
-- KTO - wip, need debug
+- KTO - done
 - Balkans - done
 
 Reference - need nicer UI
@@ -26,9 +26,8 @@ Reference - need nicer UI
 - steerpoints - done
 
 Tactical Reference
-- Munitions - database done, 
-- wip, make queries for UI
-- Surface-Air - wip, gathering data
+- Munitions - database done, queries done
+- Surface-Air - database done
 - Aircraft - ns
 - Vehicles - ns
 
