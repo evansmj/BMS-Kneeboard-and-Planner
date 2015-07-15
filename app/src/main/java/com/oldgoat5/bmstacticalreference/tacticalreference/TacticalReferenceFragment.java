@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.database.sqlite.SQLiteException;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -229,13 +230,11 @@ public class TacticalReferenceFragment extends Fragment
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener()
         {
             @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id)
+            public void onItemClick(AdapterView<?> adapterView, View rowView, int position, long id)
             {
-                //make a dialog
                 listDialog = new Dialog(CONTEXT);
                 listDialog.setContentView(R.layout.weapon_dialog_layout);
-
-                //todo make method to switch between dialog types and populate them
+                view = rowView;
 
                 switch (dialogViewType)
                 {
@@ -251,8 +250,16 @@ public class TacticalReferenceFragment extends Fragment
                         break;
                 }
 
-
                 listDialog.show();
+
+                listDialog.setOnDismissListener(new DialogInterface.OnDismissListener()
+                {
+                    @Override
+                    public void onDismiss(DialogInterface dialogInterface)
+                    {
+                        clearWeaponDialog();
+                    }
+                });
             }
         });
 
@@ -327,6 +334,33 @@ public class TacticalReferenceFragment extends Fragment
         return dataList;
     }
 
+    /*****************************************************************
+     * Clears the weapon dialog.
+     *****************************************************************/
+    private void clearWeaponDialog()
+    {
+        Log.d("TacRef", "clearWeaponDialog() called");
+
+        TextView weightTextView = (TextView) listDialogView.findViewById(R.id.weight_dialog_text_view);
+        TextView dragTextView  = (TextView) listDialog.findViewById(R.id.drag_dialog_text_view);
+        TextView blastRadiusTextView = (TextView) listDialogView.findViewById(R.id.blast_dialog_text_view);
+        TextView rangeTextView = (TextView) listDialogView.findViewById(R.id.range_dialog_text_view);
+        TextView damageTextView = (TextView) listDialogView.findViewById(R.id.damage_dialog_text_view);
+        TextView guidanceTextView = (TextView) listDialogView.findViewById(R.id.guidance_dialog_text_view);
+        TextView releaseTextView = (TextView) listDialogView.findViewById(R.id.release_dialog_text_view);
+        TextView typeTextView = (TextView) listDialogView.findViewById(R.id.type_dialog_text_view);
+
+        listDialog.setTitle("");
+        weightTextView.setText(R.string.weight);
+        dragTextView.setText(R.string.drag);
+        blastRadiusTextView.setText(R.string.blast_radius);
+        rangeTextView.setText(R.string.range);
+        damageTextView.setText(R.string.damage);
+        guidanceTextView.setText(R.string.guidance);
+        releaseTextView.setText(R.string.release_brevity);
+        typeTextView.setText(R.string.type);
+
+    }
     /*****************************************************************
      * Populates the listview dialog with weapon info.
      *****************************************************************/

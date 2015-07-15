@@ -628,6 +628,7 @@ public class DBTools extends SQLiteAssetHelper
      *****************************************************************/
     public String[] getWeaponInfo(String weaponName)
     {
+        Log.d("DBTools", "getWeaponInfo: " + weaponName);
         String[] weaponInfo = new String[8];
 
         String query = "SELECT weight, " +
@@ -642,7 +643,7 @@ public class DBTools extends SQLiteAssetHelper
                        "  JOIN weapon_info on load._id = weapon_info._id " +
                        "  JOIN damage_type AS d ON weapon_info.damage_id = d._id " +
                        "  JOIN guidance_type AS g ON weapon_info.guidance_id = g._id " +
-                       "  JOIN weapon_type AS w ON load._id = w._id " +
+                       "  JOIN weapon_type AS w ON weapon_info.weapon_type_id = w._id " +
                        "WHERE name = \"" + weaponName + "\"";
 
         database = getWritableDatabase();
