@@ -24,6 +24,8 @@ import android.widget.Toast;
 
 import com.oldgoat5.bmstacticalreference.R;
 
+import org.w3c.dom.Text;
+
 /*********************************************************************
  * Copyright © Michael Evans - All Rights Reserved.
  *
@@ -53,6 +55,7 @@ public class TacticalReferenceFragment extends Fragment
     private TextView loadTypeTextView;
     private TextView weaponTypeTextView;
     private WeaponUseListItemAdapter adapter;
+    private View listDialogView;
     private View view;
 
     //TODO on click of list view item, bringup page with full item info.
@@ -214,21 +217,41 @@ public class TacticalReferenceFragment extends Fragment
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long id)
             {
-                Toast toast = Toast.makeText(getActivity(), "click", Toast.LENGTH_LONG);
-                toast.show();
-
-                Log.d("tacref", "onclick");
-
-                //TextView nameTextView = (TextView) view.findViewById(R.id.weapon_name_list_item);
-
                 //make a dialog
                 listDialog = new Dialog(CONTEXT);
                 listDialog.setContentView(R.layout.weapon_dialog_layout);
+                listDialogView = listDialog.findViewById(R.id.weapon_dialog);
                 //todo make method to switch between dialog types and populate them
 
                 //with custom view of all info.
                 listDialog.setTitle(((TextView) view.findViewById(
                         R.id.weapon_name_text_view)).getText().toString());
+
+                Log.d("TacRef", "weaponInfo name = " + ((TextView) view.findViewById(
+                        R.id.weapon_name_text_view)).getText().toString());
+
+                String[] weaponInfo = dbTools.getWeaponInfo(((TextView) view.findViewById(
+                        R.id.weapon_name_text_view)).getText().toString());
+
+                TextView weightTextView = (TextView) listDialogView.findViewById(R.id.weight_dialog_text_view);
+                TextView dragTextView  = (TextView) listDialog.findViewById(R.id.drag_dialog_text_view);
+                TextView blastRadiusTextView = (TextView) listDialogView.findViewById(R.id.blast_dialog_text_view);
+                TextView rangeTextView = (TextView) listDialogView.findViewById(R.id.range_dialog_text_view);
+                TextView damageTextView = (TextView) listDialogView.findViewById(R.id.damage_dialog_text_view);
+                TextView guidanceTextView = (TextView) listDialogView.findViewById(R.id.guidance_dialog_text_view);
+                TextView releaseTextView = (TextView) listDialogView.findViewById(R.id.release_dialog_text_view);
+                TextView typeTextView = (TextView) listDialogView.findViewById(R.id.type_dialog_text_view);
+
+                weightTextView.setText(weightTextView.getText().toString() + " " + weaponInfo[0]);
+                dragTextView.setText(dragTextView.getText().toString() + " " + weaponInfo[1]);
+                blastRadiusTextView.setText(blastRadiusTextView.getText().toString() + " " + weaponInfo[2]);
+                int mileRange = Integer.parseInt(weaponInfo[3]);
+                mileRange = (int) Math.ceil(mileRange);
+                rangeTextView.setText(rangeTextView.getText().toString() + " " + Integer.toString(mileRange));
+                damageTextView.setText(damageTextView.getText().toString() + " " + weaponInfo[4]);
+                guidanceTextView.setText(guidanceTextView.getText().toString() + " " + weaponInfo[5]);
+                releaseTextView.setText(releaseTextView.getText().toString() + " " + weaponInfo[6]);
+                typeTextView.setText(typeTextView.getText().toString() + " " + weaponInfo[7]);
 
                 listDialog.show();
 

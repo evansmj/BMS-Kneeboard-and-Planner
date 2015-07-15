@@ -619,6 +619,46 @@ public class DBTools extends SQLiteAssetHelper
         return masterUseList;
     }
 
+    /*****************************************************************
+     * Gets weapon info
+     *
+     * @param weaponName - the name of the weapon to get info for.
+     *
+     * @return Returns an ArrayList of the results.
+     *****************************************************************/
+    public String[] getWeaponInfo(String weaponName)
+    {
+        String[] weaponInfo = new String[8];
+
+        String query = "SELECT weight, " +
+                       "  drag, " +
+                       "  blast_radius, " +
+                       "  range_km, " +
+                       "  d.type, " +
+                       "  g.type, " +
+                       "  release_brevity, " +
+                       "  w.type " +
+                       "FROM load " +
+                       "  JOIN weapon_info on load._id = weapon_info._id " +
+                       "  JOIN damage_type AS d ON weapon_info.damage_id = d._id " +
+                       "  JOIN guidance_type AS g ON weapon_info.guidance_id = g._id " +
+                       "  JOIN weapon_type AS w ON load._id = w._id " +
+                       "WHERE name = \"" + weaponName + "\"";
+
+        database = getWritableDatabase();
+        Cursor cursor = database.rawQuery(query, null);
+
+        cursor.moveToFirst();
+
+        for (int i = 0; i < 8; i++)
+        {
+            weaponInfo[i] = cursor.getString(i);
+        }
+
+        cursor.close();
+
+        return weaponInfo;
+    }
 
     @Override
     public synchronized void close()
