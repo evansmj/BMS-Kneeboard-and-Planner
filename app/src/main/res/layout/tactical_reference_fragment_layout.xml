@@ -11,8 +11,10 @@
 	    android:layout_width="fill_parent"
 	    android:layout_height="180dp"
         android:layout_alignParentBottom="true"
-        android:dividerHeight="5dp"
 	   	android:fillViewport="true"
+        android:padding="5dp"
+        android:divider="#000000"
+        android:dividerHeight="1dp"
         android:layout_below="@+id/load_type_spinner">
 
 	</ListView>

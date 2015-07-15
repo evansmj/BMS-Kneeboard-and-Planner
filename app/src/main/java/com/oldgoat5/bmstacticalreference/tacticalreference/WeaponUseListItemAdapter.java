@@ -1,6 +1,7 @@
 package com.oldgoat5.bmstacticalreference.tacticalreference;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -55,6 +56,15 @@ public class WeaponUseListItemAdapter extends WeaponUseListArrayAdapter<WeaponUs
         usesTextView.setText(usesText);
 
         //TODO button click listener to show all information.
+
+        if ((position % 2) == 0)
+        {
+            rowView.setBackgroundColor(Color.parseColor("#E8F2FE"));
+        }
+        else
+        {
+            // odd color
+        }
 
         return rowView;
     }
