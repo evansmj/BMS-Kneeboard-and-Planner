@@ -15,17 +15,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.CheckBox;
-import android.widget.ImageView;
 import android.widget.ListView;
-import android.widget.RadioButton;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.oldgoat5.bmstacticalreference.R;
-
-import org.w3c.dom.Text;
 
 /*********************************************************************
  * Copyright © Michael Evans - All Rights Reserved.
@@ -39,6 +33,8 @@ public class TacticalReferenceFragment extends Fragment
 {
     private final String[] loadTypeItems = new String[] {"---", "Weapons", "Stores"};
     private final String[] referenceTypeItems = new String[] {"---", "Munitions", "Surface-Air Threats"};
+    private final String[] surfaceTypeItems = new String[] {"---", "Surface-Air Missiles",
+            "Anti-Aircraft Artillery", "MANPADS"};
     private final String[] weaponTypeItems = new String[] {"---", "A-G Missiles", "A-A Missiles",
             "Cluster Bombs", "Guided Bombs", "Other"};
     private Context CONTEXT;
@@ -50,11 +46,13 @@ public class TacticalReferenceFragment extends Fragment
     private DialogViewType dialogViewType;
     private ArrayAdapter<String> loadTypeArrayAdapter;
     private ArrayAdapter<String> referenceTypeArrayAdapter;
+    private ArrayAdapter<String> surfaceTypeArrayAdapter;
     private ArrayAdapter<String> weaponTypeArrayAdapter;
     //private ListItemAdapter databaseAdapter;
     private ListView listView;
     private Spinner loadTypeSpinner;
     private Spinner referenceTypeSpinner;
+    private Spinner surfaceTypeSpinner;
     private Spinner weaponTypeSpinner;
     private StoreListItemAdapter storeAdapter;
     private TextView loadTypeTextView;
@@ -82,14 +80,16 @@ public class TacticalReferenceFragment extends Fragment
         weaponTypeTextView = (TextView) view.findViewById(R.id.weapon_type_text_view);
 
         loadTypeSpinner = (Spinner) view.findViewById(R.id.load_type_spinner);
-        weaponTypeSpinner = (Spinner) view.findViewById(R.id.weapon_type_spinner);
-
         referenceTypeSpinner = (Spinner) view.findViewById(R.id.reference_type_spinner);
+        surfaceTypeSpinner = (Spinner) view.findViewById(R.id.surface_type_spinner);
+        weaponTypeSpinner = (Spinner) view.findViewById(R.id.weapon_type_spinner);
 
         loadTypeArrayAdapter = new ArrayAdapter<String>(this.getActivity(),
                 android.R.layout.simple_list_item_1, loadTypeItems);
         referenceTypeArrayAdapter = new ArrayAdapter<String>(this.getActivity(),
                 android.R.layout.simple_list_item_1, referenceTypeItems);
+        surfaceTypeArrayAdapter = new ArrayAdapter<String>(this.getActivity(),
+                android.R.layout.simple_list_item_1, surfaceTypeItems);
         weaponTypeArrayAdapter = new ArrayAdapter<String>(this.getActivity(),
                 android.R.layout.simple_list_item_1, weaponTypeItems);
 
@@ -171,6 +171,32 @@ public class TacticalReferenceFragment extends Fragment
                         weaponTypeSpinner.setVisibility(View.GONE);
                         threatAdapter = new ThreatListItemAdapter(CONTEXT, dbTools.getThreats());
                         listView.setAdapter(threatAdapter);
+                        break;
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView)
+            {
+                //select nothing
+            }
+        });
+
+        surfaceTypeSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
+        {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l)
+            {
+                switch (i)
+                {
+                    case 0:
+
+                        break;
+
+                    case 1:
+                        break;
+
+                    case 2:
                         break;
                 }
             }

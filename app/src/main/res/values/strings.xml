@@ -21,9 +21,6 @@
 
     <string name="image_content_description">F-16 front profile</string>
 
-    <!-- Tactical Reference Fragment -->
-    <string name="load_type">Load Type</string>
-
     <!-- Navigation Activity -->
     <string name="korea_theater_title">Korean Theater of Operations</string>
     <string name="china">China</string>
@@ -1215,6 +1212,8 @@
     <string name="open_6_vhf">121.70</string>
 
     <!-- Tactical Reference -->
+    <string name="surface_type">Threat Type</string>
+    <string name="load_type">Load Type</string>
     <string name="weight">Weight: </string>
     <string name="drag">Drag: </string>
     <string name="range">Range: </string>

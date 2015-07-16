@@ -22,11 +22,29 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="@string/surface_type"
+        android:id="@+id/surface_type_text_view"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_below="@+id/reference_type_spinner"
+        android:layout_alignParentStart="true"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="@string/load_type"
         android:id="@+id/load_type_text_view"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:layout_below="@+id/reference_type_spinner"
         android:layout_alignParentStart="true"/>
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:spinnerMode="dropdown"
+        android:id="@+id/surface_type_spinner"
+        android:layout_below="@+id/load_type_text_view"
+        android:layout_alignParentStart="true"
+        android:layout_toStartOf="@+id/space"/>
 
     <Spinner
         android:layout_width="wrap_content"
