@@ -261,7 +261,16 @@ public class TacticalReferenceFragment extends Fragment
                         listDialog = new Dialog(CONTEXT);
                         listDialog.setContentView(R.layout.threat_dialog_layout);
                         view = rowView;
-                        //populateSurfaceDialog();
+                        populateThreatDialog();
+                        listDialog.show();
+                        listDialog.setOnDismissListener(new DialogInterface.OnDismissListener()
+                        {
+                            @Override
+                            public void onDismiss(DialogInterface dialogInterface)
+                            {
+                                clearThreatDialog();
+                            }
+                        });
                         break;
 
                     case STORE:
@@ -341,6 +350,29 @@ public class TacticalReferenceFragment extends Fragment
     }
 
     /*****************************************************************
+     * Clears the threat dialog.
+     *****************************************************************/
+    private void clearThreatDialog()
+    {
+        Log.d("Tacref", "clearThreatDialog() called");
+
+        TextView maxTOFTextView = (TextView) listDialogView.findViewById(R.id.threat_maxtof_dialog_text_view);
+        TextView weightTextView = (TextView) listDialogView.findViewById(R.id.threat_weight_dialog_text_view);
+        TextView minEngRangeTextView = (TextView) listDialogView.findViewById(R.id.threat_min_eng_range_dialog_text_view);
+        TextView minEngAltTextView = (TextView) listDialogView.findViewById(R.id.threat_min_eng_alt_dialog_text_view);
+        TextView guidanceTextView = (TextView) listDialogView.findViewById(R.id.threat_guidance_dialog_text_view);
+        TextView fireControlTextView = (TextView) listDialogView.findViewById(R.id.threat_firecontrol_dialog_text_view);
+
+        listDialog.setTitle("");
+        maxTOFTextView.setText(R.string.maxtof);
+        weightTextView.setText(R.string.weight);
+        minEngRangeTextView.setText(R.string.min_eng_range);
+        minEngAltTextView.setText(R.string.min_eng_alt);
+        guidanceTextView.setText(R.string.guidance);
+        fireControlTextView.setText(R.string.firecontrol);
+    }
+
+    /*****************************************************************
      * Clears the weapon dialog.
      *****************************************************************/
     private void clearWeaponDialog()
@@ -365,7 +397,6 @@ public class TacticalReferenceFragment extends Fragment
         guidanceTextView.setText(R.string.guidance);
         releaseTextView.setText(R.string.release_brevity);
         typeTextView.setText(R.string.type);
-
     }
     /*****************************************************************
      * Populates the listview dialog with weapon info.
@@ -411,6 +442,31 @@ public class TacticalReferenceFragment extends Fragment
      *****************************************************************/
     public void populateThreatDialog()
     {
+        listDialogView = listDialog.findViewById(R.id.threat_dialog);
 
+        listDialog.setTitle(((TextView) view.findViewById(
+                R.id.threat_name_text_view)).getText().toString());
+
+        Log.d("TacRef", "threatInfo name = " + ((TextView) view.findViewById(
+                R.id.threat_name_text_view)).getText().toString());
+
+        String[] threatInfo = dbTools.getThreatInfo(((TextView) view.findViewById(
+                R.id.threat_name_text_view)).getText().toString());
+
+        Log.d("TacRef", "threatInfo[0] " + threatInfo[0]);
+
+        TextView maxTOFTextView = (TextView) listDialogView.findViewById(R.id.threat_maxtof_dialog_text_view);
+        TextView weightTextView = (TextView) listDialogView.findViewById(R.id.threat_weight_dialog_text_view);
+        TextView minEngRangeTextView = (TextView) listDialogView.findViewById(R.id.threat_min_eng_range_dialog_text_view);
+        TextView minEngAltTextView = (TextView) listDialogView.findViewById(R.id.threat_min_eng_alt_dialog_text_view);
+        TextView guidanceTextView = (TextView) listDialogView.findViewById(R.id.threat_guidance_dialog_text_view);
+        TextView fireControlTextView = (TextView) listDialogView.findViewById(R.id.threat_firecontrol_dialog_text_view);
+
+        maxTOFTextView.setText(maxTOFTextView.getText().toString() + " " + threatInfo[0] + " sec.");
+        weightTextView.setText(weightTextView.getText().toString() + " " + threatInfo[1] + " lbs.");
+        minEngRangeTextView.setText(minEngRangeTextView.getText().toString() + " " + threatInfo[2] + " ft.");
+        minEngAltTextView.setText(minEngAltTextView.getText().toString() + " " + threatInfo[3] + " ft.");
+        guidanceTextView.setText(guidanceTextView.getText().toString() + " " + threatInfo[4]);
+        fireControlTextView.setText(fireControlTextView.getText().toString() + " " + threatInfo[5]);
     }
 }

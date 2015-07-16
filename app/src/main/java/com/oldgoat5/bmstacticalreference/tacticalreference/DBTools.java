@@ -207,7 +207,6 @@ public class DBTools extends SQLiteAssetHelper
                         cursor.getString(3), cursor.getString(4),
                         cursor.getString(5), cursor.getString(6),
                         cursor.getString(7), cursor.getString(8)));
-                //
             } while (cursor.moveToNext());
         }
         
@@ -647,6 +646,8 @@ public class DBTools extends SQLiteAssetHelper
             } while (cursor.moveToNext());
         }
 
+        cursor.close();
+
         return storeList;
     }
 
@@ -681,7 +682,41 @@ public class DBTools extends SQLiteAssetHelper
             } while (cursor.moveToNext());
         }
 
+        cursor.close();
+
         return threatList;
+    }
+
+    /*****************************************************************
+     * Get threat info.
+     *
+     * @param threatName - the name of the threat to get info for.
+     *
+     * @return Returns an array of the results.
+     *****************************************************************/
+    public String[] getThreatInfo(String threatName)
+    {
+        String[] threatInfo = new String[6];
+
+        String query = "SELECT maxtof, weight, min_eng_range, min_eng_alt, g.type, f.firecontrol " +
+                       "FROM threat " +
+                       "  JOIN guidance_type AS g ON guidance_id = g._id " +
+                       "  JOIN firecontrol_type AS f ON firecontrol_id = f._id " +
+                       "WHERE name = \"" + threatName + "\"";
+
+        database = getWritableDatabase();
+        Cursor cursor = database.rawQuery(query, null);
+
+        cursor.moveToFirst();
+
+        for (int i = 0; i < threatInfo.length; i++)
+        {
+            threatInfo[i] = cursor.getString(i);
+        }
+
+        cursor.close();
+
+        return threatInfo;
     }
 
     /*****************************************************************
@@ -689,7 +724,7 @@ public class DBTools extends SQLiteAssetHelper
      *
      * @param weaponName - the name of the weapon to get info for.
      *
-     * @return Returns an ArrayList of the results.
+     * @return Returns an array of the results.
      *****************************************************************/
     public String[] getWeaponInfo(String weaponName)
     {
