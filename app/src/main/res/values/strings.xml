@@ -1223,8 +1223,9 @@
     <string name="release_brevity">Release Brevity: </string>
     <string name="type">Type: </string>
     <string name="maxtof">Max Time of Flight: </string>
-    <string name="min_eng_range">Min Engagement Range: </string>
-    <string name="min_eng_alt">Min Engagement Alt: </string>
+    <string name="min_eng_range">Min Eng Range: </string>
+    <string name="min_eng_alt">Min Eng Alt: </string>
+    <string name="max_eng_alt">Max Eng Alt: </string>
     <string name="firecontrol">Fire Control: </string>
 
 </resources>

@@ -13,11 +13,14 @@ public class ThreatObject
     private int maxTOF;
     private int minEngRange;
     private int minEngAlt;
+    private int maxEngAlt;
+    private int range_km;
     private String guidance;
     private String fireControl;
+    private String threatType;
 
     public ThreatObject(String name, int weight, int maxTOF, int minEngRange, int minEngAlt,
-            String guidance, String fireControl)
+            String guidance, String fireControl, int range_km, int maxEngAlt, String threatType)
     {
         this.name = name;
         this.weight = weight;
@@ -26,6 +29,9 @@ public class ThreatObject
         this.minEngAlt = minEngAlt;
         this.guidance = guidance;
         this.fireControl = fireControl;
+        this.range_km = range_km;
+        this.maxEngAlt = maxEngAlt;
+        this.threatType = threatType;
     }
 
     public String getName()
@@ -61,5 +67,20 @@ public class ThreatObject
     public int getMaxTOF()
     {
         return maxTOF;
+    }
+
+    public int getMaxEngAlt()
+    {
+        return maxEngAlt;
+    }
+
+    public int getRange_km()
+    {
+        return range_km;
+    }
+
+    public String getThreatType()
+    {
+        return threatType;
     }
 }

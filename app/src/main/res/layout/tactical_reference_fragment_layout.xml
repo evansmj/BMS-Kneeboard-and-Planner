@@ -14,8 +14,8 @@
 	   	android:fillViewport="true"
         android:padding="5dp"
         android:divider="#000000"
-        android:dividerHeight="1dp"
-        android:layout_below="@+id/load_type_spinner">
+        android:dividerHeight="1dp">
+        <!-- android:layout_below="@+id/load_type_spinner" -->
 
 	</ListView>
 
@@ -42,7 +42,7 @@
         android:layout_height="wrap_content"
         android:spinnerMode="dropdown"
         android:id="@+id/surface_type_spinner"
-        android:layout_below="@+id/load_type_text_view"
+        android:layout_below="@+id/surface_type_text_view"
         android:layout_alignParentStart="true"
         android:layout_toStartOf="@+id/space"/>
 

@@ -652,24 +652,29 @@ public class DBTools extends SQLiteAssetHelper
     }
 
     /*****************************************************************
-     * Get surface threats.
+     * Get surface threats
      *
+     * @param threatType - The type of threats to return.
      * @return Returns an ArrayList of ThreatObjects.
      *****************************************************************/
-    public ArrayList<ThreatObject> getThreats()
+    public ArrayList<ThreatObject> getThreats(String threatType)
     {
         ArrayList<ThreatObject> threatList;
 
         threatList = new ArrayList<ThreatObject>();
 
-        String query = "SELECT name, maxtof, weight, min_eng_range, min_eng_alt, g.type, f.firecontrol " +
+        final String query = "SELECT name, maxtof, weight, range_km, min_eng_range, min_eng_alt, " +
+                "max_eng_alt, g.type, f.firecontrol, t.type " +
                 "FROM threat " +
                 "  JOIN guidance_type AS g ON threat.guidance_id = g._id " +
                 "  JOIN firecontrol_type AS f ON threat.firecontrol_id = f._id " +
+                "  JOIN threat_type AS t ON threat.threat_type_id = t._id " +
+                "WHERE t.type = \"" + threatType + "\" " +
                 "ORDER BY name";
 
-        database = getWritableDatabase();
+        Log.d("dbTools", "threatType: " + threatType);
 
+        database = getWritableDatabase();
         Cursor cursor = database.rawQuery(query, null);
 
         if (cursor.moveToFirst())
@@ -678,7 +683,7 @@ public class DBTools extends SQLiteAssetHelper
             {
                 threatList.add(new ThreatObject(cursor.getString(0), cursor.getInt(1),
                         cursor.getInt(2), cursor.getInt(3), cursor.getInt(4), cursor.getString(5),
-                        cursor.getString(6)));
+                        cursor.getString(6), cursor.getInt(7), cursor.getInt(8), cursor.getString(9)));
             } while (cursor.moveToNext());
         }
 
@@ -696,12 +701,14 @@ public class DBTools extends SQLiteAssetHelper
      *****************************************************************/
     public String[] getThreatInfo(String threatName)
     {
-        String[] threatInfo = new String[6];
+        String[] threatInfo = new String[9];
 
-        String query = "SELECT maxtof, weight, min_eng_range, min_eng_alt, g.type, f.firecontrol " +
+        String query = "SELECT maxtof, weight, range_km, min_eng_range, min_eng_alt, " +
+                       "max_eng_alt, g.type, f.firecontrol, t.type " +
                        "FROM threat " +
                        "  JOIN guidance_type AS g ON guidance_id = g._id " +
                        "  JOIN firecontrol_type AS f ON firecontrol_id = f._id " +
+                       "  JOIN threat_type AS t ON threat_type_id = t._id " +
                        "WHERE name = \"" + threatName + "\"";
 
         database = getWritableDatabase();
