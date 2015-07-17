@@ -66,6 +66,8 @@ public class MainActivity extends FragmentActivity
                 "Fuel Calculator").setTabListener(this));
         actionBar.addTab(actionBar.newTab().setText(
                 "Navigation Charts").setTabListener(this));
+        actionBar.addTab(actionBar.newTab().setText(
+                "Mission Planner").setTabListener(this));
         
         viewPager.setAdapter(fragmentPageAdapter);
         

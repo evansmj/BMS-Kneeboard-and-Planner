@@ -3,7 +3,6 @@ package com.oldgoat5.bmstacticalreference.tacticalreference;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import android.app.ActionBar;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -500,7 +499,7 @@ public class TacticalReferenceFragment extends Fragment
 
         String[] weaponInfo = dbTools.getWeaponInfo(((TextView) view.findViewById(
                 R.id.weapon_name_text_view)).getText().toString());
-        //todo add comma formatting to numbers.  
+        //todo add comma formatting to numbers.
         TextView weightTextView = (TextView) listDialogView.findViewById(R.id.weight_dialog_text_view);
         TextView dragTextView  = (TextView) listDialog.findViewById(R.id.drag_dialog_text_view);
         TextView blastRadiusTextView = (TextView) listDialogView.findViewById(R.id.blast_dialog_text_view);

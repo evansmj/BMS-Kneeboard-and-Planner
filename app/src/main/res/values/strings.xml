@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">BMS Tactical Reference</string>
+    <string name="app_name">BMS Kneeboard and Mission Planner</string>
     <string name="asymmetric_checkbox">Asymmetric?</string>
     <string name="one">1</string>
     <string name="two">2</string>
@@ -1227,5 +1227,11 @@
     <string name="min_eng_alt">Min Eng Alt: </string>
     <string name="max_eng_alt">Max Eng Alt: </string>
     <string name="firecontrol">Fire Control: </string>
+
+    <!-- Mission Planner Fragment-->
+    <string name="level_bomb_mission_planner">Level Bomb Mission Planner</string>
+    <string name="dive_bomb_mission_planner">Dive Bomb Mission Planner</string>
+    <string name="loft_bomb_mission_planner">Loft Bomb Mission Planner</string>
+    <string name="popup_bomb_mission_planner">Pop-up Mission Planner</string>
 
 </resources>

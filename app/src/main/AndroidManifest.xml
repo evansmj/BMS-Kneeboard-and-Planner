@@ -43,6 +43,11 @@
         </activity>
 
         <activity
+            android:name=".missionplanner.level.LevelBombMissionPlannerActivity"
+            android:label="@string/level_bomb_mission_planner" >
+        </activity>
+
+        <activity
             android:name=".reference.BrevityDictionaryActivity"
             android:label="@string/brevity_dictionary_title"
             android:noHistory="true"
