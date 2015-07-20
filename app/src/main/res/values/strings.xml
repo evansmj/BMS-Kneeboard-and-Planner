@@ -1234,4 +1234,13 @@
     <string name="loft_bomb_mission_planner">Loft Bomb Mission Planner</string>
     <string name="popup_bomb_mission_planner">Pop-up Mission Planner</string>
 
+    <string name="expected_weather">Expected Weather at Time on Target</string>
+    <string name="situation">Situation: </string>
+    <string name="winds">Winds: </string>
+    <string name="temperature">Temp: </string>
+    <string name="cloud_base">Cloud Base: </string>
+    <string name="con_layer">Con Layer: </string>
+    <string name="local_tot">Local Time On Target: </string>
+    <string name="select_bomb">Select Bomb</string>
+
 </resources>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:id="@+id/level_bomb_conditions_fragment_layout"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/expected_weather"
+        android:id="@+id/expected_weather_text_view"
+        android:paddingTop="10dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:paddingTop="10dp"
+        android:text="@string/situation"
+        android:id="@+id/situation_text_view"
+        android:layout_below="@+id/expected_weather_text_view"
+        android:layout_alignStart="@+id/expected_weather_text_view"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/winds"
+        android:id="@+id/winds_text_view"
+        android:layout_below="@+id/situation_text_view"
+        android:layout_alignStart="@+id/situation_text_view"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:paddingTop="10dp"
+        android:text="@string/temperature"
+        android:id="@+id/temperature_text_view"
+        android:layout_below="@+id/winds_text_view"
+        android:layout_alignStart="@+id/winds_text_view"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/cloud_base"
+        android:id="@+id/cloud_base_text_view"
+        android:layout_below="@+id/temperature_text_view"
+        android:layout_alignStart="@+id/temperature_text_view"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/con_layer"
+        android:id="@+id/con_layer_text_view"
+        android:layout_below="@+id/cloud_base_text_view"
+        android:layout_alignStart="@+id/cloud_base_text_view"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/local_tot"
+        android:id="@+id/local_tot"
+        android:layout_below="@+id/con_layer_text_view"
+        android:layout_alignStart="@+id/con_layer_text_view"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/select_bomb"
+        android:id="@+id/select_bomb_button"
+        android:layout_below="@+id/local_tot"
+        android:layout_alignStart="@+id/local_tot"/>
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/situation_spinner"
+        android:paddingTop="10dp"
+        android:layout_alignBottom="@+id/situation_text_view"
+        android:layout_toEndOf="@+id/situation_text_view" />
+
+
+</RelativeLayout>
