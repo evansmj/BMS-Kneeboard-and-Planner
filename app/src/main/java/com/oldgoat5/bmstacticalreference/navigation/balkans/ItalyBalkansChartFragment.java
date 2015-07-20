@@ -52,14 +52,14 @@ public class ItalyBalkansChartFragment extends Fragment
         imageView2 = (ImageView) view.findViewById(R.id.italy_balkans_image_view2);
         imageView3 = (ImageView) view.findViewById(R.id.italy_balkans_image_view3);
 
-        /*imageView1.setOnClickListener(new View.OnClickListener()
+        imageView1.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View view)
             {
-                ((ViewGroup) view.getParent()).removeView(view);
+                //((ViewGroup) view.getParent()).removeView(view);
                 zoomImageView.setImageResource(R.drawable.italy_1_airbases);
-                dialog.setContentView(imageView1);
+                dialog.setContentView(zoomImageView);
                 dialog.setTitle("Italy Airbases");
                 dialog.show();
                 dialog.setOnDismissListener(new DialogInterface.OnDismissListener()
@@ -78,9 +78,9 @@ public class ItalyBalkansChartFragment extends Fragment
             @Override
             public void onClick(View view)
             {
-                ((ViewGroup) view.getParent()).removeView(view);
+                //((ViewGroup) view.getParent()).removeView(view);
                 zoomImageView.setImageResource(R.drawable.italy_2_airbases);
-                dialog.setContentView(imageView2);
+                dialog.setContentView(zoomImageView);
                 dialog.setTitle("Italy Airbases");
                 dialog.show();
             }
@@ -91,13 +91,13 @@ public class ItalyBalkansChartFragment extends Fragment
             @Override
             public void onClick(View view)
             {
-                ((ViewGroup) view.getParent()).removeView(view);
+                //((ViewGroup) view.getParent()).removeView(view);
                 zoomImageView.setImageResource(R.drawable.italy_3_airbases);
-                dialog.setContentView(imageView3);
+                dialog.setContentView(zoomImageView);
                 dialog.setTitle("Italy Airbases");
                 dialog.show();
             }
-        });*/
+        });
 
         return view;
     }

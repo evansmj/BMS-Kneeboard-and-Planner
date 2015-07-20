@@ -41,10 +41,7 @@ public class LevelBombMissionPlannerActivity extends FragmentActivity
             fragmentManager = getSupportFragmentManager();
             fragmentTransaction = fragmentManager.beginTransaction();
             fragmentTransaction.add(R.id.level_bomb_conditions_fragment_frame_layout, conditionsFragment);
-            fragmentTransaction.addToBackStack(null);
-
             fragmentTransaction.commit();
-
         }
     }
 

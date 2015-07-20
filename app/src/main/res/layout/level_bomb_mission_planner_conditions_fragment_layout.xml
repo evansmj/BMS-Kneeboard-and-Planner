@@ -91,5 +91,32 @@
         android:layout_alignBottom="@+id/situation_text_view"
         android:layout_toEndOf="@+id/situation_text_view" />
 
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/temperature_edit_text"
+        android:layout_above="@+id/cloud_base_text_view"
+        android:layout_alignParentEnd="true"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="time"
+        android:ems="10"
+        android:id="@+id/time_on_target_edit_text"
+        android:layout_alignBottom="@+id/local_tot"
+        android:layout_alignParentEnd="true"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/con_layer_edit_text"
+        android:layout_above="@+id/local_tot"
+        android:layout_alignEnd="@+id/time_on_target_edit_text"/>
+
 
 </RelativeLayout>
