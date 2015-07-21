@@ -44,7 +44,8 @@
 
         <activity
             android:name=".missionplanner.level.LevelBombMissionPlannerActivity"
-            android:label="@string/level_bomb_mission_planner" >
+            android:label="@string/level_bomb_mission_planner"
+            android:theme="@style/BlueTheme">
         </activity>
 
         <activity

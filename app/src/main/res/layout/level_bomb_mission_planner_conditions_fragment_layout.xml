@@ -19,7 +19,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:paddingTop="10dp"
+        android:paddingTop="20dp"
         android:text="@string/situation"
         android:id="@+id/situation_text_view"
         android:layout_below="@+id/expected_weather_text_view"
@@ -28,7 +28,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingTop="10dp"
+        android:paddingTop="20dp"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="@string/winds"
         android:id="@+id/winds_text_view"
@@ -39,7 +39,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:paddingTop="10dp"
+        android:paddingTop="20dp"
         android:text="@string/temperature"
         android:id="@+id/temperature_text_view"
         android:layout_below="@+id/winds_text_view"
@@ -48,7 +48,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingTop="10dp"
+        android:paddingTop="20dp"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="@string/cloud_base"
         android:id="@+id/cloud_base_text_view"
@@ -58,7 +58,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingTop="10dp"
+        android:paddingTop="20dp"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="@string/con_layer"
         android:id="@+id/con_layer_text_view"
@@ -68,7 +68,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingTop="10dp"
+        android:paddingTop="20dp"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="@string/local_tot"
         android:id="@+id/local_tot"
@@ -88,8 +88,11 @@
         android:layout_height="wrap_content"
         android:id="@+id/situation_spinner"
         android:paddingTop="10dp"
+        android:spinnerMode="dropdown"
         android:layout_alignBottom="@+id/situation_text_view"
-        android:layout_toEndOf="@+id/situation_text_view" />
+        android:layout_alignStart="@+id/temperature_edit_text"
+        android:layout_below="@+id/expected_weather_text_view"
+        android:layout_alignEnd="@+id/temperature_edit_text"/>
 
     <EditText
         android:layout_width="wrap_content"
@@ -98,7 +101,8 @@
         android:ems="10"
         android:id="@+id/temperature_edit_text"
         android:layout_above="@+id/cloud_base_text_view"
-        android:layout_alignParentEnd="true"/>
+        android:layout_alignParentEnd="true"
+        android:layout_alignStart="@+id/con_layer_edit_text"/>
 
     <EditText
         android:layout_width="wrap_content"
@@ -107,7 +111,8 @@
         android:ems="10"
         android:id="@+id/time_on_target_edit_text"
         android:layout_alignBottom="@+id/local_tot"
-        android:layout_alignParentEnd="true"/>
+        android:layout_alignParentEnd="true"
+        android:layout_toEndOf="@+id/local_tot"/>
 
     <EditText
         android:layout_width="wrap_content"
@@ -116,7 +121,9 @@
         android:ems="10"
         android:id="@+id/con_layer_edit_text"
         android:layout_above="@+id/local_tot"
-        android:layout_alignEnd="@+id/time_on_target_edit_text"/>
+        android:layout_alignEnd="@+id/time_on_target_edit_text"
+        android:layout_toEndOf="@+id/local_tot"
+        android:layout_alignStart="@+id/time_on_target_edit_text"/>
 
 
 </RelativeLayout>

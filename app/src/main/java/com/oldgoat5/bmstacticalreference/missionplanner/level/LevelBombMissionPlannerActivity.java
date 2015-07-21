@@ -29,7 +29,6 @@ public class LevelBombMissionPlannerActivity extends FragmentActivity
 
         if (findViewById(R.id.level_bomb_conditions_fragment_frame_layout) != null)
         {
-
             // However, if we're being restored from a previous state,
             // then we don't need to do anything and should return or else
             // we could end up with overlapping fragments.
