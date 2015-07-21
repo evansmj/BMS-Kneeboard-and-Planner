@@ -682,8 +682,9 @@ public class DBTools extends SQLiteAssetHelper
             do
             {
                 threatList.add(new ThreatObject(cursor.getString(0), cursor.getInt(1),
-                        cursor.getInt(2), cursor.getInt(3), cursor.getInt(4), cursor.getString(5),
-                        cursor.getString(6), cursor.getInt(7), cursor.getInt(8), cursor.getString(9)));
+                        cursor.getInt(2), cursor.getInt(3), cursor.getInt(4), cursor.getInt(5),
+                        cursor.getInt(6), cursor.getString(7), cursor.getString(8),
+                        cursor.getString(9)));
             } while (cursor.moveToNext());
         }
 

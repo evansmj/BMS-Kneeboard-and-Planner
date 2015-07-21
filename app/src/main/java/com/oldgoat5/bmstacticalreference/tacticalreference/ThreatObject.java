@@ -19,8 +19,8 @@ public class ThreatObject
     private String fireControl;
     private String threatType;
 
-    public ThreatObject(String name, int weight, int maxTOF, int minEngRange, int minEngAlt,
-            String guidance, String fireControl, int range_km, int maxEngAlt, String threatType)
+    public ThreatObject(String name, int maxTOF, int weight, int range_km, int minEngRange, int minEngAlt,
+            int maxEngAlt, String guidance, String fireControl, String threatType)
     {
         this.name = name;
         this.weight = weight;

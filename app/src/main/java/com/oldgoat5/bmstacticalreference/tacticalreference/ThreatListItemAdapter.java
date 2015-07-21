@@ -51,7 +51,8 @@ public class ThreatListItemAdapter extends ArrayAdapter<ThreatObject>
         if ((position % 2) == 0)
         {
             rowView.setBackgroundColor(Color.parseColor("#F7E1E1"));
-        } else
+        }
+        else
         {
             // odd color
         }
