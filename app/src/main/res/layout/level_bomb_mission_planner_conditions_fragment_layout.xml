@@ -23,7 +23,7 @@
         android:text="@string/situation"
         android:id="@+id/situation_text_view"
         android:layout_below="@+id/expected_weather_text_view"
-        android:layout_alignStart="@+id/expected_weather_text_view"/>
+        android:layout_alignParentStart="true"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -80,8 +80,8 @@
         android:layout_height="wrap_content"
         android:text="@string/select_bomb"
         android:id="@+id/select_bomb_button"
-        android:layout_below="@+id/local_tot"
-        android:layout_alignStart="@+id/local_tot"/>
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"/>
 
     <Spinner
         android:layout_width="wrap_content"
@@ -92,6 +92,16 @@
         android:layout_alignBottom="@+id/situation_text_view"
         android:layout_alignStart="@+id/temperature_edit_text"
         android:layout_below="@+id/expected_weather_text_view"
+        android:layout_alignEnd="@+id/temperature_edit_text"/>
+
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/winds_edit_text"
+        android:inputType="number"
+        android:layout_alignBottom="@+id/winds_text_view"
+        android:layout_alignStart="@+id/temperature_edit_text"
         android:layout_alignEnd="@+id/temperature_edit_text"/>
 
     <EditText
@@ -133,12 +143,12 @@
         android:layout_alignEnd="@+id/con_layer_edit_text"
         android:layout_alignStart="@+id/temperature_edit_text"/>
 
-    <EditText
+    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/winds_edit_text"
-        android:layout_alignBottom="@+id/winds_text_view"
-        android:layout_alignStart="@+id/temperature_edit_text"
-        android:layout_alignEnd="@+id/temperature_edit_text"/>
+        android:text="@string/next_page"
+        android:id="@+id/level_bomb_conditions_fragment_next_button"
+        android:layout_alignBottom="@+id/select_bomb_button"
+        android:layout_alignParentEnd="true"/>
 
 </RelativeLayout>
