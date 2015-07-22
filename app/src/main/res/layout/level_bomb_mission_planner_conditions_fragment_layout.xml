@@ -91,7 +91,7 @@
                 android:textAppearance="?android:attr/textAppearanceMedium"/>
 
             <Button
-                android:id="@+id/select_bomb_button"
+                android:id="@+id/level_bomb_conditions_fragment_select_bomb_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
@@ -162,7 +162,7 @@
                 android:id="@+id/level_bomb_conditions_fragment_next_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/select_bomb_button"
+                android:layout_below="@+id/level_bomb_conditions_fragment_select_bomb_button"
                 android:layout_centerHorizontal="true"
                 android:text="@string/next_page"/>
 

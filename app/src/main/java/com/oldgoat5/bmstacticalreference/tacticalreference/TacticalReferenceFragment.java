@@ -339,6 +339,7 @@ public class TacticalReferenceFragment extends Fragment
         weaponTypeSpinner.setAdapter(weaponTypeArrayAdapter);
 
         Log.d("LoadOutFragment", "getactivity=" + getActivity().toString());
+
         dbTools = new DBTools(getActivity());
 
         try

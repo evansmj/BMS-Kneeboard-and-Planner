@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:id="@+id/bomb_select_dialog"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/bomb_select_dialog_type_select_text_view"
+        android:text="@string/select_bomb_type"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_gravity="start"/>
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/bomb_select_dialog_type_select_spinner"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/select_bomb_id"
+        android:id="@+id/bomb_select_dialog_select_bomb_text_view"/>
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/bomb_select_dialog_select_bomb_spinner"/>
+
+
+</LinearLayout>
