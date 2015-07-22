@@ -490,6 +490,7 @@ public class TacticalReferenceFragment extends Fragment
      *****************************************************************/
     private void populateWeaponDialog()
     {
+        //todo move this to dbtools
         listDialogView = listDialog.findViewById(R.id.weapon_dialog);
 
         listDialog.setTitle(((TextView) view.findViewById(

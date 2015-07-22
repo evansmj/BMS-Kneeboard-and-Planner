@@ -1247,5 +1247,9 @@
     
     <string name="select_bomb_type">Select Bomb Type:</string>
     <string name="select_bomb_id">Select Bomb:</string>
+    <string name="ok">OK</string>
+    <string name="select">Select</string>
+    <string name="cancel">Cancel</string>
+    <string name="view_bomb_info">View Bomb Info</string>
 
 </resources>

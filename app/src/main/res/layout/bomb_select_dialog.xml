@@ -29,7 +29,27 @@
     <Spinner
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:spinnerMode="dialog"
         android:id="@+id/bomb_select_dialog_select_bomb_spinner"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/view_bomb_info"
+        android:id="@+id/bomb_select_dialog_view_bomb_info_button"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/select"
+        android:id="@+id/bomb_select_dialog_ok_button"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/cancel"
+        android:id="@+id/bomb_select_dialog_cancel_button"
+        />
 
 
 </LinearLayout>

@@ -534,6 +534,79 @@ public class DBTools extends SQLiteAssetHelper
     }
 
     /*****************************************************************
+     * Gets Guided Bomb Units
+     *
+     * @return Returns an ArrayList of the results.
+     *****************************************************************/
+    public ArrayList<WeaponUseList> getMarkBombs()
+    {
+        final String queryGetDistinctNames = "SELECT DISTINCT name " +
+                "FROM load " +
+                "  JOIN weapon_info ON load._id = weapon_info._id " +
+                "WHERE weapon_type_id = 6 " +
+                "ORDER BY name";
+
+
+        ArrayList<WeaponUseList> masterUseList;
+        ArrayList<String> weaponNames;
+        Cursor cursorGetDistinctNames;
+        //HashMap<String, ArrayList<String>> weaponUseMap;
+
+        weaponNames = new ArrayList<String>();
+        masterUseList = new ArrayList<WeaponUseList>();
+        //weaponUseMap = new HashMap<String, ArrayList<String>>();
+        database = this.getWritableDatabase();
+
+        cursorGetDistinctNames = database.rawQuery(queryGetDistinctNames, null);
+
+        //get list of distinct weapons.
+        if (cursorGetDistinctNames.moveToFirst())
+        {
+            do
+            {
+                weaponNames.add(cursorGetDistinctNames.getString(0));
+            } while (cursorGetDistinctNames.moveToNext());
+        }
+
+        cursorGetDistinctNames.close();
+
+        //get list of uses for each weapon.
+        for (String name : weaponNames)
+        {
+            WeaponUseList tempUseList = new WeaponUseList();
+
+            //get list
+
+            String query = "SELECT use " +
+                    "FROM load " +
+                    "  JOIN load_uses ON load._id = load_uses._id " +
+                    "WHERE name = \"" + name + "\" " +
+                    "ORDER BY use";
+
+            database = this.getWritableDatabase();
+
+            Cursor cursor = database.rawQuery(query, null);
+
+            tempUseList.setWeaponName(name);
+
+            if (cursor.moveToNext())
+            {
+                do
+                {
+                    tempUseList.addUse(cursor.getString(0));
+                } while (cursor.moveToNext());
+            }
+
+            cursor.close();
+            //add the weaponlist to the arraylist (weaponUseList).
+
+            masterUseList.add(tempUseList);
+        }
+
+        return masterUseList;
+    }
+
+    /*****************************************************************
      * Gets Other weapons.
      *
      * @return Returns an ArrayList of the results.
