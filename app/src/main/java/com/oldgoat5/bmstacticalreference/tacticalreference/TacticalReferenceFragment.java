@@ -37,7 +37,7 @@ public class TacticalReferenceFragment extends Fragment
     private final String[] surfaceTypeItems = new String[] {"---", "Surface-Air Missiles",
             "Anti-Aircraft Artillery", "MANPADS"};
     private final String[] weaponTypeItems = new String[] {"---", "A-G Missiles", "A-A Missiles",
-            "Cluster Bombs", "Guided Bombs", "Other"};
+            "Cluster Bombs", "Guided Bombs", "Mark Bombs", "Other"};
     private Context CONTEXT;
 
     private enum DialogViewType {NONE, WEAPON, SURFACE, STORE};
@@ -273,6 +273,12 @@ public class TacticalReferenceFragment extends Fragment
                         break;
 
                     case 5:
+                        //show mark
+                        weaponAdapter = new WeaponUseListItemAdapter(getActivity(), dbTools.getMarkBombs());
+                        listView.setAdapter(weaponAdapter);
+                        break;
+
+                    case 6:
                         //other
                         weaponAdapter = new WeaponUseListItemAdapter(getActivity(), dbTools.getOtherWeapons());
                         listView.setAdapter(weaponAdapter);
