@@ -37,11 +37,14 @@ public class BombSelectDialog extends Dialog
     private Button selectButton;
     private Button viewBombInfoButton;
     private DBTools dbTools;
+    private Dialog bombDialog;
     private Spinner typeSpinner;
     private Spinner idSpinner;
     private TextView idTextView;
     private TextView typeTextView;
     private WeaponUseListItemAdapter idArrayAdapter;
+    private View bombDialogView;
+    private View weaponView;
 
     private String[] bombTypeItems;
 
@@ -100,6 +103,7 @@ public class BombSelectDialog extends Dialog
                         selectButton.setVisibility(View.GONE);
                         cancelButton.setVisibility(View.GONE);
                         idTextView.setVisibility(View.GONE);
+                        viewBombInfoButton.setVisibility(View.GONE);
                         idSpinner.setVisibility(View.GONE);
                         idSpinner.setAdapter(null);
                         break;
@@ -114,6 +118,7 @@ public class BombSelectDialog extends Dialog
                         idSpinner.setAdapter(idArrayAdapter);
                         idTextView.setVisibility(View.VISIBLE);
                         idSpinner.setVisibility(View.VISIBLE);
+                        viewBombInfoButton.setVisibility(View.VISIBLE);
                         selectButton.setVisibility(View.VISIBLE);
                         cancelButton.setVisibility(View.VISIBLE);
                         break;
@@ -124,6 +129,7 @@ public class BombSelectDialog extends Dialog
                         idSpinner.setAdapter(idArrayAdapter);
                         idTextView.setVisibility(View.VISIBLE);
                         idSpinner.setVisibility(View.VISIBLE);
+                        viewBombInfoButton.setVisibility(View.VISIBLE);
                         selectButton.setVisibility(View.VISIBLE);
                         cancelButton.setVisibility(View.VISIBLE);
                         break;
@@ -134,6 +140,33 @@ public class BombSelectDialog extends Dialog
             public void onNothingSelected(AdapterView<?> adapterView)
             {
 
+            }
+        });
+
+        idSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
+        {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View rowView, int i, long l)
+            {
+                bombDialog = new Dialog(CONTEXT);
+                bombDialog.setContentView(R.layout.weapon_dialog_layout);
+                weaponView = rowView;
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView)
+            {
+
+            }
+        });
+
+        viewBombInfoButton.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                bombDialogView = dbTools.populateWeaponDialog(bombDialog, weaponView);
+                bombDialog.show();
             }
         });
 
