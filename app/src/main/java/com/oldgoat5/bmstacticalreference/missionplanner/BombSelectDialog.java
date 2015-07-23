@@ -33,7 +33,6 @@ public class BombSelectDialog extends Dialog
     public PlannerType plannerType;
 
     private ArrayAdapter<String> typeArrayAdapter;
-    private Button cancelButton;
     private Button selectButton;
     private Button viewBombInfoButton;
     private DBTools dbTools;
@@ -63,7 +62,7 @@ public class BombSelectDialog extends Dialog
         {
             case LEVEL:
                 //cbu, mk, blu107
-                bombTypeItems = new String[] {"---", "BLU", "CBU","MK"};
+                bombTypeItems = new String[] {"---", "Cluster Bomb", "Mark Bomb", "Other"};
                 break;
 
             case DIVE:
@@ -77,7 +76,6 @@ public class BombSelectDialog extends Dialog
         }
 
         selectButton = (Button) findViewById(R.id.bomb_select_dialog_ok_button);
-        cancelButton = (Button) findViewById(R.id.bomb_select_dialog_cancel_button);
         viewBombInfoButton = (Button) findViewById(R.id.bomb_select_dialog_view_bomb_info_button);
 
         idSpinner = (Spinner) findViewById(R.id.bomb_select_dialog_select_bomb_spinner);
@@ -101,7 +99,6 @@ public class BombSelectDialog extends Dialog
                     case 0:
                         //hide number
                         selectButton.setVisibility(View.GONE);
-                        cancelButton.setVisibility(View.GONE);
                         idTextView.setVisibility(View.GONE);
                         viewBombInfoButton.setVisibility(View.GONE);
                         idSpinner.setVisibility(View.GONE);
@@ -109,10 +106,6 @@ public class BombSelectDialog extends Dialog
                         break;
 
                     case 1:
-                        //show blu
-                        break;
-
-                    case 2:
                         //show cbu
                         idArrayAdapter = new WeaponUseListItemAdapter(CONTEXT, dbTools.getClusterBombs());
                         idSpinner.setAdapter(idArrayAdapter);
@@ -120,10 +113,9 @@ public class BombSelectDialog extends Dialog
                         idSpinner.setVisibility(View.VISIBLE);
                         viewBombInfoButton.setVisibility(View.VISIBLE);
                         selectButton.setVisibility(View.VISIBLE);
-                        cancelButton.setVisibility(View.VISIBLE);
                         break;
 
-                    case 3:
+                    case 2:
                         //show mk
                         idArrayAdapter = new WeaponUseListItemAdapter(CONTEXT, dbTools.getMarkBombs());
                         idSpinner.setAdapter(idArrayAdapter);
@@ -131,7 +123,16 @@ public class BombSelectDialog extends Dialog
                         idSpinner.setVisibility(View.VISIBLE);
                         viewBombInfoButton.setVisibility(View.VISIBLE);
                         selectButton.setVisibility(View.VISIBLE);
-                        cancelButton.setVisibility(View.VISIBLE);
+                        break;
+
+                    case 3:
+                        //show bdu blu
+                        idArrayAdapter = new WeaponUseListItemAdapter(CONTEXT, dbTools.getLiveAndDummyBombUnits());
+                        idSpinner.setAdapter(idArrayAdapter);
+                        idTextView.setVisibility(View.VISIBLE);
+                        idSpinner.setVisibility(View.VISIBLE);
+                        viewBombInfoButton.setVisibility(View.VISIBLE);
+                        selectButton.setVisibility(View.VISIBLE);
                         break;
                 }
             }
