@@ -1,7 +1,9 @@
 package com.oldgoat5.bmstacticalreference.missionplanner.level;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +11,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import com.oldgoat5.bmstacticalreference.R;
 import com.oldgoat5.bmstacticalreference.missionplanner.BombSelectDialog;
@@ -28,6 +31,7 @@ public class LevelBombMissionPlannerConditionsFragment extends Fragment
     private Button nextButton;
     private Button selectBomb;
     private Spinner situationsSpinner;
+    private TextView selectedWeaponTextView;
     private View view;
 
     private int cloudBase;
@@ -36,6 +40,7 @@ public class LevelBombMissionPlannerConditionsFragment extends Fragment
     private int windDirection;
     private int windSpeed;
     private String selectedSituation;
+    private String selectedWeapon;
 
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
@@ -45,6 +50,8 @@ public class LevelBombMissionPlannerConditionsFragment extends Fragment
 
         nextButton = (Button) view.findViewById(R.id.level_bomb_conditions_fragment_next_button);
         selectBomb = (Button) view.findViewById(R.id.level_bomb_conditions_fragment_select_bomb_button);
+
+        selectedWeaponTextView = (TextView) view.findViewById(R.id.level_bomb_conditions_fragment_selected_weapon_text_view);
 
         situationsSpinner = (Spinner) view.findViewById(R.id.situation_spinner);
 
@@ -97,6 +104,18 @@ public class LevelBombMissionPlannerConditionsFragment extends Fragment
                 bombSelectDialog.setTitle("Level Release Bomb Select");
                 bombSelectDialog.setContentView(R.layout.bomb_select_dialog);
                 bombSelectDialog.show();
+
+                bombSelectDialog.setDialogResult(new BombSelectDialog.OnDialogResult()
+                {
+                    @Override
+                    public void setResult(String weaponName)
+                    {
+                        selectedWeapon = weaponName;
+                        Log.d("levlConitionsFrag", "selectedWeapon = " + selectedWeapon);
+                        selectedWeaponTextView.setText(selectedWeapon);
+                        selectedWeaponTextView.setTextColor(Color.BLACK);
+                    }
+                });
             }
         });
 

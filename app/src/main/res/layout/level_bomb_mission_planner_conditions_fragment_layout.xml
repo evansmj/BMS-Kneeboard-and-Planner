@@ -162,9 +162,22 @@
                 android:id="@+id/level_bomb_conditions_fragment_next_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:text="@string/next_page"
                 android:layout_below="@+id/level_bomb_conditions_fragment_select_bomb_button"
-                android:layout_centerHorizontal="true"
-                android:text="@string/next_page"/>
+                android:layout_alignParentStart="true"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="#D3D3D3"
+                android:text="@string/no_weapon_selected"
+                android:id="@+id/level_bomb_conditions_fragment_selected_weapon_text_view"
+                android:layout_alignBaseline="@+id/level_bomb_conditions_fragment_select_bomb_button"
+                android:layout_alignBottom="@+id/level_bomb_conditions_fragment_select_bomb_button"
+                android:layout_alignParentEnd="true"
+                android:layout_toEndOf="@+id/local_tot"/>
+
 
         </RelativeLayout>
     </ScrollView>

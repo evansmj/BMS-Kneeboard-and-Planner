@@ -1251,5 +1251,6 @@
     <string name="select">Select</string>
     <string name="cancel">Cancel</string>
     <string name="view_bomb_info">View Bomb Info</string>
+    <string name="no_weapon_selected">(No Weapon Selected)</string>
 
 </resources>

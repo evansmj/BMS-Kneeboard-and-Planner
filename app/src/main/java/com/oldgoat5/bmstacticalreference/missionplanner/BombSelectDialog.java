@@ -2,6 +2,7 @@ package com.oldgoat5.bmstacticalreference.missionplanner;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.database.sqlite.SQLiteException;
 import android.os.Bundle;
 import android.util.Log;
@@ -36,7 +37,8 @@ public class BombSelectDialog extends Dialog
     private Button selectButton;
     private Button viewBombInfoButton;
     private DBTools dbTools;
-    private Dialog bombDialog;
+    private Dialog bombInfoDialog;
+    private OnDialogResult onDialogResult;
     private Spinner typeSpinner;
     private Spinner idSpinner;
     private TextView idTextView;
@@ -46,6 +48,7 @@ public class BombSelectDialog extends Dialog
     private View weaponView;
 
     private String[] bombTypeItems;
+    private String selectedWeaponName;
 
     public BombSelectDialog(Context context, PlannerType plannerType)
     {
@@ -149,9 +152,11 @@ public class BombSelectDialog extends Dialog
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View rowView, int i, long l)
             {
-                bombDialog = new Dialog(CONTEXT);
-                bombDialog.setContentView(R.layout.weapon_dialog_layout);
+                bombInfoDialog = new Dialog(CONTEXT);
+                bombInfoDialog.setContentView(R.layout.weapon_dialog_layout);
                 weaponView = rowView;
+                selectedWeaponName = ((TextView) weaponView.findViewById(
+                        R.id.weapon_name_text_view)).getText().toString();
             }
 
             @Override
@@ -166,13 +171,27 @@ public class BombSelectDialog extends Dialog
             @Override
             public void onClick(View view)
             {
-                bombDialogView = dbTools.populateWeaponDialog(bombDialog, weaponView);
-                bombDialog.show();
+                bombDialogView = dbTools.populateWeaponDialog(bombInfoDialog, weaponView);
+                bombInfoDialog.show();
+            }
+        });
+
+        selectButton.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                Log.d("bombselectDialog", "weaponName before exit: " + selectedWeaponName);
+
+                if (onDialogResult != null)
+                {
+                    onDialogResult.setResult(selectedWeaponName);
+                }
+                dismiss();
             }
         });
 
         //open database
-
         dbTools = new DBTools(CONTEXT);
 
         try
@@ -194,5 +213,15 @@ public class BombSelectDialog extends Dialog
             throw sqle;
         }
 
+    }
+
+    public void setDialogResult(OnDialogResult result)
+    {
+        onDialogResult = result;
+    }
+
+    public interface OnDialogResult
+    {
+        void setResult(String weaponName);
     }
 }
