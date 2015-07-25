@@ -3,6 +3,8 @@ package com.oldgoat5.bmstacticalreference.missionplanner.level;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -24,12 +27,16 @@ import com.oldgoat5.bmstacticalreference.missionplanner.BombSelectDialog;
  *********************************************************************/
 public class LevelBombMissionPlannerConditionsFragment extends Fragment
 {
-    final String[] situationItems = {"Sunny", "Fair", "Poor", "Inclement"};
+    final String[] situationItems = {"---", "Sunny", "Fair", "Poor", "Inclement"};
 
     private ArrayAdapter<String> situationsArrayAdapter;
     private BombSelectDialog bombSelectDialog;
     private Button nextButton;
     private Button selectBomb;
+    private EditText windEditText;
+    private EditText tempEditText;
+    private EditText cloudBaseEditText;
+    private EditText conLayerEditText;
     private Spinner situationsSpinner;
     private TextView selectedWeaponTextView;
     private View view;
@@ -50,6 +57,11 @@ public class LevelBombMissionPlannerConditionsFragment extends Fragment
 
         nextButton = (Button) view.findViewById(R.id.level_bomb_conditions_fragment_next_button);
         selectBomb = (Button) view.findViewById(R.id.level_bomb_conditions_fragment_select_bomb_button);
+
+        windEditText = (EditText) view.findViewById(R.id.winds_edit_text);
+        windEditText.setText("000°@00kn.");
+        tempEditText = (EditText) view.findViewById(R.id.temperature_edit_text);
+        tempEditText.setText("20°C");
 
         selectedWeaponTextView = (TextView) view.findViewById(R.id.level_bomb_conditions_fragment_selected_weapon_text_view);
 
@@ -116,6 +128,69 @@ public class LevelBombMissionPlannerConditionsFragment extends Fragment
                         selectedWeaponTextView.setTextColor(Color.BLACK);
                     }
                 });
+            }
+        });
+
+        windEditText.addTextChangedListener(new TextWatcher()
+        {
+            String before;
+
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2)
+            {
+                Log.d("levelConFragment", "beforeTextChanged: " + charSequence);
+                before = charSequence.toString();
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2)
+            {
+                Log.d("levelConFragment", "onTextChanged: " + charSequence);
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable)
+            {
+                Log.d("levelConFragment", "afterTextChanged: " + editable.toString());
+                if (editable.toString().length() == 3 && before.length() == 2)
+                {
+                    editable.append("°@");
+                }
+            }
+        });
+
+        windEditText.setOnFocusChangeListener(new View.OnFocusChangeListener()
+        {
+            @Override
+            public void onFocusChange(View view, boolean b)
+            {
+                if (!b && !windEditText.getText().toString().contains("kn."))
+                {
+                    String oldText = windEditText.getText().toString();
+                    windEditText.setText(oldText + "kn.");
+                }
+            }
+        });
+
+        tempEditText.setOnFocusChangeListener(new View.OnFocusChangeListener()
+        {
+            @Override
+            public void onFocusChange(View view, boolean b)
+            {
+                if (!b && !tempEditText.getText().toString().contains("°C"))
+                {
+                    String oldText = tempEditText.getText().toString();
+                    tempEditText.setText(oldText + "°C");
+                }
+            }
+        });
+
+        nextButton.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                //
             }
         });
 

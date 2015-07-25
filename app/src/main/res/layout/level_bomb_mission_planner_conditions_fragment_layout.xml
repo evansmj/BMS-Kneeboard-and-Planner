@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    android:descendantFocusability="beforeDescendants"
+    android:focusableInTouchMode="true"
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
@@ -114,25 +116,28 @@
                 android:id="@+id/winds_edit_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:selectAllOnFocus="true"
                 android:layout_alignBottom="@+id/winds_text_view"
                 android:layout_alignEnd="@+id/temperature_edit_text"
                 android:layout_alignStart="@+id/temperature_edit_text"
-                android:inputType="number"/>
+                android:inputType="text"/>
 
             <EditText
                 android:id="@+id/temperature_edit_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:selectAllOnFocus="true"
                 android:layout_above="@+id/cloud_base_text_view"
                 android:layout_alignParentEnd="true"
                 android:layout_alignStart="@+id/con_layer_edit_text"
                 android:ems="10"
-                android:inputType="number"/>
+                android:inputType="text"/>
 
             <EditText
                 android:id="@+id/time_on_target_edit_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:selectAllOnFocus="true"
                 android:layout_alignBottom="@+id/local_tot"
                 android:layout_alignParentEnd="true"
                 android:layout_toEndOf="@+id/local_tot"
@@ -143,20 +148,22 @@
                 android:id="@+id/con_layer_edit_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:selectAllOnFocus="true"
                 android:layout_above="@+id/local_tot"
                 android:layout_alignEnd="@+id/time_on_target_edit_text"
                 android:layout_alignStart="@+id/time_on_target_edit_text"
                 android:ems="10"
-                android:inputType="number"/>
+                android:inputType="text"/>
 
             <EditText
                 android:id="@+id/cloud_base_edit_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:selectAllOnFocus="true"
                 android:layout_above="@+id/con_layer_text_view"
                 android:layout_alignEnd="@+id/con_layer_edit_text"
                 android:layout_alignStart="@+id/temperature_edit_text"
-                android:inputType="number"/>
+                android:inputType="text"/>
 
             <Button
                 android:id="@+id/level_bomb_conditions_fragment_next_button"
