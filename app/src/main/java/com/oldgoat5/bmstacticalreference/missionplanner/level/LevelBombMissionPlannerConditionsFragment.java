@@ -19,6 +19,8 @@ import android.widget.TextView;
 import com.oldgoat5.bmstacticalreference.R;
 import com.oldgoat5.bmstacticalreference.missionplanner.BombSelectDialog;
 
+import java.text.DecimalFormat;
+
 /*********************************************************************
  * Copyright © Michael Evans - All Rights Reserved.
  *
@@ -62,6 +64,10 @@ public class LevelBombMissionPlannerConditionsFragment extends Fragment
         windEditText.setText("000°@00kn.");
         tempEditText = (EditText) view.findViewById(R.id.temperature_edit_text);
         tempEditText.setText("20°C");
+        cloudBaseEditText = (EditText) view.findViewById(R.id.cloud_base_edit_text);
+        cloudBaseEditText.setText("20,000ft.");
+        conLayerEditText = (EditText) view.findViewById(R.id.con_layer_edit_text);
+        conLayerEditText.setText("30,000ft.");
 
         selectedWeaponTextView = (TextView) view.findViewById(R.id.level_bomb_conditions_fragment_selected_weapon_text_view);
 
@@ -181,6 +187,32 @@ public class LevelBombMissionPlannerConditionsFragment extends Fragment
                 {
                     String oldText = tempEditText.getText().toString();
                     tempEditText.setText(oldText + "°C");
+                }
+            }
+        });
+
+        cloudBaseEditText.setOnFocusChangeListener(new View.OnFocusChangeListener()
+        {
+            @Override
+            public void onFocusChange(View view, boolean b)
+            {
+                if (!b && !cloudBaseEditText.getText().toString().contains("ft."))
+                {
+                    String oldText = cloudBaseEditText.getText().toString();
+                    cloudBaseEditText.setText(oldText + "ft.");
+                }
+            }
+        });
+
+        conLayerEditText.setOnFocusChangeListener(new View.OnFocusChangeListener()
+        {
+            @Override
+            public void onFocusChange(View view, boolean b)
+            {
+                if (!b && !conLayerEditText.getText().toString().contains("ft."))
+                {
+                    String oldText = conLayerEditText.getText().toString();
+                    conLayerEditText.setText(oldText + "ft.");
                 }
             }
         });
