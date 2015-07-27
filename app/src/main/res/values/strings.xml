@@ -1239,7 +1239,7 @@
     <string name="winds">Winds: </string>
     <string name="temperature">Temp: </string>
     <string name="cloud_base">Cloud Base: </string>
-    <string name="con_layer">Con Layer: </string>
+    <string name="con_layer">Condensation Layer: </string>
     <string name="local_tot">Local Time On Target: </string>
     <string name="select_bomb">Select Bomb</string>
     <string name="at_symbol_text_view">At</string>

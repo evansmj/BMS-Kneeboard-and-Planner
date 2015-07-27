@@ -9,12 +9,14 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.oldgoat5.bmstacticalreference.R;
 import com.oldgoat5.bmstacticalreference.missionplanner.BombSelectDialog;
@@ -65,9 +67,9 @@ public class LevelBombMissionPlannerConditionsFragment extends Fragment
         tempEditText = (EditText) view.findViewById(R.id.temperature_edit_text);
         tempEditText.setText("20°C");
         cloudBaseEditText = (EditText) view.findViewById(R.id.cloud_base_edit_text);
-        cloudBaseEditText.setText("20,000ft.");
+        cloudBaseEditText.setText("20000ft.");
         conLayerEditText = (EditText) view.findViewById(R.id.con_layer_edit_text);
-        conLayerEditText.setText("30,000ft.");
+        conLayerEditText.setText("30000ft.");
 
         selectedWeaponTextView = (TextView) view.findViewById(R.id.level_bomb_conditions_fragment_selected_weapon_text_view);
 
@@ -172,8 +174,43 @@ public class LevelBombMissionPlannerConditionsFragment extends Fragment
             {
                 if (!b && !windEditText.getText().toString().contains("kn."))
                 {
-                    String oldText = windEditText.getText().toString();
-                    windEditText.setText(oldText + "kn.");
+                    try
+                    {
+                        String oldText = windEditText.getText().toString();
+
+                        if (oldText.length() > 5)
+                        {
+                            windEditText.setText(oldText + "kn.");
+
+                            int heading = Integer.parseInt(oldText.substring(0, 3));
+
+                            Log.d("LevelConFrag", "heading: " + heading);
+
+                            if (heading > 360)
+                            {
+                                Toast.makeText(getActivity(),
+                                        "Invalid Heading, must be < 360", Toast.LENGTH_LONG).show();
+                            }
+
+                            String speedText = windEditText.getText().toString().substring(5).replace("kn.", "");
+
+                            Log.d("LevelconFrag", "wind Speed: " + speedText);
+
+                            if (Integer.parseInt(speedText) > 99)
+                            {
+                                Toast.makeText(getActivity(),
+                                        "Wind Speed may be excessive.", Toast.LENGTH_LONG).show();
+                            }
+                        } else
+                        {
+                            throw new NumberFormatException();
+                        }
+                    }
+                    catch (NumberFormatException e)
+                    {
+                        Toast.makeText(getActivity(),
+                                "Invalid Wind value.", Toast.LENGTH_LONG).show();
+                    }
                 }
             }
         });
@@ -186,7 +223,17 @@ public class LevelBombMissionPlannerConditionsFragment extends Fragment
                 if (!b && !tempEditText.getText().toString().contains("°C"))
                 {
                     String oldText = tempEditText.getText().toString();
-                    tempEditText.setText(oldText + "°C");
+
+                    try
+                    {
+                        Integer.parseInt(oldText);
+                        tempEditText.setText(oldText + "°C");
+                    }
+                    catch (NumberFormatException e)
+                    {
+                        Toast.makeText(getActivity(),
+                                "Invalid Temperature value.", Toast.LENGTH_LONG).show();
+                    }
                 }
             }
         });
@@ -199,7 +246,21 @@ public class LevelBombMissionPlannerConditionsFragment extends Fragment
                 if (!b && !cloudBaseEditText.getText().toString().contains("ft."))
                 {
                     String oldText = cloudBaseEditText.getText().toString();
-                    cloudBaseEditText.setText(oldText + "ft.");
+
+                    try
+                    {
+                        if (oldText.contains(","))
+                        {
+                            oldText = oldText.replace(",", "");
+                        }
+                        Integer.parseInt(oldText);
+                        cloudBaseEditText.setText(oldText + "ft.");
+                    }
+                    catch (NumberFormatException e)
+                    {
+                        Toast.makeText(getActivity(),
+                                "Invalid Cloud Base value.", Toast.LENGTH_LONG).show();
+                    }
                 }
             }
         });
@@ -212,7 +273,21 @@ public class LevelBombMissionPlannerConditionsFragment extends Fragment
                 if (!b && !conLayerEditText.getText().toString().contains("ft."))
                 {
                     String oldText = conLayerEditText.getText().toString();
-                    conLayerEditText.setText(oldText + "ft.");
+
+                    try
+                    {
+                        if (oldText.contains(","))
+                        {
+                            oldText = oldText.replace(",", "");
+                        }
+                        Integer.parseInt(oldText);
+                        conLayerEditText.setText(oldText + "ft.");
+                    }
+                    catch (NumberFormatException e)
+                    {
+                        Toast.makeText(getActivity(),
+                                "Invalid Condensation Layer value.", Toast.LENGTH_LONG).show();
+                    }
                 }
             }
         });
@@ -222,7 +297,7 @@ public class LevelBombMissionPlannerConditionsFragment extends Fragment
             @Override
             public void onClick(View view)
             {
-                //
+                //make sure situation is set then send input bundle to ParametersFragment.
             }
         });
 

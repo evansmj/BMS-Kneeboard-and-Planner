@@ -82,23 +82,13 @@
                 android:text="@string/con_layer"
                 android:textAppearance="?android:attr/textAppearanceMedium"/>
 
-            <TextView
-                android:id="@+id/local_tot"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignStart="@+id/con_layer_text_view"
-                android:layout_below="@+id/con_layer_text_view"
-                android:paddingTop="20dp"
-                android:text="@string/local_tot"
-                android:textAppearance="?android:attr/textAppearanceMedium"/>
-
             <Button
                 android:id="@+id/level_bomb_conditions_fragment_select_bomb_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_below="@+id/time_on_target_edit_text"
-                android:text="@string/select_bomb"/>
+                android:text="@string/select_bomb"
+                android:layout_below="@+id/con_layer_text_view"
+                android:layout_alignParentStart="true"/>
 
             <Spinner
                 android:id="@+id/situation_spinner"
@@ -134,26 +124,15 @@
                 android:inputType="text"/>
 
             <EditText
-                android:id="@+id/time_on_target_edit_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:selectAllOnFocus="true"
-                android:layout_alignBottom="@+id/local_tot"
-                android:layout_alignParentEnd="true"
-                android:layout_toEndOf="@+id/local_tot"
-                android:ems="10"
-                android:inputType="time"/>
-
-            <EditText
                 android:id="@+id/con_layer_edit_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:selectAllOnFocus="true"
-                android:layout_above="@+id/local_tot"
-                android:layout_alignEnd="@+id/time_on_target_edit_text"
-                android:layout_alignStart="@+id/time_on_target_edit_text"
                 android:ems="10"
-                android:inputType="text"/>
+                android:inputType="text"
+                android:layout_alignBottom="@+id/con_layer_text_view"
+                android:layout_alignParentEnd="true"
+                android:layout_toEndOf="@+id/con_layer_text_view"/>
 
             <EditText
                 android:id="@+id/cloud_base_edit_text"
@@ -162,8 +141,9 @@
                 android:selectAllOnFocus="true"
                 android:layout_above="@+id/con_layer_text_view"
                 android:layout_alignEnd="@+id/con_layer_edit_text"
-                android:layout_alignStart="@+id/temperature_edit_text"
-                android:inputType="text"/>
+                android:inputType="text"
+                android:layout_toEndOf="@+id/con_layer_text_view"
+                android:layout_alignStart="@+id/temperature_edit_text"/>
 
             <Button
                 android:id="@+id/level_bomb_conditions_fragment_next_button"
@@ -183,7 +163,7 @@
                 android:layout_alignBaseline="@+id/level_bomb_conditions_fragment_select_bomb_button"
                 android:layout_alignBottom="@+id/level_bomb_conditions_fragment_select_bomb_button"
                 android:layout_alignParentEnd="true"
-                android:layout_toEndOf="@+id/local_tot"/>
+                android:layout_toEndOf="@+id/con_layer_text_view"/>
 
 
         </RelativeLayout>
