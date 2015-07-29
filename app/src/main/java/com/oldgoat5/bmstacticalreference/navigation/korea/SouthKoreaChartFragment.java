@@ -190,7 +190,7 @@ public class SouthKoreaChartFragment extends Fragment
                     case 10:
                         imageView.setImageResource(R.drawable.choongwon_one_departure);
                         dialog.setContentView(imageView);
-                        dialog.setTitle(airbases[19]);
+                        dialog.setTitle(airbases[10]);
                         dialog.show();
                         break;
 
