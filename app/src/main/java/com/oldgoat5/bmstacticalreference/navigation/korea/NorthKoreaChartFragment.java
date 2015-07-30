@@ -81,189 +81,189 @@ public class NorthKoreaChartFragment extends Fragment
                     case 0:
                         imageView.setImageResource(R.drawable.north_korea_east_west_airstrips);
                         dialog.setContentView(imageView);
-                        dialog.setTitle(airbases[0]);
+                        dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
 
                     case 1:
                         imageView.setImageResource(R.drawable.north_korea_north_south_airstrips);
                         dialog.setContentView(imageView);
-                        dialog.setTitle(airbases[1]);
+                        dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
 
                     case 2:
                         imageView.setImageResource(R.drawable.haeju_airport_diagram);
                         dialog.setContentView(imageView);
-                        dialog.setTitle(airbases[2]);
+                        dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
 
                     case 3:
                         imageView.setImageResource(R.drawable.hwangju_airport_diagram);
                         dialog.setContentView(imageView);
-                        dialog.setTitle(airbases[3]);
+                        dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
 
                     case 4:
                         imageView.setImageResource(R.drawable.hwangsuwon_airport_diagram);
                         dialog.setContentView(imageView);
-                        dialog.setTitle(airbases[4]);
+                        dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
 
                     case 5:
                         imageView.setImageResource(R.drawable.hyonni_airport_diagram);
                         dialog.setContentView(imageView);
-                        dialog.setTitle(airbases[5]);
+                        dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
 
                     case 6:
                         imageView.setImageResource(R.drawable.iwon_airport_diagram);
                         dialog.setContentView(imageView);
-                        dialog.setTitle(airbases[6]);
+                        dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
 
                     case 7:
                         imageView.setImageResource(R.drawable.kaechon_airport_diagram);
                         dialog.setContentView(imageView);
-                        dialog.setTitle(airbases[7]);
+                        dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
 
                     case 8:
                         imageView.setImageResource(R.drawable.koksan_airport_diagram);
                         dialog.setContentView(imageView);
-                        dialog.setTitle(airbases[8]);
+                        dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
 
                     case 9:
                         imageView.setImageResource(R.drawable.kuumni_airport_diagram);
                         dialog.setContentView(imageView);
-                        dialog.setTitle(airbases[9]);
+                        dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
 
                     case 10:
                         imageView.setImageResource(R.drawable.kwail_airport_diagram);
                         dialog.setContentView(imageView);
-                        dialog.setTitle(airbases[19]);
+                        dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
 
                     case 11:
                         imageView.setImageResource(R.drawable.manpo_airport_diagram);
                         dialog.setContentView(imageView);
-                        dialog.setTitle(airbases[11]);
+                        dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
 
                     case 12:
                         imageView.setImageResource(R.drawable.mirim_airport_diagram);
                         dialog.setContentView(imageView);
-                        dialog.setTitle(airbases[12]);
+                        dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
 
                     case 13:
                         imageView.setImageResource(R.drawable.onchon_airport_diagram);
                         dialog.setContentView(imageView);
-                        dialog.setTitle(airbases[13]);
+                        dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
 
                     case 14:
                         imageView.setImageResource(R.drawable.ongjin_airport_diagram);
                         dialog.setContentView(imageView);
-                        dialog.setTitle(airbases[14]);
+                        dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
 
                     case 15:
                         imageView.setImageResource(R.drawable.orang_airport_diagram);
                         dialog.setContentView(imageView);
-                        dialog.setTitle(airbases[15]);
+                        dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
 
                     case 16:
                         imageView.setImageResource(R.drawable.panghyon_airport_diagram);
                         dialog.setContentView(imageView);
-                        dialog.setTitle(airbases[16]);
+                        dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
 
                     case 17:
                         imageView.setImageResource(R.drawable.pukchangup_airport_diagram);
                         dialog.setContentView(imageView);
-                        dialog.setTitle(airbases[17]);
+                        dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
 
                     case 18:
                         imageView.setImageResource(R.drawable.samjiyonup_airport_diagram);
                         dialog.setContentView(imageView);
-                        dialog.setTitle(airbases[18]);
+                        dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
 
                     case 19:
                         imageView.setImageResource(R.drawable.sondok_airport_diagram);
                         dialog.setContentView(imageView);
-                        dialog.setTitle(airbases[19]);
+                        dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
 
                     case 20:
                         imageView.setImageResource(R.drawable.sunan_pyongyang_airport_diagram);
                         dialog.setContentView(imageView);
-                        dialog.setTitle(airbases[20]);
+                        dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
 
                     case 21:
                         imageView.setImageResource(R.drawable.sunchon_airport_diagram);
                         dialog.setContentView(imageView);
-                        dialog.setTitle(airbases[21]);
+                        dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
 
                     case 22:
                         imageView.setImageResource(R.drawable.taechon_airport_diagram);
                         dialog.setContentView(imageView);
-                        dialog.setTitle(airbases[22]);
+                        dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
 
                     case 23:
                         imageView.setImageResource(R.drawable.taetan_airport_diagram);
                         dialog.setContentView(imageView);
-                        dialog.setTitle(airbases[23]);
+                        dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
 
                     case 24:
                         imageView.setImageResource(R.drawable.toksan_airport_diagram);
                         dialog.setContentView(imageView);
-                        dialog.setTitle(airbases[24]);
+                        dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
 
                     case 25:
                         imageView.setImageResource(R.drawable.uiju_airport_diagram);
                         dialog.setContentView(imageView);
-                        dialog.setTitle(airbases[25]);
+                        dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
 
                     case 26:
                         imageView.setImageResource(R.drawable.wonsan_airport_diagram);
                         dialog.setContentView(imageView);
-                        dialog.setTitle(airbases[26]);
+                        dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
                 }

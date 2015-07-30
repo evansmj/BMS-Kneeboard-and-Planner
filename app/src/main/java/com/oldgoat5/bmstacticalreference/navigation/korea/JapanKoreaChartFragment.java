@@ -72,49 +72,49 @@ public class JapanKoreaChartFragment extends Fragment
                     case 0:
                         imageView.setImageResource(R.drawable.fukuoka_kadena_airport_diagram);
                         dialog.setContentView(imageView);
-                        dialog.setTitle(airbases[0]);
+                        dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
 
                     case 1:
                         imageView.setImageResource(R.drawable.fukuoka_kadena_departure);
                         dialog.setContentView(imageView);
-                        dialog.setTitle(airbases[1]);
+                        dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
 
                     case 2:
                         imageView.setImageResource(R.drawable.fukuoka_kadena_adiz_crossing);
                         dialog.setContentView(imageView);
-                        dialog.setTitle(airbases[2]);
+                        dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
 
                     case 3:
                         imageView.setImageResource(R.drawable.fukuoka_kadena_ils_rwy_01);
                         dialog.setContentView(imageView);
-                        dialog.setTitle(airbases[3]);
+                        dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
 
                     case 4:
                         imageView.setImageResource(R.drawable.fukuoka_kadena_ils_rwy_19);
                         dialog.setContentView(imageView);
-                        dialog.setTitle(airbases[4]);
+                        dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
 
                     case 5:
                         imageView.setImageResource(R.drawable.fukuoka_kadena_tacan_rwy_15);
                         dialog.setContentView(imageView);
-                        dialog.setTitle(airbases[5]);
+                        dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
 
                     case 6:
                         imageView.setImageResource(R.drawable.fukuoka_kadena_tacan_rwy_33);
                         dialog.setContentView(imageView);
-                        dialog.setTitle(airbases[6]);
+                        dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
 
