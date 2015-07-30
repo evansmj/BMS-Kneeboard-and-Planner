@@ -1253,4 +1253,7 @@
     <string name="view_bomb_info">View Bomb Info</string>
     <string name="no_weapon_selected">(No Weapon Selected)</string>
 
+    <string name="release_parameters">Release Parameters</string>
+    <string name="approach_course">Approach Course to Target:</string>
+
 </resources>

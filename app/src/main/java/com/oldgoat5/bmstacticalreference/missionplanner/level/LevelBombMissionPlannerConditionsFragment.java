@@ -105,6 +105,9 @@ public class LevelBombMissionPlannerConditionsFragment extends Fragment
                     case 3:
                         selectedSituation = situationItems[i];
                         break;
+
+                    case 4:
+                        selectedSituation = situationItems[i];
                 }
             }
 
