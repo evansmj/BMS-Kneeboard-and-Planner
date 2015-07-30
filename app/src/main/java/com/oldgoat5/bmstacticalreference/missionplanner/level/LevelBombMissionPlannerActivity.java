@@ -45,7 +45,8 @@ public class LevelBombMissionPlannerActivity extends FragmentActivity
             fragmentTransaction.add(R.id.level_bomb_conditions_fragment_frame_layout, conditionsFragment);
             fragmentTransaction.commit();
 
-            conditionsFragment.setConditionsResult(new LevelBombMissionPlannerConditionsFragment.OnConditionsResult()
+            conditionsFragment.setConditionsResult(
+                    new LevelBombMissionPlannerConditionsFragment.OnConditionsResult()
             {
                 @Override
                 public void setBundle(Bundle bundle)
@@ -58,7 +59,8 @@ public class LevelBombMissionPlannerActivity extends FragmentActivity
 
                     //remove conditionsFragment load parametersFragment.
                     fragmentTransaction = fragmentManager.beginTransaction();
-                    fragmentTransaction.replace(R.id.level_bomb_conditions_fragment_frame_layout, parametersFragment);
+                    fragmentTransaction.replace(
+                            R.id.level_bomb_conditions_fragment_frame_layout, parametersFragment);
                     fragmentTransaction.addToBackStack(null);
                     fragmentTransaction.commit();
                 }

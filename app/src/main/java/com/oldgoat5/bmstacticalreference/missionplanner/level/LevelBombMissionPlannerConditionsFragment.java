@@ -1,5 +1,6 @@
 package com.oldgoat5.bmstacticalreference.missionplanner.level;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -73,6 +74,7 @@ public class LevelBombMissionPlannerConditionsFragment extends Fragment
         cloudBaseEditText.setText("20000ft.");
         conLayerEditText = (EditText) view.findViewById(R.id.con_layer_edit_text);
         conLayerEditText.setText("30000ft.");
+        selectedWeapon = "(No Weapon Selected)";
 
         selectedWeaponTextView = (TextView) view.findViewById(R.id.level_bomb_conditions_fragment_selected_weapon_text_view);
 
@@ -256,7 +258,16 @@ public class LevelBombMissionPlannerConditionsFragment extends Fragment
                         {
                             oldText = oldText.replace(",", "");
                         }
-                        Integer.parseInt(oldText);
+                        Integer.parseInt(oldText); //check if integer
+
+                        if (Integer.parseInt(oldText) < 1500)
+                        {
+                            //show Toast
+                            Toast.makeText(getActivity(),
+                                    "Cloud Base lower than minimum for level release (1500ft.)",
+                                    Toast.LENGTH_LONG).show();
+                        }
+
                         cloudBaseEditText.setText(oldText + "ft.");
                     }
                     catch (NumberFormatException e)
@@ -301,7 +312,7 @@ public class LevelBombMissionPlannerConditionsFragment extends Fragment
             public void onClick(View view)
             {
                 //make sure situation is set then send input bundle to ParametersFragment.
-                if (selectedSituation != "---")
+                if (!selectedSituation.equals("---") && !selectedWeapon.equals("(No Weapon Selected)"))
                 {
                     selectedWindDirection = Integer.parseInt(
                             windEditText.getText().toString().substring(0, 2));
@@ -334,11 +345,16 @@ public class LevelBombMissionPlannerConditionsFragment extends Fragment
                         onConditionsResult.setBundle(bundle);
                     }
                 }
-                else
+                else if (selectedSituation.equals("---"))
                 {
                     //make toast invalid weather situation
                     Toast.makeText(getActivity(),
                         "Invalid Weather Situation value.", Toast.LENGTH_LONG).show();
+                }
+                else
+                {
+                    Toast.makeText(getActivity(),
+                            "No weapon selected", Toast.LENGTH_LONG).show();
                 }
             }
         });
