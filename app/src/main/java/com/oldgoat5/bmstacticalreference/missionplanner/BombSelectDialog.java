@@ -212,7 +212,6 @@ public class BombSelectDialog extends Dialog
         {
             throw sqle;
         }
-
     }
 
     public void setDialogResult(OnDialogResult result)

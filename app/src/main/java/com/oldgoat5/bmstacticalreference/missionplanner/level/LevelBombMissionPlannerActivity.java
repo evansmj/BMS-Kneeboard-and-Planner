@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.util.Log;
 
 import com.oldgoat5.bmstacticalreference.R;
 
@@ -15,10 +16,12 @@ import com.oldgoat5.bmstacticalreference.R;
  *********************************************************************/
 public class LevelBombMissionPlannerActivity extends FragmentActivity
 {
-    FragmentManager fragmentManager;
-    FragmentTransaction fragmentTransaction;
-    LevelBombMissionPlannerConditionsFragment conditionsFragment;
-    LevelBombMissionPlannerParametersFragment parametersFragment;
+    private Bundle fromConditionsBundle;
+    private FragmentManager fragmentManager;
+    private FragmentTransaction fragmentTransaction;
+    private LevelBombMissionPlannerConditionsFragment conditionsFragment;
+    private LevelBombMissionPlannerParametersFragment parametersFragment;
+    private LevelBombMissionPlannerConditionsFragment.OnConditionsResult onConditionsResult;
 
     public void onCreate(Bundle savedInstanceState)
     {
@@ -41,7 +44,25 @@ public class LevelBombMissionPlannerActivity extends FragmentActivity
             fragmentTransaction = fragmentManager.beginTransaction();
             fragmentTransaction.add(R.id.level_bomb_conditions_fragment_frame_layout, conditionsFragment);
             fragmentTransaction.commit();
+
+            conditionsFragment.setConditionsResult(new LevelBombMissionPlannerConditionsFragment.OnConditionsResult()
+            {
+                @Override
+                public void setBundle(Bundle bundle)
+                {
+                    fromConditionsBundle = bundle;
+                    Log.d("levelBombActivity", "set bundle = " + bundle.getInt("selectedCloudBase"));
+
+                    parametersFragment = new LevelBombMissionPlannerParametersFragment();
+                    parametersFragment.setArguments(fromConditionsBundle);
+
+                    //remove conditionsFragment load parametersFragment.
+                    fragmentTransaction = fragmentManager.beginTransaction();
+                    fragmentTransaction.replace(R.id.level_bomb_conditions_fragment_frame_layout, parametersFragment);
+                    fragmentTransaction.addToBackStack(null);
+                    fragmentTransaction.commit();
+                }
+            });
         }
     }
-
 }

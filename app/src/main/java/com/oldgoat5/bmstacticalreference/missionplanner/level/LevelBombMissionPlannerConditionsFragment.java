@@ -1,5 +1,6 @@
 package com.oldgoat5.bmstacticalreference.missionplanner.level;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -41,15 +42,17 @@ public class LevelBombMissionPlannerConditionsFragment extends Fragment
     private EditText tempEditText;
     private EditText cloudBaseEditText;
     private EditText conLayerEditText;
+    private LevelBombMissionPlannerParametersFragment parametersFragment;
+    private OnConditionsResult onConditionsResult;
     private Spinner situationsSpinner;
     private TextView selectedWeaponTextView;
     private View view;
 
-    private int cloudBase;
-    private int conLayer;
-    private int localTimeOnTarget;
-    private int windDirection;
-    private int windSpeed;
+    private int selectedCloudBase;
+    private int selectedConLayer;
+    private int selectedTemperature;
+    private int selectedWindDirection;
+    private int selectedWindSpeed;
     private String selectedSituation;
     private String selectedWeapon;
 
@@ -298,9 +301,58 @@ public class LevelBombMissionPlannerConditionsFragment extends Fragment
             public void onClick(View view)
             {
                 //make sure situation is set then send input bundle to ParametersFragment.
+                if (selectedSituation != "---")
+                {
+                    selectedWindDirection = Integer.parseInt(
+                            windEditText.getText().toString().substring(0, 2));
+                    selectedWindSpeed = Integer.parseInt(
+                            windEditText.getText().toString().substring(5).replace("kn.", ""));
+                    selectedTemperature = Integer.parseInt(
+                            tempEditText.getText().toString().replace("°C", ""));
+                    selectedCloudBase = Integer.parseInt(
+                            cloudBaseEditText.getText().toString().replace("ft.", ""));
+                    selectedConLayer = Integer.parseInt(
+                            conLayerEditText.getText().toString().replace("ft.", ""));
+
+                    //make bundle
+                    Bundle bundle = new Bundle();
+                    bundle.putInt("selectedWindDirection", selectedWindDirection);
+                    bundle.putInt("selectedWindSpeed", selectedWindSpeed);
+                    bundle.putInt("selectedTemperature", selectedTemperature);
+                    bundle.putInt("selectedCloudBase", selectedCloudBase);
+                    bundle.putInt("selectedConLayer", selectedConLayer);
+                    bundle.putString("selectedSituation", selectedSituation);
+                    bundle.putString("selectedWeapon", selectedWeapon);
+
+                    //send to level bomb mission planner parameters fragment.
+
+                    //parametersFragment = new LevelBombMissionPlannerParametersFragment();
+                    //parametersFragment.setArguments(bundle);
+
+                    if (onConditionsResult != null)
+                    {
+                        onConditionsResult.setBundle(bundle);
+                    }
+                }
+                else
+                {
+                    //make toast invalid weather situation
+                    Toast.makeText(getActivity(),
+                        "Invalid Weather Situation value.", Toast.LENGTH_LONG).show();
+                }
             }
         });
 
         return view;
+    }
+
+    public void setConditionsResult(OnConditionsResult result)
+    {
+        onConditionsResult = result;
+    }
+
+    public interface OnConditionsResult
+    {
+        void setBundle(Bundle bundle);
     }
 }
