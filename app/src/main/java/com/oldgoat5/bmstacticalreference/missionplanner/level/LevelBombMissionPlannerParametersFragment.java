@@ -2,6 +2,7 @@ package com.oldgoat5.bmstacticalreference.missionplanner.level;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -31,6 +32,8 @@ public class LevelBombMissionPlannerParametersFragment extends Fragment
     {
         view = inflater.inflate(
                 R.layout.level_bomb_mission_planner_parameters_fragment_layout, container, false);
+
+        Log.d("levelParametersFragment", "onCreateView() called");
 
         selectedCloudBase = getArguments().getInt("selectedCloudBase");
         selectedConLayer = getArguments().getInt("selectedConLayer");

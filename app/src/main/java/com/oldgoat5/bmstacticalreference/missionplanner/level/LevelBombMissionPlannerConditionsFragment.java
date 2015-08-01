@@ -33,7 +33,7 @@ import java.text.DecimalFormat;
  *********************************************************************/
 public class LevelBombMissionPlannerConditionsFragment extends Fragment
 {
-    final String[] situationItems = {"---", "Sunny", "Fair", "Poor", "Inclement"};
+    private final String[] situationItems = {"---", "Sunny", "Fair", "Poor", "Inclement"};
 
     private ArrayAdapter<String> situationsArrayAdapter;
     private BombSelectDialog bombSelectDialog;
@@ -57,11 +57,12 @@ public class LevelBombMissionPlannerConditionsFragment extends Fragment
     private String selectedSituation;
     private String selectedWeapon;
 
-
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
         view = inflater.inflate(
                 R.layout.level_bomb_mission_planner_conditions_fragment_layout, container, false);
+
+        Log.d("levelConditionsFragment", "onCreate() called");
 
         nextButton = (Button) view.findViewById(R.id.level_bomb_conditions_fragment_next_button);
         selectBomb = (Button) view.findViewById(R.id.level_bomb_conditions_fragment_select_bomb_button);
@@ -209,7 +210,8 @@ public class LevelBombMissionPlannerConditionsFragment extends Fragment
                                 Toast.makeText(getActivity(),
                                         "Wind Speed may be excessive.", Toast.LENGTH_LONG).show();
                             }
-                        } else
+                        }
+                        else
                         {
                             throw new NumberFormatException();
                         }
@@ -314,6 +316,8 @@ public class LevelBombMissionPlannerConditionsFragment extends Fragment
             @Override
             public void onClick(View view)
             {
+                Log.d("levelConditionsFragment", "nextButton onClick()");
+
                 //make sure situation is set then send input bundle to ParametersFragment.
                 if (!selectedSituation.equals("---") && !selectedWeapon.equals("(No Weapon Selected)"))
                 {
@@ -343,8 +347,11 @@ public class LevelBombMissionPlannerConditionsFragment extends Fragment
                     //parametersFragment = new LevelBombMissionPlannerParametersFragment();
                     //parametersFragment.setArguments(bundle);
 
+                    Log.d("levelConditionsFragment", "onConditionsResult = " + onConditionsResult);
+
                     if (onConditionsResult != null)
                     {
+                        Log.d("levelConditionsFragment", "if (onConditionsResult != null) called");
                         onConditionsResult.setBundle(bundle);
                     }
                 }
@@ -352,7 +359,7 @@ public class LevelBombMissionPlannerConditionsFragment extends Fragment
                 {
                     //make toast invalid weather situation
                     Toast.makeText(getActivity(),
-                        "Invalid Weather Situation value.", Toast.LENGTH_LONG).show();
+                            "Invalid Weather Situation value.", Toast.LENGTH_LONG).show();
                 }
                 else
                 {
@@ -361,6 +368,8 @@ public class LevelBombMissionPlannerConditionsFragment extends Fragment
                 }
             }
         });
+
+       // setRetainInstance(true);
 
         return view;
     }
