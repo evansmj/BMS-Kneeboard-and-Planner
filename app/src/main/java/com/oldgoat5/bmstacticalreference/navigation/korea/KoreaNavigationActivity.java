@@ -22,8 +22,6 @@ import java.util.ArrayList;
  *********************************************************************/
 public class KoreaNavigationActivity extends FragmentActivity //implements ActionBar.TabListener
 {
-    private ActionBar actionBar;
-    private KoreaNavigationFragmentPageAdapter fragmentPageAdapter;
     private ArrayList<PagerItem> tabsList;
     private SlidingTabLayout slidingTabLayout;
     private ViewPager viewPager;

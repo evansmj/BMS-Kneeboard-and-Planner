@@ -36,10 +36,34 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
                     android:layout_below="@+id/release_parameters_text_view"
                     android:paddingTop="20dp"
                     android:text="@string/approach_course"
+                    android:labelFor="@+id/approach_course_edit_text"
                     android:textAppearance="?android:attr/textAppearanceMedium"/>
+
+                <TextView
+                    android:id="@+id/approach_course_considerations_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/approach_course_considerations"
+                    android:layout_below="@+id/approach_course_text_view"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColor="#D3D3D3"
+                    android:textStyle="italic"/>
+
+                <EditText
+                    android:id="@+id/approach_course_edit_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/approach_course_considerations_text_view"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:selectAllOnFocus="true"
+                    android:layout_toEndOf="@+id/approach_course_text_view"
+                    android:layout_toRightOf="@+id/approach_course_text_view"
+                    android:inputType="text"/>
 
             </RelativeLayout>
 

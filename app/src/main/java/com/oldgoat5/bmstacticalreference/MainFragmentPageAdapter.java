@@ -1,5 +1,6 @@
 package com.oldgoat5.bmstacticalreference;
 
+import android.content.Context;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -19,10 +20,13 @@ import com.oldgoat5.bmstacticalreference.reference.ReferenceFragment;
  *********************************************************************/
 public class MainFragmentPageAdapter extends FragmentPagerAdapter
 {
+    private final int COUNT = 6;
+    private Context CONTEXT;
     
-    public MainFragmentPageAdapter(FragmentManager fm)
+    public MainFragmentPageAdapter(FragmentManager fm, Context context)
     {
         super(fm);
+        this.CONTEXT = context;
     }
 
     @Override
@@ -49,9 +53,31 @@ public class MainFragmentPageAdapter extends FragmentPagerAdapter
     }
 
     @Override
+    public CharSequence getPageTitle(int position)
+    {
+        switch (position)
+        {
+            case 0:
+                return "Load Card";
+            case 1:
+                return "Tactical Reference";
+            case 2:
+                return "Reference";
+            case 3:
+                return "Fuel Calculator";
+            case 4:
+                return "Navigation Charts";
+            case 5:
+                return "Mission Planner";
+            default:
+                break;
+        }
+        return null;
+    }
+
+    @Override
     public int getCount()
     {
-        return 6;
+        return COUNT;
     }
-    
 }

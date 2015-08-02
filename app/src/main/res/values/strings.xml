@@ -1255,5 +1255,6 @@
 
     <string name="release_parameters">Release Parameters</string>
     <string name="approach_course">Approach Course to Target:</string>
+    <string name="approach_course_considerations">(Consider sun angle, moon illumination, terrain, vehicle formations, threats)</string>
 
 </resources>

@@ -16,12 +16,12 @@ import android.support.v4.app.FragmentPagerAdapter;
 public class KoreaNavigationFragmentPageAdapter extends FragmentPagerAdapter
 {
     private final int COUNT = 5;
-    private Context context;
+    private Context CONTEXT;
 
     public KoreaNavigationFragmentPageAdapter(FragmentManager fm, Context context)
     {
         super(fm);
-        this.context = context;
+        this.CONTEXT = context;
     }
 
     @Override

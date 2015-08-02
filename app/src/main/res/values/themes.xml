@@ -3,7 +3,7 @@
 
     <!-- the theme applied to the application or activity -->
     <style name="BlueTheme"
-           parent="@style/AppTheme">
+           parent="@android:style/Theme.Holo.Light.DarkActionBar">
         <item name="android:actionBarStyle">@style/MyActionBar</item>
 
         <!-- Support library compatibility -->
@@ -12,7 +12,7 @@
 
     <!-- ActionBar styles -->
     <style name="MyActionBar"
-           parent="@style/Widget.AppCompat.Light.ActionBar.Solid.Inverse">
+           parent="android:Widget.Holo.Light.ActionBar">
         <item name="android:background">@color/dark_blue</item>
         <item name="android:titleTextStyle">@style/BlueTheme.MyActionBar.TitleTextStyle</item>
 
@@ -25,11 +25,11 @@
     <style name="BlueTheme.MyActionBar.TitleTextStyle"
            parent="@android:style/TextAppearance">
         <item name="android:textColor">@color/silver</item>
-        <item name="android:textSize">@dimen/abc_action_bar_title_text_size</item>
+        <item name="android:textSize">15sp</item>
         <item name="android:textStyle">bold</item>
 
         <!-- Support library compatibility-->
         <item name="textColor">@color/silver</item>
-        <item name="textSize">@dimen/abc_action_bar_title_text_size</item>
+        <item name="textSize">15sp</item>
     </style>
 </resources>

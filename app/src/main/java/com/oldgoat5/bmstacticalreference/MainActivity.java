@@ -1,36 +1,78 @@
 package com.oldgoat5.bmstacticalreference;
 
-import android.app.ActionBar;
 import android.app.ActionBar.Tab;
 import android.app.FragmentTransaction;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
+import android.app.ActionBar;
 import android.util.Log;
+import android.view.Window;
+
+import com.oldgoat5.bmstacticalreference.slidingtabs.PagerItem;
+import com.oldgoat5.bmstacticalreference.slidingtabs.SlidingTabLayout;
+
+import java.util.ArrayList;
 
 /********************************************************************
  * Copyright © Michael Evans - All Rights Reserved.
  ********************************************************************/
-public class MainActivity extends FragmentActivity 
-    implements ActionBar.TabListener
+public class MainActivity extends FragmentActivity
 {
     int grossWeight;
     int totalDrag;
 
     private ActionBar actionBar;
-    //DBTools dbHelper;
+    private ArrayList<PagerItem> tabsList;
     private MainFragmentPageAdapter fragmentPageAdapter;
+    private SlidingTabLayout slidingTabLayout;
     private ViewPager viewPager;
-    
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         Log.d("MainActivity", "begin onCreate()");
-        viewPager = (ViewPager) findViewById(R.id.pager);
-        fragmentPageAdapter = new MainFragmentPageAdapter(
-                getSupportFragmentManager());
+
+        actionBar = getActionBar();
+        Log.d("MainActivity", "actionBar = " + actionBar);
+
+        tabsList = new ArrayList<PagerItem>();
+
+        tabsList.add(new PagerItem("Load Card", Color.parseColor("#D5DADD"), Color.GRAY));
+        tabsList.add(new PagerItem("Tactical Reference", Color.parseColor("#D5DADD"), Color.GRAY));
+        tabsList.add(new PagerItem("Reference", Color.parseColor("#D5DADD"), Color.GRAY));
+        tabsList.add(new PagerItem("Fuel Calculator", Color.parseColor("#D5DADD"), Color.GRAY));
+        tabsList.add(new PagerItem("Navigation Charts", Color.parseColor("#D5DADD"), Color.GRAY));
+        tabsList.add(new PagerItem("Mission Planner", Color.parseColor("#D5DADD"), Color.GRAY));
+
+        viewPager = (ViewPager) findViewById(R.id.main_pager);
+        viewPager.setAdapter(new MainFragmentPageAdapter(getSupportFragmentManager(),
+                MainActivity.this));
+
+        slidingTabLayout = (SlidingTabLayout) findViewById(R.id.main_sliding_tabs);
+        slidingTabLayout.setDistributeEvenly(true);
+        slidingTabLayout.setTabTitleTextColor("#D5DADD");
+        slidingTabLayout.setViewPager(viewPager);
+
+        slidingTabLayout.setCustomTabColorizer(new SlidingTabLayout.TabColorizer()
+        {
+            @Override
+            public int getIndicatorColor(int position)
+            {
+                return tabsList.get(position).getIndicatorColor();
+            }
+
+            public int getDividerColor(int position)
+            {
+                return tabsList.get(position).getDividerColor();
+            }
+
+        });
+
         //dbHelper = new DBTools(this);
         //Log.d("MainActivity", "after dhHelper = new DBTools(this)");
         
@@ -51,65 +93,5 @@ public class MainActivity extends FragmentActivity
         {
             throw sqle;
         }*/
-        
-        actionBar = getActionBar();
-        
-        actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
-        
-        actionBar.addTab(actionBar.newTab().setText(
-                "Load Card").setTabListener(this));
-        actionBar.addTab(actionBar.newTab().setText(
-                "Tactical Reference").setTabListener(this));
-        actionBar.addTab(actionBar.newTab().setText(
-                "Reference").setTabListener(this));
-        actionBar.addTab(actionBar.newTab().setText(
-                "Fuel Calculator").setTabListener(this));
-        actionBar.addTab(actionBar.newTab().setText(
-                "Navigation Charts").setTabListener(this));
-        actionBar.addTab(actionBar.newTab().setText(
-                "Mission Planner").setTabListener(this));
-        
-        viewPager.setAdapter(fragmentPageAdapter);
-        
-        viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener()
-        {       
-            @Override
-            public void onPageSelected(int arg0)
-            {
-                actionBar.setSelectedNavigationItem(arg0);
-            }    
-            
-            @Override
-            public void onPageScrolled(int arg0, float arg1, int arg2)
-            {
-                // TODO Auto-generated method stub
-            }
-            
-            @Override
-            public void onPageScrollStateChanged(int arg0)
-            {
-                // TODO Auto-generated method stub         
-            }
-        });
-    }
-    
-    
-    @Override
-    public void onTabSelected(Tab tab, FragmentTransaction ft)
-    {
-        viewPager.setCurrentItem(tab.getPosition());
-    }
-    
-    @Override
-    public void onTabUnselected(Tab tab, FragmentTransaction ft)
-    {
-        //from tablistener interface
-        // TODO Auto-generated method stub
-    }
-    
-    @Override
-    public void onTabReselected(Tab tab, FragmentTransaction ft)
-    {
-        // TODO Auto-generated method stub
     }
 }

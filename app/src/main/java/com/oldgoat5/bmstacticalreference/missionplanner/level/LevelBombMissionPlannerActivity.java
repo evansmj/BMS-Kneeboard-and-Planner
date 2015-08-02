@@ -3,7 +3,6 @@ package com.oldgoat5.bmstacticalreference.missionplanner.level;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
 
 import com.oldgoat5.bmstacticalreference.R;
@@ -20,10 +19,8 @@ public class LevelBombMissionPlannerActivity extends FragmentActivity
 
     private Bundle fromConditionsBundle;
     private FragmentManager fragmentManager;
-    private FragmentTransaction fragmentTransaction;
     private LevelBombMissionPlannerConditionsFragment conditionsFragment;
     private LevelBombMissionPlannerParametersFragment parametersFragment;
-    private LevelBombMissionPlannerConditionsFragment.OnConditionsResult onConditionsResult;
 
     public void onCreate(Bundle savedInstanceState)
     {
@@ -56,14 +53,13 @@ public class LevelBombMissionPlannerActivity extends FragmentActivity
                         @Override
                         public void setBundle(Bundle bundle)
                         {
-                            fromConditionsBundle = bundle; //after scroll this not called
+                            fromConditionsBundle = bundle; //after orientation change this not called
                             Log.d("levelBombActivity", "set bundle = " + bundle.getInt("selectedCloudBase"));
 
                             parametersFragment = new LevelBombMissionPlannerParametersFragment();
                             parametersFragment.setArguments(fromConditionsBundle);
 
                             //remove conditionsFragment load parametersFragment.
-                            //todo fix not displaying parameter fragment after orientation change.
 
                             fragmentManager.beginTransaction().replace(
                                     R.id.level_bomb_conditions_fragment_frame_layout,
@@ -81,7 +77,7 @@ public class LevelBombMissionPlannerActivity extends FragmentActivity
                         @Override
                         public void setBundle(Bundle bundle)
                         {
-                            fromConditionsBundle = bundle; //after scroll this not called
+                            fromConditionsBundle = bundle; //after orientation change this not called
                             Log.d("levelBombActivity", "set bundle = " + bundle.getInt("selectedCloudBase"));
 
                             parametersFragment = new LevelBombMissionPlannerParametersFragment();
