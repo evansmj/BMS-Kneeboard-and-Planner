@@ -17,6 +17,8 @@ import com.oldgoat5.bmstacticalreference.R;
  *********************************************************************/
 public class LevelBombMissionPlannerParametersFragment extends Fragment
 {
+    private final String[] RELEASE_KTAS_ITEMS = {"450", "500", "550", "600"};
+
     private View view;
 
     private int selectedCloudBase;

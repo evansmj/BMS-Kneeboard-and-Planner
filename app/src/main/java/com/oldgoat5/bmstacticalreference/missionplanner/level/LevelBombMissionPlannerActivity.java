@@ -33,6 +33,7 @@ public class LevelBombMissionPlannerActivity extends FragmentActivity
                 getSupportFragmentManager().findFragmentByTag(FIRST_INSTANCE_TAG);
 
         Log.d("levelActivity", "conditionsFragment = " + conditionsFragment);
+        Log.d("levelActivity", "parametersFragment = " + parametersFragment);
 
         if (conditionsFragment == null)
         {
@@ -66,6 +67,11 @@ public class LevelBombMissionPlannerActivity extends FragmentActivity
                                     parametersFragment).addToBackStack(null).commit();//this works
                         }
                     });
+        }
+        else if (parametersFragment != null)
+        {
+            Log.d("levelActivity", "if parametersFragment != null)");
+            //todo may need to fix orientation change here after parametersFragment completes.
         }
         else
         {
