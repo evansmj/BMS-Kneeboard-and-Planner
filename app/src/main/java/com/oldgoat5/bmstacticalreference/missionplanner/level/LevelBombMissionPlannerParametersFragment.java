@@ -6,6 +6,9 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.EditText;
+import android.widget.Spinner;
 
 import com.oldgoat5.bmstacticalreference.R;
 
@@ -19,6 +22,11 @@ public class LevelBombMissionPlannerParametersFragment extends Fragment
 {
     private final String[] RELEASE_KTAS_ITEMS = {"450", "500", "550", "600"};
 
+    private ArrayAdapter<String> releaseKtasArrayAdapter;
+    private EditText approachCourseEditText;
+    private EditText releaseAltitudeEditText;
+    private EditText targetElevationEditText;
+    private Spinner releaseKtasSpinner;
     private View view;
 
     private int selectedCloudBase;
@@ -44,6 +52,8 @@ public class LevelBombMissionPlannerParametersFragment extends Fragment
         selectedWindSpeed = getArguments().getInt("selectedWindSpeed");
         selectedSituation = getArguments().getString("selectedSituation");
         selectedWeapon = getArguments().getString("selectedWeapon");
+
+
 
         return view;
     }

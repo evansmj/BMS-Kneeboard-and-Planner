@@ -66,7 +66,7 @@ public class MainFragmentPageAdapter extends FragmentPagerAdapter
             case 3:
                 return "Fuel Calculator";
             case 4:
-                return "Navigation Charts";
+                return "Navigation";
             case 5:
                 return "Mission Planner";
             default:

@@ -16,6 +16,7 @@ import com.oldgoat5.bmstacticalreference.R;
 public class LevelBombMissionPlannerActivity extends FragmentActivity
 {
     private static final String FIRST_INSTANCE_TAG = "first_instance_tag";
+    private static final String SECOND_INSTANCE_TAG = "second_instance_tag";
 
     private Bundle fromConditionsBundle;
     private FragmentManager fragmentManager;
@@ -32,10 +33,13 @@ public class LevelBombMissionPlannerActivity extends FragmentActivity
         conditionsFragment = (LevelBombMissionPlannerConditionsFragment)
                 getSupportFragmentManager().findFragmentByTag(FIRST_INSTANCE_TAG);
 
+        parametersFragment = (LevelBombMissionPlannerParametersFragment)
+                getSupportFragmentManager().findFragmentByTag(SECOND_INSTANCE_TAG);
+
         Log.d("levelActivity", "conditionsFragment = " + conditionsFragment);
         Log.d("levelActivity", "parametersFragment = " + parametersFragment);
 
-        if (conditionsFragment == null)
+        if (conditionsFragment == null && parametersFragment == null)
         {
             Log.d("levelActivity", "if (conditionsFragment == null) called"); //this is calling
                                                                     // after orientation change, it shouldn't
@@ -64,7 +68,7 @@ public class LevelBombMissionPlannerActivity extends FragmentActivity
 
                             fragmentManager.beginTransaction().replace(
                                     R.id.level_bomb_conditions_fragment_frame_layout,
-                                    parametersFragment).addToBackStack(null).commit();//this works
+                                    parametersFragment, SECOND_INSTANCE_TAG).addToBackStack(null).commit();
                         }
                     });
         }
@@ -95,7 +99,7 @@ public class LevelBombMissionPlannerActivity extends FragmentActivity
 
                             fragmentManager.beginTransaction().replace(
                                     R.id.level_bomb_conditions_fragment_frame_layout,
-                                    parametersFragment).commit();//this works, but without backstack.
+                                    parametersFragment, SECOND_INSTANCE_TAG).commit();//this works, but without backstack.
                         }
                     });
         }

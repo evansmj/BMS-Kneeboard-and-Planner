@@ -46,7 +46,7 @@ public class MainActivity extends FragmentActivity
         tabsList.add(new PagerItem("Tactical Reference", Color.parseColor("#D5DADD"), Color.GRAY));
         tabsList.add(new PagerItem("Reference", Color.parseColor("#D5DADD"), Color.GRAY));
         tabsList.add(new PagerItem("Fuel Calculator", Color.parseColor("#D5DADD"), Color.GRAY));
-        tabsList.add(new PagerItem("Navigation Charts", Color.parseColor("#D5DADD"), Color.GRAY));
+        tabsList.add(new PagerItem("Navigation", Color.parseColor("#D5DADD"), Color.GRAY));
         tabsList.add(new PagerItem("Mission Planner", Color.parseColor("#D5DADD"), Color.GRAY));
 
         viewPager = (ViewPager) findViewById(R.id.main_pager);
