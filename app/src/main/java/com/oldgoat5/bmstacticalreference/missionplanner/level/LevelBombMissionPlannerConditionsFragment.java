@@ -67,19 +67,19 @@ public class LevelBombMissionPlannerConditionsFragment extends Fragment
         nextButton = (Button) view.findViewById(R.id.level_bomb_conditions_fragment_next_button);
         selectBomb = (Button) view.findViewById(R.id.level_bomb_conditions_fragment_select_bomb_button);
 
-        windEditText = (EditText) view.findViewById(R.id.winds_edit_text);
+        windEditText = (EditText) view.findViewById(R.id.level_winds_edit_text);
         windEditText.setText("000°@00kn.");
-        tempEditText = (EditText) view.findViewById(R.id.temperature_edit_text);
+        tempEditText = (EditText) view.findViewById(R.id.level_temperature_edit_text);
         tempEditText.setText("20°C");
-        cloudBaseEditText = (EditText) view.findViewById(R.id.cloud_base_edit_text);
+        cloudBaseEditText = (EditText) view.findViewById(R.id.level_cloud_base_edit_text);
         cloudBaseEditText.setText("20000ft.");
-        conLayerEditText = (EditText) view.findViewById(R.id.con_layer_edit_text);
+        conLayerEditText = (EditText) view.findViewById(R.id.level_con_layer_edit_text);
         conLayerEditText.setText("30000ft.");
         selectedWeapon = "(No Weapon Selected)";
 
         selectedWeaponTextView = (TextView) view.findViewById(R.id.level_bomb_conditions_fragment_selected_weapon_text_view);
 
-        situationsSpinner = (Spinner) view.findViewById(R.id.situation_spinner);
+        situationsSpinner = (Spinner) view.findViewById(R.id.level_situation_spinner);
 
         situationsArrayAdapter = new ArrayAdapter<String>(
                 this.getActivity(), android.R.layout.simple_spinner_item, situationItems);

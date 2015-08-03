@@ -45,6 +45,18 @@ public class LevelBombMissionPlannerParametersFragment extends Fragment
 
         Log.d("levelParametersFragment", "onCreateView() called");
 
+        getArgsFromBundle();
+
+        approachCourseEditText = (EditText) view.findViewById(R.id.approach_course_edit_text);
+
+        return view;
+    }
+
+    /*****************************************************************
+     * Sets arguments from weather conditions fragment.
+     *****************************************************************/
+    private void getArgsFromBundle()
+    {
         selectedCloudBase = getArguments().getInt("selectedCloudBase");
         selectedConLayer = getArguments().getInt("selectedConLayer");
         selectedTemperature = getArguments().getInt("selectedTemperature");
@@ -52,9 +64,5 @@ public class LevelBombMissionPlannerParametersFragment extends Fragment
         selectedWindSpeed = getArguments().getInt("selectedWindSpeed");
         selectedSituation = getArguments().getString("selectedSituation");
         selectedWeapon = getArguments().getString("selectedWeapon");
-
-
-
-        return view;
     }
 }

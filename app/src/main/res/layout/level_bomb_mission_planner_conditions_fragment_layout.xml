@@ -23,7 +23,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/expected_weather_text_view"
+                android:id="@+id/level_expected_weather_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
@@ -33,56 +33,56 @@
                 android:textAppearance="?android:attr/textAppearanceLarge"/>
 
             <TextView
-                android:id="@+id/situation_text_view"
+                android:id="@+id/level_situation_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentLeft="true"
-                android:layout_below="@+id/expected_weather_text_view"
+                android:layout_below="@+id/level_expected_weather_text_view"
                 android:paddingTop="20dp"
                 android:text="@string/situation"
                 android:textAppearance="?android:attr/textAppearanceMedium"/>
 
             <TextView
-                android:id="@+id/winds_text_view"
+                android:id="@+id/level_winds_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignStart="@+id/situation_text_view"
-                android:layout_alignLeft="@+id/situation_text_view"
-                android:layout_below="@+id/situation_text_view"
+                android:layout_alignStart="@+id/level_situation_text_view"
+                android:layout_alignLeft="@+id/level_situation_text_view"
+                android:layout_below="@+id/level_situation_text_view"
                 android:paddingTop="20dp"
                 android:text="@string/winds"
                 android:textAppearance="?android:attr/textAppearanceMedium"/>
 
             <TextView
-                android:id="@+id/temperature_text_view"
+                android:id="@+id/level_temperature_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignStart="@+id/winds_text_view"
-                android:layout_alignLeft="@+id/winds_text_view"
-                android:layout_below="@+id/winds_text_view"
+                android:layout_alignStart="@+id/level_winds_text_view"
+                android:layout_alignLeft="@+id/level_winds_text_view"
+                android:layout_below="@+id/level_winds_text_view"
                 android:paddingTop="20dp"
                 android:text="@string/temperature"
                 android:textAppearance="?android:attr/textAppearanceMedium"/>
 
             <TextView
-                android:id="@+id/cloud_base_text_view"
+                android:id="@+id/level_cloud_base_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignStart="@+id/temperature_text_view"
-                android:layout_alignLeft="@+id/temperature_text_view"
-                android:layout_below="@+id/temperature_text_view"
+                android:layout_alignStart="@+id/level_temperature_text_view"
+                android:layout_alignLeft="@+id/level_temperature_text_view"
+                android:layout_below="@+id/level_temperature_text_view"
                 android:paddingTop="20dp"
                 android:text="@string/cloud_base"
                 android:textAppearance="?android:attr/textAppearanceMedium"/>
 
             <TextView
-                android:id="@+id/con_layer_text_view"
+                android:id="@+id/level_con_layer_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignStart="@+id/cloud_base_text_view"
-                android:layout_alignLeft="@+id/cloud_base_text_view"
-                android:layout_below="@+id/cloud_base_text_view"
+                android:layout_alignStart="@+id/level_cloud_base_text_view"
+                android:layout_alignLeft="@+id/level_cloud_base_text_view"
+                android:layout_below="@+id/level_cloud_base_text_view"
                 android:paddingTop="20dp"
                 android:text="@string/con_layer"
                 android:textAppearance="?android:attr/textAppearanceMedium"/>
@@ -92,74 +92,74 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/select_bomb"
-                android:layout_below="@+id/con_layer_text_view"
+                android:layout_below="@+id/level_con_layer_text_view"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"/>
 
             <Spinner
-                android:id="@+id/situation_spinner"
+                android:id="@+id/level_situation_spinner"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignBottom="@+id/situation_text_view"
-                android:layout_alignEnd="@+id/temperature_edit_text"
-                android:layout_alignRight="@+id/temperature_edit_text"
-                android:layout_alignStart="@+id/temperature_edit_text"
-                android:layout_alignLeft="@+id/temperature_edit_text"
-                android:layout_below="@+id/expected_weather_text_view"
+                android:layout_alignBottom="@+id/level_situation_text_view"
+                android:layout_alignEnd="@+id/level_temperature_edit_text"
+                android:layout_alignRight="@+id/level_temperature_edit_text"
+                android:layout_alignStart="@+id/level_temperature_edit_text"
+                android:layout_alignLeft="@+id/level_temperature_edit_text"
+                android:layout_below="@+id/level_expected_weather_text_view"
                 android:paddingTop="10dp"
                 android:spinnerMode="dropdown"/>
 
             <EditText
-                android:id="@+id/winds_edit_text"
+                android:id="@+id/level_winds_edit_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:selectAllOnFocus="true"
-                android:layout_alignBottom="@+id/winds_text_view"
-                android:layout_alignEnd="@+id/temperature_edit_text"
-                android:layout_alignRight="@+id/temperature_edit_text"
-                android:layout_alignStart="@+id/temperature_edit_text"
-                android:layout_alignLeft="@+id/temperature_edit_text"
+                android:layout_alignBottom="@+id/level_winds_text_view"
+                android:layout_alignEnd="@+id/level_temperature_edit_text"
+                android:layout_alignRight="@+id/level_temperature_edit_text"
+                android:layout_alignStart="@+id/level_temperature_edit_text"
+                android:layout_alignLeft="@+id/level_temperature_edit_text"
                 android:inputType="text"/>
 
             <EditText
-                android:id="@+id/temperature_edit_text"
+                android:id="@+id/level_temperature_edit_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:selectAllOnFocus="true"
-                android:layout_above="@+id/cloud_base_text_view"
+                android:layout_above="@+id/level_cloud_base_text_view"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
-                android:layout_alignLeft="@+id/con_layer_edit_text"
-                android:layout_alignStart="@+id/con_layer_edit_text"
+                android:layout_alignLeft="@+id/level_con_layer_edit_text"
+                android:layout_alignStart="@+id/level_con_layer_edit_text"
                 android:ems="10"
                 android:inputType="text"/>
 
             <EditText
-                android:id="@+id/con_layer_edit_text"
+                android:id="@+id/level_con_layer_edit_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:selectAllOnFocus="true"
                 android:ems="10"
                 android:inputType="text"
-                android:layout_alignBottom="@+id/con_layer_text_view"
+                android:layout_alignBottom="@+id/level_con_layer_text_view"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
-                android:layout_toRightOf="@+id/con_layer_text_view"
-                android:layout_toEndOf="@+id/con_layer_text_view"/>
+                android:layout_toRightOf="@+id/level_con_layer_text_view"
+                android:layout_toEndOf="@+id/level_con_layer_text_view"/>
 
             <EditText
-                android:id="@+id/cloud_base_edit_text"
+                android:id="@+id/level_cloud_base_edit_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:selectAllOnFocus="true"
-                android:layout_above="@+id/con_layer_text_view"
-                android:layout_alignEnd="@+id/con_layer_edit_text"
-                android:layout_alignRight="@+id/con_layer_edit_text"
+                android:layout_above="@+id/level_con_layer_text_view"
+                android:layout_alignEnd="@+id/level_con_layer_edit_text"
+                android:layout_alignRight="@+id/level_con_layer_edit_text"
                 android:inputType="text"
-                android:layout_toEndOf="@+id/con_layer_text_view"
-                android:layout_toRightOf="@+id/con_layer_text_view"
-                android:layout_alignStart="@+id/temperature_edit_text"
-                android:layout_alignLeft="@+id/temperature_edit_text"/>
+                android:layout_toEndOf="@+id/level_con_layer_text_view"
+                android:layout_toRightOf="@+id/level_con_layer_text_view"
+                android:layout_alignStart="@+id/level_temperature_edit_text"
+                android:layout_alignLeft="@+id/level_temperature_edit_text"/>
 
             <Button
                 android:id="@+id/level_bomb_conditions_fragment_next_button"
@@ -181,8 +181,8 @@
                 android:layout_alignBottom="@+id/level_bomb_conditions_fragment_select_bomb_button"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
-                android:layout_toEndOf="@+id/con_layer_text_view"
-                android:layout_toRightOf="@id/con_layer_text_view"/>
+                android:layout_toEndOf="@+id/level_con_layer_text_view"
+                android:layout_toRightOf="@id/level_con_layer_text_view"/>
 
 
         </RelativeLayout>
