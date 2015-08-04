@@ -22,7 +22,7 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/release_parameters_text_view"
+                    android:id="@+id/level_release_parameters_text_view"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentTop="true"
@@ -32,46 +32,46 @@
                     android:textAppearance="?android:attr/textAppearanceLarge"/>
 
                 <TextView
-                    android:id="@+id/approach_course_text_view"
+                    android:id="@+id/level_approach_course_text_view"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentStart="true"
                     android:layout_alignParentLeft="true"
-                    android:layout_below="@+id/release_parameters_text_view"
+                    android:layout_below="@+id/level_release_parameters_text_view"
                     android:paddingTop="20dp"
                     android:text="@string/approach_course"
-                    android:labelFor="@+id/approach_course_edit_text"
+                    android:labelFor="@+id/level_approach_course_edit_text"
                     android:textAppearance="?android:attr/textAppearanceMedium"/>
 
                 <TextView
-                    android:id="@+id/approach_course_considerations_text_view"
+                    android:id="@+id/level_approach_course_considerations_text_view"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentStart="true"
                     android:text="@string/approach_course_considerations"
-                    android:layout_below="@+id/approach_course_text_view"
+                    android:layout_below="@+id/level_approach_course_text_view"
                     android:textAppearance="?android:attr/textAppearanceSmall"
                     android:textColor="#D3D3D3"
                     android:textStyle="italic"/>
 
                 <EditText
-                    android:id="@+id/approach_course_edit_text"
+                    android:id="@+id/level_approach_course_edit_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_above="@+id/approach_course_considerations_text_view"
+                    android:layout_above="@+id/level_approach_course_considerations_text_view"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentRight="true"
                     android:selectAllOnFocus="true"
-                    android:layout_toEndOf="@+id/approach_course_text_view"
-                    android:layout_toRightOf="@+id/approach_course_text_view"
+                    android:layout_toEndOf="@+id/level_approach_course_text_view"
+                    android:layout_toRightOf="@+id/level_approach_course_text_view"
                     android:inputType="text"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/target_elevation_text_view"
-                    android:layout_below="@+id/approach_course_considerations_text_view"
+                    android:id="@+id/level_target_elevation_text_view"
+                    android:layout_below="@+id/level_approach_course_considerations_text_view"
                     android:text="@string/target_elevation"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:layout_alignParentStart="true"
@@ -84,9 +84,9 @@
                     android:text="@string/mean_sea_level"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentStart="true"
-                    android:layout_below="@+id/target_elevation_text_view"
+                    android:layout_below="@+id/level_target_elevation_text_view"
                     android:textStyle="italic"
-                    android:id="@+id/target_elevation_mean_sea_level"
+                    android:id="@+id/level_target_elevation_mean_sea_level"
                     android:textAppearance="?android:attr/textAppearanceSmall"
                     android:textColor="#D3D3D3"/>
 
@@ -98,19 +98,19 @@
                     android:selectAllOnFocus="true"
                     android:paddingTop="20dp"
                     android:inputType="text"
-                    android:id="@+id/target_elevation_edit_text"
-                    android:layout_toRightOf="@+id/approach_course_text_view"
-                    android:layout_toEndOf="@+id/approach_course_text_view"
-                    android:layout_alignBottom="@+id/target_elevation_text_view"/>
+                    android:id="@+id/level_target_elevation_edit_text"
+                    android:layout_toRightOf="@+id/level_approach_course_text_view"
+                    android:layout_toEndOf="@+id/level_approach_course_text_view"
+                    android:layout_alignBottom="@+id/level_target_elevation_text_view"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/release_altitude_text_view"
+                    android:id="@+id/level_release_altitude_text_view"
                     android:paddingTop="20dp"
-                    android:layout_below="@+id/target_elevation_mean_sea_level"
+                    android:layout_below="@+id/level_target_elevation_mean_sea_level"
                     android:text="@string/release_altitude"
-                    android:labelFor="@+id/release_altitude_edit_text"
+                    android:labelFor="@+id/level_release_altitude_edit_text"
                     android:layout_alignParentStart="true"
                     android:layout_alignParentLeft="true"
                     android:textAppearance="?android:attr/textAppearanceMedium"/>
@@ -121,61 +121,61 @@
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentStart="true"
                     android:textStyle="italic"
-                    android:id="@+id/above_ground_level_text_view"
+                    android:id="@+id/level_above_ground_level_text_view"
                     android:text="@string/above_ground_level"
                     android:textAppearance="?android:attr/textAppearanceSmall"
                     android:textColor="#D3D3D3"
-                    android:layout_below="@id/release_altitude_text_view"/>
+                    android:layout_below="@id/level_release_altitude_text_view"/>
 
                 <EditText
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/release_altitude_edit_text"
+                    android:id="@+id/level_release_altitude_edit_text"
                     android:layout_alignParentRight="true"
                     android:selectAllOnFocus="true"
                     android:inputType="text"
                     android:paddingTop="20dp"
                     android:layout_alignParentEnd="true"
-                    android:layout_toRightOf="@id/approach_course_text_view"
-                    android:layout_toEndOf="@id/approach_course_text_view"
-                    android:layout_alignBottom="@id/release_altitude_text_view"/>
+                    android:layout_toRightOf="@id/level_approach_course_text_view"
+                    android:layout_toEndOf="@id/level_approach_course_text_view"
+                    android:layout_alignBottom="@id/level_release_altitude_text_view"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/release_ktas_text_view"
+                    android:id="@+id/level_release_ktas_text_view"
                     android:text="@string/release_ktas"
-                    android:layout_below="@id/above_ground_level_text_view"
+                    android:layout_below="@id/level_above_ground_level_text_view"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentStart="true"
                     android:paddingTop="20dp"
-                    android:labelFor="@+id/release_ktas_spinner"
+                    android:labelFor="@+id/level_release_ktas_spinner"
                     android:textAppearance="?android:textAppearanceMedium"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/release_knots_true_airspeed"
+                    android:id="@+id/level_release_knots_true_airspeed"
                     android:textStyle="italic"
                     android:text="@string/knots_true_airspeed"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentStart="true"
                     android:textAppearance="?android:attr/textAppearanceSmall"
                     android:textColor="#D3D3D3"
-                    android:layout_below="@+id/release_ktas_text_view"/>
+                    android:layout_below="@+id/level_release_ktas_text_view"/>
 
                 <Spinner
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/above_ground_level_text_view"
-                    android:id="@+id/release_ktas_spinner"
+                    android:layout_below="@id/level_above_ground_level_text_view"
+                    android:id="@+id/level_release_ktas_spinner"
                     android:layout_alignParentRight="true"
                     android:layout_alignParentEnd="true"
                     android:paddingTop="20dp"
-                    android:layout_toRightOf="@id/approach_course_text_view"
-                    android:layout_toEndOf="@id/approach_course_text_view"
+                    android:layout_toRightOf="@id/level_approach_course_text_view"
+                    android:layout_toEndOf="@id/level_approach_course_text_view"
                     android:spinnerMode="dropdown"
-                    android:layout_above="@+id/release_knots_true_airspeed"/>
+                    android:layout_above="@+id/level_release_knots_true_airspeed"/>
 
 
 

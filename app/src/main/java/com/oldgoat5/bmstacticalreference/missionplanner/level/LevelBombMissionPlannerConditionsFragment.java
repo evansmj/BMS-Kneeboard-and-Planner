@@ -24,6 +24,7 @@ import com.oldgoat5.bmstacticalreference.R;
 import com.oldgoat5.bmstacticalreference.missionplanner.BombSelectDialog;
 
 import java.text.DecimalFormat;
+import java.util.HashMap;
 
 /*********************************************************************
  * Copyright © Michael Evans - All Rights Reserved.
@@ -43,6 +44,7 @@ public class LevelBombMissionPlannerConditionsFragment extends Fragment
     private EditText tempEditText;
     private EditText cloudBaseEditText;
     private EditText conLayerEditText;
+    private HashMap<String, Boolean> inputValidity;
     private LevelBombMissionPlannerParametersFragment parametersFragment;
     private OnConditionsResult onConditionsResult;
     private Spinner situationsSpinner;
@@ -64,25 +66,8 @@ public class LevelBombMissionPlannerConditionsFragment extends Fragment
 
         Log.d("levelConditionsFragment", "onCreate() called");
 
-        nextButton = (Button) view.findViewById(R.id.level_bomb_conditions_fragment_next_button);
-        selectBomb = (Button) view.findViewById(R.id.level_bomb_conditions_fragment_select_bomb_button);
-
-        windEditText = (EditText) view.findViewById(R.id.level_winds_edit_text);
-        windEditText.setText("000°@00kn.");
-        tempEditText = (EditText) view.findViewById(R.id.level_temperature_edit_text);
-        tempEditText.setText("20°C");
-        cloudBaseEditText = (EditText) view.findViewById(R.id.level_cloud_base_edit_text);
-        cloudBaseEditText.setText("20000ft.");
-        conLayerEditText = (EditText) view.findViewById(R.id.level_con_layer_edit_text);
-        conLayerEditText.setText("30000ft.");
-        selectedWeapon = "(No Weapon Selected)";
-
-        selectedWeaponTextView = (TextView) view.findViewById(R.id.level_bomb_conditions_fragment_selected_weapon_text_view);
-
-        situationsSpinner = (Spinner) view.findViewById(R.id.level_situation_spinner);
-
-        situationsArrayAdapter = new ArrayAdapter<String>(
-                this.getActivity(), android.R.layout.simple_spinner_item, situationItems);
+        instantiateResources();
+        inputValidity = new HashMap<>();
 
         situationsSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
         {
@@ -93,29 +78,31 @@ public class LevelBombMissionPlannerConditionsFragment extends Fragment
                 {
                     case 0:
                         selectedSituation = situationItems[i];
+                        inputValidity.put("selectedSituation", false);
                         break;
-
                     case 1:
                         selectedSituation = situationItems[i];
+                        inputValidity.put("selectedSituation", true);
                         break;
-
                     case 2:
                         selectedSituation = situationItems[i];
+                        inputValidity.put("selectedSituation", true);
                         break;
-
                     case 3:
                         selectedSituation = situationItems[i];
+                        inputValidity.put("selectedSituation", true);
                         break;
-
                     case 4:
                         selectedSituation = situationItems[i];
+                        inputValidity.put("selectedSituation", true);
+                        break;
                 }
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> adapterView)
             {
-
+                situationsSpinner.requestFocus();
             }
         });
 
@@ -143,6 +130,7 @@ public class LevelBombMissionPlannerConditionsFragment extends Fragment
                         Log.d("levlConitionsFrag", "selectedWeapon = " + selectedWeapon);
                         selectedWeaponTextView.setText(selectedWeapon);
                         selectedWeaponTextView.setTextColor(Color.BLACK);
+                        inputValidity.put("selectedWeapon", true);
                     }
                 });
             }
@@ -181,16 +169,15 @@ public class LevelBombMissionPlannerConditionsFragment extends Fragment
             @Override
             public void onFocusChange(View view, boolean b)
             {
-                if (!b && !windEditText.getText().toString().contains("kn."))
+                if (!b /*&& !windEditText.getText().toString().contains("kn.")*/)
                 {
                     try
                     {
                         String oldText = windEditText.getText().toString();
 
-                        if (oldText.length() > 5)
+                        if (oldText.length() > 5 && !windEditText.getText().toString().contains("kn."))
                         {
                             windEditText.setText(oldText + "kn.");
-
                             int heading = Integer.parseInt(oldText.substring(0, 3));
 
                             Log.d("LevelConFrag", "heading: " + heading);
@@ -199,17 +186,40 @@ public class LevelBombMissionPlannerConditionsFragment extends Fragment
                             {
                                 Toast.makeText(getActivity(),
                                         "Invalid Heading, must be < 360", Toast.LENGTH_LONG).show();
+                                inputValidity.put("selectedWind", false);
                             }
-
                             String speedText = windEditText.getText().toString().substring(5).replace("kn.", "");
 
                             Log.d("LevelconFrag", "wind Speed: " + speedText);
+                            if (Integer.parseInt(speedText) > 99)
+                            {
+                                Toast.makeText(getActivity(),
+                                        "Wind Speed may be excessive.", Toast.LENGTH_LONG).show();
+                                inputValidity.put("selectedWind", false);
+                            }
+                            inputValidity.put("selectedWind", true);
+                        }
+                        else if(oldText.length() > 5 && windEditText.getText().toString().contains("kn."))
+                        {
+                            int heading = Integer.parseInt(oldText.substring(0,3));
+
+                            if (heading > 360)
+                            {
+                                Toast.makeText(getActivity(),
+                                        "Invalid Heading, must be < 360", Toast.LENGTH_LONG).show();
+                                inputValidity.put("selectedWind", false);
+                            }
+
+                            String speedText = windEditText.getText().toString().substring(5).replace("kn.", "");
 
                             if (Integer.parseInt(speedText) > 99)
                             {
                                 Toast.makeText(getActivity(),
                                         "Wind Speed may be excessive.", Toast.LENGTH_LONG).show();
+                                inputValidity.put("selectedWind", false);
                             }
+                            inputValidity.put("selectedWind", true);
+
                         }
                         else
                         {
@@ -220,6 +230,7 @@ public class LevelBombMissionPlannerConditionsFragment extends Fragment
                     {
                         Toast.makeText(getActivity(),
                                 "Invalid Wind value.", Toast.LENGTH_LONG).show();
+                        inputValidity.put("selectedWind", false);
                     }
                 }
             }
@@ -238,11 +249,13 @@ public class LevelBombMissionPlannerConditionsFragment extends Fragment
                     {
                         Integer.parseInt(oldText);
                         tempEditText.setText(oldText + "°C");
+                        inputValidity.put("selectedTemperature", true);
                     }
                     catch (NumberFormatException e)
                     {
                         Toast.makeText(getActivity(),
                                 "Invalid Temperature value.", Toast.LENGTH_LONG).show();
+                        inputValidity.put("selectedTemperature", false);
                     }
                 }
             }
@@ -253,32 +266,39 @@ public class LevelBombMissionPlannerConditionsFragment extends Fragment
             @Override
             public void onFocusChange(View view, boolean b)
             {
-                if (!b && !cloudBaseEditText.getText().toString().contains("ft."))
+                if (!b /*&& !cloudBaseEditText.getText().toString().contains("ft.")*/)
                 {
                     String oldText = cloudBaseEditText.getText().toString();
 
                     try
                     {
+                        if (oldText.contains("ft."))
+                        {
+                            oldText = oldText.replace("ft.", "");
+                        }
                         if (oldText.contains(","))
                         {
                             oldText = oldText.replace(",", "");
                         }
+
                         Integer.parseInt(oldText); //check if integer
 
                         if (Integer.parseInt(oldText) < 1500)
                         {
-                            //show Toast
+                            //USAF minimum, other country maybe different SOP
                             Toast.makeText(getActivity(),
                                     "Cloud Base lower than minimum for level release (1500ft.)",
                                     Toast.LENGTH_LONG).show();
                         }
 
                         cloudBaseEditText.setText(oldText + "ft.");
+                        inputValidity.put("selectedCloudBase", true);
                     }
                     catch (NumberFormatException e)
                     {
                         Toast.makeText(getActivity(),
                                 "Invalid Cloud Base value.", Toast.LENGTH_LONG).show();
+                        inputValidity.put("selectedCloudBase", false);
                     }
                 }
             }
@@ -289,23 +309,29 @@ public class LevelBombMissionPlannerConditionsFragment extends Fragment
             @Override
             public void onFocusChange(View view, boolean b)
             {
-                if (!b && !conLayerEditText.getText().toString().contains("ft."))
+                if (!b /*&& !conLayerEditText.getText().toString().contains("ft.")*/)
                 {
                     String oldText = conLayerEditText.getText().toString();
 
                     try
                     {
+                        if (oldText.contains("ft."))
+                        {
+                            oldText = oldText.replace("ft.", "");
+                        }
                         if (oldText.contains(","))
                         {
                             oldText = oldText.replace(",", "");
                         }
                         Integer.parseInt(oldText);
                         conLayerEditText.setText(oldText + "ft.");
+                        inputValidity.put("selectedConLayer", true);
                     }
                     catch (NumberFormatException e)
                     {
                         Toast.makeText(getActivity(),
                                 "Invalid Condensation Layer value.", Toast.LENGTH_LONG).show();
+                        inputValidity.put("selectedConLayer", false);
                     }
                 }
             }
@@ -319,7 +345,7 @@ public class LevelBombMissionPlannerConditionsFragment extends Fragment
                 Log.d("levelConditionsFragment", "nextButton onClick()");
 
                 //make sure situation is set then send input bundle to ParametersFragment.
-                if (!selectedSituation.equals("---") && !selectedWeapon.equals("(No Weapon Selected)"))
+                if (inputIsValid())
                 {
                     selectedWindDirection = Integer.parseInt(
                             windEditText.getText().toString().substring(0, 2));
@@ -355,17 +381,6 @@ public class LevelBombMissionPlannerConditionsFragment extends Fragment
                         onConditionsResult.setBundle(bundle);
                     }
                 }
-                else if (selectedSituation.equals("---"))
-                {
-                    //make toast invalid weather situation
-                    Toast.makeText(getActivity(),
-                            "Invalid Weather Situation value.", Toast.LENGTH_LONG).show();
-                }
-                else
-                {
-                    Toast.makeText(getActivity(),
-                            "No weapon selected", Toast.LENGTH_LONG).show();
-                }
             }
         });
 
@@ -382,5 +397,52 @@ public class LevelBombMissionPlannerConditionsFragment extends Fragment
     public interface OnConditionsResult
     {
         void setBundle(Bundle bundle);
+    }
+
+
+    /*****************************************************************
+     * Check invalid input.
+     *
+     * @return Returns false if any input is invalid
+     *****************************************************************/
+    private boolean inputIsValid()
+    {
+        boolean finalValidity = false;
+
+        if (selectedWeaponTextView.getText().toString().equals("No Weapon Selected"))
+        {
+            inputValidity.put("selectedWeapon", false);
+        }
+
+        if (!inputValidity.containsValue(false))
+        {
+            finalValidity = true;
+        }
+        else
+        {
+            //todo add list of which inputs are invalid.
+            Toast.makeText(getActivity(), "Form contains invalid input.", Toast.LENGTH_LONG).show();
+        }
+
+        return finalValidity;
+    }
+
+    private void instantiateResources()
+    {
+        nextButton = (Button) view.findViewById(R.id.level_bomb_conditions_fragment_next_button);
+        selectBomb = (Button) view.findViewById(R.id.level_bomb_conditions_fragment_select_bomb_button);
+        windEditText = (EditText) view.findViewById(R.id.level_winds_edit_text);
+        windEditText.setText("000°@00kn.");
+        tempEditText = (EditText) view.findViewById(R.id.level_temperature_edit_text);
+        tempEditText.setText("20°C");
+        cloudBaseEditText = (EditText) view.findViewById(R.id.level_cloud_base_edit_text);
+        cloudBaseEditText.setText("20000ft.");
+        conLayerEditText = (EditText) view.findViewById(R.id.level_con_layer_edit_text);
+        conLayerEditText.setText("30000ft.");
+        selectedWeapon = "(No Weapon Selected)";
+        selectedWeaponTextView = (TextView) view.findViewById(R.id.level_bomb_conditions_fragment_selected_weapon_text_view);
+        situationsSpinner = (Spinner) view.findViewById(R.id.level_situation_spinner);
+        situationsArrayAdapter = new ArrayAdapter<String>(
+                this.getActivity(), android.R.layout.simple_spinner_item, situationItems);
     }
 }
