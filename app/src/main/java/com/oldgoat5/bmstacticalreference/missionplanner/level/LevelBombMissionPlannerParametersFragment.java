@@ -140,10 +140,40 @@ public class LevelBombMissionPlannerParametersFragment extends Fragment
                     catch (NumberFormatException e)
                     {
                         Toast.makeText(getActivity(), "Invalid Approach Course Heading", Toast.LENGTH_LONG).show();
+                        inputValidity.put("selectedApproachCourse", false);
                     }
                 }
-                if (inputValidity.containsKey("selectedApproachCourse"))
-                    Log.d("levelParametersfragment", inputValidity.get("selectedApproachCourse").toString());
+            }
+        });
+
+        releaseAltitudeEditText.setOnFocusChangeListener(new View.OnFocusChangeListener()
+        {
+            @Override
+            public void onFocusChange(View view, boolean b)
+            {
+                if (!b)
+                {
+                    String oldText = releaseAltitudeEditText.getText().toString();
+
+                    try
+                    {
+                        if (oldText.contains("ft."))
+                        {
+                            oldText = oldText.replace("ft.", "");
+                            Integer.parseInt(oldText);
+                        }
+                        else
+                        {
+                            Integer.parseInt(oldText);
+                            releaseAltitudeEditText.append("ft.");
+                        }
+                    }
+                    catch (NumberFormatException e)
+                    {
+                        Toast.makeText(getActivity(), "Invalid Release Altitude", Toast.LENGTH_LONG).show();
+                        inputValidity.put("selectedReleaseAltitude", false);
+                    }
+                }
             }
         });
 
