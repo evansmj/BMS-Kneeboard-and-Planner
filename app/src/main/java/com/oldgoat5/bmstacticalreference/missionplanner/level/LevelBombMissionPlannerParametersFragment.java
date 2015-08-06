@@ -12,8 +12,11 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.oldgoat5.bmstacticalreference.R;
+
+import java.util.HashMap;
 
 /*********************************************************************
  * Copyright © Michael Evans - All Rights Reserved.
@@ -29,6 +32,7 @@ public class LevelBombMissionPlannerParametersFragment extends Fragment
     private EditText approachCourseEditText;
     private EditText releaseAltitudeEditText;
     private EditText targetElevationEditText;
+    private HashMap<String, Boolean> inputValidity;
     private Spinner releaseKtasSpinner;
     private View view;
 
@@ -50,25 +54,16 @@ public class LevelBombMissionPlannerParametersFragment extends Fragment
         Log.d("levelParametersFragment", "onCreateView() called");
 
         getArgsFromBundle();
+        instantiateResources();
 
-        approachCourseEditText = (EditText) view.findViewById(R.id.level_approach_course_edit_text);
-        approachCourseEditText.setText("000°");
-        releaseAltitudeEditText = (EditText) view.findViewById(R.id.level_release_altitude_edit_text);
-        releaseAltitudeEditText.setText("5000ft. MSL");
-        targetElevationEditText = (EditText) view.findViewById(R.id.level_target_elevation_edit_text);
-        targetElevationEditText.setText("100ft. AGL");
-
-        releaseKtasSpinner= (Spinner) view.findViewById(R.id.level_release_ktas_spinner);
-
-        releaseKtasArrayAdapter = new ArrayAdapter<String>(
-                this.getActivity(), android.R.layout.simple_spinner_item, RELEASE_KTAS_ITEMS);
+        inputValidity = new HashMap<>();
 
         releaseKtasSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
         {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l)
             {
-                switch(i)
+                switch (i)
                 {
                     case 0:
                         selectedReleaseSpeed = RELEASE_KTAS_ITEMS[i];
@@ -91,46 +86,64 @@ public class LevelBombMissionPlannerParametersFragment extends Fragment
             @Override
             public void onNothingSelected(AdapterView<?> adapterView)
             {
+                releaseKtasSpinner.requestFocus();
             }
         });
 
         releaseKtasSpinner.setAdapter(releaseKtasArrayAdapter);
-
-        approachCourseEditText.addTextChangedListener(new TextWatcher()
-        {
-            String before;
-
-            @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2)
-            {
-                before = charSequence.toString();
-            }
-
-            @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2)
-            {
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable editable)
-            {
-                if (editable.toString().length() == 3 && before.length() == 2)
-                {
-                    editable.append("°");
-                }
-            }
-        });
 
         approachCourseEditText.setOnFocusChangeListener(new View.OnFocusChangeListener()
         {
             @Override
             public void onFocusChange(View view, boolean b)
             {
-                if (!b && !approachCourseEditText.getText().toString().contains("°"))
+                if (!b /*&& !approachCourseEditText.getText().toString().contains("°")*/)
                 {
+                    try
+                    {
+                        String oldText = approachCourseEditText.getText().toString();
 
+                        if (oldText.length() == 3 && !approachCourseEditText.getText().toString().contains("°"))
+                        {
+                            if (Integer.parseInt(oldText) > 360)
+                            {
+                                Toast.makeText(
+                                        getActivity(), "Invalid Heading, must be < 360", Toast.LENGTH_LONG).show();
+                                inputValidity.put("selectedApproachCourse", false);
+                            }
+                            else
+                            {
+                                inputValidity.put("selectedApproachCourse", true);
+                            }
+                            approachCourseEditText.append("°");
+                        }
+                        else if (oldText.length() == 3 && approachCourseEditText.getText().toString().contains("°"))
+                        {
+                            if (Integer.parseInt(oldText.substring(0, 3)) > 360)
+                            {
+                                Toast.makeText(
+                                        getActivity(), "Invalid Heading, must be < 360", Toast.LENGTH_LONG).show();
+                                inputValidity.put("selectedApproachCourse", false);
+                            }
+                            else
+                            {
+                                inputValidity.put("selectedApproachCourse", true);
+                            }
+                        }
+                        else
+                        {
+                            Toast.makeText(
+                                    getActivity(), "Heading must be 3 digits", Toast.LENGTH_LONG).show();
+                            inputValidity.put("selectedApproachCourse", false);
+                        }
+                    }
+                    catch (NumberFormatException e)
+                    {
+                        Toast.makeText(getActivity(), "Invalid Approach Course Heading", Toast.LENGTH_LONG).show();
+                    }
                 }
+                if (inputValidity.containsKey("selectedApproachCourse"))
+                    Log.d("levelParametersfragment", inputValidity.get("selectedApproachCourse").toString());
             }
         });
 
@@ -149,5 +162,18 @@ public class LevelBombMissionPlannerParametersFragment extends Fragment
         selectedWindSpeed = getArguments().getInt("selectedWindSpeed");
         selectedSituation = getArguments().getString("selectedSituation");
         selectedWeapon = getArguments().getString("selectedWeapon");
+    }
+
+    private void instantiateResources()
+    {
+        approachCourseEditText = (EditText) view.findViewById(R.id.level_approach_course_edit_text);
+        approachCourseEditText.setText("000°");
+        releaseAltitudeEditText = (EditText) view.findViewById(R.id.level_release_altitude_edit_text);
+        releaseAltitudeEditText.setText("5000ft. MSL");
+        targetElevationEditText = (EditText) view.findViewById(R.id.level_target_elevation_edit_text);
+        targetElevationEditText.setText("100ft. AGL");
+        releaseKtasSpinner = (Spinner) view.findViewById(R.id.level_release_ktas_spinner);
+        releaseKtasArrayAdapter = new ArrayAdapter<String>(
+                this.getActivity(), android.R.layout.simple_spinner_item, RELEASE_KTAS_ITEMS);
     }
 }

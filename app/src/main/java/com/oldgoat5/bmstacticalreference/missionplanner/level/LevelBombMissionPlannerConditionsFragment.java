@@ -188,6 +188,11 @@ public class LevelBombMissionPlannerConditionsFragment extends Fragment
                                         "Invalid Heading, must be < 360", Toast.LENGTH_LONG).show();
                                 inputValidity.put("selectedWind", false);
                             }
+                            else
+                            {
+                                inputValidity.put("selectedWind", true);
+                            }
+
                             String speedText = windEditText.getText().toString().substring(5).replace("kn.", "");
 
                             Log.d("LevelconFrag", "wind Speed: " + speedText);
@@ -195,19 +200,21 @@ public class LevelBombMissionPlannerConditionsFragment extends Fragment
                             {
                                 Toast.makeText(getActivity(),
                                         "Wind Speed may be excessive.", Toast.LENGTH_LONG).show();
-                                inputValidity.put("selectedWind", false);
                             }
-                            inputValidity.put("selectedWind", true);
                         }
-                        else if(oldText.length() > 5 && windEditText.getText().toString().contains("kn."))
+                        else if (oldText.length() > 5 && windEditText.getText().toString().contains("kn."))
                         {
-                            int heading = Integer.parseInt(oldText.substring(0,3));
+                            int heading = Integer.parseInt(oldText.substring(0, 3));
 
                             if (heading > 360)
                             {
                                 Toast.makeText(getActivity(),
                                         "Invalid Heading, must be < 360", Toast.LENGTH_LONG).show();
                                 inputValidity.put("selectedWind", false);
+                            }
+                            else
+                            {
+                                inputValidity.put("selectedWind", true);
                             }
 
                             String speedText = windEditText.getText().toString().substring(5).replace("kn.", "");
@@ -216,10 +223,7 @@ public class LevelBombMissionPlannerConditionsFragment extends Fragment
                             {
                                 Toast.makeText(getActivity(),
                                         "Wind Speed may be excessive.", Toast.LENGTH_LONG).show();
-                                inputValidity.put("selectedWind", false);
                             }
-                            inputValidity.put("selectedWind", true);
-
                         }
                         else
                         {
@@ -241,15 +245,23 @@ public class LevelBombMissionPlannerConditionsFragment extends Fragment
             @Override
             public void onFocusChange(View view, boolean b)
             {
-                if (!b && !tempEditText.getText().toString().contains("°C"))
+                if (!b /*&& !tempEditText.getText().toString().contains("°C")*/)
                 {
                     String oldText = tempEditText.getText().toString();
 
                     try
                     {
-                        Integer.parseInt(oldText);
-                        tempEditText.setText(oldText + "°C");
-                        inputValidity.put("selectedTemperature", true);
+                        if (oldText.contains("°C"))
+                        {
+                            Integer.parseInt(oldText.replace("°C", ""));
+                            inputValidity.put("selectedTemperature", true);
+                        }
+                        else
+                        {
+                            Integer.parseInt(oldText);
+                            tempEditText.setText(oldText + "°C");
+                            inputValidity.put("selectedTemperature", true);
+                        }
                     }
                     catch (NumberFormatException e)
                     {
@@ -340,9 +352,12 @@ public class LevelBombMissionPlannerConditionsFragment extends Fragment
         nextButton.setOnClickListener(new View.OnClickListener()
         {
             @Override
-            public void onClick(View view)
+            public void onClick(View cview)
             {
                 Log.d("levelConditionsFragment", "nextButton onClick()");
+
+                //remove focus from all so last EditText can update
+                view.requestFocus();
 
                 //make sure situation is set then send input bundle to ParametersFragment.
                 if (inputIsValid())
