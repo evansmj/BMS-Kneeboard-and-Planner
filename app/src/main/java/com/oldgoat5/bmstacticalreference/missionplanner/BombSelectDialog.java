@@ -65,7 +65,7 @@ public class BombSelectDialog extends Dialog
         {
             case LEVEL:
                 //cbu, mk, blu107
-                bombTypeItems = new String[] {"---", "Cluster Bomb", "Mark Bomb", "Other"};
+                bombTypeItems = new String[] {"---", "Cluster Bombs", "Guided Bombs", "Mark Bombs", "Other"};
                 break;
 
             case DIVE:
@@ -119,6 +119,16 @@ public class BombSelectDialog extends Dialog
                         break;
 
                     case 2:
+                        //show gbu
+                        idArrayAdapter = new WeaponUseListItemAdapter(CONTEXT, dbTools.getGuidedBombs());
+                        idSpinner.setAdapter(idArrayAdapter);
+                        idTextView.setVisibility(View.VISIBLE);
+                        idSpinner.setVisibility(View.VISIBLE);
+                        viewBombInfoButton.setVisibility(View.VISIBLE);
+                        selectButton.setVisibility(View.VISIBLE);
+                        break;
+
+                    case 3:
                         //show mk
                         idArrayAdapter = new WeaponUseListItemAdapter(CONTEXT, dbTools.getMarkBombs());
                         idSpinner.setAdapter(idArrayAdapter);
@@ -128,7 +138,7 @@ public class BombSelectDialog extends Dialog
                         selectButton.setVisibility(View.VISIBLE);
                         break;
 
-                    case 3:
+                    case 4:
                         //show bdu blu
                         idArrayAdapter = new WeaponUseListItemAdapter(CONTEXT, dbTools.getLiveAndDummyBombUnits());
                         idSpinner.setAdapter(idArrayAdapter);
