@@ -1254,12 +1254,17 @@
     <string name="no_weapon_selected">(No Weapon Selected)</string>
 
     <string name="release_parameters">Release Parameters</string>
-    <string name="approach_course">Approach Course:</string>
+    <string name="approach_course">Select Approach Course:</string>
     <string name="approach_course_considerations">(Consider sun angle, moon illumination, terrain, vehicle formations, threats)</string>
-    <string name="target_elevation">Target Elevation:</string>
+    <string name="target_elevation">Select Target Elevation:</string>
     <string name="above_ground_level">(Above Ground Level)</string>
     <string name="mean_sea_level">(Mean Sea Level)</string>
+    <string name="select_release_altitude">Select Release Altitude:</string>
     <string name="release_altitude">Release Altitude:</string>
-    <string name="release_ktas">Release KTAS:</string>
+    <string name="release_ktas">Select Release KTAS:</string>
     <string name="knots_true_airspeed">Knots True Airspeed</string>
+    <string name="min_safe_release_altitude">Min Safe Rel Altitude:</string>
+    <string name="awaiting_form_info">(Awaiting Form Info)</string>
+    <string name="bomb_range">Bomb Range:</string>
+    <string name="calculate">Calculate</string>
 </resources>

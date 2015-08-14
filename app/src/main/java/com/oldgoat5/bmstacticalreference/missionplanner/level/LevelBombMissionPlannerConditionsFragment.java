@@ -424,8 +424,9 @@ public class LevelBombMissionPlannerConditionsFragment extends Fragment
     {
         boolean finalValidity = false;
 
-        if (selectedWeaponTextView.getText().toString().equals("No Weapon Selected"))
+        if (selectedWeaponTextView.getText().toString().equals("(No Weapon Selected)"))
         {
+            Toast.makeText(getActivity(), "No Weapon Selected.", Toast.LENGTH_LONG).show();
             inputValidity.put("selectedWeapon", false);
         }
 
@@ -435,7 +436,6 @@ public class LevelBombMissionPlannerConditionsFragment extends Fragment
         }
         else
         {
-            //todo add list of which inputs are invalid.
             Toast.makeText(getActivity(), "Form contains invalid input.", Toast.LENGTH_LONG).show();
         }
 
