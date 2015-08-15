@@ -29,7 +29,7 @@ import java.util.HashMap;
  *********************************************************************/
 public class LevelBombMissionPlannerParametersFragment extends Fragment
 {
-    private final String[] RELEASE_KTAS_ITEMS = {"---", "450", "500", "550", "600"};
+    private final String[] RELEASE_KTAS_ITEMS = {"---", "400", "450", "500", "550"};
 
     private ArrayAdapter<String> releaseKtasArrayAdapter;
     private Button calculateButton;
@@ -37,8 +37,9 @@ public class LevelBombMissionPlannerParametersFragment extends Fragment
     private EditText releaseAltitudeEditText;
     private EditText targetElevationEditText;
     private HashMap<String, Boolean> inputValidity;
+    private TextView determinedBombRangeResultTextView;
+    private TextView determinedReleaseAltitudeResultTextView;
     private TextView minSafeReleaseAltitudeResultTextView;
-    private TextView levelDeterminedReleseAltitudeResultTextView;
     private Spinner releaseKtasSpinner;
     private View view;
 
@@ -128,7 +129,8 @@ public class LevelBombMissionPlannerParametersFragment extends Fragment
                             }
                             approachCourseEditText.append("°");
                         }
-                        else if (oldText.length() == 3 && approachCourseEditText.getText().toString().contains("°"))
+                        else if ((oldText.length() == 3 || oldText.length() == 4)
+                                && approachCourseEditText.getText().toString().contains("°"))
                         {
                             if (Integer.parseInt(oldText.substring(0, 3)) > 360)
                             {
@@ -261,14 +263,39 @@ public class LevelBombMissionPlannerParametersFragment extends Fragment
                         Log.d("levelparametersfrag",
                                 "targetelev: " + fromTargetElev + "releasealt: " + fromReleaseAlt);
 
-                        levelDeterminedReleseAltitudeResultTextView.setText(
+                        determinedReleaseAltitudeResultTextView.setText(
                                 (fromTargetElev + fromReleaseAlt) + "ft. MSL");
-                        levelDeterminedReleseAltitudeResultTextView.setTextColor(Color.BLACK);
+                        determinedReleaseAltitudeResultTextView.setTextColor(Color.BLACK);
                     }
                     catch (NumberFormatException e)
                     {
                         Toast.makeText(getActivity(), "Bad form args", Toast.LENGTH_LONG).show();
                     }
+
+                    //calculate trajectory
+                    final double g = 9.81;                                 //g acceleration on Earth m/s^2
+                    final double Vo = Integer.parseInt(
+                            selectedReleaseSpeed) * 0.51444444444;         //meters per second
+                    final double releaseAngle = 0;                         //level release = 0 degree
+                    final double Vx = Vo * Math.cos(releaseAngle);         //x release velocity
+                    final double Vy = Vo * Math.sin(releaseAngle);         //y release velocity
+                    final double Yo = Double.parseDouble(releaseAltitudeEditText
+                            .getText().toString().replace("ft. AGL", "")) * 0.3048; //release altitude AGL meters
+                    final double maxHeight = Yo + Math.pow(Vy, 2) / (2 * g);  //max height reached
+                    final double timeToMaxHeight = Vy/g;
+                    final double timeMaxHeightToImpact = Math.sqrt(2 * maxHeight / g);
+                    final double bombXRange =
+                            (Vx * (timeToMaxHeight + timeMaxHeightToImpact)) * 3.28084; //horizontal range in feet
+                    final double fallTime = Math.round(
+                            (timeToMaxHeight + timeMaxHeightToImpact) * 10.0) / 10.0; //seconds
+                    /*final double speedAtImpact = Math.sqrt(
+                            Math.pow((g * timeMaxHeightToImpact), 2) + Math.pow(Vx, 2)); unused for now*/
+
+                    //set results
+                    Log.d("levelreleaseparamet", fallTime + "seconds fall ");
+                    determinedBombRangeResultTextView.setText(Long.toString(Math.round(bombXRange)));
+                    determinedBombRangeResultTextView.setTextColor(Color.BLACK);
+
                 }
             }
         });
@@ -294,10 +321,21 @@ public class LevelBombMissionPlannerParametersFragment extends Fragment
     private void instantiateResources()
     {
         calculateButton = (Button) view.findViewById(R.id.level_release_parameters_calculate_button);
+
         approachCourseEditText = (EditText) view.findViewById(R.id.level_approach_course_edit_text);
+        releaseAltitudeEditText = (EditText) view.findViewById(R.id.level_release_altitude_agl_edit_text);
+        targetElevationEditText = (EditText) view.findViewById(R.id.level_target_elevation_edit_text);
+
         approachCourseEditText.setText("000°");
+        releaseAltitudeEditText.setText("5000ft. AGL");
+        targetElevationEditText.setText("100ft. MSL");
+
+        determinedBombRangeResultTextView = (TextView) view.findViewById(
+                R.id.level_determined_bomb_range_result_text_view);
         minSafeReleaseAltitudeResultTextView = (TextView) view.findViewById(
                 R.id.level_min_safe_release_altitude_result_text_view);
+        determinedReleaseAltitudeResultTextView = (TextView) view.findViewById(
+                R.id.level_determined_release_altitude_result_text_view);
 
         if (selectedWeapon.contains("CBU"))
             minSafeReleaseAltitudeResultTextView.setText("(None for CBU)"); //be specific for user confidence
@@ -308,21 +346,16 @@ public class LevelBombMissionPlannerParametersFragment extends Fragment
         if (selectedWeapon.contains("GBU"))
             minSafeReleaseAltitudeResultTextView.setText("(None for GBU)");
 
-        releaseAltitudeEditText = (EditText) view.findViewById(R.id.level_release_altitude_agl_edit_text);
-        releaseAltitudeEditText.setText("5000ft. AGL");
-        targetElevationEditText = (EditText) view.findViewById(R.id.level_target_elevation_edit_text);
-        targetElevationEditText.setText("100ft. MSL");
+
         releaseKtasSpinner = (Spinner) view.findViewById(R.id.level_release_ktas_spinner);
+
         releaseKtasArrayAdapter = new ArrayAdapter<String>(
                 this.getActivity(), android.R.layout.simple_spinner_item, RELEASE_KTAS_ITEMS);
-        levelDeterminedReleseAltitudeResultTextView = (TextView) view.findViewById(
-                R.id.level_determined_release_altitude_result_text_view);
     }
 
     private boolean inputIsValid()
     {
         boolean finalValidity = false;
-
 
 
         if (!inputValidity.containsValue(false))
