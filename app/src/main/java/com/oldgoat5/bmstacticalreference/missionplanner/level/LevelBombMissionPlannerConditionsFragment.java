@@ -15,6 +15,8 @@ import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -24,6 +26,7 @@ import com.oldgoat5.bmstacticalreference.R;
 import com.oldgoat5.bmstacticalreference.missionplanner.BombSelectDialog;
 
 import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.HashMap;
 
 /*********************************************************************
@@ -40,6 +43,8 @@ public class LevelBombMissionPlannerConditionsFragment extends Fragment
     private BombSelectDialog bombSelectDialog;
     private Button nextButton;
     private Button selectBomb;
+    private CheckBox useHpaCheckBox;
+    private EditText altimeterEditText;
     private EditText windEditText;
     private EditText tempEditText;
     private EditText cloudBaseEditText;
@@ -51,6 +56,8 @@ public class LevelBombMissionPlannerConditionsFragment extends Fragment
     private TextView selectedWeaponTextView;
     private View view;
 
+    private double selectedAltimeter;
+    private boolean useHpa;
     private int selectedCloudBase;
     private int selectedConLayer;
     private int selectedTemperature;
@@ -349,6 +356,68 @@ public class LevelBombMissionPlannerConditionsFragment extends Fragment
             }
         });
 
+        useHpaCheckBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
+        {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked)
+            {
+                if (isChecked)
+                {
+                    useHpa = true;
+                    altimeterEditText.setText("1013.25hPa");
+                }
+                else
+                {
+                    useHpa = false;
+                    altimeterEditText.setText("29.92Hg");
+                }
+            }
+        });
+
+        altimeterEditText.setOnFocusChangeListener(new View.OnFocusChangeListener()
+        {
+            @Override
+            public void onFocusChange(View view, boolean b)
+            {
+                if (!b)
+                {
+                    String oldText = altimeterEditText.getText().toString();
+
+                    try
+                    {
+                        if (useHpa)
+                        {
+                            if (oldText.contains("Hpa"))
+                            {
+                                oldText = oldText.replace("Hpa", "");
+                            }
+
+                            Double.parseDouble(oldText);
+                            altimeterEditText.setText(oldText + "Hpa");
+                            inputValidity.put("selectedAltimeter", true);
+                        }
+                        else
+                        {
+                            if (oldText.contains("Hg"))
+                            {
+                                oldText = oldText.replace("Hg", "");
+                            }
+
+                            Double.parseDouble(oldText);
+                            altimeterEditText.setText(oldText + "Hg");
+                            inputValidity.put("selectedAltimeter", true);
+                        }
+                    }
+                    catch (NumberFormatException e)
+                    {
+                        inputValidity.put("selectedAltimeter", false);
+                        Toast.makeText(
+                                getActivity(), "Invalid Altimeter Setting", Toast.LENGTH_LONG).show();
+                    }
+                }
+            }
+        });
+
         nextButton.setOnClickListener(new View.OnClickListener()
         {
             @Override
@@ -372,6 +441,17 @@ public class LevelBombMissionPlannerConditionsFragment extends Fragment
                             cloudBaseEditText.getText().toString().replace("ft.", ""));
                     selectedConLayer = Integer.parseInt(
                             conLayerEditText.getText().toString().replace("ft.", ""));
+
+                    if (useHpa)
+                    {
+                        selectedAltimeter = Double.parseDouble(
+                                altimeterEditText.getText().toString().replace("Hpa", ""));
+                    }
+                    else
+                    {
+                        selectedAltimeter = Double.parseDouble(
+                                altimeterEditText.getText().toString().replace("Hg", ""));
+                    }
 
                     //make bundle
                     Bundle bundle = new Bundle();
@@ -446,6 +526,9 @@ public class LevelBombMissionPlannerConditionsFragment extends Fragment
     {
         nextButton = (Button) view.findViewById(R.id.level_bomb_conditions_fragment_next_button);
         selectBomb = (Button) view.findViewById(R.id.level_bomb_conditions_fragment_select_bomb_button);
+        useHpaCheckBox = (CheckBox) view.findViewById(R.id.level_use_hpa_check_box);
+        altimeterEditText = (EditText) view.findViewById(R.id.level_altimeter_edit_text);
+        altimeterEditText.setText("29.92 Hg");
         windEditText = (EditText) view.findViewById(R.id.level_winds_edit_text);
         windEditText.setText("000°@00kn.");
         tempEditText = (EditText) view.findViewById(R.id.level_temperature_edit_text);
