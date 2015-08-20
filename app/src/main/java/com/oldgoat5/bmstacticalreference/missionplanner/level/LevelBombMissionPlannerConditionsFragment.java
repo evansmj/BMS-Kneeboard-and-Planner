@@ -387,13 +387,13 @@ public class LevelBombMissionPlannerConditionsFragment extends Fragment
                     {
                         if (useHpa)
                         {
-                            if (oldText.contains("Hpa"))
+                            if (oldText.contains("hPa"))
                             {
-                                oldText = oldText.replace("Hpa", "");
+                                oldText = oldText.replace("hPa", "");
                             }
 
                             Double.parseDouble(oldText);
-                            altimeterEditText.setText(oldText + "Hpa");
+                            altimeterEditText.setText(oldText + "hPa");
                             inputValidity.put("selectedAltimeter", true);
                         }
                         else
@@ -445,7 +445,7 @@ public class LevelBombMissionPlannerConditionsFragment extends Fragment
                     if (useHpa)
                     {
                         selectedAltimeter = Double.parseDouble(
-                                altimeterEditText.getText().toString().replace("Hpa", ""));
+                                altimeterEditText.getText().toString().replace("hPa", ""));
                     }
                     else
                     {
@@ -462,12 +462,10 @@ public class LevelBombMissionPlannerConditionsFragment extends Fragment
                     bundle.putInt("selectedConLayer", selectedConLayer);
                     bundle.putString("selectedSituation", selectedSituation);
                     bundle.putString("selectedWeapon", selectedWeapon);
+                    bundle.putDouble("selectedAltimeter", selectedAltimeter);
+                    bundle.putBoolean("useHpa", useHpa);
 
                     //send to level bomb mission planner parameters fragment.
-
-                    //parametersFragment = new LevelBombMissionPlannerParametersFragment();
-                    //parametersFragment.setArguments(bundle);
-
                     Log.d("levelConditionsFragment", "onConditionsResult = " + onConditionsResult);
 
                     if (onConditionsResult != null)

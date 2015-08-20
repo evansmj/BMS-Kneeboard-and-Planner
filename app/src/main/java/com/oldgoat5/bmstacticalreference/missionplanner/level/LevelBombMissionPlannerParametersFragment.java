@@ -1,6 +1,7 @@
 package com.oldgoat5.bmstacticalreference.missionplanner.level;
 
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.text.Editable;
@@ -39,12 +40,17 @@ public class LevelBombMissionPlannerParametersFragment extends Fragment
     private HashMap<String, Boolean> inputValidity;
     private TextView determinedBombRangeResultTextView;
     private TextView determinedReleaseAltitudeResultTextView;
+    private TextView determinedSightDepressionResultTextView;
     private TextView minSafeReleaseAltitudeResultTextView;
     private Spinner releaseKtasSpinner;
     private View view;
 
+    private boolean useHpa;
+    private double selectedAltimeter;
     private int selectedCloudBase;
     private int selectedConLayer;
+    private int selectedReleaseAltitudeAGL;
+    private int selectedTargetElevationMSL;
     private int selectedTemperature;
     private int selectedWindDirection;
     private int selectedWindSpeed;
@@ -245,27 +251,21 @@ public class LevelBombMissionPlannerParametersFragment extends Fragment
             public void onClick(View pview)
             {
                 view.requestFocus();
+                //TOOD add release KCAS later, adjuster in loadcard.
 
                 if (inputIsValid())
                 {
                     try
                     {
-                        Log.d("levelparametersfrag",
+                        selectedTargetElevationMSL = Integer.parseInt(
                                 targetElevationEditText.getText().toString().replace("ft. MSL", ""));
-                        Log.d("levelparametersfrag",
+                        selectedReleaseAltitudeAGL = Integer.parseInt(
                                 releaseAltitudeEditText.getText().toString().replace("ft. AGL", ""));
-
-                        int fromTargetElev = Integer.parseInt(
-                                targetElevationEditText.getText().toString().replace("ft. MSL", ""));
-                        int fromReleaseAlt = Integer.parseInt(
-                                releaseAltitudeEditText.getText().toString().replace("ft. AGL", ""));
-
-                        Log.d("levelparametersfrag",
-                                "targetelev: " + fromTargetElev + "releasealt: " + fromReleaseAlt);
 
                         determinedReleaseAltitudeResultTextView.setText(
-                                (fromTargetElev + fromReleaseAlt) + "ft. MSL");
+                                (selectedTargetElevationMSL + selectedReleaseAltitudeAGL) + "ft. MSL");
                         determinedReleaseAltitudeResultTextView.setTextColor(Color.BLACK);
+                        determinedReleaseAltitudeResultTextView.setTypeface(Typeface.DEFAULT);
                     }
                     catch (NumberFormatException e)
                     {
@@ -273,28 +273,37 @@ public class LevelBombMissionPlannerParametersFragment extends Fragment
                     }
 
                     //calculate trajectory
-                    final double g = 9.81;                                 //g acceleration on Earth m/s^2
+                    //TODO add approximate air resistance, then closer air resistance based on dimensions
+                    final double g = 9.80665;                                 //g acceleration on Earth m/s^2
                     final double Vo = Integer.parseInt(
                             selectedReleaseSpeed) * 0.51444444444;         //meters per second
-                    final double releaseAngle = 0;                         //level release = 0 degree
-                    final double Vx = Vo * Math.cos(releaseAngle);         //x release velocity
-                    final double Vy = Vo * Math.sin(releaseAngle);         //y release velocity
-                    final double Yo = Double.parseDouble(releaseAltitudeEditText
-                            .getText().toString().replace("ft. AGL", "")) * 0.3048; //release altitude AGL meters
+                    final double releaseAngle = 0 * 0.017;               //level release angle radians
+                    final double Vx = Vo * Math.cos(releaseAngle);         //x release velocity m/s
+                    final double Vy = Vo * Math.sin(releaseAngle);         //y release velocity m/s
+                    final double Yo = selectedReleaseAltitudeAGL * 0.3048; //release altitude AGL meters
                     final double maxHeight = Yo + Math.pow(Vy, 2) / (2 * g);  //max height reached
                     final double timeToMaxHeight = Vy/g;
                     final double timeMaxHeightToImpact = Math.sqrt(2 * maxHeight / g);
-                    final double bombXRange =
+                    final double bombRange =
                             (Vx * (timeToMaxHeight + timeMaxHeightToImpact)) * 3.28084; //horizontal range in feet
                     final double fallTime = Math.round(
                             (timeToMaxHeight + timeMaxHeightToImpact) * 10.0) / 10.0; //seconds
-                    /*final double speedAtImpact = Math.sqrt(
-                            Math.pow((g * timeMaxHeightToImpact), 2) + Math.pow(Vx, 2)); unused for now*/
+                    final double speedAtImpact = Math.sqrt(
+                            Math.pow((g * timeMaxHeightToImpact), 2) + Math.pow(Vx, 2));
 
-                    //set results
                     Log.d("levelreleaseparamet", fallTime + "seconds fall ");
-                    determinedBombRangeResultTextView.setText(Long.toString(Math.round(bombXRange)));
+                    Log.d("levelreleaseparamet", "unrounded seconds fall" + (timeToMaxHeight + timeMaxHeightToImpact));
+                    determinedBombRangeResultTextView.setText(Long.toString(Math.round(bombRange)) + "ft.");
                     determinedBombRangeResultTextView.setTextColor(Color.BLACK);
+                    determinedBombRangeResultTextView.setTypeface(Typeface.DEFAULT);
+
+                    //calculate sight depression
+                    final double sightDepressionResult = (3.14159 / 180) * Math.atan(
+                            (selectedReleaseAltitudeAGL / bombRange) * 0.017);
+
+                    determinedSightDepressionResultTextView.setText(Double.toString(sightDepressionResult));
+                    determinedSightDepressionResultTextView.setTextColor(Color.BLACK);
+                    determinedSightDepressionResultTextView.setTypeface(Typeface.DEFAULT);
 
                 }
             }
@@ -308,6 +317,8 @@ public class LevelBombMissionPlannerParametersFragment extends Fragment
      *****************************************************************/
     private void getArgsFromBundle()
     {
+        useHpa = getArguments().getBoolean("useHpa");
+        selectedAltimeter = getArguments().getDouble("selectedAltimeter");
         selectedCloudBase = getArguments().getInt("selectedCloudBase");
         selectedConLayer = getArguments().getInt("selectedConLayer");
         selectedTemperature = getArguments().getInt("selectedTemperature");
@@ -332,6 +343,8 @@ public class LevelBombMissionPlannerParametersFragment extends Fragment
 
         determinedBombRangeResultTextView = (TextView) view.findViewById(
                 R.id.level_determined_bomb_range_result_text_view);
+        determinedSightDepressionResultTextView = (TextView) view.findViewById(
+                R.id.level_release_sight_depression_result_text_view);
         minSafeReleaseAltitudeResultTextView = (TextView) view.findViewById(
                 R.id.level_min_safe_release_altitude_result_text_view);
         determinedReleaseAltitudeResultTextView = (TextView) view.findViewById(
