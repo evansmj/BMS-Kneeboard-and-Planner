@@ -298,10 +298,11 @@ public class LevelBombMissionPlannerParametersFragment extends Fragment
                     determinedBombRangeResultTextView.setTypeface(Typeface.DEFAULT);
 
                     //calculate sight depression
-                    final double sightDepressionResult = (3.14159 / 180) * Math.atan(
-                            (selectedReleaseAltitudeAGL / bombRange) * 0.017);
+                    final long sightDepressionResult = Math.round((3.14159 / 180) * Math.atan(
+                            (selectedReleaseAltitudeAGL / bombRange)) * (180/3.14159) * 1000);
 
-                    determinedSightDepressionResultTextView.setText(Double.toString(sightDepressionResult));
+                    determinedSightDepressionResultTextView.setText(
+                            Long.toString(sightDepressionResult) + "mrad.");
                     determinedSightDepressionResultTextView.setTextColor(Color.BLACK);
                     determinedSightDepressionResultTextView.setTypeface(Typeface.DEFAULT);
 
