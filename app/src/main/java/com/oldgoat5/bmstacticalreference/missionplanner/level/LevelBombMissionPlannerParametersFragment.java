@@ -4,8 +4,6 @@ import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -40,8 +38,9 @@ public class LevelBombMissionPlannerParametersFragment extends Fragment
     private HashMap<String, Boolean> inputValidity;
     private TextView determinedBombRangeResultTextView;
     private TextView determinedReleaseAltitudeResultTextView;
+    private TextView determinedReleaseSpeedResultTextView;
     private TextView determinedSightDepressionResultTextView;
-    private TextView minSafeReleaseAltitudeResultTextView;
+    private TextView determinedMinSafeReleaseAltitudeResultTextView;
     private Spinner releaseKtasSpinner;
     private View view;
 
@@ -297,6 +296,30 @@ public class LevelBombMissionPlannerParametersFragment extends Fragment
                     determinedBombRangeResultTextView.setTextColor(Color.BLACK);
                     determinedBombRangeResultTextView.setTypeface(Typeface.DEFAULT);
 
+                    //calculate release speed
+                    final double altimeterPascal;
+
+                    if (!useHpa)
+                    {
+                        altimeterPascal = selectedAltimeter * 3386.38867;
+                    }
+                    else
+                    {
+                        altimeterPascal = selectedAltimeter;
+                    }
+
+                    final double R = 287.05; //constant specific gas for dry air
+                    final double Po = 1.225; //kg/m^3 (standard pressure 0 msl, 15C)
+                    final double P = altimeterPascal / (R * (selectedTemperature + 273.15));//pressure at release altitude
+                    final double tas = Double.parseDouble(selectedReleaseSpeed);
+                    final long determinedReleaseSpeed = Math.round(tas / Math.sqrt(Po / P));
+
+                    determinedReleaseSpeedResultTextView.setText(Long.toString(determinedReleaseSpeed));
+                    determinedReleaseSpeedResultTextView.setTextColor(Color.BLACK);
+                    determinedReleaseSpeedResultTextView.setTypeface(Typeface.DEFAULT);
+
+                    Log.d("levelreleaseparam", "tas: " + tas + "Po: " + Po + "P: " + P);
+
                     //calculate sight depression
                     final long sightDepressionResult = Math.round((3.14159 / 180) * Math.atan(
                             (selectedReleaseAltitudeAGL / bombRange)) * (180/3.14159) * 1000);
@@ -305,7 +328,6 @@ public class LevelBombMissionPlannerParametersFragment extends Fragment
                             Long.toString(sightDepressionResult) + "mrad.");
                     determinedSightDepressionResultTextView.setTextColor(Color.BLACK);
                     determinedSightDepressionResultTextView.setTypeface(Typeface.DEFAULT);
-
                 }
             }
         });
@@ -346,20 +368,21 @@ public class LevelBombMissionPlannerParametersFragment extends Fragment
                 R.id.level_determined_bomb_range_result_text_view);
         determinedSightDepressionResultTextView = (TextView) view.findViewById(
                 R.id.level_release_sight_depression_result_text_view);
-        minSafeReleaseAltitudeResultTextView = (TextView) view.findViewById(
+        determinedMinSafeReleaseAltitudeResultTextView = (TextView) view.findViewById(
                 R.id.level_min_safe_release_altitude_result_text_view);
         determinedReleaseAltitudeResultTextView = (TextView) view.findViewById(
                 R.id.level_determined_release_altitude_result_text_view);
+        determinedReleaseSpeedResultTextView = (TextView) view.findViewById(
+                R.id.level_release_speed_result_text_view);
 
         if (selectedWeapon.contains("CBU"))
-            minSafeReleaseAltitudeResultTextView.setText("(None for CBU)"); //be specific for user confidence
+            determinedMinSafeReleaseAltitudeResultTextView.setText("(None for CBU)"); //be specific for user confidence
 
         if (selectedWeapon.contains("Rockeye"))
-            minSafeReleaseAltitudeResultTextView.setText("(None for MK-20D)");
+            determinedMinSafeReleaseAltitudeResultTextView.setText("(None for MK-20D)");
 
         if (selectedWeapon.contains("GBU"))
-            minSafeReleaseAltitudeResultTextView.setText("(None for GBU)");
-
+            determinedMinSafeReleaseAltitudeResultTextView.setText("(None for GBU)");
 
         releaseKtasSpinner = (Spinner) view.findViewById(R.id.level_release_ktas_spinner);
 

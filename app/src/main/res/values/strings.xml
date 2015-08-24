@@ -1264,13 +1264,14 @@
     <string name="select_release_altitude">Select Release Altitude:</string>
     <string name="release_altitude">Release Altitude:</string>
     <string name="release_ktas">Select Release KTAS:</string>
-    <string name="knots_true_airspeed">Knots True Airspeed</string>
+    <string name="knots_true_airspeed">(Knots True Airspeed)</string>
+    <string name="knots_calibrated_airspeed">(Knots Calibrated Airspeed)</string>
     <string name="min_safe_release_altitude">Min Safe Rel Altitude:</string>
     <string name="awaiting_form_info">(Awaiting Form Info)</string>
     <string name="bomb_range">Bomb Range:</string>
     <string name="calculate">Calculate</string>
     <string name="bomb_range_label">(Travel From Release)</string>
-    <string name="release_speed">Release Speed KCAS:</string>
+    <string name="release_speed">Release Speed:</string>
     <string name="sight_depression">Approx Sight Depression:</string>
     <string name="sight_depression_label">(If &lt; 260, Visible At Release)</string>
 </resources>
