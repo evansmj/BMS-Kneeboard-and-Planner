@@ -4,6 +4,7 @@ import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,6 +20,7 @@ import android.widget.Toast;
 import com.oldgoat5.bmstacticalreference.R;
 
 import java.util.HashMap;
+import java.util.StringTokenizer;
 
 /*********************************************************************
  * Copyright © Michael Evans - All Rights Reserved.
@@ -29,10 +31,16 @@ import java.util.HashMap;
 public class LevelBombMissionPlannerParametersFragment extends Fragment
 {
     private final String[] RELEASE_KTAS_ITEMS = {"---", "400", "450", "500", "550"};
+    private final String[] RELEASE_MODE_ITEMS = {"---", "Single", "Pair"};
+    private final String[] RIPPLE_QUANTITY_ITEMS = {"---", "1", "2", "3", "4", "5", "6"};
 
     private ArrayAdapter<String> releaseKtasArrayAdapter;
+    private ArrayAdapter<String> releaseModeArrayAdapter;
+    private ArrayAdapter<String> rippleQuantityArrayAdapter;
     private Button calculateButton;
     private EditText approachCourseEditText;
+    private EditText bombSpacingEditText;
+    private EditText burstAltitudeEditText;
     private EditText releaseAltitudeEditText;
     private EditText targetElevationEditText;
     private HashMap<String, Boolean> inputValidity;
@@ -42,6 +50,8 @@ public class LevelBombMissionPlannerParametersFragment extends Fragment
     private TextView determinedSightDepressionResultTextView;
     private TextView determinedMinSafeReleaseAltitudeResultTextView;
     private Spinner releaseKtasSpinner;
+    private Spinner releaseModeSpinner;
+    private Spinner rippleQuantitySpinner;
     private View view;
 
     private boolean useHpa;
@@ -54,7 +64,9 @@ public class LevelBombMissionPlannerParametersFragment extends Fragment
     private int selectedWindDirection;
     private int selectedWindSpeed;
     private String selectedSituation;
+    private String selectedReleaseMode;
     private String selectedReleaseSpeed;
+    private String selectedRippleQuantity;
     private String selectedWeapon;
 
     @Override
@@ -103,11 +115,14 @@ public class LevelBombMissionPlannerParametersFragment extends Fragment
             @Override
             public void onNothingSelected(AdapterView<?> adapterView)
             {
+                selectedReleaseSpeed = RELEASE_KTAS_ITEMS[0];
                 inputValidity.put("selectedReleaseSpeed", false);
             }
         });
 
         releaseKtasSpinner.setAdapter(releaseKtasArrayAdapter);
+        releaseModeSpinner.setAdapter(releaseModeArrayAdapter);
+        rippleQuantitySpinner.setAdapter(rippleQuantityArrayAdapter);
 
         approachCourseEditText.setOnFocusChangeListener(new View.OnFocusChangeListener()
         {
@@ -244,6 +259,156 @@ public class LevelBombMissionPlannerParametersFragment extends Fragment
             }
         });
 
+        burstAltitudeEditText.setOnFocusChangeListener(new View.OnFocusChangeListener()
+        {
+            @Override
+            public void onFocusChange(View view, boolean b)
+            {
+                if (!b)
+                {
+                    String oldText = burstAltitudeEditText.getText().toString();
+
+                    try
+                    {
+                        if (oldText.contains("ft. AGL"))
+                        {
+                            oldText = oldText.replace("ft. AGL", "");
+                            Integer.parseInt(oldText);
+                            inputValidity.put("selectedBurstAltitude", true);
+                        }
+                        else if (oldText.contains("ft."))
+                        {
+                            oldText = oldText.replace("ft.", "");
+                            Integer.parseInt(oldText);
+                            burstAltitudeEditText.append(" AGL");
+                            inputValidity.put("selectedBurstAltitude", true);
+                        }
+                        else
+                        {
+                            Integer.parseInt(oldText);
+                            burstAltitudeEditText.append("ft. AGL");
+                            inputValidity.put("selectedBurstAltitude", true);
+                        }
+                    }
+                    catch (NumberFormatException e)
+                    {
+                        Toast.makeText(getActivity(), "Invalid Burst Altitude", Toast.LENGTH_LONG).show();
+                        inputValidity.put("selectedBurstAltitude", false);
+                    }
+                }
+            }
+        });
+
+        bombSpacingEditText.setOnFocusChangeListener(new View.OnFocusChangeListener()
+        {
+            @Override
+            public void onFocusChange(View view, boolean b)
+            {
+                if (!b)
+                {
+                    String oldText = bombSpacingEditText.getText().toString();
+
+                    try
+                    {
+                        if (oldText.contains("ft."))
+                        {
+                            oldText = oldText.replace("ft.", "");
+                            Integer.parseInt(oldText);
+                            inputValidity.put("selectedBombSpacing", true);
+                        }
+                        else
+                        {
+                            Integer.parseInt(oldText);
+                            bombSpacingEditText.append("ft.");
+                            inputValidity.put("selectedBombSpacing", true);
+                        }
+                    }
+                    catch (NumberFormatException e)
+                    {
+                        Toast.makeText(getActivity(), "Invalid Bomb Spacing", Toast.LENGTH_LONG).show();
+                        inputValidity.put("selectedBombSpacing", false);
+                    }
+                }
+            }
+        });
+
+        releaseModeSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
+        {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l)
+            {
+                switch (i)
+                {
+                    case 0:
+                        selectedReleaseMode = RELEASE_MODE_ITEMS[i];
+                        inputValidity.put("selectedReleaseMode", false);
+                        break;
+                    case 1:
+                        selectedReleaseMode = RELEASE_MODE_ITEMS[i];
+                        inputValidity.put("selectedReleaseMode", true);
+                        break;
+                    case 2:
+                        selectedReleaseMode = RELEASE_MODE_ITEMS[i];
+                        inputValidity.put("selectedReleaseMode", true);
+                        break;
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView)
+            {
+                selectedReleaseMode = RELEASE_MODE_ITEMS[0];
+                inputValidity.put("selectedReleaseMode", false);
+            }
+        });
+
+        rippleQuantitySpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
+        {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l)
+            {
+                switch (i)
+                {
+                    case 0:
+                        selectedRippleQuantity = RIPPLE_QUANTITY_ITEMS[i];
+                        inputValidity.put("selectedRippleQuantity", false);
+                        break;
+                    case 1:
+                        selectedRippleQuantity = RIPPLE_QUANTITY_ITEMS[i];
+                        inputValidity.put("selectedRippleQuantity", true);
+                        break;
+                    case 2:
+                        selectedRippleQuantity = RIPPLE_QUANTITY_ITEMS[i];
+                        inputValidity.put("selectedRippleQuantity", true);
+                        break;
+                    case 3:
+                        selectedRippleQuantity = RIPPLE_QUANTITY_ITEMS[i];
+                        inputValidity.put("selectedRippleQuantity", true);
+                        break;
+                    case 4:
+                        selectedRippleQuantity = RIPPLE_QUANTITY_ITEMS[i];
+                        inputValidity.put("selectedRippleQuantity", true);
+                        break;
+                    case 5:
+                        selectedRippleQuantity = RIPPLE_QUANTITY_ITEMS[i];
+                        inputValidity.put("selectedRippleQuantity", true);
+                        break;
+                    case 6:
+                        selectedRippleQuantity = RIPPLE_QUANTITY_ITEMS[i];
+                        inputValidity.put("selectedRippleQuantity", true);
+                        break;
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView)
+            {
+                selectedRippleQuantity = RIPPLE_QUANTITY_ITEMS[0];
+                inputValidity.put("selectedRippleQuantity", false);
+            }
+        });
+
+
         calculateButton.setOnClickListener(new View.OnClickListener()
         {
             @Override
@@ -281,7 +446,7 @@ public class LevelBombMissionPlannerParametersFragment extends Fragment
                     final double Vy = Vo * Math.sin(releaseAngle);         //y release velocity m/s
                     final double Yo = selectedReleaseAltitudeAGL * 0.3048; //release altitude AGL meters
                     final double maxHeight = Yo + Math.pow(Vy, 2) / (2 * g);  //max height reached
-                    final double timeToMaxHeight = Vy/g;
+                    final double timeToMaxHeight = Vy / g;
                     final double timeMaxHeightToImpact = Math.sqrt(2 * maxHeight / g);
                     final double bombRange =
                             (Vx * (timeToMaxHeight + timeMaxHeightToImpact)) * 3.28084; //horizontal range in feet
@@ -305,7 +470,7 @@ public class LevelBombMissionPlannerParametersFragment extends Fragment
                     }
                     else
                     {
-                        altimeterPascal = selectedAltimeter;
+                        altimeterPascal = selectedAltimeter * 100;
                     }
 
                     final double R = 287.05; //constant specific gas for dry air
@@ -314,7 +479,7 @@ public class LevelBombMissionPlannerParametersFragment extends Fragment
                     final double tas = Double.parseDouble(selectedReleaseSpeed);
                     final long determinedReleaseSpeed = Math.round(tas / Math.sqrt(Po / P));
 
-                    determinedReleaseSpeedResultTextView.setText(Long.toString(determinedReleaseSpeed));
+                    determinedReleaseSpeedResultTextView.setText(Long.toString(determinedReleaseSpeed) + "kn.");
                     determinedReleaseSpeedResultTextView.setTextColor(Color.BLACK);
                     determinedReleaseSpeedResultTextView.setTypeface(Typeface.DEFAULT);
 
@@ -322,12 +487,23 @@ public class LevelBombMissionPlannerParametersFragment extends Fragment
 
                     //calculate sight depression
                     final long sightDepressionResult = Math.round((3.14159 / 180) * Math.atan(
-                            (selectedReleaseAltitudeAGL / bombRange)) * (180/3.14159) * 1000);
+                            (selectedReleaseAltitudeAGL / bombRange)) * (180 / 3.14159) * 1000);
 
                     determinedSightDepressionResultTextView.setText(
                             Long.toString(sightDepressionResult) + "mrad.");
                     determinedSightDepressionResultTextView.setTextColor(Color.BLACK);
                     determinedSightDepressionResultTextView.setTypeface(Typeface.DEFAULT);
+
+                    if (selectedWeapon.contains("CBU") || selectedWeapon.contains("Rockeye"))
+                    {
+                        //determine splash pattern
+                        final int burstAltitude;
+                    }
+                    else
+                    {
+                        //determined stick length
+
+                    }
                 }
             }
         });
@@ -357,10 +533,14 @@ public class LevelBombMissionPlannerParametersFragment extends Fragment
         calculateButton = (Button) view.findViewById(R.id.level_release_parameters_calculate_button);
 
         approachCourseEditText = (EditText) view.findViewById(R.id.level_approach_course_edit_text);
+        bombSpacingEditText = (EditText) view.findViewById(R.id.level_select_bomb_spacing_edit_text);
+        burstAltitudeEditText = (EditText) view.findViewById(R.id.level_selected_burst_altitude_edit_text);
         releaseAltitudeEditText = (EditText) view.findViewById(R.id.level_release_altitude_agl_edit_text);
         targetElevationEditText = (EditText) view.findViewById(R.id.level_target_elevation_edit_text);
 
         approachCourseEditText.setText("000°");
+        bombSpacingEditText.setText("999ft.");
+        burstAltitudeEditText.setText("2000ft. AGL");
         releaseAltitudeEditText.setText("5000ft. AGL");
         targetElevationEditText.setText("100ft. MSL");
 
@@ -385,15 +565,20 @@ public class LevelBombMissionPlannerParametersFragment extends Fragment
             determinedMinSafeReleaseAltitudeResultTextView.setText("(None for GBU)");
 
         releaseKtasSpinner = (Spinner) view.findViewById(R.id.level_release_ktas_spinner);
+        releaseModeSpinner = (Spinner) view.findViewById(R.id.level_release_mode_spinner);
+        rippleQuantitySpinner = (Spinner) view.findViewById(R.id.level_select_ripple_quantity_spinner);
 
         releaseKtasArrayAdapter = new ArrayAdapter<String>(
                 this.getActivity(), android.R.layout.simple_spinner_item, RELEASE_KTAS_ITEMS);
+        releaseModeArrayAdapter = new ArrayAdapter<String>(
+                this.getActivity(), android.R.layout.simple_spinner_item, RELEASE_MODE_ITEMS);
+        rippleQuantityArrayAdapter = new ArrayAdapter<String>(
+                this.getActivity(), android.R.layout.simple_spinner_item, RIPPLE_QUANTITY_ITEMS);
     }
 
     private boolean inputIsValid()
     {
         boolean finalValidity = false;
-
 
         if (!inputValidity.containsValue(false))
         {

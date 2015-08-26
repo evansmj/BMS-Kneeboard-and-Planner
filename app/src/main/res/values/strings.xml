@@ -1274,4 +1274,11 @@
     <string name="release_speed">Release Speed:</string>
     <string name="sight_depression">Approx Sight Depression:</string>
     <string name="sight_depression_label">(If &lt; 260, Visible At Release)</string>
+    <string name="select_burst_altitude">Select Burst Altitude:</string>
+    <string name="select_release_mode">Select Release Mode:</string>
+    <string name="select_release_mode_label">(For Each Release Pulse)</string>
+    <string name="select_ripple_quantity">Select Ripple Quantity:</string>
+    <string name="select_ripple_quantity_label">(For Each Pickle)</string>
+    <string name="select_bomb_spacing">Select Bomb Spacing:</string>
+    <string name="feet">(Feet)</string>
 </resources>

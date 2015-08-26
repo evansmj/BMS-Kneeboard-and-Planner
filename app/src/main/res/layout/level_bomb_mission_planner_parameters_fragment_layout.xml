@@ -59,6 +59,7 @@
                     android:id="@+id/level_approach_course_edit_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/level_approach_course_text_view"
                     android:layout_above="@+id/level_approach_course_considerations_text_view"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentRight="true"
@@ -96,7 +97,9 @@
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentRight="true"
                     android:selectAllOnFocus="true"
+                    android:layout_above="@id/level_target_elevation_mean_sea_level"
                     android:paddingTop="20dp"
+                    android:layout_alignBaseline="@+id/level_target_elevation_text_view"
                     android:inputType="textNoSuggestions"
                     android:id="@+id/level_target_elevation_edit_text"
                     android:layout_toEndOf="@+id/level_approach_course_text_view"
@@ -135,6 +138,8 @@
                     android:id="@+id/level_release_altitude_agl_edit_text"
                     android:layout_alignParentRight="true"
                     android:selectAllOnFocus="true"
+                    android:layout_alignBaseline="@+id/level_release_altitude_agl_text_view"
+                    android:layout_above="@id/level_above_ground_level_text_view"
                     android:inputType="textNoSuggestions"
                     android:paddingTop="20dp"
                     android:layout_alignParentEnd="true"
@@ -182,11 +187,164 @@
                     android:layout_alignStart="@+id/level_release_altitude_agl_edit_text"
                     android:layout_below="@+id/level_above_ground_level_text_view"/>
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/level_selected_burst_altitude_text_view"
+                    android:text="@string/select_burst_altitude"
+                    android:textAppearance="?android:textAppearanceMedium"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:paddingTop="10dp"
+                    android:layout_below="@id/level_release_knots_true_airspeed"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/level_selected_burst_altitude_label_text_view"
+                    android:layout_below="@id/level_selected_burst_altitude_text_view"
+                    android:textAppearance="?android:textAppearanceSmall"
+                    android:textColor="#D3D3D3"
+                    android:textStyle="italic"
+                    android:text="@string/above_ground_level"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"/>
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/level_selected_burst_altitude_edit_text"
+                    android:inputType="textNoSuggestions"
+                    android:selectAllOnFocus="true"
+                    android:layout_alignBaseline="@+id/level_selected_burst_altitude_text_view"
+                    android:paddingTop="30dp"
+                    android:layout_alignBottom="@+id/level_selected_burst_altitude_text_view"
+                    android:layout_above="@id/level_selected_burst_altitude_label_text_view"
+                    android:layout_alignLeft="@+id/level_release_ktas_spinner"
+                    android:layout_alignStart="@+id/level_release_ktas_spinner"
+                    android:layout_below="@id/level_release_ktas_spinner"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/level_select_release_mode"
+                    android:layout_below="@id/level_selected_burst_altitude_label_text_view"
+                    android:text="@string/select_release_mode"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:paddingTop="20dp"
+                    android:textAppearance="?android:textAppearanceMedium"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/level_select_release_mode_label"
+                    android:layout_below="@id/level_select_release_mode"
+                    android:text="@string/select_release_mode_label"
+                    android:textStyle="italic"
+                    android:textColor="#D3D3D3"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"/>
+
+                <Spinner
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/level_release_mode_spinner"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"
+                    android:spinnerMode="dropdown"
+                    android:layout_toEndOf="@id/level_approach_course_text_view"
+                    android:layout_toRightOf="@+id/level_approach_course_text_view"
+                    android:paddingTop="10dp"
+                    android:layout_below="@id/level_selected_burst_altitude_label_text_view"
+                    android:layout_above="@id/level_select_release_mode_label"
+                    android:layout_alignLeft="@+id/level_release_ktas_spinner"
+                    android:layout_alignStart="@+id/level_release_ktas_spinner"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/level_select_ripple_quantity"
+                    android:text="@string/select_ripple_quantity"
+                    android:textAppearance="?android:textAppearanceMedium"
+                    android:paddingTop="20dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@id/level_select_release_mode_label"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/level_select_ripple_quantity_label"
+                    android:layout_below="@id/level_select_ripple_quantity"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:textStyle="italic"
+                    android:textColor="#D3D3D3"
+                    android:text="@string/select_ripple_quantity_label"
+                    android:textAppearance="?android:textAppearanceSmall"/>
+
+                <Spinner
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/level_select_ripple_quantity_spinner"
+                    android:layout_below="@+id/level_select_release_mode_label"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"
+                    android:spinnerMode="dropdown"
+                    android:layout_toEndOf="@id/level_approach_course_text_view"
+                    android:layout_toRightOf="@+id/level_approach_course_text_view"
+                    android:layout_alignLeft="@+id/level_release_ktas_spinner"
+                    android:layout_alignStart="@+id/level_release_ktas_spinner"
+                    android:layout_above="@id/level_select_ripple_quantity_label"
+                    android:paddingTop="10dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/level_select_bomb_spacing_text_view"
+                    android:layout_below="@id/level_select_ripple_quantity_label"
+                    android:text="@string/select_bomb_spacing"
+                    android:paddingTop="20dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:textAppearance="?android:attr/textAppearanceMedium"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/level_select_bomb_spacing_label"
+                    android:text="@string/feet"
+                    android:layout_below="@id/level_select_bomb_spacing_text_view"
+                    android:textAppearance="?android:textAppearanceSmall"
+                    android:textColor="#D3D3D3"
+                    android:textStyle="italic"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"/>
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/level_select_bomb_spacing_edit_text"
+                    android:layout_below="@id/level_select_ripple_quantity_spinner"
+                    android:layout_above="@id/level_select_bomb_spacing_label"
+                    android:layout_alignLeft="@+id/level_release_ktas_spinner"
+                    android:layout_alignStart="@+id/level_release_ktas_spinner"
+                    android:selectAllOnFocus="true"
+                    android:paddingTop="30dp"
+                    android:layout_alignBottom="@+id/level_select_bomb_spacing_text_view"
+                    android:layout_alignBaseline="@+id/level_select_bomb_spacing_text_view"
+                    android:inputType="textNoSuggestions"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"/>
+
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/level_release_parameters_calculate_button"
-                    android:layout_below="@id/level_release_knots_true_airspeed"
+                    android:layout_below="@id/level_select_bomb_spacing_label"
                     android:text="@string/calculate"/>
 
                 <TextView
