@@ -1280,6 +1280,9 @@
     <string name="select_ripple_quantity">Select Ripple Quantity:</string>
     <string name="select_ripple_quantity_label">(For Each Pickle)</string>
     <string name="select_bomb_spacing">Select Bomb Spacing:</string>
+    <string name="select_bomb_spacing_label">(Spacing &lt; 999)</string>
     <string name="feet">(Feet)</string>
     <string name="burst_altitude_label">(300 &lt; Burst Alt &gt; 3000)</string>
+    <string name="width_cbu">Width of Cluster Pattern:</string>
+    <string name="length_cbu">Length of Cluster Pattern:</string>
 </resources>

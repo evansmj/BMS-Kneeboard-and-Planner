@@ -19,6 +19,9 @@ import android.widget.Toast;
 
 import com.oldgoat5.bmstacticalreference.R;
 
+import org.apache.commons.math3.analysis.interpolation.SplineInterpolator;
+import org.apache.commons.math3.analysis.polynomials.PolynomialSplineFunction;
+
 import java.util.HashMap;
 import java.util.StringTokenizer;
 
@@ -30,6 +33,12 @@ import java.util.StringTokenizer;
  *********************************************************************/
 public class LevelBombMissionPlannerParametersFragment extends Fragment
 {
+    private final double[] CLUSTER_SPLASH_PATTERN_BURST_ALT = {300, 500, 700, 900, 1200, 1500, 1800, 2200, 2600, 3000};
+    private final double[] CBU_52BB_SPLASH_PATTERN = {696, 898, 1063, 1205, 1391, 1556, 1704, 1884, 2048, 2200};
+    private final double[] CBU_58AB_SPLASH_PATTERN = {885, 1143, 1353, 1534, 1771, 1980, 2169, 2398, 2607, 2800};
+    private final double[] CBU_87_SPLASH_PATTERN = {632, 816, 966, 1095, 1265, 1414, 1549, 1713, 1862, 2000};
+    private final double[] CBU_97SFW_SPLASH_PATTERN = {632, 816, 966, 1095, 1265, 1414, 1549, 1713, 1862, 2000};
+    private final double[] MK_20D_SPLASH_PATTERN = {506, 653, 773, 876, 1012, 1131, 1239, 1370, 1490, 1600};
     private final String[] RELEASE_KTAS_ITEMS = {"---", "400", "450", "500", "550"};
     private final String[] RELEASE_MODE_ITEMS = {"---", "Single", "Pair"};
     private final String[] RIPPLE_QUANTITY_ITEMS = {"---", "1", "2", "3", "4", "5", "6"};
@@ -49,6 +58,12 @@ public class LevelBombMissionPlannerParametersFragment extends Fragment
     private TextView determinedReleaseSpeedResultTextView;
     private TextView determinedSightDepressionResultTextView;
     private TextView determinedMinSafeReleaseAltitudeResultTextView;
+    private TextView determinedLengthCbuTextView;
+    private TextView determinedLengthCbuLabelTextView;
+    private TextView determinedLengthCbuResultTextView;
+    private TextView determinedWidthCbuTextView;
+    private TextView determinedWidthCbuLabelTextView;
+    private TextView determinedWidthCbuResultTextView;
     private TextView selectedBombSpacingTextView;
     private TextView selectedBombSpacingLabelTextView;
     private TextView selectedBurstAltitudeTextView;
@@ -64,6 +79,9 @@ public class LevelBombMissionPlannerParametersFragment extends Fragment
 
     private boolean useHpa;
     private double selectedAltimeter;
+    private String selectedApproachCourse;
+    private int selectedBombSpacing;
+    private int selectedBurstAltitude;
     private int selectedCloudBase;
     private int selectedConLayer;
     private int selectedReleaseAltitudeAGL;
@@ -157,6 +175,7 @@ public class LevelBombMissionPlannerParametersFragment extends Fragment
                             {
                                 inputValidity.put("selectedApproachCourse", true);
                             }
+                            selectedApproachCourse = approachCourseEditText.getText().toString();
                             approachCourseEditText.append("°");
                         }
                         else if ((oldText.length() == 3 || oldText.length() == 4)
@@ -172,6 +191,7 @@ public class LevelBombMissionPlannerParametersFragment extends Fragment
                             {
                                 inputValidity.put("selectedApproachCourse", true);
                             }
+                            selectedApproachCourse = approachCourseEditText.getText().toString();
                         }
                         else
                         {
@@ -203,19 +223,19 @@ public class LevelBombMissionPlannerParametersFragment extends Fragment
                         if (oldText.contains("ft. AGL"))
                         {
                             oldText = oldText.replace("ft. AGL", "");
-                            Integer.parseInt(oldText);
+                            selectedReleaseAltitudeAGL = Integer.parseInt(oldText);
                             inputValidity.put("selectedReleaseAltitude", true);
                         }
                         else if (oldText.contains("ft."))
                         {
                             oldText = oldText.replace("ft.", "");
-                            Integer.parseInt(oldText);
+                            selectedReleaseAltitudeAGL = Integer.parseInt(oldText);
                             releaseAltitudeEditText.append(" AGL");
                             inputValidity.put("selectedReleaseAltitude", true);
                         }
                         else
                         {
-                            Integer.parseInt(oldText);
+                            selectedReleaseAltitudeAGL = Integer.parseInt(oldText);
                             releaseAltitudeEditText.append("ft. AGL");
                             inputValidity.put("selectedReleaseAltitude", true);
                         }
@@ -243,19 +263,19 @@ public class LevelBombMissionPlannerParametersFragment extends Fragment
                         if (oldText.contains("ft. MSL"))
                         {
                             oldText = oldText.replace("ft. MSL", "");
-                            Integer.parseInt(oldText);
+                            selectedTargetElevationMSL = Integer.parseInt(oldText);
                             inputValidity.put("selectedTargetElevation", true);
                         }
                         else if (oldText.contains("ft."))
                         {
                             oldText = oldText.replace("ft.", "");
-                            Integer.parseInt(oldText);
+                            selectedTargetElevationMSL = Integer.parseInt(oldText);
                             targetElevationEditText.append(" MSL");
                             inputValidity.put("selectedTargetElevation", true);
                         }
                         else
                         {
-                            Integer.parseInt(oldText);
+                            selectedTargetElevationMSL = Integer.parseInt(oldText);
                             targetElevationEditText.append("ft. MSL");
                             inputValidity.put("selectedTargetElevation", true);
                         }
@@ -283,19 +303,19 @@ public class LevelBombMissionPlannerParametersFragment extends Fragment
                         if (oldText.contains("ft. AGL"))
                         {
                             oldText = oldText.replace("ft. AGL", "");
-                            Integer.parseInt(oldText);
+                            selectedBurstAltitude = Integer.parseInt(oldText);
                             inputValidity.put("selectedBurstAltitude", true);
                         }
                         else if (oldText.contains("ft."))
                         {
                             oldText = oldText.replace("ft.", "");
-                            Integer.parseInt(oldText);
+                            selectedBurstAltitude = Integer.parseInt(oldText);
                             burstAltitudeEditText.append(" AGL");
                             inputValidity.put("selectedBurstAltitude", true);
                         }
                         else
                         {
-                            Integer.parseInt(oldText);
+                            selectedBurstAltitude = Integer.parseInt(oldText);
                             burstAltitudeEditText.append("ft. AGL");
                             inputValidity.put("selectedBurstAltitude", true);
                         }
@@ -323,12 +343,12 @@ public class LevelBombMissionPlannerParametersFragment extends Fragment
                         if (oldText.contains("ft."))
                         {
                             oldText = oldText.replace("ft.", "");
-                            Integer.parseInt(oldText);
+                            selectedBombSpacing = Integer.parseInt(oldText);
                             inputValidity.put("selectedBombSpacing", true);
                         }
                         else
                         {
-                            Integer.parseInt(oldText);
+                            selectedBombSpacing = Integer.parseInt(oldText);
                             bombSpacingEditText.append("ft.");
                             inputValidity.put("selectedBombSpacing", true);
                         }
@@ -431,10 +451,15 @@ public class LevelBombMissionPlannerParametersFragment extends Fragment
                 {
                     try
                     {
+                        //incase nothing focused
                         selectedTargetElevationMSL = Integer.parseInt(
                                 targetElevationEditText.getText().toString().replace("ft. MSL", ""));
                         selectedReleaseAltitudeAGL = Integer.parseInt(
                                 releaseAltitudeEditText.getText().toString().replace("ft. AGL", ""));
+                        selectedBombSpacing = Integer.parseInt(
+                                bombSpacingEditText.getText().toString().replace("ft.", ""));
+                        selectedBurstAltitude = Integer.parseInt(
+                                burstAltitudeEditText.getText().toString().replace("ft. AGL", ""));
 
                         determinedReleaseAltitudeResultTextView.setText(
                                 (selectedTargetElevationMSL + selectedReleaseAltitudeAGL) + "ft. MSL");
@@ -507,7 +532,31 @@ public class LevelBombMissionPlannerParametersFragment extends Fragment
                     if (selectedWeapon.contains("CBU") || selectedWeapon.contains("Rockeye"))
                     {
                         //determine splash pattern
-                        final int burstAltitude;
+
+                        SplineInterpolator interpolator = new SplineInterpolator();
+
+                        PolynomialSplineFunction function = interpolator.interpolate(
+                                CLUSTER_SPLASH_PATTERN_BURST_ALT, getSplashPattern());
+
+                        Log.d("levelrelparameters", "selectedBurstAlt = " + selectedBurstAltitude);
+
+                        double cbuPatternDiameter = function.value(selectedBurstAltitude);
+                        int releaseModeInt;
+
+                        releaseModeInt = selectedReleaseMode.equals(RELEASE_MODE_ITEMS[1])? 1 : 2;
+
+                        int numBombs = Integer.parseInt(selectedRippleQuantity) * releaseModeInt;
+
+                        determinedWidthCbuResultTextView.setText(
+                                Long.toString(Math.round(cbuPatternDiameter))); //same for pair/single
+                        determinedWidthCbuResultTextView.setTextColor(Color.BLACK);
+                        determinedWidthCbuResultTextView.setTypeface(Typeface.DEFAULT);
+
+                        determinedLengthCbuResultTextView.setText(
+                                Long.toString(Math.round(
+                                        cbuPatternDiameter + ((numBombs - 1) * selectedBombSpacing))));
+                        determinedLengthCbuResultTextView.setTextColor(Color.BLACK);
+                        determinedLengthCbuResultTextView.setTypeface(Typeface.DEFAULT);
                     }
                     else
                     {
@@ -538,6 +587,38 @@ public class LevelBombMissionPlannerParametersFragment extends Fragment
         Log.d("levelparameters", "selectedWeapon = " + selectedWeapon);
     }
 
+    private double[] getSplashPattern()
+    {
+        double[] cbuPattern;
+
+        if (selectedWeapon.contains("CBU-52"))
+        {
+            cbuPattern = CBU_52BB_SPLASH_PATTERN;
+        }
+        else if (selectedWeapon.contains("CBU-58"))
+        {
+            cbuPattern = CBU_58AB_SPLASH_PATTERN;
+        }
+        else if (selectedWeapon.contains("CBU-87"))
+        {
+            cbuPattern = CBU_87_SPLASH_PATTERN;
+        }
+        else if (selectedWeapon.contains("CBU-97"))
+        {
+            cbuPattern = CBU_97SFW_SPLASH_PATTERN;
+        }
+        else if (selectedWeapon.contains("Rockeye"))
+        {
+            cbuPattern = MK_20D_SPLASH_PATTERN;
+        }
+        else
+        {
+            cbuPattern = CBU_52BB_SPLASH_PATTERN;
+        }
+
+        return cbuPattern;
+    }
+
     private void instantiateResources()
     {
         calculateButton = (Button) view.findViewById(R.id.level_release_parameters_calculate_button);
@@ -549,7 +630,7 @@ public class LevelBombMissionPlannerParametersFragment extends Fragment
         targetElevationEditText = (EditText) view.findViewById(R.id.level_target_elevation_edit_text);
 
         approachCourseEditText.setText("000°");
-        bombSpacingEditText.setText("999ft.");
+        bombSpacingEditText.setText("0ft.");
         burstAltitudeEditText.setText("2000ft. AGL");
         releaseAltitudeEditText.setText("5000ft. AGL");
         targetElevationEditText.setText("100ft. MSL");
@@ -568,6 +649,18 @@ public class LevelBombMissionPlannerParametersFragment extends Fragment
                 R.id.level_selected_burst_altitude_text_view);
         selectedBurstAltitudeLabelTextView = (TextView) view.findViewById(
                 R.id.level_selected_burst_altitude_label_text_view);
+        determinedLengthCbuTextView = (TextView) view.findViewById(
+                R.id.level_determined_length_cbu_pattern_text_view);
+        determinedLengthCbuLabelTextView = (TextView) view.findViewById(
+                R.id.level_determined_length_cbu_pattern_label_text_view);
+        determinedLengthCbuResultTextView = (TextView) view.findViewById(
+                R.id.level_determined_length_cbu_pattern_result_text_view);
+        determinedWidthCbuTextView = (TextView) view.findViewById(
+                R.id.level_determined_width_cbu_pattern_text_view);
+        determinedWidthCbuLabelTextView = (TextView) view.findViewById(
+                R.id.level_determined_width_cbu_pattern_label_text_view);
+        determinedWidthCbuResultTextView = (TextView) view.findViewById(
+                R.id.level_determined_width_cbu_pattern_result_text_view);
 
         if (selectedWeapon.contains("CBU"))
             determinedMinSafeReleaseAltitudeResultTextView.setText("(None for CBU)"); //be specific for user confidence
@@ -614,7 +707,27 @@ public class LevelBombMissionPlannerParametersFragment extends Fragment
             selectedBurstAltitudeLabelTextView.setVisibility(View.VISIBLE);
             burstAltitudeEditText.setVisibility(View.VISIBLE);
 
+            determinedLengthCbuTextView.setVisibility(View.VISIBLE);
+            determinedLengthCbuLabelTextView.setVisibility(View.VISIBLE);
+            determinedLengthCbuResultTextView.setVisibility(View.VISIBLE);
+            determinedWidthCbuTextView.setVisibility(View.VISIBLE);
+            determinedWidthCbuLabelTextView.setVisibility(View.VISIBLE);
+            determinedWidthCbuResultTextView.setVisibility(View.VISIBLE);
+
             inputValidity.put("selectedBurstAltitude", true);
+        }
+        else
+        {
+            selectedBurstAltitudeTextView.setVisibility(View.GONE);
+            selectedBurstAltitudeLabelTextView.setVisibility(View.GONE);
+            burstAltitudeEditText.setVisibility(View.GONE);
+
+            determinedLengthCbuTextView.setVisibility(View.GONE);
+            determinedLengthCbuLabelTextView.setVisibility(View.GONE);
+            determinedLengthCbuResultTextView.setVisibility(View.GONE);
+            determinedWidthCbuTextView.setVisibility(View.GONE);
+            determinedWidthCbuLabelTextView.setVisibility(View.GONE);
+            determinedWidthCbuResultTextView.setVisibility(View.GONE);
         }
     }
 }
