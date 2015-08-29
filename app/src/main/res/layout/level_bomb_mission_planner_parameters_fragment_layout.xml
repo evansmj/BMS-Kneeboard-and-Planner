@@ -206,7 +206,7 @@
                     android:textAppearance="?android:textAppearanceSmall"
                     android:textColor="#D3D3D3"
                     android:textStyle="italic"
-                    android:text="@string/above_ground_level"
+                    android:text="@string/burst_altitude_label"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentStart="true"/>
 

@@ -212,14 +212,15 @@
 
             <CheckBox
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="60dp"
                 android:text="@string/use_hpa"
                 android:textStyle="italic"
                 android:textColor="#D3D3D3"
                 android:id="@+id/level_use_hpa_check_box"
                 android:layout_below="@+id/level_altimeter_edit_text"
                 android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true"/>
+                android:layout_alignParentEnd="true"
+                android:elegantTextHeight="false"/>
 
         </RelativeLayout>
     </ScrollView>

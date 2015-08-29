@@ -49,6 +49,14 @@ public class LevelBombMissionPlannerParametersFragment extends Fragment
     private TextView determinedReleaseSpeedResultTextView;
     private TextView determinedSightDepressionResultTextView;
     private TextView determinedMinSafeReleaseAltitudeResultTextView;
+    private TextView selectedBombSpacingTextView;
+    private TextView selectedBombSpacingLabelTextView;
+    private TextView selectedBurstAltitudeTextView;
+    private TextView selectedBurstAltitudeLabelTextView;
+    private TextView selectedReleaseModeTextView;
+    private TextView selectedReleaseModeLabelTextView;
+    private TextView selectedRippleQuantityTextView;
+    private TextView selectedRippleQuantityLabelTextView;
     private Spinner releaseKtasSpinner;
     private Spinner releaseModeSpinner;
     private Spinner rippleQuantitySpinner;
@@ -81,6 +89,8 @@ public class LevelBombMissionPlannerParametersFragment extends Fragment
         instantiateResources();
 
         inputValidity = new HashMap<>();
+
+        determineSmsParametersToDisplay();
 
         releaseKtasSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
         {
@@ -554,6 +564,10 @@ public class LevelBombMissionPlannerParametersFragment extends Fragment
                 R.id.level_determined_release_altitude_result_text_view);
         determinedReleaseSpeedResultTextView = (TextView) view.findViewById(
                 R.id.level_release_speed_result_text_view);
+        selectedBurstAltitudeTextView = (TextView) view.findViewById(
+                R.id.level_selected_burst_altitude_text_view);
+        selectedBurstAltitudeLabelTextView = (TextView) view.findViewById(
+                R.id.level_selected_burst_altitude_label_text_view);
 
         if (selectedWeapon.contains("CBU"))
             determinedMinSafeReleaseAltitudeResultTextView.setText("(None for CBU)"); //be specific for user confidence
@@ -590,5 +604,17 @@ public class LevelBombMissionPlannerParametersFragment extends Fragment
         }
 
         return finalValidity;
+    }
+
+    private void determineSmsParametersToDisplay()
+    {
+        if (selectedWeapon.contains("CBU") || selectedWeapon.contains("Rockeye"))
+        {
+            selectedBurstAltitudeTextView.setVisibility(View.VISIBLE);
+            selectedBurstAltitudeLabelTextView.setVisibility(View.VISIBLE);
+            burstAltitudeEditText.setVisibility(View.VISIBLE);
+
+            inputValidity.put("selectedBurstAltitude", true);
+        }
     }
 }
