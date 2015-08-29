@@ -1,7 +1,5 @@
 package com.oldgoat5.bmstacticalreference.missionplanner.level;
 
-import android.app.Dialog;
-import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -11,7 +9,6 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -25,8 +22,6 @@ import android.widget.Toast;
 import com.oldgoat5.bmstacticalreference.R;
 import com.oldgoat5.bmstacticalreference.missionplanner.BombSelectDialog;
 
-import java.text.DecimalFormat;
-import java.text.NumberFormat;
 import java.util.HashMap;
 
 /*********************************************************************
@@ -51,7 +46,7 @@ public class LevelBombMissionPlannerConditionsFragment extends Fragment
     private EditText conLayerEditText;
     private HashMap<String, Boolean> inputValidity;
     private LevelBombMissionPlannerParametersFragment parametersFragment;
-    private OnConditionsResult onConditionsResult;
+    private OnConditionsResultListener onConditionsResultListener;
     private Spinner situationsSpinner;
     private TextView selectedWeaponTextView;
     private View view;
@@ -129,7 +124,7 @@ public class LevelBombMissionPlannerConditionsFragment extends Fragment
                 bombSelectDialog.setContentView(R.layout.bomb_select_dialog);
                 bombSelectDialog.show();
 
-                bombSelectDialog.setDialogResult(new BombSelectDialog.OnDialogResult()
+                bombSelectDialog.setDialogResultListener(new BombSelectDialog.OnDialogResultListener()
                 {
                     @Override
                     public void setResult(String weaponName)
@@ -467,12 +462,12 @@ public class LevelBombMissionPlannerConditionsFragment extends Fragment
                     bundle.putBoolean("useHpa", useHpa);
 
                     //send to level bomb mission planner parameters fragment.
-                    Log.d("levelConditionsFragment", "onConditionsResult = " + onConditionsResult);
+                    Log.d("levelConditionsFragment", "onConditionsResult = " + onConditionsResultListener);
 
-                    if (onConditionsResult != null)
+                    if (onConditionsResultListener != null)
                     {
                         Log.d("levelConditionsFragment", "if (onConditionsResult != null) called");
-                        onConditionsResult.setBundle(bundle);
+                        onConditionsResultListener.setBundle(bundle);
                     }
                 }
             }
@@ -483,12 +478,12 @@ public class LevelBombMissionPlannerConditionsFragment extends Fragment
         return view;
     }
 
-    public void setConditionsResult(OnConditionsResult result)
+    public void setConditionsResultListener(OnConditionsResultListener listener)
     {
-        onConditionsResult = result;
+        onConditionsResultListener = listener;
     }
 
-    public interface OnConditionsResult
+    public interface OnConditionsResultListener
     {
         void setBundle(Bundle bundle);
     }

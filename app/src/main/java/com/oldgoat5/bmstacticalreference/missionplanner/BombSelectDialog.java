@@ -38,7 +38,7 @@ public class BombSelectDialog extends Dialog
     private Button viewBombInfoButton;
     private DBTools dbTools;
     private Dialog bombInfoDialog;
-    private OnDialogResult onDialogResult;
+    private OnDialogResultListener onDialogResult;
     private Spinner typeSpinner;
     private Spinner idSpinner;
     private TextView idTextView;
@@ -197,6 +197,8 @@ public class BombSelectDialog extends Dialog
                 {
                     onDialogResult.setResult(selectedWeaponName);
                 }
+
+                dbTools.close();
                 dismiss();
             }
         });
@@ -224,12 +226,12 @@ public class BombSelectDialog extends Dialog
         }
     }
 
-    public void setDialogResult(OnDialogResult result)
+    public void setDialogResultListener(OnDialogResultListener result)
     {
         onDialogResult = result;
     }
 
-    public interface OnDialogResult
+    public interface OnDialogResultListener
     {
         void setResult(String weaponName);
     }

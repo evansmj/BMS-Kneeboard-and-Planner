@@ -52,8 +52,8 @@ public class LevelBombMissionPlannerActivity extends FragmentActivity
 
             Log.d("levelActivity", "after .add.commit();");
 
-            conditionsFragment.setConditionsResult(
-                    new LevelBombMissionPlannerConditionsFragment.OnConditionsResult()
+            conditionsFragment.setConditionsResultListener(
+                    new LevelBombMissionPlannerConditionsFragment.OnConditionsResultListener()
                     {
                         @Override
                         public void setBundle(Bundle bundle)
@@ -81,8 +81,8 @@ public class LevelBombMissionPlannerActivity extends FragmentActivity
         {
             Log.d("levelActivity", "conditionsFragment != null (else called)");
 
-            conditionsFragment.setConditionsResult(
-                    new LevelBombMissionPlannerConditionsFragment.OnConditionsResult()
+            conditionsFragment.setConditionsResultListener(
+                    new LevelBombMissionPlannerConditionsFragment.OnConditionsResultListener()
                     {
                         @Override
                         public void setBundle(Bundle bundle)
