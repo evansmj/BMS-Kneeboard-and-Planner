@@ -559,7 +559,7 @@
                     android:textColor="#D3D3D3"
                     android:textStyle="italic"
                     android:textAppearance="?android:textAppearanceSmall"
-                    android:text="@string/feet"
+                    android:text="@string/percent_15_feet"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentStart="true"/>
 
@@ -598,7 +598,7 @@
                     android:textColor="#D3D3D3"
                     android:textStyle="italic"
                     android:textAppearance="?android:textAppearanceSmall"
-                    android:text="@string/feet"/>
+                    android:text="@string/percent_15_feet"/>
 
                 <TextView
                     android:layout_width="wrap_content"

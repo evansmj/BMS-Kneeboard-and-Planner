@@ -5,10 +5,10 @@
               android:layout_height="match_parent">
 
     <Button
-        android:id="@+id/korea_navigation_select_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/korea_theater_title"
+        android:id="@+id/aegean_navigation_select_button"
+        android:text="@string/aegean_theater_title"
         android:layout_gravity="center_horizontal"/>
 
     <Button
@@ -16,6 +16,13 @@
         android:layout_height="wrap_content"
         android:text="@string/balkans"
         android:id="@+id/battle_for_balkans_navigation_select_button"
+        android:layout_gravity="center_horizontal"/>
+
+    <Button
+        android:id="@+id/korea_navigation_select_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/korea_theater_title"
         android:layout_gravity="center_horizontal"/>
 
 </LinearLayout>

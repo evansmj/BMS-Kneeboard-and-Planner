@@ -548,13 +548,13 @@ public class LevelBombMissionPlannerParametersFragment extends Fragment
                         int numBombs = Integer.parseInt(selectedRippleQuantity) * releaseModeInt;
 
                         determinedWidthCbuResultTextView.setText(
-                                Long.toString(Math.round(cbuPatternDiameter))); //same for pair/single
+                                Long.toString(Math.round(cbuPatternDiameter)) + "ft."); //same for pair/single
                         determinedWidthCbuResultTextView.setTextColor(Color.BLACK);
                         determinedWidthCbuResultTextView.setTypeface(Typeface.DEFAULT);
 
                         determinedLengthCbuResultTextView.setText(
                                 Long.toString(Math.round(
-                                        cbuPatternDiameter + ((numBombs - 1) * selectedBombSpacing))));
+                                        cbuPatternDiameter + ((numBombs - 1) * selectedBombSpacing))) + "ft.");
                         determinedLengthCbuResultTextView.setTextColor(Color.BLACK);
                         determinedLengthCbuResultTextView.setTypeface(Typeface.DEFAULT);
                     }

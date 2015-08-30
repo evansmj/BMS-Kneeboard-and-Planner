@@ -32,6 +32,12 @@
         </activity>
 
         <activity
+            android:name=".navigation.aegean.AegeanNavigationActivity"
+            android:label="@string/aegean_theater_title"
+            android:theme="@style/BlueTheme">
+        </activity>
+
+        <activity
             android:name=".navigation.korea.KoreaNavigationActivity"
             android:label="@string/korea_theater_title"
             android:theme="@style/BlueTheme">
