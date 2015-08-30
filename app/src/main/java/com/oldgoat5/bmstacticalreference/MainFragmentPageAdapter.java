@@ -20,7 +20,7 @@ import com.oldgoat5.bmstacticalreference.reference.ReferenceFragment;
  *********************************************************************/
 public class MainFragmentPageAdapter extends FragmentPagerAdapter
 {
-    private final int COUNT = 6;
+    private final int COUNT = 5;
     private Context CONTEXT;
     
     public MainFragmentPageAdapter(FragmentManager fm, Context context)
@@ -41,10 +41,8 @@ public class MainFragmentPageAdapter extends FragmentPagerAdapter
             case 2:
                 return new ReferenceFragment();
             case 3:
-                return new FuelCalculatorFragment();
-            case 4:
                 return new NavigationChartsFragment();
-            case 5:
+            case 4:
                 return new MissionPlannerFragment();
             default:
                 break;
@@ -64,10 +62,8 @@ public class MainFragmentPageAdapter extends FragmentPagerAdapter
             case 2:
                 return "Reference";
             case 3:
-                return "Fuel Calculator";
-            case 4:
                 return "Navigation";
-            case 5:
+            case 4:
                 return "Mission Planner";
             default:
                 break;

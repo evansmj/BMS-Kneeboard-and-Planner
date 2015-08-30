@@ -73,7 +73,7 @@ public class NavigationChartsFragment extends Fragment
         return view;
     }
 
-    public void showAegeanNavigation()
+    private void showAegeanNavigation()
     {
         Intent intent = new Intent(getActivity(), AegeanNavigationActivity.class);
         startActivity(intent);
@@ -82,7 +82,7 @@ public class NavigationChartsFragment extends Fragment
     /*****************************************************************
      * Starts the battle for balkans activity.
      *****************************************************************/
-    public void showBattleForBalkansNavigation()
+    private void showBattleForBalkansNavigation()
     {
         Intent intent = new Intent(getActivity(), BattleForBalkansNavigationActivity.class);
         startActivity(intent);
@@ -91,7 +91,7 @@ public class NavigationChartsFragment extends Fragment
     /*****************************************************************
      * Starts the korea navigation activity.
      *****************************************************************/
-    public void showKoreaNavigation()
+    private void showKoreaNavigation()
     {
         Intent intent = new Intent(getActivity(), KoreaNavigationActivity.class);
         startActivity(intent);

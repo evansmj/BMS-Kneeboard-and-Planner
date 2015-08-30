@@ -1,40 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/light_blue"
-    android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
+    android:orientation="vertical"
+    android:theme="@style/BlueTheme" >
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/fuel_calculator_select_button"
+        android:text="@string/fuel_calculator"/>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/brevity_dictionary_title"
-        android:id="@+id/brevity_dictionary_select_button"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"/>
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/steerpoints"
-        android:id="@+id/navigation_steerpoints_select_button"
-        android:layout_below="@+id/default_frequencies_select_button"
-        android:layout_centerHorizontal="true"/>
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/brevity_dictionary_select_button"/>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/default_frequencies"
-        android:id="@+id/default_frequencies_select_button"
-        android:layout_below="@+id/brevity_dictionary_select_button"
-        android:layout_centerHorizontal="true"/>
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/default_frequencies_select_button"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/steerpoints"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/navigation_steerpoints_select_button"/>
+
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/tacan_ils_checklist"
-        android:id="@+id/tacan_ils_checklist_select_button"
-        android:layout_below="@id/navigation_steerpoints_select_button"
-        android:layout_centerHorizontal="true"/>
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/tacan_ils_checklist_select_button"/>
 
-</RelativeLayout>
+</LinearLayout>

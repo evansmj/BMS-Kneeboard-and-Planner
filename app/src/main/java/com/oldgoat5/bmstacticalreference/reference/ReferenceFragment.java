@@ -27,6 +27,7 @@ public class ReferenceFragment extends Fragment
     private Dialog tacanIlsCheckListDialog;
     private Button brevityDictionaryStartButton;
     private Button defaultFrequenciesButton;
+    private Button fuelCalculatorButton;
     private Button navigationSteerpointsButton;
     private Button tacanIlsCheckListButton;
     private ZoomImageView tacanIlsCheckListImageView;
@@ -43,6 +44,8 @@ public class ReferenceFragment extends Fragment
                 R.id.brevity_dictionary_select_button);
         defaultFrequenciesButton = (Button) view.findViewById(
                 R.id.default_frequencies_select_button);
+        fuelCalculatorButton = (Button) view.findViewById(
+                R.id.fuel_calculator_select_button);
         navigationSteerpointsButton = (Button) view.findViewById(
                 R.id.navigation_steerpoints_select_button);
         tacanIlsCheckListButton = (Button) view.findViewById(
@@ -76,6 +79,15 @@ public class ReferenceFragment extends Fragment
                 defaultFrequenciesDialog.setContentView(R.layout.default_frequencies_view);
                 defaultFrequenciesDialog.setTitle("Default Frequencies");
                 defaultFrequenciesDialog.show();
+            }
+        });
+
+        fuelCalculatorButton.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                startFuelCalculatorActivity();
             }
         });
 
@@ -113,6 +125,12 @@ public class ReferenceFragment extends Fragment
     private void startBrevityDictionaryActivity()
     {
         Intent intent = new Intent(getActivity(), BrevityDictionaryActivity.class);
+        startActivity(intent);
+    }
+
+    private void startFuelCalculatorActivity()
+    {
+        Intent intent = new Intent(getActivity(), FuelCalculatorActivity.class);
         startActivity(intent);
     }
 }

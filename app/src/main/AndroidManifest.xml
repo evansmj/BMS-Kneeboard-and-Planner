@@ -68,6 +68,12 @@
             </meta-data>
         </activity>
 
+        <activity
+            android:name=".reference.FuelCalculatorActivity"
+            android:label="@string/fuel_calculator"
+            android:theme="@style/BlueTheme">
+        </activity>
+
     </application>
 
 </manifest>

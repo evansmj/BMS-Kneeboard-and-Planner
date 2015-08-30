@@ -1091,7 +1091,8 @@
     <!-- Tactical Formation Reference Activity -->
     <string name="tactical_formation_reference_title">Tactical Formation Reference</string>
 
-    <!-- Fuel Calculator Fragment -->
+    <!-- Fuel Calculator Activity -->
+    <string name="fuel_calculator">Bingo Fuel Calculator</string>
     <string name="trip_nm_text_view">Return Leg Nautical Miles:</string>
     <string name="distance_to_alternate">Home to Alternate Nautical Miles:</string>
     <string name="altitude">Altitude:</string>

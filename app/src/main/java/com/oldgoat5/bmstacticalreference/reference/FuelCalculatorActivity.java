@@ -1,7 +1,7 @@
-package com.oldgoat5.bmstacticalreference;
+package com.oldgoat5.bmstacticalreference.reference;
 
+import android.app.Activity;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
@@ -13,6 +13,8 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
+import com.oldgoat5.bmstacticalreference.R;
+
 /*********************************************************************
  * Copyright © Michael Evans - All Rights Reserved.
  *
@@ -21,7 +23,7 @@ import android.widget.TextView;
  * @author Michael Evans
  * @since 5/21/2015
  *********************************************************************/
-public class FuelCalculatorFragment extends Fragment
+public class FuelCalculatorActivity extends Activity
 {
     private EditText homeAltEditText;
     private EditText tripEditText;
@@ -43,25 +45,25 @@ public class FuelCalculatorFragment extends Fragment
     private int weatherConditions;
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState)
+    public void onCreate(Bundle savedInstanceState)
     {
-        view = inflater.inflate(
-                R.layout.fuel_calculator_activity_layout, container, false);
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.fuel_calculator_activity_layout);
 
-        homeAltEditText = (EditText) view.findViewById(R.id.distance_to_alternate_edit_text);
-        tripEditText = (EditText) view.findViewById(R.id.trip_nm_edit_text);
+        //todo add variable joker
+        homeAltEditText = (EditText) findViewById(R.id.distance_to_alternate_edit_text);
+        tripEditText = (EditText) findViewById(R.id.trip_nm_edit_text);
 
-        lowRadioButton = (RadioButton) view.findViewById(R.id.low_radio_button);
-        medRadioButton = (RadioButton) view.findViewById(R.id.med_radio_button);
-        hiRadioButton = (RadioButton) view.findViewById(R.id.hi_radio_button);
+        lowRadioButton = (RadioButton) findViewById(R.id.low_radio_button);
+        medRadioButton = (RadioButton) findViewById(R.id.med_radio_button);
+        hiRadioButton = (RadioButton) findViewById(R.id.hi_radio_button);
 
-        altitudeRadioGroup = (RadioGroup) view.findViewById(R.id.alt_radio_group);
-        weatherRadioGroup = (RadioGroup) view.findViewById(R.id.weather_radio_group);
+        altitudeRadioGroup = (RadioGroup) findViewById(R.id.alt_radio_group);
+        weatherRadioGroup = (RadioGroup) findViewById(R.id.weather_radio_group);
 
-        bingoFuelTextView = (TextView) view.findViewById(R.id.bingo_result_text_view);
-        jokerFuelTextView = (TextView) view.findViewById(R.id.joker_result_text_view);
-        homeAltTextView = (TextView) view.findViewById(R.id.distance_to_alternate_text_view);
+        bingoFuelTextView = (TextView) findViewById(R.id.bingo_result_text_view);
+        jokerFuelTextView = (TextView) findViewById(R.id.joker_result_text_view);
+        homeAltTextView = (TextView) findViewById(R.id.distance_to_alternate_text_view);
         //totalFuelTextView = (TextView) view.findViewById(R.id.total_fuel_result_text_view);
         //tripTextView = (TextView) view.findViewById(R.id.trip_nm_text_view);
 
@@ -195,7 +197,6 @@ public class FuelCalculatorFragment extends Fragment
                 calculateFuel();
             }
         });
-        return view;
     }
 
     private void calculateFuel()
