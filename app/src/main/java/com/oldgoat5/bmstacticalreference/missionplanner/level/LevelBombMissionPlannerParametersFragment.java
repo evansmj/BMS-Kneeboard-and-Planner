@@ -475,6 +475,12 @@ public class LevelBombMissionPlannerParametersFragment extends Fragment
                         Toast.makeText(getActivity(), "Bad form args", Toast.LENGTH_LONG).show();
                     }
 
+                    //calculate minReleaseAlt
+                    if (!selectedWeapon.contains("CBU") || !selectedWeapon.contains("Rockeye"))
+                    {
+
+                    }
+
                     //calculate trajectory
                     //TODO add approximate air resistance, then closer air resistance based on dimensions
                     final double g = 9.80665;                                 //g acceleration on Earth m/s^2
