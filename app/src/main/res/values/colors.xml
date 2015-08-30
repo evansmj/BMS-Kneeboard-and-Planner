@@ -7,4 +7,6 @@
     <color name="silver">#D5DADD</color>
     <color name="tab_blue">#345166</color>
     <color name="text_blue">#417394</color>
+    <color name="black">#000000</color>
+    <color name="dark_red">#990000</color>
 </resources>
