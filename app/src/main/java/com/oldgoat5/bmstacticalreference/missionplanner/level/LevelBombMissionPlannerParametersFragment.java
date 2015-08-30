@@ -53,6 +53,10 @@ public class LevelBombMissionPlannerParametersFragment extends Fragment
     private EditText releaseAltitudeEditText;
     private EditText targetElevationEditText;
     private HashMap<String, Boolean> inputValidity;
+    private Spinner releaseKtasSpinner;
+    private Spinner releaseModeSpinner;
+    private Spinner rippleQuantitySpinner;
+    private SplineInterpolator interpolator;
     private TextView determinedBombRangeResultTextView;
     private TextView determinedReleaseAltitudeResultTextView;
     private TextView determinedReleaseSpeedResultTextView;
@@ -64,6 +68,9 @@ public class LevelBombMissionPlannerParametersFragment extends Fragment
     private TextView determinedWidthCbuTextView;
     private TextView determinedWidthCbuLabelTextView;
     private TextView determinedWidthCbuResultTextView;
+    private TextView determinedStickLengthTextView;
+    private TextView determinedStickLengthLabelTextView;
+    private TextView determinedStickLengthResultTextView;
     private TextView selectedBombSpacingTextView;
     private TextView selectedBombSpacingLabelTextView;
     private TextView selectedBurstAltitudeTextView;
@@ -72,9 +79,6 @@ public class LevelBombMissionPlannerParametersFragment extends Fragment
     private TextView selectedReleaseModeLabelTextView;
     private TextView selectedRippleQuantityTextView;
     private TextView selectedRippleQuantityLabelTextView;
-    private Spinner releaseKtasSpinner;
-    private Spinner releaseModeSpinner;
-    private Spinner rippleQuantitySpinner;
     private View view;
 
     private boolean useHpa;
@@ -529,23 +533,19 @@ public class LevelBombMissionPlannerParametersFragment extends Fragment
                     determinedSightDepressionResultTextView.setTextColor(Color.BLACK);
                     determinedSightDepressionResultTextView.setTypeface(Typeface.DEFAULT);
 
+                    //hit patterns
+                    int releaseModeInt = selectedReleaseMode.equals(RELEASE_MODE_ITEMS[1])? 1 : 2;
+                    int numBombs = Integer.parseInt(selectedRippleQuantity) * releaseModeInt;
+
                     if (selectedWeapon.contains("CBU") || selectedWeapon.contains("Rockeye"))
                     {
-                        //determine splash pattern
-
-                        SplineInterpolator interpolator = new SplineInterpolator();
-
-                        PolynomialSplineFunction function = interpolator.interpolate(
+                        //determine cluster splash pattern
+                        PolynomialSplineFunction clusterFunction = interpolator.interpolate(
                                 CLUSTER_SPLASH_PATTERN_BURST_ALT, getSplashPattern());
 
                         Log.d("levelrelparameters", "selectedBurstAlt = " + selectedBurstAltitude);
 
-                        double cbuPatternDiameter = function.value(selectedBurstAltitude);
-                        int releaseModeInt;
-
-                        releaseModeInt = selectedReleaseMode.equals(RELEASE_MODE_ITEMS[1])? 1 : 2;
-
-                        int numBombs = Integer.parseInt(selectedRippleQuantity) * releaseModeInt;
+                        double cbuPatternDiameter = clusterFunction.value(selectedBurstAltitude);
 
                         determinedWidthCbuResultTextView.setText(
                                 Long.toString(Math.round(cbuPatternDiameter)) + "ft."); //same for pair/single
@@ -561,7 +561,10 @@ public class LevelBombMissionPlannerParametersFragment extends Fragment
                     else
                     {
                         //determined stick length
-
+                        determinedStickLengthResultTextView.setText(
+                                Integer.toString((numBombs - 1) * selectedBombSpacing) + "ft.");
+                        determinedStickLengthResultTextView.setTypeface(Typeface.DEFAULT);
+                        determinedStickLengthResultTextView.setTextColor(Color.BLACK);
                     }
                 }
             }
@@ -621,6 +624,8 @@ public class LevelBombMissionPlannerParametersFragment extends Fragment
 
     private void instantiateResources()
     {
+        interpolator = new SplineInterpolator();
+
         calculateButton = (Button) view.findViewById(R.id.level_release_parameters_calculate_button);
 
         approachCourseEditText = (EditText) view.findViewById(R.id.level_approach_course_edit_text);
@@ -661,6 +666,12 @@ public class LevelBombMissionPlannerParametersFragment extends Fragment
                 R.id.level_determined_width_cbu_pattern_label_text_view);
         determinedWidthCbuResultTextView = (TextView) view.findViewById(
                 R.id.level_determined_width_cbu_pattern_result_text_view);
+        determinedStickLengthTextView = (TextView) view.findViewById(
+                R.id.level_determined_stick_length_text_view);
+        determinedStickLengthLabelTextView = (TextView) view.findViewById(
+                R.id.level_determined_stick_length_label_text_view);
+        determinedStickLengthResultTextView = (TextView) view.findViewById(
+                R.id.level_determined_stick_length_result_text_view);
 
         if (selectedWeapon.contains("CBU"))
             determinedMinSafeReleaseAltitudeResultTextView.setText("(None for CBU)"); //be specific for user confidence
@@ -714,6 +725,10 @@ public class LevelBombMissionPlannerParametersFragment extends Fragment
             determinedWidthCbuLabelTextView.setVisibility(View.VISIBLE);
             determinedWidthCbuResultTextView.setVisibility(View.VISIBLE);
 
+            determinedStickLengthTextView.setVisibility(View.GONE);
+            determinedStickLengthLabelTextView.setVisibility(View.GONE);
+            determinedStickLengthResultTextView.setVisibility(View.GONE);
+
             inputValidity.put("selectedBurstAltitude", true);
         }
         else
@@ -728,6 +743,10 @@ public class LevelBombMissionPlannerParametersFragment extends Fragment
             determinedWidthCbuTextView.setVisibility(View.GONE);
             determinedWidthCbuLabelTextView.setVisibility(View.GONE);
             determinedWidthCbuResultTextView.setVisibility(View.GONE);
+
+            determinedStickLengthTextView.setVisibility(View.VISIBLE);
+            determinedStickLengthLabelTextView.setVisibility(View.VISIBLE);
+            determinedStickLengthResultTextView.setVisibility(View.VISIBLE);
         }
     }
 }

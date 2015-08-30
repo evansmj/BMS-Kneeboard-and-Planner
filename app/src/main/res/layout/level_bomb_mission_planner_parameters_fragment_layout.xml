@@ -614,6 +614,42 @@
                     android:textStyle="italic"
                     android:textColor="#D3D3D3"/>
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/level_determined_stick_length_text_view"
+                    android:layout_below="@id/level_determined_length_cbu_pattern_label_text_view"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:text="@string/stick_length"
+                    android:paddingTop="20dp"
+                    android:textAppearance="?android:textAppearanceMedium"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/level_determined_stick_length_label_text_view"
+                    android:layout_below="@id/level_determined_stick_length_text_view"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColor="#D3D3D3"
+                    android:text="@string/feet"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/level_determined_stick_length_result_text_view"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/awaiting_form_info"
+                    android:layout_alignBaseline="@+id/level_determined_stick_length_text_view"
+                    android:layout_alignLeft="@+id/level_release_ktas_spinner"
+                    android:layout_alignStart="@+id/level_release_ktas_spinner"
+                    android:textColor="#D3D3D3"
+                    android:textStyle="italic"/>
+
             </RelativeLayout>
         </ScrollView>
 </RelativeLayout>
