@@ -28,13 +28,11 @@ public class AegeanNavigationFragmentPageAdapter extends FragmentPagerAdapter
         switch (position)
         {
             case 0:
-                //return new CyprusAegeanChartFragment();
-                return new GreeceAegeanChartFragment();
+                return new CyprusAegeanChartFragment();
             case 1:
                 return new GreeceAegeanChartFragment();
             case 2:
-                //return new TurkeyAegeanChartFragment();
-                break;
+                return new TurkeyAegeanChartFragment();
 
             default:
                 break;
@@ -46,14 +44,14 @@ public class AegeanNavigationFragmentPageAdapter extends FragmentPagerAdapter
     @Override
     public CharSequence getPageTitle(int position)
     {
-        switch (position) //south korea, north korea, japan, china, russia
+        switch (position)
         {
             case 0:
-                return "Cyrpus";
+                return "Cyprus";
             case 1:
                 return "Greece";
             case 2:
-                return "Turkiye";
+                return "Turkey";
 
             default:
                 break;

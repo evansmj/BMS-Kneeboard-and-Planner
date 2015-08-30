@@ -36,7 +36,7 @@ public class AegeanNavigationActivity extends FragmentActivity
 
         tabsList.add(new PagerItem("Cyprus", Color.CYAN, Color.GRAY));
         tabsList.add(new PagerItem("Greece", Color.GREEN, Color.GRAY));
-        tabsList.add(new PagerItem("Turkiye", Color.YELLOW, Color.GRAY));
+        tabsList.add(new PagerItem("Turkey", Color.YELLOW, Color.GRAY));
 
         viewPager = (ViewPager) findViewById(R.id.aegean_navigation_pager);
         viewPager.setAdapter(new AegeanNavigationFragmentPageAdapter(getSupportFragmentManager(),
