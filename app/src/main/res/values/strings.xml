@@ -1288,5 +1288,7 @@
     <string name="width_cbu">Width of Cluster Pattern:</string>
     <string name="length_cbu">Length of Cluster Pattern:</string>
     <string name="stick_length">Stick Length:</string>
-    <string name="feet">(Feet)</string>
+    <string name="stick_length_label">(Length of Impacts)</string>
+    <string name="bomb_tof">Bomb Time of Fall:</string>
+    <string name="seconds">(Seconds)</string>
 </resources>

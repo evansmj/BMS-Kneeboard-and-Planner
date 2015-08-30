@@ -33,6 +33,8 @@ import java.util.StringTokenizer;
  *********************************************************************/
 public class LevelBombMissionPlannerParametersFragment extends Fragment
 {
+    private final double[] MIN_RELEASE_ALT_500LB = {950, 850, 750, 650};
+    private final double[] MIN_RELEASE_ALT_2000LB = {1550, 1450, 1350, 1250};
     private final double[] CLUSTER_SPLASH_PATTERN_BURST_ALT = {300, 500, 700, 900, 1200, 1500, 1800, 2200, 2600, 3000};
     private final double[] CBU_52BB_SPLASH_PATTERN = {696, 898, 1063, 1205, 1391, 1556, 1704, 1884, 2048, 2200};
     private final double[] CBU_58AB_SPLASH_PATTERN = {885, 1143, 1353, 1534, 1771, 1980, 2169, 2398, 2607, 2800};
@@ -57,6 +59,7 @@ public class LevelBombMissionPlannerParametersFragment extends Fragment
     private Spinner releaseModeSpinner;
     private Spinner rippleQuantitySpinner;
     private SplineInterpolator interpolator;
+    private TextView determinedBombFallTimeResultTextView;
     private TextView determinedBombRangeResultTextView;
     private TextView determinedReleaseAltitudeResultTextView;
     private TextView determinedReleaseSpeedResultTextView;
@@ -71,14 +74,8 @@ public class LevelBombMissionPlannerParametersFragment extends Fragment
     private TextView determinedStickLengthTextView;
     private TextView determinedStickLengthLabelTextView;
     private TextView determinedStickLengthResultTextView;
-    private TextView selectedBombSpacingTextView;
-    private TextView selectedBombSpacingLabelTextView;
     private TextView selectedBurstAltitudeTextView;
     private TextView selectedBurstAltitudeLabelTextView;
-    private TextView selectedReleaseModeTextView;
-    private TextView selectedReleaseModeLabelTextView;
-    private TextView selectedRippleQuantityTextView;
-    private TextView selectedRippleQuantityLabelTextView;
     private View view;
 
     private boolean useHpa;
@@ -308,25 +305,31 @@ public class LevelBombMissionPlannerParametersFragment extends Fragment
                         {
                             oldText = oldText.replace("ft. AGL", "");
                             selectedBurstAltitude = Integer.parseInt(oldText);
+                            if (!(selectedBurstAltitude >= 300) || !(selectedBurstAltitude <= 3000))
+                                throw new NumberFormatException();
                             inputValidity.put("selectedBurstAltitude", true);
                         }
                         else if (oldText.contains("ft."))
                         {
                             oldText = oldText.replace("ft.", "");
                             selectedBurstAltitude = Integer.parseInt(oldText);
+                            if (!(selectedBurstAltitude >= 300) || !(selectedBurstAltitude <= 3000))
+                                throw new NumberFormatException();
                             burstAltitudeEditText.append(" AGL");
                             inputValidity.put("selectedBurstAltitude", true);
                         }
                         else
                         {
                             selectedBurstAltitude = Integer.parseInt(oldText);
+                            if (!(selectedBurstAltitude >= 300) || !(selectedBurstAltitude <= 3000))
+                                throw new NumberFormatException();
                             burstAltitudeEditText.append("ft. AGL");
                             inputValidity.put("selectedBurstAltitude", true);
                         }
                     }
                     catch (NumberFormatException e)
                     {
-                        Toast.makeText(getActivity(), "Invalid Burst Altitude", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getActivity(), "Invalid Burst Altitude, Must be >=300 and <=3000", Toast.LENGTH_LONG).show();
                         inputValidity.put("selectedBurstAltitude", false);
                     }
                 }
@@ -449,8 +452,6 @@ public class LevelBombMissionPlannerParametersFragment extends Fragment
             public void onClick(View pview)
             {
                 view.requestFocus();
-                //TOOD add release KCAS later, adjuster in loadcard.
-
                 if (inputIsValid())
                 {
                     try
@@ -478,7 +479,16 @@ public class LevelBombMissionPlannerParametersFragment extends Fragment
                     //calculate minReleaseAlt
                     if (!selectedWeapon.contains("CBU") || !selectedWeapon.contains("Rockeye"))
                     {
+                        if (selectedWeapon.contains("BLU-107"))
+                        {
+                            determinedMinSafeReleaseAltitudeResultTextView.setText("250ft.");
+                            determinedMinSafeReleaseAltitudeResultTextView.setTextColor(Color.BLACK);
+                            determinedMinSafeReleaseAltitudeResultTextView.setTypeface(Typeface.DEFAULT);
+                        }
+                        else
+                        {
 
+                        }
                     }
 
                     //calculate trajectory
@@ -500,8 +510,12 @@ public class LevelBombMissionPlannerParametersFragment extends Fragment
                     final double speedAtImpact = Math.sqrt(
                             Math.pow((g * timeMaxHeightToImpact), 2) + Math.pow(Vx, 2));
 
-                    Log.d("levelreleaseparamet", fallTime + "seconds fall ");
-                    Log.d("levelreleaseparamet", "unrounded seconds fall" + (timeToMaxHeight + timeMaxHeightToImpact));
+                    //Log.d("levelreleaseparamet", fallTime + "seconds fall ");
+                    //Log.d("levelreleaseparamet", "unrounded seconds fall" + (timeToMaxHeight + timeMaxHeightToImpact));
+                    determinedBombFallTimeResultTextView.setText(fallTime + "s");
+                    determinedBombFallTimeResultTextView.setTextColor(Color.BLACK);
+                    determinedBombFallTimeResultTextView.setTypeface(Typeface.DEFAULT);
+
                     determinedBombRangeResultTextView.setText(Long.toString(Math.round(bombRange)) + "ft.");
                     determinedBombRangeResultTextView.setTextColor(Color.BLACK);
                     determinedBombRangeResultTextView.setTypeface(Typeface.DEFAULT);
@@ -646,6 +660,8 @@ public class LevelBombMissionPlannerParametersFragment extends Fragment
         releaseAltitudeEditText.setText("5000ft. AGL");
         targetElevationEditText.setText("100ft. MSL");
 
+        determinedBombFallTimeResultTextView = (TextView) view.findViewById(
+                R.id.level_determined_bomb_tof_result_text_view);
         determinedBombRangeResultTextView = (TextView) view.findViewById(
                 R.id.level_determined_bomb_range_result_text_view);
         determinedSightDepressionResultTextView = (TextView) view.findViewById(
