@@ -411,7 +411,7 @@
                     android:layout_alignParentStart="true"
                     android:layout_below="@+id/level_determined_release_altitude_text_view"
                     android:textStyle="italic"
-                    android:id="@+id/level_determined_release_altitude_msl_text_view"
+                    android:id="@+id/level_determined_release_altitude_label_text_view"
                     android:textAppearance="?android:attr/textAppearanceSmall"
                     android:textColor="#D3D3D3"/>
 
@@ -433,7 +433,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/level_release_speed_text_view"
-                    android:layout_below="@id/level_determined_release_altitude_msl_text_view"
+                    android:layout_below="@id/level_determined_release_altitude_label_text_view"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentStart="true"
                     android:paddingTop="20dp"

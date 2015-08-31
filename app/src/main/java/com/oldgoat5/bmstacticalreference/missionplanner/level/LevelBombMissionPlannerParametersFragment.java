@@ -1,5 +1,6 @@
 package com.oldgoat5.bmstacticalreference.missionplanner.level;
 
+import android.database.sqlite.SQLiteException;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -18,10 +19,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.oldgoat5.bmstacticalreference.R;
+import com.oldgoat5.bmstacticalreference.tacticalreference.DBTools;
 
 import org.apache.commons.math3.analysis.interpolation.SplineInterpolator;
 import org.apache.commons.math3.analysis.polynomials.PolynomialSplineFunction;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.StringTokenizer;
 
@@ -35,6 +38,7 @@ public class LevelBombMissionPlannerParametersFragment extends Fragment
 {
     private final double[] MIN_RELEASE_ALT_500LB = {950, 850, 750, 650};
     private final double[] MIN_RELEASE_ALT_2000LB = {1550, 1450, 1350, 1250};
+    private final double[] RELEASE_KTAS_ITEMS_DOUBLE = {400, 450, 500, 550};
     private final double[] CLUSTER_SPLASH_PATTERN_BURST_ALT = {300, 500, 700, 900, 1200, 1500, 1800, 2200, 2600, 3000};
     private final double[] CBU_52BB_SPLASH_PATTERN = {696, 898, 1063, 1205, 1391, 1556, 1704, 1884, 2048, 2200};
     private final double[] CBU_58AB_SPLASH_PATTERN = {885, 1143, 1353, 1534, 1771, 1980, 2169, 2398, 2607, 2800};
@@ -45,10 +49,13 @@ public class LevelBombMissionPlannerParametersFragment extends Fragment
     private final String[] RELEASE_MODE_ITEMS = {"---", "Single", "Pair"};
     private final String[] RIPPLE_QUANTITY_ITEMS = {"---", "1", "2", "3", "4", "5", "6"};
 
+    private enum BombClass {lb500, lb2000}
+
     private ArrayAdapter<String> releaseKtasArrayAdapter;
     private ArrayAdapter<String> releaseModeArrayAdapter;
     private ArrayAdapter<String> rippleQuantityArrayAdapter;
     private Button calculateButton;
+    private DBTools dbTools;
     private EditText approachCourseEditText;
     private EditText bombSpacingEditText;
     private EditText burstAltitudeEditText;
@@ -61,6 +68,7 @@ public class LevelBombMissionPlannerParametersFragment extends Fragment
     private SplineInterpolator interpolator;
     private TextView determinedBombFallTimeResultTextView;
     private TextView determinedBombRangeResultTextView;
+    private TextView determinedReleaseAltitudeLabelTextView;
     private TextView determinedReleaseAltitudeResultTextView;
     private TextView determinedReleaseSpeedResultTextView;
     private TextView determinedSightDepressionResultTextView;
@@ -81,6 +89,7 @@ public class LevelBombMissionPlannerParametersFragment extends Fragment
     private boolean useHpa;
     private double selectedAltimeter;
     private String selectedApproachCourse;
+    private BombClass determinedBombClass;
     private int selectedBombSpacing;
     private int selectedBurstAltitude;
     private int selectedCloudBase;
@@ -90,6 +99,8 @@ public class LevelBombMissionPlannerParametersFragment extends Fragment
     private int selectedTemperature;
     private int selectedWindDirection;
     private int selectedWindSpeed;
+    private int bombWeight;
+    private long determinedMinSafeReleaseAltitude;
     private String selectedSituation;
     private String selectedReleaseMode;
     private String selectedReleaseSpeed;
@@ -487,7 +498,45 @@ public class LevelBombMissionPlannerParametersFragment extends Fragment
                         }
                         else
                         {
+                            openDatabase();
+                            //get weight from database
+                            bombWeight = dbTools.getLoadWeight(selectedWeapon);
+                            //see which weight class it is closest to
+                            determinedBombClass = determineBombClass(bombWeight);
+                            //apply interpolation
+                            PolynomialSplineFunction minRelFunction;
 
+                            if (determinedBombClass == BombClass.lb500)
+                            {
+                                minRelFunction = interpolator.interpolate(
+                                        RELEASE_KTAS_ITEMS_DOUBLE, MIN_RELEASE_ALT_500LB);
+                            }
+                            else
+                            {
+                                minRelFunction = interpolator.interpolate(
+                                        RELEASE_KTAS_ITEMS_DOUBLE, MIN_RELEASE_ALT_2000LB);
+                            }
+
+                            determinedMinSafeReleaseAltitude = Math.round(minRelFunction.value(
+                                    Double.parseDouble(selectedReleaseSpeed)));
+
+                            determinedMinSafeReleaseAltitudeResultTextView.setText(
+                                    determinedMinSafeReleaseAltitude + "ft. AGL");
+                            determinedMinSafeReleaseAltitudeResultTextView.setTextColor(Color.BLACK);
+                            determinedMinSafeReleaseAltitudeResultTextView.setTypeface(Typeface.DEFAULT);
+
+                            if (selectedReleaseAltitudeAGL < determinedMinSafeReleaseAltitude)
+                            {
+                                Toast.makeText(getActivity(),
+                                        "Warning: Release Alt AGL < Min Safe Release Alt " +
+                                                "for level release", Toast.LENGTH_LONG).show();
+                                determinedMinSafeReleaseAltitudeResultTextView.setTextColor(Color.RED);
+                                determinedReleaseAltitudeResultTextView.setTextColor(Color.RED);
+                                determinedReleaseAltitudeLabelTextView.setText("(Increase By " +
+                                        (determinedMinSafeReleaseAltitude - selectedReleaseAltitudeAGL)
+                                        + "ft.)");
+                                determinedReleaseAltitudeLabelTextView.setTextColor(Color.RED);
+                            }
                         }
                     }
 
@@ -644,6 +693,7 @@ public class LevelBombMissionPlannerParametersFragment extends Fragment
 
     private void instantiateResources()
     {
+        dbTools = new DBTools(getActivity());
         interpolator = new SplineInterpolator();
 
         calculateButton = (Button) view.findViewById(R.id.level_release_parameters_calculate_button);
@@ -668,6 +718,8 @@ public class LevelBombMissionPlannerParametersFragment extends Fragment
                 R.id.level_release_sight_depression_result_text_view);
         determinedMinSafeReleaseAltitudeResultTextView = (TextView) view.findViewById(
                 R.id.level_min_safe_release_altitude_result_text_view);
+        determinedReleaseAltitudeLabelTextView = (TextView) view.findViewById(
+                R.id.level_determined_release_altitude_label_text_view);
         determinedReleaseAltitudeResultTextView = (TextView) view.findViewById(
                 R.id.level_determined_release_altitude_result_text_view);
         determinedReleaseSpeedResultTextView = (TextView) view.findViewById(
@@ -732,6 +784,23 @@ public class LevelBombMissionPlannerParametersFragment extends Fragment
         return finalValidity;
     }
 
+    private BombClass determineBombClass(int weight)
+    {
+        BombClass result;
+
+        int abs500 = Math.abs(weight - 500);
+        int abs2000 = Math.abs(weight - 2000);
+
+        if (abs500 < abs2000)
+            result = BombClass.lb500;
+        else if (abs500 == abs2000)
+            result = BombClass.lb2000;
+        else
+            result = BombClass.lb2000; //safe than sorry
+
+        return result;
+    }
+
     private void determineSmsParametersToDisplay()
     {
         if (selectedWeapon.contains("CBU") || selectedWeapon.contains("Rockeye"))
@@ -769,6 +838,28 @@ public class LevelBombMissionPlannerParametersFragment extends Fragment
             determinedStickLengthTextView.setVisibility(View.VISIBLE);
             determinedStickLengthLabelTextView.setVisibility(View.VISIBLE);
             determinedStickLengthResultTextView.setVisibility(View.VISIBLE);
+        }
+    }
+
+    private void openDatabase()
+    {
+        try
+        {
+            dbTools.createDatabase();
+        }
+        catch (IOException e)
+        {
+            throw new Error("BombSelectDialog: Unable to create database ");
+        }
+
+        try
+        {
+            Log.d("BombSelectDialog", "openDataBase() try");
+            dbTools.openDatabase();
+        }
+        catch (SQLiteException sqle)
+        {
+            throw sqle;
         }
     }
 }

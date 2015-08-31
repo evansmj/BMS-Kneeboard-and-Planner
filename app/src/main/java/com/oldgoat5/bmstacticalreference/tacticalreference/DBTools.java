@@ -453,6 +453,30 @@ public class DBTools extends SQLiteAssetHelper
     }
 
     /*****************************************************************
+     * Gets the weight of the desired load
+     * @param name - The load whose weight is to be returned.
+     * @return Returns integer weight of the load.
+     *****************************************************************/
+    public int getLoadWeight(String name)
+    {
+        final String queryWeight = "SELECT weight " +
+                                   "FROM load " +
+                                   "WHERE name = \"" + name + "\"";
+
+        int weight = 0;
+
+        database = this.getWritableDatabase();
+        Cursor cursor = database.rawQuery(queryWeight, null);
+
+        if (cursor.moveToNext())
+            weight = cursor.getInt(0);
+
+        cursor.close();
+
+        return weight;
+    }
+
+    /*****************************************************************
      * Gets Cluster Bomb Units
      *
      * @return Returns an ArrayList of the results.
