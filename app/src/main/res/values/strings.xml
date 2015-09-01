@@ -1093,8 +1093,9 @@
 
     <!-- Fuel Calculator Activity -->
     <string name="fuel_calculator">Bingo Fuel Calculator</string>
-    <string name="trip_nm_text_view">Return Leg Nautical Miles:</string>
-    <string name="distance_to_alternate">Home to Alternate Nautical Miles:</string>
+    <string name="trip_nm_text_view">Return Leg</string>
+    <string name="nautical_miles">(Nautical Miles)</string>
+    <string name="distance_to_alternate">Home to Alternate</string>
     <string name="altitude">Altitude:</string>
     <string name="low_level">Low Alt (&lt; 5,000ft)</string>
     <string name="med_level">Med Alt</string>
