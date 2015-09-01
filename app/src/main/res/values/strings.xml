@@ -1107,6 +1107,7 @@
     <string name="weather">Weather:</string>
     <string name="vmc">Visual Meteorological Conditions</string>
     <string name="imc">Instrument Meteorological Conditions</string>
+    <string name="joker_offset">Joker Offset</string>
 
     <!-- Reference Fragment -->
     <string name="tacan_ils_checklist">TACAN ILS Checklist</string>

@@ -12,6 +12,7 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.oldgoat5.bmstacticalreference.R;
 
@@ -27,6 +28,7 @@ public class FuelCalculatorActivity extends Activity
 {
     private EditText homeAltEditText;
     private EditText tripEditText;
+    private EditText jokerOffsetEditText;
     private RadioButton lowRadioButton;
     private RadioButton medRadioButton;
     private RadioButton hiRadioButton;
@@ -42,6 +44,7 @@ public class FuelCalculatorActivity extends Activity
     private int homeAltMiles;
     private int tripMiles;
     private int selectedAltitude;
+    private int selectedJokerOffset;
     private int weatherConditions;
 
     @Override
@@ -52,6 +55,7 @@ public class FuelCalculatorActivity extends Activity
 
         //todo add variable joker
         homeAltEditText = (EditText) findViewById(R.id.distance_to_alternate_edit_text);
+        jokerOffsetEditText = (EditText) findViewById(R.id.joker_offset_edit_text);
         tripEditText = (EditText) findViewById(R.id.trip_nm_edit_text);
 
         lowRadioButton = (RadioButton) findViewById(R.id.low_radio_button);
@@ -72,6 +76,8 @@ public class FuelCalculatorActivity extends Activity
 
         selectedAltitude = 1;
         weatherConditions = 0;
+
+        jokerOffsetEditText.setText("1000");
 
         homeAltEditText.addTextChangedListener(new TextWatcher()
         {
@@ -190,11 +196,41 @@ public class FuelCalculatorActivity extends Activity
                         break;
 
                     default:
-                        weatherConditions = 0;
+                        weatherConditions = 400;
                         break;
                 }
 
                 calculateFuel();
+            }
+        });
+
+        jokerOffsetEditText.addTextChangedListener(new TextWatcher()
+        {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2)
+            {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2)
+            {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable)
+            {
+                try
+                {
+                    selectedJokerOffset = Integer.parseInt(editable.toString());
+                    calculateFuel();
+                }
+                catch (NumberFormatException e)
+                {
+                    Toast.makeText(FuelCalculatorActivity.this, "Invalid Joker Offset",
+                            Toast.LENGTH_LONG).show();
+                }
             }
         });
     }
@@ -228,7 +264,7 @@ public class FuelCalculatorActivity extends Activity
         }
 
         bingoFuelTextView.setText(Integer.toString(total) + " lbs");
-        jokerFuelTextView.setText(Integer.toString(total + 1000) + " lbs");
+        jokerFuelTextView.setText(Integer.toString(total + selectedJokerOffset) + " lbs");
         //totalFuelTextView.setText(Integer.toString(5) + " lbs");
     }
 }

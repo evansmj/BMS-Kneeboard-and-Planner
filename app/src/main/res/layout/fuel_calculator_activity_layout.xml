@@ -172,5 +172,23 @@
                 android:layout_height="wrap_content"
                 android:text="@string/imc"/>
         </RadioGroup>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/joker_offset_text_view"
+            android:textAppearance="?android:textAppearanceLarge"
+            android:text="@string/joker_offset"
+            android:layout_below="@+id/weather_radio_group"/>
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/joker_offset_edit_text"
+            android:ems="10"
+            android:layout_below="@id/joker_offset_text_view"
+            android:inputType="number"/>
+
     </RelativeLayout>
+
 </ScrollView>
