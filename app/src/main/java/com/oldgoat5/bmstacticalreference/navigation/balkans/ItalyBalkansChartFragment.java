@@ -44,8 +44,6 @@ public class ItalyBalkansChartFragment extends Fragment
             CONTEXT = getActivity();
         }
 
-        //TODO add - if infochart ImageView onClick(), show ZoomImageView dialog with chart to allow easy zooming.
-
         dialog = new Dialog(CONTEXT);
         zoomImageView = new ZoomImageView(CONTEXT);
         imageView1 = (ImageView) view.findViewById(R.id.italy_balkans_image_view1);

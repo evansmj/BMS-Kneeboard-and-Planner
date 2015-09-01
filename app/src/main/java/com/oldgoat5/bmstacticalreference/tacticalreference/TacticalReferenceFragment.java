@@ -64,8 +64,6 @@ public class TacticalReferenceFragment extends Fragment
     private View listDialogView;
     private View view;
 
-    //TODO on click of list view item, bringup page with full item info.
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, 
             Bundle savedInstanceState)

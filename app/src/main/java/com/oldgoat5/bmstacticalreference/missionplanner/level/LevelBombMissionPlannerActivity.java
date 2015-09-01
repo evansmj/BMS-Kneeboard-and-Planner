@@ -75,7 +75,6 @@ public class LevelBombMissionPlannerActivity extends FragmentActivity
         else if (parametersFragment != null)
         {
             Log.d("levelActivity", "if parametersFragment != null)");
-            //todo may need to fix orientation change here after parametersFragment completes.
         }
         else
         {

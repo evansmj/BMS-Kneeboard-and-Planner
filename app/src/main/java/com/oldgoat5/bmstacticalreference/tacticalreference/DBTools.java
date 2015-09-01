@@ -961,7 +961,7 @@ public class DBTools extends SQLiteAssetHelper
                 R.id.threat_name_text_view)).getText().toString());
 
         Log.d("TacRef", "threatInfo[0] " + threatInfo[0]);
-        //todo add comma formatting to numbers.
+
         TextView maxTOFTextView = (TextView) listDialogView.findViewById(R.id.threat_maxtof_dialog_text_view);
         TextView weightTextView = (TextView) listDialogView.findViewById(R.id.threat_weight_dialog_text_view);
         TextView rangeTextView = (TextView) listDialogView.findViewById(R.id.threat_range_km_dialog_text_view);
@@ -990,7 +990,7 @@ public class DBTools extends SQLiteAssetHelper
     }
 
     /*****************************************************************
-     * Populates the listview dialog with weapon info.
+     * Populates the list view dialog with weapon info.
      *****************************************************************/
     public View populateWeaponDialog(Dialog listDialog, View view)
     {
@@ -1004,7 +1004,7 @@ public class DBTools extends SQLiteAssetHelper
 
         String[] weaponInfo = getWeaponInfo(((TextView) view.findViewById(
                 R.id.weapon_name_text_view)).getText().toString());
-        //todo add comma formatting to numbers.
+
         TextView weightTextView = (TextView) listDialogView.findViewById(R.id.weight_dialog_text_view);
         TextView dragTextView  = (TextView) listDialog.findViewById(R.id.drag_dialog_text_view);
         TextView blastRadiusTextView = (TextView) listDialogView.findViewById(R.id.blast_dialog_text_view);
