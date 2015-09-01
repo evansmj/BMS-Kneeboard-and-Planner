@@ -705,7 +705,7 @@ public class LevelBombMissionPlannerParametersFragment extends Fragment
         targetElevationEditText = (EditText) view.findViewById(R.id.level_target_elevation_edit_text);
 
         approachCourseEditText.setText("000°");
-        bombSpacingEditText.setText("0ft.");
+        bombSpacingEditText.setText("125ft."); //most common spacing by f-16 pilots
         burstAltitudeEditText.setText("2000ft. AGL");
         releaseAltitudeEditText.setText("5000ft. AGL");
         targetElevationEditText.setText("100ft. MSL");
