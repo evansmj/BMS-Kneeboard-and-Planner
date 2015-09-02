@@ -26,7 +26,8 @@
         android:id="@+id/surface_type_text_view"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:layout_below="@+id/reference_type_spinner"
-        android:layout_alignParentStart="true"/>
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -35,7 +36,8 @@
         android:id="@+id/load_type_text_view"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:layout_below="@+id/reference_type_spinner"
-        android:layout_alignParentStart="true"/>
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"/>
 
     <Spinner
         android:layout_width="wrap_content"
@@ -44,6 +46,8 @@
         android:id="@+id/surface_type_spinner"
         android:layout_below="@+id/surface_type_text_view"
         android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_toLeftOf="@+id/space"
         android:layout_toStartOf="@+id/space"/>
 
     <Spinner
@@ -53,16 +57,19 @@
         android:id="@+id/load_type_spinner"
         android:layout_below="@+id/load_type_text_view"
         android:layout_alignParentStart="true"
-        android:layout_toStartOf="@+id/space"/>
+        android:layout_alignParentLeft="true"
+        android:layout_toStartOf="@+id/space"
+        android:layout_toLeftOf="@+id/space"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Weapon Type"
+        android:text="@string/weapon_type"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:id="@+id/weapon_type_text_view"
         android:layout_below="@+id/reference_type_spinner"
-        android:layout_toEndOf="@+id/space"/>
+        android:layout_toEndOf="@+id/space"
+        android:layout_toRightOf="@+id/space"/>
 
     <Spinner
         android:layout_width="wrap_content"
@@ -70,8 +77,10 @@
         android:spinnerMode="dropdown"
         android:id="@+id/weapon_type_spinner"
         android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
         android:layout_below="@+id/weapon_type_text_view"
-        android:layout_toEndOf="@+id/space"/>
+        android:layout_toEndOf="@+id/space"
+        android:layout_toRightOf="@+id/space"/>
 
     <Space
         android:layout_width="20px"
@@ -86,6 +95,7 @@
         android:spinnerMode="dropdown"
         android:id="@+id/reference_type_spinner"
         android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"/>
 
 </RelativeLayout>
