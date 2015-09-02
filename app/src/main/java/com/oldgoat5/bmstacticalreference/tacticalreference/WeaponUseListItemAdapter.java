@@ -33,17 +33,32 @@ public class WeaponUseListItemAdapter extends WeaponUseListArrayAdapter<WeaponUs
         this.list = list;
     }
 
+    @Override
     public View getView(int position, View convertView, ViewGroup parent)
     {
-        LayoutInflater inflater = (LayoutInflater) CONTEXT.getSystemService(
-                Context.LAYOUT_INFLATER_SERVICE);
-        //TODO use view holder
-        View rowView = inflater.inflate(R.layout.weapon_item_layout, parent, false);
+        ViewHolder viewHolder;
 
-        TextView weaponName = (TextView) rowView.findViewById(R.id.weapon_name_text_view);
-        weaponName.setText(list.get(position).getWeaponName());
+        if (convertView == null)
+        {
+            LayoutInflater inflater = (LayoutInflater) CONTEXT.getSystemService(
+                    Context.LAYOUT_INFLATER_SERVICE);
 
-        TextView usesTextView = (TextView) rowView.findViewById(R.id.uses_text_view);
+            convertView = inflater.inflate(R.layout.weapon_item_layout, null);
+            viewHolder = new ViewHolder();
+
+            viewHolder.weaponNameTextView = (TextView) convertView.findViewById(
+                    R.id.weapon_name_text_view);
+            viewHolder.usesTextView = (TextView) convertView.findViewById(
+                    R.id.uses_text_view);
+
+            convertView.setTag(viewHolder);
+        }
+        else
+        {
+            viewHolder = (ViewHolder) convertView.getTag();
+        }
+
+        viewHolder.weaponNameTextView.setText(list.get(position).getWeaponName());
 
         String[] uses = list.get(position).getUses();
         String usesText = "";
@@ -53,18 +68,18 @@ public class WeaponUseListItemAdapter extends WeaponUseListArrayAdapter<WeaponUs
             usesText += "\n" + uses[i];
         }
 
-        usesTextView.setText(usesText);
+        viewHolder.usesTextView.setText(usesText);
 
         if ((position % 2) == 0)
-        {
-            rowView.setBackgroundColor(Color.parseColor("#E8F2FE"));
-        }
-        else
-        {
-            // odd color
-        }
+            convertView.setBackgroundColor(Color.parseColor("#E8F2FE"));
 
-        return rowView;
+        return convertView;
+    }
+
+    private static class ViewHolder
+    {
+        TextView weaponNameTextView;
+        TextView usesTextView;
     }
 
 
