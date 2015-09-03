@@ -43,7 +43,7 @@ public class WeaponUseListItemAdapter extends WeaponUseListArrayAdapter<WeaponUs
             LayoutInflater inflater = (LayoutInflater) CONTEXT.getSystemService(
                     Context.LAYOUT_INFLATER_SERVICE);
 
-            convertView = inflater.inflate(R.layout.weapon_item_layout, null);
+            convertView = inflater.inflate(R.layout.weapon_item_layout, parent, false);
             viewHolder = new ViewHolder();
 
             viewHolder.weaponNameTextView = (TextView) convertView.findViewById(
@@ -71,7 +71,13 @@ public class WeaponUseListItemAdapter extends WeaponUseListArrayAdapter<WeaponUs
         viewHolder.usesTextView.setText(usesText);
 
         if ((position % 2) == 0)
+        {
             convertView.setBackgroundColor(Color.parseColor("#E8F2FE"));
+        }
+        else
+        {
+            convertView.setBackgroundColor(Color.parseColor("#00000000"));
+        }
 
         return convertView;
     }
