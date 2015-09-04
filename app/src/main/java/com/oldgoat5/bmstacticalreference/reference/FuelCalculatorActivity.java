@@ -1,13 +1,13 @@
 package com.oldgoat5.bmstacticalreference.reference;
 
 import android.app.Activity;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -26,6 +26,7 @@ import com.oldgoat5.bmstacticalreference.R;
  *********************************************************************/
 public class FuelCalculatorActivity extends Activity
 {
+    private Button saveToDataCardButton;
     private EditText homeAltEditText;
     private EditText tripEditText;
     private EditText jokerOffsetEditText;
@@ -35,11 +36,8 @@ public class FuelCalculatorActivity extends Activity
     private RadioGroup altitudeRadioGroup;
     private RadioGroup weatherRadioGroup;
     private TextView homeAltTextView;
-    private TextView bingoFuelTextView;
-    private TextView jokerFuelTextView;
-    private TextView totalFuelTextView;
-    private TextView tripTextView;
-    private View view;
+    private TextView bingoFuelResultTextView;
+    private TextView jokerFuelResultTextView;
 
     private int homeAltMiles;
     private int tripMiles;
@@ -53,7 +51,8 @@ public class FuelCalculatorActivity extends Activity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fuel_calculator_activity_layout);
 
-        //todo add variable joker
+        saveToDataCardButton = (Button) findViewById(R.id.fuel_calculator_save_results_button);
+
         homeAltEditText = (EditText) findViewById(R.id.distance_to_alternate_edit_text);
         jokerOffsetEditText = (EditText) findViewById(R.id.joker_offset_edit_text);
         tripEditText = (EditText) findViewById(R.id.trip_nm_edit_text);
@@ -65,11 +64,9 @@ public class FuelCalculatorActivity extends Activity
         altitudeRadioGroup = (RadioGroup) findViewById(R.id.alt_radio_group);
         weatherRadioGroup = (RadioGroup) findViewById(R.id.weather_radio_group);
 
-        bingoFuelTextView = (TextView) findViewById(R.id.bingo_result_text_view);
-        jokerFuelTextView = (TextView) findViewById(R.id.joker_result_text_view);
+        bingoFuelResultTextView = (TextView) findViewById(R.id.bingo_result_text_view);
+        jokerFuelResultTextView = (TextView) findViewById(R.id.joker_result_text_view);
         homeAltTextView = (TextView) findViewById(R.id.distance_to_alternate_text_view);
-        //totalFuelTextView = (TextView) view.findViewById(R.id.total_fuel_result_text_view);
-        //tripTextView = (TextView) view.findViewById(R.id.trip_nm_text_view);
 
         altitudeRadioGroup.check(R.id.med_radio_button);
         weatherRadioGroup.check(R.id.vmc_radio_button);
@@ -233,6 +230,15 @@ public class FuelCalculatorActivity extends Activity
                 }
             }
         });
+
+        saveToDataCardButton.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                saveToSharedPreferences();
+            }
+        });
     }
 
     private void calculateFuel()
@@ -263,8 +269,25 @@ public class FuelCalculatorActivity extends Activity
                 break;
         }
 
-        bingoFuelTextView.setText(Integer.toString(total) + " lbs");
-        jokerFuelTextView.setText(Integer.toString(total + selectedJokerOffset) + " lbs");
+        bingoFuelResultTextView.setText(Integer.toString(total) + " lbs");
+        jokerFuelResultTextView.setText(Integer.toString(total + selectedJokerOffset) + " lbs");
         //totalFuelTextView.setText(Integer.toString(5) + " lbs");
+    }
+
+    private void saveToSharedPreferences()
+    {
+        try
+        {
+            SharedPreferences dataCard = getSharedPreferences("DataCard", 0);
+            SharedPreferences.Editor editor = dataCard.edit();
+            editor.putInt("joker", Integer.parseInt(jokerFuelResultTextView.getText().toString()));
+            editor.putInt("bingo", Integer.parseInt(bingoFuelResultTextView.getText().toString()));
+            editor.apply();
+        }
+        catch (NumberFormatException e)
+        {
+            Toast.makeText(FuelCalculatorActivity.this,
+                    "Invalid ", Toast.LENGTH_LONG).show();
+        }
     }
 }

@@ -72,11 +72,12 @@ public class WeaponUseListItemAdapter extends WeaponUseListArrayAdapter<WeaponUs
 
         if ((position % 2) == 0)
         {
-            convertView.setBackgroundColor(Color.parseColor("#E8F2FE"));
+            //maybe parse color faster than R.Color, reason for viewholder
+            convertView.setBackgroundColor(Color.parseColor("#E8F2FE"));//light_blue
         }
         else
         {
-            convertView.setBackgroundColor(Color.parseColor("#00000000"));
+            convertView.setBackgroundColor(Color.parseColor("#00000000"));//transparent
         }
 
         return convertView;

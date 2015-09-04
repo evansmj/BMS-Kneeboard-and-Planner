@@ -37,24 +37,51 @@ public class KoreaAirbaseArrayAdapter extends ArrayAdapter<String>
     @Override
     public View getView(int position, View convertView, ViewGroup parent)
     {
-        inflater = (LayoutInflater) CONTEXT.getSystemService(
-                Context.LAYOUT_INFLATER_SERVICE);
+        ViewHolder viewHolder;
 
-        rowView = inflater.inflate(android.R.layout.simple_list_item_1, parent, false);
+        if (convertView == null)
+        {
 
-        textView = (TextView) rowView.findViewById(android.R.id.text1);
-        textView.setText(airbases[position]);
+            inflater = (LayoutInflater) CONTEXT.getSystemService(
+                    Context.LAYOUT_INFLATER_SERVICE);
+
+            convertView = inflater.inflate(android.R.layout.simple_list_item_1, parent, false);
+            viewHolder = new ViewHolder();
+
+            viewHolder.airbaseNameTextView = (TextView) convertView.findViewById(android.R.id.text1);
+
+            convertView.setTag(viewHolder);
+        }
+        else
+        {
+            viewHolder = (ViewHolder) convertView.getTag();
+        }
+
+        viewHolder.airbaseNameTextView.setText(airbases[position]);
 
         if (airbases[position].contains("Airport Diagram"))
         {
-            textView.setTypeface(null, Typeface.BOLD);
-            //rowView.setBackgroundColor(Color.parseColor("#E8F2FE"));
+            viewHolder.airbaseNameTextView.setTypeface(null, Typeface.BOLD);
+            //default padding 6dp for simple_list_item
+            int dpValue = 6;
+            float d = CONTEXT.getResources().getDisplayMetrics().density;
+            int padding = (int) (dpValue * d);
+            viewHolder.airbaseNameTextView.setPadding(padding, 0, 0, padding);
         }
         else if (!airbases[position].contains("Airstrips"))
         {
-            textView.setPadding(150, 0, 0, 0);
+            int dpValue = 75;
+            float d = CONTEXT.getResources().getDisplayMetrics().density;
+            int padding = (int) (dpValue * d);
+            viewHolder.airbaseNameTextView.setPadding(padding, 0, 0, 0);
+            viewHolder.airbaseNameTextView.setTypeface(Typeface.DEFAULT);
         }
 
-        return rowView;
+        return convertView;
+    }
+
+    private static class ViewHolder
+    {
+        TextView airbaseNameTextView;
     }
 }

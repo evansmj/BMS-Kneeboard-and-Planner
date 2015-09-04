@@ -41,7 +41,9 @@ public class DictionaryItemAdapter extends ArrayAdapter<WordDefinitionObject>
     @Override
     public View getView(int position, View convertView, ViewGroup parent)
     {
-        inflater = (LayoutInflater) CONTEXT.getSystemService(
+        ViewHolder viewHolder;
+
+        /*inflater = (LayoutInflater) CONTEXT.getSystemService(
                 Context.LAYOUT_INFLATER_SERVICE);
 
         rowView = inflater.inflate(R.layout.word_definition_object_layout, parent, false);
@@ -60,8 +62,47 @@ public class DictionaryItemAdapter extends ArrayAdapter<WordDefinitionObject>
         else
         {
             // odd color
+        }*/
+
+        if (convertView == null)
+        {
+            inflater = (LayoutInflater) CONTEXT.getSystemService(
+                    Context.LAYOUT_INFLATER_SERVICE);
+
+            convertView = inflater.inflate(R.layout.word_definition_object_layout, parent, false);
+            viewHolder = new ViewHolder();
+
+            viewHolder.wordTextView = (TextView) convertView.findViewById(
+                    R.id.brevity_dictionary_word_text_view);
+            viewHolder.definitionTextView = (TextView) convertView.findViewById(
+                    R.id.brevity_dictionary_definition_text_view);
+
+            convertView.setTag(viewHolder);
+        }
+        else
+        {
+            viewHolder = (ViewHolder) convertView.getTag();
         }
 
-        return rowView;
+        viewHolder.wordTextView.setText((itemsArrayList).get(position).getWord());
+        viewHolder.definitionTextView.setText((itemsArrayList).get(position).getDefinition());
+
+        if ((position % 2) == 0)
+        {
+            //maybe parse color faster than R.Color, reason for viewholder
+            convertView.setBackgroundColor(Color.parseColor("#E8F2FE")); //light_blue
+        }
+        else
+        {
+            convertView.setBackgroundColor(Color.parseColor("#00000000"));//transparent
+        }
+
+        return convertView;
+    }
+
+    private static class ViewHolder
+    {
+        TextView wordTextView;
+        TextView definitionTextView;
     }
 }

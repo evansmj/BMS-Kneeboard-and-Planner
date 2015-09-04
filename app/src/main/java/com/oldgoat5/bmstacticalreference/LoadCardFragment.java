@@ -1,5 +1,6 @@
 package com.oldgoat5.bmstacticalreference;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -27,8 +28,10 @@ public class LoadCardFragment extends Fragment
         grossWeightTextView = (TextView) view.findViewById(R.id.grossWeightTextView);
         totalDragTextView = (TextView) view.findViewById(R.id.dragTextView);
         
-        
-        
+        SharedPreferences dataCard = getActivity().getSharedPreferences("DataCard", 0);
+
+        int grossWeight = dataCard.getInt("grossWeight", 0);
+        grossWeightTextView.setText(grossWeight + "lbs");
         
         return view;
     }
