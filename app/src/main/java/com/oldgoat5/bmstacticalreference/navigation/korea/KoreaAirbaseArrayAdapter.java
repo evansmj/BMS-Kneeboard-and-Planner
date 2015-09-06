@@ -79,6 +79,15 @@ public class KoreaAirbaseArrayAdapter extends ArrayAdapter<String>
             viewHolder.airbaseNameTextView.setPadding(padding75, padding2, padding6, padding3);
             viewHolder.airbaseNameTextView.setTypeface(Typeface.DEFAULT);
         }
+        else if (airbases[position].contains("Airstrips"))
+        {
+            float d = CONTEXT.getResources().getDisplayMetrics().density;
+            int padding6 = (int) (6 * d);
+            int padding2 = (int) (2 * d);
+            int padding3 = (int) (3 * d);
+            viewHolder.airbaseNameTextView.setPadding(padding6, padding2, padding6, padding3);
+            viewHolder.airbaseNameTextView.setTypeface(Typeface.DEFAULT);
+        }
 
         return convertView;
     }
