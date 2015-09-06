@@ -34,7 +34,6 @@
             android:layout_height="wrap_content"
             android:layout_alignBaseline="@id/joker_text_view"
             android:layout_centerHorizontal="true"
-            android:text="jokerresult"
             android:textAppearance="?android:attr/textAppearanceMedium"/>
 
         <TextView
@@ -43,7 +42,6 @@
             android:layout_height="wrap_content"
             android:layout_alignBaseline="@id/bingo_text_view"
             android:layout_centerHorizontal="true"
-            android:text="bingoresult"
             android:textAppearance="?android:attr/textAppearanceMedium"/>
 
         <TextView
@@ -71,6 +69,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/trip_nm_edit_text"
+            android:paddingTop="20dp"
             android:layout_centerHorizontal="true"
             android:text="@string/distance_to_alternate"
             android:textAppearance="?android:attr/textAppearanceLarge"/>
@@ -107,6 +106,7 @@
             android:id="@+id/altitude_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingTop="20dp"
             android:layout_centerHorizontal="true"
             android:layout_below="@+id/distance_to_alternate_edit_text"
             android:text="@string/altitude"
@@ -145,6 +145,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/alt_radio_group"
             android:layout_centerHorizontal="true"
+            android:paddingTop="20dp"
             android:text="@string/weather"
             android:textAppearance="?android:attr/textAppearanceLarge"/>
 
@@ -174,6 +175,7 @@
             android:id="@+id/joker_offset_text_view"
             android:textAppearance="?android:textAppearanceLarge"
             android:layout_centerHorizontal="true"
+            android:paddingTop="20dp"
             android:text="@string/joker_offset"
             android:layout_below="@+id/weather_radio_group"/>
 

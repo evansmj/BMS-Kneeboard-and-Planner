@@ -51,30 +51,11 @@ public class FuelCalculatorActivity extends Activity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fuel_calculator_activity_layout);
 
-        saveToDataCardButton = (Button) findViewById(R.id.fuel_calculator_save_results_button);
-
-        homeAltEditText = (EditText) findViewById(R.id.distance_to_alternate_edit_text);
-        jokerOffsetEditText = (EditText) findViewById(R.id.joker_offset_edit_text);
-        tripEditText = (EditText) findViewById(R.id.trip_nm_edit_text);
-
-        lowRadioButton = (RadioButton) findViewById(R.id.low_radio_button);
-        medRadioButton = (RadioButton) findViewById(R.id.med_radio_button);
-        hiRadioButton = (RadioButton) findViewById(R.id.hi_radio_button);
-
-        altitudeRadioGroup = (RadioGroup) findViewById(R.id.alt_radio_group);
-        weatherRadioGroup = (RadioGroup) findViewById(R.id.weather_radio_group);
-
-        bingoFuelResultTextView = (TextView) findViewById(R.id.bingo_result_text_view);
-        jokerFuelResultTextView = (TextView) findViewById(R.id.joker_result_text_view);
-        homeAltTextView = (TextView) findViewById(R.id.distance_to_alternate_text_view);
-
-        altitudeRadioGroup.check(R.id.med_radio_button);
-        weatherRadioGroup.check(R.id.vmc_radio_button);
+        instantiateResources();
 
         selectedAltitude = 1;
+        selectedJokerOffset = 1000;
         weatherConditions = 0;
-
-        jokerOffsetEditText.setText("1000");
 
         homeAltEditText.addTextChangedListener(new TextWatcher()
         {
@@ -274,6 +255,31 @@ public class FuelCalculatorActivity extends Activity
         //totalFuelTextView.setText(Integer.toString(5) + " lbs");
     }
 
+    private void instantiateResources()
+    {
+        saveToDataCardButton = (Button) findViewById(R.id.fuel_calculator_save_results_button);
+
+        homeAltEditText = (EditText) findViewById(R.id.distance_to_alternate_edit_text);
+        jokerOffsetEditText = (EditText) findViewById(R.id.joker_offset_edit_text);
+        tripEditText = (EditText) findViewById(R.id.trip_nm_edit_text);
+
+        jokerOffsetEditText.setText("1000");
+
+        lowRadioButton = (RadioButton) findViewById(R.id.low_radio_button);
+        medRadioButton = (RadioButton) findViewById(R.id.med_radio_button);
+        hiRadioButton = (RadioButton) findViewById(R.id.hi_radio_button);
+
+        altitudeRadioGroup = (RadioGroup) findViewById(R.id.alt_radio_group);
+        weatherRadioGroup = (RadioGroup) findViewById(R.id.weather_radio_group);
+
+        bingoFuelResultTextView = (TextView) findViewById(R.id.bingo_result_text_view);
+        jokerFuelResultTextView = (TextView) findViewById(R.id.joker_result_text_view);
+        homeAltTextView = (TextView) findViewById(R.id.distance_to_alternate_text_view);
+
+        altitudeRadioGroup.check(R.id.med_radio_button);
+        weatherRadioGroup.check(R.id.vmc_radio_button);
+    }
+
     private void saveToSharedPreferences()
     {
         try
@@ -288,6 +294,7 @@ public class FuelCalculatorActivity extends Activity
         {
             Toast.makeText(FuelCalculatorActivity.this,
                     "Invalid ", Toast.LENGTH_LONG).show();
+            Log.d("fuelcalc", "joker" + jokerFuelResultTextView.getText().toString());
         }
     }
 }
