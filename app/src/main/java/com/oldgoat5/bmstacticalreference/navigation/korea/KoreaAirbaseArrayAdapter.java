@@ -62,18 +62,21 @@ public class KoreaAirbaseArrayAdapter extends ArrayAdapter<String>
         if (airbases[position].contains("Airport Diagram"))
         {
             viewHolder.airbaseNameTextView.setTypeface(null, Typeface.BOLD);
-            //default padding 6dp for simple_list_item
-            int dpValue = 6;
+            //default padding 6dp for simple_list_item, top 2dp, bottom 3dp
             float d = CONTEXT.getResources().getDisplayMetrics().density;
-            int padding = (int) (dpValue * d);
-            viewHolder.airbaseNameTextView.setPadding(padding, 0, 0, padding);
+            int padding6 = (int) (6 * d);
+            int padding2 = (int) (2 * d);
+            int padding3 = (int) (3 * d);
+            viewHolder.airbaseNameTextView.setPadding(padding6, padding2, padding6, padding3);
         }
         else if (!airbases[position].contains("Airstrips"))
         {
-            int dpValue = 75;
             float d = CONTEXT.getResources().getDisplayMetrics().density;
-            int padding = (int) (dpValue * d);
-            viewHolder.airbaseNameTextView.setPadding(padding, 0, 0, 0);
+            int padding6 = (int) (6 * d);
+            int padding75 = (int) (75 * d);
+            int padding2 = (int) (2 * d);
+            int padding3 = (int) (3 * d);
+            viewHolder.airbaseNameTextView.setPadding(padding75, padding2, padding6, padding3);
             viewHolder.airbaseNameTextView.setTypeface(Typeface.DEFAULT);
         }
 
