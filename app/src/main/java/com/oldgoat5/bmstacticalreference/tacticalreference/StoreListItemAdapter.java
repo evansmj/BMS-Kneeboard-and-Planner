@@ -33,33 +33,50 @@ public class StoreListItemAdapter extends ArrayAdapter<StoreObject>
 
     public View getView(int position, View convertView, ViewGroup parent)
     {
+        ViewHolder viewHolder;
 
         //todo viewholder
-        LayoutInflater inflater = (LayoutInflater) CONTEXT.getSystemService(
-                Context.LAYOUT_INFLATER_SERVICE);
 
-        View rowView = inflater.inflate(
-                R.layout.store_object_layout, parent, false);
-
-        TextView nameTextView = (TextView) rowView.findViewById(R.id.store_name_text_view);
-        TextView weightTextView = (TextView) rowView.findViewById(R.id.store_weight_text_view);
-        TextView dragTextView = (TextView) rowView.findViewById(R.id.store_drag_text_view);
-
-        nameTextView.setText((itemsArrayList).get(position).getName());
-        weightTextView.setText("\nWeight: " + Integer.toString((itemsArrayList).get(position).getWeight()));
-        dragTextView.setText("Drag: " + Integer.toString((itemsArrayList).get(position).getDrag()));
-
-        if ((position % 2) == 0)
+        if (convertView == null)
         {
-            rowView.setBackgroundColor(Color.parseColor("#E8F2FE"));
+            LayoutInflater inflater = (LayoutInflater) CONTEXT.getSystemService(
+                    Context.LAYOUT_INFLATER_SERVICE);
+
+            convertView = inflater.inflate(R.layout.store_object_layout, parent, false);
+            viewHolder = new ViewHolder();
+
+            viewHolder.name = (TextView) convertView.findViewById(R.id.store_name_text_view);
+            viewHolder.weight = (TextView) convertView.findViewById(R.id.store_weight_text_view);
+            viewHolder.drag = (TextView) convertView.findViewById(R.id.store_drag_text_view);
+
+            convertView.setTag(viewHolder);
         }
         else
         {
-            // odd color
+            viewHolder = (ViewHolder) convertView.getTag();
         }
 
-        return rowView;
+        viewHolder.name.setText((itemsArrayList).get(position).getName());
+        viewHolder.weight.setText("\nWeight: " + Integer.toString((itemsArrayList).get(position).getWeight()));
+        viewHolder.drag.setText("Drag: " + Integer.toString((itemsArrayList).get(position).getDrag()));
+
+        if ((position % 2) == 0)
+        {
+            convertView.setBackgroundColor(CONTEXT.getResources().getColor(R.color.light_blue));
+        }
+        else
+        {
+            convertView.setBackgroundColor(CONTEXT.getResources().getColor(R.color.transparent));
+        }
+
+        return convertView;
     }
 
+    private static class ViewHolder
+    {
+        TextView name;
+        TextView weight;
+        TextView drag;
+    }
 
 }
