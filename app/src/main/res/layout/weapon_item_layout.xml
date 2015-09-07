@@ -15,9 +15,22 @@
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/weapon_weight_text_view"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#000000"/>
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/weapon_drag_text_view"
+        android:textColor="#000000"
+        android:textAppearance="?android:attr/textAppearanceMedium"/>
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
         android:textColor="#000000"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:id="@+id/uses_text_view"
-        android:layout_gravity="center_horizontal"/>
+        android:id="@+id/uses_text_view"/>
 
 </LinearLayout>

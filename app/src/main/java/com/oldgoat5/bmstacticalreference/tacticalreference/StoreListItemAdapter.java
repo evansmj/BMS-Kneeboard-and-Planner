@@ -33,6 +33,8 @@ public class StoreListItemAdapter extends ArrayAdapter<StoreObject>
 
     public View getView(int position, View convertView, ViewGroup parent)
     {
+
+        //todo viewholder
         LayoutInflater inflater = (LayoutInflater) CONTEXT.getSystemService(
                 Context.LAYOUT_INFLATER_SERVICE);
 

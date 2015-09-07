@@ -280,6 +280,8 @@ public class DBTools extends SQLiteAssetHelper
             Cursor cursor = database.rawQuery(query, null);
 
             tempUseList.setWeaponName(name);
+            tempUseList.setWeaponDrag(getLoadDrag(name));
+            tempUseList.setWeaponWeight(getLoadWeight(name));
 
             if (cursor.moveToNext())
             {
@@ -360,6 +362,8 @@ public class DBTools extends SQLiteAssetHelper
             Cursor cursor = database.rawQuery(query, null);
 
             tempUseList.setWeaponName(name);
+            tempUseList.setWeaponDrag(getLoadDrag(name));
+            tempUseList.setWeaponWeight(getLoadWeight(name));
 
             if (cursor.moveToNext())
             {
@@ -433,6 +437,8 @@ public class DBTools extends SQLiteAssetHelper
             Cursor cursor = database.rawQuery(query, null);
 
             tempUseList.setWeaponName(name);
+            tempUseList.setWeaponDrag(getLoadDrag(name));
+            tempUseList.setWeaponWeight(getLoadWeight(name));
 
             if (cursor.moveToNext())
             {
@@ -474,6 +480,29 @@ public class DBTools extends SQLiteAssetHelper
         cursor.close();
 
         return weight;
+    }
+
+    /*****************************************************************
+     * Get the drag of the desired load
+     * @param name - The load whose drag is to be returned.
+     * @return Returns integer drag of the load.
+     *****************************************************************/
+    public int getLoadDrag(String name)
+    {
+        final String queryDrag = "SELECT drag " +
+                                 "FROM load " +
+                                 "WHERE name = \"" + name + "\"";
+
+        int drag = 0;
+        database = this.getWritableDatabase();
+        Cursor cursor = database.rawQuery(queryDrag, null);
+
+        if (cursor.moveToNext())
+            drag = cursor.getInt(0);
+
+        cursor.close();
+
+        return drag;
     }
 
     /*****************************************************************
@@ -538,6 +567,8 @@ public class DBTools extends SQLiteAssetHelper
             Cursor cursor = database.rawQuery(query, null);
 
             tempUseList.setWeaponName(name);
+            tempUseList.setWeaponDrag(getLoadDrag(name));
+            tempUseList.setWeaponWeight(getLoadWeight(name));
 
             if (cursor.moveToNext())
             {
@@ -618,6 +649,8 @@ public class DBTools extends SQLiteAssetHelper
             Cursor cursor = database.rawQuery(query, null);
 
             tempUseList.setWeaponName(name);
+            tempUseList.setWeaponDrag(getLoadDrag(name));
+            tempUseList.setWeaponWeight(getLoadWeight(name));
 
             if (cursor.moveToNext())
             {
@@ -691,6 +724,8 @@ public class DBTools extends SQLiteAssetHelper
             Cursor cursor = database.rawQuery(query, null);
 
             tempUseList.setWeaponName(name);
+            tempUseList.setWeaponDrag(getLoadDrag(name));
+            tempUseList.setWeaponWeight(getLoadWeight(name));
 
             if (cursor.moveToNext())
             {
@@ -774,6 +809,8 @@ public class DBTools extends SQLiteAssetHelper
             Cursor cursor = database.rawQuery(query, null);
 
             tempUseList.setWeaponName(name);
+            tempUseList.setWeaponDrag(getLoadDrag(name));
+            tempUseList.setWeaponWeight(getLoadWeight(name));
 
             if (cursor.moveToNext())
             {
