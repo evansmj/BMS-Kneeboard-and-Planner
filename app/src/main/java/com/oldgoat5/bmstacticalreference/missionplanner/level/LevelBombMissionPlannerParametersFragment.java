@@ -524,6 +524,9 @@ public class LevelBombMissionPlannerParametersFragment extends Fragment
                                     determinedMinSafeReleaseAltitude + "ft. AGL");
                             determinedMinSafeReleaseAltitudeResultTextView.setTextColor(Color.BLACK);
                             determinedMinSafeReleaseAltitudeResultTextView.setTypeface(Typeface.DEFAULT);
+                            determinedReleaseAltitudeLabelTextView.setTextColor(Color.BLACK);
+                            determinedReleaseAltitudeLabelTextView.setText(
+                                    getActivity().getResources().getString(R.string.mean_sea_level));
 
                             if (selectedReleaseAltitudeAGL < determinedMinSafeReleaseAltitude)
                             {
