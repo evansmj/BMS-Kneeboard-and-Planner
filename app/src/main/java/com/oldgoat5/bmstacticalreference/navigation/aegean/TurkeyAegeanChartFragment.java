@@ -76,174 +76,261 @@ public class TurkeyAegeanChartFragment extends Fragment
                     case 0:
                         imageView.setImageResource(R.drawable.sakyatan_range_diagram);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(charts[position]);
                         dialog.show();
                         break;
                     case 1:
                         imageView.setImageResource(R.drawable.sakyatan_area_chart);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(charts[position]);
                         dialog.show();
                         break;
                     case 2:
                         imageView.setImageResource(R.drawable.sakyatan_target_list);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(charts[position]);
                         dialog.show();
                         break;
                     case 3:
                         imageView.setImageResource(R.drawable.akinci_airport_diagram);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(charts[position]);
                         dialog.show();
                         break;
                     case 4:
                         imageView.setImageResource(R.drawable.akinci_sid_rwy_03);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(charts[position]);
                         dialog.show();
                         break;
                     case 5:
                         imageView.setImageResource(R.drawable.akinci_sid_rwy_21);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(charts[position]);
                         dialog.show();
                         break;
                     case 6:
                         imageView.setImageResource(R.drawable.akinci_tacan_rwy_16r);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(charts[position]);
                         dialog.show();
                         break;
                     case 7:
                         imageView.setImageResource(R.drawable.antalya_airport_diagram);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(charts[position]);
                         dialog.show();
                         break;
                     case 8:
                         imageView.setImageResource(R.drawable.antalya_tacan_rwy_16r);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(charts[position]);
                         dialog.show();
                         break;
                     case 9:
                         imageView.setImageResource(R.drawable.bandirma_airport_diagram);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(charts[position]);
                         dialog.show();
                         break;
                     case 10:
                         imageView.setImageResource(R.drawable.bandirma_sid_rwy_01_19);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(charts[position]);
                         dialog.show();
                         break;
                     case 11:
                         imageView.setImageResource(R.drawable.bandirma_ils_dme_rwy_01);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(charts[position]);
                         dialog.show();
                         break;
                     case 12:
                         imageView.setImageResource(R.drawable.cardak_airport_diagram);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(charts[position]);
                         dialog.show();
                         break;
                     case 13:
                         imageView.setImageResource(R.drawable.cardak_ils_dme_rwy_26);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(charts[position]);
                         dialog.show();
                         break;
                     case 14:
                         imageView.setImageResource(R.drawable.cigli_airport_diagram);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(charts[position]);
                         dialog.show();
                         break;
                     case 15:
                         imageView.setImageResource(R.drawable.cigli_ils_dme_rwy_16);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(charts[position]);
                         dialog.show();
                         break;
                     case 16:
                         imageView.setImageResource(R.drawable.konya_airport_diagram);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(charts[position]);
                         dialog.show();
                         break;
                     case 17:
                         imageView.setImageResource(R.drawable.konya_sid_rwy_01_ne);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(charts[position]);
                         dialog.show();
                         break;
                     case 18:
                         imageView.setImageResource(R.drawable.konya_sid_rwy_01_sw);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(charts[position]);
                         dialog.show();
                         break;
                     case 19:
                         imageView.setImageResource(R.drawable.konya_sid_rwy_19_ne);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(charts[position]);
                         dialog.show();
                         break;
                     case 20:
                         imageView.setImageResource(R.drawable.konya_sid_rwy_19_sw);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(charts[position]);
                         dialog.show();
                         break;
                     case 21:
                         imageView.setImageResource(R.drawable.konya_ils_dme_rwy_01);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(charts[position]);
                         dialog.show();
                         break;
                     case 22:
                         imageView.setImageResource(R.drawable.merkez_airport_diagram);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(charts[position]);
                         dialog.show();
                         break;
                     case 23:
                         imageView.setImageResource(R.drawable.merkez_sid_rwy_01_ne);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(charts[position]);
                         dialog.show();
                         break;
                     case 24:
                         imageView.setImageResource(R.drawable.merkez_sid_rwy_01_sw);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(charts[position]);
                         dialog.show();
                         break;
                     case 25:
                         imageView.setImageResource(R.drawable.merkez_sid_rwy_19_se);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(charts[position]);
                         dialog.show();
                         break;
                     case 26:
                         imageView.setImageResource(R.drawable.merkez_sid_rwy_19_nw);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(charts[position]);
                         dialog.show();
                         break;
                     case 27:
                         imageView.setImageResource(R.drawable.merkez_tacan_rwy_01);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(charts[position]);
                         dialog.show();
                         break;
                     case 28:
                         imageView.setImageResource(R.drawable.merkez_ils_dme_rwy_01);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(charts[position]);
                         dialog.show();
                         break;

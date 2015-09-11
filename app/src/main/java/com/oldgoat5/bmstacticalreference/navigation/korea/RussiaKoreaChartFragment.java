@@ -75,6 +75,9 @@ public class RussiaKoreaChartFragment extends Fragment
                     case 0:
                         imageView.setImageResource(R.drawable.nachodka_airport_diagram);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;

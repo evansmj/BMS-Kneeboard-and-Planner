@@ -12,6 +12,7 @@ import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 
 import com.oldgoat5.bmstacticalreference.navigation.ZoomImageView;
 import com.oldgoat5.bmstacticalreference.R;
@@ -120,6 +121,9 @@ public class SouthKoreaChartFragment extends Fragment
                     case 0:
                         imageView.setImageResource(R.drawable.south_korea_east_west_airstrips);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
@@ -127,6 +131,9 @@ public class SouthKoreaChartFragment extends Fragment
                     case 1:
                         imageView.setImageResource(R.drawable.south_korea_north_south_airstrips);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
@@ -134,6 +141,9 @@ public class SouthKoreaChartFragment extends Fragment
                     case 2:
                         imageView.setImageResource(R.drawable.chongju_airport_diagram);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
@@ -141,6 +151,9 @@ public class SouthKoreaChartFragment extends Fragment
                     case 3:
                         imageView.setImageResource(R.drawable.chongju_five_departure);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
@@ -148,6 +161,9 @@ public class SouthKoreaChartFragment extends Fragment
                     case 4:
                         imageView.setImageResource(R.drawable.chongju_ils_rwy_23r);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
@@ -155,6 +171,9 @@ public class SouthKoreaChartFragment extends Fragment
                     case 5:
                         imageView.setImageResource(R.drawable.chongju_tacan_rwy_05l);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
@@ -162,6 +181,9 @@ public class SouthKoreaChartFragment extends Fragment
                     case 6:
                         imageView.setImageResource(R.drawable.chongju_tacan_rwy_05r);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
@@ -169,6 +191,9 @@ public class SouthKoreaChartFragment extends Fragment
                     case 7:
                         imageView.setImageResource(R.drawable.chongju_tacan_rwy_23l);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
@@ -176,6 +201,9 @@ public class SouthKoreaChartFragment extends Fragment
                     case 8:
                         imageView.setImageResource(R.drawable.chongju_visual);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
@@ -183,6 +211,9 @@ public class SouthKoreaChartFragment extends Fragment
                     case 9:
                         imageView.setImageResource(R.drawable.choongwon_airport_diagram);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
@@ -190,6 +221,9 @@ public class SouthKoreaChartFragment extends Fragment
                     case 10:
                         imageView.setImageResource(R.drawable.choongwon_one_departure);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
@@ -197,6 +231,9 @@ public class SouthKoreaChartFragment extends Fragment
                     case 11:
                         imageView.setImageResource(R.drawable.choongwon_ils_rwy_34r);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
@@ -204,6 +241,9 @@ public class SouthKoreaChartFragment extends Fragment
                     case 12:
                         imageView.setImageResource(R.drawable.choongwon_tacan_34l);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
@@ -211,6 +251,9 @@ public class SouthKoreaChartFragment extends Fragment
                     case 13:
                         imageView.setImageResource(R.drawable.choongwon_tacan_rwy_16l);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
@@ -218,6 +261,9 @@ public class SouthKoreaChartFragment extends Fragment
                     case 14:
                         imageView.setImageResource(R.drawable.choongwon_tacan_rwy_16r);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
@@ -225,6 +271,9 @@ public class SouthKoreaChartFragment extends Fragment
                     case 15:
                         imageView.setImageResource(R.drawable.hoengsong_airport_diagram);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
@@ -232,6 +281,9 @@ public class SouthKoreaChartFragment extends Fragment
                     case 16:
                         imageView.setImageResource(R.drawable.hoengsong_notam);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
@@ -239,6 +291,9 @@ public class SouthKoreaChartFragment extends Fragment
                     case 17:
                         imageView.setImageResource(R.drawable.hoengsong_ils_rwy_36);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
@@ -246,6 +301,9 @@ public class SouthKoreaChartFragment extends Fragment
                     case 18:
                         imageView.setImageResource(R.drawable.hoengsong_visual_rwy_18);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
@@ -253,6 +311,9 @@ public class SouthKoreaChartFragment extends Fragment
                     case 19:
                         imageView.setImageResource(R.drawable.hoengsong_visual_rwy_36);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
@@ -260,6 +321,9 @@ public class SouthKoreaChartFragment extends Fragment
                     case 20:
                         imageView.setImageResource(R.drawable.kangnung_airport_diagram);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
@@ -267,6 +331,9 @@ public class SouthKoreaChartFragment extends Fragment
                     case 21:
                         imageView.setImageResource(R.drawable.kangnung_kangwon_one_departure);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
@@ -274,6 +341,9 @@ public class SouthKoreaChartFragment extends Fragment
                     case 22:
                         imageView.setImageResource(R.drawable.kangnung_ils_rwy_26);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
@@ -281,6 +351,9 @@ public class SouthKoreaChartFragment extends Fragment
                     case 23:
                         imageView.setImageResource(R.drawable.kangnung_circle_to_land_rwy_08);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
@@ -288,6 +361,9 @@ public class SouthKoreaChartFragment extends Fragment
                     case 24:
                         imageView.setImageResource(R.drawable.kimhae_airport_diagram);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
@@ -295,6 +371,9 @@ public class SouthKoreaChartFragment extends Fragment
                     case 25:
                         imageView.setImageResource(R.drawable.kimhae_nakdong_3a_departure);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
@@ -302,6 +381,9 @@ public class SouthKoreaChartFragment extends Fragment
                     case 26:
                         imageView.setImageResource(R.drawable.kimhae_nakdong_4a_departure);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
@@ -309,6 +391,9 @@ public class SouthKoreaChartFragment extends Fragment
                     case 27:
                         imageView.setImageResource(R.drawable.kimhae_ils_rwy_34);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
@@ -316,6 +401,9 @@ public class SouthKoreaChartFragment extends Fragment
                     case 28:
                         imageView.setImageResource(R.drawable.kimhae_tacan_rwy_16);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
@@ -323,6 +411,9 @@ public class SouthKoreaChartFragment extends Fragment
                     case 29:
                         imageView.setImageResource(R.drawable.kimpo_airport_diagram);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
@@ -330,6 +421,9 @@ public class SouthKoreaChartFragment extends Fragment
                     case 30:
                         imageView.setImageResource(R.drawable.kimpo_1w_1e_departure);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
@@ -337,6 +431,9 @@ public class SouthKoreaChartFragment extends Fragment
                     case 31:
                         imageView.setImageResource(R.drawable.kimpo_ils_rwy_14l);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
@@ -344,6 +441,9 @@ public class SouthKoreaChartFragment extends Fragment
                     case 32:
                         imageView.setImageResource(R.drawable.kimpo_ils_rwy_14r);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
@@ -351,6 +451,9 @@ public class SouthKoreaChartFragment extends Fragment
                     case 33:
                         imageView.setImageResource(R.drawable.kimpo_ils_rwy_32l);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
@@ -358,6 +461,9 @@ public class SouthKoreaChartFragment extends Fragment
                     case 34:
                         imageView.setImageResource(R.drawable.kimpo_ils_rwy_32r);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
@@ -365,6 +471,9 @@ public class SouthKoreaChartFragment extends Fragment
                     case 35:
                         imageView.setImageResource(R.drawable.kunsan_airport_diagram);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
@@ -372,6 +481,9 @@ public class SouthKoreaChartFragment extends Fragment
                     case 36:
                         imageView.setImageResource(R.drawable.kunsan_aladi_one_departure);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
@@ -379,6 +491,9 @@ public class SouthKoreaChartFragment extends Fragment
                     case 37:
                         imageView.setImageResource(R.drawable.kunsan_coyote_three_departure);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
@@ -386,6 +501,9 @@ public class SouthKoreaChartFragment extends Fragment
                     case 38:
                         imageView.setImageResource(R.drawable.kunsan_patro_departure);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
@@ -393,6 +511,9 @@ public class SouthKoreaChartFragment extends Fragment
                     case 39:
                         imageView.setImageResource(R.drawable.kunsan_ils_rwy_18);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
@@ -400,6 +521,9 @@ public class SouthKoreaChartFragment extends Fragment
                     case 40:
                         imageView.setImageResource(R.drawable.kunsan_ils_rwy_36);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
@@ -407,6 +531,9 @@ public class SouthKoreaChartFragment extends Fragment
                     case 41:
                         imageView.setImageResource(R.drawable.kunsan_visual_18_36);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
@@ -414,6 +541,9 @@ public class SouthKoreaChartFragment extends Fragment
                     case 42:
                         imageView.setImageResource(R.drawable.kwangju_airport_diagram);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
@@ -421,6 +551,9 @@ public class SouthKoreaChartFragment extends Fragment
                     case 43:
                         imageView.setImageResource(R.drawable.kwangju_3a_departure_rwy_02);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
@@ -428,6 +561,9 @@ public class SouthKoreaChartFragment extends Fragment
                     case 44:
                         imageView.setImageResource(R.drawable.kwangju_4a_departure_rwy_20);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
@@ -435,6 +571,9 @@ public class SouthKoreaChartFragment extends Fragment
                     case 45:
                         imageView.setImageResource(R.drawable.kwangju_ils_rwy_02);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
@@ -442,6 +581,9 @@ public class SouthKoreaChartFragment extends Fragment
                     case 46:
                         imageView.setImageResource(R.drawable.kwangju_ils_rwy_20);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
@@ -449,6 +591,9 @@ public class SouthKoreaChartFragment extends Fragment
                     case 47:
                         imageView.setImageResource(R.drawable.mandumi_airport_diagram);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
@@ -456,6 +601,9 @@ public class SouthKoreaChartFragment extends Fragment
                     case 48:
                         imageView.setImageResource(R.drawable.osan_airport_diagram);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
@@ -463,6 +611,9 @@ public class SouthKoreaChartFragment extends Fragment
                     case 49:
                         imageView.setImageResource(R.drawable.osan_draggin_one_departure);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
@@ -470,6 +621,9 @@ public class SouthKoreaChartFragment extends Fragment
                     case 50:
                         imageView.setImageResource(R.drawable.osan_jet_yoke_four_departure);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
@@ -477,6 +631,9 @@ public class SouthKoreaChartFragment extends Fragment
                     case 51:
                         imageView.setImageResource(R.drawable.osan_ils_rwy_09);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
@@ -484,6 +641,9 @@ public class SouthKoreaChartFragment extends Fragment
                     case 52:
                         imageView.setImageResource(R.drawable.osan_ils_rwy_27);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
@@ -491,6 +651,9 @@ public class SouthKoreaChartFragment extends Fragment
                     case 53:
                         imageView.setImageResource(R.drawable.pohang_airport_diagram);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
@@ -498,6 +661,9 @@ public class SouthKoreaChartFragment extends Fragment
                     case 54:
                         imageView.setImageResource(R.drawable.pohang_posco_one_departure);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
@@ -505,6 +671,9 @@ public class SouthKoreaChartFragment extends Fragment
                     case 55:
                         imageView.setImageResource(R.drawable.pohang_ils_rwy_26);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
@@ -512,6 +681,9 @@ public class SouthKoreaChartFragment extends Fragment
                     case 56:
                         imageView.setImageResource(R.drawable.pohang_tacan_rwy_08);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
@@ -519,6 +691,9 @@ public class SouthKoreaChartFragment extends Fragment
                     case 57:
                         imageView.setImageResource(R.drawable.pusan_airport_diagram);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
@@ -526,6 +701,9 @@ public class SouthKoreaChartFragment extends Fragment
                     case 58:
                         imageView.setImageResource(R.drawable.pusan_korav_north_departure);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
@@ -533,6 +711,9 @@ public class SouthKoreaChartFragment extends Fragment
                     case 59:
                         imageView.setImageResource(R.drawable.pusan_ils_rwy_32);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
@@ -540,6 +721,9 @@ public class SouthKoreaChartFragment extends Fragment
                     case 60:
                         imageView.setImageResource(R.drawable.pusan_tacan_rwy_14);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
@@ -547,6 +731,9 @@ public class SouthKoreaChartFragment extends Fragment
                     case 61:
                         imageView.setImageResource(R.drawable.pyongtaek_airport_diagram);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
@@ -554,6 +741,9 @@ public class SouthKoreaChartFragment extends Fragment
                     case 62:
                         imageView.setImageResource(R.drawable.pyongtaek_osan_one_departure);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
@@ -561,6 +751,9 @@ public class SouthKoreaChartFragment extends Fragment
                     case 63:
                         imageView.setImageResource(R.drawable.pyongtaek_ils_rwy_34);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
@@ -568,6 +761,9 @@ public class SouthKoreaChartFragment extends Fragment
                     case 64:
                         imageView.setImageResource(R.drawable.pyongtaek_tacan_rwy_16);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
@@ -575,6 +771,9 @@ public class SouthKoreaChartFragment extends Fragment
                     case 65:
                         imageView.setImageResource(R.drawable.sachon_airport_diagram);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
@@ -582,6 +781,9 @@ public class SouthKoreaChartFragment extends Fragment
                     case 66:
                         imageView.setImageResource(R.drawable.sachon_one_deprture);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
@@ -589,6 +791,9 @@ public class SouthKoreaChartFragment extends Fragment
                     case 67:
                         imageView.setImageResource(R.drawable.sachon_ils_rwy_05l);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
@@ -596,6 +801,9 @@ public class SouthKoreaChartFragment extends Fragment
                     case 68:
                         imageView.setImageResource(R.drawable.sachon_ils_rwy_23r);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
@@ -603,6 +811,9 @@ public class SouthKoreaChartFragment extends Fragment
                     case 69:
                         imageView.setImageResource(R.drawable.sachon_tacan_rwy_05r);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
@@ -610,6 +821,9 @@ public class SouthKoreaChartFragment extends Fragment
                     case 70:
                         imageView.setImageResource(R.drawable.sachon_tacan_rwy_23l);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
@@ -617,6 +831,9 @@ public class SouthKoreaChartFragment extends Fragment
                     case 71:
                         imageView.setImageResource(R.drawable.seosan_haemi_airport_diagram);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
@@ -624,6 +841,9 @@ public class SouthKoreaChartFragment extends Fragment
                     case 72:
                         imageView.setImageResource(R.drawable.seosan_haemi_seosan_one_departure);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
@@ -631,6 +851,9 @@ public class SouthKoreaChartFragment extends Fragment
                     case 73:
                         imageView.setImageResource(R.drawable.seosan_haemi_ils_rwy_02r);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
@@ -638,6 +861,9 @@ public class SouthKoreaChartFragment extends Fragment
                     case 74:
                         imageView.setImageResource(R.drawable.seosan_haemi_hi_tacan_rwy_02l);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
@@ -645,6 +871,9 @@ public class SouthKoreaChartFragment extends Fragment
                     case 75:
                         imageView.setImageResource(R.drawable.seosan_haemi_hi_tacan_rwy_20l);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
@@ -652,6 +881,9 @@ public class SouthKoreaChartFragment extends Fragment
                     case 76:
                         imageView.setImageResource(R.drawable.seosan_haemi_hi_tacan_rwy_20r);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
@@ -659,6 +891,9 @@ public class SouthKoreaChartFragment extends Fragment
                     case 77:
                         imageView.setImageResource(R.drawable.seoul_airport_diagram);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
@@ -666,6 +901,9 @@ public class SouthKoreaChartFragment extends Fragment
                     case 78:
                         imageView.setImageResource(R.drawable.seoul_noru_one_departure);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
@@ -673,6 +911,9 @@ public class SouthKoreaChartFragment extends Fragment
                     case 79:
                         imageView.setImageResource(R.drawable.seoul_ils_rwy_19);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
@@ -680,6 +921,9 @@ public class SouthKoreaChartFragment extends Fragment
                     case 80:
                         imageView.setImageResource(R.drawable.seoul_tacan_rwy_01);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
@@ -687,6 +931,9 @@ public class SouthKoreaChartFragment extends Fragment
                     case 81:
                         imageView.setImageResource(R.drawable.seoul_tacan_rwy_18);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
@@ -694,6 +941,9 @@ public class SouthKoreaChartFragment extends Fragment
                     case 82:
                         imageView.setImageResource(R.drawable.seoul_tacan_rwy_36);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
@@ -701,6 +951,9 @@ public class SouthKoreaChartFragment extends Fragment
                     case 83:
                         imageView.setImageResource(R.drawable.sokcho_airport_diagram);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
@@ -708,6 +961,9 @@ public class SouthKoreaChartFragment extends Fragment
                     case 84:
                         imageView.setImageResource(R.drawable.sokcho_notam);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
@@ -715,6 +971,9 @@ public class SouthKoreaChartFragment extends Fragment
                     case 85:
                         imageView.setImageResource(R.drawable.sokcho_one_departure);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
@@ -722,6 +981,9 @@ public class SouthKoreaChartFragment extends Fragment
                     case 86:
                         imageView.setImageResource(R.drawable.sokcho_ils_rwy_18);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
@@ -729,6 +991,9 @@ public class SouthKoreaChartFragment extends Fragment
                     case 87:
                         imageView.setImageResource(R.drawable.sokcho_visual_rwy_18);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
@@ -736,6 +1001,9 @@ public class SouthKoreaChartFragment extends Fragment
                     case 88:
                         imageView.setImageResource(R.drawable.sokcho_visual_rwy_36);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
@@ -743,6 +1011,9 @@ public class SouthKoreaChartFragment extends Fragment
                     case 89:
                         imageView.setImageResource(R.drawable.suwon_airport_diagram);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
@@ -750,6 +1021,9 @@ public class SouthKoreaChartFragment extends Fragment
                     case 90:
                         imageView.setImageResource(R.drawable.suwon_six_departure);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
@@ -757,6 +1031,9 @@ public class SouthKoreaChartFragment extends Fragment
                     case 91:
                         imageView.setImageResource(R.drawable.suwon_ils_rwy_32l);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
@@ -764,6 +1041,9 @@ public class SouthKoreaChartFragment extends Fragment
                     case 92:
                         imageView.setImageResource(R.drawable.suwon_tacan_rwy_14l_14r);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
@@ -771,6 +1051,9 @@ public class SouthKoreaChartFragment extends Fragment
                     case 93:
                         imageView.setImageResource(R.drawable.suwon_tacan_rwy_32r);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
@@ -778,6 +1061,9 @@ public class SouthKoreaChartFragment extends Fragment
                     case 94:
                         imageView.setImageResource(R.drawable.taegu_airport_diagram);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
@@ -785,6 +1071,9 @@ public class SouthKoreaChartFragment extends Fragment
                     case 95:
                         imageView.setImageResource(R.drawable.taegu_six_departure);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
@@ -792,6 +1081,9 @@ public class SouthKoreaChartFragment extends Fragment
                     case 96:
                         imageView.setImageResource(R.drawable.taegu_ils_rwy_32);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
@@ -799,6 +1091,9 @@ public class SouthKoreaChartFragment extends Fragment
                     case 97:
                         imageView.setImageResource(R.drawable.taegu_circle_to_land_rwy_14);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
@@ -806,6 +1101,9 @@ public class SouthKoreaChartFragment extends Fragment
                     case 98:
                         imageView.setImageResource(R.drawable.yechon_airport_diagram);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
@@ -813,6 +1111,9 @@ public class SouthKoreaChartFragment extends Fragment
                     case 99:
                         imageView.setImageResource(R.drawable.yechon_solty_5a_departure);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
@@ -820,6 +1121,9 @@ public class SouthKoreaChartFragment extends Fragment
                     case 100:
                         imageView.setImageResource(R.drawable.yechon_ils_rwy_26);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
@@ -827,6 +1131,9 @@ public class SouthKoreaChartFragment extends Fragment
                     case 101:
                         imageView.setImageResource(R.drawable.yechon_tacan_rwy_08);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;

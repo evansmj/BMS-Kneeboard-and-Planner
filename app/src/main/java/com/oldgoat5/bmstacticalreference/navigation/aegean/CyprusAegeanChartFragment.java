@@ -67,12 +67,18 @@ public class CyprusAegeanChartFragment extends Fragment
                     case 0:
                         imageView.setImageResource(R.drawable.pafos_airport_diagram);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(charts[position]);
                         dialog.show();
                         break;
                     case 1:
                         imageView.setImageResource(R.drawable.pafos_ils_dme_rwy_29);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(charts[position]);
                         dialog.show();
                         break;

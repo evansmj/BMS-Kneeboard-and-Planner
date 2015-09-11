@@ -560,7 +560,7 @@ public class LevelBombMissionPlannerParametersFragment extends Fragment
                     final double fallTime = Math.round(
                             (timeToMaxHeight + timeMaxHeightToImpact) * 10.0) / 10.0; //seconds
                     final double speedAtImpact = Math.sqrt(
-                            Math.pow((g * timeMaxHeightToImpact), 2) + Math.pow(Vx, 2));
+                            Math.pow((g * timeMaxHeightToImpact), 2) + Math.pow(Vx, 2));//maybe use later
 
                     //Log.d("levelreleaseparamet", fallTime + "seconds fall ");
                     //Log.d("levelreleaseparamet", "unrounded seconds fall" + (timeToMaxHeight + timeMaxHeightToImpact));
@@ -576,13 +576,9 @@ public class LevelBombMissionPlannerParametersFragment extends Fragment
                     final double altimeterPascal;
 
                     if (!useHpa)
-                    {
                         altimeterPascal = selectedAltimeter * 3386.38867;
-                    }
                     else
-                    {
                         altimeterPascal = selectedAltimeter * 100;
-                    }
 
                     final double R = 287.05; //constant specific gas for dry air
                     final double Po = 1.225; //kg/m^3 (standard pressure 0 msl, 15C)

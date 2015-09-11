@@ -85,6 +85,9 @@ public class ChinaKoreaChartFragment extends Fragment
                     case 0:
                         imageView.setImageResource(R.drawable.liuhe_airport_diagram);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(airbases[0]);
                         dialog.show();
                         break;
@@ -92,6 +95,9 @@ public class ChinaKoreaChartFragment extends Fragment
                     case 1:
                         imageView.setImageResource(R.drawable.shenyang_airport_diagram);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(airbases[1]);
                         dialog.show();
                         break;

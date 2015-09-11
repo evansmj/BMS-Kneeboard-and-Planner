@@ -72,6 +72,9 @@ public class JapanKoreaChartFragment extends Fragment
                     case 0:
                         imageView.setImageResource(R.drawable.fukuoka_kadena_airport_diagram);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
@@ -79,6 +82,9 @@ public class JapanKoreaChartFragment extends Fragment
                     case 1:
                         imageView.setImageResource(R.drawable.fukuoka_kadena_departure);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
@@ -86,6 +92,9 @@ public class JapanKoreaChartFragment extends Fragment
                     case 2:
                         imageView.setImageResource(R.drawable.fukuoka_kadena_adiz_crossing);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
@@ -93,6 +102,9 @@ public class JapanKoreaChartFragment extends Fragment
                     case 3:
                         imageView.setImageResource(R.drawable.fukuoka_kadena_ils_rwy_01);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
@@ -100,6 +112,9 @@ public class JapanKoreaChartFragment extends Fragment
                     case 4:
                         imageView.setImageResource(R.drawable.fukuoka_kadena_ils_rwy_19);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
@@ -107,6 +122,9 @@ public class JapanKoreaChartFragment extends Fragment
                     case 5:
                         imageView.setImageResource(R.drawable.fukuoka_kadena_tacan_rwy_15);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
@@ -114,6 +132,9 @@ public class JapanKoreaChartFragment extends Fragment
                     case 6:
                         imageView.setImageResource(R.drawable.fukuoka_kadena_tacan_rwy_33);
                         dialog.setContentView(imageView);
+                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        dialog.setCanceledOnTouchOutside(false);
                         dialog.setTitle(airbases[position]);
                         dialog.show();
                         break;
