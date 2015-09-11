@@ -5,68 +5,52 @@ import android.graphics.Canvas;
 import android.graphics.Rect;
 import android.text.TextPaint;
 import android.util.AttributeSet;
+import android.view.Gravity;
 import android.widget.TextView;
 
 /**********************************************************************
- * 
- * @author YShinkarev http://stackoverflow.com/questions/2888780/is-it
- *         -possible-to-write-vertically-in-a-textview-in-android
- *
- * Creates a vertical text view widget for use in load out page.  
+ * Creates a vertical text view widget.
  **********************************************************************/
 public class VerticalTextView extends TextView
 {
-    private int _width, _height;
-    private final Rect _bounds = new Rect();
+    final boolean topDown;
 
-    public VerticalTextView(Context context, AttributeSet attrs,
-            int defStyle)
-    {
-        super(context , attrs , defStyle);
-    }
-
-    public VerticalTextView(Context context, AttributeSet attrs)
-    {
-        super(context , attrs);
-    }
-
-    public VerticalTextView(Context context)
-    {
-        super(context);
+    public VerticalTextView(Context context, AttributeSet attrs){
+        super(context, attrs);
+        final int gravity = getGravity();
+        if(Gravity.isVertical(gravity) && (gravity&Gravity.VERTICAL_GRAVITY_MASK) == Gravity.BOTTOM) {
+            setGravity((gravity&Gravity.HORIZONTAL_GRAVITY_MASK) | Gravity.TOP);
+            topDown = false;
+        }else
+            topDown = true;
     }
 
     @Override
-    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec)
-    {
-        super.onMeasure(widthMeasureSpec , heightMeasureSpec);
-        // vise versa
-        _height = getMeasuredWidth();
-        _width = getMeasuredHeight();
-        setMeasuredDimension(_width , _height);
+    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec){
+        super.onMeasure(heightMeasureSpec, widthMeasureSpec);
+        setMeasuredDimension(getMeasuredHeight(), getMeasuredWidth());
     }
 
     @Override
-    protected void onDraw(Canvas canvas)
-    {
+    protected void onDraw(Canvas canvas){
+        TextPaint textPaint = getPaint();
+        textPaint.setColor(getCurrentTextColor());
+        textPaint.drawableState = getDrawableState();
+
         canvas.save();
 
-        canvas.translate(_width , _height);
-        canvas.rotate(-90);
+        if(topDown){
+            canvas.translate(getWidth(), 0);
+            canvas.rotate(90);
+        }else {
+            canvas.translate(0, getHeight());
+            canvas.rotate(-90);
+        }
 
-        TextPaint paint = getPaint();
-        paint.setColor(getTextColors().getDefaultColor());
 
-        String text = text();
+        canvas.translate(getCompoundPaddingLeft(), getExtendedPaddingTop());
 
-        paint.getTextBounds(text , 0 , text.length() , _bounds);
-        canvas.drawText(text , getCompoundPaddingLeft() ,
-                (_bounds.height() - _width) / 2 , paint);
-
+        getLayout().draw(canvas);
         canvas.restore();
-    }
-
-    private String text()
-    {
-        return super.getText().toString();
     }
 }

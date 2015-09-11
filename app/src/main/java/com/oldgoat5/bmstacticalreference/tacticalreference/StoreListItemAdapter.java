@@ -35,8 +35,6 @@ public class StoreListItemAdapter extends ArrayAdapter<StoreObject>
     {
         ViewHolder viewHolder;
 
-        //todo viewholder
-
         if (convertView == null)
         {
             LayoutInflater inflater = (LayoutInflater) CONTEXT.getSystemService(

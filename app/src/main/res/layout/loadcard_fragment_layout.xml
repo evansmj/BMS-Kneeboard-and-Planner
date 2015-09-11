@@ -1,25 +1,162 @@
 <?xml version="1.0" encoding="utf-8"?>
-<GridLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" 
-    android:background="#FFFFFF"
-    android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:theme="@style/BlueTheme" >
 
     <TextView
-        android:id="@+id/grossWeightTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
+        android:id="@+id/data_card_callsign_label_text_view"
+        android:padding="3dp"
         android:layout_alignParentTop="true"
-        android:text="@string/loadcard_gross_weight" />
+        android:background="@drawable/card_dark_background"
+        android:textAppearance="?android:textAppearanceMedium"
+        android:text="@string/callsign_label"/>
 
-    <TextView
-        android:id="@+id/dragTextView"
+    <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/grossWeightTextView"
-        android:text="@string/loadcard_drag" />
+        style="@style/Card.EditText.Style"
+        android:id="@+id/data_card_callsign_edit_text"
+        android:background="@color/card_yellow"
+        android:inputType="textNoSuggestions"
+        android:padding="3dp"
+        android:layout_alignParentTop="true"
+        android:layout_above="@+id/data_card_flight_label_text_view"
+        android:layout_toRightOf="@+id/data_card_callsign_label_text_view"
+        android:textAppearance="?android:textAppearanceMedium"
+        android:layout_toLeftOf="@+id/data_card_tcn_label_text_view"/>
 
-</GridLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/data_card_package_label_text_view"
+        android:layout_toRightOf="@id/data_card_callsign_edit_text"
+        android:layout_above="@id/data_card_flight_label_text_view"
+        android:padding="3dp"
+        android:background="@drawable/card_dark_background"
+        android:textAppearance="?android:textAppearanceMedium"
+        android:text="@string/package_label"
+        android:layout_alignParentTop="true"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/data_card_package_edit_text"
+        android:layout_toRightOf="@+id/data_card_package_label_text_view"
+        android:layout_above="@id/data_card_flight_label_text_view"
+        android:textAppearance="?android:textAppearanceMedium"
+        android:padding="3dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        style="@style/Card.EditText.Style"/>
+
+    <com.oldgoat5.bmstacticalreference.tacticalreference.VerticalTextView
+        android:id="@+id/data_card_flight_label_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/card_dark_background"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:padding="3dp"
+        android:gravity="bottom|center"
+        android:text="@string/flight_label"
+        android:layout_below="@id/data_card_callsign_label_text_view"
+        android:layout_alignBottom="@+id/data_card_wing4_label_text_view"/>
+
+    <TextView
+        android:id="@+id/data_card_pos_label_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/card_dark_background"
+        android:padding="3dp"
+        android:text="@string/pos_label"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_toRightOf="@+id/data_card_flight_label_text_view"
+        android:layout_below="@+id/data_card_callsign_label_text_view"
+        android:layout_alignRight="@+id/data_card_element_label_text_view"/>
+
+    <TextView
+        android:id="@+id/data_card_name_label_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="3dp"
+        android:layout_alignBottom="@id/data_card_pos_label_text_view"
+        android:text="@string/name_label"
+        android:background="@drawable/card_dark_background"
+        android:textAppearance="?android:textAppearanceMedium"
+        android:layout_toRightOf="@+id/data_card_pos_label_text_view"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/data_card_idm_label_text_view"
+        android:layout_alignBottom="@id/data_card_name_label_text_view"
+        android:textAppearance="?android:textAppearanceMedium"
+        android:background="@drawable/card_dark_background"
+        android:layout_toRightOf="@+id/data_card_name_label_text_view"
+        android:padding="3dp"
+        android:text="@string/idm_label"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/data_card_tcn_label_text_view"
+        android:layout_toRightOf="@+id/data_card_idm_label_text_view"
+        android:textAppearance="?android:textAppearanceMedium"
+        android:text="@string/tcn_label"
+        android:layout_alignParentRight="true"
+        android:layout_alignBottom="@id/data_card_idm_label_text_view"
+        android:padding="3dp"
+        android:background="@drawable/card_dark_background"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/data_card_lead_label_text_view"
+        android:text="@string/lead_label"
+        android:padding="3dp"
+        android:layout_toRightOf="@+id/data_card_flight_label_text_view"
+        android:layout_below="@+id/data_card_pos_label_text_view"
+        android:textAppearance="?android:textAppearanceMedium"
+        android:background="@drawable/card_dark_background"
+        android:layout_toLeftOf="@+id/data_card_name_label_text_view"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/data_card_wing2_label_text_view"
+        android:textAppearance="?android:textAppearanceMedium"
+        android:text="@string/wing2_label"
+        android:background="@drawable/card_dark_background"
+        android:layout_below="@id/data_card_lead_label_text_view"
+        android:layout_toRightOf="@id/data_card_flight_label_text_view"
+        android:padding="3dp"
+        android:layout_alignRight="@+id/data_card_lead_label_text_view"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/data_card_element_label_text_view"
+        android:background="@drawable/card_dark_background"
+        android:textAppearance="?android:textAppearanceMedium"
+        android:padding="3dp"
+        android:layout_below="@id/data_card_wing2_label_text_view"
+        android:layout_toRightOf="@id/data_card_flight_label_text_view"
+        android:text="@string/element_label"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/data_card_wing4_label_text_view"
+        android:layout_below="@id/data_card_element_label_text_view"
+        android:text="@string/wing4_label"
+        android:textAppearance="?android:textAppearanceMedium"
+        android:padding="3dp"
+        android:layout_toRightOf="@id/data_card_flight_label_text_view"
+        android:background="@drawable/card_dark_background"
+        android:layout_alignRight="@+id/data_card_element_label_text_view"/>
+
+</RelativeLayout>

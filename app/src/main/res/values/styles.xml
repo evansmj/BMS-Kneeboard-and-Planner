@@ -17,5 +17,14 @@
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
         
     </style>
+    
+    <style
+        name="Card.EditText.Style"
+        parent="@android:style/Widget.EditText">
+        
+        <item name="android:background">@drawable/card_yellow_background</item>
+        <item name="background">@drawable/card_yellow_background</item>
+        
+    </style>
 
 </resources>

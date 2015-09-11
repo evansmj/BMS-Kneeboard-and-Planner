@@ -114,8 +114,6 @@ public class ReferenceFragment extends Fragment
             }
         });
 
-
-        // TODO add tactical formation reference pictures.
         return view;
     }
 

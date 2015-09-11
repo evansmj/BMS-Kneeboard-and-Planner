@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="dark_yellow">#CCCC00</color>
+    <color name="card_yellow">#EEE8AA</color>
     <color name="brown">#B5651D</color>
     <color name="light_blue">#E8F2FE</color>
     <color name="medium_blue">#7A99AD</color>
@@ -10,5 +10,6 @@
     <color name="text_blue">#417394</color>
     <color name="black">#000000</color>
     <color name="dark_red">#990000</color>
+    <color name="gray">#C0C0C0</color>
     <color name="transparent">#00000000</color>
 </resources>

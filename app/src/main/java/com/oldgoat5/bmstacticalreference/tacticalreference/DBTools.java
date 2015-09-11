@@ -23,6 +23,7 @@ import java.util.HashMap;
 public class DBTools extends SQLiteAssetHelper
 {
     private final Context CONTEXT;
+    //todo verify threat values
     
     private static String DB_PATH;
     private static String DB_NAME = "BMSLoadDB.db";

@@ -71,8 +71,6 @@ public class TacticalReferenceFragment extends Fragment
         view = inflater.inflate(
                 R.layout.tactical_reference_fragment_layout, container, false);
 
-        //todo add weight and drag to listview
-
         if (this.isAdded())
         {
             CONTEXT = getActivity();

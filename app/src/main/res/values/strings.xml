@@ -17,6 +17,18 @@
     <string name="eleven">11</string>
     <string name="twelve">12</string>
 
+    <!-- Data Card Fragment -->
+    <string name="callsign_label">Callsign</string>
+    <string name="flight_label">Flight</string>
+    <string name="pos_label">Pos</string>
+    <string name="lead_label">1 Lead</string>
+    <string name="wing2_label">2 Wing</string>
+    <string name="element_label">3 Element</string>
+    <string name="wing4_label">4 Wing</string>
+    <string name="name_label">Name</string>
+    <string name="idm_label">IDM</string>
+    <string name="tcn_label">TCN</string>
+    <string name="package_label">Package</string>
     <string name="loadcard_gross_weight">Gross Weight: </string>
     <string name="loadcard_drag">Drag: </string>
     <string name="save_to_data_card">Save To Data Card</string>
