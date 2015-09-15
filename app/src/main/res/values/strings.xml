@@ -34,6 +34,20 @@
     <string name="save_to_data_card">Save To Data Card</string>
     <string name="notes">Notes:</string>
     <string name="tasking">Tasking</string>
+    <string name="delivery">Delivery</string>
+    <string name="app_course">CRS</string>
+    <string name="app_course_init">000°</string>
+    <string name="msra">MSRA</string>
+    <string name="msra_init">0000ft. AGL</string>
+    <string name="rel_alt">Rel. Alt</string>
+    <string name="type_no_colon">Type</string>
+    <string name="rel_alt_init">0000ft. MSL</string>
+    <string name="range_no_colon">Range</string>
+    <string name="range_init">00000ft.</string>
+    <string name="rel_spd">Rel. Spd</string>
+    <string name="rel_spd_init">345 KCAS</string>
+    <string name="tof">Time of Fall</string>
+    <string name="tof_init">10.7s</string>
 
     <string name="image_content_description">F-16 front profile</string>
 

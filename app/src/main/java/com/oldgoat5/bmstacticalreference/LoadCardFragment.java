@@ -20,6 +20,7 @@ public class LoadCardFragment extends Fragment
     private View view;
 
     //todo reorganize tools package
+    //todo setting to change text size.
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, 

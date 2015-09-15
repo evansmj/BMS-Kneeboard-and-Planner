@@ -56,7 +56,7 @@ public class MainFragmentPageAdapter extends FragmentPagerAdapter
         switch (position)
         {
             case 0:
-                return "Load Card";
+                return "Data Card";
             case 1:
                 return "Tactical Reference";
             case 2:
