@@ -45,9 +45,9 @@
     <string name="range_no_colon">Range</string>
     <string name="range_init">00000ft.</string>
     <string name="rel_spd">Rel. Spd</string>
-    <string name="rel_spd_init">345 KCAS</string>
-    <string name="tof">Time of Fall</string>
-    <string name="tof_init">10.7s</string>
+    <string name="rel_spd_init">000 KCAS</string>
+    <string name="tof">T. o. Fall</string>
+    <string name="tof_init">00.0s</string>
 
     <string name="image_content_description">F-16 front profile</string>
 
