@@ -832,6 +832,7 @@
             android:minWidth="60dp"
             android:padding="3dp"
             android:inputType="textNoSuggestions"
+            android:layout_toLeftOf="@id/data_card_package_label_text_view"
             android:textAppearance="?android:textAppearanceMedium"
             android:layout_toRightOf="@id/data_card_delivery_type_text_view"
             android:layout_alignBaseline="@+id/data_card_delivery_type_text_view"/>
@@ -845,6 +846,7 @@
             android:background="@drawable/card_dark_background"
             android:padding="3dp"
             android:textAppearance="?android:textAppearanceMedium"
+            android:layout_alignLeft="@id/data_card_package_label_text_view"
             android:layout_toRightOf="@+id/data_card_delivery_type_edit_text"/>
 
         <EditText
@@ -947,6 +949,7 @@
             android:layout_below="@id/data_card_delivery_release_altitude_text_view"
             android:text="@string/rel_spd"
             android:layout_toRightOf="@id/data_card_delivery_label_text_view"
+            android:layout_alignRight="@+id/data_card_pos_label_text_view"
             android:padding="3dp"
             android:textAppearance="?android:textAppearanceMedium"/>
 
