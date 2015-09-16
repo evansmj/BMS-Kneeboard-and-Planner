@@ -53,7 +53,7 @@
             style="@style/Card.EditText.Style"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_above="@id/data_card_flight_label_text_view"
+            android:layout_above="@+id/data_card_flight_label_text_view"
             android:textAppearance="?android:textAppearanceMedium"
             android:layout_alignParentTop="true"
             android:layout_toLeftOf="@+id/data_card_flight_notes_label_text_view"
@@ -65,13 +65,13 @@
             android:id="@+id/data_card_flight_label_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/data_card_callsign_label_text_view"
+            android:layout_below="@+id/data_card_callsign_label_text_view"
             android:background="@drawable/card_dark_background"
             android:gravity="bottom|center"
             android:padding="3dp"
             android:text="@string/flight_label"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:layout_alignBottom="@+id/data_card_wing4_label_text_view"/>
+            android:layout_alignBottom="@+id/data_card_joker_label_text_view"/>
 
         <TextView
             android:id="@+id/data_card_pos_label_text_view"
@@ -176,7 +176,7 @@
             android:layout_below="@+id/data_card_tcn_label_text_view"
             android:layout_toLeftOf="@+id/data_card_flight_notes_label_text_view"
             android:textAppearance="?android:textAppearanceMedium"
-            android:layout_toRightOf="@id/data_card_lead_idm_edit_text"
+            android:layout_toRightOf="@+id/data_card_lead_idm_edit_text"
             android:inputType="textNoSuggestions"
             android:padding="3dp"/>
 
@@ -186,7 +186,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:textAppearanceMedium"
-            android:layout_below="@id/data_card_lead_tcn_edit_text"
+            android:layout_below="@+id/data_card_lead_tcn_edit_text"
             android:layout_toLeftOf="@+id/data_card_flight_notes_label_text_view"
             android:layout_toRightOf="@+id/data_card_wing2_idm_edit_text"
             android:inputType="textNoSuggestions"
@@ -210,9 +210,9 @@
             android:layout_width="wrap_content"
             android:textAppearance="?android:textAppearanceMedium"
             android:layout_height="wrap_content"
-            android:layout_below="@id/data_card_element_tcn_edit_text"
+            android:layout_below="@+id/data_card_element_tcn_edit_text"
             android:layout_toLeftOf="@+id/data_card_flight_notes_label_text_view"
-            android:layout_toRightOf="@id/data_card_wing4_idm_edit_text"
+            android:layout_toRightOf="@+id/data_card_wing4_idm_edit_text"
             android:inputType="textNoSuggestions"
             android:padding="3dp"/>
 
@@ -222,7 +222,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_alignParentTop="true"
-            android:layout_below="@id/data_card_package_edit_text"
+            android:layout_below="@+id/data_card_package_edit_text"
             android:layout_toRightOf="@+id/data_card_tcn_label_text_view"
             android:background="@drawable/card_dark_background"
             android:padding="3dp"
@@ -237,10 +237,58 @@
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/data_card_wing4_tcn_edit_text"
             android:layout_alignParentRight="true"
-            android:layout_below="@id/data_card_flight_notes_label_text_view"
-            android:layout_toRightOf="@id/data_card_tcn_label_text_view"
+            android:layout_below="@+id/data_card_flight_notes_label_text_view"
+            android:layout_toRightOf="@+id/data_card_tcn_label_text_view"
             android:inputType="textMultiLine|textNoSuggestions"
             android:padding="3dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/data_card_wing4_label_text_view"
+            android:id="@+id/data_card_joker_label_text_view"
+            android:layout_alignLeft="@+id/data_card_wing4_label_text_view"
+            android:layout_alignRight="@+id/data_card_wing4_label_text_view"
+            android:text="@string/joker"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:background="@drawable/card_dark_background"
+            android:padding="3dp"/>
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/data_card_joker_edit_text"
+            android:layout_below="@+id/data_card_wing4_edit_text"
+            android:layout_alignLeft="@+id/data_card_name_label_text_view"
+            android:layout_alignRight="@+id/data_card_name_label_text_view"
+            style="@style/Card.EditText.Style"
+            android:padding="3dp"
+            android:inputType="textNoSuggestions"
+            android:textAppearance="?android:textAppearanceMedium"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/data_card_bingo_label_text_view"
+            android:layout_alignBaseline="@+id/data_card_joker_label_text_view"
+            android:text="@string/bingo"
+            android:layout_alignLeft="@+id/data_card_idm_label_text_view"
+            android:layout_alignRight="@+id/data_card_package_tcn_label_text_view"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:padding="3dp"
+            android:background="@drawable/card_dark_background"/>
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/data_card_bingo_edit_text"
+            android:layout_alignBaseline="@+id/data_card_bingo_label_text_view"
+            android:layout_alignLeft="@+id/data_card_flight_notes_label_text_view"
+            android:layout_alignRight="@+id/data_card_flight_notes_label_text_view"
+            style="@style/Card.EditText.Style"
+            android:padding="3dp"
+            android:inputType="textNoSuggestions"
+            android:textAppearance="?android:textAppearanceMedium"/>
 
         <TextView
             android:id="@+id/data_card_lead_label_text_view"
@@ -336,7 +384,7 @@
             android:layout_alignRight="@+id/data_card_element_edit_text"
             android:layout_below="@+id/data_card_element_edit_text"
             android:layout_toLeftOf="@+id/data_card_element_idm_edit_text"
-            android:layout_toRightOf="@id/data_card_wing4_label_text_view"
+            android:layout_toRightOf="@+id/data_card_wing4_label_text_view"
             android:inputType="textNoSuggestions"
             android:padding="3dp"/>
 
@@ -349,14 +397,14 @@
             android:padding="3dp"
             android:text="@string/package_label"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:layout_below="@+id/data_card_wing4_label_text_view"
+            android:layout_below="@+id/data_card_joker_label_text_view"
             android:layout_alignBottom="@+id/data_card_package5_edit_text"/>
 
         <TextView
             android:id="@+id/data_card_package_callsign_label_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/data_card_wing4_label_text_view"
+            android:layout_below="@+id/data_card_joker_label_text_view"
             android:layout_alignRight="@+id/data_card_pos_label_text_view"
             android:layout_alignLeft="@+id/data_card_pos_label_text_view"
             android:background="@drawable/card_dark_background"
@@ -370,9 +418,9 @@
             android:layout_width="wrap_content"
             android:textAppearance="?android:textAppearanceMedium"
             android:layout_height="wrap_content"
-            android:layout_alignRight="@id/data_card_package_callsign_label_text_view"
+            android:layout_alignRight="@+id/data_card_package_callsign_label_text_view"
             android:layout_below="@+id/data_card_package_callsign_label_text_view"
-            android:layout_alignLeft="@id/data_card_package_callsign_label_text_view"
+            android:layout_alignLeft="@+id/data_card_package_callsign_label_text_view"
             android:inputType="textNoSuggestions"
             android:padding="3dp"/>
 
@@ -381,49 +429,49 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:textAppearanceMedium"
             android:id="@+id/data_card_package2_edit_text"
-            android:layout_below="@id/data_card_package1_edit_text"
+            android:layout_below="@+id/data_card_package1_edit_text"
             style="@style/Card.EditText.Style"
             android:padding="3dp"
             android:inputType="textNoSuggestions"
-            android:layout_alignLeft="@id/data_card_package_callsign_label_text_view"
-            android:layout_alignRight="@id/data_card_package_callsign_label_text_view"/>
+            android:layout_alignLeft="@+id/data_card_package_callsign_label_text_view"
+            android:layout_alignRight="@+id/data_card_package_callsign_label_text_view"/>
 
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/data_card_package3_edit_text"
-            android:layout_below="@id/data_card_package2_edit_text"
+            android:layout_below="@+id/data_card_package2_edit_text"
             style="@style/Card.EditText.Style"
             android:textAppearance="?android:textAppearanceMedium"
             android:padding="3dp"
             android:inputType="textNoSuggestions"
-            android:layout_alignLeft="@id/data_card_package_callsign_label_text_view"
-            android:layout_alignRight="@id/data_card_package_callsign_label_text_view"/>
+            android:layout_alignLeft="@+id/data_card_package_callsign_label_text_view"
+            android:layout_alignRight="@+id/data_card_package_callsign_label_text_view"/>
 
 
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/data_card_package4_edit_text"
-            android:layout_below="@id/data_card_package3_edit_text"
+            android:layout_below="@+id/data_card_package3_edit_text"
             android:textAppearance="?android:textAppearanceMedium"
             style="@style/Card.EditText.Style"
             android:padding="3dp"
             android:inputType="textNoSuggestions"
-            android:layout_alignLeft="@id/data_card_package_callsign_label_text_view"
-            android:layout_alignRight="@id/data_card_package_callsign_label_text_view"/>
+            android:layout_alignLeft="@+id/data_card_package_callsign_label_text_view"
+            android:layout_alignRight="@+id/data_card_package_callsign_label_text_view"/>
 
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/data_card_package5_edit_text"
-            android:layout_below="@id/data_card_package4_edit_text"
+            android:layout_below="@+id/data_card_package4_edit_text"
             style="@style/Card.EditText.Style"
             android:padding="3dp"
             android:textAppearance="?android:textAppearanceMedium"
             android:inputType="textNoSuggestions"
-            android:layout_alignLeft="@id/data_card_package_callsign_label_text_view"
-            android:layout_alignRight="@id/data_card_package_callsign_label_text_view"/>
+            android:layout_alignLeft="@+id/data_card_package_callsign_label_text_view"
+            android:layout_alignRight="@+id/data_card_package_callsign_label_text_view"/>
 
         <RelativeLayout
             android:layout_width="wrap_content"
@@ -431,7 +479,7 @@
             android:id="@+id/data_card_package_uhf_vhf_relative_layout"
             android:layout_alignLeft="@+id/data_card_name_label_text_view"
             android:layout_alignRight="@+id/data_card_name_label_text_view"
-            android:layout_below="@+id/data_card_wing4_edit_text" >
+            android:layout_below="@+id/data_card_joker_label_text_view" >
 
             <Space
                 android:id="@+id/data_card_uhf_vhf_space"
@@ -446,7 +494,7 @@
                 android:text="@string/uhf"
                 android:padding="3dp"
                 android:layout_alignParentLeft="true"
-                android:layout_toLeftOf="@id/data_card_uhf_vhf_space"
+                android:layout_toLeftOf="@+id/data_card_uhf_vhf_space"
                 android:textAppearance="?android:textAppearanceMedium"
                 android:background="@drawable/card_dark_background"/>
 
@@ -454,10 +502,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/data_card_package1_uhf_edit_text"
-                android:layout_below="@id/data_card_package_uhf_label_text_view"
+                android:layout_below="@+id/data_card_package_uhf_label_text_view"
                 android:textAppearance="?android:textAppearanceMedium"
-                android:layout_alignLeft="@id/data_card_package_uhf_label_text_view"
-                android:layout_alignRight="@id/data_card_package_uhf_label_text_view"
+                android:layout_alignLeft="@+id/data_card_package_uhf_label_text_view"
+                android:layout_alignRight="@+id/data_card_package_uhf_label_text_view"
                 style="@style/Card.EditText.Style"
                 android:inputType="textNoSuggestions"
                 android:padding="3dp"/>
@@ -466,10 +514,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/data_card_package2_uhf_edit_text"
-                android:layout_below="@id/data_card_package1_uhf_edit_text"
+                android:layout_below="@+id/data_card_package1_uhf_edit_text"
                 android:textAppearance="?android:textAppearanceMedium"
-                android:layout_alignLeft="@id/data_card_package_uhf_label_text_view"
-                android:layout_alignRight="@id/data_card_package_uhf_label_text_view"
+                android:layout_alignLeft="@+id/data_card_package_uhf_label_text_view"
+                android:layout_alignRight="@+id/data_card_package_uhf_label_text_view"
                 style="@style/Card.EditText.Style"
                 android:inputType="textNoSuggestions"
                 android:padding="3dp"/>
@@ -478,9 +526,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/data_card_package3_uhf_edit_text"
-                android:layout_below="@id/data_card_package2_uhf_edit_text"
-                android:layout_alignLeft="@id/data_card_package_uhf_label_text_view"
-                android:layout_alignRight="@id/data_card_package_uhf_label_text_view"
+                android:layout_below="@+id/data_card_package2_uhf_edit_text"
+                android:layout_alignLeft="@+id/data_card_package_uhf_label_text_view"
+                android:layout_alignRight="@+id/data_card_package_uhf_label_text_view"
                 android:textAppearance="?android:textAppearanceMedium"
                 style="@style/Card.EditText.Style"
                 android:inputType="textNoSuggestions"
@@ -491,9 +539,9 @@
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:textAppearanceMedium"
                 android:id="@+id/data_card_package4_uhf_edit_text"
-                android:layout_below="@id/data_card_package3_uhf_edit_text"
-                android:layout_alignLeft="@id/data_card_package_uhf_label_text_view"
-                android:layout_alignRight="@id/data_card_package_uhf_label_text_view"
+                android:layout_below="@+id/data_card_package3_uhf_edit_text"
+                android:layout_alignLeft="@+id/data_card_package_uhf_label_text_view"
+                android:layout_alignRight="@+id/data_card_package_uhf_label_text_view"
                 style="@style/Card.EditText.Style"
                 android:inputType="textNoSuggestions"
                 android:padding="3dp"/>
@@ -517,7 +565,7 @@
                 android:text="@string/vhf"
                 android:padding="3dp"
                 android:layout_alignParentRight="true"
-                android:layout_toRightOf="@id/data_card_uhf_vhf_space"
+                android:layout_toRightOf="@+id/data_card_uhf_vhf_space"
                 android:textAppearance="?android:textAppearanceMedium"
                 android:background="@drawable/card_dark_background"/>
 
@@ -538,9 +586,9 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/data_card_package2_vhf_edit_text"
                 android:textAppearance="?android:textAppearanceMedium"
-                android:layout_below="@id/data_card_package1_vhf_edit_text"
-                android:layout_alignLeft="@id/data_card_package_vhf_label_text_view"
-                android:layout_alignRight="@id/data_card_package_vhf_label_text_view"
+                android:layout_below="@+id/data_card_package1_vhf_edit_text"
+                android:layout_alignLeft="@+id/data_card_package_vhf_label_text_view"
+                android:layout_alignRight="@+id/data_card_package_vhf_label_text_view"
                 style="@style/Card.EditText.Style"
                 android:inputType="textNoSuggestions"
                 android:padding="3dp"/>
@@ -549,9 +597,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/data_card_package3_vhf_edit_text"
-                android:layout_below="@id/data_card_package2_vhf_edit_text"
-                android:layout_alignLeft="@id/data_card_package_vhf_label_text_view"
-                android:layout_alignRight="@id/data_card_package_vhf_label_text_view"
+                android:layout_below="@+id/data_card_package2_vhf_edit_text"
+                android:layout_alignLeft="@+id/data_card_package_vhf_label_text_view"
+                android:layout_alignRight="@+id/data_card_package_vhf_label_text_view"
                 android:textAppearance="?android:textAppearanceMedium"
                 style="@style/Card.EditText.Style"
                 android:inputType="textNoSuggestions"
@@ -561,10 +609,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/data_card_package4_vhf_edit_text"
-                android:layout_below="@id/data_card_package3_vhf_edit_text"
+                android:layout_below="@+id/data_card_package3_vhf_edit_text"
                 android:textAppearance="?android:textAppearanceMedium"
-                android:layout_alignLeft="@id/data_card_package_vhf_label_text_view"
-                android:layout_alignRight="@id/data_card_package_vhf_label_text_view"
+                android:layout_alignLeft="@+id/data_card_package_vhf_label_text_view"
+                android:layout_alignRight="@+id/data_card_package_vhf_label_text_view"
                 style="@style/Card.EditText.Style"
                 android:inputType="textNoSuggestions"
                 android:padding="3dp"/>
@@ -574,9 +622,9 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/data_card_package5_vhf_edit_text"
                 android:textAppearance="?android:textAppearanceMedium"
-                android:layout_below="@id/data_card_package4_vhf_edit_text"
-                android:layout_alignLeft="@id/data_card_package_vhf_label_text_view"
-                android:layout_alignRight="@id/data_card_package_vhf_label_text_view"
+                android:layout_below="@+id/data_card_package4_vhf_edit_text"
+                android:layout_alignLeft="@+id/data_card_package_vhf_label_text_view"
+                android:layout_alignRight="@+id/data_card_package_vhf_label_text_view"
                 style="@style/Card.EditText.Style"
                 android:inputType="textNoSuggestions"
                 android:padding="3dp"/>
@@ -587,22 +635,22 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/data_card_package_idm_label_text_view"
-            android:layout_below="@+id/data_card_wing4_idm_edit_text"
+            android:layout_below="@+id/data_card_joker_label_text_view"
             android:text="@string/idm_label"
             android:background="@drawable/card_dark_background"
             android:padding="3dp"
             android:textAppearance="?android:textAppearanceMedium"
-            android:layout_alignLeft="@id/data_card_idm_label_text_view"
-            android:layout_alignRight="@id/data_card_idm_label_text_view"/>
+            android:layout_alignLeft="@+id/data_card_idm_label_text_view"
+            android:layout_alignRight="@+id/data_card_idm_label_text_view"/>
 
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/data_card_package1_idm_edit_text"
             android:textAppearance="?android:textAppearanceMedium"
-            android:layout_below="@id/data_card_package_idm_label_text_view"
-            android:layout_alignLeft="@id/data_card_package_idm_label_text_view"
-            android:layout_alignRight="@id/data_card_package_idm_label_text_view"
+            android:layout_below="@+id/data_card_package_idm_label_text_view"
+            android:layout_alignLeft="@+id/data_card_package_idm_label_text_view"
+            android:layout_alignRight="@+id/data_card_package_idm_label_text_view"
             style="@style/Card.EditText.Style"
             android:inputType="textNoSuggestions"
             android:padding="3dp"/>
@@ -612,9 +660,9 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:textAppearanceMedium"
             android:id="@+id/data_card_package2_idm_edit_text"
-            android:layout_below="@id/data_card_package1_idm_edit_text"
-            android:layout_alignLeft="@id/data_card_package_idm_label_text_view"
-            android:layout_alignRight="@id/data_card_package_idm_label_text_view"
+            android:layout_below="@+id/data_card_package1_idm_edit_text"
+            android:layout_alignLeft="@+id/data_card_package_idm_label_text_view"
+            android:layout_alignRight="@+id/data_card_package_idm_label_text_view"
             style="@style/Card.EditText.Style"
             android:inputType="textNoSuggestions"
             android:padding="3dp"/>
@@ -623,10 +671,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/data_card_package3_idm_edit_text"
-            android:layout_below="@id/data_card_package2_idm_edit_text"
-            android:layout_alignLeft="@id/data_card_package_idm_label_text_view"
+            android:layout_below="@+id/data_card_package2_idm_edit_text"
+            android:layout_alignLeft="@+id/data_card_package_idm_label_text_view"
             android:textAppearance="?android:textAppearanceMedium"
-            android:layout_alignRight="@id/data_card_package_idm_label_text_view"
+            android:layout_alignRight="@+id/data_card_package_idm_label_text_view"
             style="@style/Card.EditText.Style"
             android:inputType="textNoSuggestions"
             android:padding="3dp"/>
@@ -635,10 +683,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/data_card_package4_idm_edit_text"
-            android:layout_below="@id/data_card_package3_idm_edit_text"
+            android:layout_below="@+id/data_card_package3_idm_edit_text"
             android:textAppearance="?android:textAppearanceMedium"
-            android:layout_alignLeft="@id/data_card_package_idm_label_text_view"
-            android:layout_alignRight="@id/data_card_package_idm_label_text_view"
+            android:layout_alignLeft="@+id/data_card_package_idm_label_text_view"
+            android:layout_alignRight="@+id/data_card_package_idm_label_text_view"
             style="@style/Card.EditText.Style"
             android:inputType="textNoSuggestions"
             android:padding="3dp"/>
@@ -648,9 +696,9 @@
             android:layout_height="wrap_content"
             android:id="@+id/data_card_package5_idm_edit_text"
             android:textAppearance="?android:textAppearanceMedium"
-            android:layout_below="@id/data_card_package4_idm_edit_text"
-            android:layout_alignLeft="@id/data_card_package_idm_label_text_view"
-            android:layout_alignRight="@id/data_card_package_idm_label_text_view"
+            android:layout_below="@+id/data_card_package4_idm_edit_text"
+            android:layout_alignLeft="@+id/data_card_package_idm_label_text_view"
+            android:layout_alignRight="@+id/data_card_package_idm_label_text_view"
             style="@style/Card.EditText.Style"
             android:inputType="textNoSuggestions"
             android:padding="3dp"/>
@@ -660,9 +708,9 @@
             android:layout_height="wrap_content"
             android:id="@+id/data_card_package_tcn_label_text_view"
             android:text="@string/tcn_label"
-            android:layout_below="@id/data_card_wing4_tcn_edit_text"
-            android:layout_alignLeft="@id/data_card_tcn_label_text_view"
-            android:layout_alignRight="@id/data_card_tcn_label_text_view"
+            android:layout_below="@+id/data_card_joker_label_text_view"
+            android:layout_alignLeft="@+id/data_card_tcn_label_text_view"
+            android:layout_alignRight="@+id/data_card_tcn_label_text_view"
             android:textAppearance="?android:textAppearanceMedium"
             android:padding="3dp"
             android:background="@drawable/card_dark_background"/>
@@ -671,10 +719,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/data_card_package1_tcn_edit_text"
-            android:layout_below="@id/data_card_package_tcn_label_text_view"
+            android:layout_below="@+id/data_card_package_tcn_label_text_view"
             android:textAppearance="?android:textAppearanceMedium"
-            android:layout_alignLeft="@id/data_card_package_tcn_label_text_view"
-            android:layout_alignRight="@id/data_card_package_tcn_label_text_view"
+            android:layout_alignLeft="@+id/data_card_package_tcn_label_text_view"
+            android:layout_alignRight="@+id/data_card_package_tcn_label_text_view"
             style="@style/Card.EditText.Style"
             android:padding="3dp"
             android:inputType="textNoSuggestions"/>
@@ -684,9 +732,9 @@
             android:layout_height="wrap_content"
             android:id="@+id/data_card_package2_tcn_edit_text"
             android:textAppearance="?android:textAppearanceMedium"
-            android:layout_below="@id/data_card_package1_tcn_edit_text"
-            android:layout_alignLeft="@id/data_card_package_tcn_label_text_view"
-            android:layout_alignRight="@id/data_card_package_tcn_label_text_view"
+            android:layout_below="@+id/data_card_package1_tcn_edit_text"
+            android:layout_alignLeft="@+id/data_card_package_tcn_label_text_view"
+            android:layout_alignRight="@+id/data_card_package_tcn_label_text_view"
             style="@style/Card.EditText.Style"
             android:padding="3dp"
             android:inputType="textNoSuggestions"/>
@@ -695,9 +743,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/data_card_package3_tcn_edit_text"
-            android:layout_below="@id/data_card_package2_tcn_edit_text"
-            android:layout_alignLeft="@id/data_card_package_tcn_label_text_view"
-            android:layout_alignRight="@id/data_card_package_tcn_label_text_view"
+            android:layout_below="@+id/data_card_package2_tcn_edit_text"
+            android:layout_alignLeft="@+id/data_card_package_tcn_label_text_view"
+            android:layout_alignRight="@+id/data_card_package_tcn_label_text_view"
             android:textAppearance="?android:textAppearanceMedium"
             style="@style/Card.EditText.Style"
             android:padding="3dp"
@@ -707,10 +755,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/data_card_package4_tcn_edit_text"
-            android:layout_below="@id/data_card_package3_tcn_edit_text"
+            android:layout_below="@+id/data_card_package3_tcn_edit_text"
             android:textAppearance="?android:textAppearanceMedium"
-            android:layout_alignLeft="@id/data_card_package_tcn_label_text_view"
-            android:layout_alignRight="@id/data_card_package_tcn_label_text_view"
+            android:layout_alignLeft="@+id/data_card_package_tcn_label_text_view"
+            android:layout_alignRight="@+id/data_card_package_tcn_label_text_view"
             style="@style/Card.EditText.Style"
             android:padding="3dp"
             android:inputType="textNoSuggestions"/>
@@ -719,9 +767,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/data_card_package5_tcn_edit_text"
-            android:layout_below="@id/data_card_package4_tcn_edit_text"
-            android:layout_alignLeft="@id/data_card_package_tcn_label_text_view"
-            android:layout_alignRight="@id/data_card_package_tcn_label_text_view"
+            android:layout_below="@+id/data_card_package4_tcn_edit_text"
+            android:layout_alignLeft="@+id/data_card_package_tcn_label_text_view"
+            android:layout_alignRight="@+id/data_card_package_tcn_label_text_view"
             android:textAppearance="?android:textAppearanceMedium"
             style="@style/Card.EditText.Style"
             android:padding="3dp"
@@ -731,11 +779,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/data_card_package_tasking_label_text_view"
-            android:layout_below="@id/data_card_flight_notes_edit_text"
+            android:layout_below="@+id/data_card_joker_label_text_view"
             android:text="@string/tasking"
             android:inputType="text"
-            android:layout_alignLeft="@id/data_card_flight_notes_label_text_view"
-            android:layout_alignRight="@id/data_card_flight_notes_label_text_view"
+            android:layout_alignLeft="@+id/data_card_flight_notes_label_text_view"
+            android:layout_alignRight="@+id/data_card_flight_notes_label_text_view"
             android:textAppearance="?android:textAppearanceMedium"
             android:padding="3dp"
             android:background="@drawable/card_dark_background"/>
@@ -744,68 +792,68 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/data_card_package1_tasking_edit_text"
-            android:layout_below="@id/data_card_package_tasking_label_text_view"
+            android:layout_below="@+id/data_card_package_tasking_label_text_view"
             style="@style/Card.EditText.Style"
             android:textAppearance="?android:textAppearanceMedium"
             android:padding="3dp"
             android:inputType="textNoSuggestions"
-            android:layout_alignLeft="@id/data_card_package_tasking_label_text_view"
-            android:layout_alignRight="@id/data_card_package_tasking_label_text_view"/>
+            android:layout_alignLeft="@+id/data_card_package_tasking_label_text_view"
+            android:layout_alignRight="@+id/data_card_package_tasking_label_text_view"/>
 
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/data_card_package2_tasking_edit_text"
-            android:layout_below="@id/data_card_package1_tasking_edit_text"
+            android:layout_below="@+id/data_card_package1_tasking_edit_text"
             style="@style/Card.EditText.Style"
             android:textAppearance="?android:textAppearanceMedium"
             android:padding="3dp"
             android:inputType="textNoSuggestions"
-            android:layout_alignLeft="@id/data_card_package_tasking_label_text_view"
-            android:layout_alignRight="@id/data_card_package_tasking_label_text_view"/>
+            android:layout_alignLeft="@+id/data_card_package_tasking_label_text_view"
+            android:layout_alignRight="@+id/data_card_package_tasking_label_text_view"/>
 
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/data_card_package3_tasking_edit_text"
-            android:layout_below="@id/data_card_package2_tasking_edit_text"
+            android:layout_below="@+id/data_card_package2_tasking_edit_text"
             style="@style/Card.EditText.Style"
             android:textAppearance="?android:textAppearanceMedium"
             android:padding="3dp"
             android:inputType="textNoSuggestions"
-            android:layout_alignLeft="@id/data_card_package_tasking_label_text_view"
-            android:layout_alignRight="@id/data_card_package_tasking_label_text_view"/>
+            android:layout_alignLeft="@+id/data_card_package_tasking_label_text_view"
+            android:layout_alignRight="@+id/data_card_package_tasking_label_text_view"/>
 
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/data_card_package4_tasking_edit_text"
-            android:layout_below="@id/data_card_package3_tasking_edit_text"
+            android:layout_below="@+id/data_card_package3_tasking_edit_text"
             style="@style/Card.EditText.Style"
             android:textAppearance="?android:textAppearanceMedium"
             android:padding="3dp"
             android:inputType="textNoSuggestions"
-            android:layout_alignLeft="@id/data_card_package_tasking_label_text_view"
-            android:layout_alignRight="@id/data_card_package_tasking_label_text_view"/>
+            android:layout_alignLeft="@+id/data_card_package_tasking_label_text_view"
+            android:layout_alignRight="@+id/data_card_package_tasking_label_text_view"/>
 
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/data_card_package5_tasking_edit_text"
-            android:layout_below="@id/data_card_package4_tasking_edit_text"
+            android:layout_below="@+id/data_card_package4_tasking_edit_text"
             style="@style/Card.EditText.Style"
             android:textAppearance="?android:textAppearanceMedium"
             android:padding="3dp"
             android:inputType="textNoSuggestions"
-            android:layout_alignLeft="@id/data_card_package_tasking_label_text_view"
-            android:layout_alignRight="@id/data_card_package_tasking_label_text_view"/>
+            android:layout_alignLeft="@+id/data_card_package_tasking_label_text_view"
+            android:layout_alignRight="@+id/data_card_package_tasking_label_text_view"/>
 
         <com.oldgoat5.bmstacticalreference.tacticalreference.VerticalTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/data_card_delivery_label_text_view"
             android:text="@string/delivery"
-            android:layout_below="@id/data_card_package_master_label_text_view"
+            android:layout_below="@+id/data_card_package_master_label_text_view"
             android:gravity="bottom|center"
             android:layout_alignBottom="@+id/data_card_delivery_release_speed_text_view"
             android:background="@drawable/card_dark_background"
@@ -820,8 +868,8 @@
             android:text="@string/type_no_colon"
             android:padding="3dp"
             android:textAppearance="?android:textAppearanceMedium"
-            android:layout_below="@id/data_card_package5_edit_text"
-            android:layout_alignLeft="@id/data_card_package_callsign_label_text_view"
+            android:layout_below="@+id/data_card_package5_edit_text"
+            android:layout_alignLeft="@+id/data_card_package_callsign_label_text_view"
             android:layout_alignRight="@+id/data_card_delivery_release_altitude_text_view"/>
 
         <EditText
@@ -832,9 +880,9 @@
             android:minWidth="60dp"
             android:padding="3dp"
             android:inputType="textNoSuggestions"
-            android:layout_toLeftOf="@id/data_card_package_label_text_view"
+            android:layout_toLeftOf="@+id/data_card_package_label_text_view"
             android:textAppearance="?android:textAppearanceMedium"
-            android:layout_toRightOf="@id/data_card_delivery_type_text_view"
+            android:layout_toRightOf="@+id/data_card_delivery_type_text_view"
             android:layout_alignBaseline="@+id/data_card_delivery_type_text_view"/>
 
         <TextView
@@ -846,7 +894,7 @@
             android:background="@drawable/card_dark_background"
             android:padding="3dp"
             android:textAppearance="?android:textAppearanceMedium"
-            android:layout_alignLeft="@id/data_card_package_label_text_view"
+            android:layout_alignLeft="@+id/data_card_package_label_text_view"
             android:layout_toRightOf="@+id/data_card_delivery_type_edit_text"/>
 
         <EditText
@@ -868,12 +916,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/data_card_delivery_min_safe_rel_alt_text_view"
-            android:layout_toRightOf="@id/data_card_package_uhf_vhf_relative_layout"
+            android:layout_toRightOf="@+id/data_card_package_uhf_vhf_relative_layout"
             android:background="@drawable/card_dark_background"
             android:textAppearance="?android:textAppearanceMedium"
             android:padding="3dp"
             android:layout_toLeftOf="@+id/data_card_package_tasking_label_text_view"
-            android:layout_alignBaseline="@id/data_card_delivery_approach_course_text_view"
+            android:layout_alignBaseline="@+id/data_card_delivery_approach_course_text_view"
             android:text="@string/msra"/>
 
         <EditText
@@ -885,8 +933,8 @@
             android:padding="3dp"
             android:layout_alignParentRight="true"
             android:inputType="textNoSuggestions"
-            android:layout_toRightOf="@id/data_card_delivery_min_safe_rel_alt_text_view"
-            android:layout_alignBaseline="@id/data_card_delivery_min_safe_rel_alt_text_view"
+            android:layout_toRightOf="@+id/data_card_delivery_min_safe_rel_alt_text_view"
+            android:layout_alignBaseline="@+id/data_card_delivery_min_safe_rel_alt_text_view"
             android:text="@string/msra_init"/>
 
         <TextView
@@ -898,8 +946,8 @@
             android:textAppearance="?android:textAppearanceMedium"
             android:background="@drawable/card_dark_background"
             android:layout_alignRight="@+id/data_card_delivery_release_speed_text_view"
-            android:layout_toRightOf="@id/data_card_delivery_label_text_view"
-            android:layout_below="@id/data_card_delivery_type_text_view"/>
+            android:layout_toRightOf="@+id/data_card_delivery_label_text_view"
+            android:layout_below="@+id/data_card_delivery_type_text_view"/>
 
         <EditText
             android:layout_width="wrap_content"
@@ -907,9 +955,9 @@
             android:id="@+id/data_card_delivery_release_altitude_edit_text"
             android:text="@string/rel_alt_init"
             android:textAppearance="?android:textAppearanceMedium"
-            android:layout_alignRight="@id/data_card_delivery_approach_course_edit_text"
-            android:layout_toRightOf="@id/data_card_delivery_release_altitude_text_view"
-            android:layout_alignBaseline="@id/data_card_delivery_release_altitude_text_view"
+            android:layout_alignRight="@+id/data_card_delivery_approach_course_edit_text"
+            android:layout_toRightOf="@+id/data_card_delivery_release_altitude_text_view"
+            android:layout_alignBaseline="@+id/data_card_delivery_release_altitude_text_view"
             style="@style/Card.EditText.Style"
             android:inputType="textNoSuggestions"
             android:padding="3dp"/>
@@ -920,10 +968,10 @@
             android:id="@+id/data_card_delivery_range_text_view"
             android:inputType="text"
             android:text="@string/range_no_colon"
-            android:layout_alignLeft="@id/data_card_delivery_min_safe_rel_alt_text_view"
-            android:layout_alignRight="@id/data_card_delivery_min_safe_rel_alt_text_view"
-            android:layout_toRightOf="@id/data_card_delivery_release_altitude_edit_text"
-            android:layout_alignBaseline="@id/data_card_delivery_release_altitude_edit_text"
+            android:layout_alignLeft="@+id/data_card_delivery_min_safe_rel_alt_text_view"
+            android:layout_alignRight="@+id/data_card_delivery_min_safe_rel_alt_text_view"
+            android:layout_toRightOf="@+id/data_card_delivery_release_altitude_edit_text"
+            android:layout_alignBaseline="@+id/data_card_delivery_release_altitude_edit_text"
             android:padding="3dp"
             android:textAppearance="?android:textAppearanceMedium"
             android:background="@drawable/card_dark_background"/>
@@ -938,17 +986,17 @@
             android:text="@string/range_init"
             android:textAppearance="?android:textAppearanceMedium"
             android:layout_alignParentRight="true"
-            android:layout_alignBaseline="@id/data_card_delivery_range_text_view"
-            android:layout_toRightOf="@id/data_card_delivery_range_text_view"/>
+            android:layout_alignBaseline="@+id/data_card_delivery_range_text_view"
+            android:layout_toRightOf="@+id/data_card_delivery_range_text_view"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/data_card_delivery_release_speed_text_view"
             android:background="@drawable/card_dark_background"
-            android:layout_below="@id/data_card_delivery_release_altitude_text_view"
+            android:layout_below="@+id/data_card_delivery_release_altitude_text_view"
             android:text="@string/rel_spd"
-            android:layout_toRightOf="@id/data_card_delivery_label_text_view"
+            android:layout_toRightOf="@+id/data_card_delivery_label_text_view"
             android:layout_alignRight="@+id/data_card_pos_label_text_view"
             android:padding="3dp"
             android:textAppearance="?android:textAppearanceMedium"/>
@@ -957,13 +1005,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/data_card_delivery_release_speed_edit_text"
-            android:layout_alignLeft="@id/data_card_delivery_release_altitude_edit_text"
+            android:layout_alignLeft="@+id/data_card_delivery_release_altitude_edit_text"
             android:padding="3dp"
             android:minWidth="90dp"
             android:textAppearance="?android:textAppearanceMedium"
             style="@style/Card.EditText.Style"
             android:inputType="textNoSuggestions"
-            android:layout_alignBaseline="@id/data_card_delivery_release_speed_text_view"
+            android:layout_alignBaseline="@+id/data_card_delivery_release_speed_text_view"
             android:text="@string/rel_spd_init"
             android:layout_alignRight="@+id/data_card_delivery_release_altitude_edit_text"/>
 
@@ -977,21 +1025,21 @@
             android:layout_alignLeft="@+id/data_card_delivery_range_text_view"
             android:layout_alignRight="@+id/data_card_delivery_range_text_view"
             android:text="@string/tof"
-            android:layout_alignBaseline="@id/data_card_delivery_release_speed_text_view"
+            android:layout_alignBaseline="@+id/data_card_delivery_release_speed_text_view"
             android:background="@drawable/card_dark_background"/>
 
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/data_card_delivery_time_of_fall_edit_text"
-            android:layout_alignBaseline="@id/data_card_delivery_time_of_fall_text_view"
+            android:layout_alignBaseline="@+id/data_card_delivery_time_of_fall_text_view"
             style="@style/Card.EditText.Style"
             android:inputType="textNoSuggestions"
             android:padding="3dp"
             android:text="@string/tof_init"
             android:textAppearance="?android:textAppearanceMedium"
             android:layout_alignParentRight="true"
-            android:layout_toRightOf="@id/data_card_delivery_time_of_fall_text_view"/>
+            android:layout_toRightOf="@+id/data_card_delivery_time_of_fall_text_view"/>
 
 
     </RelativeLayout>
