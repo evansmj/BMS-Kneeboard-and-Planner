@@ -43,7 +43,8 @@
 
         <activity
             android:name=".navigation.balkans.BattleForBalkansNavigationActivity"
-            android:label="@string/balkans" >
+            android:label="@string/balkans"
+            android:theme="@style/BlueTheme">
         </activity>
 
         <activity

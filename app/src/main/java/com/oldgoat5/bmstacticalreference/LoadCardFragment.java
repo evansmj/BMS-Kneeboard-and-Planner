@@ -41,7 +41,7 @@ public class LoadCardFragment extends Fragment
         //grossWeightTextView.setText(grossWeight + "lbs");
 
         //if shared preferences
-        changeTextAppearance(0);
+        //changeTextAppearance(0);
 
         return view;
     }

@@ -23,7 +23,6 @@ public class MainActivity extends FragmentActivity
     int grossWeight;
     int totalDrag;
 
-    private ActionBar actionBar;
     private ArrayList<PagerItem> tabsList;
     private MainFragmentPageAdapter fragmentPageAdapter;
     private SlidingTabLayout slidingTabLayout;
@@ -37,17 +36,20 @@ public class MainActivity extends FragmentActivity
 
         Log.d("MainActivity", "begin onCreate()");
 
-        actionBar = getActionBar();
-        Log.d("MainActivity", "actionBar = " + actionBar);
-
         tabsList = new ArrayList<PagerItem>();
 
-        tabsList.add(new PagerItem("Load Card", Color.parseColor("#D5DADD"), Color.GRAY));
-        tabsList.add(new PagerItem("Tactical Reference", Color.parseColor("#D5DADD"), Color.GRAY));
-        tabsList.add(new PagerItem("Reference", Color.parseColor("#D5DADD"), Color.GRAY));
-        tabsList.add(new PagerItem("Fuel Calculator", Color.parseColor("#D5DADD"), Color.GRAY));
-        tabsList.add(new PagerItem("Navigation", Color.parseColor("#D5DADD"), Color.GRAY));
-        tabsList.add(new PagerItem("Mission Planner", Color.parseColor("#D5DADD"), Color.GRAY));
+        tabsList.add(new PagerItem("Load Card",
+                getResources().getColor(R.color.silver), Color.GRAY));
+        tabsList.add(new PagerItem("Tactical Reference",
+                getResources().getColor(R.color.silver), Color.GRAY));
+        tabsList.add(new PagerItem("Reference",
+                getResources().getColor(R.color.silver), Color.GRAY));
+        tabsList.add(new PagerItem("Fuel Calculator",
+                getResources().getColor(R.color.silver), Color.GRAY));
+        tabsList.add(new PagerItem("Navigation",
+                getResources().getColor(R.color.silver), Color.GRAY));
+        tabsList.add(new PagerItem("Mission Planner",
+                getResources().getColor(R.color.silver), Color.GRAY));
 
         viewPager = (ViewPager) findViewById(R.id.main_pager);
         viewPager.setAdapter(new MainFragmentPageAdapter(getSupportFragmentManager(),
@@ -72,26 +74,5 @@ public class MainActivity extends FragmentActivity
             }
 
         });
-
-        //dbHelper = new DBTools(this);
-        //Log.d("MainActivity", "after dhHelper = new DBTools(this)");
-        
-        /*try
-        {
-            dbHelper.createDataBase();
-        }
-        catch (IOException ioe)
-        {
-            throw new Error("Unable to create database");
-        }
-        
-        try
-        {
-            dbHelper.openDataBase();
-        }
-        catch (SQLiteException sqle)
-        {
-            throw sqle;
-        }*/
     }
 }
