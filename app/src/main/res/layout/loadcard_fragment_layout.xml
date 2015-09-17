@@ -1041,6 +1041,5 @@
             android:layout_alignParentRight="true"
             android:layout_toRightOf="@+id/data_card_delivery_time_of_fall_text_view"/>
 
-
     </RelativeLayout>
 </ScrollView>

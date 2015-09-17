@@ -8,6 +8,9 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
 import android.app.ActionBar;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.Window;
 
 import com.oldgoat5.bmstacticalreference.slidingtabs.PagerItem;
@@ -72,7 +75,33 @@ public class MainActivity extends FragmentActivity
             {
                 return tabsList.get(position).getDividerColor();
             }
-
         });
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu)
+    {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.main_activity_actions, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item)
+    {
+        // Handle presses on the action bar items
+        switch (item.getItemId())
+        {
+            case R.id.action_settings:
+                //todo make settings activity
+                return true;
+
+            case R.id.action_about:
+                //todo make about license credits page
+                return true;
+
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 }

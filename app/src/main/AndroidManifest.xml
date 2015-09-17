@@ -70,7 +70,7 @@
         <activity
             android:name=".reference.FuelCalculatorActivity"
             android:label="@string/fuel_calculator"
-            android:theme="@style/DarkRedTheme">
+            android:theme="@style/BlueTheme">
         </activity>
 
     </application>

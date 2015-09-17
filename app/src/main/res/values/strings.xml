@@ -3,19 +3,8 @@
 
     <string name="app_name">BMS Kneeboard and Mission Planner</string>
     <string name="aegean_theater_title">Aegean Theater</string>
-    <string name="asymmetric_checkbox">Asymmetric?</string>
-    <string name="one">1</string>
-    <string name="two">2</string>
-    <string name="three">3</string>
-    <string name="four">4</string>
-    <string name="five">5</string>
-    <string name="six">6</string>
-    <string name="seven">7</string>
-    <string name="eight">8</string>
-    <string name="nine">9</string>
-    <string name="ten">10</string>
-    <string name="eleven">11</string>
-    <string name="twelve">12</string>
+    <string name="settings_title">Settings</string>
+    <string name="about_title">About</string>
 
     <!-- Data Card Fragment -->
     <string name="callsign_label">Callsign</string>
