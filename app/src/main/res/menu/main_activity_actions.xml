@@ -5,11 +5,13 @@
     <item android:id="@+id/action_settings"
           android:icon="@android:drawable/ic_menu_preferences"
           android:title="@string/settings_title"
-          bms:showAsAction="ifRoom"/>
+          android:showAsAction="always"
+          bms:showAsAction="always"/>
 
     <item android:id="@+id/action_about"
           android:icon="@android:drawable/ic_menu_help"
           android:title="@string/about_title"
-          bms:showAsAction="ifRoom"/>
+          android:showAsAction="always"
+          bms:showAsAction="always"/>
 
 </menu>

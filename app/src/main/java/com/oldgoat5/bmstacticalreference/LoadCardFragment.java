@@ -22,8 +22,9 @@ public class LoadCardFragment extends Fragment
     private TextView totalDragTextView;
     private View view;
 
+    private int selectedCardSize; //uses android.R.style text appearance
+
     //todo reorganize tools package
-    //todo setting to change text size.
     //todo retain last card.  add clear button
 
     @Override
@@ -38,10 +39,21 @@ public class LoadCardFragment extends Fragment
         SharedPreferences dataCard = getActivity().getSharedPreferences("DataCard", 0);
 
         int grossWeight = dataCard.getInt("grossWeight", 0);
-        //grossWeightTextView.setText(grossWeight + "lbs");
 
-        //if shared preferences
-        //changeTextAppearance(0);
+        switch (dataCard.getInt("cardSize", 1))
+        {
+            case 0:
+                selectedCardSize = android.R.style.TextAppearance_Small;
+                break;
+            case 1:
+                selectedCardSize = android.R.style.TextAppearance_Medium;
+                break;
+            case 2:
+                selectedCardSize = android.R.style.TextAppearance_Large;
+                break;
+        }
+
+        changeTextAppearance(selectedCardSize);
 
         return view;
     }
@@ -62,13 +74,13 @@ public class LoadCardFragment extends Fragment
             if (grandchild.toString().contains("text_view"))
             {
                 TextView grandchildTextView = (TextView) grandchild;
-                grandchildTextView.setTextAppearance(this.getActivity(), android.R.style.TextAppearance_Small);
+                grandchildTextView.setTextAppearance(this.getActivity(), size);
                 grandchildTextView.setTextColor(Color.BLACK);
             }
             if (grandchild.toString().contains("edit_text"))
             {
                 EditText grandchildEditText = (EditText) grandchild;
-                grandchildEditText.setTextAppearance(this.getActivity(), android.R.style.TextAppearance_Small);
+                grandchildEditText.setTextAppearance(this.getActivity(), size);
                 grandchildEditText.setTextColor(Color.BLACK);
             }
 
@@ -83,18 +95,17 @@ public class LoadCardFragment extends Fragment
                     if (greatgrandchild.toString().contains("text_view"))
                     {
                         TextView greatgrandchildTextView = (TextView) greatgrandchild;
-                        greatgrandchildTextView.setTextAppearance(this.getActivity(), android.R.style.TextAppearance_Small);
+                        greatgrandchildTextView.setTextAppearance(this.getActivity(), size);
                         greatgrandchildTextView.setTextColor(Color.BLACK);
                     }
                     if (greatgrandchild.toString().contains("edit_text"))
                     {
                         EditText greatgrandchildEditText = (EditText) greatgrandchild;
-                        greatgrandchildEditText.setTextAppearance(this.getActivity(), android.R.style.TextAppearance_Small);
+                        greatgrandchildEditText.setTextAppearance(this.getActivity(), size);
                         greatgrandchildEditText.setTextColor(Color.BLACK);
                     }
                 }
             }
         }
     }
-    
 }
