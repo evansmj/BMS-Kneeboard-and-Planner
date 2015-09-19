@@ -2,10 +2,10 @@
 <ScrollView
     android:id="@+id/data_card_master_scroll_view"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:focusableInTouchMode="true"
     android:fillViewport="true"
-    android:orientation="horizontal"
     android:theme="@style/BlueTheme">
 
     <!-- Do not support right to left layouts, use inputtype=text to disable wordwrap-->

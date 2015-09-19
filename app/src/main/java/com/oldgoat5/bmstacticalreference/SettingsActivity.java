@@ -71,6 +71,7 @@ public class SettingsActivity extends Activity
                 editor.putInt("cardSize", selectedCardSize);
                 editor.apply();
                 //todo make card redraw layout
+
                 finish();
             }
         });

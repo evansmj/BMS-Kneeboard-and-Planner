@@ -18,11 +18,10 @@ import android.widget.TextView;
  ********************************************************************/
 public class LoadCardFragment extends Fragment
 {
+    private SharedPreferences dataCard;
     private TextView grossWeightTextView;
     private TextView totalDragTextView;
     private View view;
-
-    private int selectedCardSize; //uses android.R.style text appearance
 
     //todo reorganize tools package
     //todo retain last card.  add clear button
@@ -36,9 +35,27 @@ public class LoadCardFragment extends Fragment
         //grossWeightTextView = (TextView) view.findViewById(R.id.grossWeightTextView);
         //totalDragTextView = (TextView) view.findViewById(R.id.dragTextView);
         
-        SharedPreferences dataCard = getActivity().getSharedPreferences("DataCard", 0);
+        dataCard = getActivity().getSharedPreferences("DataCard", 0);
 
         int grossWeight = dataCard.getInt("grossWeight", 0);
+
+        changeTextAppearance(getSelectedCardSize());
+
+        return view;
+    }
+
+    @Override
+    public void onResume()
+    {
+        super.onResume();
+
+        view.postInvalidate();
+        changeTextAppearance(getSelectedCardSize());
+    }
+
+    private int getSelectedCardSize()
+    {
+        int selectedCardSize;
 
         switch (dataCard.getInt("cardSize", 1))
         {
@@ -51,17 +68,15 @@ public class LoadCardFragment extends Fragment
             case 2:
                 selectedCardSize = android.R.style.TextAppearance_Large;
                 break;
+            default:
+                selectedCardSize = android.R.style.TextAppearance_Small;
         }
 
-        changeTextAppearance(selectedCardSize);
-
-        return view;
+        return selectedCardSize;
     }
 
     private void changeTextAppearance(int size)
     {
-        //todo change size to android.R.style.textappearances.
-
         View child = ((ViewGroup)view).getChildAt(0);
         Log.d("LoadCardFragment", child.toString());
 
