@@ -494,6 +494,7 @@ public class LevelBombMissionPlannerParametersFragment extends Fragment
             @Override
             public void onClick(View pview)
             {
+                savedStatusTextView.setVisibility(View.GONE);
                 view.requestFocus();
                 if (inputIsValid())
                 {
@@ -832,9 +833,6 @@ public class LevelBombMissionPlannerParametersFragment extends Fragment
             public void onClick(View view)
             {
                 saveToDataCard();
-                //show status
-                savedStatusTextView.setText("Saved OK");
-                savedStatusTextView.setVisibility(View.VISIBLE);
 
             }
         });
@@ -904,69 +902,84 @@ public class LevelBombMissionPlannerParametersFragment extends Fragment
 
     private void saveToDataCard()
     {
-        //put all values to data card ?: cluster/stick
-        SharedPreferences dataCard = getActivity().getSharedPreferences("DataCard", 0);
-        SharedPreferences.Editor editor = dataCard.edit();
-
-        //if cluster, get these
-        if (isCluster)
+        if (inputIsValid())
         {
-            editor.putInt("burst_altitude", selectedBurstAltitude);
+            //put all values to data card ?: cluster/stick
+            SharedPreferences dataCard = getActivity().getSharedPreferences("DataCard", 0);
+            SharedPreferences.Editor editor = dataCard.edit();
 
-            editor.putInt("cluster_pattern_length", Integer.parseInt(
-                    determinedLengthCbuResultTextView.getText().toString().replace(
+            //if cluster, get these
+            if (isCluster)
+            {
+                editor.putInt("burst_altitude", selectedBurstAltitude);
+
+                editor.putInt("cluster_pattern_length", Integer.parseInt(
+                        determinedLengthCbuResultTextView.getText().toString().replace(
+                                "ft.", "")));
+                editor.putInt("cluster_pattern_width", Integer.parseInt(
+                        determinedWidthCbuResultTextView.getText().toString().replace(
+                                "ft.", "")));
+            }
+            else
+            {
+                //stick length
+                editor.putInt("stick_length", Integer.parseInt(
+                        determinedStickLengthResultTextView.getText().toString().replace(
+                                "ft.", "")));
+            }
+
+            editor.putString("approach_course", selectedApproachCourse);
+
+            //msra agl
+            editor.putInt("msra", Integer.parseInt(
+                    determinedMinSafeReleaseAltitudeResultTextView.getText().toString().replace(
+                            "ft. AGL", "")));
+            //rel alt msl / agl
+            editor.putInt("release_altitude_msl", Integer.parseInt(
+                    determinedReleaseAltitudeResultTextView.getText().toString().replace(
+                            "ft. MSL", "")));
+            editor.putInt("release_altitude_agl", selectedReleaseAltitudeAGL);
+
+            //rel speed kcas / ktas
+            editor.putInt("release_speed_kcas", Integer.parseInt(
+                    determinedReleaseSpeedResultTextView.getText().toString().replace(
+                            "kn.", "")));
+            editor.putInt("release_speed_ktas", Integer.parseInt(selectedReleaseSpeed));
+
+            //bomb range
+            editor.putInt("bomb_range", Integer.parseInt(
+                    determinedBombRangeResultTextView.getText().toString().replace(
                             "ft.", "")));
-            editor.putInt("cluster_pattern_width", Integer.parseInt(
-                    determinedWidthCbuResultTextView.getText().toString().replace(
-                            "ft.", "")));
+
+            //bomb tof
+            editor.putFloat("bomb_tof", Float.parseFloat(
+                    determinedBombFallTimeResultTextView.getText().toString().replace(
+                            "s", "")));
+
+            //approx sight depression,
+            editor.putInt("approx_sight_depression", Integer.parseInt(
+                    determinedSightDepressionResultTextView.getText().toString().replace(
+                            "mrad.", "")));
+            //rel mode
+            editor.putString("release_mode", selectedReleaseMode);
+            //ripple qty
+            editor.putString("ripple", selectedRippleQuantity);
+            //bomb spacing
+            editor.putInt("bomb_spacing", selectedBombSpacing);
+            editor.putString("release_profile", "Level");
+
+            editor.apply();
+            //apply
+            //show status
+            savedStatusTextView.setText("Saved OK");
+            savedStatusTextView.setTextColor(getResources().getColor(R.color.green));
+            savedStatusTextView.setVisibility(View.VISIBLE);
         }
         else
         {
-            //stick length
-            editor.putInt("stick_length", Integer.parseInt(
-                    determinedStickLengthResultTextView.getText().toString().replace(
-                            "ft.", "")));
+            savedStatusTextView.setText("Invalid input");
+            savedStatusTextView.setTextColor(getResources().getColor(R.color.dark_red));
+            savedStatusTextView.setVisibility(View.VISIBLE);
         }
-
-        //msra agl
-        editor.putInt("msra", Integer.parseInt(
-                determinedMinSafeReleaseAltitudeResultTextView.getText().toString().replace(
-                        "ft. AGL", "")));
-        //rel alt msl / agl
-        editor.putInt("release_altitude_msl", Integer.parseInt(
-                determinedReleaseAltitudeResultTextView.getText().toString().replace(
-                        "ft. MSL", "")));
-        editor.putInt("release_altitude_agl", selectedReleaseAltitudeAGL);
-
-        //rel speed kcas / ktas
-        editor.putInt("release_speed_kcas", Integer.parseInt(
-                determinedReleaseSpeedResultTextView.getText().toString().replace(
-                        "kn.", "")));
-        editor.putInt("release_speed_ktas", Integer.parseInt(selectedReleaseSpeed));
-
-        //bomb range
-        editor.putInt("bomb_range", Integer.parseInt(
-                determinedBombRangeResultTextView.getText().toString().replace(
-                        "ft.", "")));
-
-        //bomb tof
-        editor.putFloat("bomb_tof", Float.parseFloat(
-                determinedBombFallTimeResultTextView.getText().toString().replace(
-                        "s", "")));
-
-        //approx sight depression,
-        editor.putInt("approx_sight_depression", Integer.parseInt(
-                determinedSightDepressionResultTextView.getText().toString().replace(
-                        "mrad.", "")));
-        //rel mode
-        editor.putString("release_mode", selectedReleaseMode);
-        //ripple qty
-        editor.putString("ripple", selectedRippleQuantity);
-        //bomb spacing
-        editor.putInt("bomb_spacing", selectedBombSpacing);
-        editor.putString("release_profile", "Level");
-
-        editor.apply();
-        //apply
     }
 }
