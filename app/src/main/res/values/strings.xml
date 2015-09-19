@@ -13,6 +13,32 @@
     <string name="large">Large</string>
     <string name="apply">Apply</string>
 
+    <!-- About Activity -->
+    <string name="thanks_title">
+        Thanks
+    </string>
+
+    <string name="thanks">
+        First and foremost, thanks to the BenchMark Sims Group for their work on the most accurate, unclassified F-16
+        simulator available to the general public, complete with all elements of a dynamic war.
+        Please post any suggestions, big or small, to the official forum thread.
+    </string>
+
+    <string name="credits">Credits</string>
+    <string name="oldgoat5_credits">App by Michael &quot;OldGoat5&quot; Evans</string>
+
+    <string name="sir_quacks_credits">
+        Launcher icon and testing help by &quot;Sir_Quacks&quot;</string>
+
+    <string name="reddog_credits">
+        Korea, Balkans chart information by Oliver &quot;RedDog"&quot;
+    </string>
+
+    <string name="neystratiou_credits">
+        Aegean charts created by Nikos &quot;Neystratiou&quot;
+    </string>
+
+
     <!-- Data Card Fragment -->
     <string name="callsign_label">Callsign</string>
     <string name="flight_label">Flight</string>

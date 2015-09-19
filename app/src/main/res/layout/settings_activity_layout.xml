@@ -1,59 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent">
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
     <TextView
+        android:id="@+id/settings_activity_card_size_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/data_card_size"
-        android:paddingTop="20dp"
-        android:id="@+id/settings_activity_card_size_text_view"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"/>
+        android:layout_centerHorizontal="true"
+        android:paddingTop="20dp"
+        android:text="@string/data_card_size"
+        android:textAppearance="?android:attr/textAppearanceLarge"/>
 
     <RadioGroup
+        android:id="@+id/settings_activity_card_size_radio_group"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/settings_activity_card_size_radio_group"
-        android:paddingTop="20dp"
-        android:layout_centerHorizontal="true"
         android:layout_below="@+id/settings_activity_card_size_text_view"
-        android:layout_gravity="center_horizontal">
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
+        android:paddingTop="20dp">
 
         <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:id="@+id/settings_activity_card_size_small_radio_button"
-            android:textAppearance="?android:textAppearanceMedium"
-            android:text="@string/small"/>
-
-        <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="@string/small"
+            android:textAppearance="?android:textAppearanceMedium"/>
+
+        <RadioButton
             android:id="@+id/settings_activity_card_size_medium_radio_button"
-            android:textAppearance="?android:textAppearanceMedium"
-            android:text="@string/medium"/>
-
-        <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="@string/medium"
+            android:textAppearance="?android:textAppearanceMedium"/>
+
+        <RadioButton
             android:id="@+id/settings_activity_card_size_large_radio_button"
-            android:textAppearance="?android:textAppearanceMedium"
-            android:text="@string/large"/>
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/large"
+            android:textAppearance="?android:textAppearanceMedium"/>
 
     </RadioGroup>
 
     <Button
+        android:id="@+id/settings_activity_apply_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/apply"
-        android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
-        android:id="@+id/settings_activity_apply_button"
-        />
-
+        android:layout_centerHorizontal="true"
+        android:text="@string/apply"/>
 
 </RelativeLayout>
