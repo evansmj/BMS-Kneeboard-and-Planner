@@ -48,7 +48,7 @@
             android:layout_below="@+id/level_approach_course_text_view"
             android:text="@string/approach_course_considerations"
             android:textAppearance="?android:attr/textAppearanceSmall"
-            android:textColor="#D3D3D3"
+            android:textColor="@color/text_gray"
             android:textStyle="italic"/>
 
         <EditText
@@ -84,7 +84,7 @@
             android:layout_below="@+id/level_target_elevation_text_view"
             android:text="@string/mean_sea_level"
             android:textAppearance="?android:attr/textAppearanceSmall"
-            android:textColor="#D3D3D3"
+            android:textColor="@color/text_gray"
             android:textStyle="italic"/>
 
         <EditText
@@ -125,7 +125,7 @@
             android:layout_below="@id/level_release_altitude_agl_text_view"
             android:text="@string/above_ground_level"
             android:textAppearance="?android:attr/textAppearanceSmall"
-            android:textColor="#D3D3D3"
+            android:textColor="@color/text_gray"
             android:textStyle="italic"/>
 
         <EditText
@@ -165,7 +165,7 @@
             android:paddingBottom="10dp"
             android:text="@string/knots_true_airspeed"
             android:textAppearance="?android:attr/textAppearanceSmall"
-            android:textColor="#D3D3D3"
+            android:textColor="@color/text_gray"
             android:textStyle="italic"/>
 
         <Spinner
@@ -203,7 +203,7 @@
             android:layout_below="@id/level_selected_burst_altitude_text_view"
             android:text="@string/burst_altitude_label"
             android:textAppearance="?android:textAppearanceSmall"
-            android:textColor="#D3D3D3"
+            android:textColor="@color/text_gray"
             android:textStyle="italic"/>
 
         <EditText
@@ -241,7 +241,7 @@
             android:layout_alignParentStart="true"
             android:layout_below="@id/level_select_release_mode"
             android:text="@string/select_release_mode_label"
-            android:textColor="#D3D3D3"
+            android:textColor="@color/text_gray"
             android:textStyle="italic"/>
 
         <Spinner
@@ -279,7 +279,7 @@
             android:layout_below="@id/level_select_ripple_quantity"
             android:text="@string/select_ripple_quantity_label"
             android:textAppearance="?android:textAppearanceSmall"
-            android:textColor="#D3D3D3"
+            android:textColor="@color/text_gray"
             android:textStyle="italic"/>
 
         <Spinner
@@ -317,7 +317,7 @@
             android:layout_below="@id/level_select_bomb_spacing_text_view"
             android:text="@string/select_bomb_spacing_label"
             android:textAppearance="?android:textAppearanceSmall"
-            android:textColor="#D3D3D3"
+            android:textColor="@color/text_gray"
             android:textStyle="italic"/>
 
         <EditText
@@ -363,7 +363,7 @@
             android:layout_below="@+id/level_min_safe_release_altitude_text_view"
             android:text="@string/above_ground_level"
             android:textAppearance="?android:attr/textAppearanceSmall"
-            android:textColor="#D3D3D3"
+            android:textColor="@color/text_gray"
             android:textStyle="italic"/>
 
         <Space
@@ -385,7 +385,7 @@
             android:paddingTop="40dp"
             android:text="@string/awaiting_form_info"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textColor="#D3D3D3"
+            android:textColor="@color/text_gray"
             android:textStyle="italic"/>
 
         <TextView
@@ -408,7 +408,7 @@
             android:layout_below="@+id/level_determined_release_altitude_text_view"
             android:text="@string/mean_sea_level"
             android:textAppearance="?android:attr/textAppearanceSmall"
-            android:textColor="#D3D3D3"
+            android:textColor="@color/text_gray"
             android:textStyle="italic"/>
 
         <TextView
@@ -422,7 +422,7 @@
             android:layout_alignStart="@+id/level_release_ktas_spinner"
             android:text="@string/awaiting_form_info"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textColor="#D3D3D3"
+            android:textColor="@color/text_gray"
             android:textStyle="italic"/>
 
         <TextView
@@ -445,7 +445,7 @@
             android:layout_below="@id/level_release_speed_text_view"
             android:text="@string/knots_calibrated_airspeed"
             android:textAppearance="?android:textAppearanceSmall"
-            android:textColor="#D3D3D3"
+            android:textColor="@color/text_gray"
             android:textStyle="italic"/>
 
         <TextView
@@ -459,7 +459,7 @@
             android:layout_alignStart="@id/level_release_ktas_spinner"
             android:text="@string/awaiting_form_info"
             android:textAppearance="?android:textAppearanceMedium"
-            android:textColor="#D3D3D3"
+            android:textColor="@color/text_gray"
             android:textStyle="italic"/>
 
         <TextView
@@ -482,7 +482,7 @@
             android:layout_below="@+id/level_determined_bomb_range_text_view"
             android:text="@string/bomb_range_label"
             android:textAppearance="?android:textAppearanceSmall"
-            android:textColor="#D3D3D3"
+            android:textColor="@color/text_gray"
             android:textStyle="italic"/>
 
         <TextView
@@ -496,7 +496,7 @@
             android:layout_alignStart="@+id/level_release_ktas_spinner"
             android:text="@string/awaiting_form_info"
             android:textAppearance="?android:textAppearanceMedium"
-            android:textColor="#D3D3D3"
+            android:textColor="@color/text_gray"
             android:textStyle="italic"/>
 
         <TextView
@@ -519,7 +519,7 @@
             android:layout_below="@+id/level_determined_bomb_tof_text_view"
             android:text="@string/seconds"
             android:textAppearance="?android:textAppearanceSmall"
-            android:textColor="#D3D3D3"
+            android:textColor="@color/text_gray"
             android:textStyle="italic"/>
 
         <TextView
@@ -533,7 +533,7 @@
             android:layout_alignStart="@+id/level_release_ktas_spinner"
             android:text="@string/awaiting_form_info"
             android:textAppearance="?android:textAppearanceMedium"
-            android:textColor="#D3D3D3"
+            android:textColor="@color/text_gray"
             android:textStyle="italic"/>
 
         <TextView
@@ -556,7 +556,7 @@
             android:layout_below="@+id/level_release_sight_depression_text_view"
             android:text="@string/sight_depression_label"
             android:textAppearance="?android:textAppearanceSmall"
-            android:textColor="#D3D3D3"
+            android:textColor="@color/text_gray"
             android:textStyle="italic"/>
 
         <TextView
@@ -570,7 +570,7 @@
             android:layout_alignStart="@+id/level_release_ktas_spinner"
             android:text="@string/awaiting_form_info"
             android:textAppearance="?android:textAppearanceMedium"
-            android:textColor="#D3D3D3"
+            android:textColor="@color/text_gray"
             android:textStyle="italic"/>
 
         <TextView
@@ -593,7 +593,7 @@
             android:layout_below="@+id/level_determined_width_cbu_pattern_text_view"
             android:text="@string/percent_15_feet"
             android:textAppearance="?android:textAppearanceSmall"
-            android:textColor="#D3D3D3"
+            android:textColor="@color/text_gray"
             android:textStyle="italic"/>
 
         <TextView
@@ -607,7 +607,7 @@
             android:layout_alignStart="@+id/level_release_ktas_spinner"
             android:text="@string/awaiting_form_info"
             android:textAppearance="?android:textAppearanceMedium"
-            android:textColor="#D3D3D3"
+            android:textColor="@color/text_gray"
             android:textStyle="italic"/>
 
         <TextView
@@ -630,7 +630,7 @@
             android:layout_below="@id/level_determined_length_cbu_pattern_text_view"
             android:text="@string/percent_15_feet"
             android:textAppearance="?android:textAppearanceSmall"
-            android:textColor="#D3D3D3"
+            android:textColor="@color/text_gray"
             android:textStyle="italic"/>
 
         <TextView
@@ -644,7 +644,7 @@
             android:layout_alignStart="@+id/level_release_ktas_spinner"
             android:text="@string/awaiting_form_info"
             android:textAppearance="?android:textAppearanceMedium"
-            android:textColor="#D3D3D3"
+            android:textColor="@color/text_gray"
             android:textStyle="italic"/>
 
         <TextView
@@ -667,7 +667,7 @@
             android:layout_below="@id/level_determined_stick_length_text_view"
             android:text="@string/stick_length_label"
             android:textAppearance="?android:attr/textAppearanceSmall"
-            android:textColor="#D3D3D3"
+            android:textColor="@color/text_gray"
             android:textStyle="italic"/>
 
         <TextView
@@ -681,8 +681,26 @@
             android:layout_alignStart="@+id/level_release_ktas_spinner"
             android:text="@string/awaiting_form_info"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textColor="#D3D3D3"
+            android:textColor="@color/text_gray"
             android:textStyle="italic"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/level_release_parameters_save_status_text_view"
+            android:textAppearance="?android:textAppearanceLarge"
+            android:textStyle="bold"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/green"
+            android:visibility="gone"
+            android:layout_below="@id/level_determined_stick_length_label_text_view"/>
+
+        <Button
+            android:id="@+id/level_release_parameters_save_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/level_release_parameters_save_status_text_view"
+            android:text="@string/save_to_data_card"/>
 
     </RelativeLayout>
 </ScrollView>

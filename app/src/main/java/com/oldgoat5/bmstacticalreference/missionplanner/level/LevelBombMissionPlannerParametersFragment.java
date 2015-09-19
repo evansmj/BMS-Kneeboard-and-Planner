@@ -1,5 +1,6 @@
 package com.oldgoat5.bmstacticalreference.missionplanner.level;
 
+import android.content.SharedPreferences;
 import android.database.sqlite.SQLiteException;
 import android.graphics.Color;
 import android.graphics.Typeface;
@@ -49,12 +50,13 @@ public class LevelBombMissionPlannerParametersFragment extends Fragment
     private final String[] RELEASE_MODE_ITEMS = {"---", "Single", "Pair"};
     private final String[] RIPPLE_QUANTITY_ITEMS = {"---", "1", "2", "3", "4", "5", "6"};
 
-    private enum BombClass {lb500, lb2000}
+    private enum BombClass {lb500, lb2000} //no pun intended
 
     private ArrayAdapter<String> releaseKtasArrayAdapter;
     private ArrayAdapter<String> releaseModeArrayAdapter;
     private ArrayAdapter<String> rippleQuantityArrayAdapter;
     private Button calculateButton;
+    private Button saveDataCardButton;
     private DBTools dbTools;
     private EditText approachCourseEditText;
     private EditText bombSpacingEditText;
@@ -82,10 +84,12 @@ public class LevelBombMissionPlannerParametersFragment extends Fragment
     private TextView determinedStickLengthTextView;
     private TextView determinedStickLengthLabelTextView;
     private TextView determinedStickLengthResultTextView;
+    private TextView savedStatusTextView;
     private TextView selectedBurstAltitudeTextView;
     private TextView selectedBurstAltitudeLabelTextView;
     private View view;
 
+    private boolean isCluster;
     private boolean useHpa;
     private double selectedAltimeter;
     private String selectedApproachCourse;
@@ -117,53 +121,238 @@ public class LevelBombMissionPlannerParametersFragment extends Fragment
 
         getArgsFromBundle();
         instantiateResources();
+        setListeners();
 
         inputValidity = new HashMap<>();
 
         determineSmsParametersToDisplay();
 
-        releaseKtasSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
-        {
-            @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l)
-            {
-                switch (i)
-                {
-                    case 0:
-                        selectedReleaseSpeed = RELEASE_KTAS_ITEMS[i];
-                        inputValidity.put("selectedReleaseSpeed", false);
-                        break;
-                    case 1:
-                        selectedReleaseSpeed = RELEASE_KTAS_ITEMS[i];
-                        inputValidity.put("selectedReleaseSpeed", true);
-                        break;
-                    case 2:
-                        selectedReleaseSpeed = RELEASE_KTAS_ITEMS[i];
-                        inputValidity.put("selectedReleaseSpeed", true);
-                        break;
-                    case 3:
-                        selectedReleaseSpeed = RELEASE_KTAS_ITEMS[i];
-                        inputValidity.put("selectedReleaseSpeed", true);
-                        break;
-                    case 4:
-                        selectedReleaseSpeed = RELEASE_KTAS_ITEMS[i];
-                        inputValidity.put("selectedReleaseSpeed", true);
-                        break;
-                }
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView)
-            {
-                selectedReleaseSpeed = RELEASE_KTAS_ITEMS[0];
-                inputValidity.put("selectedReleaseSpeed", false);
-            }
-        });
-
         releaseKtasSpinner.setAdapter(releaseKtasArrayAdapter);
         releaseModeSpinner.setAdapter(releaseModeArrayAdapter);
         rippleQuantitySpinner.setAdapter(rippleQuantityArrayAdapter);
 
+        return view;
+    }
+
+    /*****************************************************************
+     * Determine which bomb weight class to use in calculation.
+     *
+     * @param weight
+     * @return The closes class, safe than sorry.
+     *****************************************************************/
+    private BombClass determineBombClass(int weight)
+    {
+        BombClass result;
+
+        int abs500 = Math.abs(weight - 500);
+        int abs2000 = Math.abs(weight - 2000);
+
+        if (abs500 < abs2000)
+            result = BombClass.lb500;
+        else if (abs500 == abs2000)
+            result = BombClass.lb2000;
+        else
+            result = BombClass.lb2000; //safe than sorry
+
+        return result;
+    }
+
+    /*****************************************************************
+     * If cluster bomb, show cluster bomb associated views.
+     * else, show stick length views.
+     *****************************************************************/
+    private void determineSmsParametersToDisplay()
+    {
+        if (selectedWeapon.contains("CBU") || selectedWeapon.contains("Rockeye"))
+        {
+            selectedBurstAltitudeTextView.setVisibility(View.VISIBLE);
+            selectedBurstAltitudeLabelTextView.setVisibility(View.VISIBLE);
+            burstAltitudeEditText.setVisibility(View.VISIBLE);
+
+            determinedLengthCbuTextView.setVisibility(View.VISIBLE);
+            determinedLengthCbuLabelTextView.setVisibility(View.VISIBLE);
+            determinedLengthCbuResultTextView.setVisibility(View.VISIBLE);
+            determinedWidthCbuTextView.setVisibility(View.VISIBLE);
+            determinedWidthCbuLabelTextView.setVisibility(View.VISIBLE);
+            determinedWidthCbuResultTextView.setVisibility(View.VISIBLE);
+
+            determinedStickLengthTextView.setVisibility(View.GONE);
+            determinedStickLengthLabelTextView.setVisibility(View.GONE);
+            determinedStickLengthResultTextView.setVisibility(View.GONE);
+
+            isCluster = true;
+
+            //inputValidity.put("selectedBurstAltitude", true);
+        }
+        else
+        {
+            selectedBurstAltitudeTextView.setVisibility(View.GONE);
+            selectedBurstAltitudeLabelTextView.setVisibility(View.GONE);
+            burstAltitudeEditText.setVisibility(View.GONE);
+
+            determinedLengthCbuTextView.setVisibility(View.GONE);
+            determinedLengthCbuLabelTextView.setVisibility(View.GONE);
+            determinedLengthCbuResultTextView.setVisibility(View.GONE);
+            determinedWidthCbuTextView.setVisibility(View.GONE);
+            determinedWidthCbuLabelTextView.setVisibility(View.GONE);
+            determinedWidthCbuResultTextView.setVisibility(View.GONE);
+
+            determinedStickLengthTextView.setVisibility(View.VISIBLE);
+            determinedStickLengthLabelTextView.setVisibility(View.VISIBLE);
+            determinedStickLengthResultTextView.setVisibility(View.VISIBLE);
+
+            isCluster = false;
+        }
+    }
+
+    /*****************************************************************
+     * Sets arguments from level release weather conditions fragment.
+     *****************************************************************/
+    private void getArgsFromBundle()
+    {
+        useHpa = getArguments().getBoolean("useHpa");
+        selectedAltimeter = getArguments().getDouble("selectedAltimeter");
+        selectedCloudBase = getArguments().getInt("selectedCloudBase");
+        selectedConLayer = getArguments().getInt("selectedConLayer");
+        selectedTemperature = getArguments().getInt("selectedTemperature");
+        selectedWindDirection = getArguments().getInt("selectedWindDirection");
+        selectedWindSpeed = getArguments().getInt("selectedWindSpeed");
+        selectedSituation = getArguments().getString("selectedSituation");
+        selectedWeapon = getArguments().getString("selectedWeapon");
+        //Log.d("levelparameters", "selectedWeapon = " + selectedWeapon);
+    }
+
+    private double[] getSplashPattern()
+    {
+        double[] cbuPattern;
+
+        if (selectedWeapon.contains("CBU-52"))
+        {
+            cbuPattern = CBU_52BB_SPLASH_PATTERN;
+        }
+        else if (selectedWeapon.contains("CBU-58"))
+        {
+            cbuPattern = CBU_58AB_SPLASH_PATTERN;
+        }
+        else if (selectedWeapon.contains("CBU-87"))
+        {
+            cbuPattern = CBU_87_SPLASH_PATTERN;
+        }
+        else if (selectedWeapon.contains("CBU-97"))
+        {
+            cbuPattern = CBU_97SFW_SPLASH_PATTERN;
+        }
+        else if (selectedWeapon.contains("Rockeye"))
+        {
+            cbuPattern = MK_20D_SPLASH_PATTERN;
+        }
+        else
+        {
+            cbuPattern = CBU_52BB_SPLASH_PATTERN;
+        }
+
+        return cbuPattern;
+    }
+
+    private boolean inputIsValid()
+    {
+        boolean finalValidity = false;
+
+        if (!inputValidity.containsValue(false))
+        {
+            finalValidity = true;
+        }
+        else
+        {
+            Toast.makeText(getActivity(), "Form contains invalid input.", Toast.LENGTH_LONG).show();
+        }
+
+        return finalValidity;
+    }
+
+    private void instantiateResources()
+    {
+        dbTools = new DBTools(getActivity());
+        interpolator = new SplineInterpolator();
+
+        calculateButton = (Button) view.findViewById(R.id.level_release_parameters_calculate_button);
+        saveDataCardButton = (Button) view.findViewById(R.id.level_release_parameters_save_button);
+
+        approachCourseEditText = (EditText) view.findViewById(R.id.level_approach_course_edit_text);
+        bombSpacingEditText = (EditText) view.findViewById(R.id.level_select_bomb_spacing_edit_text);
+        burstAltitudeEditText = (EditText) view.findViewById(R.id.level_selected_burst_altitude_edit_text);
+        releaseAltitudeEditText = (EditText) view.findViewById(R.id.level_release_altitude_agl_edit_text);
+        targetElevationEditText = (EditText) view.findViewById(R.id.level_target_elevation_edit_text);
+
+        approachCourseEditText.setText("000°");
+        bombSpacingEditText.setText("125ft."); //most common spacing by f-16 pilots
+        burstAltitudeEditText.setText("2000ft. AGL");
+        releaseAltitudeEditText.setText("5000ft. AGL");
+        targetElevationEditText.setText("100ft. MSL");
+
+        determinedBombFallTimeResultTextView = (TextView) view.findViewById(
+                R.id.level_determined_bomb_tof_result_text_view);
+        determinedBombRangeResultTextView = (TextView) view.findViewById(
+                R.id.level_determined_bomb_range_result_text_view);
+        determinedSightDepressionResultTextView = (TextView) view.findViewById(
+                R.id.level_release_sight_depression_result_text_view);
+        determinedMinSafeReleaseAltitudeResultTextView = (TextView) view.findViewById(
+                R.id.level_min_safe_release_altitude_result_text_view);
+        determinedReleaseAltitudeLabelTextView = (TextView) view.findViewById(
+                R.id.level_determined_release_altitude_label_text_view);
+        determinedReleaseAltitudeResultTextView = (TextView) view.findViewById(
+                R.id.level_determined_release_altitude_result_text_view);
+        determinedReleaseSpeedResultTextView = (TextView) view.findViewById(
+                R.id.level_release_speed_result_text_view);
+        savedStatusTextView = (TextView) view.findViewById(
+                R.id.level_release_parameters_save_status_text_view);
+        selectedBurstAltitudeTextView = (TextView) view.findViewById(
+                R.id.level_selected_burst_altitude_text_view);
+        selectedBurstAltitudeLabelTextView = (TextView) view.findViewById(
+                R.id.level_selected_burst_altitude_label_text_view);
+        determinedLengthCbuTextView = (TextView) view.findViewById(
+                R.id.level_determined_length_cbu_pattern_text_view);
+        determinedLengthCbuLabelTextView = (TextView) view.findViewById(
+                R.id.level_determined_length_cbu_pattern_label_text_view);
+        determinedLengthCbuResultTextView = (TextView) view.findViewById(
+                R.id.level_determined_length_cbu_pattern_result_text_view);
+        determinedWidthCbuTextView = (TextView) view.findViewById(
+                R.id.level_determined_width_cbu_pattern_text_view);
+        determinedWidthCbuLabelTextView = (TextView) view.findViewById(
+                R.id.level_determined_width_cbu_pattern_label_text_view);
+        determinedWidthCbuResultTextView = (TextView) view.findViewById(
+                R.id.level_determined_width_cbu_pattern_result_text_view);
+        determinedStickLengthTextView = (TextView) view.findViewById(
+                R.id.level_determined_stick_length_text_view);
+        determinedStickLengthLabelTextView = (TextView) view.findViewById(
+                R.id.level_determined_stick_length_label_text_view);
+        determinedStickLengthResultTextView = (TextView) view.findViewById(
+                R.id.level_determined_stick_length_result_text_view);
+
+        //be specific for user confidence
+        if (selectedWeapon.contains("CBU"))
+            determinedMinSafeReleaseAltitudeResultTextView.setText("(None for CBU)");
+
+        if (selectedWeapon.contains("Rockeye"))
+            determinedMinSafeReleaseAltitudeResultTextView.setText("(None for MK-20D)");
+
+        if (selectedWeapon.contains("GBU"))
+            determinedMinSafeReleaseAltitudeResultTextView.setText("(None for GBU)");
+
+        releaseKtasSpinner = (Spinner) view.findViewById(R.id.level_release_ktas_spinner);
+        releaseModeSpinner = (Spinner) view.findViewById(R.id.level_release_mode_spinner);
+        rippleQuantitySpinner = (Spinner) view.findViewById(R.id.level_select_ripple_quantity_spinner);
+
+        releaseKtasArrayAdapter = new ArrayAdapter<String>(
+                this.getActivity(), android.R.layout.simple_spinner_item, RELEASE_KTAS_ITEMS);
+        releaseModeArrayAdapter = new ArrayAdapter<String>(
+                this.getActivity(), android.R.layout.simple_spinner_item, RELEASE_MODE_ITEMS);
+        rippleQuantityArrayAdapter = new ArrayAdapter<String>(
+                this.getActivity(), android.R.layout.simple_spinner_item, RIPPLE_QUANTITY_ITEMS);
+    }
+
+    private void setListeners()
+    {
         approachCourseEditText.setOnFocusChangeListener(new View.OnFocusChangeListener()
         {
             @Override
@@ -221,81 +410,34 @@ public class LevelBombMissionPlannerParametersFragment extends Fragment
             }
         });
 
-        releaseAltitudeEditText.setOnFocusChangeListener(new View.OnFocusChangeListener()
+        bombSpacingEditText.setOnFocusChangeListener(new View.OnFocusChangeListener()
         {
             @Override
             public void onFocusChange(View view, boolean b)
             {
                 if (!b)
                 {
-                    String oldText = releaseAltitudeEditText.getText().toString();
+                    String oldText = bombSpacingEditText.getText().toString();
 
                     try
                     {
-                        if (oldText.contains("ft. AGL"))
-                        {
-                            oldText = oldText.replace("ft. AGL", "");
-                            selectedReleaseAltitudeAGL = Integer.parseInt(oldText);
-                            inputValidity.put("selectedReleaseAltitude", true);
-                        }
-                        else if (oldText.contains("ft."))
+                        if (oldText.contains("ft."))
                         {
                             oldText = oldText.replace("ft.", "");
-                            selectedReleaseAltitudeAGL = Integer.parseInt(oldText);
-                            releaseAltitudeEditText.append(" AGL");
-                            inputValidity.put("selectedReleaseAltitude", true);
+                            selectedBombSpacing = Integer.parseInt(oldText);
+                            inputValidity.put("selectedBombSpacing", true);
                         }
                         else
                         {
-                            selectedReleaseAltitudeAGL = Integer.parseInt(oldText);
-                            releaseAltitudeEditText.append("ft. AGL");
-                            inputValidity.put("selectedReleaseAltitude", true);
+                            selectedBombSpacing = Integer.parseInt(oldText);
+                            bombSpacingEditText.append("ft.");
+                            inputValidity.put("selectedBombSpacing", true);
                         }
                     }
                     catch (NumberFormatException e)
                     {
-                        Toast.makeText(getActivity(), "Invalid Release Altitude", Toast.LENGTH_LONG).show();
-                        inputValidity.put("selectedReleaseAltitude", false);
-                    }
-                }
-            }
-        });
-
-        targetElevationEditText.setOnFocusChangeListener(new View.OnFocusChangeListener()
-        {
-            @Override
-            public void onFocusChange(View view, boolean b)
-            {
-                if (!b)
-                {
-                    String oldText = targetElevationEditText.getText().toString();
-
-                    try
-                    {
-                        if (oldText.contains("ft. MSL"))
-                        {
-                            oldText = oldText.replace("ft. MSL", "");
-                            selectedTargetElevationMSL = Integer.parseInt(oldText);
-                            inputValidity.put("selectedTargetElevation", true);
-                        }
-                        else if (oldText.contains("ft."))
-                        {
-                            oldText = oldText.replace("ft.", "");
-                            selectedTargetElevationMSL = Integer.parseInt(oldText);
-                            targetElevationEditText.append(" MSL");
-                            inputValidity.put("selectedTargetElevation", true);
-                        }
-                        else
-                        {
-                            selectedTargetElevationMSL = Integer.parseInt(oldText);
-                            targetElevationEditText.append("ft. MSL");
-                            inputValidity.put("selectedTargetElevation", true);
-                        }
-                    }
-                    catch (NumberFormatException e)
-                    {
-                        Toast.makeText(getActivity(), "Invalid Target Elevation", Toast.LENGTH_LONG).show();
-                        inputValidity.put("selectedTargetElevation", false);
+                        Toast.makeText(getActivity(), "Invalid Bomb Spacing", Toast.LENGTH_LONG).show();
+                        inputValidity.put("selectedBombSpacing", false);
                     }
                 }
             }
@@ -347,36 +489,264 @@ public class LevelBombMissionPlannerParametersFragment extends Fragment
             }
         });
 
-        bombSpacingEditText.setOnFocusChangeListener(new View.OnFocusChangeListener()
+        calculateButton.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View pview)
+            {
+                view.requestFocus();
+                if (inputIsValid())
+                {
+                    try
+                    {
+                        //incase nothing focused
+                        selectedTargetElevationMSL = Integer.parseInt(
+                                targetElevationEditText.getText().toString().replace("ft. MSL", ""));
+                        selectedReleaseAltitudeAGL = Integer.parseInt(
+                                releaseAltitudeEditText.getText().toString().replace("ft. AGL", ""));
+                        selectedBombSpacing = Integer.parseInt(
+                                bombSpacingEditText.getText().toString().replace("ft.", ""));
+                        selectedBurstAltitude = Integer.parseInt(
+                                burstAltitudeEditText.getText().toString().replace("ft. AGL", ""));
+
+                        determinedReleaseAltitudeResultTextView.setText(
+                                (selectedTargetElevationMSL + selectedReleaseAltitudeAGL) + "ft. MSL");
+                        determinedReleaseAltitudeResultTextView.setTextColor(Color.BLACK);
+                        determinedReleaseAltitudeResultTextView.setTypeface(Typeface.DEFAULT);
+                    }
+                    catch (NumberFormatException e)
+                    {
+                        Toast.makeText(getActivity(), "Bad form args", Toast.LENGTH_LONG).show();
+                    }
+
+                    //calculate minReleaseAlt
+                    if (!selectedWeapon.contains("CBU") || !selectedWeapon.contains("Rockeye"))
+                    {
+                        if (selectedWeapon.contains("BLU-107"))
+                        {
+                            determinedMinSafeReleaseAltitudeResultTextView.setText("250ft.");
+                            determinedMinSafeReleaseAltitudeResultTextView.setTextColor(Color.BLACK);
+                            determinedMinSafeReleaseAltitudeResultTextView.setTypeface(Typeface.DEFAULT);
+                        }
+                        else
+                        {
+                            openDatabase();
+                            //get weight from database
+                            bombWeight = dbTools.getLoadWeight(selectedWeapon);
+                            //see which weight class it is closest to
+                            determinedBombClass = determineBombClass(bombWeight);
+                            //apply interpolation
+                            PolynomialSplineFunction minRelFunction;
+
+                            if (determinedBombClass == BombClass.lb500)
+                            {
+                                minRelFunction = interpolator.interpolate(
+                                        RELEASE_KTAS_ITEMS_DOUBLE, MIN_RELEASE_ALT_500LB);
+                            }
+                            else
+                            {
+                                minRelFunction = interpolator.interpolate(
+                                        RELEASE_KTAS_ITEMS_DOUBLE, MIN_RELEASE_ALT_2000LB);
+                            }
+
+                            determinedMinSafeReleaseAltitude = Math.round(minRelFunction.value(
+                                    Double.parseDouble(selectedReleaseSpeed)));
+
+                            determinedMinSafeReleaseAltitudeResultTextView.setText(
+                                    determinedMinSafeReleaseAltitude + "ft. AGL");
+                            determinedMinSafeReleaseAltitudeResultTextView.setTextColor(Color.BLACK);
+                            determinedMinSafeReleaseAltitudeResultTextView.setTypeface(Typeface.DEFAULT);
+
+                            determinedReleaseAltitudeLabelTextView.setTextColor(
+                                    getResources().getColor(R.color.text_gray));
+                            determinedReleaseAltitudeLabelTextView.setText(
+                                    getActivity().getResources().getString(R.string.mean_sea_level));
+
+                            if (selectedReleaseAltitudeAGL < determinedMinSafeReleaseAltitude)
+                            {
+                                Toast.makeText(getActivity(),
+                                        "Warning: Release Alt AGL < Min Safe Release Alt " +
+                                                "for level release", Toast.LENGTH_LONG).show();
+                                determinedMinSafeReleaseAltitudeResultTextView.setTextColor(Color.RED);
+                                determinedReleaseAltitudeResultTextView.setTextColor(Color.RED);
+                                determinedReleaseAltitudeLabelTextView.setText("(Increase By " +
+                                        (determinedMinSafeReleaseAltitude - selectedReleaseAltitudeAGL)
+                                        + "ft.)");
+                                determinedReleaseAltitudeLabelTextView.setTextColor(Color.RED);
+                            }
+                        }
+                    }
+
+                    //calculate trajectory
+                    //TODO add approximate air resistance, then closer air resistance based on dimensions
+                    final double g = 9.80665;                                 //g acceleration on Earth m/s^2
+                    final double Vo = Integer.parseInt(
+                            selectedReleaseSpeed) * 0.51444444444;         //meters per second
+                    final double releaseAngle = 0 * 0.017;               //level release angle radians
+                    final double Vx = Vo * Math.cos(releaseAngle);         //x release velocity m/s
+                    final double Vy = Vo * Math.sin(releaseAngle);         //y release velocity m/s
+                    final double Yo = selectedReleaseAltitudeAGL * 0.3048; //release altitude AGL meters
+                    final double maxHeight = Yo + Math.pow(Vy, 2) / (2 * g);  //max height reached
+                    final double timeToMaxHeight = Vy / g;
+                    final double timeMaxHeightToImpact = Math.sqrt(2 * maxHeight / g);
+                    final double bombRange =
+                            (Vx * (timeToMaxHeight + timeMaxHeightToImpact)) * 3.28084; //horizontal range in feet
+                    final double fallTime = Math.round(
+                            (timeToMaxHeight + timeMaxHeightToImpact) * 10.0) / 10.0; //seconds
+                    final double speedAtImpact = Math.sqrt(
+                            Math.pow((g * timeMaxHeightToImpact), 2) + Math.pow(Vx, 2));//maybe use later
+
+                    //Log.d("levelreleaseparamet", fallTime + "seconds fall ");
+                    //Log.d("levelreleaseparamet", "unrounded seconds fall" + (timeToMaxHeight + timeMaxHeightToImpact));
+                    determinedBombFallTimeResultTextView.setText(fallTime + "s");
+                    determinedBombFallTimeResultTextView.setTextColor(Color.BLACK);
+                    determinedBombFallTimeResultTextView.setTypeface(Typeface.DEFAULT);
+
+                    determinedBombRangeResultTextView.setText(Long.toString(Math.round(bombRange)) + "ft.");
+                    determinedBombRangeResultTextView.setTextColor(Color.BLACK);
+                    determinedBombRangeResultTextView.setTypeface(Typeface.DEFAULT);
+
+                    //calculate release speed
+                    final double altimeterPascal;
+
+                    if (!useHpa)
+                        altimeterPascal = selectedAltimeter * 3386.38867;
+                    else
+                        altimeterPascal = selectedAltimeter * 100;
+
+                    final double R = 287.05; //constant specific gas for dry air
+                    final double Po = 1.225; //kg/m^3 (standard pressure 0 msl, 15C)
+                    final double P = altimeterPascal / (R * (selectedTemperature + 273.15));//pressure at release altitude
+                    final double tas = Double.parseDouble(selectedReleaseSpeed);
+                    final long determinedReleaseSpeed = Math.round(tas / Math.sqrt(Po / P));
+
+                    determinedReleaseSpeedResultTextView.setText(Long.toString(determinedReleaseSpeed) + "kn.");
+                    determinedReleaseSpeedResultTextView.setTextColor(Color.BLACK);
+                    determinedReleaseSpeedResultTextView.setTypeface(Typeface.DEFAULT);
+
+                    Log.d("levelreleaseparam", "tas: " + tas + "Po: " + Po + "P: " + P);
+
+                    //calculate sight depression
+                    final long sightDepressionResult = Math.round((3.14159 / 180) * Math.atan(
+                            (selectedReleaseAltitudeAGL / bombRange)) * (180 / 3.14159) * 1000);
+
+                    determinedSightDepressionResultTextView.setText(
+                            Long.toString(sightDepressionResult) + "mrad.");
+                    determinedSightDepressionResultTextView.setTextColor(Color.BLACK);
+                    determinedSightDepressionResultTextView.setTypeface(Typeface.DEFAULT);
+
+                    //hit patterns
+                    int releaseModeInt = selectedReleaseMode.equals(RELEASE_MODE_ITEMS[1]) ? 1 : 2;
+                    int numBombs = Integer.parseInt(selectedRippleQuantity) * releaseModeInt;
+
+                    if (selectedWeapon.contains("CBU") || selectedWeapon.contains("Rockeye"))
+                    {
+                        //determine cluster splash pattern
+                        PolynomialSplineFunction clusterFunction = interpolator.interpolate(
+                                CLUSTER_SPLASH_PATTERN_BURST_ALT, getSplashPattern());
+
+                        Log.d("levelrelparameters", "selectedBurstAlt = " + selectedBurstAltitude);
+
+                        double cbuPatternDiameter = clusterFunction.value(selectedBurstAltitude);
+
+                        determinedWidthCbuResultTextView.setText(
+                                Long.toString(Math.round(cbuPatternDiameter)) + "ft."); //same for pair/single
+                        determinedWidthCbuResultTextView.setTextColor(Color.BLACK);
+                        determinedWidthCbuResultTextView.setTypeface(Typeface.DEFAULT);
+
+                        determinedLengthCbuResultTextView.setText(
+                                Long.toString(Math.round(
+                                        cbuPatternDiameter + ((numBombs - 1) * selectedBombSpacing))) + "ft.");
+                        determinedLengthCbuResultTextView.setTextColor(Color.BLACK);
+                        determinedLengthCbuResultTextView.setTypeface(Typeface.DEFAULT);
+                    }
+                    else
+                    {
+                        //determined stick length
+                        determinedStickLengthResultTextView.setText(
+                                Integer.toString((numBombs - 1) * selectedBombSpacing) + "ft.");
+                        determinedStickLengthResultTextView.setTypeface(Typeface.DEFAULT);
+                        determinedStickLengthResultTextView.setTextColor(Color.BLACK);
+                    }
+                }
+            }
+        });
+
+        releaseAltitudeEditText.setOnFocusChangeListener(new View.OnFocusChangeListener()
         {
             @Override
             public void onFocusChange(View view, boolean b)
             {
                 if (!b)
                 {
-                    String oldText = bombSpacingEditText.getText().toString();
+                    String oldText = releaseAltitudeEditText.getText().toString();
 
                     try
                     {
-                        if (oldText.contains("ft."))
+                        if (oldText.contains("ft. AGL"))
+                        {
+                            oldText = oldText.replace("ft. AGL", "");
+                            selectedReleaseAltitudeAGL = Integer.parseInt(oldText);
+                            inputValidity.put("selectedReleaseAltitude", true);
+                        }
+                        else if (oldText.contains("ft."))
                         {
                             oldText = oldText.replace("ft.", "");
-                            selectedBombSpacing = Integer.parseInt(oldText);
-                            inputValidity.put("selectedBombSpacing", true);
+                            selectedReleaseAltitudeAGL = Integer.parseInt(oldText);
+                            releaseAltitudeEditText.append(" AGL");
+                            inputValidity.put("selectedReleaseAltitude", true);
                         }
                         else
                         {
-                            selectedBombSpacing = Integer.parseInt(oldText);
-                            bombSpacingEditText.append("ft.");
-                            inputValidity.put("selectedBombSpacing", true);
+                            selectedReleaseAltitudeAGL = Integer.parseInt(oldText);
+                            releaseAltitudeEditText.append("ft. AGL");
+                            inputValidity.put("selectedReleaseAltitude", true);
                         }
                     }
                     catch (NumberFormatException e)
                     {
-                        Toast.makeText(getActivity(), "Invalid Bomb Spacing", Toast.LENGTH_LONG).show();
-                        inputValidity.put("selectedBombSpacing", false);
+                        Toast.makeText(getActivity(), "Invalid Release Altitude", Toast.LENGTH_LONG).show();
+                        inputValidity.put("selectedReleaseAltitude", false);
                     }
                 }
+            }
+        });
+
+        releaseKtasSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
+        {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l)
+            {
+                switch (i)
+                {
+                    case 0:
+                        selectedReleaseSpeed = RELEASE_KTAS_ITEMS[i];
+                        inputValidity.put("selectedReleaseSpeed", false);
+                        break;
+                    case 1:
+                        selectedReleaseSpeed = RELEASE_KTAS_ITEMS[i];
+                        inputValidity.put("selectedReleaseSpeed", true);
+                        break;
+                    case 2:
+                        selectedReleaseSpeed = RELEASE_KTAS_ITEMS[i];
+                        inputValidity.put("selectedReleaseSpeed", true);
+                        break;
+                    case 3:
+                        selectedReleaseSpeed = RELEASE_KTAS_ITEMS[i];
+                        inputValidity.put("selectedReleaseSpeed", true);
+                        break;
+                    case 4:
+                        selectedReleaseSpeed = RELEASE_KTAS_ITEMS[i];
+                        inputValidity.put("selectedReleaseSpeed", true);
+                        break;
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView)
+            {
+                selectedReleaseSpeed = RELEASE_KTAS_ITEMS[0];
+                inputValidity.put("selectedReleaseSpeed", false);
             }
         });
 
@@ -456,388 +826,58 @@ public class LevelBombMissionPlannerParametersFragment extends Fragment
             }
         });
 
-
-        calculateButton.setOnClickListener(new View.OnClickListener()
+        saveDataCardButton.setOnClickListener(new View.OnClickListener()
         {
             @Override
-            public void onClick(View pview)
+            public void onClick(View view)
             {
-                view.requestFocus();
-                if (inputIsValid())
+                saveToDataCard();
+                //show status
+                savedStatusTextView.setText("Saved OK");
+                savedStatusTextView.setVisibility(View.VISIBLE);
+
+            }
+        });
+
+        targetElevationEditText.setOnFocusChangeListener(new View.OnFocusChangeListener()
+        {
+            @Override
+            public void onFocusChange(View view, boolean b)
+            {
+                if (!b)
                 {
+                    String oldText = targetElevationEditText.getText().toString();
+
                     try
                     {
-                        //incase nothing focused
-                        selectedTargetElevationMSL = Integer.parseInt(
-                                targetElevationEditText.getText().toString().replace("ft. MSL", ""));
-                        selectedReleaseAltitudeAGL = Integer.parseInt(
-                                releaseAltitudeEditText.getText().toString().replace("ft. AGL", ""));
-                        selectedBombSpacing = Integer.parseInt(
-                                bombSpacingEditText.getText().toString().replace("ft.", ""));
-                        selectedBurstAltitude = Integer.parseInt(
-                                burstAltitudeEditText.getText().toString().replace("ft. AGL", ""));
-
-                        determinedReleaseAltitudeResultTextView.setText(
-                                (selectedTargetElevationMSL + selectedReleaseAltitudeAGL) + "ft. MSL");
-                        determinedReleaseAltitudeResultTextView.setTextColor(Color.BLACK);
-                        determinedReleaseAltitudeResultTextView.setTypeface(Typeface.DEFAULT);
-                    }
-                    catch (NumberFormatException e)
-                    {
-                        Toast.makeText(getActivity(), "Bad form args", Toast.LENGTH_LONG).show();
-                    }
-
-                    //calculate minReleaseAlt
-                    if (!selectedWeapon.contains("CBU") || !selectedWeapon.contains("Rockeye"))
-                    {
-                        if (selectedWeapon.contains("BLU-107"))
+                        if (oldText.contains("ft. MSL"))
                         {
-                            determinedMinSafeReleaseAltitudeResultTextView.setText("250ft.");
-                            determinedMinSafeReleaseAltitudeResultTextView.setTextColor(Color.BLACK);
-                            determinedMinSafeReleaseAltitudeResultTextView.setTypeface(Typeface.DEFAULT);
+                            oldText = oldText.replace("ft. MSL", "");
+                            selectedTargetElevationMSL = Integer.parseInt(oldText);
+                            inputValidity.put("selectedTargetElevation", true);
+                        }
+                        else if (oldText.contains("ft."))
+                        {
+                            oldText = oldText.replace("ft.", "");
+                            selectedTargetElevationMSL = Integer.parseInt(oldText);
+                            targetElevationEditText.append(" MSL");
+                            inputValidity.put("selectedTargetElevation", true);
                         }
                         else
                         {
-                            openDatabase();
-                            //get weight from database
-                            bombWeight = dbTools.getLoadWeight(selectedWeapon);
-                            //see which weight class it is closest to
-                            determinedBombClass = determineBombClass(bombWeight);
-                            //apply interpolation
-                            PolynomialSplineFunction minRelFunction;
-
-                            if (determinedBombClass == BombClass.lb500)
-                            {
-                                minRelFunction = interpolator.interpolate(
-                                        RELEASE_KTAS_ITEMS_DOUBLE, MIN_RELEASE_ALT_500LB);
-                            }
-                            else
-                            {
-                                minRelFunction = interpolator.interpolate(
-                                        RELEASE_KTAS_ITEMS_DOUBLE, MIN_RELEASE_ALT_2000LB);
-                            }
-
-                            determinedMinSafeReleaseAltitude = Math.round(minRelFunction.value(
-                                    Double.parseDouble(selectedReleaseSpeed)));
-
-                            determinedMinSafeReleaseAltitudeResultTextView.setText(
-                                    determinedMinSafeReleaseAltitude + "ft. AGL");
-                            determinedMinSafeReleaseAltitudeResultTextView.setTextColor(Color.BLACK);
-                            determinedMinSafeReleaseAltitudeResultTextView.setTypeface(Typeface.DEFAULT);
-                            determinedReleaseAltitudeLabelTextView.setTextColor(Color.BLACK);
-                            determinedReleaseAltitudeLabelTextView.setText(
-                                    getActivity().getResources().getString(R.string.mean_sea_level));
-
-                            if (selectedReleaseAltitudeAGL < determinedMinSafeReleaseAltitude)
-                            {
-                                Toast.makeText(getActivity(),
-                                        "Warning: Release Alt AGL < Min Safe Release Alt " +
-                                                "for level release", Toast.LENGTH_LONG).show();
-                                determinedMinSafeReleaseAltitudeResultTextView.setTextColor(Color.RED);
-                                determinedReleaseAltitudeResultTextView.setTextColor(Color.RED);
-                                determinedReleaseAltitudeLabelTextView.setText("(Increase By " +
-                                        (determinedMinSafeReleaseAltitude - selectedReleaseAltitudeAGL)
-                                        + "ft.)");
-                                determinedReleaseAltitudeLabelTextView.setTextColor(Color.RED);
-                            }
+                            selectedTargetElevationMSL = Integer.parseInt(oldText);
+                            targetElevationEditText.append("ft. MSL");
+                            inputValidity.put("selectedTargetElevation", true);
                         }
                     }
-
-                    //calculate trajectory
-                    //TODO add approximate air resistance, then closer air resistance based on dimensions
-                    final double g = 9.80665;                                 //g acceleration on Earth m/s^2
-                    final double Vo = Integer.parseInt(
-                            selectedReleaseSpeed) * 0.51444444444;         //meters per second
-                    final double releaseAngle = 0 * 0.017;               //level release angle radians
-                    final double Vx = Vo * Math.cos(releaseAngle);         //x release velocity m/s
-                    final double Vy = Vo * Math.sin(releaseAngle);         //y release velocity m/s
-                    final double Yo = selectedReleaseAltitudeAGL * 0.3048; //release altitude AGL meters
-                    final double maxHeight = Yo + Math.pow(Vy, 2) / (2 * g);  //max height reached
-                    final double timeToMaxHeight = Vy / g;
-                    final double timeMaxHeightToImpact = Math.sqrt(2 * maxHeight / g);
-                    final double bombRange =
-                            (Vx * (timeToMaxHeight + timeMaxHeightToImpact)) * 3.28084; //horizontal range in feet
-                    final double fallTime = Math.round(
-                            (timeToMaxHeight + timeMaxHeightToImpact) * 10.0) / 10.0; //seconds
-                    final double speedAtImpact = Math.sqrt(
-                            Math.pow((g * timeMaxHeightToImpact), 2) + Math.pow(Vx, 2));//maybe use later
-
-                    //Log.d("levelreleaseparamet", fallTime + "seconds fall ");
-                    //Log.d("levelreleaseparamet", "unrounded seconds fall" + (timeToMaxHeight + timeMaxHeightToImpact));
-                    determinedBombFallTimeResultTextView.setText(fallTime + "s");
-                    determinedBombFallTimeResultTextView.setTextColor(Color.BLACK);
-                    determinedBombFallTimeResultTextView.setTypeface(Typeface.DEFAULT);
-
-                    determinedBombRangeResultTextView.setText(Long.toString(Math.round(bombRange)) + "ft.");
-                    determinedBombRangeResultTextView.setTextColor(Color.BLACK);
-                    determinedBombRangeResultTextView.setTypeface(Typeface.DEFAULT);
-
-                    //calculate release speed
-                    final double altimeterPascal;
-
-                    if (!useHpa)
-                        altimeterPascal = selectedAltimeter * 3386.38867;
-                    else
-                        altimeterPascal = selectedAltimeter * 100;
-
-                    final double R = 287.05; //constant specific gas for dry air
-                    final double Po = 1.225; //kg/m^3 (standard pressure 0 msl, 15C)
-                    final double P = altimeterPascal / (R * (selectedTemperature + 273.15));//pressure at release altitude
-                    final double tas = Double.parseDouble(selectedReleaseSpeed);
-                    final long determinedReleaseSpeed = Math.round(tas / Math.sqrt(Po / P));
-
-                    determinedReleaseSpeedResultTextView.setText(Long.toString(determinedReleaseSpeed) + "kn.");
-                    determinedReleaseSpeedResultTextView.setTextColor(Color.BLACK);
-                    determinedReleaseSpeedResultTextView.setTypeface(Typeface.DEFAULT);
-
-                    Log.d("levelreleaseparam", "tas: " + tas + "Po: " + Po + "P: " + P);
-
-                    //calculate sight depression
-                    final long sightDepressionResult = Math.round((3.14159 / 180) * Math.atan(
-                            (selectedReleaseAltitudeAGL / bombRange)) * (180 / 3.14159) * 1000);
-
-                    determinedSightDepressionResultTextView.setText(
-                            Long.toString(sightDepressionResult) + "mrad.");
-                    determinedSightDepressionResultTextView.setTextColor(Color.BLACK);
-                    determinedSightDepressionResultTextView.setTypeface(Typeface.DEFAULT);
-
-                    //hit patterns
-                    int releaseModeInt = selectedReleaseMode.equals(RELEASE_MODE_ITEMS[1])? 1 : 2;
-                    int numBombs = Integer.parseInt(selectedRippleQuantity) * releaseModeInt;
-
-                    if (selectedWeapon.contains("CBU") || selectedWeapon.contains("Rockeye"))
+                    catch (NumberFormatException e)
                     {
-                        //determine cluster splash pattern
-                        PolynomialSplineFunction clusterFunction = interpolator.interpolate(
-                                CLUSTER_SPLASH_PATTERN_BURST_ALT, getSplashPattern());
-
-                        Log.d("levelrelparameters", "selectedBurstAlt = " + selectedBurstAltitude);
-
-                        double cbuPatternDiameter = clusterFunction.value(selectedBurstAltitude);
-
-                        determinedWidthCbuResultTextView.setText(
-                                Long.toString(Math.round(cbuPatternDiameter)) + "ft."); //same for pair/single
-                        determinedWidthCbuResultTextView.setTextColor(Color.BLACK);
-                        determinedWidthCbuResultTextView.setTypeface(Typeface.DEFAULT);
-
-                        determinedLengthCbuResultTextView.setText(
-                                Long.toString(Math.round(
-                                        cbuPatternDiameter + ((numBombs - 1) * selectedBombSpacing))) + "ft.");
-                        determinedLengthCbuResultTextView.setTextColor(Color.BLACK);
-                        determinedLengthCbuResultTextView.setTypeface(Typeface.DEFAULT);
-                    }
-                    else
-                    {
-                        //determined stick length
-                        determinedStickLengthResultTextView.setText(
-                                Integer.toString((numBombs - 1) * selectedBombSpacing) + "ft.");
-                        determinedStickLengthResultTextView.setTypeface(Typeface.DEFAULT);
-                        determinedStickLengthResultTextView.setTextColor(Color.BLACK);
+                        Toast.makeText(getActivity(), "Invalid Target Elevation", Toast.LENGTH_LONG).show();
+                        inputValidity.put("selectedTargetElevation", false);
                     }
                 }
             }
         });
-
-        return view;
-    }
-
-    /*****************************************************************
-     * Sets arguments from level release weather conditions fragment.
-     *****************************************************************/
-    private void getArgsFromBundle()
-    {
-        useHpa = getArguments().getBoolean("useHpa");
-        selectedAltimeter = getArguments().getDouble("selectedAltimeter");
-        selectedCloudBase = getArguments().getInt("selectedCloudBase");
-        selectedConLayer = getArguments().getInt("selectedConLayer");
-        selectedTemperature = getArguments().getInt("selectedTemperature");
-        selectedWindDirection = getArguments().getInt("selectedWindDirection");
-        selectedWindSpeed = getArguments().getInt("selectedWindSpeed");
-        selectedSituation = getArguments().getString("selectedSituation");
-        selectedWeapon = getArguments().getString("selectedWeapon");
-        Log.d("levelparameters", "selectedWeapon = " + selectedWeapon);
-    }
-
-    private double[] getSplashPattern()
-    {
-        double[] cbuPattern;
-
-        if (selectedWeapon.contains("CBU-52"))
-        {
-            cbuPattern = CBU_52BB_SPLASH_PATTERN;
-        }
-        else if (selectedWeapon.contains("CBU-58"))
-        {
-            cbuPattern = CBU_58AB_SPLASH_PATTERN;
-        }
-        else if (selectedWeapon.contains("CBU-87"))
-        {
-            cbuPattern = CBU_87_SPLASH_PATTERN;
-        }
-        else if (selectedWeapon.contains("CBU-97"))
-        {
-            cbuPattern = CBU_97SFW_SPLASH_PATTERN;
-        }
-        else if (selectedWeapon.contains("Rockeye"))
-        {
-            cbuPattern = MK_20D_SPLASH_PATTERN;
-        }
-        else
-        {
-            cbuPattern = CBU_52BB_SPLASH_PATTERN;
-        }
-
-        return cbuPattern;
-    }
-
-    private void instantiateResources()
-    {
-        dbTools = new DBTools(getActivity());
-        interpolator = new SplineInterpolator();
-
-        calculateButton = (Button) view.findViewById(R.id.level_release_parameters_calculate_button);
-
-        approachCourseEditText = (EditText) view.findViewById(R.id.level_approach_course_edit_text);
-        bombSpacingEditText = (EditText) view.findViewById(R.id.level_select_bomb_spacing_edit_text);
-        burstAltitudeEditText = (EditText) view.findViewById(R.id.level_selected_burst_altitude_edit_text);
-        releaseAltitudeEditText = (EditText) view.findViewById(R.id.level_release_altitude_agl_edit_text);
-        targetElevationEditText = (EditText) view.findViewById(R.id.level_target_elevation_edit_text);
-
-        approachCourseEditText.setText("000°");
-        bombSpacingEditText.setText("125ft."); //most common spacing by f-16 pilots
-        burstAltitudeEditText.setText("2000ft. AGL");
-        releaseAltitudeEditText.setText("5000ft. AGL");
-        targetElevationEditText.setText("100ft. MSL");
-
-        determinedBombFallTimeResultTextView = (TextView) view.findViewById(
-                R.id.level_determined_bomb_tof_result_text_view);
-        determinedBombRangeResultTextView = (TextView) view.findViewById(
-                R.id.level_determined_bomb_range_result_text_view);
-        determinedSightDepressionResultTextView = (TextView) view.findViewById(
-                R.id.level_release_sight_depression_result_text_view);
-        determinedMinSafeReleaseAltitudeResultTextView = (TextView) view.findViewById(
-                R.id.level_min_safe_release_altitude_result_text_view);
-        determinedReleaseAltitudeLabelTextView = (TextView) view.findViewById(
-                R.id.level_determined_release_altitude_label_text_view);
-        determinedReleaseAltitudeResultTextView = (TextView) view.findViewById(
-                R.id.level_determined_release_altitude_result_text_view);
-        determinedReleaseSpeedResultTextView = (TextView) view.findViewById(
-                R.id.level_release_speed_result_text_view);
-        selectedBurstAltitudeTextView = (TextView) view.findViewById(
-                R.id.level_selected_burst_altitude_text_view);
-        selectedBurstAltitudeLabelTextView = (TextView) view.findViewById(
-                R.id.level_selected_burst_altitude_label_text_view);
-        determinedLengthCbuTextView = (TextView) view.findViewById(
-                R.id.level_determined_length_cbu_pattern_text_view);
-        determinedLengthCbuLabelTextView = (TextView) view.findViewById(
-                R.id.level_determined_length_cbu_pattern_label_text_view);
-        determinedLengthCbuResultTextView = (TextView) view.findViewById(
-                R.id.level_determined_length_cbu_pattern_result_text_view);
-        determinedWidthCbuTextView = (TextView) view.findViewById(
-                R.id.level_determined_width_cbu_pattern_text_view);
-        determinedWidthCbuLabelTextView = (TextView) view.findViewById(
-                R.id.level_determined_width_cbu_pattern_label_text_view);
-        determinedWidthCbuResultTextView = (TextView) view.findViewById(
-                R.id.level_determined_width_cbu_pattern_result_text_view);
-        determinedStickLengthTextView = (TextView) view.findViewById(
-                R.id.level_determined_stick_length_text_view);
-        determinedStickLengthLabelTextView = (TextView) view.findViewById(
-                R.id.level_determined_stick_length_label_text_view);
-        determinedStickLengthResultTextView = (TextView) view.findViewById(
-                R.id.level_determined_stick_length_result_text_view);
-
-        if (selectedWeapon.contains("CBU"))
-            determinedMinSafeReleaseAltitudeResultTextView.setText("(None for CBU)"); //be specific for user confidence
-
-        if (selectedWeapon.contains("Rockeye"))
-            determinedMinSafeReleaseAltitudeResultTextView.setText("(None for MK-20D)");
-
-        if (selectedWeapon.contains("GBU"))
-            determinedMinSafeReleaseAltitudeResultTextView.setText("(None for GBU)");
-
-        releaseKtasSpinner = (Spinner) view.findViewById(R.id.level_release_ktas_spinner);
-        releaseModeSpinner = (Spinner) view.findViewById(R.id.level_release_mode_spinner);
-        rippleQuantitySpinner = (Spinner) view.findViewById(R.id.level_select_ripple_quantity_spinner);
-
-        releaseKtasArrayAdapter = new ArrayAdapter<String>(
-                this.getActivity(), android.R.layout.simple_spinner_item, RELEASE_KTAS_ITEMS);
-        releaseModeArrayAdapter = new ArrayAdapter<String>(
-                this.getActivity(), android.R.layout.simple_spinner_item, RELEASE_MODE_ITEMS);
-        rippleQuantityArrayAdapter = new ArrayAdapter<String>(
-                this.getActivity(), android.R.layout.simple_spinner_item, RIPPLE_QUANTITY_ITEMS);
-    }
-
-    private boolean inputIsValid()
-    {
-        boolean finalValidity = false;
-
-        if (!inputValidity.containsValue(false))
-        {
-            finalValidity = true;
-        }
-        else
-        {
-            Toast.makeText(getActivity(), "Form contains invalid input.", Toast.LENGTH_LONG).show();
-        }
-
-        return finalValidity;
-    }
-
-    private BombClass determineBombClass(int weight)
-    {
-        BombClass result;
-
-        int abs500 = Math.abs(weight - 500);
-        int abs2000 = Math.abs(weight - 2000);
-
-        if (abs500 < abs2000)
-            result = BombClass.lb500;
-        else if (abs500 == abs2000)
-            result = BombClass.lb2000;
-        else
-            result = BombClass.lb2000; //safe than sorry
-
-        return result;
-    }
-
-    private void determineSmsParametersToDisplay()
-    {
-        if (selectedWeapon.contains("CBU") || selectedWeapon.contains("Rockeye"))
-        {
-            selectedBurstAltitudeTextView.setVisibility(View.VISIBLE);
-            selectedBurstAltitudeLabelTextView.setVisibility(View.VISIBLE);
-            burstAltitudeEditText.setVisibility(View.VISIBLE);
-
-            determinedLengthCbuTextView.setVisibility(View.VISIBLE);
-            determinedLengthCbuLabelTextView.setVisibility(View.VISIBLE);
-            determinedLengthCbuResultTextView.setVisibility(View.VISIBLE);
-            determinedWidthCbuTextView.setVisibility(View.VISIBLE);
-            determinedWidthCbuLabelTextView.setVisibility(View.VISIBLE);
-            determinedWidthCbuResultTextView.setVisibility(View.VISIBLE);
-
-            determinedStickLengthTextView.setVisibility(View.GONE);
-            determinedStickLengthLabelTextView.setVisibility(View.GONE);
-            determinedStickLengthResultTextView.setVisibility(View.GONE);
-
-            inputValidity.put("selectedBurstAltitude", true);
-        }
-        else
-        {
-            selectedBurstAltitudeTextView.setVisibility(View.GONE);
-            selectedBurstAltitudeLabelTextView.setVisibility(View.GONE);
-            burstAltitudeEditText.setVisibility(View.GONE);
-
-            determinedLengthCbuTextView.setVisibility(View.GONE);
-            determinedLengthCbuLabelTextView.setVisibility(View.GONE);
-            determinedLengthCbuResultTextView.setVisibility(View.GONE);
-            determinedWidthCbuTextView.setVisibility(View.GONE);
-            determinedWidthCbuLabelTextView.setVisibility(View.GONE);
-            determinedWidthCbuResultTextView.setVisibility(View.GONE);
-
-            determinedStickLengthTextView.setVisibility(View.VISIBLE);
-            determinedStickLengthLabelTextView.setVisibility(View.VISIBLE);
-            determinedStickLengthResultTextView.setVisibility(View.VISIBLE);
-        }
     }
 
     private void openDatabase()
@@ -853,12 +893,81 @@ public class LevelBombMissionPlannerParametersFragment extends Fragment
 
         try
         {
-            Log.d("BombSelectDialog", "openDataBase() try");
+            //Log.d("BombSelectDialog", "openDataBase() try");
             dbTools.openDatabase();
         }
         catch (SQLiteException sqle)
         {
-            throw sqle;
+            //throw sqle;
         }
+    }
+
+    private void saveToDataCard()
+    {
+        //put all values to data card ?: cluster/stick
+        SharedPreferences dataCard = getActivity().getSharedPreferences("DataCard", 0);
+        SharedPreferences.Editor editor = dataCard.edit();
+
+        //if cluster, get these
+        if (isCluster)
+        {
+            editor.putInt("burst_altitude", selectedBurstAltitude);
+
+            editor.putInt("cluster_pattern_length", Integer.parseInt(
+                    determinedLengthCbuResultTextView.getText().toString().replace(
+                            "ft.", "")));
+            editor.putInt("cluster_pattern_width", Integer.parseInt(
+                    determinedWidthCbuResultTextView.getText().toString().replace(
+                            "ft.", "")));
+        }
+        else
+        {
+            //stick length
+            editor.putInt("stick_length", Integer.parseInt(
+                    determinedStickLengthResultTextView.getText().toString().replace(
+                            "ft.", "")));
+        }
+
+        //msra agl
+        editor.putInt("msra", Integer.parseInt(
+                determinedMinSafeReleaseAltitudeResultTextView.getText().toString().replace(
+                        "ft. AGL", "")));
+        //rel alt msl / agl
+        editor.putInt("release_altitude_msl", Integer.parseInt(
+                determinedReleaseAltitudeResultTextView.getText().toString().replace(
+                        "ft. MSL", "")));
+        editor.putInt("release_altitude_agl", selectedReleaseAltitudeAGL);
+
+        //rel speed kcas / ktas
+        editor.putInt("release_speed_kcas", Integer.parseInt(
+                determinedReleaseSpeedResultTextView.getText().toString().replace(
+                        "kn.", "")));
+        editor.putInt("release_speed_ktas", Integer.parseInt(selectedReleaseSpeed));
+
+        //bomb range
+        editor.putInt("bomb_range", Integer.parseInt(
+                determinedBombRangeResultTextView.getText().toString().replace(
+                        "ft.", "")));
+
+        //bomb tof
+        editor.putFloat("bomb_tof", Float.parseFloat(
+                determinedBombFallTimeResultTextView.getText().toString().replace(
+                        "s", "")));
+
+        //approx sight depression,
+        editor.putInt("approx_sight_depression", Integer.parseInt(
+                determinedSightDepressionResultTextView.getText().toString().replace(
+                        "mrad.", "")));
+        //rel mode
+        editor.putString("release_mode", selectedReleaseMode);
+        //ripple qty
+        editor.putString("ripple", selectedRippleQuantity);
+        //bomb spacing
+        editor.putInt("bomb_spacing", selectedBombSpacing);
+        
+        editor.putString("release_profile", "Level");
+
+        editor.apply();
+        //apply
     }
 }
