@@ -964,7 +964,6 @@ public class LevelBombMissionPlannerParametersFragment extends Fragment
         editor.putString("ripple", selectedRippleQuantity);
         //bomb spacing
         editor.putInt("bomb_spacing", selectedBombSpacing);
-        
         editor.putString("release_profile", "Level");
 
         editor.apply();
