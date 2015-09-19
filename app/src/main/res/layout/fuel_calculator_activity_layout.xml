@@ -17,6 +17,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
+            android:padding="5dp"
             android:text="@string/joker"
             android:textAppearance="?android:attr/textAppearanceLarge"/>
 
@@ -24,6 +25,7 @@
             android:id="@+id/bingo_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:padding="5dp"
             android:layout_below="@id/joker_text_view"
             android:text="@string/bingo"
             android:textAppearance="?android:attr/textAppearanceLarge"/>
@@ -33,6 +35,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignBaseline="@id/joker_text_view"
+            android:padding="10dp"
             android:layout_centerHorizontal="true"
             android:textAppearance="?android:attr/textAppearanceMedium"/>
 
@@ -41,6 +44,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignBaseline="@id/bingo_text_view"
+            android:padding="10dp"
             android:layout_centerHorizontal="true"
             android:textAppearance="?android:attr/textAppearanceMedium"/>
 
@@ -188,12 +192,22 @@
             android:layout_below="@id/joker_offset_text_view"
             android:inputType="number"/>
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/fuel_calculator_saved_status_text_view"
+            android:layout_below="@+id/joker_offset_edit_text"
+            android:paddingTop="20dp"
+            android:textStyle="bold"
+            android:textAppearance="?android:textAppearanceLarge"
+            android:layout_centerHorizontal="true"/>
+
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/fuel_calculator_save_results_button"
             android:text="@string/save_to_data_card"
-            android:layout_below="@+id/joker_offset_edit_text"
+            android:layout_below="@+id/fuel_calculator_saved_status_text_view"
             android:layout_centerHorizontal="true"/>
 
     </RelativeLayout>

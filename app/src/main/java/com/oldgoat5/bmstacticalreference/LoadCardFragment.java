@@ -18,13 +18,12 @@ import android.widget.TextView;
  ********************************************************************/
 public class LoadCardFragment extends Fragment
 {
+    private EditText jokerEditText;
+    private EditText bingoEditText;
     private SharedPreferences dataCard;
-    private TextView grossWeightTextView;
-    private TextView totalDragTextView;
     private View view;
 
-    //todo reorganize tools package
-    //todo retain last card.  add clear button
+    //todo save datacard, clear data card
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, 
@@ -32,13 +31,9 @@ public class LoadCardFragment extends Fragment
     {
         view = inflater.inflate(
                 R.layout.loadcard_fragment_layout, container, false);
-        //grossWeightTextView = (TextView) view.findViewById(R.id.grossWeightTextView);
-        //totalDragTextView = (TextView) view.findViewById(R.id.dragTextView);
-        
-        dataCard = getActivity().getSharedPreferences("DataCard", 0);
 
-        int grossWeight = dataCard.getInt("grossWeight", 0);
-
+        instantiateResources();
+        loadDataCard("DataCard"); //placeholder for selected saved card.
         changeTextAppearance(getSelectedCardSize());
 
         return view;
@@ -49,7 +44,7 @@ public class LoadCardFragment extends Fragment
     {
         super.onResume();
 
-        view.postInvalidate();
+        loadDataCard("DataCard");
         changeTextAppearance(getSelectedCardSize());
     }
 
@@ -78,12 +73,12 @@ public class LoadCardFragment extends Fragment
     private void changeTextAppearance(int size)
     {
         View child = ((ViewGroup)view).getChildAt(0);
-        Log.d("LoadCardFragment", child.toString());
+        //Log.d("LoadCardFragment", child.toString());
 
         for (int i = 0; i < ((ViewGroup)child).getChildCount(); i++)
         {
             View grandchild = ((ViewGroup)child).getChildAt(i);
-            Log.d("LoadCardFragment", grandchild.toString());
+            //Log.d("LoadCardFragment", grandchild.toString());
             //if there is text view or edit text, change textappearance size.
 
             if (grandchild.toString().contains("text_view"))
@@ -101,7 +96,7 @@ public class LoadCardFragment extends Fragment
 
             if (grandchild.toString().contains("data_card_package_uhf_vhf_relative_layout"))
             {
-                Log.d("LoadCardFragment", "grandchild.tostring() = " + grandchild.toString());
+                //Log.d("LoadCardFragment", "grandchild.tostring() = " + grandchild.toString());
 
                 for (int x = 0; x < ((ViewGroup)grandchild).getChildCount(); x++)
                 {
@@ -122,5 +117,20 @@ public class LoadCardFragment extends Fragment
                 }
             }
         }
+    }
+
+    private void instantiateResources()
+    {
+        jokerEditText = (EditText) view.findViewById(R.id.data_card_joker_edit_text);
+        bingoEditText = (EditText) view.findViewById(R.id.data_card_bingo_edit_text);
+    }
+
+    private void loadDataCard(String dataCardName)
+    {
+        //todo make shared preference keys global constants like c ?
+        dataCard = getActivity().getSharedPreferences(dataCardName, 0);
+
+        jokerEditText.setText(Integer.toString(dataCard.getInt("joker", 0)));
+        bingoEditText.setText(Integer.toString(dataCard.getInt("bingo", 0)));
     }
 }

@@ -5,7 +5,6 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -28,19 +27,19 @@ public class FuelCalculatorActivity extends Activity
 {
     private Button saveToDataCardButton;
     private EditText homeAltEditText;
-    private EditText tripEditText;
+    private EditText returnLegEditText;
     private EditText jokerOffsetEditText;
     private RadioButton lowRadioButton;
     private RadioButton medRadioButton;
     private RadioButton hiRadioButton;
     private RadioGroup altitudeRadioGroup;
     private RadioGroup weatherRadioGroup;
-    private TextView homeAltTextView;
     private TextView bingoFuelResultTextView;
     private TextView jokerFuelResultTextView;
+    private TextView savedStatusTextView;
 
     private int homeAltMiles;
-    private int tripMiles;
+    private int returnLegMiles;
     private int selectedAltitude;
     private int selectedJokerOffset;
     private int weatherConditions;
@@ -74,8 +73,8 @@ public class FuelCalculatorActivity extends Activity
             @Override
             public void afterTextChanged(Editable editable)
             {
-                Log.d("fuelcalc", "homeAlt.changed");
-                Log.d("fuelCAlc", "homealt = " + editable.toString());
+                //Log.d("fuelcalc", "homeAlt.changed");
+                //Log.d("fuelCAlc", "homealt = " + editable.toString());
 
                 if (editable.toString().length() > 0)
                 {
@@ -86,7 +85,7 @@ public class FuelCalculatorActivity extends Activity
                     }
                     catch (NumberFormatException e)
                     {
-                        Log.d("fuelCalc", "invalid float homeAlt");
+                        //Log.d("fuelCalc", "invalid float homeAlt");
                     }
                 }
                 else
@@ -94,7 +93,7 @@ public class FuelCalculatorActivity extends Activity
             }
         });
 
-        tripEditText.addTextChangedListener(new TextWatcher()
+        returnLegEditText.addTextChangedListener(new TextWatcher()
         {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2)
@@ -111,23 +110,24 @@ public class FuelCalculatorActivity extends Activity
             @Override
             public void afterTextChanged(Editable editable)
             {
-                Log.d("fuelCalc", "trip.changed");
-                Log.d("fuelCalc", "tripFuel = " + editable.toString());
-
                 if (editable.toString().length() > 0)
                 {
                     try
                     {
-                        tripMiles = Integer.parseInt(editable.toString());
+                        returnLegMiles = Integer.parseInt(editable.toString());
                         calculateFuel();
                     }
                     catch (NumberFormatException e)
                     {
-                        Log.d("fuelcalc", "invalid float in trip");
+                        //Log.d("fuelcalc", "invalid float in trip");
                     }
                 }
                 else
-                    tripMiles = 0;
+                {
+                    returnLegMiles = 0;
+                    jokerFuelResultTextView.setText("");
+                    bingoFuelResultTextView.setText("");
+                }
             }
         });
 
@@ -136,8 +136,8 @@ public class FuelCalculatorActivity extends Activity
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i)
             {
-                Log.d("fuelCalc", "radioG.changed");
-                Log.d("fuelCalc", "i = " + Integer.toString(i));
+                //Log.d("fuelCalc", "radioG.changed");
+                //Log.d("fuelCalc", "i = " + Integer.toString(i));
                 switch (i)
                 {
                     case R.id.low_radio_button:
@@ -153,7 +153,7 @@ public class FuelCalculatorActivity extends Activity
                         selectedAltitude = 1;
                         break;
                 }
-                Log.d("fuelCalc", "radioGChanged selAlt = " + Integer.toString(selectedAltitude));
+                //Log.d("fuelCalc", "radioGChanged selAlt = " + Integer.toString(selectedAltitude));
                 calculateFuel();
             }
         });
@@ -226,23 +226,23 @@ public class FuelCalculatorActivity extends Activity
     {
         int total;
 
-        Log.d("fuelCalc", "calcFuel called");
-        Log.d("fuelCalc", "tripFuel = " + Integer.toString(tripMiles));
-        Log.d("fuelCalc", "homeAltFuel = " + Integer.toString(tripMiles));
-        Log.d("fuelCalc", "selectedAltitude= " + Integer.toString(selectedAltitude));
+        //Log.d("fuelCalc", "calcFuel called");
+        //Log.d("fuelCalc", "tripFuel = " + Integer.toString(returnLegMiles));
+        //Log.d("fuelCalc", "homeAltFuel = " + Integer.toString(returnLegMiles));
+        //Log.d("fuelCalc", "selectedAltitude= " + Integer.toString(selectedAltitude));
 
         switch (selectedAltitude)
         {
             case 0:
-                total = 1200 + weatherConditions + (tripMiles * 20) + (homeAltMiles * 10); //low
+                total = 1200 + weatherConditions + (returnLegMiles * 20) + (homeAltMiles * 10); //low
                 break;
 
             case 1:
-                total = 1200 + weatherConditions + (tripMiles * 15) + (homeAltMiles * 10); //med
+                total = 1200 + weatherConditions + (returnLegMiles * 15) + (homeAltMiles * 10); //med
                 break;
 
             case 2:
-                total = 1200 + weatherConditions + (tripMiles * 10) + (homeAltMiles * 10); //high
+                total = 1200 + weatherConditions + (returnLegMiles * 10) + (homeAltMiles * 10); //high
                 break;
 
             default:
@@ -261,7 +261,7 @@ public class FuelCalculatorActivity extends Activity
 
         homeAltEditText = (EditText) findViewById(R.id.distance_to_alternate_edit_text);
         jokerOffsetEditText = (EditText) findViewById(R.id.joker_offset_edit_text);
-        tripEditText = (EditText) findViewById(R.id.trip_nm_edit_text);
+        returnLegEditText = (EditText) findViewById(R.id.trip_nm_edit_text);
 
         jokerOffsetEditText.setText("1000");
 
@@ -274,7 +274,7 @@ public class FuelCalculatorActivity extends Activity
 
         bingoFuelResultTextView = (TextView) findViewById(R.id.bingo_result_text_view);
         jokerFuelResultTextView = (TextView) findViewById(R.id.joker_result_text_view);
-        homeAltTextView = (TextView) findViewById(R.id.distance_to_alternate_text_view);
+        savedStatusTextView = (TextView) findViewById(R.id.fuel_calculator_saved_status_text_view);
 
         altitudeRadioGroup.check(R.id.med_radio_button);
         weatherRadioGroup.check(R.id.vmc_radio_button);
@@ -286,15 +286,22 @@ public class FuelCalculatorActivity extends Activity
         {
             SharedPreferences dataCard = getSharedPreferences("DataCard", 0);
             SharedPreferences.Editor editor = dataCard.edit();
-            editor.putInt("joker", Integer.parseInt(jokerFuelResultTextView.getText().toString()));
-            editor.putInt("bingo", Integer.parseInt(bingoFuelResultTextView.getText().toString()));
+
+            editor.putInt("joker", Integer.parseInt(
+                    jokerFuelResultTextView.getText().toString().replace(" lbs", "")));
+
+            editor.putInt("bingo", Integer.parseInt(
+                    bingoFuelResultTextView.getText().toString().replace(" lbs", "")));
+
             editor.apply();
+
+            savedStatusTextView.setText("Saved OK");
+            savedStatusTextView.setTextColor(getResources().getColor(R.color.green));
         }
         catch (NumberFormatException e)
         {
-            Toast.makeText(FuelCalculatorActivity.this,
-                    "Invalid ", Toast.LENGTH_LONG).show();
-            Log.d("fuelcalc", "joker" + jokerFuelResultTextView.getText().toString());
+            savedStatusTextView.setText("Invalid values");
+            savedStatusTextView.setTextColor(getResources().getColor(R.color.dark_red));
         }
     }
 }
