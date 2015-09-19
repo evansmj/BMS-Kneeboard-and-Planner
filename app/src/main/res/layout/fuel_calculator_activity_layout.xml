@@ -197,7 +197,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/fuel_calculator_saved_status_text_view"
             android:layout_below="@+id/joker_offset_edit_text"
-            android:paddingTop="20dp"
+            android:visibility="gone"
             android:textStyle="bold"
             android:textAppearance="?android:textAppearanceLarge"
             android:layout_centerHorizontal="true"/>

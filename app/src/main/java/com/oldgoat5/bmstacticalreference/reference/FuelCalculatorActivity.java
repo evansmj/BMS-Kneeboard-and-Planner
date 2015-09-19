@@ -45,7 +45,7 @@ public class FuelCalculatorActivity extends Activity
     private int weatherConditions;
 
     @Override
-    public void onCreate(Bundle savedInstanceState)
+    public void onCreate(final Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fuel_calculator_activity_layout);
@@ -127,6 +127,8 @@ public class FuelCalculatorActivity extends Activity
                     returnLegMiles = 0;
                     jokerFuelResultTextView.setText("");
                     bingoFuelResultTextView.setText("");
+                    savedStatusTextView.setVisibility(View.GONE);
+                    savedStatusTextView.setText("");
                 }
             }
         });
@@ -252,7 +254,6 @@ public class FuelCalculatorActivity extends Activity
 
         bingoFuelResultTextView.setText(Integer.toString(total) + " lbs");
         jokerFuelResultTextView.setText(Integer.toString(total + selectedJokerOffset) + " lbs");
-        //totalFuelTextView.setText(Integer.toString(5) + " lbs");
     }
 
     private void instantiateResources()
@@ -297,11 +298,13 @@ public class FuelCalculatorActivity extends Activity
 
             savedStatusTextView.setText("Saved OK");
             savedStatusTextView.setTextColor(getResources().getColor(R.color.green));
+            savedStatusTextView.setVisibility(View.VISIBLE);
         }
         catch (NumberFormatException e)
         {
             savedStatusTextView.setText("Invalid values");
             savedStatusTextView.setTextColor(getResources().getColor(R.color.dark_red));
+            savedStatusTextView.setVisibility(View.VISIBLE);
         }
     }
 }
