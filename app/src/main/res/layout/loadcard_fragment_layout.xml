@@ -6,7 +6,8 @@
     android:layout_height="fill_parent"
     android:focusableInTouchMode="true"
     android:fillViewport="true"
-    android:theme="@style/BlueTheme">
+    android:theme="@style/BlueTheme"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <!-- Do not support right to left layouts, use inputtype=text to disable wordwrap-->
 
@@ -249,7 +250,7 @@
             android:id="@+id/data_card_joker_label_text_view"
             android:layout_alignLeft="@+id/data_card_wing4_label_text_view"
             android:layout_alignRight="@+id/data_card_wing4_label_text_view"
-            android:text="@string/joker"
+            android:text="@string/joker_no_colon"
             android:textAppearance="?android:textAppearanceMedium"
             android:background="@drawable/card_dark_background"
             android:padding="3dp"/>
@@ -271,7 +272,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/data_card_bingo_label_text_view"
             android:layout_alignBaseline="@+id/data_card_joker_label_text_view"
-            android:text="@string/bingo"
+            android:text="@string/bingo_no_colon"
             android:layout_alignLeft="@+id/data_card_idm_label_text_view"
             android:layout_alignRight="@+id/data_card_package_tcn_label_text_view"
             android:textAppearance="?android:textAppearanceMedium"
@@ -855,7 +856,7 @@
             android:text="@string/delivery"
             android:layout_below="@+id/data_card_package_master_label_text_view"
             android:gravity="bottom|center"
-            android:layout_alignBottom="@+id/data_card_delivery_release_speed_text_view"
+            android:layout_alignBottom="@+id/data_card_delivery_approach_course_label_text_view"
             android:background="@drawable/card_dark_background"
             android:textAppearance="?android:textAppearanceMedium"
             android:padding="3dp"/>
@@ -880,37 +881,10 @@
             android:minWidth="60dp"
             android:padding="3dp"
             android:inputType="textNoSuggestions"
-            android:layout_toLeftOf="@+id/data_card_package_label_text_view"
+            android:layout_alignLeft="@+id/data_card_name_label_text_view"
             android:textAppearance="?android:textAppearanceMedium"
-            android:layout_toRightOf="@+id/data_card_delivery_type_text_view"
+            android:layout_alignRight="@+id/data_card_name_label_text_view"
             android:layout_alignBaseline="@+id/data_card_delivery_type_text_view"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/data_card_delivery_approach_course_text_view"
-            android:layout_below="@+id/data_card_package5_edit_text"
-            android:text="@string/app_course"
-            android:background="@drawable/card_dark_background"
-            android:padding="3dp"
-            android:textAppearance="?android:textAppearanceMedium"
-            android:layout_alignLeft="@+id/data_card_package_label_text_view"
-            android:layout_toRightOf="@+id/data_card_delivery_type_edit_text"/>
-
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/data_card_delivery_approach_course_edit_text"
-            android:layout_toRightOf="@+id/data_card_delivery_approach_course_text_view"
-            style="@style/Card.EditText.Style"
-            android:padding="3dp"
-            android:minWidth="50dp"
-            android:maxWidth="50dp"
-            android:textAppearance="?android:textAppearanceMedium"
-            android:layout_toLeftOf="@+id/data_card_delivery_min_safe_rel_alt_text_view"
-            android:inputType="textNoSuggestions"
-            android:layout_alignBaseline="@+id/data_card_delivery_approach_course_text_view"
-            android:text="@string/app_course_init"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -920,8 +894,8 @@
             android:background="@drawable/card_dark_background"
             android:textAppearance="?android:textAppearanceMedium"
             android:padding="3dp"
+            android:layout_below="@+id/data_card_package5_idm_edit_text"
             android:layout_toLeftOf="@+id/data_card_package_tasking_label_text_view"
-            android:layout_alignBaseline="@+id/data_card_delivery_approach_course_text_view"
             android:text="@string/msra"/>
 
         <EditText
@@ -955,8 +929,8 @@
             android:id="@+id/data_card_delivery_release_altitude_edit_text"
             android:text="@string/rel_alt_init"
             android:textAppearance="?android:textAppearanceMedium"
-            android:layout_alignRight="@+id/data_card_delivery_approach_course_edit_text"
-            android:layout_toRightOf="@+id/data_card_delivery_release_altitude_text_view"
+            android:layout_alignLeft="@+id/data_card_name_label_text_view"
+            android:layout_alignRight="@+id/data_card_name_label_text_view"
             android:layout_alignBaseline="@+id/data_card_delivery_release_altitude_text_view"
             style="@style/Card.EditText.Style"
             android:inputType="textNoSuggestions"
@@ -1040,6 +1014,270 @@
             android:textAppearance="?android:textAppearanceMedium"
             android:layout_alignParentRight="true"
             android:layout_toRightOf="@+id/data_card_delivery_time_of_fall_text_view"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/data_card_delivery_approach_course_label_text_view"
+            android:layout_below="@+id/data_card_delivery_release_speed_text_view"
+            android:text="@string/app_course"
+            android:layout_alignLeft="@+id/data_card_pos_label_text_view"
+            android:layout_alignRight="@+id/data_card_pos_label_text_view"
+            android:background="@drawable/card_dark_background"
+            android:padding="3dp"
+            android:textAppearance="?android:textAppearanceMedium"/>
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/data_card_delivery_approach_course_edit_text"
+            style="@style/Card.EditText.Style"
+            android:layout_alignBaseline="@+id/data_card_delivery_approach_course_label_text_view"
+            android:padding="3dp"
+            android:inputType="textNoSuggestions"
+            android:text="@string/app_course_init"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:layout_alignLeft="@+id/data_card_name_label_text_view"
+            android:layout_alignRight="@+id/data_card_name_label_text_view"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/data_card_delivery_sight_depression_label_text_view"
+            android:background="@drawable/card_dark_background"
+            android:layout_alignBaseline="@+id/data_card_delivery_approach_course_label_text_view"
+            android:padding="3dp"
+            android:text="@string/sight_depression_delivery_label"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:layout_alignLeft="@+id/data_card_idm_label_text_view"
+            android:layout_alignRight="@+id/data_card_tcn_label_text_view"/>
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/data_card_delivery_sight_depression_edit_text"
+            android:layout_alignBaseline="@+id/data_card_delivery_approach_course_label_text_view"
+            style="@style/Card.EditText.Style"
+            android:padding="3dp"
+            android:text="@string/sight_depression_init"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:layout_alignLeft="@+id/data_card_flight_notes_label_text_view"
+            android:inputType="textNoSuggestions"
+            android:layout_alignRight="@+id/data_card_flight_notes_label_text_view"/>
+
+        <com.oldgoat5.bmstacticalreference.tacticalreference.VerticalTextView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:id="@+id/data_card_weapon_label_text_view"
+            android:gravity="bottom|center"
+            android:layout_below="@id/data_card_delivery_label_text_view"
+            android:text="@string/weapon"
+            android:padding="3dp"
+            android:layout_alignBottom="@+id/data_card_weapon_fuse_label_text_view"
+            android:background="@drawable/card_dark_background"
+            android:textAppearance="?android:textAppearanceMedium"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/data_card_weapon_type_label_text_view"
+            android:background="@drawable/card_dark_background"
+            android:layout_below="@+id/data_card_delivery_approach_course_label_text_view"
+            android:text="@string/type_no_colon"
+            android:padding="3dp"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:layout_alignLeft="@+id/data_card_delivery_release_speed_text_view"
+            android:layout_alignRight="@+id/data_card_delivery_release_speed_text_view"/>
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/data_card_weapon_type_edit_text"
+            style="@style/Card.EditText.Style"
+            android:layout_alignLeft="@+id/data_card_name_label_text_view"
+            android:layout_alignRight="@+id/data_card_name_label_text_view"
+            android:layout_alignBaseline="@+id/data_card_weapon_type_label_text_view"
+            android:padding="3dp"
+            android:inputType="textNoSuggestions"
+            android:textAppearance="?android:textAppearanceMedium"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/data_card_weapon_release_angle_label_text_view"
+            android:layout_alignBaseline="@+id/data_card_weapon_type_label_text_view"
+            android:padding="3dp"
+            android:inputType="text"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:layout_alignLeft="@+id/data_card_idm_label_text_view"
+            android:layout_alignRight="@+id/data_card_tcn_label_text_view"
+            android:background="@drawable/card_dark_background"
+            android:text="@string/rel_angle"/>
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/data_card_weapon_release_angle_edit_text"
+            android:layout_alignBaseline="@id/data_card_weapon_type_label_text_view"
+            style="@style/Card.EditText.Style"
+            android:layout_alignLeft="@id/data_card_flight_notes_label_text_view"
+            android:layout_alignRight="@id/data_card_flight_notes_label_text_view"
+            android:padding="3dp"
+            android:text="@string/rel_angle_init"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:inputType="textNoSuggestions"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/data_card_weapon_arming_delay_label_text_view"
+            android:layout_below="@id/data_card_weapon_type_label_text_view"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:padding="3dp"
+            android:text="@string/arming_delay"
+            android:layout_alignLeft="@id/data_card_pos_label_text_view"
+            android:layout_alignRight="@id/data_card_pos_label_text_view"
+            android:background="@drawable/card_dark_background"
+            android:inputType="text"/>
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/data_card_weapon_arming_delay_edit_text"
+            android:layout_alignBaseline="@+id/data_card_weapon_arming_delay_label_text_view"
+            android:layout_alignLeft="@id/data_card_name_label_text_view"
+            android:layout_alignRight="@id/data_card_name_label_text_view"
+            style="@style/Card.EditText.Style"
+            android:padding="3dp"
+            android:text="@string/arming_delay_init"
+            android:inputType="textNoSuggestions"
+            android:textAppearance="?android:textAppearanceMedium"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/data_card_weapon_release_mode_label_text_view"
+            android:layout_alignBaseline="@+id/data_card_weapon_arming_delay_label_text_view"
+            android:layout_alignLeft="@id/data_card_idm_label_text_view"
+            android:layout_alignRight="@id/data_card_tcn_label_text_view"
+            android:padding="3dp"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:background="@drawable/card_dark_background"
+            android:text="@string/sgl_pair"/>
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/data_card_weapon_release_mode_edit_text"
+            android:layout_alignBaseline="@+id/data_card_weapon_arming_delay_label_text_view"
+            android:padding="3dp"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:inputType="textNoSuggestions"
+            android:text="@string/single"
+            style="@style/Card.EditText.Style"
+            android:layout_alignLeft="@+id/data_card_flight_notes_label_text_view"
+            android:layout_alignRight="@+id/data_card_flight_notes_label_text_view"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/data_card_weapon_burst_altitude_label_text_view"
+            android:layout_below="@+id/data_card_weapon_arming_delay_label_text_view"
+            android:padding="3dp"
+            android:text="@string/burst_alt"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:background="@drawable/card_dark_background"
+            android:layout_alignLeft="@id/data_card_pos_label_text_view"
+            android:layout_alignRight="@id/data_card_pos_label_text_view"/>
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/data_card_weapon_burst_altitude_edit_text"
+            android:layout_alignBaseline="@+id/data_card_weapon_burst_altitude_label_text_view"
+            android:layout_alignLeft="@id/data_card_name_label_text_view"
+            android:layout_alignRight="@id/data_card_name_label_text_view"
+            android:inputType="textNoSuggestions"
+            style="@style/Card.EditText.Style"
+            android:padding="3dp"
+            android:text="@string/burst_alt_init"
+            android:textAppearance="?android:textAppearanceMedium"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/data_card_weapon_ripple_quantity_text_view"
+            android:layout_alignBaseline="@+id/data_card_weapon_burst_altitude_label_text_view"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:text="@string/ripple"
+            android:padding="3dp"
+            android:background="@drawable/card_dark_background"
+            android:layout_alignLeft="@id/data_card_idm_label_text_view"
+            android:layout_alignRight="@id/data_card_tcn_label_text_view"/>
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/data_card_weapon_ripple_quantity_edit_text"
+            android:layout_alignBaseline="@id/data_card_weapon_burst_altitude_label_text_view"
+            android:inputType="textNoSuggestions"
+            android:text="@string/ripple_init"
+            android:padding="3dp"
+            android:textAppearance="?android:textAppearanceMedium"
+            style="@style/Card.EditText.Style"
+            android:layout_alignLeft="@id/data_card_flight_notes_label_text_view"
+            android:layout_alignRight="@id/data_card_flight_notes_label_text_view"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/data_card_weapon_fuse_label_text_view"
+            android:layout_below="@id/data_card_weapon_burst_altitude_label_text_view"
+            android:text="@string/fuse"
+            android:padding="3dp"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:background="@drawable/card_dark_background"
+            android:layout_alignLeft="@id/data_card_pos_label_text_view"
+            android:layout_alignRight="@id/data_card_pos_label_text_view"/>
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/data_card_weapon_fuse_edit_text"
+            android:inputType="textNoSuggestions"
+            android:padding="3dp"
+            android:text="@string/fuse_nose"
+            android:textAppearance="?android:textAppearanceMedium"
+            style="@style/Card.EditText.Style"
+            android:layout_alignBaseline="@id/data_card_weapon_fuse_label_text_view"
+            android:layout_alignLeft="@id/data_card_name_label_text_view"
+            android:layout_alignRight="@id/data_card_name_label_text_view"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/data_card_weapon_spacing_label_text_view"
+            android:layout_alignBaseline="@id/data_card_weapon_fuse_label_text_view"
+            android:padding="3dp"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:background="@drawable/card_dark_background"
+            android:layout_alignLeft="@id/data_card_idm_label_text_view"
+            android:layout_alignRight="@id/data_card_package_tcn_label_text_view"
+            android:text="@string/spacing"/>
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/data_card_weapon_spacing_edit_text"
+            android:layout_alignBaseline="@id/data_card_weapon_fuse_label_text_view"
+            style="@style/Card.EditText.Style"
+            android:layout_alignLeft="@id/data_card_flight_notes_label_text_view"
+            android:layout_alignRight="@id/data_card_flight_notes_label_text_view"
+            android:inputType="textNoSuggestions"
+            android:padding="3dp"
+            android:text="@string/spacing_init"
+            android:textAppearance="?android:textAppearanceMedium"/>
+
 
     </RelativeLayout>
 </ScrollView>

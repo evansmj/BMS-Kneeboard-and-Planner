@@ -23,6 +23,7 @@ public class LoadCardFragment extends Fragment
     private View view;
 
     //todo save datacard, clear data card
+    //todo add alow and msl floor
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, 
@@ -44,6 +45,10 @@ public class LoadCardFragment extends Fragment
         super.onResume();
 
         loadDataCard("DataCard");
+        SharedPreferences.Editor editor = dataCard.edit();
+        editor.remove("joker");
+        editor.remove("bingo");
+        editor.apply();
         changeTextAppearance(getSelectedCardSize());
     }
 
@@ -129,7 +134,7 @@ public class LoadCardFragment extends Fragment
         //todo make shared preference keys global constants like c ?
         dataCard = getActivity().getSharedPreferences(dataCardName, 0);
 
-        jokerEditText.setText(Integer.toString(dataCard.getInt("joker", 0)));
-        bingoEditText.setText(Integer.toString(dataCard.getInt("bingo", 0)));
+        jokerEditText.setText(dataCard.getString("joker", "3000lbs"));
+        bingoEditText.setText(dataCard.getString("bingo", "2000lbs"));
     }
 }

@@ -57,7 +57,7 @@
     <string name="notes">Notes:</string>
     <string name="tasking">Tasking</string>
     <string name="delivery">Delivery</string>
-    <string name="app_course">CRS</string>
+    <string name="app_course">Appr. Crs</string>
     <string name="app_course_init">000°</string>
     <string name="msra">MSRA</string>
     <string name="msra_init">0000ft. AGL</string>
@@ -70,8 +70,26 @@
     <string name="rel_spd_init">000 KCAS</string>
     <string name="tof">T. o. Fall</string>
     <string name="tof_init">00.0s</string>
+    <string name="sight_depression_delivery_label">Depp.</string>
+    <string name="sight_depression_init">260mrad.</string>
+    <string name="rel_angle">Rel. Ang</string>
+    <string name="rel_angle_init">45°</string>
+    <string name="arming_delay">Arm. Del</string>
+    <string name="arming_delay_init">7.0s</string>
+    <string name="sgl_pair">Sgl/Pair</string>
+    <string name="burst_alt">Burst Alt</string>
+    <string name="burst_alt_init">2000ft.</string>
+    <string name="ripple">Ripple</string>
+    <string name="ripple_init">1</string>
+    <string name="fuse">Fuse</string>
+    <string name="spacing">Spacing</string>
+    <string name="spacing_init">175ft.</string>
+    <string name="joker_no_colon">Joker</string>
+    <string name="bingo_no_colon">Bingo</string>
+    <string name="fuse_nose">Nose</string>
+    <string name="single">Single</string>
 
-    <string name="image_content_description">F-16 front profile</string>
+    <string name="weapon">Weapon</string>
 
     <!-- Navigation Activity -->
     <string name="korea_theater_title">Korean Theater of Operations</string>
@@ -86,7 +104,8 @@
     <string name="russia">Russia</string>
     <string name="russia_fragment_title">Russian Bases - Korean Theater of Operations</string>
 
-    <!-- Battle For Balkans -->
+    <!-- Battle For Balkans (save data to replace images, probably put into database, search queries
+         nearest airbase (Gps), nearest ILS -->
     <string name="balkans">Battle For Balkans</string>
     <string name="airport">Airport</string>
     <string name="tower">TOWER(UHF/VHF)</string>
