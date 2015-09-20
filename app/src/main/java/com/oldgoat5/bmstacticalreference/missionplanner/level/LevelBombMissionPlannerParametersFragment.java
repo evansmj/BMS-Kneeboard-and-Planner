@@ -931,41 +931,39 @@ public class LevelBombMissionPlannerParametersFragment extends Fragment
             editor.putString("approach_course", selectedApproachCourse);
 
             //msra agl
-            editor.putInt("msra", Integer.parseInt(
-                    determinedMinSafeReleaseAltitudeResultTextView.getText().toString().replace(
-                            "ft. AGL", "")));
+            editor.putString("msra",
+                    determinedMinSafeReleaseAltitudeResultTextView.getText().toString());
             //rel alt msl / agl
-            editor.putInt("release_altitude_msl", Integer.parseInt(
-                    determinedReleaseAltitudeResultTextView.getText().toString().replace(
-                            "ft. MSL", "")));
-            editor.putInt("release_altitude_agl", selectedReleaseAltitudeAGL);
+            editor.putString("release_altitude_msl",
+                    determinedReleaseAltitudeResultTextView.getText().toString());
+
+            editor.putString("release_altitude_agl", selectedReleaseAltitudeAGL + "ft. AGL");
 
             //rel speed kcas / ktas
-            editor.putInt("release_speed_kcas", Integer.parseInt(
-                    determinedReleaseSpeedResultTextView.getText().toString().replace(
-                            "kn.", "")));
-            editor.putInt("release_speed_ktas", Integer.parseInt(selectedReleaseSpeed));
+            editor.putString("release_speed_kcas",
+                    determinedReleaseSpeedResultTextView.getText().toString());
+
+            editor.putString("release_speed_ktas", selectedReleaseSpeed + "kn. KTAS");
 
             //bomb range
-            editor.putInt("bomb_range", Integer.parseInt(
-                    determinedBombRangeResultTextView.getText().toString().replace(
-                            "ft.", "")));
+            editor.putString("bomb_range",
+                    determinedBombRangeResultTextView.getText().toString());
 
             //bomb tof
-            editor.putFloat("bomb_tof", Float.parseFloat(
-                    determinedBombFallTimeResultTextView.getText().toString().replace(
-                            "s", "")));
+            editor.putString("bomb_tof",
+                    determinedBombFallTimeResultTextView.getText().toString());
 
             //approx sight depression,
-            editor.putInt("approx_sight_depression", Integer.parseInt(
-                    determinedSightDepressionResultTextView.getText().toString().replace(
-                            "mrad.", "")));
+            editor.putString("approx_sight_depression",
+                    determinedSightDepressionResultTextView.getText().toString());
             //rel mode
             editor.putString("release_mode", selectedReleaseMode);
             //ripple qty
             editor.putString("ripple", selectedRippleQuantity);
             //bomb spacing
-            editor.putInt("bomb_spacing", selectedBombSpacing);
+            editor.putString("bomb_spacing", selectedBombSpacing + "ft.");
+
+            //level release
             editor.putString("release_profile", "Level");
 
             editor.apply();
