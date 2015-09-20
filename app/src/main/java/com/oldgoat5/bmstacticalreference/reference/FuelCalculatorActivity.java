@@ -288,11 +288,9 @@ public class FuelCalculatorActivity extends Activity
             SharedPreferences dataCard = getSharedPreferences("DataCard", 0);
             SharedPreferences.Editor editor = dataCard.edit();
 
-            editor.putInt("joker", Integer.parseInt(
-                    jokerFuelResultTextView.getText().toString().replace(" lbs", "")));
+            editor.putString("joker", jokerFuelResultTextView.getText().toString());
 
-            editor.putInt("bingo", Integer.parseInt(
-                    bingoFuelResultTextView.getText().toString().replace(" lbs", "")));
+            editor.putString("bingo", bingoFuelResultTextView.getText().toString());
 
             editor.apply();
 
