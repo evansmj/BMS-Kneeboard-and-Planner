@@ -3,7 +3,6 @@ package com.oldgoat5.bmstacticalreference;
 import android.app.Activity;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioGroup;
@@ -11,7 +10,7 @@ import android.widget.RadioGroup;
 /*********************************************************************
  * Copyright © Michael Evans - All Rights Reserved.
  *
- * @author michael
+ * @author Michael Evans
  * @since 9/17/2015
  *********************************************************************/
 public class SettingsActivity extends Activity
@@ -32,7 +31,7 @@ public class SettingsActivity extends Activity
         dataCardPref = getApplicationContext().getSharedPreferences("DataCard", 0);
         selectedCardSize = dataCardPref.getInt("card_size", android.R.style.TextAppearance_Medium);
 
-        Log.d("SettingsActivity", "onCreate Text Size = " + selectedCardSize);
+        //Log.d("SettingsActivity", "onCreate Text Size = " + selectedCardSize);
 
         instantiateResources();
         checkRadioButton();
@@ -44,17 +43,17 @@ public class SettingsActivity extends Activity
     {
         super.onResume();
 
-        Log.d("SettingsActivity", "onResume() text size = " + selectedCardSize);
+        //Log.d("SettingsActivity", "onResume() text size = " + selectedCardSize);
 
         selectedCardSize = dataCardPref.getInt("card_size", android.R.style.TextAppearance_Medium);
         checkRadioButton();
 
-        Log.d("SettingsActivity", "onResume() end size = " + selectedCardSize);
+        //Log.d("SettingsActivity", "onResume() end size = " + selectedCardSize);
     }
 
     private void checkRadioButton()
     {
-        Log.d("SettingsActivity", "check radio button card size = " + selectedCardSize);
+        //Log.d("SettingsActivity", "check radio button card size = " + selectedCardSize);
 
         switch(selectedCardSize)
         {
@@ -85,7 +84,7 @@ public class SettingsActivity extends Activity
             @Override
             public void onClick(View view)
             {
-                Log.d("SettingsActivity", "apply onclick textsize = " + selectedCardSize);
+                //Log.d("SettingsActivity", "apply onclick textsize = " + selectedCardSize);
 
                 dataCardPref.edit().putInt("card_size", selectedCardSize).apply();
 
@@ -113,7 +112,7 @@ public class SettingsActivity extends Activity
                         break;
                 }
 
-                Log.d("SettingsActivity", "onCheckedChange textSize " + selectedCardSize);
+                //Log.d("SettingsActivity", "onCheckedChange textSize " + selectedCardSize);
             }
         });
     }

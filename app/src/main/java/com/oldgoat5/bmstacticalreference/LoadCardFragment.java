@@ -4,7 +4,6 @@ import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -52,7 +51,7 @@ public class LoadCardFragment extends Fragment
         view = inflater.inflate(
                 R.layout.loadcard_fragment_layout, container, false);
 
-        Log.d("LoadCardFragment", "on Create View()");
+        //Log.d("LoadCardFragment", "on Create View()");
 
         instantiateResources();
         setListeners();
@@ -60,7 +59,7 @@ public class LoadCardFragment extends Fragment
         dataCardTextSize = getSelectedCardSize();
         changeTextAppearance(dataCardTextSize);
 
-        Log.d("LoadCardFragment", "onCreate() dataTextSize = " + dataCardTextSize);
+        //Log.d("LoadCardFragment", "onCreate() dataTextSize = " + dataCardTextSize);
 
         return view;
     }
@@ -70,11 +69,11 @@ public class LoadCardFragment extends Fragment
     {
         super.onResume();
 
-        Log.d("LoadCardFragment", "on Resume()");
-        Log.d("LoadCardFragment", "on Resume() dataCardTextSize = " + dataCardTextSize);
+        //Log.d("LoadCardFragment", "on Resume()");
+        //Log.d("LoadCardFragment", "on Resume() dataCardTextSize = " + dataCardTextSize);
         loadDataCard();
         changeTextAppearance(dataCardTextSize);
-        Log.d("LoadCardFragment", "on Resume end textSize = " + dataCardTextSize);
+        //Log.d("LoadCardFragment", "on Resume end textSize = " + dataCardTextSize);
     }
 
     @Override
@@ -82,8 +81,8 @@ public class LoadCardFragment extends Fragment
     {
         super.onPause();
 
-        Log.d("LoadCardFragment", "on Pause()");
-        Log.d("LoadCardFragment", "on Pause() dataCardTextSize = " + dataCardTextSize);
+        //Log.d("LoadCardFragment", "on Pause()");
+        //Log.d("LoadCardFragment", "on Pause() dataCardTextSize = " + dataCardTextSize);
         saveDataCard();
     }
 
@@ -116,12 +115,12 @@ public class LoadCardFragment extends Fragment
     private void changeTextAppearance(int size)
     {
         View child = ((ViewGroup)view).getChildAt(0);
-        //Log.d("LoadCardFragment", child.toString());
+        ////Log.d("LoadCardFragment", child.toString());
 
         for (int i = 0; i < ((ViewGroup)child).getChildCount(); i++)
         {
             View grandchild = ((ViewGroup)child).getChildAt(i);
-            //Log.d("LoadCardFragment", grandchild.toString());
+            ////Log.d("LoadCardFragment", grandchild.toString());
             //if there is text view or edit text, change textappearance size.
 
             if (grandchild.toString().contains("text_view"))
@@ -139,7 +138,7 @@ public class LoadCardFragment extends Fragment
 
             if (grandchild.toString().contains("data_card_package_uhf_vhf_relative_layout"))
             {
-                //Log.d("LoadCardFragment", "grandchild.tostring() = " + grandchild.toString());
+                ////Log.d("LoadCardFragment", "grandchild.tostring() = " + grandchild.toString());
 
                 for (int x = 0; x < ((ViewGroup)grandchild).getChildCount(); x++)
                 {
@@ -276,12 +275,12 @@ public class LoadCardFragment extends Fragment
             public void onClick(View view)
             {
                 dataCardTextSize = getSelectedCardSize();
-                Log.d("LoadCardFragment", "start button, dataCardTextSize = " + dataCardTextSize);
+                //Log.d("LoadCardFragment", "start button, dataCardTextSize = " + dataCardTextSize);
 
                 dataCard.edit().clear().apply();
                 loadDataCard();
                 dataCard.edit().putInt("card_size", dataCardTextSize).apply();
-                Log.d("LoadCardFragment", "end button, dataCardTextSize = " + dataCardTextSize);
+                //Log.d("LoadCardFragment", "end button, dataCardTextSize = " + dataCardTextSize);
             }
         });
     }
