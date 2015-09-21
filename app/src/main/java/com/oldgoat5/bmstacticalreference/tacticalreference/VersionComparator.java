@@ -2,13 +2,13 @@ package com.oldgoat5.bmstacticalreference.tacticalreference;
 
 import android.util.Log;
 
-//package com.readystatesoftware.sqliteasset;
+import com.oldgoat5.bmstacticalreference.tacticalreference.SQLiteAssetHelper.SQLiteAssetException;
 
 import java.util.Comparator;
-        import java.util.regex.Matcher;
-        import java.util.regex.Pattern;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
-        import com.oldgoat5.bmstacticalreference.tacticalreference.SQLiteAssetHelper.SQLiteAssetException;
+//package com.readystatesoftware.sqliteasset;
 
 /**
  * Compare paths by their upgrade version numbers, instead of using

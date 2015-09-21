@@ -1,22 +1,13 @@
 package com.oldgoat5.bmstacticalreference;
 
-import android.app.ActionBar.Tab;
-import android.app.FragmentTransaction;
-import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentManager;
 import android.support.v4.view.ViewPager;
-import android.app.ActionBar;
-import android.util.AttributeSet;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.ViewGroup;
-import android.view.Window;
 
 import com.oldgoat5.bmstacticalreference.slidingtabs.PagerItem;
 import com.oldgoat5.bmstacticalreference.slidingtabs.SlidingTabLayout;
@@ -42,7 +33,7 @@ public class MainActivity extends FragmentActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Log.d("MainActivity", "begin onCreate()");
+        //Log.d("MainActivity", "begin onCreate()");
 
         tabsList = new ArrayList<PagerItem>();
 

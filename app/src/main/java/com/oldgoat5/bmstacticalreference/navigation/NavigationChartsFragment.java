@@ -9,10 +9,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-import com.oldgoat5.bmstacticalreference.navigation.aegean.AegeanNavigationActivity;
-import com.oldgoat5.bmstacticalreference.navigation.korea.KoreaNavigationActivity;
-import com.oldgoat5.bmstacticalreference.navigation.balkans.BattleForBalkansNavigationActivity;
 import com.oldgoat5.bmstacticalreference.R;
+import com.oldgoat5.bmstacticalreference.navigation.aegean.AegeanNavigationActivity;
+import com.oldgoat5.bmstacticalreference.navigation.balkans.BattleForBalkansNavigationActivity;
+import com.oldgoat5.bmstacticalreference.navigation.korea.KoreaNavigationActivity;
 
 /*********************************************************************
  * Copyright © Michael Evans - All Rights Reserved.

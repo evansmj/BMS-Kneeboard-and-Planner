@@ -6,8 +6,6 @@ import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.text.TextWatcher;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,7 +25,6 @@ import org.apache.commons.math3.analysis.polynomials.PolynomialSplineFunction;
 
 import java.io.IOException;
 import java.util.HashMap;
-import java.util.StringTokenizer;
 
 /*********************************************************************
  * Copyright © Michael Evans - All Rights Reserved.
@@ -117,7 +114,7 @@ public class LevelBombMissionPlannerParametersFragment extends Fragment
         view = inflater.inflate(
                 R.layout.level_bomb_mission_planner_parameters_fragment_layout, container, false);
 
-        Log.d("levelParametersFragment", "onCreateView() called");
+        //Log.d("levelParametersFragment", "onCreateView() called");
 
         getArgsFromBundle();
         instantiateResources();
@@ -625,7 +622,7 @@ public class LevelBombMissionPlannerParametersFragment extends Fragment
                     determinedReleaseSpeedResultTextView.setTextColor(Color.BLACK);
                     determinedReleaseSpeedResultTextView.setTypeface(Typeface.DEFAULT);
 
-                    Log.d("levelreleaseparam", "tas: " + tas + "Po: " + Po + "P: " + P);
+                    //Log.d("levelreleaseparam", "tas: " + tas + "Po: " + Po + "P: " + P);
 
                     //calculate sight depression
                     final long sightDepressionResult = Math.round((3.14159 / 180) * Math.atan(
@@ -646,7 +643,7 @@ public class LevelBombMissionPlannerParametersFragment extends Fragment
                         PolynomialSplineFunction clusterFunction = interpolator.interpolate(
                                 CLUSTER_SPLASH_PATTERN_BURST_ALT, getSplashPattern());
 
-                        Log.d("levelrelparameters", "selectedBurstAlt = " + selectedBurstAltitude);
+                        //Log.d("levelrelparameters", "selectedBurstAlt = " + selectedBurstAltitude);
 
                         double cbuPatternDiameter = clusterFunction.value(selectedBurstAltitude);
 

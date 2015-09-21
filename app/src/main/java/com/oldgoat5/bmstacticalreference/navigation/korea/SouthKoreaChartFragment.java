@@ -12,10 +12,9 @@ import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.RelativeLayout;
 
-import com.oldgoat5.bmstacticalreference.navigation.ZoomImageView;
 import com.oldgoat5.bmstacticalreference.R;
+import com.oldgoat5.bmstacticalreference.navigation.ZoomImageView;
 
 /*********************************************************************
  * Copyright © Michael Evans - All Rights Reserved.

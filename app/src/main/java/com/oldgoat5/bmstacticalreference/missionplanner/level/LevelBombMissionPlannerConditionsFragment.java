@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -66,7 +65,7 @@ public class LevelBombMissionPlannerConditionsFragment extends Fragment
         view = inflater.inflate(
                 R.layout.level_bomb_mission_planner_conditions_fragment_layout, container, false);
 
-        Log.d("levelConditionsFragment", "onCreate() called");
+        //Log.d("levelConditionsFragment", "onCreate() called");
 
         instantiateResources();
         inputValidity = new HashMap<>();
@@ -130,7 +129,7 @@ public class LevelBombMissionPlannerConditionsFragment extends Fragment
                     public void setResult(String weaponName)
                     {
                         selectedWeapon = weaponName;
-                        Log.d("levlConitionsFrag", "selectedWeapon = " + selectedWeapon);
+                        //Log.d("levlConitionsFrag", "selectedWeapon = " + selectedWeapon);
                         selectedWeaponTextView.setText(selectedWeapon);
                         selectedWeaponTextView.setTextColor(Color.BLACK);
                         inputValidity.put("selectedWeapon", true);
@@ -146,20 +145,20 @@ public class LevelBombMissionPlannerConditionsFragment extends Fragment
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2)
             {
-                Log.d("levelConFragment", "beforeTextChanged: " + charSequence);
+                //Log.d("levelConFragment", "beforeTextChanged: " + charSequence);
                 before = charSequence.toString();
             }
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2)
             {
-                Log.d("levelConFragment", "onTextChanged: " + charSequence);
+                //Log.d("levelConFragment", "onTextChanged: " + charSequence);
             }
 
             @Override
             public void afterTextChanged(Editable editable)
             {
-                Log.d("levelConFragment", "afterTextChanged: " + editable.toString());
+                //Log.d("levelConFragment", "afterTextChanged: " + editable.toString());
                 if (editable.toString().length() == 3 && before.length() == 2)
                 {
                     editable.append("°@");
@@ -183,7 +182,7 @@ public class LevelBombMissionPlannerConditionsFragment extends Fragment
                             windEditText.setText(oldText + "kn.");
                             int heading = Integer.parseInt(oldText.substring(0, 3));
 
-                            Log.d("LevelConFrag", "heading: " + heading);
+                            //Log.d("LevelConFrag", "heading: " + heading);
 
                             if (heading > 360)
                             {
@@ -198,7 +197,7 @@ public class LevelBombMissionPlannerConditionsFragment extends Fragment
 
                             String speedText = windEditText.getText().toString().substring(5).replace("kn.", "");
 
-                            Log.d("LevelconFrag", "wind Speed: " + speedText);
+                            //Log.d("LevelconFrag", "wind Speed: " + speedText);
                             if (Integer.parseInt(speedText) > 99)
                             {
                                 Toast.makeText(getActivity(),
@@ -419,7 +418,7 @@ public class LevelBombMissionPlannerConditionsFragment extends Fragment
             @Override
             public void onClick(View cview)
             {
-                Log.d("levelConditionsFragment", "nextButton onClick()");
+                //Log.d("levelConditionsFragment", "nextButton onClick()");
 
                 //remove focus from all so last EditText can update
                 view.requestFocus();
@@ -462,11 +461,11 @@ public class LevelBombMissionPlannerConditionsFragment extends Fragment
                     bundle.putBoolean("useHpa", useHpa);
 
                     //send to level bomb mission planner parameters fragment.
-                    Log.d("levelConditionsFragment", "onConditionsResult = " + onConditionsResultListener);
+                    //Log.d("levelConditionsFragment", "onConditionsResult = " + onConditionsResultListener);
 
                     if (onConditionsResultListener != null)
                     {
-                        Log.d("levelConditionsFragment", "if (onConditionsResult != null) called");
+                        //Log.d("levelConditionsFragment", "if (onConditionsResult != null) called");
                         onConditionsResultListener.setBundle(bundle);
                     }
                 }

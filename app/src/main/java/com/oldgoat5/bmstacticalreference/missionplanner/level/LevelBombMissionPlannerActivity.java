@@ -3,7 +3,6 @@ package com.oldgoat5.bmstacticalreference.missionplanner.level;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
-import android.util.Log;
 
 import com.oldgoat5.bmstacticalreference.R;
 
@@ -28,7 +27,7 @@ public class LevelBombMissionPlannerActivity extends FragmentActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.level_bomb_mission_planner_activity_layout);
 
-        Log.d("levelActivity", "onCreate called");
+        //Log.d("levelActivity", "onCreate called");
 
         conditionsFragment = (LevelBombMissionPlannerConditionsFragment)
                 getSupportFragmentManager().findFragmentByTag(FIRST_INSTANCE_TAG);
@@ -36,12 +35,12 @@ public class LevelBombMissionPlannerActivity extends FragmentActivity
         parametersFragment = (LevelBombMissionPlannerParametersFragment)
                 getSupportFragmentManager().findFragmentByTag(SECOND_INSTANCE_TAG);
 
-        Log.d("levelActivity", "conditionsFragment = " + conditionsFragment);
-        Log.d("levelActivity", "parametersFragment = " + parametersFragment);
+        //Log.d("levelActivity", "conditionsFragment = " + conditionsFragment);
+        //Log.d("levelActivity", "parametersFragment = " + parametersFragment);
 
         if (conditionsFragment == null && parametersFragment == null)
         {
-            Log.d("levelActivity", "if (conditionsFragment == null) called"); //this is calling
+            //Log.d("levelActivity", "if (conditionsFragment == null) called"); //this is calling
                                                                     // after orientation change, it shouldn't
             conditionsFragment = new LevelBombMissionPlannerConditionsFragment();
 
@@ -50,7 +49,7 @@ public class LevelBombMissionPlannerActivity extends FragmentActivity
                     R.id.level_bomb_conditions_fragment_frame_layout,
                     conditionsFragment, FIRST_INSTANCE_TAG).commit();
 
-            Log.d("levelActivity", "after .add.commit();");
+            //Log.d("levelActivity", "after .add.commit();");
 
             conditionsFragment.setConditionsResultListener(
                     new LevelBombMissionPlannerConditionsFragment.OnConditionsResultListener()
@@ -59,7 +58,7 @@ public class LevelBombMissionPlannerActivity extends FragmentActivity
                         public void setBundle(Bundle bundle)
                         {
                             fromConditionsBundle = bundle; //after orientation change this not called
-                            Log.d("levelBombActivity", "set bundle = " + bundle.getInt("selectedCloudBase"));
+                            //Log.d("levelBombActivity", "set bundle = " + bundle.getInt("selectedCloudBase"));
 
                             parametersFragment = new LevelBombMissionPlannerParametersFragment();
                             parametersFragment.setArguments(fromConditionsBundle);
@@ -74,11 +73,11 @@ public class LevelBombMissionPlannerActivity extends FragmentActivity
         }
         else if (parametersFragment != null)
         {
-            Log.d("levelActivity", "if parametersFragment != null)");
+            //Log.d("levelActivity", "if parametersFragment != null)");
         }
         else
         {
-            Log.d("levelActivity", "conditionsFragment != null (else called)");
+            //Log.d("levelActivity", "conditionsFragment != null (else called)");
 
             conditionsFragment.setConditionsResultListener(
                     new LevelBombMissionPlannerConditionsFragment.OnConditionsResultListener()
@@ -87,7 +86,7 @@ public class LevelBombMissionPlannerActivity extends FragmentActivity
                         public void setBundle(Bundle bundle)
                         {
                             fromConditionsBundle = bundle; //after orientation change this not called
-                            Log.d("levelBombActivity", "set bundle = " + bundle.getInt("selectedCloudBase"));
+                            //Log.d("levelBombActivity", "set bundle = " + bundle.getInt("selectedCloudBase"));
 
                             parametersFragment = new LevelBombMissionPlannerParametersFragment();
                             parametersFragment.setArguments(fromConditionsBundle);

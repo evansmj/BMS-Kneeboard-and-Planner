@@ -1,15 +1,10 @@
 package com.oldgoat5.bmstacticalreference.tacticalreference;
 
-import java.io.IOException;
-import java.util.ArrayList;
-
 import android.app.Dialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.database.sqlite.SQLiteException;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,6 +16,9 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.oldgoat5.bmstacticalreference.R;
+
+import java.io.IOException;
+import java.util.ArrayList;
 
 /*********************************************************************
  * Copyright © Michael Evans - All Rights Reserved.
@@ -326,7 +324,7 @@ public class TacticalReferenceFragment extends Fragment
         surfaceTypeSpinner.setAdapter(surfaceTypeArrayAdapter);
         weaponTypeSpinner.setAdapter(weaponTypeArrayAdapter);
 
-        Log.d("LoadOutFragment", "getactivity=" + getActivity().toString());
+        //Log.d("LoadOutFragment", "getactivity=" + getActivity().toString());
 
         dbTools = new DBTools(getActivity());
 
@@ -341,7 +339,7 @@ public class TacticalReferenceFragment extends Fragment
         
         try
         {
-            Log.d("loadoutfragment", "openDataBase() try");
+            //Log.d("loadoutfragment", "openDataBase() try");
             dbTools.openDatabase();
         }
         catch (SQLiteException sqle)
@@ -365,13 +363,13 @@ public class TacticalReferenceFragment extends Fragment
      *****************************************************************/
     private ArrayList<OrdnanceObject> generateData()
     {
-        Log.d("loadoutfragment", "begin generateData()");
+        //Log.d("loadoutfragment", "begin generateData()");
         //ArrayList<RowItem> items;
         ArrayList<OrdnanceObject> dataList;
         
         dataList = dbTools.getAllRows();
         
-        Log.d("loadoutfragment", "after db.getAllRows()");
+        //Log.d("loadoutfragment", "after db.getAllRows()");
         /*items = new ArrayList<RowItem>();
         
         //or call method from dbtools get all rows

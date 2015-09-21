@@ -1,15 +1,14 @@
 package com.oldgoat5.bmstacticalreference.tacticalreference;
 
-import java.util.ArrayList;
-
 import android.app.ListActivity;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
+
+import java.util.ArrayList;
 
 public class ListViewPopulateDataBase extends ListActivity
 {
@@ -23,7 +22,7 @@ public class ListViewPopulateDataBase extends ListActivity
     {
         super.onCreate(savedInstanceState);
         
-        Log.d("listviewpopulate", "on Create");
+        //Log.d("listviewpopulate", "on Create");
         openDatabase();
         //writeToListView();
     }
@@ -79,7 +78,7 @@ public class ListViewPopulateDataBase extends ListActivity
         }
         catch(SQLiteException sqle)
         {
-            Log.d("DBTools.openDatabase()", "Could not open database.");
+            //Log.d("DBTools.openDatabase()", "Could not open database.");
             throw sqle;
         }
         finally

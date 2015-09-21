@@ -10,8 +10,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-import com.oldgoat5.bmstacticalreference.navigation.ZoomImageView;
 import com.oldgoat5.bmstacticalreference.R;
+import com.oldgoat5.bmstacticalreference.navigation.ZoomImageView;
 
 /********************************************************************
  * Copyright © Michael Evans - All Rights Reserved.

@@ -5,7 +5,6 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
-import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -16,9 +15,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.HashMap;
 
 public class DBTools extends SQLiteAssetHelper
 {
@@ -37,23 +34,23 @@ public class DBTools extends SQLiteAssetHelper
     public DBTools(Context context)
     {
         super(context, DB_NAME, null, DB_VERSION);
-        Log.d("DBTools", "constructor");
+        //Log.d("DBTools", "constructor");
         this.CONTEXT = context;
         DB_PATH = context.getApplicationInfo().dataDir + "/databases/";
         //DB_PATH = Environment.getExternalStorageDirectory();
         setForcedUpgrade();
-        Log.d("constructor, DB_PATH=", DB_PATH);
-        Log.d("cnstructor, context=", context.toString());
+        //Log.d("constructor, DB_PATH=", DB_PATH);
+        //Log.d("cnstructor, context=", context.toString());
     }
     
     public void createDatabase() throws IOException
     {
         boolean dbExists = checkDatabase();
-        Log.d("dbtools", "createDataBase()");
+        //Log.d("dbtools", "createDataBase()");
         
         if (!dbExists)
         {
-            Log.d("DBTools", "if !dbExists called");
+            //Log.d("DBTools", "if !dbExists called");
 
             database = this.getWritableDatabase();
 
@@ -63,7 +60,7 @@ public class DBTools extends SQLiteAssetHelper
             } 
             catch(IOException e)
             {
-                Log.d("dbtools", "EXCEPTION copydb()");
+                //Log.d("dbtools", "EXCEPTION copydb()");
                 e.printStackTrace();
                 //throw new Error("Could not copy database");
             }
@@ -94,7 +91,7 @@ public class DBTools extends SQLiteAssetHelper
             String path = DB_PATH + DB_NAME;
             checkDb = SQLiteDatabase.openDatabase(
                     path, null, SQLiteDatabase.OPEN_READONLY);
-            Log.d("DBTools", "checkDatabase() try");
+            //Log.d("DBTools", "checkDatabase() try");
         }
         catch (SQLiteException e)
         {
@@ -110,7 +107,7 @@ public class DBTools extends SQLiteAssetHelper
         
         /*if (!dbFile.exists())
         {
-            Log.d("DBTools.java", "checkdb() if!dbFile.exists called");
+            //Log.d("DBTools.java", "checkdb() if!dbFile.exists called");
             dbFile.getParentFile().mkdirs();
             copyDataBase(CONTEXT.getAssets().open(DB_PATH), 
             new FileOutputStream(DB_PATH));
@@ -140,15 +137,15 @@ public class DBTools extends SQLiteAssetHelper
             outputStream.flush();
             outputStream.close();
         }*/
-        Log.d("dbtools", "start copyDatabase");
+        //Log.d("dbtools", "start copyDatabase");
         
         InputStream input = CONTEXT.getAssets().open(DB_NAME);
-        Log.d("input=", input.toString());
+        //Log.d("input=", input.toString());
         
         String outFileName = DB_PATH + DB_NAME;
         
         OutputStream output = new FileOutputStream(outFileName);
-        Log.d("output", output.toString());
+        //Log.d("output", output.toString());
         
         byte[] buffer = new byte[1024];
         int length;
@@ -176,9 +173,9 @@ public class DBTools extends SQLiteAssetHelper
      *****************************************************************/
     public ArrayList<OrdnanceObject> getAllRows()
     {
-        Log.d("dbtools", "begin getAllRows()");
-        Log.d("myDataBase path", database.getPath());
-        Log.d("myDataBase version", Integer.toString(database.getVersion()));
+        //Log.d("dbtools", "begin getAllRows()");
+        //Log.d("myDataBase path", database.getPath());
+        //Log.d("myDataBase version", Integer.toString(database.getVersion()));
         
         //ArrayList<HashMap<String, String>> rowsArrayList;
         ArrayList<OrdnanceObject> rowsArrayList;
@@ -192,15 +189,15 @@ public class DBTools extends SQLiteAssetHelper
         //SQLiteDatabase database = this.getReadableDatabase();
         database = this.getWritableDatabase();
         
-        Log.d("dbtools", "before cursor = db.rawQuery");
+        //Log.d("dbtools", "before cursor = db.rawQuery");
         
         //////////it is breaking here.  check the myDataBase stuff. ////////////////////////////////// 
-        Log.d("my DataBase test", database.toString());
+        //Log.d("my DataBase test", database.toString());
         
         Cursor cursor = database.rawQuery(selectQuery, null);
         //Cursor cursor = myDataBase.rawQuery(selectQuery, null);
         
-        Log.d("dbtools", "after cursor raw query");
+        //Log.d("dbtools", "after cursor raw query");
         
         
         //make an object type of ordinance.  stick these into array list.  
@@ -451,7 +448,7 @@ public class DBTools extends SQLiteAssetHelper
 
             cursor.close();
             //add the weaponlist to the arraylist (weaponUseList).
-            //Log.d("DBTools otherlist", " " + tempUseList.size());
+            ////Log.d("DBTools otherlist", " " + tempUseList.size());
 
             masterUseList.add(tempUseList);
         }
@@ -823,7 +820,7 @@ public class DBTools extends SQLiteAssetHelper
 
             cursor.close();
             //add the weaponlist to the arraylist (weaponUseList).
-            //Log.d("DBTools otherlist", " " + tempUseList.size());
+            ////Log.d("DBTools otherlist", " " + tempUseList.size());
 
             masterUseList.add(tempUseList);
         }
@@ -885,7 +882,7 @@ public class DBTools extends SQLiteAssetHelper
                 "WHERE t.type = \"" + threatType + "\" " +
                 "ORDER BY name";
 
-        Log.d("dbTools", "threatType: " + threatType);
+        //Log.d("dbTools", "threatType: " + threatType);
 
         database = getWritableDatabase();
         Cursor cursor = database.rawQuery(query, null);
@@ -949,7 +946,7 @@ public class DBTools extends SQLiteAssetHelper
      *****************************************************************/
     public String[] getWeaponInfo(String weaponName)
     {
-        Log.d("DBTools", "getWeaponInfo: " + weaponName);
+        //Log.d("DBTools", "getWeaponInfo: " + weaponName);
         String[] weaponInfo = new String[8];
 
         String query = "SELECT weight, " +
@@ -992,13 +989,13 @@ public class DBTools extends SQLiteAssetHelper
         listDialog.setTitle(((TextView) view.findViewById(
                 R.id.threat_name_text_view)).getText().toString());
 
-        Log.d("TacRef", "threatInfo name = " + ((TextView) view.findViewById(
-                R.id.threat_name_text_view)).getText().toString());
+        //Log.d("TacRef", "threatInfo name = " + ((TextView) view.findViewById(
+        //        R.id.threat_name_text_view)).getText().toString());
 
         String[] threatInfo = getThreatInfo(((TextView) view.findViewById(
                 R.id.threat_name_text_view)).getText().toString());
 
-        Log.d("TacRef", "threatInfo[0] " + threatInfo[0]);
+        //Log.d("TacRef", "threatInfo[0] " + threatInfo[0]);
 
         TextView maxTOFTextView = (TextView) listDialogView.findViewById(R.id.threat_maxtof_dialog_text_view);
         TextView weightTextView = (TextView) listDialogView.findViewById(R.id.threat_weight_dialog_text_view);
@@ -1037,8 +1034,8 @@ public class DBTools extends SQLiteAssetHelper
         listDialog.setTitle(((TextView) view.findViewById(
                 R.id.weapon_name_text_view)).getText().toString());
 
-        Log.d("TacRef", "weaponInfo name = " + ((TextView) view.findViewById(
-                R.id.weapon_name_text_view)).getText().toString());
+        //Log.d("TacRef", "weaponInfo name = " + ((TextView) view.findViewById(
+        //        R.id.weapon_name_text_view)).getText().toString());
 
         String[] weaponInfo = getWeaponInfo(((TextView) view.findViewById(
                 R.id.weapon_name_text_view)).getText().toString());
@@ -1082,7 +1079,7 @@ public class DBTools extends SQLiteAssetHelper
     public void onCreate(SQLiteDatabase db)
     {
         //called when app .getReadableDatabase() is called
-        Log.d("DBTools", "onCreate(db)");
+        //Log.d("DBTools", "onCreate(db)");
     }*/
 
     @Override
@@ -1099,11 +1096,11 @@ public class DBTools extends SQLiteAssetHelper
                 // Copy the db from assests
                 copyDatabase();
 
-                Log.d("DBTools", "onUpgrade success");
+                //Log.d("DBTools", "onUpgrade success");
             }
             catch (IOException e)
             {
-                Log.d("DBtools", "onUpgrade failed");
+                //Log.d("DBtools", "onUpgrade failed");
             }
         }
     }

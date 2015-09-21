@@ -8,7 +8,6 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.database.sqlite.SQLiteQueryBuilder;
 import android.text.TextUtils;
-import android.util.Log;
 
 import com.oldgoat5.bmstacticalreference.R;
 
@@ -49,7 +48,7 @@ public class BrevityDictionaryTable
 
     public Cursor getAllWordsAndDefinitions()
     {
-        Log.d("brevTable", "inside getAllWords");
+        //Log.d("brevTable", "inside getAllWords");
 
         SQLiteQueryBuilder builder = new SQLiteQueryBuilder();
         builder.setTables(FTS_VIRTUAL_TABLE);
@@ -173,7 +172,7 @@ public class BrevityDictionaryTable
                     long id = addWord(strings[0].trim(), strings[1].trim());
                     if (id < 0)
                     {
-                        Log.d("BrevityDictTable", "unable to add word");
+                        //Log.d("BrevityDictTable", "unable to add word");
                     }
                 }
             }

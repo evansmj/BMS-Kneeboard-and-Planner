@@ -1,10 +1,7 @@
 package com.oldgoat5.bmstacticalreference.navigation.korea;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.graphics.Typeface;
-import android.text.Layout;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;

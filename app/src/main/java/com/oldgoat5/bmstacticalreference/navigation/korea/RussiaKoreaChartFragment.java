@@ -1,11 +1,11 @@
 package com.oldgoat5.bmstacticalreference.navigation.korea;
 
 import android.app.Dialog;
+import android.content.Context;
 import android.graphics.Matrix;
 import android.graphics.PointF;
-import android.support.v4.app.Fragment;
-import android.content.Context;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,8 +15,8 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import com.oldgoat5.bmstacticalreference.navigation.ZoomImageView;
 import com.oldgoat5.bmstacticalreference.R;
+import com.oldgoat5.bmstacticalreference.navigation.ZoomImageView;
 
 /*********************************************************************
  * Copyright © Michael Evans - All Rights Reserved.

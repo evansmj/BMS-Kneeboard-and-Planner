@@ -2,10 +2,8 @@ package com.oldgoat5.bmstacticalreference.missionplanner;
 
 import android.app.Dialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.database.sqlite.SQLiteException;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -191,7 +189,7 @@ public class BombSelectDialog extends Dialog
             @Override
             public void onClick(View view)
             {
-                Log.d("bombselectDialog", "weaponName before exit: " + selectedWeaponName);
+                //Log.d("bombselectDialog", "weaponName before exit: " + selectedWeaponName);
 
                 if (onDialogResult != null)
                 {
@@ -217,7 +215,7 @@ public class BombSelectDialog extends Dialog
 
         try
         {
-            Log.d("BombSelectDialog", "openDataBase() try");
+            //Log.d("BombSelectDialog", "openDataBase() try");
             dbTools.openDatabase();
         }
         catch (SQLiteException sqle)
