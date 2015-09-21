@@ -14,15 +14,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="10dp"
-            android:text="@string/thanks_title"
-            android:textAppearance="?android:textAppearanceLarge"/>
+            android:text="@string/about_title"
+            android:textAppearance="?android:textAppearanceMedium"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="10dp"
             android:text="@string/thanks"
-            android:textAppearance="?android:textAppearanceMedium"/>
+            android:textAppearance="?android:textAppearanceSmall"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -30,35 +30,62 @@
             android:layout_gravity="top|start"
             android:padding="10dp"
             android:text="@string/credits"
-            android:textAppearance="?android:textAppearanceLarge"/>
+            android:textAppearance="?android:textAppearanceMedium"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="10dp"
             android:text="@string/oldgoat5_credits"
-            android:textAppearance="?android:textAppearanceMedium"/>
+            android:textAppearance="?android:textAppearanceSmall"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="10dp"
             android:text="@string/sir_quacks_credits"
-            android:textAppearance="?android:textAppearanceMedium"/>
+            android:textAppearance="?android:textAppearanceSmall"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="10dp"
             android:text="@string/reddog_credits"
-            android:textAppearance="?android:textAppearanceMedium"/>
+            android:textAppearance="?android:textAppearanceSmall"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="10dp"
             android:text="@string/neystratiou_credits"
-            android:textAppearance="?android:textAppearanceMedium"/>
+            android:textAppearance="?android:textAppearanceSmall"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:text="@string/licensing"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sqlassethelper_used"
+            android:padding="10dp"
+            android:textAppearance="?android:textAppearanceSmall"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="@string/math_used"
+            android:textAppearance="?android:textAppearanceSmall"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:textAppearanceSmall"
+            android:text="@string/apache_license"/>
 
 
     </LinearLayout>
