@@ -3,6 +3,7 @@ package com.oldgoat5.bmstacticalreference;
 import android.app.Activity;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioGroup;
@@ -19,7 +20,7 @@ public class SettingsActivity extends Activity
     private RadioGroup cardRadioGroup;
     private SharedPreferences dataCardPref;
 
-    private int selectedCardSize; //don't use enum, unnecessary overhead
+    private int selectedCardSize;
     private int selectedRadioButton;
 
     @Override
@@ -28,32 +29,53 @@ public class SettingsActivity extends Activity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.settings_activity_layout);
 
-        instantiateResources();
+        dataCardPref = getApplicationContext().getSharedPreferences("DataCard", 0);
+        selectedCardSize = dataCardPref.getInt("card_size", android.R.style.TextAppearance_Medium);
 
+        Log.d("SettingsActivity", "onCreate Text Size = " + selectedCardSize);
+
+        instantiateResources();
+        checkRadioButton();
         setListeners();
+    }
+
+    @Override
+    public void onResume()
+    {
+        super.onResume();
+
+        Log.d("SettingsActivity", "onResume() text size = " + selectedCardSize);
+
+        selectedCardSize = dataCardPref.getInt("card_size", android.R.style.TextAppearance_Medium);
+        checkRadioButton();
+
+        Log.d("SettingsActivity", "onResume() end size = " + selectedCardSize);
+    }
+
+    private void checkRadioButton()
+    {
+        Log.d("SettingsActivity", "check radio button card size = " + selectedCardSize);
+
+        switch(selectedCardSize)
+        {
+            case android.R.style.TextAppearance_Small:
+                selectedRadioButton = R.id.settings_activity_card_size_small_radio_button;
+                break;
+            case android.R.style.TextAppearance_Medium:
+                selectedRadioButton = R.id.settings_activity_card_size_medium_radio_button;
+                break;
+            case android.R.style.TextAppearance_Large:
+                selectedRadioButton = R.id.settings_activity_card_size_large_radio_button;
+                break;
+        }
+
+        cardRadioGroup.check(selectedRadioButton);
     }
 
     private void instantiateResources()
     {
         applyButton = (Button) findViewById(R.id.settings_activity_apply_button);
         cardRadioGroup = (RadioGroup) findViewById(R.id.settings_activity_card_size_radio_group);
-
-        dataCardPref = getApplicationContext().getSharedPreferences("DataCard", 0);
-
-        switch(dataCardPref.getInt("cardSize", 1))
-        {
-            case 0:
-                selectedRadioButton = R.id.settings_activity_card_size_small_radio_button;
-                break;
-            case 1:
-                selectedRadioButton = R.id.settings_activity_card_size_medium_radio_button;
-                break;
-            case 2:
-                selectedRadioButton = R.id.settings_activity_card_size_large_radio_button;
-                break;
-        }
-
-        cardRadioGroup.check(selectedRadioButton);
     }
 
     private void setListeners()
@@ -63,12 +85,9 @@ public class SettingsActivity extends Activity
             @Override
             public void onClick(View view)
             {
-                dataCardPref = getApplicationContext().getSharedPreferences(
-                        "DataCard", 0);
-                SharedPreferences.Editor editor = dataCardPref.edit();
-                editor.putInt("cardSize", selectedCardSize);
-                editor.apply();
-                //todo make card redraw layout
+                Log.d("SettingsActivity", "apply onclick textsize = " + selectedCardSize);
+
+                dataCardPref.edit().putInt("card_size", selectedCardSize).apply();
 
                 finish();
             }
@@ -82,21 +101,19 @@ public class SettingsActivity extends Activity
                 switch (i)
                 {
                     case R.id.settings_activity_card_size_small_radio_button:
-                        selectedCardSize = 0; //small //don't use enum unless good idea
+                        selectedCardSize = android.R.style.TextAppearance_Small;
                         break;
 
                     case R.id.settings_activity_card_size_medium_radio_button:
-                        selectedCardSize = 1; //medium
+                        selectedCardSize = android.R.style.TextAppearance_Medium;
                         break;
 
                     case R.id.settings_activity_card_size_large_radio_button:
-                        selectedCardSize = 2; //large
-                        break;
-
-                    default:
-                        selectedCardSize = 1;
+                        selectedCardSize = android.R.style.TextAppearance_Large;
                         break;
                 }
+
+                Log.d("SettingsActivity", "onCheckedChange textSize " + selectedCardSize);
             }
         });
     }

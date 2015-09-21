@@ -4,6 +4,7 @@ import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -44,9 +45,6 @@ public class LoadCardFragment extends Fragment
 
     private int dataCardTextSize;
 
-    //todo save datacard, clear data card
-    //todo add alow and msl floor
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, 
             Bundle savedInstanceState)
@@ -54,10 +52,15 @@ public class LoadCardFragment extends Fragment
         view = inflater.inflate(
                 R.layout.loadcard_fragment_layout, container, false);
 
+        Log.d("LoadCardFragment", "on Create View()");
+
         instantiateResources();
         setListeners();
         loadDataCard();
-        changeTextAppearance(getSelectedCardSize());
+        dataCardTextSize = getSelectedCardSize();
+        changeTextAppearance(dataCardTextSize);
+
+        Log.d("LoadCardFragment", "onCreate() dataTextSize = " + dataCardTextSize);
 
         return view;
     }
@@ -67,8 +70,11 @@ public class LoadCardFragment extends Fragment
     {
         super.onResume();
 
+        Log.d("LoadCardFragment", "on Resume()");
+        Log.d("LoadCardFragment", "on Resume() dataCardTextSize = " + dataCardTextSize);
         loadDataCard();
-        changeTextAppearance(getSelectedCardSize());
+        changeTextAppearance(dataCardTextSize);
+        Log.d("LoadCardFragment", "on Resume end textSize = " + dataCardTextSize);
     }
 
     @Override
@@ -76,6 +82,8 @@ public class LoadCardFragment extends Fragment
     {
         super.onPause();
 
+        Log.d("LoadCardFragment", "on Pause()");
+        Log.d("LoadCardFragment", "on Pause() dataCardTextSize = " + dataCardTextSize);
         saveDataCard();
     }
 
@@ -83,7 +91,7 @@ public class LoadCardFragment extends Fragment
     {
         int selectedCardSize;
 
-        switch (dataCard.getInt("cardSize", 1))
+        switch (dataCard.getInt("card_size", 1))
         {
             case 0:
                 selectedCardSize = android.R.style.TextAppearance_Small;
@@ -199,6 +207,7 @@ public class LoadCardFragment extends Fragment
     private void loadDataCard()
     {
         //todo maybe make shared preference keys global constants maybe
+        dataCardTextSize = dataCard.getInt("card_size", android.R.style.TextAppearance_Medium);
 
         //Flight section
         flightBingoEditText.setText(dataCard.getString("bingo", "2500 lbs"));
@@ -230,6 +239,8 @@ public class LoadCardFragment extends Fragment
     {
         //save current card
         SharedPreferences.Editor editor = dataCard.edit();
+
+        editor.putInt("card_size", dataCardTextSize);
 
         //Flight section
         editor.putString("bingo", flightBingoEditText.getText().toString());
@@ -264,11 +275,13 @@ public class LoadCardFragment extends Fragment
             @Override
             public void onClick(View view)
             {
-                dataCardTextSize = dataCard.getInt("card_size", 1);
+                dataCardTextSize = getSelectedCardSize();
+                Log.d("LoadCardFragment", "start button, dataCardTextSize = " + dataCardTextSize);
 
                 dataCard.edit().clear().apply();
                 loadDataCard();
                 dataCard.edit().putInt("card_size", dataCardTextSize).apply();
+                Log.d("LoadCardFragment", "end button, dataCardTextSize = " + dataCardTextSize);
             }
         });
     }
