@@ -831,7 +831,7 @@
             android:id="@+id/data_card_package_tasking_label_text_view"
             android:layout_below="@+id/data_card_flight_floor_label_text_view"
             android:text="@string/tasking"
-            android:inputType="text"
+            android:inputType="textNoSuggestions"
             android:layout_alignLeft="@+id/data_card_flight_notes_label_text_view"
             android:layout_alignRight="@+id/data_card_flight_notes_label_text_view"
             android:textAppearance="?android:textAppearanceMedium"
@@ -989,7 +989,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/data_card_delivery_range_text_view"
-            android:inputType="text"
+            android:inputType="textNoSuggestions"
             android:text="@string/range_no_colon"
             android:layout_alignLeft="@+id/data_card_delivery_min_safe_rel_alt_text_view"
             android:layout_alignRight="@+id/data_card_delivery_min_safe_rel_alt_text_view"
@@ -1156,7 +1156,7 @@
             android:id="@+id/data_card_weapon_release_angle_label_text_view"
             android:layout_alignBaseline="@+id/data_card_weapon_type_label_text_view"
             android:padding="3dp"
-            android:inputType="text"
+            android:inputType="textNoSuggestions"
             android:textAppearance="?android:textAppearanceMedium"
             android:layout_alignLeft="@+id/data_card_idm_label_text_view"
             android:layout_alignRight="@+id/data_card_tcn_label_text_view"
@@ -1187,7 +1187,7 @@
             android:layout_alignLeft="@id/data_card_pos_label_text_view"
             android:layout_alignRight="@id/data_card_pos_label_text_view"
             android:background="@drawable/card_dark_background"
-            android:inputType="text"/>
+            android:inputType="textNoSuggestions"/>
 
         <EditText
             android:layout_width="wrap_content"
