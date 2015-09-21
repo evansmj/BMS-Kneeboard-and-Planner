@@ -42,7 +42,7 @@ public class SettingsActivity extends Activity
 
         dataCardPref = getApplicationContext().getSharedPreferences("DataCard", 0);
 
-        switch(dataCardPref.getInt("cardSize", 0))
+        switch(dataCardPref.getInt("cardSize", 1))
         {
             case 0:
                 selectedRadioButton = R.id.settings_activity_card_size_small_radio_button;

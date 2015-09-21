@@ -908,27 +908,34 @@ public class LevelBombMissionPlannerParametersFragment extends Fragment
             SharedPreferences dataCard = getActivity().getSharedPreferences("DataCard", 0);
             SharedPreferences.Editor editor = dataCard.edit();
 
-            //if cluster, get these
+
             if (isCluster)
             {
-                editor.putInt("burst_altitude", selectedBurstAltitude);
+                editor.putString("burst_altitude", selectedBurstAltitude + "ft. AGL");
 
-                editor.putInt("cluster_pattern_length", Integer.parseInt(
-                        determinedLengthCbuResultTextView.getText().toString().replace(
-                                "ft.", "")));
-                editor.putInt("cluster_pattern_width", Integer.parseInt(
-                        determinedWidthCbuResultTextView.getText().toString().replace(
-                                "ft.", "")));
+                editor.putString("cluster_pattern_length",
+                        determinedLengthCbuResultTextView.getText().toString());
+                editor.putString("cluster_pattern_width",
+                        determinedWidthCbuResultTextView.getText().toString());
+
+                editor.putString("stick_length", "N/A");
             }
             else
             {
                 //stick length
-                editor.putInt("stick_length", Integer.parseInt(
-                        determinedStickLengthResultTextView.getText().toString().replace(
-                                "ft.", "")));
+                editor.putString("stick_length",
+                        determinedStickLengthResultTextView.getText().toString());
+
+                editor.putString("pattern_length", "N/A");
+                editor.putString("pattern_width", "N/A");
+                editor.putString("burst_altitude", "N/A");
             }
 
+            //approach course
             editor.putString("approach_course", selectedApproachCourse);
+
+            //weapon type (name)
+            editor.putString("weapon_type", selectedWeapon);
 
             //msra agl
             editor.putString("msra",
@@ -937,6 +944,7 @@ public class LevelBombMissionPlannerParametersFragment extends Fragment
             editor.putString("release_altitude_msl",
                     determinedReleaseAltitudeResultTextView.getText().toString());
 
+            //add in later Target info card
             editor.putString("release_altitude_agl", selectedReleaseAltitudeAGL + "ft. AGL");
 
             //rel speed kcas / ktas
@@ -950,11 +958,11 @@ public class LevelBombMissionPlannerParametersFragment extends Fragment
                     determinedBombRangeResultTextView.getText().toString());
 
             //bomb tof
-            editor.putString("bomb_tof",
+            editor.putString("bomb_time_of_fall",
                     determinedBombFallTimeResultTextView.getText().toString());
 
             //approx sight depression,
-            editor.putString("approx_sight_depression",
+            editor.putString("sight_depression",
                     determinedSightDepressionResultTextView.getText().toString());
             //rel mode
             editor.putString("release_mode", selectedReleaseMode);
