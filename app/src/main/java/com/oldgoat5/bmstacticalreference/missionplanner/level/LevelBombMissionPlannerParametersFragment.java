@@ -905,14 +905,13 @@ public class LevelBombMissionPlannerParametersFragment extends Fragment
             SharedPreferences dataCard = getActivity().getSharedPreferences("DataCard", 0);
             SharedPreferences.Editor editor = dataCard.edit();
 
-
             if (isCluster)
             {
                 editor.putString("burst_altitude", selectedBurstAltitude + "ft. AGL");
 
-                editor.putString("cluster_pattern_length",
+                editor.putString("pattern_length",
                         determinedLengthCbuResultTextView.getText().toString());
-                editor.putString("cluster_pattern_width",
+                editor.putString("pattern_width",
                         determinedWidthCbuResultTextView.getText().toString());
 
                 editor.putString("stick_length", "N/A");
