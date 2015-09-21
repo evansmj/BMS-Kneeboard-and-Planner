@@ -53,7 +53,7 @@ public class BattleForBalkansNavigationActivity extends FragmentActivity
 
         slidingTabLayout = (SlidingTabLayout) findViewById(R.id.battle_for_balkans_sliding_tabs);
         slidingTabLayout.setDistributeEvenly(true);
-        slidingTabLayout.setTabTitleTextColor("#000000");
+        slidingTabLayout.setTabTitleTextColor("#D5DADD");
         slidingTabLayout.setViewPager(viewPager);
 
         slidingTabLayout.setCustomTabColorizer(new SlidingTabLayout.TabColorizer()
