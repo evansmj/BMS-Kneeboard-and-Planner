@@ -1,36 +1,47 @@
-# BMSTacticalReference
-F-16C/D Block 50/52 references bmsforum.org
+# BMS Kneeboard and Planner
+
 
 Features:
 
+Card
+Data card - done
+- add chart quick clicks
+- add expected threats
+Coordination card - ns
+
+
 Weapon release parameters calculator
-- use real equations, 10 step - ns
-- dive toss
-- pop up
-- level
-Calibrated/True airspeed conversion - rp5 manual p86
-- time of flight
-- dive angle
-- release AboveGroundLevel
+level - doe
+dive
+loft
+pop up - discuss
 
 Joker/Bingo fuel calculator
-- use equation from manual - done, need better UI
+- use equation from manual - done
+
+Airport query-able database
+- discuss
+- add balkans, replace images.
 
 Charts
+- gui - add expandable containers by air base
 - KTO - done
-- Balkans - done
+- Balkans - make text based
+- Aegean - done
 
-Reference - need nicer UI
+Reference
 - Brevity dictionary - done
 - frequencies - done
 - steerpoints - done
 
 Tactical Reference
-- Munitions - database done, queries done
-- Surface-Air - database done
+- Munitions - done
+- Surface-Air - need update
 - Aircraft - ns
 - Vehicles - ns
+- Radars
 
 Checklists
 - instrument landing - done
-- tactical formations - ns
+- tactical formations - discuss
+- checklists - discuss
