@@ -5,7 +5,6 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -36,8 +35,6 @@ public class ItalyBalkansChartFragment extends Fragment
     {
         super.onCreate(savedInstanceState);
         view = inflater.inflate(R.layout.italy_balkans_chart_fragment_layout, container, false);
-
-        Log.d("italyBalkans", "onCreateView()");
 
         if (this.isAdded())
         {

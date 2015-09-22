@@ -4,7 +4,6 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
-import android.util.Log;
 
 import com.oldgoat5.bmstacticalreference.R;
 import com.oldgoat5.bmstacticalreference.slidingtabs.PagerItem;
@@ -29,8 +28,6 @@ public class AegeanNavigationActivity extends FragmentActivity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.aegean_navigation_activity_layout);
-
-        Log.d("aegeannav", "inside onCreate()");
 
         tabsList = new ArrayList<PagerItem>();
 

@@ -4,7 +4,6 @@ import android.app.Dialog;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -63,22 +62,6 @@ public class ChinaKoreaChartFragment extends Fragment
             public void onItemClick(AdapterView<?> parent, View view,
                                            int position, long id)
             {
-
-                /*AlertDialog dialog = new AlertDialog.Builder(getActivity())
-                        .setView(imageView)
-                        //.setPositiveButton("ok", new DialogInterface.OnClickListener() {
-                        //    @Override
-                        //    public void onClick(DialogInterface dialog, int which) {
-                         //       dialog.dismiss();
-                         //   }
-                        .create();*/
-                /*AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-                AlertDialog dialog = builder.create();
-                dialog.setView(imageView,0,0,0,0);
-
-
-                dialog.show();*/
-                Log.d("China position: ", Integer.toString(position));
 
                 switch(position)
                 {
