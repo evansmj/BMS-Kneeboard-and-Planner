@@ -15,9 +15,11 @@ import android.widget.RadioGroup;
  *********************************************************************/
 public class SettingsActivity extends Activity
 {
+    private final String SETTINGS_NAME = "Settings";
+
     private Button applyButton;
     private RadioGroup cardRadioGroup;
-    private SharedPreferences dataCardPref;
+    private SharedPreferences settingsSharedPref;
 
     private int selectedCardSize;
     private int selectedRadioButton;
@@ -28,8 +30,11 @@ public class SettingsActivity extends Activity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.settings_activity_layout);
 
-        dataCardPref = getApplicationContext().getSharedPreferences("DataCard", 0);
-        selectedCardSize = dataCardPref.getInt("card_size", android.R.style.TextAppearance_Medium);
+        settingsSharedPref = getApplicationContext().getSharedPreferences(SETTINGS_NAME, 0);
+
+        //dataCardPref = getApplicationContext().getSharedPreferences("DataCard", 0);
+        selectedCardSize = settingsSharedPref.getInt("card_size",
+                android.R.style.TextAppearance_Medium);
 
         //Log.d("SettingsActivity", "onCreate Text Size = " + selectedCardSize);
 
@@ -45,7 +50,9 @@ public class SettingsActivity extends Activity
 
         //Log.d("SettingsActivity", "onResume() text size = " + selectedCardSize);
 
-        selectedCardSize = dataCardPref.getInt("card_size", android.R.style.TextAppearance_Medium);
+        selectedCardSize = settingsSharedPref.getInt("card_size",
+                android.R.style.TextAppearance_Medium);
+
         checkRadioButton();
 
         //Log.d("SettingsActivity", "onResume() end size = " + selectedCardSize);
@@ -86,7 +93,7 @@ public class SettingsActivity extends Activity
             {
                 //Log.d("SettingsActivity", "apply onclick textsize = " + selectedCardSize);
 
-                dataCardPref.edit().putInt("card_size", selectedCardSize).apply();
+                settingsSharedPref.edit().putInt("card_size", selectedCardSize).apply();
 
                 finish();
             }

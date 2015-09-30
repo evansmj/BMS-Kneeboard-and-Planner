@@ -19,6 +19,7 @@ import android.widget.TextView;
 public class LoadCardFragment extends Fragment
 {
     private final String DATA_CARD_NAME = "DataCard";
+    private final String SETTINGS_NAME = "Settings";
 
     private Button clearDataButton;
     private EditText deliveryApproachCourseEditText;
@@ -39,7 +40,8 @@ public class LoadCardFragment extends Fragment
     private EditText weaponRippleQuantityEditText;
     private EditText weaponStickLengthEditText;
     private EditText weaponTypeEditText;
-    private SharedPreferences dataCard;
+    private SharedPreferences dataCardSharedPref;
+    private SharedPreferences settingsSharedPref;
     private View view;
 
     private int dataCardTextSize;
@@ -90,7 +92,7 @@ public class LoadCardFragment extends Fragment
     {
         int selectedCardSize;
 
-        switch (dataCard.getInt("card_size", 1))
+        switch (settingsSharedPref.getInt("card_size", 1))
         {
             case 0:
                 selectedCardSize = android.R.style.TextAppearance_Small;
@@ -165,7 +167,8 @@ public class LoadCardFragment extends Fragment
     {
         clearDataButton = (Button) view.findViewById(R.id.data_card_clear_button);
 
-        dataCard = getActivity().getSharedPreferences(DATA_CARD_NAME, 0);
+        dataCardSharedPref = getActivity().getSharedPreferences(DATA_CARD_NAME, 0);
+        settingsSharedPref = getActivity().getSharedPreferences(SETTINGS_NAME, 0);
 
         deliveryApproachCourseEditText = (EditText) view.findViewById(
                 R.id.data_card_delivery_approach_course_edit_text);
@@ -206,40 +209,39 @@ public class LoadCardFragment extends Fragment
     private void loadDataCard()
     {
         //todo maybe make shared preference keys global constants maybe
-        dataCardTextSize = dataCard.getInt("card_size", android.R.style.TextAppearance_Medium);
+        dataCardTextSize = settingsSharedPref.getInt("card_size",
+                android.R.style.TextAppearance_Medium);
 
         //Flight section
-        flightBingoEditText.setText(dataCard.getString("bingo", "2500 lbs"));
-        flightJokerEditText.setText(dataCard.getString("joker", "3500 lbs"));
+        flightBingoEditText.setText(dataCardSharedPref.getString("bingo", "2500 lbs"));
+        flightJokerEditText.setText(dataCardSharedPref.getString("joker", "3500 lbs"));
 
         //Delivery section
-        deliveryApproachCourseEditText.setText(dataCard.getString("approach_course", "000°"));
-        deliveryBombRangeEditText.setText(dataCard.getString("bomb_range", "00000ft"));
-        deliveryReleaseAltitudeEditText.setText(dataCard.getString(
+        deliveryApproachCourseEditText.setText(dataCardSharedPref.getString("approach_course", "000°"));
+        deliveryBombRangeEditText.setText(dataCardSharedPref.getString("bomb_range", "00000ft"));
+        deliveryReleaseAltitudeEditText.setText(dataCardSharedPref.getString(
                 "release_altitude_msl", "0000ft. MSL"));
-        deliveryReleaseSpeedEditText.setText(dataCard.getString("release_speed_kcas", "000 KCAS"));
-        deliverySightDepressionEditText.setText(dataCard.getString("sight_depression", "260mrad."));
-        deliveryTimeOfFallEditText.setText(dataCard.getString("bomb_time_of_fall", "00.0s"));
-        deliveryTypeEditText.setText(dataCard.getString("release_profile", ""));
-        deliveryMsraEditText.setText(dataCard.getString("msra", "0000ft. AGL"));
+        deliveryReleaseSpeedEditText.setText(dataCardSharedPref.getString("release_speed_kcas", "000 KCAS"));
+        deliverySightDepressionEditText.setText(dataCardSharedPref.getString("sight_depression", "260mrad."));
+        deliveryTimeOfFallEditText.setText(dataCardSharedPref.getString("bomb_time_of_fall", "00.0s"));
+        deliveryTypeEditText.setText(dataCardSharedPref.getString("release_profile", ""));
+        deliveryMsraEditText.setText(dataCardSharedPref.getString("msra", "0000ft. AGL"));
 
         //Weapon section
-        weaponBombSpacingEditText.setText(dataCard.getString("bomb_spacing", "175ft."));
-        weaponBurstAltitudeEditText.setText(dataCard.getString("burst_altitude", "0000ft. AGL"));
-        weaponClusterPatternLengthEditText.setText(dataCard.getString("pattern_length", ""));
-        weaponClusterPatternWidthEditText.setText(dataCard.getString("pattern_width", ""));
-        weaponReleaseModeEditText.setText(dataCard.getString("release_mode", "Single"));
-        weaponRippleQuantityEditText.setText(dataCard.getString("ripple", "1"));
-        weaponStickLengthEditText.setText(dataCard.getString("stick_length", ""));
-        weaponTypeEditText.setText(dataCard.getString("weapon_type", ""));
+        weaponBombSpacingEditText.setText(dataCardSharedPref.getString("bomb_spacing", "175ft."));
+        weaponBurstAltitudeEditText.setText(dataCardSharedPref.getString("burst_altitude", "0000ft. AGL"));
+        weaponClusterPatternLengthEditText.setText(dataCardSharedPref.getString("pattern_length", ""));
+        weaponClusterPatternWidthEditText.setText(dataCardSharedPref.getString("pattern_width", ""));
+        weaponReleaseModeEditText.setText(dataCardSharedPref.getString("release_mode", "Single"));
+        weaponRippleQuantityEditText.setText(dataCardSharedPref.getString("ripple", "1"));
+        weaponStickLengthEditText.setText(dataCardSharedPref.getString("stick_length", ""));
+        weaponTypeEditText.setText(dataCardSharedPref.getString("weapon_type", ""));
     }
 
     private void saveDataCard()
     {
         //save current card
-        SharedPreferences.Editor editor = dataCard.edit();
-
-        editor.putInt("card_size", dataCardTextSize);
+        SharedPreferences.Editor editor = dataCardSharedPref.edit();
 
         //Flight section
         editor.putString("bingo", flightBingoEditText.getText().toString());
@@ -277,9 +279,8 @@ public class LoadCardFragment extends Fragment
                 dataCardTextSize = getSelectedCardSize();
                 //Log.d("LoadCardFragment", "start button, dataCardTextSize = " + dataCardTextSize);
 
-                dataCard.edit().clear().apply();
+                dataCardSharedPref.edit().clear().apply();
                 loadDataCard();
-                dataCard.edit().putInt("card_size", dataCardTextSize).apply();
                 //Log.d("LoadCardFragment", "end button, dataCardTextSize = " + dataCardTextSize);
             }
         });
