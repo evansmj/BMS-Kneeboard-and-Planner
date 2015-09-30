@@ -1,6 +1,17 @@
 # BMS Kneeboard and Planner
 
 
+For use with the Benchmark Sims Falcon 4.32.
+Documentation on the accuracy of the flight model and systems, as well as
+the campaign engine can be found at www.bmsforum.org (will need to create account).
+
+
+https://www.youtube.com/watch?v=wbMRa4VG8jc
+An uncut operation of our wing, with around 24 of us. (~2 hours)
+
+https://www.youtube.com/watch?v=2s-0WBhysd8
+A condensed operation on the wings vs wings server. (~16 min)
+
 Features:
 
 Card
