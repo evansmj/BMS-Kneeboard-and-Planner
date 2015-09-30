@@ -12,14 +12,17 @@ An uncut operation of our wing, with around 24 of us. (~2 hours)
 During the start up the pilot enters information into the different systems, which are read
 from paper data cards.  When the weather is bad they will also need the approach plates, which would
 have to be printed.  This app sets out to save paper, organize, and automate ballistic trajectory planning,
-among other thing.  Large operations where each role is critical, should still rely on the printed
-datacards by the official Weapon Delivery Planner.  This app is more suited to smaller ones, or when
+among other things.  Large operations where each role is critical, may still want to rely on the printed
+datacards by the official Weapon Delivery Planner.  This app is more suited to smaller packages, or when
 your printer runs out of paper.
 
 
 https://www.youtube.com/watch?v=2s-0WBhysd8
 
 A condensed operation on the wings vs wings server. (~16 min)
+
+
+
 
 Features:
 
