@@ -33,30 +33,51 @@ public class ThreatListItemAdapter extends ArrayAdapter<ThreatObject>
 
     public View getView(int position, View convertView, ViewGroup parent)
     {
-        LayoutInflater inflater = (LayoutInflater) CONTEXT.getSystemService(
-                Context.LAYOUT_INFLATER_SERVICE);
+        ViewHolder viewHolder;
 
-        View rowView = inflater.inflate(
-                R.layout.threat_object_layout, parent, false);
-
-        TextView nameTextView = (TextView) rowView.findViewById(R.id.threat_name_text_view);
-        TextView minEngRangeTextView = (TextView) rowView.findViewById(R.id.threat_min_eng_range_text_view);
-        TextView guidanceTextView = (TextView) rowView.findViewById(R.id.threat_guidance_text_view);
-
-        nameTextView.setText((itemsArrayList).get(position).getName());
-        minEngRangeTextView.setText("\nMinEngRange: " + Integer.toString(
-                (itemsArrayList).get(position).getMinEngRange()) + " ft.");
-        guidanceTextView.setText("Guidance: " + (itemsArrayList).get(position).getGuidance());
-
-        if ((position % 2) == 0)
+        if (convertView == null)
         {
-            rowView.setBackgroundColor(Color.parseColor("#F7E1E1"));
+            LayoutInflater inflater = (LayoutInflater) CONTEXT.getSystemService(
+                    Context.LAYOUT_INFLATER_SERVICE);
+            convertView = inflater.inflate(
+                    R.layout.threat_object_layout, parent, false);
+
+            viewHolder = new ViewHolder();
+
+            viewHolder.nameTextView = (TextView) convertView.findViewById(
+                                                                        R.id.threat_name_text_view);
+            viewHolder.minEngRangeTextView = (TextView) convertView.findViewById(
+                                                               R.id.threat_min_eng_range_text_view);
+            viewHolder.guidanceTextView = (TextView) convertView.findViewById(
+                                                                    R.id.threat_guidance_text_view);
         }
         else
         {
-            // odd color
+            viewHolder = (ViewHolder) convertView.getTag();
         }
 
-        return rowView;
+        viewHolder.nameTextView.setText((itemsArrayList).get(position).getName());
+        viewHolder.minEngRangeTextView.setText("\nMinEngRange: " + Integer.toString(
+                (itemsArrayList).get(position).getMinEngRange()) + " ft.");
+        viewHolder.guidanceTextView.setText("Guidance: " + (itemsArrayList).get(position)
+                                                                           .getGuidance());
+
+        if ((position % 2) == 0)
+        {
+            convertView.setBackgroundColor(CONTEXT.getResources().getColor(R.color.light_red));
+        }
+        else
+        {
+            convertView.setBackgroundColor(CONTEXT.getResources().getColor(R.color.transparent));
+        }
+
+        return convertView;
+    }
+
+    private static class ViewHolder
+    {
+        TextView nameTextView;
+        TextView minEngRangeTextView;
+        TextView guidanceTextView;
     }
 }
