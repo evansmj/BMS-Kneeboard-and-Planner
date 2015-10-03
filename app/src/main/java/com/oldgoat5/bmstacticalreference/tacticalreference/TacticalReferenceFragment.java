@@ -16,6 +16,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.oldgoat5.bmstacticalreference.R;
+import com.oldgoat5.bmstacticalreference.tools.database.DBTools;
 
 import java.io.IOException;
 import java.util.ArrayList;

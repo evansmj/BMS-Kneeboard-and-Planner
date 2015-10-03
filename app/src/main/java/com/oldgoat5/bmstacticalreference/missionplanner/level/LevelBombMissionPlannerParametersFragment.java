@@ -18,7 +18,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.oldgoat5.bmstacticalreference.R;
-import com.oldgoat5.bmstacticalreference.tacticalreference.DBTools;
+import com.oldgoat5.bmstacticalreference.tools.database.DBTools;
 
 import org.apache.commons.math3.analysis.interpolation.SplineInterpolator;
 import org.apache.commons.math3.analysis.polynomials.PolynomialSplineFunction;

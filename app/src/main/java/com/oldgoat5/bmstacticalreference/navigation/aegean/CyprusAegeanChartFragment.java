@@ -13,7 +13,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.oldgoat5.bmstacticalreference.R;
-import com.oldgoat5.bmstacticalreference.navigation.ZoomImageView;
+import com.oldgoat5.bmstacticalreference.tools.views.ZoomImageView;
 
 /*********************************************************************
  * Copyright © Michael Evans - All Rights Reserved.

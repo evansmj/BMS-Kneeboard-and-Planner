@@ -1,4 +1,4 @@
-package com.oldgoat5.bmstacticalreference.tacticalreference;
+package com.oldgoat5.bmstacticalreference.tools.database;
 
 /*
  * Copyright (C) 2011 readyState Software Ltd, 2007 The Android Open Source Project

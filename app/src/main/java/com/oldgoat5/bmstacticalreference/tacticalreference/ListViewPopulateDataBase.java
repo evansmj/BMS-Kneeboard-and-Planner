@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
+import com.oldgoat5.bmstacticalreference.tools.database.DBTools;
+
 import java.util.ArrayList;
 
 public class ListViewPopulateDataBase extends ListActivity

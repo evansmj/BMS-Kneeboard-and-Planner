@@ -1,8 +1,9 @@
-package com.oldgoat5.bmstacticalreference.tacticalreference;
+package com.oldgoat5.bmstacticalreference.tools.database;
 
 import android.util.Log;
 
-import com.oldgoat5.bmstacticalreference.tacticalreference.SQLiteAssetHelper.SQLiteAssetException;
+import com.oldgoat5.bmstacticalreference.tools.database.SQLiteAssetHelper;
+import com.oldgoat5.bmstacticalreference.tools.database.SQLiteAssetHelper.SQLiteAssetException;
 
 import java.util.Comparator;
 import java.util.regex.Matcher;

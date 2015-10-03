@@ -1,4 +1,4 @@
-package com.oldgoat5.bmstacticalreference.slidingtabs;
+package com.oldgoat5.bmstacticalreference.tools.slidingtabs;
 
 /*********************************************************************
  * Copyright © Michael Evans - All Rights Reserved.

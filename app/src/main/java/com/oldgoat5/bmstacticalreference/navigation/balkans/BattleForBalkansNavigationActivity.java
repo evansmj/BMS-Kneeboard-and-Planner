@@ -6,8 +6,8 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
 
 import com.oldgoat5.bmstacticalreference.R;
-import com.oldgoat5.bmstacticalreference.slidingtabs.PagerItem;
-import com.oldgoat5.bmstacticalreference.slidingtabs.SlidingTabLayout;
+import com.oldgoat5.bmstacticalreference.tools.slidingtabs.PagerItem;
+import com.oldgoat5.bmstacticalreference.tools.slidingtabs.SlidingTabLayout;
 
 import java.util.ArrayList;
 

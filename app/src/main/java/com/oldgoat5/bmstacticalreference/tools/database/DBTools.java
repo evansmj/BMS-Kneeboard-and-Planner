@@ -1,4 +1,4 @@
-package com.oldgoat5.bmstacticalreference.tacticalreference;
+package com.oldgoat5.bmstacticalreference.tools.database;
 
 import android.app.Dialog;
 import android.content.Context;
@@ -9,6 +9,11 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.oldgoat5.bmstacticalreference.R;
+import com.oldgoat5.bmstacticalreference.tacticalreference.OrdnanceObject;
+import com.oldgoat5.bmstacticalreference.tacticalreference.StoreObject;
+import com.oldgoat5.bmstacticalreference.tacticalreference.ThreatObject;
+import com.oldgoat5.bmstacticalreference.tacticalreference.WeaponUseList;
+import com.oldgoat5.bmstacticalreference.tools.database.SQLiteAssetHelper;
 
 import java.io.File;
 import java.io.FileOutputStream;

@@ -12,7 +12,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.oldgoat5.bmstacticalreference.R;
-import com.oldgoat5.bmstacticalreference.tacticalreference.DBTools;
+import com.oldgoat5.bmstacticalreference.tools.database.DBTools;
 import com.oldgoat5.bmstacticalreference.tacticalreference.WeaponUseListItemAdapter;
 
 import java.io.IOException;

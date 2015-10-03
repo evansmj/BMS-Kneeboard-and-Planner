@@ -1,4 +1,4 @@
-package com.oldgoat5.bmstacticalreference.tacticalreference;
+package com.oldgoat5.bmstacticalreference.tools.views;
 
 import android.content.Context;
 import android.graphics.Canvas;

@@ -1,6 +1,8 @@
-package com.oldgoat5.bmstacticalreference.tacticalreference;
+package com.oldgoat5.bmstacticalreference.tools.database;
 
 import android.util.Log;
+
+import com.oldgoat5.bmstacticalreference.tools.database.SQLiteAssetHelper;
 
 import java.io.IOException;
 import java.io.InputStream;

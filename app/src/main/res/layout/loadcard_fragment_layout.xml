@@ -63,7 +63,7 @@
             android:inputType="textNoSuggestions"
             android:padding="3dp"/>
 
-        <com.oldgoat5.bmstacticalreference.tacticalreference.VerticalTextView
+        <com.oldgoat5.bmstacticalreference.tools.views.VerticalTextView
             android:id="@+id/data_card_flight_label_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -438,7 +438,7 @@
             android:inputType="textNoSuggestions"
             android:padding="3dp"/>
 
-        <com.oldgoat5.bmstacticalreference.tacticalreference.VerticalTextView
+        <com.oldgoat5.bmstacticalreference.tools.views.VerticalTextView
             android:id="@+id/data_card_package_master_label_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -898,7 +898,7 @@
             android:layout_alignLeft="@+id/data_card_package_tasking_label_text_view"
             android:layout_alignRight="@+id/data_card_package_tasking_label_text_view"/>
 
-        <com.oldgoat5.bmstacticalreference.tacticalreference.VerticalTextView
+        <com.oldgoat5.bmstacticalreference.tools.views.VerticalTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/data_card_delivery_label_text_view"
@@ -1114,7 +1114,7 @@
             android:inputType="textNoSuggestions"
             android:layout_alignRight="@+id/data_card_flight_notes_label_text_view"/>
 
-        <com.oldgoat5.bmstacticalreference.tacticalreference.VerticalTextView
+        <com.oldgoat5.bmstacticalreference.tools.views.VerticalTextView
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
             android:id="@+id/data_card_weapon_label_text_view"

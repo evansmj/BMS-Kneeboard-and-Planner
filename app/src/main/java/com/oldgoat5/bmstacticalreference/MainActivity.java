@@ -9,8 +9,8 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 
-import com.oldgoat5.bmstacticalreference.slidingtabs.PagerItem;
-import com.oldgoat5.bmstacticalreference.slidingtabs.SlidingTabLayout;
+import com.oldgoat5.bmstacticalreference.tools.slidingtabs.PagerItem;
+import com.oldgoat5.bmstacticalreference.tools.slidingtabs.SlidingTabLayout;
 
 import java.util.ArrayList;
 
