@@ -42,7 +42,6 @@ public class BombSelectDialog extends Dialog
     private TextView idTextView;
     private TextView typeTextView;
     private WeaponUseListItemAdapter idArrayAdapter;
-    private View bombDialogView;
     private View weaponView;
 
     private String[] bombTypeItems;
@@ -75,6 +74,8 @@ public class BombSelectDialog extends Dialog
             case POPUP:
                 break;
         }
+
+        bombInfoDialog = new Dialog(CONTEXT);
 
         selectButton = (Button) findViewById(R.id.bomb_select_dialog_ok_button);
         viewBombInfoButton = (Button) findViewById(R.id.bomb_select_dialog_view_bomb_info_button);
@@ -160,7 +161,7 @@ public class BombSelectDialog extends Dialog
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View rowView, int i, long l)
             {
-                bombInfoDialog = new Dialog(CONTEXT);
+                //bombInfoDialog = new Dialog(CONTEXT);
                 bombInfoDialog.setContentView(R.layout.weapon_dialog_layout);
                 weaponView = rowView;
                 selectedWeaponName = ((TextView) weaponView.findViewById(
@@ -179,7 +180,7 @@ public class BombSelectDialog extends Dialog
             @Override
             public void onClick(View view)
             {
-                bombDialogView = dbTools.populateWeaponDialog(bombInfoDialog, weaponView);
+                dbTools.populateWeaponDialog(bombInfoDialog, weaponView);
                 bombInfoDialog.show();
             }
         });

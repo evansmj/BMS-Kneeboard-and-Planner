@@ -302,7 +302,7 @@ public class TacticalReferenceFragment extends Fragment
                         listDialog = new Dialog(CONTEXT);
                         listDialog.setContentView(R.layout.weapon_dialog_layout);
                         view = rowView;
-                        listDialogView = dbTools.populateWeaponDialog(listDialog, view);
+                        dbTools.populateWeaponDialog(listDialog, view);
                         listDialog.show();
                         break;
 
@@ -310,7 +310,7 @@ public class TacticalReferenceFragment extends Fragment
                         listDialog = new Dialog(CONTEXT);
                         listDialog.setContentView(R.layout.threat_dialog_layout);
                         view = rowView;
-                        listDialogView = dbTools.populateThreatDialog(listDialog, view);
+                        dbTools.populateThreatDialog(listDialog, view);
                         listDialog.show();
                         break;
 

@@ -986,10 +986,11 @@ public class DBTools extends SQLiteAssetHelper
 
     /*****************************************************************
      * Populates the threat dialog.
+     * @param listDialog - The dialog to modify
+     * @param view - The view to get the threat name from (spinner selected row)
      *****************************************************************/
-    public View populateThreatDialog(Dialog listDialog, View view)
+    public void populateThreatDialog(Dialog listDialog, View view)
     {
-        View listDialogView = listDialog.findViewById(R.id.threat_dialog);
 
         listDialog.setTitle(((TextView) view.findViewById(
                 R.id.threat_name_text_view)).getText().toString());
@@ -1002,15 +1003,15 @@ public class DBTools extends SQLiteAssetHelper
 
         //Log.d("TacRef", "threatInfo[0] " + threatInfo[0]);
 
-        TextView maxTOFTextView = (TextView) listDialogView.findViewById(R.id.threat_maxtof_dialog_text_view);
-        TextView weightTextView = (TextView) listDialogView.findViewById(R.id.threat_weight_dialog_text_view);
-        TextView rangeTextView = (TextView) listDialogView.findViewById(R.id.threat_range_km_dialog_text_view);
-        TextView minEngRangeTextView = (TextView) listDialogView.findViewById(R.id.threat_min_eng_range_dialog_text_view);
-        TextView minEngAltTextView = (TextView) listDialogView.findViewById(R.id.threat_min_eng_alt_dialog_text_view);
-        TextView maxEngAltTextView = (TextView) listDialogView.findViewById(R.id.threat_max_alt_dialog_text_view);
-        TextView guidanceTextView = (TextView) listDialogView.findViewById(R.id.threat_guidance_dialog_text_view);
-        TextView fireControlTextView = (TextView) listDialogView.findViewById(R.id.threat_firecontrol_dialog_text_view);
-        TextView typeTextView = (TextView) listDialogView.findViewById(R.id.threat_type_dialog_text_view);
+        TextView maxTOFTextView = (TextView) listDialog.findViewById(R.id.threat_maxtof_dialog_text_view);
+        TextView weightTextView = (TextView) listDialog.findViewById(R.id.threat_weight_dialog_text_view);
+        TextView rangeTextView = (TextView) listDialog.findViewById(R.id.threat_range_km_dialog_text_view);
+        TextView minEngRangeTextView = (TextView) listDialog.findViewById(R.id.threat_min_eng_range_dialog_text_view);
+        TextView minEngAltTextView = (TextView) listDialog.findViewById(R.id.threat_min_eng_alt_dialog_text_view);
+        TextView maxEngAltTextView = (TextView) listDialog.findViewById(R.id.threat_max_alt_dialog_text_view);
+        TextView guidanceTextView = (TextView) listDialog.findViewById(R.id.threat_guidance_dialog_text_view);
+        TextView fireControlTextView = (TextView) listDialog.findViewById(R.id.threat_firecontrol_dialog_text_view);
+        TextView typeTextView = (TextView) listDialog.findViewById(R.id.threat_type_dialog_text_view);
 
         maxTOFTextView.setText(maxTOFTextView.getText().toString() + " " + threatInfo[0] + " sec.");
         weightTextView.setText(weightTextView.getText().toString() + " " + threatInfo[1] + " lbs.");
@@ -1025,17 +1026,16 @@ public class DBTools extends SQLiteAssetHelper
         guidanceTextView.setText(guidanceTextView.getText().toString() + " " + threatInfo[6]);
         fireControlTextView.setText(fireControlTextView.getText().toString() + " " + threatInfo[7]);
         typeTextView.setText(typeTextView.getText().toString() + " " + threatInfo[8]);
-
-        return listDialogView;
     }
 
     /*****************************************************************
      * Populates the list view dialog with weapon info.
+     *
+     * @param listDialog - The dialog to modify
+     * @param view - The view to get the weapon name from (spinner selected row)
      *****************************************************************/
-    public View populateWeaponDialog(Dialog listDialog, View view)
+    public void populateWeaponDialog(Dialog listDialog, View view)
     {
-        View listDialogView = listDialog.findViewById(R.id.weapon_dialog);
-
         listDialog.setTitle(((TextView) view.findViewById(
                 R.id.weapon_name_text_view)).getText().toString());
 
@@ -1045,14 +1045,14 @@ public class DBTools extends SQLiteAssetHelper
         String[] weaponInfo = getWeaponInfo(((TextView) view.findViewById(
                 R.id.weapon_name_text_view)).getText().toString());
 
-        TextView weightTextView = (TextView) listDialogView.findViewById(R.id.weight_dialog_text_view);
+        TextView weightTextView = (TextView) listDialog.findViewById(R.id.weight_dialog_text_view);
         TextView dragTextView  = (TextView) listDialog.findViewById(R.id.drag_dialog_text_view);
-        TextView blastRadiusTextView = (TextView) listDialogView.findViewById(R.id.blast_dialog_text_view);
-        TextView rangeTextView = (TextView) listDialogView.findViewById(R.id.range_dialog_text_view);
-        TextView damageTextView = (TextView) listDialogView.findViewById(R.id.damage_dialog_text_view);
-        TextView guidanceTextView = (TextView) listDialogView.findViewById(R.id.guidance_dialog_text_view);
-        TextView releaseTextView = (TextView) listDialogView.findViewById(R.id.release_dialog_text_view);
-        TextView typeTextView = (TextView) listDialogView.findViewById(R.id.type_dialog_text_view);
+        TextView blastRadiusTextView = (TextView) listDialog.findViewById(R.id.blast_dialog_text_view);
+        TextView rangeTextView = (TextView) listDialog.findViewById(R.id.range_dialog_text_view);
+        TextView damageTextView = (TextView) listDialog.findViewById(R.id.damage_dialog_text_view);
+        TextView guidanceTextView = (TextView) listDialog.findViewById(R.id.guidance_dialog_text_view);
+        TextView releaseTextView = (TextView) listDialog.findViewById(R.id.release_dialog_text_view);
+        TextView typeTextView = (TextView) listDialog.findViewById(R.id.type_dialog_text_view);
 
         weightTextView.setText(weightTextView.getText().toString() + " " + weaponInfo[0] + " lbs.");
         dragTextView.setText(dragTextView.getText().toString() + " " + weaponInfo[1]);
@@ -1066,8 +1066,6 @@ public class DBTools extends SQLiteAssetHelper
         guidanceTextView.setText(guidanceTextView.getText().toString() + " " + weaponInfo[5]);
         releaseTextView.setText(releaseTextView.getText().toString() + " " + weaponInfo[6]);
         typeTextView.setText(typeTextView.getText().toString() + " " + weaponInfo[7]);
-
-        return listDialogView;
     }
 
     @Override
