@@ -23,6 +23,9 @@ public class ThreatListItemAdapter extends ArrayAdapter<ThreatObject>
     private final Context CONTEXT;
     private final ArrayList<ThreatObject> itemsArrayList;
 
+    private String minEngRangeString;
+    private String guidanceString;
+
     public ThreatListItemAdapter(Context context, ArrayList<ThreatObject> itemsArrayList)
     {
         super(context, R.layout.threat_object_layout, itemsArrayList);
@@ -57,20 +60,19 @@ public class ThreatListItemAdapter extends ArrayAdapter<ThreatObject>
             viewHolder = (ViewHolder) convertView.getTag();
         }
 
+        minEngRangeString = String.format(CONTEXT.getString(R.string.threat_min_eng_range_output),
+                (itemsArrayList).get(position).getMinEngRange());
+        guidanceString = String.format(CONTEXT.getString(R.string.threat_guidance_output),
+                (itemsArrayList).get(position).getGuidance());
+
         viewHolder.nameTextView.setText((itemsArrayList).get(position).getName());
-        viewHolder.minEngRangeTextView.setText("\nMinEngRange: " + Integer.toString(
-                (itemsArrayList).get(position).getMinEngRange()) + " ft.");
-        viewHolder.guidanceTextView.setText("Guidance: " + (itemsArrayList).get(position)
-                                                                           .getGuidance());
+        viewHolder.minEngRangeTextView.setText(minEngRangeString);
+        viewHolder.guidanceTextView.setText(guidanceString);
 
         if ((position % 2) == 0)
-        {
             convertView.setBackgroundColor(CONTEXT.getResources().getColor(R.color.light_red));
-        }
         else
-        {
             convertView.setBackgroundColor(CONTEXT.getResources().getColor(R.color.transparent));
-        }
 
         return convertView;
     }

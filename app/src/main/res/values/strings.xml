@@ -261,6 +261,16 @@
     <string name="max_eng_alt">Max Eng Alt: </string>
     <string name="firecontrol">Fire Control: </string>
 
+    <!-- Tactical Reference output string formats -->
+    <string name="threat_min_eng_range_output">\nMinEngRange: %d ft.</string>
+    <string name="threat_guidance_output">Guidance: %s</string>
+
+    <string name="weapon_weight_output">\nWeight: %d lbs</string>
+    <string name="weapon_drag_output">Drag: %d</string>
+
+    <string name="store_weight_output">\nWeight: %d lbs</string>
+    <string name="store_drag_output">Drag: %d</string>
+
     <!-- Mission Planner Fragment-->
     <string name="level_bomb_mission_planner">Level Bomb Mission Planner</string>
     <string name="dive_bomb_mission_planner">Dive Bomb Mission Planner</string>

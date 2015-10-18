@@ -19,8 +19,11 @@ import java.util.ArrayList;
  *********************************************************************/
 public class WeaponUseListItemAdapter extends WeaponUseListArrayAdapter<WeaponUseList>
 {
-    private Context CONTEXT;
-    private ArrayList<WeaponUseList> list;
+    private final Context CONTEXT;
+    private final ArrayList<WeaponUseList> list;
+
+    private String weightString;
+    private String dragString;
 
     public WeaponUseListItemAdapter(Context context, ArrayList<WeaponUseList> list)
     {
@@ -59,9 +62,14 @@ public class WeaponUseListItemAdapter extends WeaponUseListArrayAdapter<WeaponUs
             viewHolder = (ViewHolder) convertView.getTag();
         }
 
+        weightString = String.format(CONTEXT.getString(
+                R.string.weapon_weight_output), list.get(position).getWeaponWeight());
+        dragString = String.format(CONTEXT.getString(R.string.weapon_drag_output),
+                list.get(position).getWeaponDrag());
+
         viewHolder.weaponNameTextView.setText(list.get(position).getWeaponName());
-        viewHolder.weightTextView.setText("\nWeight: " + list.get(position).getWeaponWeight());
-        viewHolder.dragTextView.setText("Drag: " + list.get(position).getWeaponDrag());
+        viewHolder.weightTextView.setText(weightString);
+        viewHolder.dragTextView.setText(dragString);
 
         String[] uses = list.get(position).getUses();
         String usesText = "";
@@ -78,13 +86,9 @@ public class WeaponUseListItemAdapter extends WeaponUseListArrayAdapter<WeaponUs
         viewHolder.usesTextView.setTextColor(CONTEXT.getResources().getColor(R.color.brown));
 
         if ((position % 2) == 0)
-        {
             convertView.setBackgroundColor(CONTEXT.getResources().getColor(R.color.light_blue));
-        }
         else
-        {
             convertView.setBackgroundColor(CONTEXT.getResources().getColor(R.color.transparent));
-        }
 
         return convertView;
     }
@@ -96,6 +100,4 @@ public class WeaponUseListItemAdapter extends WeaponUseListArrayAdapter<WeaponUs
         TextView dragTextView;
         TextView usesTextView;
     }
-
-
 }

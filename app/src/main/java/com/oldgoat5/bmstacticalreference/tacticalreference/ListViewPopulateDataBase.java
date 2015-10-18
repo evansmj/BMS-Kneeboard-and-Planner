@@ -5,8 +5,6 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.os.Bundle;
-import android.widget.ArrayAdapter;
-import android.widget.TextView;
 
 import com.oldgoat5.bmstacticalreference.tools.database.DBTools;
 
@@ -14,9 +12,7 @@ import java.util.ArrayList;
 
 public class ListViewPopulateDataBase extends ListActivity
 {
-    private ArrayList<String> results = new ArrayList<String>();
     private SQLiteDatabase database;
-    private String tableName;
     private ArrayList<String> ordinanceList = new ArrayList<String>();
     
     @Override
@@ -76,6 +72,7 @@ public class ListViewPopulateDataBase extends ListActivity
                                 blast_radius + "Best used: " + best_used);
                     } while (cursor.moveToNext());
                 }
+                cursor.close();
             }
         }
         catch(SQLiteException sqle)
@@ -90,20 +87,5 @@ public class ListViewPopulateDataBase extends ListActivity
                 database.close();
             }
         }
-    }
-    
-    //not used for now
-    public void writeToListView()
-    {
-        TextView tView = new TextView(this);
-        tView.setText("this data retieved from the database");
-        getListView().addHeaderView(tView);
-        
-        setListAdapter(new ArrayAdapter<String>(
-                this, android.R.layout.simple_list_item_1, results));
-        getListView().setTextFilterEnabled(true);
-        
-        
-        
     }
 }

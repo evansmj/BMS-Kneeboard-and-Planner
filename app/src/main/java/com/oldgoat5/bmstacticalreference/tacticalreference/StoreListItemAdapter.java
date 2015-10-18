@@ -22,6 +22,9 @@ public class StoreListItemAdapter extends ArrayAdapter<StoreObject>
     private final Context CONTEXT;
     private final ArrayList<StoreObject> itemsArrayList;
 
+    private String weightString;
+    private String dragString;
+
     public StoreListItemAdapter(Context context, ArrayList<StoreObject> itemsArrayList)
     {
         super(context, R.layout.store_object_layout, itemsArrayList);
@@ -53,18 +56,19 @@ public class StoreListItemAdapter extends ArrayAdapter<StoreObject>
             viewHolder = (ViewHolder) convertView.getTag();
         }
 
+        weightString = String.format(CONTEXT.getString(R.string.store_weight_output),
+                (itemsArrayList).get(position).getWeight());
+        dragString = String.format(CONTEXT.getString(R.string.store_drag_output),
+                (itemsArrayList).get(position).getDrag());
+
         viewHolder.name.setText((itemsArrayList).get(position).getName());
-        viewHolder.weight.setText("\nWeight: " + Integer.toString((itemsArrayList).get(position).getWeight()));
-        viewHolder.drag.setText("Drag: " + Integer.toString((itemsArrayList).get(position).getDrag()));
+        viewHolder.weight.setText(weightString);
+        viewHolder.drag.setText(dragString);
 
         if ((position % 2) == 0)
-        {
             convertView.setBackgroundColor(CONTEXT.getResources().getColor(R.color.light_blue));
-        }
         else
-        {
             convertView.setBackgroundColor(CONTEXT.getResources().getColor(R.color.transparent));
-        }
 
         return convertView;
     }
@@ -75,5 +79,4 @@ public class StoreListItemAdapter extends ArrayAdapter<StoreObject>
         TextView weight;
         TextView drag;
     }
-
 }
