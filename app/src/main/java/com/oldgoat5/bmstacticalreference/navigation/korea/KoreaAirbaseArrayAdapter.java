@@ -20,8 +20,6 @@ public class KoreaAirbaseArrayAdapter extends ArrayAdapter<String>
 
     private LayoutInflater inflater;
     private String[] airbases;
-    private TextView textView;
-    private View rowView;
 
     public KoreaAirbaseArrayAdapter(Context context, String[] airbases)
     {
@@ -45,7 +43,8 @@ public class KoreaAirbaseArrayAdapter extends ArrayAdapter<String>
             convertView = inflater.inflate(android.R.layout.simple_list_item_1, parent, false);
             viewHolder = new ViewHolder();
 
-            viewHolder.airbaseNameTextView = (TextView) convertView.findViewById(android.R.id.text1);
+            viewHolder.airbaseNameTextView = (TextView) convertView.findViewById(
+                                                                                android.R.id.text1);
 
             convertView.setTag(viewHolder);
         }

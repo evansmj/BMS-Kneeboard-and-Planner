@@ -50,6 +50,7 @@ public class ThreatListItemAdapter extends ArrayAdapter<ThreatObject>
                                                                R.id.threat_min_eng_range_text_view);
             viewHolder.guidanceTextView = (TextView) convertView.findViewById(
                                                                     R.id.threat_guidance_text_view);
+            convertView.setTag(viewHolder);
         }
         else
         {
