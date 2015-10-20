@@ -29,9 +29,6 @@ public class FuelCalculatorActivity extends Activity
     private EditText homeAltEditText;
     private EditText returnLegEditText;
     private EditText jokerOffsetEditText;
-    private RadioButton lowRadioButton;
-    private RadioButton medRadioButton;
-    private RadioButton hiRadioButton;
     private RadioGroup altitudeRadioGroup;
     private RadioGroup weatherRadioGroup;
     private TextView bingoFuelResultTextView;
@@ -265,10 +262,6 @@ public class FuelCalculatorActivity extends Activity
         returnLegEditText = (EditText) findViewById(R.id.trip_nm_edit_text);
 
         jokerOffsetEditText.setText("1000");
-
-        lowRadioButton = (RadioButton) findViewById(R.id.low_radio_button);
-        medRadioButton = (RadioButton) findViewById(R.id.med_radio_button);
-        hiRadioButton = (RadioButton) findViewById(R.id.hi_radio_button);
 
         altitudeRadioGroup = (RadioGroup) findViewById(R.id.alt_radio_group);
         weatherRadioGroup = (RadioGroup) findViewById(R.id.weather_radio_group);
