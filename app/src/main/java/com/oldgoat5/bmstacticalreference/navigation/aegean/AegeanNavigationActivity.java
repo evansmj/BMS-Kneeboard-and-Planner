@@ -29,7 +29,7 @@ public class AegeanNavigationActivity extends FragmentActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.aegean_navigation_activity_layout);
 
-        tabsList = new ArrayList<PagerItem>();
+        tabsList = new ArrayList<>();
 
         tabsList.add(new PagerItem("Cyprus", Color.CYAN, Color.GRAY));
         tabsList.add(new PagerItem("Greece", Color.GREEN, Color.GRAY));
@@ -58,6 +58,5 @@ public class AegeanNavigationActivity extends FragmentActivity
             }
 
         });
-
     }
 }

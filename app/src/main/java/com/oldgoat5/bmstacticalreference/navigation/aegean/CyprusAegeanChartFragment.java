@@ -10,10 +10,16 @@ import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ExpandableListView;
 import android.widget.ListView;
 
 import com.oldgoat5.bmstacticalreference.R;
+import com.oldgoat5.bmstacticalreference.navigation.NavigationChartsExpandableListAdapter;
 import com.oldgoat5.bmstacticalreference.tools.views.ZoomImageView;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
 /*********************************************************************
  * Copyright © Michael Evans - All Rights Reserved.
@@ -25,12 +31,14 @@ public class CyprusAegeanChartFragment extends Fragment
 {
     Context CONTEXT;
 
-    private ArrayAdapter<String> adapter;
     private Dialog dialog;
-    private ZoomImageView imageView;
-    private ListView listView;
-    private String[] charts;
+    private ExpandableListView listView;
+    private NavigationChartsExpandableListAdapter listAdapter;
+    private ArrayList<String> airbases;
+    private HashMap<String, ArrayList<String>> charts;
     private View view;
+    private ZoomImageView imageView;
+
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState)
@@ -38,10 +46,14 @@ public class CyprusAegeanChartFragment extends Fragment
         super.onCreate(savedInstanceState);
         view = inflater.inflate(R.layout.cyprus_aegean_chart_fragment_layout, container, false);
 
-        charts = new String[] {"Pafos Airport Diagram", "Pafos ILS/DME RWY 29"};
+        airbases = new ArrayList<>();
+        charts = new HashMap<>();
 
-        adapter = new AegeanAirbaseArrayAdapter(this.getActivity(), charts);
-        listView = (ListView) view.findViewById(R.id.cyprus_aegean_fragment_list_view);
+        setupLists();
+
+        listAdapter = new NavigationChartsExpandableListAdapter(getContext(), airbases, charts);
+        listView = (ExpandableListView) view.findViewById(
+                R.id.cyprus_aegean_fragment_expandable_list_view);
 
         if (this.isAdded())
         {
@@ -53,7 +65,9 @@ public class CyprusAegeanChartFragment extends Fragment
 
         imageView = new ZoomImageView(CONTEXT);
 
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener()
+        listView.setAdapter(listAdapter);
+
+        /*listView.setOnItemClickListener(new AdapterView.OnItemClickListener()
         {
             @Override
             public void onItemClick(AdapterView<?> parent, View view,
@@ -87,8 +101,20 @@ public class CyprusAegeanChartFragment extends Fragment
             }
         });
 
-        listView.setAdapter(adapter);
+        listView.setAdapter(adapter);*/
 
         return view;
+    }
+
+    /*****************************************************************
+     * Sets up the lists and hash maps for the expandable list view.
+     *****************************************************************/
+    private void setupLists()
+    {
+        airbases.add("Pafos Airport Diagram");
+        ArrayList<String> pafos = new ArrayList<>();
+
+        pafos.add("Pafos ILS/DME RWY 29");
+        charts.put(airbases.get(0), pafos);
     }
 }
