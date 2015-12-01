@@ -43,10 +43,10 @@ public class NavigationChartsExpandableListAdapter extends BaseExpandableListAda
     /*****************************************************************
      * Shows the airbase views.
      *
-     * @param groupPosition
-     * @param isExpanded
+     * @param groupPosition - The specified group
+     * @param isExpanded - If the view is expanded
      * @param convertView - The view to recycle.
-     * @param parent
+     * @param parent - The parent view
      * @return Returns a recycled view.
      *****************************************************************/
     @Override
@@ -78,11 +78,13 @@ public class NavigationChartsExpandableListAdapter extends BaseExpandableListAda
         groupViewHolder.airbaseTextView.setText(airbaseTitle);
 
         groupViewHolder.airbaseTextView.setTypeface(null, Typeface.BOLD);
+
         //default padding 6dp for simple_list_item, top 2dp, bottom 3dp
         float d = context.getResources().getDisplayMetrics().density;
         int paddingLeftRight = (int) (35 * d);
         int paddingTop = (int) (2 * d);
         int paddingBottom = (int) (3 * d);
+
         groupViewHolder.airbaseTextView.setPadding(
                 paddingLeftRight, paddingTop, paddingLeftRight, paddingBottom);
 
@@ -92,12 +94,12 @@ public class NavigationChartsExpandableListAdapter extends BaseExpandableListAda
     /*****************************************************************
      * Shows the charts view.
      *
-     * @param groupPosition
-     * @param childPosition
-     * @param isLastChild
+     * @param groupPosition - The given group position
+     * @param childPosition - The given child position
+     * @param isLastChild - If this is the last child
      * @param convertView - The view to recycle.
-     * @param parent
-     * @return
+     * @param parent - The parent view.
+     * @return Returns the child view.
      *****************************************************************/
     @Override
     public View getChildView(int groupPosition, int childPosition, boolean isLastChild,
@@ -139,7 +141,7 @@ public class NavigationChartsExpandableListAdapter extends BaseExpandableListAda
     @Override
     public int getChildrenCount(int groupPosition)
     {
-        return this.airbaseCharts.size();
+        return this.airbaseCharts.get(this.airbases.get(groupPosition)).size();
     }
 
     @Override
@@ -175,7 +177,7 @@ public class NavigationChartsExpandableListAdapter extends BaseExpandableListAda
     @Override
     public boolean isChildSelectable(int groupPosition, int childPosition)
     {
-        return false;
+        return true;
     }
 
     private static class GroupViewHolder

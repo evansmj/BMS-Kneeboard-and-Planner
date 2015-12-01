@@ -4,6 +4,7 @@ import android.app.Dialog;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -65,7 +66,45 @@ public class CyprusAegeanChartFragment extends Fragment
 
         imageView = new ZoomImageView(CONTEXT);
 
-        listView.setAdapter(listAdapter);
+        listView.setOnChildClickListener(new ExpandableListView.OnChildClickListener()
+        {
+            @Override
+            public boolean onChildClick(ExpandableListView parent, View v,
+                                        int groupPosition, int childPosition, long id)
+            {
+                Log.d("ExpandableListAdapter",
+                        "onChildClick() g " + groupPosition + "c" + childPosition);
+                switch (groupPosition)
+                {
+                    case 0:
+                        switch (childPosition)
+                        {
+                            case 0:
+                                imageView.setImageResource(R.drawable.pafos_airport_diagram);
+                                dialog.setContentView(imageView);
+                                dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                        WindowManager.LayoutParams.MATCH_PARENT);
+                                dialog.setCanceledOnTouchOutside(false);
+                                dialog.setTitle(
+                                        listAdapter.getChild(groupPosition, childPosition).toString());
+                                dialog.show();
+                                break;
+                            case 1:
+                                imageView.setImageResource(R.drawable.pafos_ils_dme_rwy_29);
+                                dialog.setContentView(imageView);
+                                dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                        WindowManager.LayoutParams.MATCH_PARENT);
+                                dialog.setCanceledOnTouchOutside(false);
+                                dialog.setTitle(
+                                        listAdapter.getChild(groupPosition, childPosition).toString());
+                                dialog.show();
+                                break;
+                        }
+                        break;
+                }
+                return false;
+            }
+        });
 
         /*listView.setOnItemClickListener(new AdapterView.OnItemClickListener()
         {
@@ -99,9 +138,9 @@ public class CyprusAegeanChartFragment extends Fragment
                 // onListItemClick listener is not called anymore.
                 //return false;
             }
-        });
+        });*/
 
-        listView.setAdapter(adapter);*/
+        listView.setAdapter(listAdapter);
 
         return view;
     }
@@ -111,9 +150,10 @@ public class CyprusAegeanChartFragment extends Fragment
      *****************************************************************/
     private void setupLists()
     {
-        airbases.add("Pafos Airport Diagram");
+        airbases.add("Pafos Airbase");
         ArrayList<String> pafos = new ArrayList<>();
 
+        pafos.add("Pafos Airport Diagram");
         pafos.add("Pafos ILS/DME RWY 29");
         charts.put(airbases.get(0), pafos);
     }
