@@ -1,19 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:focusable="false"
-        android:id="@+id/navigation_child_list_item_add_button"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        style="@style/Base.Widget.AppCompat.Button.Borderless"
-        android:drawableRight="@android:drawable/btn_star"
-        android:drawableEnd="@android:drawable/btn_star"/>
-
+                android:layout_height="wrap_content"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp">
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -27,8 +17,6 @@
         android:paddingStart="?android:attr/expandableListPreferredChildIndicatorLeft"
         android:paddingRight="5dp"
         android:paddingEnd="5dp"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:layout_toLeftOf="@id/navigation_child_list_item_add_button"
-        android:layout_toStartOf="@id/navigation_child_list_item_add_button"/>
+        android:textAppearance="?android:attr/textAppearanceMedium"/>
 
 </RelativeLayout>

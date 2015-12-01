@@ -3,18 +3,33 @@
               android:orientation="vertical"
               android:layout_width="match_parent"
               android:layout_height="wrap_content"
-              android:paddingTop="10dp"
-              android:paddingBottom="10dp"
+
               android:background="@color/silver">
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:focusable="false"
+        android:id="@+id/navigation_group_list_item_add_button"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        style="@style/Base.Widget.AppCompat.Button.Borderless"
+        android:drawableRight="@android:drawable/btn_star"
+        android:drawableEnd="@android:drawable/btn_star"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/navigation_group_list_item_name_text_view"
         android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:paddingLeft="?android:expandableListPreferredItemPaddingLeft"
         android:paddingStart="?android:expandableListPreferredItemPaddingLeft"
         android:paddingRight="5dp"
-        android:paddingEnd="5dp"/>
+        android:paddingEnd="5dp"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@id/navigation_group_list_item_add_button"
+        android:layout_toStartOf="@id/navigation_group_list_item_add_button"/>
 
 </RelativeLayout>

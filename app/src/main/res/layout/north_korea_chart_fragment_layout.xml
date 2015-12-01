@@ -12,9 +12,9 @@
         android:id="@+id/north_korea_title_fragment"
         android:layout_gravity="center_horizontal"/>-->
 
-    <ListView
+    <ExpandableListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/north_korea_fragment_list_view"
+        android:id="@+id/north_korea_fragment_expandable_list_view"
         />
 </LinearLayout>

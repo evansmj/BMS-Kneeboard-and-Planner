@@ -138,10 +138,23 @@ public class NavigationChartsExpandableListAdapter extends BaseExpandableListAda
         return this.airbases.size();
     }
 
+    /*****************************************************************
+     * Returns the number of children in a specified group.
+     *
+     * @param groupPosition - The specified group.
+     * @return Returns the number of children in the group.
+     *****************************************************************/
     @Override
     public int getChildrenCount(int groupPosition)
     {
-        return this.airbaseCharts.get(this.airbases.get(groupPosition)).size();
+        try
+        {
+            return this.airbaseCharts.get(this.airbases.get(groupPosition)).size();
+        }
+        catch (NullPointerException e)
+        {
+            return 0;
+        }
     }
 
     @Override
