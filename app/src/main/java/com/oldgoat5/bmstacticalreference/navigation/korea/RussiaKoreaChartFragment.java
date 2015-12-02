@@ -61,7 +61,7 @@ public class RussiaKoreaChartFragment extends Fragment
 
         imageView = new ZoomImageView(CONTEXT);
 
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener()
+        /*listView.setOnItemClickListener(new AdapterView.OnItemClickListener()
         {
             @Override
             public void onItemClick(AdapterView<?> parent, View view,
@@ -84,7 +84,7 @@ public class RussiaKoreaChartFragment extends Fragment
                 // onListItemClick listener is not called anymore.
                 //return false;
             }
-        });
+        });*/
 
         listView.setAdapter(adapter);
 

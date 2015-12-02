@@ -183,7 +183,6 @@ public class JapanKoreaChartFragment extends Fragment
         ArrayList<String> fukuoka = new ArrayList<>();
 
         groups.add("Fukuoka (Kadena) Airbase");
-        
         fukuoka.add("Fukuoka (Kadena) Airport Diagram");
         fukuoka.add("Fukuoka (Kadena) Departure");
         fukuoka.add("Fukuoka (Kadena) ADIZ Crossing");
