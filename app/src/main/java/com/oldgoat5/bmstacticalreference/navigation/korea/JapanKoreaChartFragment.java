@@ -8,16 +8,18 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
+import android.widget.ExpandableListView;
 
 import com.oldgoat5.bmstacticalreference.R;
+import com.oldgoat5.bmstacticalreference.navigation.NavigationChartsExpandableListAdapter;
 import com.oldgoat5.bmstacticalreference.tools.views.ZoomImageView;
+
+import java.util.ArrayList;
+import java.util.HashMap;
 
 /*********************************************************************
  * Copyright © Michael Evans - All Rights Reserved.
- *
+ * <p/>
  * Shows a list of Japanese charts in the KTO theater.
  *
  * @author Michael Evans
@@ -27,12 +29,13 @@ public class JapanKoreaChartFragment extends Fragment
 {
     private Context CONTEXT;
 
-    private ArrayAdapter<String> adapter;
+    private ArrayList<String> groups;
     private Dialog dialog;
-    private ZoomImageView imageView;
-    private ListView listView;
-    private String[] airbases;
+    private HashMap<String, ArrayList<String>> children;
+    private ExpandableListView listView;
+    private NavigationChartsExpandableListAdapter adapter;
     private View view;
+    private ZoomImageView imageView;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState)
@@ -40,13 +43,14 @@ public class JapanKoreaChartFragment extends Fragment
         super.onCreate(savedInstanceState);
         view = inflater.inflate(R.layout.japan_korea_chart_fragment_layout, container, false);
 
-        airbases = new String[] {"Fukuoka (Kadena) Airport Diagram", "Fukuoka (Kadena) Departure",
-            "Fukuoka (Kadena) ADIZ Crossing", "Fukuoka (Kadena) ILS RWY 01",
-            "Fukuoka (Kadena) ILS RWY 19", "Fukuoka (Kadena) TACAN RWY 15",
-            "Fukuoka (Kadena) TACAN RWY 33"};
+        groups = new ArrayList<>();
+        children = new HashMap<>();
 
-        adapter = new KoreaAirbaseArrayAdapter(this.getActivity(), airbases);
-        listView = (ListView) view.findViewById(R.id.japan_korea_fragment_list_view);
+        setupLists();
+
+        adapter = new NavigationChartsExpandableListAdapter(this.getContext(), groups, children);
+        listView = (ExpandableListView) view.findViewById(
+                R.id.japan_korea_fragment_expandable_list_view);
 
         if (this.isAdded())
         {
@@ -58,89 +62,111 @@ public class JapanKoreaChartFragment extends Fragment
 
         imageView = new ZoomImageView(CONTEXT);
 
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener()
+        listView.setOnChildClickListener(new ExpandableListView.OnChildClickListener()
         {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view,
-                                           int position, long id)
+            public boolean onChildClick(ExpandableListView parent, View v,
+                                        int groupPosition, int childPosition, long id)
             {
-
-                switch(position)
+                switch (groupPosition)
                 {
                     case 0:
-                        imageView.setImageResource(R.drawable.fukuoka_kadena_airport_diagram);
-                        dialog.setContentView(imageView);
-                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
-                                WindowManager.LayoutParams.MATCH_PARENT);
-                        dialog.setCanceledOnTouchOutside(false);
-                        dialog.setTitle(airbases[position]);
-                        dialog.show();
-                        break;
+                        switch (childPosition)
+                        {
+                            case 0:
+                                imageView.setImageResource(
+                                        R.drawable.fukuoka_kadena_airport_diagram);
+                                dialog.setContentView(imageView);
+                                dialog.getWindow().setLayout(
+                                        WindowManager.LayoutParams.MATCH_PARENT,
+                                        WindowManager.LayoutParams.MATCH_PARENT);
+                                dialog.setCanceledOnTouchOutside(false);
+                                dialog.setTitle(adapter.getChild(
+                                        groupPosition, childPosition).toString());
+                                dialog.show();
+                                break;
 
-                    case 1:
-                        imageView.setImageResource(R.drawable.fukuoka_kadena_departure);
-                        dialog.setContentView(imageView);
-                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
-                                WindowManager.LayoutParams.MATCH_PARENT);
-                        dialog.setCanceledOnTouchOutside(false);
-                        dialog.setTitle(airbases[position]);
-                        dialog.show();
-                        break;
+                            case 1:
+                                imageView.setImageResource(
+                                        R.drawable.fukuoka_kadena_departure);
+                                dialog.setContentView(imageView);
+                                dialog.getWindow().setLayout(
+                                        WindowManager.LayoutParams.MATCH_PARENT,
+                                        WindowManager.LayoutParams.MATCH_PARENT);
+                                dialog.setCanceledOnTouchOutside(false);
+                                dialog.setTitle(adapter.getChild(
+                                        groupPosition, childPosition).toString());
+                                dialog.show();
+                                break;
 
-                    case 2:
-                        imageView.setImageResource(R.drawable.fukuoka_kadena_adiz_crossing);
-                        dialog.setContentView(imageView);
-                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
-                                WindowManager.LayoutParams.MATCH_PARENT);
-                        dialog.setCanceledOnTouchOutside(false);
-                        dialog.setTitle(airbases[position]);
-                        dialog.show();
-                        break;
+                            case 2:
+                                imageView.setImageResource(
+                                        R.drawable.fukuoka_kadena_adiz_crossing);
+                                dialog.setContentView(imageView);
+                                dialog.getWindow().setLayout(
+                                        WindowManager.LayoutParams.MATCH_PARENT,
+                                        WindowManager.LayoutParams.MATCH_PARENT);
+                                dialog.setCanceledOnTouchOutside(false);
+                                dialog.setTitle(adapter.getChild(
+                                        groupPosition, childPosition).toString());
+                                dialog.show();
+                                break;
 
-                    case 3:
-                        imageView.setImageResource(R.drawable.fukuoka_kadena_ils_rwy_01);
-                        dialog.setContentView(imageView);
-                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
-                                WindowManager.LayoutParams.MATCH_PARENT);
-                        dialog.setCanceledOnTouchOutside(false);
-                        dialog.setTitle(airbases[position]);
-                        dialog.show();
-                        break;
+                            case 3:
+                                imageView.setImageResource(
+                                        R.drawable.fukuoka_kadena_ils_rwy_01);
+                                dialog.setContentView(imageView);
+                                dialog.getWindow().setLayout(
+                                        WindowManager.LayoutParams.MATCH_PARENT,
+                                        WindowManager.LayoutParams.MATCH_PARENT);
+                                dialog.setCanceledOnTouchOutside(false);
+                                dialog.setTitle(adapter.getChild(
+                                        groupPosition, childPosition).toString());
+                                dialog.show();
+                                break;
 
-                    case 4:
-                        imageView.setImageResource(R.drawable.fukuoka_kadena_ils_rwy_19);
-                        dialog.setContentView(imageView);
-                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
-                                WindowManager.LayoutParams.MATCH_PARENT);
-                        dialog.setCanceledOnTouchOutside(false);
-                        dialog.setTitle(airbases[position]);
-                        dialog.show();
-                        break;
+                            case 4:
+                                imageView.setImageResource(
+                                        R.drawable.fukuoka_kadena_ils_rwy_19);
+                                dialog.setContentView(imageView);
+                                dialog.getWindow().setLayout(
+                                        WindowManager.LayoutParams.MATCH_PARENT,
+                                        WindowManager.LayoutParams.MATCH_PARENT);
+                                dialog.setCanceledOnTouchOutside(false);
+                                dialog.setTitle(adapter.getChild(
+                                        groupPosition, childPosition).toString());
+                                dialog.show();
+                                break;
 
-                    case 5:
-                        imageView.setImageResource(R.drawable.fukuoka_kadena_tacan_rwy_15);
-                        dialog.setContentView(imageView);
-                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
-                                WindowManager.LayoutParams.MATCH_PARENT);
-                        dialog.setCanceledOnTouchOutside(false);
-                        dialog.setTitle(airbases[position]);
-                        dialog.show();
-                        break;
+                            case 5:
+                                imageView.setImageResource(
+                                        R.drawable.fukuoka_kadena_tacan_rwy_15);
+                                dialog.setContentView(imageView);
+                                dialog.getWindow().setLayout(
+                                        WindowManager.LayoutParams.MATCH_PARENT,
+                                        WindowManager.LayoutParams.MATCH_PARENT);
+                                dialog.setCanceledOnTouchOutside(false);
+                                dialog.setTitle(adapter.getChild(
+                                        groupPosition, childPosition).toString());
+                                dialog.show();
+                                break;
 
-                    case 6:
-                        imageView.setImageResource(R.drawable.fukuoka_kadena_tacan_rwy_33);
-                        dialog.setContentView(imageView);
-                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
-                                WindowManager.LayoutParams.MATCH_PARENT);
-                        dialog.setCanceledOnTouchOutside(false);
-                        dialog.setTitle(airbases[position]);
-                        dialog.show();
+                            case 6:
+                                imageView.setImageResource(
+                                        R.drawable.fukuoka_kadena_tacan_rwy_33);
+                                dialog.setContentView(imageView);
+                                dialog.getWindow().setLayout(
+                                        WindowManager.LayoutParams.MATCH_PARENT,
+                                        WindowManager.LayoutParams.MATCH_PARENT);
+                                dialog.setCanceledOnTouchOutside(false);
+                                dialog.setTitle(adapter.getChild(
+                                        groupPosition, childPosition).toString());
+                                dialog.show();
+                                break;
+                        }
                         break;
-
                 }
-                // Return true to consume the click event. In this case the
-                // onListItemClick listener is not called anymore.
-                //return false;
+                return false;
             }
         });
 
@@ -149,4 +175,23 @@ public class JapanKoreaChartFragment extends Fragment
         return view;
     }
 
+    /*****************************************************************
+     * Sets up array lists and hash maps needed for Japan.
+     *****************************************************************/
+    private void setupLists()
+    {
+        ArrayList<String> fukuoka = new ArrayList<>();
+
+        groups.add("Fukuoka (Kadena) Airbase");
+        
+        fukuoka.add("Fukuoka (Kadena) Airport Diagram");
+        fukuoka.add("Fukuoka (Kadena) Departure");
+        fukuoka.add("Fukuoka (Kadena) ADIZ Crossing");
+        fukuoka.add("Fukuoka (Kadena) ILS RWY 01");
+        fukuoka.add("Fukuoka (Kadena) ILS RWY 19");
+        fukuoka.add("Fukuoka (Kadena) TACAN RWY 15");
+        fukuoka.add("Fukuoka (Kadena) TACAN RWY 33");
+
+        children.put(groups.get(0), fukuoka);
+    }
 }
