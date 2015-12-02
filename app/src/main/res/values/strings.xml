@@ -94,6 +94,7 @@
     <string name="stick_len">Stick Len</string>
     <string name="clear_data">Clear Results Data</string>
     <string name="weapon">Weapon</string>
+    <string name="laser_code">L. Code</string>
 
     <!-- Navigation Activity -->
     <string name="aegean_theater_title">Aegean Theater of Operations</string>
