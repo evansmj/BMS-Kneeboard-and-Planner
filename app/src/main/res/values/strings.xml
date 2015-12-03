@@ -56,8 +56,27 @@
     <string name="notes">Notes:</string>
     <string name="tasking">Tasking</string>
     <string name="delivery">Delivery</string>
+
+    <string name="support">Support</string>
+    <string name="awacs">Awacs</string>
+    <string name="jstars">Jstars</string>
+    <string name="fac">Fac</string>
+    <string name="tanker">Tanker</string>
+    <string name="station_time">Station</string>
+
+    <string name="aircraft">Aircraft</string>
+    <string name="max_g">Max g</string>
+    <string name="max_spd">Max Spd</string>
+    <string name="tgp_code">Tgp Code</string>
+    <string name="lst_code">Lst Code</string>
+    <string name="to_type">T/o Type</string>
+    <string name="to_power">T/o Pow</string>
+    <string name="rotate">Rotate</string>
+    <string name="takeoff_speed">T/o Spd</string>
     <string name="floor">Floor</string>
     <string name="alow">ALOW</string>
+    <string name="weight_no_colon">Weight</string>
+
     <string name="app_course">Appr. Crs</string>
     <string name="app_course_init">000°</string>
     <string name="msra">MSRA</string>
@@ -94,7 +113,7 @@
     <string name="stick_len">Stick Len</string>
     <string name="clear_data">Clear Results Data</string>
     <string name="weapon">Weapon</string>
-    <string name="laser_code">L. Code</string>
+    <string name="laser_code">Lsr Code</string>
 
     <!-- Navigation Activity -->
     <string name="aegean_theater_title">Aegean Theater of Operations</string>
