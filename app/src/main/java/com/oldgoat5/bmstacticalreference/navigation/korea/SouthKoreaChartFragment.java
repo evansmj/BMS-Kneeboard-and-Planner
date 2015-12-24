@@ -463,7 +463,7 @@ public class SouthKoreaChartFragment extends Fragment
                                 dialog.show();
                                 break;
 
-                            case 3:
+                            case 2:
                                 imageView.setImageResource(
                                         R.drawable.kangnung_ils_rwy_26);
                                 dialog.setContentView(imageView);
@@ -476,7 +476,7 @@ public class SouthKoreaChartFragment extends Fragment
                                 dialog.show();
                                 break;
 
-                            case 4:
+                            case 3:
                                 imageView.setImageResource(
                                         R.drawable.kangnung_circle_to_land_rwy_08);
                                 dialog.setContentView(imageView);
