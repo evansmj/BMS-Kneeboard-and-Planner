@@ -130,6 +130,8 @@
     <string name="russia">Russia</string>
     <string name="russia_fragment_title">Russian Bases - Korean Theater of Operations</string>
 
+    <string name="set_as">Set As&#8230;</string>
+
     <!-- Brevity Dictionary Activity -->
     <string name="brevity_dictionary_title">Brevity Dictionary</string>
     <string name="menu_search">Search</string>

@@ -208,7 +208,6 @@ public class LoadCardFragment extends Fragment
 
     private void loadDataCard()
     {
-        //todo maybe make shared preference keys global constants maybe
         dataCardTextSize = settingsSharedPref.getInt("card_size",
                 android.R.style.TextAppearance_Medium);
 

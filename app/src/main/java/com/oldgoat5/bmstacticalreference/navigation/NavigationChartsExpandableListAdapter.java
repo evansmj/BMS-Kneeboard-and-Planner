@@ -1,11 +1,14 @@
 package com.oldgoat5.bmstacticalreference.navigation;
 
+import android.app.Dialog;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.oldgoat5.bmstacticalreference.R;
@@ -14,6 +17,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 /*********************************************************************
+ * Copyright © Michael Evans - All Rights Reserved.
+ *
  * List adapter for expandable list views.
  *
  * @author Michael Evans
@@ -21,9 +26,12 @@ import java.util.HashMap;
  *********************************************************************/
 public class NavigationChartsExpandableListAdapter extends BaseExpandableListAdapter
 {
+    private final String DATA_CARD_NAME = "DataCard";
+
     private Context context;
     private ArrayList<String> airbases;
-    private HashMap<String, ArrayList<String>> airbaseCharts;
+    private HashMap<String, ArrayList<NavigationChartsTuple<String, Integer>>> airbaseCharts;
+    private SharedPreferences dataCardSharedPref;
 
     /*****************************************************************
      * Constructor.
@@ -33,15 +41,17 @@ public class NavigationChartsExpandableListAdapter extends BaseExpandableListAda
      * @param airbaseChartHashMap - an airbase:chart hash map.
      *****************************************************************/
     public NavigationChartsExpandableListAdapter(Context context, ArrayList<String> airbases,
-            HashMap<String, ArrayList<String>> airbaseChartHashMap)
+            HashMap<String, ArrayList<NavigationChartsTuple<String, Integer>>> airbaseChartHashMap)
     {
         this.context = context;
         this.airbases = airbases;
         this.airbaseCharts = airbaseChartHashMap;
+
+        dataCardSharedPref = context.getSharedPreferences(DATA_CARD_NAME, 0);
     }
 
     /*****************************************************************
-     * Shows the airbase views.
+     * Shows the airbase views.  Also handles the favorites click listener.
      *
      * @param groupPosition - The specified group
      * @param isExpanded - If the view is expanded
@@ -55,7 +65,7 @@ public class NavigationChartsExpandableListAdapter extends BaseExpandableListAda
     {
         GroupViewHolder groupViewHolder;
 
-        String airbaseTitle = (String) getGroup(groupPosition);
+        final String airbaseTitle = (String) getGroup(groupPosition);
 
         if (convertView == null)
         {
@@ -65,6 +75,8 @@ public class NavigationChartsExpandableListAdapter extends BaseExpandableListAda
             convertView = inflater.inflate(R.layout.navigation_group_list_item, parent, false);
             groupViewHolder = new GroupViewHolder();
 
+            groupViewHolder.favoritesButton = (Button)
+                    convertView.findViewById(R.id.navigation_group_list_item_favorite_button);
             groupViewHolder.airbaseTextView = (TextView)
                     convertView.findViewById(R.id.navigation_group_list_item_name_text_view);
 
@@ -77,9 +89,54 @@ public class NavigationChartsExpandableListAdapter extends BaseExpandableListAda
 
         groupViewHolder.airbaseTextView.setText(airbaseTitle);
 
+        groupViewHolder.favoritesButton.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                //when clicked, add this set of charts to data card preferences,
+                // either as home plate or alternate.
+
+                //show dialog to set either home plate or alternate.
+                Dialog dialog = new Dialog(context);
+                View dialogView = v.findViewById(R.id.favorites_setter_dialog);
+
+                Button dialogHomeButton = (Button) dialogView.findViewById(
+                        R.id.favorites_setter_home_plate_select_button);
+                Button dialogAlternateButton = (Button) dialogView.findViewById(
+                        R.id.favorites_setter_alternate_select_button);
+
+                dialogHomeButton.setOnClickListener(new View.OnClickListener()
+                {
+                    @Override
+                    public void onClick(View v)
+                    {
+                        SharedPreferences.Editor editor = dataCardSharedPref.edit();
+                        editor.putString("favoriteHomePlate", airbaseTitle);
+                        editor.apply();
+                    }
+                });
+
+                dialogAlternateButton.setOnClickListener(new View.OnClickListener()
+                {
+                    @Override
+                    public void onClick(View v)
+                    {
+                        SharedPreferences.Editor editor = dataCardSharedPref.edit();
+                        editor.putString("favoriteHomePlate", airbaseTitle);
+                        editor.apply();
+                    }
+                });
+
+                dialog.setContentView(R.layout.favorites_setter_dialog_layout);
+                dialog.setTitle(R.string.set_as);
+                dialog.show();
+            }
+        });
+
         groupViewHolder.airbaseTextView.setTypeface(null, Typeface.BOLD);
 
-        //default padding 6dp for simple_list_item, top 2dp, bottom 3dp
+        //default padding is 6dp for simple_list_item, top 2dp, bottom 3dp
         float d = context.getResources().getDisplayMetrics().density;
         int paddingLeftRight = (int) (35 * d);
         int paddingTop = (int) (2 * d);
@@ -107,7 +164,8 @@ public class NavigationChartsExpandableListAdapter extends BaseExpandableListAda
     {
         ChildViewHolder childViewHolder;
 
-        String chart = (String) getChild(groupPosition, childPosition);
+        String chartTitle = (String)
+                ((NavigationChartsTuple) getChild(groupPosition, childPosition)).getTitle();
 
         if (convertView == null)
         {
@@ -127,7 +185,7 @@ public class NavigationChartsExpandableListAdapter extends BaseExpandableListAda
             childViewHolder = (ChildViewHolder) convertView.getTag();
         }
 
-        childViewHolder.chartTextView.setText(chart);
+        childViewHolder.chartTextView.setText(chartTitle);
 
         return convertView;
     }
@@ -196,6 +254,7 @@ public class NavigationChartsExpandableListAdapter extends BaseExpandableListAda
     private static class GroupViewHolder
     {
         TextView airbaseTextView;
+        Button favoritesButton;
     }
 
     private static class ChildViewHolder
