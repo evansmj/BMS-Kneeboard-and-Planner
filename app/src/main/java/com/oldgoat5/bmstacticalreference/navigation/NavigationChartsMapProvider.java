@@ -13,17 +13,200 @@ import java.util.HashMap;
  *********************************************************************/
 public class NavigationChartsMapProvider
 {
+    private ArrayList<String> northKoreaAirbaseList;
     private ArrayList<String> southKoreaAirbaseList;
+    private HashMap<String, ArrayList<NavigationChartsTuple<String, Integer>>> northKoreaHashMap;
     private HashMap<String, ArrayList<NavigationChartsTuple<String, Integer>>> southKoreaHashMap;
+
+    public ArrayList<String> getNorthKoreaAirbaseList()
+    {
+        return this.northKoreaAirbaseList;
+    }
 
     public ArrayList<String> getSouthKoreaAirbaseList()
     {
         return this.southKoreaAirbaseList;
     }
 
+    public HashMap<String, ArrayList<NavigationChartsTuple<String, Integer>>> getNorthKoreaHashMap()
+    {
+        return this.northKoreaHashMap;
+    }
+
     public HashMap<String, ArrayList<NavigationChartsTuple<String, Integer>>> getSouthKoreaHashMap()
     {
         return this.southKoreaHashMap;
+    }
+
+    public void setNorthKorea()
+    {
+        ArrayList<NavigationChartsTuple<String, Integer>> airstrips = new ArrayList<>();
+        ArrayList<NavigationChartsTuple<String, Integer>> haeju = new ArrayList<>();
+        ArrayList<NavigationChartsTuple<String, Integer>> hwangju = new ArrayList<>();
+        ArrayList<NavigationChartsTuple<String, Integer>> hwangsuwon = new ArrayList<>();
+        ArrayList<NavigationChartsTuple<String, Integer>> hyonni = new ArrayList<>();
+        ArrayList<NavigationChartsTuple<String, Integer>> iwon = new ArrayList<>();
+        ArrayList<NavigationChartsTuple<String, Integer>> kaechon = new ArrayList<>();
+        ArrayList<NavigationChartsTuple<String, Integer>> koksan = new ArrayList<>();
+        ArrayList<NavigationChartsTuple<String, Integer>> kuumni = new ArrayList<>();
+        ArrayList<NavigationChartsTuple<String, Integer>> kwail = new ArrayList<>();
+        ArrayList<NavigationChartsTuple<String, Integer>> manpo = new ArrayList<>();
+        ArrayList<NavigationChartsTuple<String, Integer>> mirim = new ArrayList<>();
+        ArrayList<NavigationChartsTuple<String, Integer>> onchon = new ArrayList<>();
+        ArrayList<NavigationChartsTuple<String, Integer>> ongjin = new ArrayList<>();
+        ArrayList<NavigationChartsTuple<String, Integer>> orang = new ArrayList<>();
+        ArrayList<NavigationChartsTuple<String, Integer>> panghyon = new ArrayList<>();
+        ArrayList<NavigationChartsTuple<String, Integer>> pukchangup = new ArrayList<>();
+        ArrayList<NavigationChartsTuple<String, Integer>> samjiyonup = new ArrayList<>();
+        ArrayList<NavigationChartsTuple<String, Integer>> sondok = new ArrayList<>();
+        ArrayList<NavigationChartsTuple<String, Integer>> sunan = new ArrayList<>();
+        ArrayList<NavigationChartsTuple<String, Integer>> sunchon = new ArrayList<>();
+        ArrayList<NavigationChartsTuple<String, Integer>> taechon = new ArrayList<>();
+        ArrayList<NavigationChartsTuple<String, Integer>> taetan = new ArrayList<>();
+        ArrayList<NavigationChartsTuple<String, Integer>> toksan = new ArrayList<>();
+        ArrayList<NavigationChartsTuple<String, Integer>> uiju = new ArrayList<>();
+        ArrayList<NavigationChartsTuple<String, Integer>> wonsan = new ArrayList<>();
+
+        ArrayList<String> groupsList = new ArrayList<>();
+        HashMap<
+           String, ArrayList<NavigationChartsTuple<String, Integer>>> childrenMap = new HashMap<>();
+
+        groupsList.add("Airstrips");
+        airstrips.add(new NavigationChartsTuple<String, Integer>(
+                "East-West Airstrips", R.drawable.north_korea_airstrips_east_west));
+        airstrips.add(new NavigationChartsTuple<String, Integer>(
+                "North-South Airstrips", R.drawable.north_korea_airstrips_north_south));
+        childrenMap.put(groupsList.get(0), airstrips);
+
+        groupsList.add("Haeju Airbase");
+        haeju.add(new NavigationChartsTuple<String, Integer>(
+                "Haeju Airport Diagram", R.drawable.haeju_airport_diagram));
+        childrenMap.put(groupsList.get(1), haeju);
+
+        groupsList.add("Hwangju Airbase");
+        hwangju.add(new NavigationChartsTuple<String, Integer>(
+                "Hwangju Airport Diagram", R.drawable.hwangju_airport_diagram));
+        childrenMap.put(groupsList.get(2), hwangju);
+
+        groupsList.add("Hwangsuwon Airbase");
+        hwangsuwon.add(new NavigationChartsTuple<String, Integer>(
+                "Hwangsuwon Airport Diagram", R.drawable.hwangsuwon_airport_diagram));
+        childrenMap.put(groupsList.get(3), hwangsuwon);
+
+        groupsList.add("Hyon-Ni Airbase");
+        hyonni.add(new NavigationChartsTuple<String, Integer>(
+                "Hyon-Ni Airport Diagram", R.drawable.hyonni_airport_diagram));
+        childrenMap.put(groupsList.get(4), hyonni);
+
+        groupsList.add("Iwon Airbase");
+        iwon.add(new NavigationChartsTuple<String, Integer>(
+                "Iwon Airport Diagram", R.drawable.iwon_airport_diagram));
+        childrenMap.put(groupsList.get(5), iwon);
+
+        groupsList.add("Kaech`on Airbase");
+        kaechon.add(new NavigationChartsTuple<String, Integer>(
+                "Kaech`on Airport Diagram", R.drawable.kaechon_airport_diagram));
+        childrenMap.put(groupsList.get(6), kaechon);
+
+        groupsList.add("Koksan Airbase");
+        koksan.add(new NavigationChartsTuple<String, Integer>(
+                "Koksan Airport Diagram", R.drawable.koksan_airport_diagram));
+        childrenMap.put(groupsList.get(7), koksan);
+
+        groupsList.add("Kuum-ni Airbase");
+        kuumni.add(new NavigationChartsTuple<String, Integer>(
+                "Kuum-ni Airport Diagram", R.drawable.kuumni_airport_diagram));
+        childrenMap.put(groupsList.get(8), kuumni);
+
+        groupsList.add("Kwail Airbase");
+        kwail.add(new NavigationChartsTuple<String, Integer>(
+                "Kwail Airport Diagram", R.drawable.kwail_airport_diagram));
+        childrenMap.put(groupsList.get(9), kwail);
+
+        groupsList.add("Manp`o Airbase");
+        manpo.add(new NavigationChartsTuple<String, Integer>(
+                "Manp`o Airport Diagram", R.drawable.manpo_airport_diagram));
+        childrenMap.put(groupsList.get(10), manpo);
+
+        groupsList.add("Mirim Airbase");
+        mirim.add(new NavigationChartsTuple<String, Integer>(
+                "Mirim Airport Diagram", R.drawable.mirim_airport_diagram));
+        childrenMap.put(groupsList.get(11), mirim);
+
+        groupsList.add("Onch`on Airbase");
+        onchon.add(new NavigationChartsTuple<String, Integer>(
+                "Onch`on Airport Diagram", R.drawable.onchon_airport_diagram));
+        childrenMap.put(groupsList.get(12), onchon);
+
+        groupsList.add("Ongjin Airbase");
+        ongjin.add(new NavigationChartsTuple<String, Integer>(
+                "Ongjin Airport Diagram", R.drawable.ongjin_airport_diagram));
+        childrenMap.put(groupsList.get(13), ongjin);
+
+        groupsList.add("Orang Airbase");
+        orang.add(new NavigationChartsTuple<String, Integer>(
+                "Orang Airport Diagram", R.drawable.orang_airport_diagram));
+        childrenMap.put(groupsList.get(14), orang);
+
+        groupsList.add("Panghyon Airbase");
+        panghyon.add(new NavigationChartsTuple<String, Integer>(
+                "Panghyon Airport Diagram", R.drawable.panghyon_airport_diagram));
+        childrenMap.put(groupsList.get(15), panghyon);
+
+        groupsList.add("Pukch`ang-up Airbase");
+        pukchangup.add(new NavigationChartsTuple<String, Integer>(
+                "Pukch`ang-up Airport Diagram", R.drawable.pukchangup_airport_diagram));
+        childrenMap.put(groupsList.get(16), pukchangup);
+
+        groupsList.add("Samjiyon-up Airbase");
+        samjiyonup.add(new NavigationChartsTuple<String, Integer>(
+                "Samjiyon-up Airport Diagram", R.drawable.samjiyonup_airport_diagram));
+        childrenMap.put(groupsList.get(17), samjiyonup);
+
+        groupsList.add("Sondok Airbase");
+        sondok.add(new NavigationChartsTuple<String, Integer>(
+                "Sondok Airport Diagram", R.drawable.sondok_airport_diagram));
+        childrenMap.put(groupsList.get(18), sondok);
+
+        groupsList.add("Sunan (Pyongyang) Airbase");
+        sunan.add(new NavigationChartsTuple<String, Integer>(
+                "Sunan (Pyongyang) Airport Diagram", R.drawable.sunan_pyongyang_airport_diagram));
+        sunan.add(new NavigationChartsTuple<String, Integer>(
+                "Sunan (Pyongyang) ILS RWY 18", R.drawable.sunan_pyongyang_ils_rwy_18));
+        childrenMap.put(groupsList.get(19), sunan);
+
+        groupsList.add("Sunch`on Airbase");
+        sunchon.add(new NavigationChartsTuple<String, Integer>(
+                "Sunch`on Airport Diagram", R.drawable.sunchon_airport_diagram));
+        childrenMap.put(groupsList.get(20), sunchon);
+
+        groupsList.add("T`aech`on Airbase");
+        taechon.add(new NavigationChartsTuple<String, Integer>(
+                "T`aech`on Airport Diagram", R.drawable.taechon_airport_diagram));
+        childrenMap.put(groupsList.get(21), taechon);
+
+        groupsList.add("Taetan Airbase");
+        taetan.add(new NavigationChartsTuple<String, Integer>(
+                "Taetan Airport Diagram", R.drawable.taetan_airport_diagram));
+        childrenMap.put(groupsList.get(22), taetan);
+
+        groupsList.add("Toksan Airbase");
+        toksan.add(new NavigationChartsTuple<String, Integer>(
+                "Toksan Airport Diagram", R.drawable.toksan_airport_diagram));
+        childrenMap.put(groupsList.get(23), toksan);
+
+        groupsList.add("Uiju Airbase");
+        uiju.add(new NavigationChartsTuple<String, Integer>(
+                "Uiju Airport Diagram", R.drawable.uiju_airport_diagram));
+        childrenMap.put(groupsList.get(24), uiju);
+
+        groupsList.add("Wonsan Airbase");
+        wonsan.add(new NavigationChartsTuple<String, Integer>(
+                "Wonsan Airport Diagram", R.drawable.wonsan_airport_diagram));
+        childrenMap.put(groupsList.get(25), wonsan);
+
+        this.northKoreaAirbaseList = groupsList;
+        this.northKoreaHashMap = childrenMap;
     }
 
     public void setSouthKorea()

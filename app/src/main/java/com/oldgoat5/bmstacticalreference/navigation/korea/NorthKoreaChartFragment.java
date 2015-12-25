@@ -12,6 +12,8 @@ import android.widget.ExpandableListView;
 
 import com.oldgoat5.bmstacticalreference.R;
 import com.oldgoat5.bmstacticalreference.navigation.NavigationChartsExpandableListAdapter;
+import com.oldgoat5.bmstacticalreference.navigation.NavigationChartsMapProvider;
+import com.oldgoat5.bmstacticalreference.navigation.NavigationChartsTuple;
 import com.oldgoat5.bmstacticalreference.tools.views.ZoomImageView;
 
 import java.util.ArrayList;
@@ -32,7 +34,7 @@ public class NorthKoreaChartFragment extends Fragment
     private ArrayList<String> groupsList;
     private Dialog dialog;
     private ExpandableListView listView;
-    private HashMap<String, ArrayList<String>> childrenMap;
+    private HashMap<String, ArrayList<NavigationChartsTuple<String, Integer>>> childrenMap;
     private NavigationChartsExpandableListAdapter adapter;
     private ZoomImageView imageView;
     private View view;
@@ -83,8 +85,8 @@ public class NorthKoreaChartFragment extends Fragment
                                         WindowManager.LayoutParams.MATCH_PARENT,
                                         WindowManager.LayoutParams.MATCH_PARENT);
                                 dialog.setCanceledOnTouchOutside(false);
-                                dialog.setTitle(
-                                        adapter.getChild(groupPosition, childPosition).toString());
+                                dialog.setTitle((String) ((NavigationChartsTuple)
+                                        adapter.getChild(groupPosition, childPosition)).getTitle());
                                 dialog.show();
                                 break;
 
@@ -96,8 +98,8 @@ public class NorthKoreaChartFragment extends Fragment
                                         WindowManager.LayoutParams.MATCH_PARENT,
                                         WindowManager.LayoutParams.MATCH_PARENT);
                                 dialog.setCanceledOnTouchOutside(false);
-                                dialog.setTitle(
-                                        adapter.getChild(groupPosition, childPosition).toString());
+                                dialog.setTitle((String) ((NavigationChartsTuple)
+                                        adapter.getChild(groupPosition, childPosition)).getTitle());
                                 dialog.show();
                                 break;
 
@@ -110,7 +112,8 @@ public class NorthKoreaChartFragment extends Fragment
                         dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
                                 WindowManager.LayoutParams.MATCH_PARENT);
                         dialog.setCanceledOnTouchOutside(false);
-                        dialog.setTitle(adapter.getGroup(groupPosition).toString());
+                        dialog.setTitle((String) ((NavigationChartsTuple)
+                                adapter.getChild(groupPosition, childPosition)).getTitle());
                         dialog.show();
                         break;
 
@@ -120,7 +123,8 @@ public class NorthKoreaChartFragment extends Fragment
                         dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
                                 WindowManager.LayoutParams.MATCH_PARENT);
                         dialog.setCanceledOnTouchOutside(false);
-                        dialog.setTitle(adapter.getGroup(groupPosition).toString());
+                        dialog.setTitle((String) ((NavigationChartsTuple)
+                                adapter.getChild(groupPosition, childPosition)).getTitle());
                         dialog.show();
                         break;
 
@@ -130,7 +134,8 @@ public class NorthKoreaChartFragment extends Fragment
                         dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
                                 WindowManager.LayoutParams.MATCH_PARENT);
                         dialog.setCanceledOnTouchOutside(false);
-                        dialog.setTitle(adapter.getGroup(groupPosition).toString());
+                        dialog.setTitle((String) ((NavigationChartsTuple)
+                                adapter.getChild(groupPosition, childPosition)).getTitle());
                         dialog.show();
                         break;
 
@@ -140,7 +145,8 @@ public class NorthKoreaChartFragment extends Fragment
                         dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
                                 WindowManager.LayoutParams.MATCH_PARENT);
                         dialog.setCanceledOnTouchOutside(false);
-                        dialog.setTitle(adapter.getGroup(groupPosition).toString());
+                        dialog.setTitle((String) ((NavigationChartsTuple)
+                                adapter.getChild(groupPosition, childPosition)).getTitle());
                         dialog.show();
                         break;
 
@@ -150,7 +156,8 @@ public class NorthKoreaChartFragment extends Fragment
                         dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
                                 WindowManager.LayoutParams.MATCH_PARENT);
                         dialog.setCanceledOnTouchOutside(false);
-                        dialog.setTitle(adapter.getChild(groupPosition, childPosition).toString());
+                        dialog.setTitle((String) ((NavigationChartsTuple)
+                                adapter.getChild(groupPosition, childPosition)).getTitle());
                         dialog.show();
                         break;
 
@@ -160,7 +167,8 @@ public class NorthKoreaChartFragment extends Fragment
                         dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
                                 WindowManager.LayoutParams.MATCH_PARENT);
                         dialog.setCanceledOnTouchOutside(false);
-                        dialog.setTitle(adapter.getChild(groupPosition, childPosition).toString());
+                        dialog.setTitle((String) ((NavigationChartsTuple)
+                                adapter.getChild(groupPosition, childPosition)).getTitle());
                         dialog.show();
                         break;
 
@@ -170,7 +178,8 @@ public class NorthKoreaChartFragment extends Fragment
                         dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
                                 WindowManager.LayoutParams.MATCH_PARENT);
                         dialog.setCanceledOnTouchOutside(false);
-                        dialog.setTitle(adapter.getChild(groupPosition, childPosition).toString());
+                        dialog.setTitle((String) ((NavigationChartsTuple)
+                                adapter.getChild(groupPosition, childPosition)).getTitle());
                         dialog.show();
                         break;
 
@@ -180,7 +189,8 @@ public class NorthKoreaChartFragment extends Fragment
                         dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
                                 WindowManager.LayoutParams.MATCH_PARENT);
                         dialog.setCanceledOnTouchOutside(false);
-                        dialog.setTitle(adapter.getChild(groupPosition, childPosition).toString());
+                        dialog.setTitle((String) ((NavigationChartsTuple)
+                                adapter.getChild(groupPosition, childPosition)).getTitle());
                         dialog.show();
                         break;
 
@@ -190,7 +200,8 @@ public class NorthKoreaChartFragment extends Fragment
                         dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
                                 WindowManager.LayoutParams.MATCH_PARENT);
                         dialog.setCanceledOnTouchOutside(false);
-                        dialog.setTitle(adapter.getChild(groupPosition, childPosition).toString());
+                        dialog.setTitle((String) ((NavigationChartsTuple)
+                                adapter.getChild(groupPosition, childPosition)).getTitle());
                         dialog.show();
                         break;
 
@@ -200,7 +211,8 @@ public class NorthKoreaChartFragment extends Fragment
                         dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
                                 WindowManager.LayoutParams.MATCH_PARENT);
                         dialog.setCanceledOnTouchOutside(false);
-                        dialog.setTitle(adapter.getChild(groupPosition, childPosition).toString());
+                        dialog.setTitle((String) ((NavigationChartsTuple)
+                                adapter.getChild(groupPosition, childPosition)).getTitle());
                         dialog.show();
                         break;
 
@@ -210,7 +222,8 @@ public class NorthKoreaChartFragment extends Fragment
                         dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
                                 WindowManager.LayoutParams.MATCH_PARENT);
                         dialog.setCanceledOnTouchOutside(false);
-                        dialog.setTitle(adapter.getChild(groupPosition, childPosition).toString());
+                        dialog.setTitle((String) ((NavigationChartsTuple)
+                                adapter.getChild(groupPosition, childPosition)).getTitle());
                         dialog.show();
                         break;
 
@@ -220,7 +233,8 @@ public class NorthKoreaChartFragment extends Fragment
                         dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
                                 WindowManager.LayoutParams.MATCH_PARENT);
                         dialog.setCanceledOnTouchOutside(false);
-                        dialog.setTitle(adapter.getChild(groupPosition, childPosition).toString());
+                        dialog.setTitle((String) ((NavigationChartsTuple)
+                                adapter.getChild(groupPosition, childPosition)).getTitle());
                         dialog.show();
                         break;
 
@@ -230,7 +244,8 @@ public class NorthKoreaChartFragment extends Fragment
                         dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
                                 WindowManager.LayoutParams.MATCH_PARENT);
                         dialog.setCanceledOnTouchOutside(false);
-                        dialog.setTitle(adapter.getChild(groupPosition, childPosition).toString());
+                        dialog.setTitle((String) ((NavigationChartsTuple)
+                                adapter.getChild(groupPosition, childPosition)).getTitle());
                         dialog.show();
                         break;
 
@@ -240,7 +255,8 @@ public class NorthKoreaChartFragment extends Fragment
                         dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
                                 WindowManager.LayoutParams.MATCH_PARENT);
                         dialog.setCanceledOnTouchOutside(false);
-                        dialog.setTitle(adapter.getChild(groupPosition, childPosition).toString());
+                        dialog.setTitle((String) ((NavigationChartsTuple)
+                                adapter.getChild(groupPosition, childPosition)).getTitle());
                         dialog.show();
                         break;
 
@@ -250,7 +266,8 @@ public class NorthKoreaChartFragment extends Fragment
                         dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
                                 WindowManager.LayoutParams.MATCH_PARENT);
                         dialog.setCanceledOnTouchOutside(false);
-                        dialog.setTitle(adapter.getChild(groupPosition, childPosition).toString());
+                        dialog.setTitle((String) ((NavigationChartsTuple)
+                                adapter.getChild(groupPosition, childPosition)).getTitle());
                         dialog.show();
                         break;
 
@@ -260,7 +277,8 @@ public class NorthKoreaChartFragment extends Fragment
                         dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
                                 WindowManager.LayoutParams.MATCH_PARENT);
                         dialog.setCanceledOnTouchOutside(false);
-                        dialog.setTitle(adapter.getChild(groupPosition, childPosition).toString());
+                        dialog.setTitle((String) ((NavigationChartsTuple)
+                                adapter.getChild(groupPosition, childPosition)).getTitle());
                         dialog.show();
                         break;
 
@@ -270,7 +288,8 @@ public class NorthKoreaChartFragment extends Fragment
                         dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
                                 WindowManager.LayoutParams.MATCH_PARENT);
                         dialog.setCanceledOnTouchOutside(false);
-                        dialog.setTitle(adapter.getChild(groupPosition, childPosition).toString());
+                        dialog.setTitle((String) ((NavigationChartsTuple)
+                                adapter.getChild(groupPosition, childPosition)).getTitle());
                         dialog.show();
                         break;
 
@@ -280,7 +299,8 @@ public class NorthKoreaChartFragment extends Fragment
                         dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
                                 WindowManager.LayoutParams.MATCH_PARENT);
                         dialog.setCanceledOnTouchOutside(false);
-                        dialog.setTitle(adapter.getChild(groupPosition, childPosition).toString());
+                        dialog.setTitle((String) ((NavigationChartsTuple)
+                                adapter.getChild(groupPosition, childPosition)).getTitle());
                         dialog.show();
                         break;
 
@@ -295,8 +315,8 @@ public class NorthKoreaChartFragment extends Fragment
                                         WindowManager.LayoutParams.MATCH_PARENT,
                                         WindowManager.LayoutParams.MATCH_PARENT);
                                 dialog.setCanceledOnTouchOutside(false);
-                                dialog.setTitle(
-                                        adapter.getChild(groupPosition, childPosition).toString());
+                                dialog.setTitle((String) ((NavigationChartsTuple)
+                                        adapter.getChild(groupPosition, childPosition)).getTitle());
                                 dialog.show();
                                 break;
 
@@ -308,8 +328,8 @@ public class NorthKoreaChartFragment extends Fragment
                                         WindowManager.LayoutParams.MATCH_PARENT,
                                         WindowManager.LayoutParams.MATCH_PARENT);
                                 dialog.setCanceledOnTouchOutside(false);
-                                dialog.setTitle(
-                                        adapter.getChild(groupPosition, childPosition).toString());
+                                dialog.setTitle((String) ((NavigationChartsTuple)
+                                        adapter.getChild(groupPosition, childPosition)).getTitle());
                                 dialog.show();
                                 break;
                         }
@@ -321,7 +341,8 @@ public class NorthKoreaChartFragment extends Fragment
                         dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
                                 WindowManager.LayoutParams.MATCH_PARENT);
                         dialog.setCanceledOnTouchOutside(false);
-                        dialog.setTitle(adapter.getChild(groupPosition, childPosition).toString());
+                        dialog.setTitle((String) ((NavigationChartsTuple)
+                                adapter.getChild(groupPosition, childPosition)).getTitle());
                         dialog.show();
                         break;
 
@@ -331,7 +352,8 @@ public class NorthKoreaChartFragment extends Fragment
                         dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
                                 WindowManager.LayoutParams.MATCH_PARENT);
                         dialog.setCanceledOnTouchOutside(false);
-                        dialog.setTitle(adapter.getChild(groupPosition, childPosition).toString());
+                        dialog.setTitle((String) ((NavigationChartsTuple)
+                                adapter.getChild(groupPosition, childPosition)).getTitle());
                         dialog.show();
                         break;
 
@@ -341,7 +363,8 @@ public class NorthKoreaChartFragment extends Fragment
                         dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
                                 WindowManager.LayoutParams.MATCH_PARENT);
                         dialog.setCanceledOnTouchOutside(false);
-                        dialog.setTitle(adapter.getChild(groupPosition, childPosition).toString());
+                        dialog.setTitle((String) ((NavigationChartsTuple)
+                                adapter.getChild(groupPosition, childPosition)).getTitle());
                         dialog.show();
                         break;
 
@@ -351,7 +374,8 @@ public class NorthKoreaChartFragment extends Fragment
                         dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
                                 WindowManager.LayoutParams.MATCH_PARENT);
                         dialog.setCanceledOnTouchOutside(false);
-                        dialog.setTitle(adapter.getChild(groupPosition, childPosition).toString());
+                        dialog.setTitle((String) ((NavigationChartsTuple)
+                                adapter.getChild(groupPosition, childPosition)).getTitle());
                         dialog.show();
                         break;
 
@@ -361,7 +385,8 @@ public class NorthKoreaChartFragment extends Fragment
                         dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
                                 WindowManager.LayoutParams.MATCH_PARENT);
                         dialog.setCanceledOnTouchOutside(false);
-                        dialog.setTitle(adapter.getChild(groupPosition, childPosition).toString());
+                        dialog.setTitle((String) ((NavigationChartsTuple)
+                                adapter.getChild(groupPosition, childPosition)).getTitle());
                         dialog.show();
                         break;
 
@@ -371,7 +396,8 @@ public class NorthKoreaChartFragment extends Fragment
                         dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
                                 WindowManager.LayoutParams.MATCH_PARENT);
                         dialog.setCanceledOnTouchOutside(false);
-                        dialog.setTitle(adapter.getChild(groupPosition, childPosition).toString());
+                        dialog.setTitle((String) ((NavigationChartsTuple)
+                                adapter.getChild(groupPosition, childPosition)).getTitle());
                         dialog.show();
                         break;
 
@@ -403,7 +429,14 @@ public class NorthKoreaChartFragment extends Fragment
                 "Sunan (Pyongyang) Airport Diagram", "Sunch`on Airport Diagram",
                 "T`aech`on Airport Diagram", "Taetan Airport Diagram", "Toksan Airport Diagram",
                 "Uiju Airport Diagram", "Wonsan Airport Diagram"};*/
-        ArrayList<String> airstrips = new ArrayList<>();
+        NavigationChartsMapProvider provider = new NavigationChartsMapProvider();
+
+        provider.setNorthKorea();
+
+        groupsList = provider.getNorthKoreaAirbaseList();
+        childrenMap = provider.getNorthKoreaHashMap();
+
+       /* ArrayList<String> airstrips = new ArrayList<>();
         ArrayList<String> haeju = new ArrayList<>();
         ArrayList<String> hwangju = new ArrayList<>();
         ArrayList<String> hwangsuwon = new ArrayList<>();
@@ -534,6 +567,6 @@ public class NorthKoreaChartFragment extends Fragment
 
         groupsList.add("Wonsan Airbase");
         wonsan.add("Wonsan Airport Diagram");
-        childrenMap.put(groupsList.get(25), wonsan);
+        childrenMap.put(groupsList.get(25), wonsan);*/
     }
 }

@@ -99,7 +99,8 @@ public class NavigationChartsExpandableListAdapter extends BaseExpandableListAda
 
                 //show dialog to set either home plate or alternate.
                 Dialog dialog = new Dialog(context);
-                View dialogView = v.findViewById(R.id.favorites_setter_dialog);
+                View dialogView = View.inflate(
+                        context, R.layout.favorites_setter_dialog_layout, null);
 
                 Button dialogHomeButton = (Button) dialogView.findViewById(
                         R.id.favorites_setter_home_plate_select_button);
