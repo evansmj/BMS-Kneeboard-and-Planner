@@ -13,12 +13,21 @@ import java.util.HashMap;
  *********************************************************************/
 public class NavigationChartsMapProvider
 {
+    private ArrayList<String> chinaKoreaAirbaseList;
     private ArrayList<String> japanKoreaAirbaseList;
     private ArrayList<String> northKoreaAirbaseList;
+    private ArrayList<String> russiaKoreaAirbaseList;
     private ArrayList<String> southKoreaAirbaseList;
+    private HashMap<String, ArrayList<NavigationChartsTuple<String, Integer>>> chinaKoreaHashMap;
     private HashMap<String, ArrayList<NavigationChartsTuple<String, Integer>>> japanKoreaHashMap;
     private HashMap<String, ArrayList<NavigationChartsTuple<String, Integer>>> northKoreaHashMap;
+    private HashMap<String, ArrayList<NavigationChartsTuple<String, Integer>>> russiaKoreaHashMap;
     private HashMap<String, ArrayList<NavigationChartsTuple<String, Integer>>> southKoreaHashMap;
+
+    public ArrayList<String> getChinaKoreaAirbaseList()
+    {
+        return this.chinaKoreaAirbaseList;
+    }
 
     public ArrayList<String> getJapanKoreaAirbaseList()
     {
@@ -30,9 +39,19 @@ public class NavigationChartsMapProvider
         return this.northKoreaAirbaseList;
     }
 
+    public ArrayList<String> getRussiaKoreaAirbaseList()
+    {
+        return this.russiaKoreaAirbaseList;
+    }
+
     public ArrayList<String> getSouthKoreaAirbaseList()
     {
         return this.southKoreaAirbaseList;
+    }
+
+    public HashMap<String, ArrayList<NavigationChartsTuple<String, Integer>>> getChinaKoreaHashMap()
+    {
+        return this.chinaKoreaHashMap;
     }
 
     public HashMap<String, ArrayList<NavigationChartsTuple<String, Integer>>> getJapanKoreaHashMap()
@@ -45,9 +64,42 @@ public class NavigationChartsMapProvider
         return this.northKoreaHashMap;
     }
 
+    public HashMap<
+            String, ArrayList<NavigationChartsTuple<String, Integer>>> getRussiaKoreaHashMap()
+    {
+        return this.russiaKoreaHashMap;
+    }
+
     public HashMap<String, ArrayList<NavigationChartsTuple<String, Integer>>> getSouthKoreaHashMap()
     {
         return this.southKoreaHashMap;
+    }
+
+    public void setChinaKorea()
+    {
+        //airbases = new String[] {"Liuhe Airport Diagram", "Shenyang Airport Diagram"};
+
+        ArrayList<NavigationChartsTuple<String, Integer>> liuhe = new ArrayList<>();
+        ArrayList<NavigationChartsTuple<String, Integer>> shenyang = new ArrayList<>();
+
+        ArrayList<String> groups = new ArrayList<>();
+        HashMap<
+            String, ArrayList<NavigationChartsTuple<String, Integer>>> children = new HashMap<>();
+
+        groups.add("Liuhe Airbase");
+        liuhe.add(new NavigationChartsTuple<String, Integer>(
+                "Liuhe Airport Diagram", R.drawable.liuhe_airport_diagram));
+
+        children.put(groups.get(0), liuhe);
+
+        groups.add("Shenyang Airbase");
+        shenyang.add(new NavigationChartsTuple<String, Integer>(
+                "Shenyang Airport Diagram", R.drawable.shenyang_airport_diagram));
+
+        children.put(groups.get(1), shenyang);
+
+        chinaKoreaAirbaseList = groups;
+        chinaKoreaHashMap = children;
     }
 
     public void setJapanKorea()
@@ -249,6 +301,24 @@ public class NavigationChartsMapProvider
 
         this.northKoreaAirbaseList = groupsList;
         this.northKoreaHashMap = childrenMap;
+    }
+
+    public void setRussiaKorea()
+    {
+        //airbases = new String[] {"Nachodka Airport Diagram"};
+        ArrayList<NavigationChartsTuple<String, Integer>> nachodka = new ArrayList<>();
+
+        ArrayList<String> groups = new ArrayList<>();
+        HashMap<
+            String, ArrayList<NavigationChartsTuple<String, Integer>>> children = new HashMap<>();
+
+        groups.add("Nachodka Airbase");
+        nachodka.add(new NavigationChartsTuple<String, Integer>(
+                "Nachodka Airport Diagram", R.drawable.nachodka_airport_diagram));
+        children.put(groups.get(0), nachodka);
+
+        this.russiaKoreaAirbaseList = groups;
+        this.russiaKoreaHashMap = children;
     }
 
     public void setSouthKorea()

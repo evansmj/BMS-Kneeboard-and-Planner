@@ -2,20 +2,22 @@ package com.oldgoat5.bmstacticalreference.navigation.korea;
 
 import android.app.Dialog;
 import android.content.Context;
-import android.graphics.Matrix;
-import android.graphics.PointF;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
+import android.widget.ExpandableListView;
 
 import com.oldgoat5.bmstacticalreference.R;
+import com.oldgoat5.bmstacticalreference.navigation.NavigationChartsExpandableListAdapter;
+import com.oldgoat5.bmstacticalreference.navigation.NavigationChartsMapProvider;
+import com.oldgoat5.bmstacticalreference.navigation.NavigationChartsTuple;
 import com.oldgoat5.bmstacticalreference.tools.views.ZoomImageView;
+
+import java.util.ArrayList;
+import java.util.HashMap;
 
 /*********************************************************************
  * Copyright © Michael Evans - All Rights Reserved.
@@ -29,15 +31,12 @@ public class RussiaKoreaChartFragment extends Fragment
 {
     Context CONTEXT;
 
-    private ArrayAdapter<String> adapter;
+    private ArrayList<String> groups;
     private Dialog dialog;
     private ZoomImageView imageView;
-    private ListView listView;
-    private Matrix matrix;
-    private Matrix savedMatrix;
-    private Object mode;
-    private PointF start;
-    private String[] airbases;
+    private ExpandableListView listView;
+    private HashMap<String, ArrayList<NavigationChartsTuple<String, Integer>>> children;
+    private NavigationChartsExpandableListAdapter adapter;
     private View view;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -46,10 +45,14 @@ public class RussiaKoreaChartFragment extends Fragment
         super.onCreate(savedInstanceState);
         view = inflater.inflate(R.layout.russia_korea_chart_fragment_layout, container, false);
 
-        airbases = new String[] {"Nachodka Airport Diagram"};
+        groups = new ArrayList<>();
+        children = new HashMap<>();
 
-        adapter = new KoreaAirbaseArrayAdapter(this.getActivity(), airbases);
-        listView = (ListView) view.findViewById(R.id.russia_korea_fragment_list_view);
+        setupLists();
+
+        adapter = new NavigationChartsExpandableListAdapter(this.getActivity(), groups, children);
+        listView = (ExpandableListView) view.findViewById(
+                R.id.russia_korea_fragment_expandable_list_view);
 
         if (this.isAdded())
         {
@@ -61,35 +64,51 @@ public class RussiaKoreaChartFragment extends Fragment
 
         imageView = new ZoomImageView(CONTEXT);
 
-        /*listView.setOnItemClickListener(new AdapterView.OnItemClickListener()
+        listView.setOnChildClickListener(new ExpandableListView.OnChildClickListener()
         {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view,
-                                           int position, long id)
+            public boolean onChildClick(ExpandableListView parent, View v,
+                                        int groupPosition, int childPosition, long id)
             {
-
-                switch(position)
+                switch (groupPosition)
                 {
                     case 0:
-                        imageView.setImageResource(R.drawable.nachodka_airport_diagram);
-                        dialog.setContentView(imageView);
-                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
-                                WindowManager.LayoutParams.MATCH_PARENT);
-                        dialog.setCanceledOnTouchOutside(false);
-                        dialog.setTitle(airbases[position]);
-                        dialog.show();
+                        switch (childPosition)
+                        {
+                            case 0:
+                                imageView.setImageResource(
+                                        R.drawable.nachodka_airport_diagram);
+                                dialog.setContentView(imageView);
+                                dialog.getWindow().setLayout(
+                                        WindowManager.LayoutParams.MATCH_PARENT,
+                                        WindowManager.LayoutParams.MATCH_PARENT);
+                                dialog.setCanceledOnTouchOutside(false);
+                                dialog.setTitle((String) ((NavigationChartsTuple)
+                                        adapter.getChild(
+                                                groupPosition, childPosition)).getTitle());
+                                dialog.show();
+                                break;
+                        }
                         break;
                 }
-                // Return true to consume the click event. In this case the
-                // onListItemClick listener is not called anymore.
-                //return false;
+                return false;
             }
-        });*/
+        });
 
         listView.setAdapter(adapter);
 
         return view;
     }
 
+    /*****************************************************************
+     * Sets up array lists and hash maps needed for Japan.
+     *****************************************************************/
+    private void setupLists()
+    {
+        NavigationChartsMapProvider provider = new NavigationChartsMapProvider();
 
+        provider.setRussiaKorea();
+        groups = provider.getRussiaKoreaAirbaseList();
+        children = provider.getRussiaKoreaHashMap();
+    }
 }

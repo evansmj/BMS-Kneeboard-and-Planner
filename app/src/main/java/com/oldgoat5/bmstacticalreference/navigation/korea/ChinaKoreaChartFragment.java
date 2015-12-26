@@ -10,10 +10,16 @@ import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.ListView;
+import android.widget.ExpandableListView;
 
 import com.oldgoat5.bmstacticalreference.R;
+import com.oldgoat5.bmstacticalreference.navigation.NavigationChartsExpandableListAdapter;
+import com.oldgoat5.bmstacticalreference.navigation.NavigationChartsMapProvider;
+import com.oldgoat5.bmstacticalreference.navigation.NavigationChartsTuple;
 import com.oldgoat5.bmstacticalreference.tools.views.ZoomImageView;
+
+import java.util.ArrayList;
+import java.util.HashMap;
 
 /*********************************************************************
  * Copyright © Michael Evans - All Rights Reserved.
@@ -27,11 +33,12 @@ public class ChinaKoreaChartFragment extends Fragment
 {
     Context CONTEXT;
 
-    private ArrayAdapter<String> adapter;
+    private ArrayList<String> groups;
+    private HashMap<String, ArrayList<NavigationChartsTuple<String, Integer>>> children;
+    private NavigationChartsExpandableListAdapter adapter;
     private Dialog dialog;
     private ZoomImageView imageView;
-    private ListView listView;
-    private String[] airbases;
+    private ExpandableListView listView;
     private View view;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -40,11 +47,16 @@ public class ChinaKoreaChartFragment extends Fragment
         super.onCreate(savedInstanceState);
         view = inflater.inflate(R.layout.china_korea_chart_fragment_layout, container, false);
 
-        airbases = new String[] {"Liuhe Airport Diagram", "Shenyang Airport Diagram"};
+        groups = new ArrayList<>();
+        children = new HashMap<>();
 
-        adapter = new KoreaAirbaseArrayAdapter(this.getActivity(), airbases);
-        //imageView = (ImageView) view.findViewById(R.id.chart_image_view);
-        listView = (ListView) view.findViewById(R.id.china_korea_fragment_list_view);
+        setupLists();
+
+        //airbases = new String[] {"Liuhe Airport Diagram", "Shenyang Airport Diagram"};
+
+        adapter = new NavigationChartsExpandableListAdapter(this.getContext(), groups, children);
+        listView = (ExpandableListView) view.findViewById(
+                R.id.china_korea_fragment_expandable_list_view);
 
         if (this.isAdded())
         {
@@ -56,43 +68,66 @@ public class ChinaKoreaChartFragment extends Fragment
 
         imageView = new ZoomImageView(CONTEXT);
 
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener()
+        listView.setOnChildClickListener(new ExpandableListView.OnChildClickListener()
         {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view,
-                                           int position, long id)
+            public boolean onChildClick(ExpandableListView parent, View view,
+                                     int groupPosition, int childPosition, long id)
             {
-
-                switch(position)
+                switch (groupPosition)
                 {
                     case 0:
-                        imageView.setImageResource(R.drawable.liuhe_airport_diagram);
-                        dialog.setContentView(imageView);
-                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
-                                WindowManager.LayoutParams.MATCH_PARENT);
-                        dialog.setCanceledOnTouchOutside(false);
-                        dialog.setTitle(airbases[0]);
-                        dialog.show();
+                        switch (childPosition)
+                        {
+                            case 0:
+                                imageView.setImageResource(R.drawable.liuhe_airport_diagram);
+                                dialog.setContentView(imageView);
+                                dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                        WindowManager.LayoutParams.MATCH_PARENT);
+                                dialog.setCanceledOnTouchOutside(false);
+                                dialog.setTitle((String) ((NavigationChartsTuple)
+                                        adapter.getChild(groupPosition, childPosition)).getTitle());
+                                dialog.show();
+                                break;
+                        }
                         break;
 
                     case 1:
-                        imageView.setImageResource(R.drawable.shenyang_airport_diagram);
-                        dialog.setContentView(imageView);
-                        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
-                                WindowManager.LayoutParams.MATCH_PARENT);
-                        dialog.setCanceledOnTouchOutside(false);
-                        dialog.setTitle(airbases[1]);
-                        dialog.show();
+                        switch (childPosition)
+                        {
+                            case 0:
+                                imageView.setImageResource(R.drawable.shenyang_airport_diagram);
+                                dialog.setContentView(imageView);
+                                dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                                        WindowManager.LayoutParams.MATCH_PARENT);
+                                dialog.setCanceledOnTouchOutside(false);
+                                dialog.setTitle((String) ((NavigationChartsTuple)
+                                        adapter.getChild(groupPosition, childPosition)).getTitle());
+                                dialog.show();
+                                break;
+                        }
                         break;
                 }
                 // Return true to consume the click event. In this case the
                 // onListItemClick listener is not called anymore.
-                //return false;
+                return false;
             }
         });
 
         listView.setAdapter(adapter);
 
         return view;
+    }
+
+    /*****************************************************************
+     * Sets up array lists and hash maps needed for Japan.
+     *****************************************************************/
+    private void setupLists()
+    {
+        NavigationChartsMapProvider provider = new NavigationChartsMapProvider();
+
+        provider.setChinaKorea();
+        groups = provider.getChinaKoreaAirbaseList();
+        children = provider.getChinaKoreaHashMap();
     }
 }

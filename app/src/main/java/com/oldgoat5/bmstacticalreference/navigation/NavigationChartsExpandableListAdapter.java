@@ -120,7 +120,7 @@ public class NavigationChartsExpandableListAdapter extends BaseExpandableListAda
                         editor.putString("favoriteHomePlate", airbaseTitle);
                         editor.apply();
                         dialog.dismiss();
-                        Toast.makeText(context, "Saved as Home Plate", Toast.LENGTH_LONG).show();
+                        Toast.makeText(context, "Set as Home Plate", Toast.LENGTH_LONG).show();
                     }
                 });
 
@@ -133,7 +133,7 @@ public class NavigationChartsExpandableListAdapter extends BaseExpandableListAda
                         editor.putString("favoriteHomePlate", airbaseTitle);
                         editor.apply();
                         dialog.dismiss();
-                        Toast.makeText(context, "Saved as Alternate", Toast.LENGTH_LONG).show();
+                        Toast.makeText(context, "Set as Alternate", Toast.LENGTH_LONG).show();
                     }
                 });
 
