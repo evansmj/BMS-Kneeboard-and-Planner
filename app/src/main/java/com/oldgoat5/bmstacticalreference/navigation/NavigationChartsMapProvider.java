@@ -13,10 +13,17 @@ import java.util.HashMap;
  *********************************************************************/
 public class NavigationChartsMapProvider
 {
+    private ArrayList<String> japanKoreaAirbaseList;
     private ArrayList<String> northKoreaAirbaseList;
     private ArrayList<String> southKoreaAirbaseList;
+    private HashMap<String, ArrayList<NavigationChartsTuple<String, Integer>>> japanKoreaHashMap;
     private HashMap<String, ArrayList<NavigationChartsTuple<String, Integer>>> northKoreaHashMap;
     private HashMap<String, ArrayList<NavigationChartsTuple<String, Integer>>> southKoreaHashMap;
+
+    public ArrayList<String> getJapanKoreaAirbaseList()
+    {
+        return this.japanKoreaAirbaseList;
+    }
 
     public ArrayList<String> getNorthKoreaAirbaseList()
     {
@@ -28,6 +35,11 @@ public class NavigationChartsMapProvider
         return this.southKoreaAirbaseList;
     }
 
+    public HashMap<String, ArrayList<NavigationChartsTuple<String, Integer>>> getJapanKoreaHashMap()
+    {
+        return this.japanKoreaHashMap;
+    }
+
     public HashMap<String, ArrayList<NavigationChartsTuple<String, Integer>>> getNorthKoreaHashMap()
     {
         return this.northKoreaHashMap;
@@ -36,6 +48,36 @@ public class NavigationChartsMapProvider
     public HashMap<String, ArrayList<NavigationChartsTuple<String, Integer>>> getSouthKoreaHashMap()
     {
         return this.southKoreaHashMap;
+    }
+
+    public void setJapanKorea()
+    {
+        ArrayList<NavigationChartsTuple<String, Integer>> fukuoka = new ArrayList<>();
+
+        ArrayList<String> groups = new ArrayList<>();
+        HashMap<
+           String, ArrayList<NavigationChartsTuple<String, Integer>>> children = new HashMap<>();
+
+        groups.add("Fukuoka (Kadena) Airbase");
+        fukuoka.add(new NavigationChartsTuple<String, Integer>(
+                "Fukuoka (Kadena) Airport Diagram", R.drawable.fukuoka_kadena_airport_diagram));
+        fukuoka.add(new NavigationChartsTuple<String, Integer>(
+                "Fukuoka (Kadena) Departure", R.drawable.fukuoka_kadena_departure));
+        fukuoka.add(new NavigationChartsTuple<String, Integer>(
+                "Fukuoka (Kadena) ADIZ Crossing", R.drawable.fukuoka_kadena_adiz_crossing));
+        fukuoka.add(new NavigationChartsTuple<String, Integer>(
+                "Fukuoka (Kadena) ILS RWY 01", R.drawable.fukuoka_kadena_ils_rwy_01));
+        fukuoka.add(new NavigationChartsTuple<String, Integer>(
+                "Fukuoka (Kadena) ILS RWY 19", R.drawable.fukuoka_kadena_ils_rwy_19));
+        fukuoka.add(new NavigationChartsTuple<String, Integer>(
+                "Fukuoka (Kadena) TACAN RWY 15", R.drawable.fukuoka_kadena_tacan_rwy_15));
+        fukuoka.add(new NavigationChartsTuple<String, Integer>(
+                "Fukuoka (Kadena) TACAN RWY 33", R.drawable.fukuoka_kadena_tacan_rwy_33));
+
+        children.put(groups.get(0), fukuoka);
+
+        japanKoreaAirbaseList = groups;
+        japanKoreaHashMap = children;
     }
 
     public void setNorthKorea()

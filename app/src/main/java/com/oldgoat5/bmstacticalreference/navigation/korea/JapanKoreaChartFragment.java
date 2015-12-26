@@ -12,6 +12,8 @@ import android.widget.ExpandableListView;
 
 import com.oldgoat5.bmstacticalreference.R;
 import com.oldgoat5.bmstacticalreference.navigation.NavigationChartsExpandableListAdapter;
+import com.oldgoat5.bmstacticalreference.navigation.NavigationChartsMapProvider;
+import com.oldgoat5.bmstacticalreference.navigation.NavigationChartsTuple;
 import com.oldgoat5.bmstacticalreference.tools.views.ZoomImageView;
 
 import java.util.ArrayList;
@@ -31,7 +33,7 @@ public class JapanKoreaChartFragment extends Fragment
 
     private ArrayList<String> groups;
     private Dialog dialog;
-    private HashMap<String, ArrayList<String>> children;
+    private HashMap<String, ArrayList<NavigationChartsTuple<String, Integer>>> children;
     private ExpandableListView listView;
     private NavigationChartsExpandableListAdapter adapter;
     private View view;
@@ -81,8 +83,9 @@ public class JapanKoreaChartFragment extends Fragment
                                         WindowManager.LayoutParams.MATCH_PARENT,
                                         WindowManager.LayoutParams.MATCH_PARENT);
                                 dialog.setCanceledOnTouchOutside(false);
-                                dialog.setTitle(adapter.getChild(
-                                        groupPosition, childPosition).toString());
+                                dialog.setTitle((String) ((NavigationChartsTuple)
+                                        adapter.getChild(
+                                        groupPosition, childPosition)).getTitle());
                                 dialog.show();
                                 break;
 
@@ -94,8 +97,9 @@ public class JapanKoreaChartFragment extends Fragment
                                         WindowManager.LayoutParams.MATCH_PARENT,
                                         WindowManager.LayoutParams.MATCH_PARENT);
                                 dialog.setCanceledOnTouchOutside(false);
-                                dialog.setTitle(adapter.getChild(
-                                        groupPosition, childPosition).toString());
+                                dialog.setTitle((String) ((NavigationChartsTuple)
+                                        adapter.getChild(
+                                                groupPosition, childPosition)).getTitle());
                                 dialog.show();
                                 break;
 
@@ -107,8 +111,9 @@ public class JapanKoreaChartFragment extends Fragment
                                         WindowManager.LayoutParams.MATCH_PARENT,
                                         WindowManager.LayoutParams.MATCH_PARENT);
                                 dialog.setCanceledOnTouchOutside(false);
-                                dialog.setTitle(adapter.getChild(
-                                        groupPosition, childPosition).toString());
+                                dialog.setTitle((String) ((NavigationChartsTuple)
+                                        adapter.getChild(
+                                                groupPosition, childPosition)).getTitle());
                                 dialog.show();
                                 break;
 
@@ -120,8 +125,9 @@ public class JapanKoreaChartFragment extends Fragment
                                         WindowManager.LayoutParams.MATCH_PARENT,
                                         WindowManager.LayoutParams.MATCH_PARENT);
                                 dialog.setCanceledOnTouchOutside(false);
-                                dialog.setTitle(adapter.getChild(
-                                        groupPosition, childPosition).toString());
+                                dialog.setTitle((String) ((NavigationChartsTuple)
+                                        adapter.getChild(
+                                                groupPosition, childPosition)).getTitle());
                                 dialog.show();
                                 break;
 
@@ -133,8 +139,9 @@ public class JapanKoreaChartFragment extends Fragment
                                         WindowManager.LayoutParams.MATCH_PARENT,
                                         WindowManager.LayoutParams.MATCH_PARENT);
                                 dialog.setCanceledOnTouchOutside(false);
-                                dialog.setTitle(adapter.getChild(
-                                        groupPosition, childPosition).toString());
+                                dialog.setTitle((String) ((NavigationChartsTuple)
+                                        adapter.getChild(
+                                                groupPosition, childPosition)).getTitle());
                                 dialog.show();
                                 break;
 
@@ -146,8 +153,9 @@ public class JapanKoreaChartFragment extends Fragment
                                         WindowManager.LayoutParams.MATCH_PARENT,
                                         WindowManager.LayoutParams.MATCH_PARENT);
                                 dialog.setCanceledOnTouchOutside(false);
-                                dialog.setTitle(adapter.getChild(
-                                        groupPosition, childPosition).toString());
+                                dialog.setTitle((String) ((NavigationChartsTuple)
+                                        adapter.getChild(
+                                                groupPosition, childPosition)).getTitle());
                                 dialog.show();
                                 break;
 
@@ -159,8 +167,9 @@ public class JapanKoreaChartFragment extends Fragment
                                         WindowManager.LayoutParams.MATCH_PARENT,
                                         WindowManager.LayoutParams.MATCH_PARENT);
                                 dialog.setCanceledOnTouchOutside(false);
-                                dialog.setTitle(adapter.getChild(
-                                        groupPosition, childPosition).toString());
+                                dialog.setTitle((String) ((NavigationChartsTuple)
+                                        adapter.getChild(
+                                                groupPosition, childPosition)).getTitle());
                                 dialog.show();
                                 break;
                         }
@@ -180,7 +189,13 @@ public class JapanKoreaChartFragment extends Fragment
      *****************************************************************/
     private void setupLists()
     {
-        ArrayList<String> fukuoka = new ArrayList<>();
+        NavigationChartsMapProvider provider = new NavigationChartsMapProvider();
+
+        provider.setJapanKorea();
+        groups = provider.getJapanKoreaAirbaseList();
+        children = provider.getJapanKoreaHashMap();
+
+        /* ArrayList<String> fukuoka = new ArrayList<>();
 
         groups.add("Fukuoka (Kadena) Airbase");
         fukuoka.add("Fukuoka (Kadena) Airport Diagram");
@@ -191,6 +206,6 @@ public class JapanKoreaChartFragment extends Fragment
         fukuoka.add("Fukuoka (Kadena) TACAN RWY 15");
         fukuoka.add("Fukuoka (Kadena) TACAN RWY 33");
 
-        children.put(groups.get(0), fukuoka);
+        children.put(groups.get(0), fukuoka);*/
     }
 }

@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.oldgoat5.bmstacticalreference.R;
 
@@ -119,6 +120,7 @@ public class NavigationChartsExpandableListAdapter extends BaseExpandableListAda
                         editor.putString("favoriteHomePlate", airbaseTitle);
                         editor.apply();
                         dialog.dismiss();
+                        Toast.makeText(context, "Saved as Home Plate", Toast.LENGTH_LONG).show();
                     }
                 });
 
@@ -131,6 +133,7 @@ public class NavigationChartsExpandableListAdapter extends BaseExpandableListAda
                         editor.putString("favoriteHomePlate", airbaseTitle);
                         editor.apply();
                         dialog.dismiss();
+                        Toast.makeText(context, "Saved as Alternate", Toast.LENGTH_LONG).show();
                     }
                 });
 
