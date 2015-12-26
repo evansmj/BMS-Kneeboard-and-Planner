@@ -98,9 +98,12 @@ public class NavigationChartsExpandableListAdapter extends BaseExpandableListAda
                 // either as home plate or alternate.
 
                 //show dialog to set either home plate or alternate.
-                Dialog dialog = new Dialog(context);
+                final Dialog dialog = new Dialog(context);
+
                 View dialogView = View.inflate(
                         context, R.layout.favorites_setter_dialog_layout, null);
+
+                dialog.setContentView(dialogView);
 
                 Button dialogHomeButton = (Button) dialogView.findViewById(
                         R.id.favorites_setter_home_plate_select_button);
@@ -115,6 +118,7 @@ public class NavigationChartsExpandableListAdapter extends BaseExpandableListAda
                         SharedPreferences.Editor editor = dataCardSharedPref.edit();
                         editor.putString("favoriteHomePlate", airbaseTitle);
                         editor.apply();
+                        dialog.dismiss();
                     }
                 });
 
@@ -126,10 +130,10 @@ public class NavigationChartsExpandableListAdapter extends BaseExpandableListAda
                         SharedPreferences.Editor editor = dataCardSharedPref.edit();
                         editor.putString("favoriteHomePlate", airbaseTitle);
                         editor.apply();
+                        dialog.dismiss();
                     }
                 });
 
-                dialog.setContentView(R.layout.favorites_setter_dialog_layout);
                 dialog.setTitle(R.string.set_as);
                 dialog.show();
             }

@@ -9,7 +9,7 @@
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="New Button"
+        android:text="@string/home_plate"
         android:id="@+id/favorites_setter_home_plate_select_button"
         android:layout_gravity="center_horizontal"/>
 
@@ -17,7 +17,7 @@
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="New Button"
+        android:text="@string/alternate"
         android:id="@+id/favorites_setter_alternate_select_button"
         android:layout_gravity="center_horizontal"/>
 
