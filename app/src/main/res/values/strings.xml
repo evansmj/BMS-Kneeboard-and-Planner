@@ -66,6 +66,8 @@
     <string name="station_time">Station Time</string>
 
     <string name="navigation">Navigation</string>
+    <string name="navigation_home_plate_template">Home Plate \n (%s)</string>
+    <string name="navigation_alternate_template">Alternate \n (%s)</string>
 
     <string name="aircraft">Aircraft</string>
     <string name="max_g">Max g</string>

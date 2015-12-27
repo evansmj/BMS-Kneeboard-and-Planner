@@ -986,17 +986,19 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="150dp"
+            android:background="@drawable/card_dark_background"
             android:id="@+id/data_card_navigation_home_plate_button"
             android:layout_below="@id/data_card_flight_tanker_label_text_view"
             android:layout_alignLeft="@id/data_card_flight_tanker_label_text_view"
             android:layout_alignRight="@id/data_card_name_label_text_view"
-            android:text="@string/home_plate"/>
+            android:text="@string/navigation_home_plate_template"/>
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="150dp"
+            android:background="@drawable/card_dark_background"
             android:id="@+id/data_card_navigation_alternate_button"
-            android:text="@string/alternate"
+            android:text="@string/navigation_alternate_template"
             android:layout_below="@id/data_card_flight_tanker_label_text_view"
             android:layout_alignLeft="@id/data_card_idm_label_text_view"
             android:layout_alignRight="@id/data_card_package_tasking_label_text_view"/>

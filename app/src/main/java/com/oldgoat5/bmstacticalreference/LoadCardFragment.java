@@ -22,6 +22,8 @@ public class LoadCardFragment extends Fragment
     private final String SETTINGS_NAME = "Settings";
 
     private Button clearDataButton;
+    private Button homePlateButton;
+    private Button alternateButton;
     private EditText deliveryApproachCourseEditText;
     private EditText deliveryMsraEditText;
     private EditText deliveryBombRangeEditText;
@@ -166,6 +168,8 @@ public class LoadCardFragment extends Fragment
     private void instantiateResources()
     {
         clearDataButton = (Button) view.findViewById(R.id.data_card_clear_button);
+        homePlateButton = (Button) view.findViewById(R.id.data_card_navigation_home_plate_button);
+        alternateButton = (Button) view.findViewById(R.id.data_card_navigation_alternate_button);
 
         dataCardSharedPref = getActivity().getSharedPreferences(DATA_CARD_NAME, 0);
         settingsSharedPref = getActivity().getSharedPreferences(SETTINGS_NAME, 0);
@@ -211,26 +215,42 @@ public class LoadCardFragment extends Fragment
         dataCardTextSize = settingsSharedPref.getInt("card_size",
                 android.R.style.TextAppearance_Medium);
 
+        //Delivery section
+        deliveryApproachCourseEditText.setText(
+                dataCardSharedPref.getString("approach_course", "000°"));
+        deliveryBombRangeEditText.setText(dataCardSharedPref.getString("bomb_range", "00000ft"));
+        deliveryReleaseAltitudeEditText.setText(dataCardSharedPref.getString(
+                "release_altitude_msl", "0000ft. MSL"));
+        deliveryReleaseSpeedEditText.setText(
+                dataCardSharedPref.getString("release_speed_kcas", "000 KCAS"));
+        deliverySightDepressionEditText.setText(
+                dataCardSharedPref.getString("sight_depression", "260mrad."));
+        deliveryTimeOfFallEditText.setText(
+                dataCardSharedPref.getString("bomb_time_of_fall", "00.0s"));
+        deliveryTypeEditText.setText(dataCardSharedPref.getString("release_profile", ""));
+        deliveryMsraEditText.setText(dataCardSharedPref.getString("msra", "0000ft. AGL"));
+
         //Flight section
         flightBingoEditText.setText(dataCardSharedPref.getString("bingo", "2500 lbs"));
         flightJokerEditText.setText(dataCardSharedPref.getString("joker", "3500 lbs"));
 
-        //Delivery section
-        deliveryApproachCourseEditText.setText(dataCardSharedPref.getString("approach_course", "000°"));
-        deliveryBombRangeEditText.setText(dataCardSharedPref.getString("bomb_range", "00000ft"));
-        deliveryReleaseAltitudeEditText.setText(dataCardSharedPref.getString(
-                "release_altitude_msl", "0000ft. MSL"));
-        deliveryReleaseSpeedEditText.setText(dataCardSharedPref.getString("release_speed_kcas", "000 KCAS"));
-        deliverySightDepressionEditText.setText(dataCardSharedPref.getString("sight_depression", "260mrad."));
-        deliveryTimeOfFallEditText.setText(dataCardSharedPref.getString("bomb_time_of_fall", "00.0s"));
-        deliveryTypeEditText.setText(dataCardSharedPref.getString("release_profile", ""));
-        deliveryMsraEditText.setText(dataCardSharedPref.getString("msra", "0000ft. AGL"));
+        //Navigation section
+        homePlateButton.setText(
+            String.format(getContext().getString(R.string.navigation_home_plate_template),
+            dataCardSharedPref.getString("home_plate", "None")));
+
+        alternateButton.setText(
+            String.format(getContext().getString(R.string.navigation_alternate_template),
+            dataCardSharedPref.getString("alternate", "None")));
 
         //Weapon section
         weaponBombSpacingEditText.setText(dataCardSharedPref.getString("bomb_spacing", "175ft."));
-        weaponBurstAltitudeEditText.setText(dataCardSharedPref.getString("burst_altitude", "0000ft. AGL"));
-        weaponClusterPatternLengthEditText.setText(dataCardSharedPref.getString("pattern_length", ""));
-        weaponClusterPatternWidthEditText.setText(dataCardSharedPref.getString("pattern_width", ""));
+        weaponBurstAltitudeEditText.setText(dataCardSharedPref.getString(
+                "burst_altitude", "0000ft. AGL"));
+        weaponClusterPatternLengthEditText.setText(
+                dataCardSharedPref.getString("pattern_length", ""));
+        weaponClusterPatternWidthEditText.setText(
+                dataCardSharedPref.getString("pattern_width", ""));
         weaponReleaseModeEditText.setText(dataCardSharedPref.getString("release_mode", "Single"));
         weaponRippleQuantityEditText.setText(dataCardSharedPref.getString("ripple", "1"));
         weaponStickLengthEditText.setText(dataCardSharedPref.getString("stick_length", ""));
