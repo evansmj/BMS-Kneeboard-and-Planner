@@ -57,12 +57,15 @@
     <string name="tasking">Tasking</string>
     <string name="delivery">Delivery</string>
 
+    <string name="agency_label">Agency</string>
     <string name="support">Support</string>
     <string name="awacs">Awacs</string>
     <string name="jstars">Jstars</string>
     <string name="fac">Fac</string>
     <string name="tanker">Tanker</string>
-    <string name="station_time">Station</string>
+    <string name="station_time">Station Time</string>
+
+    <string name="navigation">Navigation</string>
 
     <string name="aircraft">Aircraft</string>
     <string name="max_g">Max g</string>

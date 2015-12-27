@@ -806,12 +806,36 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:id="@+id/data_card_support_agency_label_text_view"
+            android:padding="3dp"
+            android:background="@drawable/card_dark_background"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:text="@string/agency_label"
+            android:layout_below="@id/data_card_package5_edit_text"
+            android:layout_alignLeft="@id/data_card_pos_label_text_view"
+            android:layout_alignRight="@id/data_card_pos_label_text_view"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/data_card_support_callsign_label_text_view"
+            android:padding="3dp"
+            android:background="@drawable/card_dark_background"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:text="@string/callsign_label"
+            android:layout_below="@id/data_card_package5_edit_text"
+            android:layout_alignLeft="@id/data_card_name_label_text_view"
+            android:layout_alignRight="@id/data_card_name_label_text_view"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:id="@+id/data_card_support_awacs_label_text_view"
             android:padding="3dp"
             android:background="@drawable/card_dark_background"
             android:textAppearance="?android:textAppearanceMedium"
             android:text="@string/awacs"
-            android:layout_below="@id/data_card_package5_edit_text"
+            android:layout_below="@id/data_card_support_agency_label_text_view"
             android:layout_alignLeft="@id/data_card_pos_label_text_view"
             android:layout_alignRight="@id/data_card_pos_label_text_view"/>
 
@@ -823,21 +847,21 @@
             android:inputType="textNoSuggestions"
             android:padding="3dp"
             android:textAppearance="?android:textAppearanceMedium"
-            android:layout_below="@id/data_card_package_uhf_vhf_relative_layout"
+            android:layout_below="@id/data_card_support_callsign_label_text_view"
             android:layout_alignLeft="@id/data_card_name_label_text_view"
             android:layout_alignRight="@id/data_card_name_label_text_view"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/data_card_flight_awacs_tos_text_view"
+            android:id="@+id/data_card_support_station_time_label_text_view"
             android:layout_below="@id/data_card_package5_idm_edit_text"
             android:padding="3dp"
             android:background="@drawable/card_dark_background"
             android:text="@string/station_time"
             android:textAppearance="?android:textAppearanceMedium"
             android:layout_alignLeft="@id/data_card_idm_label_text_view"
-            android:layout_alignRight="@id/data_card_package_tcn_label_text_view"/>
+            android:layout_alignRight="@id/data_card_package_tasking_label_text_view"/>
 
         <EditText
             android:layout_width="wrap_content"
@@ -846,9 +870,9 @@
             style="@style/Card.EditText.Style"
             android:padding="3dp"
             android:inputType="textNoSuggestions"
-            android:layout_below="@id/data_card_package5_tasking_edit_text"
+            android:layout_below="@id/data_card_support_station_time_label_text_view"
             android:textAppearance="?android:textAppearanceMedium"
-            android:layout_alignLeft="@id/data_card_flight_notes_edit_text"
+            android:layout_alignLeft="@id/data_card_support_station_time_label_text_view"
             android:layout_alignRight="@id/data_card_flight_notes_edit_text"/>
 
         <TextView
@@ -875,18 +899,6 @@
             android:layout_alignLeft="@id/data_card_name_label_text_view"
             android:layout_alignRight="@id/data_card_name_label_text_view"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/data_card_flight_jstars_tos_text_view"
-            android:padding="3dp"
-            android:layout_below="@id/data_card_flight_awacs_tos_text_view"
-            android:background="@drawable/card_dark_background"
-            android:textAppearance="?android:textAppearanceMedium"
-            android:text="@string/station_time"
-            android:layout_alignLeft="@id/data_card_idm_label_text_view"
-            android:layout_alignRight="@id/data_card_package_tcn_label_text_view"/>
-
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -896,7 +908,7 @@
             android:inputType="textNoSuggestions"
             android:textAppearance="?android:textAppearanceMedium"
             android:layout_below="@id/data_card_flight_awacs_tos_edit_text"
-            android:layout_alignLeft="@id/data_card_flight_notes_edit_text"
+            android:layout_alignLeft="@id/data_card_support_station_time_label_text_view"
             android:layout_alignRight="@id/data_card_flight_notes_edit_text"/>
 
         <TextView
@@ -923,18 +935,6 @@
             android:layout_alignLeft="@id/data_card_name_label_text_view"
             android:layout_alignRight="@id/data_card_name_label_text_view"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/data_card_flight_fac_tos_text_view"
-            android:padding="3dp"
-            android:background="@drawable/card_dark_background"
-            android:textAppearance="?android:textAppearanceMedium"
-            android:layout_below="@id/data_card_flight_jstars_label_text_view"
-            android:text="@string/station_time"
-            android:layout_alignLeft="@id/data_card_idm_label_text_view"
-            android:layout_alignRight="@id/data_card_package_tcn_label_text_view"/>
-
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -944,7 +944,7 @@
             android:inputType="textNoSuggestions"
             android:textAppearance="?android:textAppearanceMedium"
             android:layout_below="@id/data_card_flight_jstars_tos_edit_text"
-            android:layout_alignLeft="@id/data_card_flight_notes_edit_text"
+            android:layout_alignLeft="@id/data_card_support_station_time_label_text_view"
             android:layout_alignRight="@id/data_card_flight_notes_edit_text"/>
 
         <TextView
@@ -974,26 +974,44 @@
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/data_card_flight_tanker_tos_text_view"
-            android:padding="3dp"
-            android:background="@drawable/card_dark_background"
-            android:textAppearance="?android:textAppearanceMedium"
-            android:text="@string/station_time"
-            android:layout_alignLeft="@id/data_card_idm_label_text_view"
-            android:layout_alignRight="@id/data_card_package_tcn_label_text_view"
-            android:layout_below="@id/data_card_flight_fac_tos_text_view"/>
-
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:id="@+id/data_card_flight_tanker_tos_edit_text"
             style="@style/Card.EditText.Style"
             android:inputType="textNoSuggestions"
             android:layout_below="@id/data_card_flight_fac_tos_edit_text"
             android:textAppearance="?android:textAppearanceMedium"
             android:padding="3dp"
-            android:layout_alignLeft="@id/data_card_flight_notes_edit_text"
+            android:layout_alignLeft="@id/data_card_support_station_time_label_text_view"
             android:layout_alignRight="@id/data_card_flight_notes_edit_text"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="150dp"
+            android:id="@+id/data_card_navigation_home_plate_button"
+            android:layout_below="@id/data_card_flight_tanker_label_text_view"
+            android:layout_alignLeft="@id/data_card_flight_tanker_label_text_view"
+            android:layout_alignRight="@id/data_card_name_label_text_view"
+            android:text="@string/home_plate"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="150dp"
+            android:id="@+id/data_card_navigation_alternate_button"
+            android:text="@string/alternate"
+            android:layout_below="@id/data_card_flight_tanker_label_text_view"
+            android:layout_alignLeft="@id/data_card_idm_label_text_view"
+            android:layout_alignRight="@id/data_card_package_tasking_label_text_view"/>
+
+        <com.oldgoat5.bmstacticalreference.tools.views.VerticalTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="bottom|center"
+            android:id="@+id/data_card_navigation_label_text_view"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:padding="3dp"
+            android:text="@string/navigation"
+            android:background="@drawable/card_dark_background"
+            android:layout_below="@id/data_card_flight_tanker_label_text_view"
+            android:layout_alignBottom="@id/data_card_navigation_home_plate_button"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -1002,7 +1020,7 @@
             android:background="@drawable/card_dark_background"
             android:padding="3dp"
             android:textAppearance="?android:textAppearanceMedium"
-            android:layout_below="@id/data_card_flight_tanker_label_text_view"
+            android:layout_below="@id/data_card_navigation_home_plate_button"
             android:text="@string/type_no_colon"
             android:layout_alignLeft="@id/data_card_pos_label_text_view"
             android:layout_alignRight="@id/data_card_pos_label_text_view"/>
@@ -1011,7 +1029,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/data_card_aircraft_type_edit_text"
-            android:layout_below="@id/data_card_flight_tanker_edit_text"
+            android:layout_below="@id/data_card_navigation_home_plate_button"
             style="@style/Card.EditText.Style"
             android:padding="3dp"
             android:inputType="textNoSuggestions"
@@ -1026,7 +1044,7 @@
             android:background="@drawable/card_dark_background"
             android:padding="3dp"
             android:textAppearance="?android:textAppearanceMedium"
-            android:layout_below="@id/data_card_flight_tanker_tos_text_view"
+            android:layout_below="@id/data_card_navigation_home_plate_button"
             android:layout_alignLeft="@id/data_card_package_idm_label_text_view"
             android:layout_alignRight="@id/data_card_package_tcn_label_text_view"/>
 
@@ -1035,7 +1053,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/data_card_aircraft_max_g_edit_text"
             style="@style/Card.EditText.Style"
-            android:layout_below="@id/data_card_flight_tanker_tos_edit_text"
+            android:layout_below="@id/data_card_navigation_home_plate_button"
             android:padding="3dp"
             android:inputType="textNoSuggestions"
             android:layout_alignLeft="@id/data_card_package_tasking_label_text_view"
@@ -1332,7 +1350,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/data_card_aircraft_label_text_view"
-            android:layout_below="@id/data_card_flight_tanker_label_text_view"
+            android:layout_below="@id/data_card_navigation_home_plate_button"
             android:text="@string/aircraft"
             android:gravity="bottom|center"
             android:layout_alignBottom="@id/data_card_flight_floor_label_text_view"
