@@ -16,6 +16,7 @@ import android.widget.ListView;
 
 import com.oldgoat5.bmstacticalreference.R;
 import com.oldgoat5.bmstacticalreference.navigation.NavigationChartsExpandableListAdapter;
+import com.oldgoat5.bmstacticalreference.navigation.NavigationChartsTuple;
 import com.oldgoat5.bmstacticalreference.tools.views.ZoomImageView;
 
 import java.util.ArrayList;
@@ -36,10 +37,9 @@ public class CyprusAegeanChartFragment extends Fragment
     private ExpandableListView listView;
     private NavigationChartsExpandableListAdapter listAdapter;
     private ArrayList<String> airbases;
-    private HashMap<String, ArrayList<String>> charts;
+    private HashMap<String, ArrayList<NavigationChartsTuple<String, Integer>>> charts;
     private View view;
     private ZoomImageView imageView;
-
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState)
@@ -50,7 +50,7 @@ public class CyprusAegeanChartFragment extends Fragment
         airbases = new ArrayList<>();
         charts = new HashMap<>();
 
-        setupLists();
+        /*setupLists();
 
         listAdapter = new NavigationChartsExpandableListAdapter(getContext(), airbases, charts);
         listView = (ExpandableListView) view.findViewById(
@@ -104,7 +104,7 @@ public class CyprusAegeanChartFragment extends Fragment
                 }
                 return false;
             }
-        });
+        });*/
 
         /*listView.setOnItemClickListener(new AdapterView.OnItemClickListener()
         {
@@ -155,6 +155,6 @@ public class CyprusAegeanChartFragment extends Fragment
 
         pafos.add("Pafos Airport Diagram");
         pafos.add("Pafos ILS/DME RWY 29");
-        charts.put(airbases.get(0), pafos);
+        //charts.put(airbases.get(0), pafos);
     }
 }

@@ -5,7 +5,6 @@ import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,13 +13,12 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.oldgoat5.bmstacticalreference.navigation.NavigationChartsExpandableListAdapter;
 import com.oldgoat5.bmstacticalreference.navigation.NavigationChartsMapProvider;
 import com.oldgoat5.bmstacticalreference.navigation.NavigationChartsTuple;
+import com.oldgoat5.bmstacticalreference.tools.views.ZoomImageView;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -342,6 +340,11 @@ public class LoadCardFragment extends Fragment
                 country = dataCardSharedPref.getString("home_plate_country", "None");
                 selectedBase = dataCardSharedPref.getString("home_plate", "None");
 
+                if (selectedBase.equals("None"))
+                {
+                    return;
+                }
+
                 switch (country)
                 {
                     case "south_korea":
@@ -399,7 +402,7 @@ public class LoadCardFragment extends Fragment
                     {
                         //show image view of the chart drawable
                         Dialog imageDialog = new Dialog(getContext());
-                        ImageView imageView = new ImageView(getContext());
+                        ZoomImageView imageView = new ZoomImageView(getContext());
 
                         imageView.setImageResource(
                                     tupleArrayList.get(position).getDrawable());
@@ -441,6 +444,11 @@ public class LoadCardFragment extends Fragment
                 country = dataCardSharedPref.getString("alternate_country", "None");
                 selectedBase = dataCardSharedPref.getString("alternate", "None");
 
+                if (selectedBase.equals("None"))
+                {
+                    return;
+                }
+
                 switch (country)
                 {
                     case "south_korea":
@@ -498,7 +506,7 @@ public class LoadCardFragment extends Fragment
                     {
                         //show image view of the chart drawable
                         Dialog imageDialog = new Dialog(getContext());
-                        ImageView imageView = new ImageView(getContext());
+                        ZoomImageView imageView = new ZoomImageView(getContext());
 
                         imageView.setImageResource(
                                 tupleArrayList.get(position).getDrawable());
