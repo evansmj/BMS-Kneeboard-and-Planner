@@ -1,18 +1,32 @@
 package com.oldgoat5.bmstacticalreference;
 
+import android.app.Dialog;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
 
+import com.oldgoat5.bmstacticalreference.navigation.NavigationChartsExpandableListAdapter;
+import com.oldgoat5.bmstacticalreference.navigation.NavigationChartsMapProvider;
+import com.oldgoat5.bmstacticalreference.navigation.NavigationChartsTuple;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+
 /********************************************************************
- *Copyright © Michael Evans - All Rights Reserved.
+ * Copyright © Michael Evans - All Rights Reserved.
  *
  * @author Michael Evans
  ********************************************************************/
@@ -301,6 +315,204 @@ public class LoadCardFragment extends Fragment
                 dataCardSharedPref.edit().clear().apply();
                 loadDataCard();
                 //Log.d("LoadCardFragment", "end button, dataCardTextSize = " + dataCardTextSize);
+            }
+        });
+
+        homePlateButton.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                //show dialog with charts of this airbase.
+                Dialog dialog = new Dialog(getContext());
+                View dialogView = View.inflate(
+                        getContext(), R.layout.loadcard_chart_dialog_layout, null);
+                ListView listView = (ListView) dialogView.findViewById(
+                        R.id.loadcard_chart_dialog_list_view);
+
+                //get provider
+                NavigationChartsMapProvider provider = new NavigationChartsMapProvider();
+
+                //find out which country
+                String country;
+                String selectedBase;
+                HashMap<String, ArrayList<NavigationChartsTuple<String, Integer>>> airbaseHashMap =
+                        new HashMap<>();
+
+                country = dataCardSharedPref.getString("home_plate_country", "None");
+                selectedBase = dataCardSharedPref.getString("home_plate", "None");
+
+                switch (country)
+                {
+                    case "south_korea":
+                        provider.setSouthKorea();
+                        airbaseHashMap = provider.getSouthKoreaHashMap();
+                        break;
+
+                    case "north_korea":
+                        provider.setNorthKorea();
+                        airbaseHashMap = provider.getNorthKoreaHashMap();
+                        break;
+
+                    case "japan_korea":
+                        provider.setJapanKorea();
+                        airbaseHashMap = provider.getJapanKoreaHashMap();
+                        break;
+
+                    case "russia_korea":
+                        provider.setRussiaKorea();
+                        airbaseHashMap = provider.getRussiaKoreaHashMap();
+                        break;
+
+                    case "china_korea":
+                        provider.setChinaKorea();
+                        airbaseHashMap = provider.getChinaKoreaHashMap();
+                        break;
+                }
+
+                //make adapter
+                final ArrayList<NavigationChartsTuple<String, Integer>> tupleArrayList;
+                String[] charts;
+
+                tupleArrayList = airbaseHashMap.get(selectedBase);
+
+                charts = new String[tupleArrayList.size()];
+
+                for (int i = 0; i < charts.length; i++)
+                {
+                    charts[i] = tupleArrayList.get(i).getTitle();
+                }
+
+                ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(
+                        getContext(), android.R.layout.simple_list_item_1, charts);
+
+                //set adapter
+                listView.setAdapter(arrayAdapter);
+                dialog.setContentView(dialogView);
+                dialog.setTitle(selectedBase);
+
+                //set listener for list view
+                listView.setOnItemClickListener(new AdapterView.OnItemClickListener()
+                {
+                    @Override
+                    public void onItemClick(AdapterView<?> parent, View view, int position, long id)
+                    {
+                        //show image view of the chart drawable
+                        Dialog imageDialog = new Dialog(getContext());
+                        ImageView imageView = new ImageView(getContext());
+
+                        imageView.setImageResource(
+                                    tupleArrayList.get(position).getDrawable());
+                        imageDialog.setContentView(imageView);
+                        imageDialog.setTitle(tupleArrayList.get(position).getTitle());
+                        imageDialog.getWindow().setLayout(
+                                WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        imageDialog.setCanceledOnTouchOutside(false);
+                        imageDialog.show();
+                    }
+                });
+
+                dialog.show();
+            }
+        });
+
+        alternateButton.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                //show dialog with charts of this airbase.
+                Dialog dialog = new Dialog(getContext());
+                View dialogView = View.inflate(
+                        getContext(), R.layout.loadcard_chart_dialog_layout, null);
+                ListView listView = (ListView) dialogView.findViewById(
+                        R.id.loadcard_chart_dialog_list_view);
+
+                //get provider
+                NavigationChartsMapProvider provider = new NavigationChartsMapProvider();
+
+                //find out which country
+                String country;
+                String selectedBase;
+                HashMap<String, ArrayList<NavigationChartsTuple<String, Integer>>> airbaseHashMap =
+                        new HashMap<>();
+
+                country = dataCardSharedPref.getString("alternate_country", "None");
+                selectedBase = dataCardSharedPref.getString("alternate", "None");
+
+                switch (country)
+                {
+                    case "south_korea":
+                        provider.setSouthKorea();
+                        airbaseHashMap = provider.getSouthKoreaHashMap();
+                        break;
+
+                    case "north_korea":
+                        provider.setNorthKorea();
+                        airbaseHashMap = provider.getNorthKoreaHashMap();
+                        break;
+
+                    case "japan_korea":
+                        provider.setJapanKorea();
+                        airbaseHashMap = provider.getJapanKoreaHashMap();
+                        break;
+
+                    case "russia_korea":
+                        provider.setRussiaKorea();
+                        airbaseHashMap = provider.getRussiaKoreaHashMap();
+                        break;
+
+                    case "china_korea":
+                        provider.setChinaKorea();
+                        airbaseHashMap = provider.getChinaKoreaHashMap();
+                        break;
+                }
+
+                //make adapter
+                final ArrayList<NavigationChartsTuple<String, Integer>> tupleArrayList;
+                String[] charts;
+
+                tupleArrayList = airbaseHashMap.get(selectedBase);
+
+                charts = new String[tupleArrayList.size()];
+
+                for (int i = 0; i < charts.length; i++)
+                {
+                    charts[i] = tupleArrayList.get(i).getTitle();
+                }
+
+                ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(
+                        getContext(), android.R.layout.simple_list_item_1, charts);
+
+                //set adapter
+                listView.setAdapter(arrayAdapter);
+                dialog.setContentView(dialogView);
+                dialog.setTitle(selectedBase);
+
+                //set listener for list view
+                listView.setOnItemClickListener(new AdapterView.OnItemClickListener()
+                {
+                    @Override
+                    public void onItemClick(AdapterView<?> parent, View view, int position, long id)
+                    {
+                        //show image view of the chart drawable
+                        Dialog imageDialog = new Dialog(getContext());
+                        ImageView imageView = new ImageView(getContext());
+
+                        imageView.setImageResource(
+                                tupleArrayList.get(position).getDrawable());
+                        imageDialog.setContentView(imageView);
+                        imageDialog.setTitle(tupleArrayList.get(position).getTitle());
+                        imageDialog.getWindow().setLayout(
+                                WindowManager.LayoutParams.MATCH_PARENT,
+                                WindowManager.LayoutParams.MATCH_PARENT);
+                        imageDialog.setCanceledOnTouchOutside(false);
+                        imageDialog.show();
+                    }
+                });
+
+                dialog.show();
             }
         });
     }

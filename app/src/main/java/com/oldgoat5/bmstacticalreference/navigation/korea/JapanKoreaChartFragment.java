@@ -4,6 +4,7 @@ import android.app.Dialog;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -50,7 +51,8 @@ public class JapanKoreaChartFragment extends Fragment
 
         setupLists();
 
-        adapter = new NavigationChartsExpandableListAdapter(this.getContext(), groups, children);
+        adapter = new NavigationChartsExpandableListAdapter(this.getContext(), groups, children,
+                "japan_korea");
         listView = (ExpandableListView) view.findViewById(
                 R.id.japan_korea_fragment_expandable_list_view);
 

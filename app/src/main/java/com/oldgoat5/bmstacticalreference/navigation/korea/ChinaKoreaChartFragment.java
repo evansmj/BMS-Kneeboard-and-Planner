@@ -4,6 +4,7 @@ import android.app.Dialog;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -54,7 +55,8 @@ public class ChinaKoreaChartFragment extends Fragment
 
         //airbases = new String[] {"Liuhe Airport Diagram", "Shenyang Airport Diagram"};
 
-        adapter = new NavigationChartsExpandableListAdapter(this.getContext(), groups, children);
+        adapter = new NavigationChartsExpandableListAdapter(this.getContext(), groups, children,
+                "china_korea");
         listView = (ExpandableListView) view.findViewById(
                 R.id.china_korea_fragment_expandable_list_view);
 

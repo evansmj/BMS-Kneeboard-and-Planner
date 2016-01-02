@@ -77,8 +77,6 @@ public class NavigationChartsMapProvider
 
     public void setChinaKorea()
     {
-        //airbases = new String[] {"Liuhe Airport Diagram", "Shenyang Airport Diagram"};
-
         ArrayList<NavigationChartsTuple<String, Integer>> liuhe = new ArrayList<>();
         ArrayList<NavigationChartsTuple<String, Integer>> shenyang = new ArrayList<>();
 

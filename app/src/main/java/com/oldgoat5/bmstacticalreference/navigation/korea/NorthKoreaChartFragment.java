@@ -51,7 +51,7 @@ public class NorthKoreaChartFragment extends Fragment
         setupLists();
 
         adapter = new NavigationChartsExpandableListAdapter(
-                this.getContext(), groupsList, childrenMap);
+                this.getContext(), groupsList, childrenMap, "north_korea");
 
         listView = (ExpandableListView) view.findViewById(
                 R.id.north_korea_fragment_expandable_list_view);
@@ -417,156 +417,11 @@ public class NorthKoreaChartFragment extends Fragment
      *****************************************************************/
     private void setupLists()
     {
-        /*airbases = new String[]{"East-West Airstrips", "North-South Airstrips",
-                "Haeju Airport Diagram", "Hwangju Airport Diagram",
-                "Hwangsuwon Airport Diagram", "Hyon-Ni Airport Diagram",
-                "Iwon Airport Diagram", "Kaech`on Airport Diagram",
-                "Koksan Airport Diagram", "Kuum-ni Airport Diagram",
-                "Kwail Airport Diagram", "Manp`o Airport Diagram", "Mirim Airport Diagram",
-                "Onch`on Airport Diagram", "Ongjin Airport Diagram", "Orang Airport Diagram",
-                "Panghyon Airport Diagram", "Pukch`ang-up Airport Diagram",
-                "Samjiyon-up Airport Diagram", "Sondok Airport Diagram",
-                "Sunan (Pyongyang) Airport Diagram", "Sunch`on Airport Diagram",
-                "T`aech`on Airport Diagram", "Taetan Airport Diagram", "Toksan Airport Diagram",
-                "Uiju Airport Diagram", "Wonsan Airport Diagram"};*/
         NavigationChartsMapProvider provider = new NavigationChartsMapProvider();
 
         provider.setNorthKorea();
 
         groupsList = provider.getNorthKoreaAirbaseList();
         childrenMap = provider.getNorthKoreaHashMap();
-
-       /* ArrayList<String> airstrips = new ArrayList<>();
-        ArrayList<String> haeju = new ArrayList<>();
-        ArrayList<String> hwangju = new ArrayList<>();
-        ArrayList<String> hwangsuwon = new ArrayList<>();
-        ArrayList<String> hyonni = new ArrayList<>();
-        ArrayList<String> iwon = new ArrayList<>();
-        ArrayList<String> kaechon = new ArrayList<>();
-        ArrayList<String> koksan = new ArrayList<>();
-        ArrayList<String> kuumni = new ArrayList<>();
-        ArrayList<String> kwail = new ArrayList<>();
-        ArrayList<String> manpo = new ArrayList<>();
-        ArrayList<String> mirim = new ArrayList<>();
-        ArrayList<String> onchon = new ArrayList<>();
-        ArrayList<String> ongjin = new ArrayList<>();
-        ArrayList<String> orang = new ArrayList<>();
-        ArrayList<String> panghyon = new ArrayList<>();
-        ArrayList<String> pukchangup = new ArrayList<>();
-        ArrayList<String> samjiyonup = new ArrayList<>();
-        ArrayList<String> sondok = new ArrayList<>();
-        ArrayList<String> sunan = new ArrayList<>();
-        ArrayList<String> sunchon = new ArrayList<>();
-        ArrayList<String> taechon = new ArrayList<>();
-        ArrayList<String> taetan = new ArrayList<>();
-        ArrayList<String> toksan = new ArrayList<>();
-        ArrayList<String> uiju = new ArrayList<>();
-        ArrayList<String> wonsan = new ArrayList<>();
-
-        groupsList.add("Airstrips");
-        airstrips.add("East-West Airstrips");
-        airstrips.add("North-South Airstrips");
-        childrenMap.put(groupsList.get(0), airstrips);
-
-        groupsList.add("Haeju Airbase");
-        haeju.add("Haeju Airport Diagram");
-        childrenMap.put(groupsList.get(1), haeju);
-
-        groupsList.add("Hwangju Airbase");
-        hwangju.add("Hwangju Airport Diagram");
-        childrenMap.put(groupsList.get(2), hwangju);
-
-        groupsList.add("Hwangsuwon Airbase");
-        hwangsuwon.add("Hwangsuwon Airport Diagram");
-        childrenMap.put(groupsList.get(3), hwangsuwon);
-
-        groupsList.add("Hyon-Ni Airbase");
-        hyonni.add("Hyon-Ni Airport Diagram");
-        childrenMap.put(groupsList.get(4), hyonni);
-
-        groupsList.add("Iwon Airbase");
-        iwon.add("Iwon Airport Diagram");
-        childrenMap.put(groupsList.get(5), iwon);
-
-        groupsList.add("Kaech`on Airbase");
-        kaechon.add("Kaech`on Airport Diagram");
-        childrenMap.put(groupsList.get(6), kaechon);
-
-        groupsList.add("Koksan Airbase");
-        koksan.add("Koksan Airport Diagram");
-        childrenMap.put(groupsList.get(7), koksan);
-
-        groupsList.add("Kuum-ni Airbase");
-        kuumni.add("Kuum-ni Airport Diagram");
-        childrenMap.put(groupsList.get(8), kuumni);
-
-        groupsList.add("Kwail Airbase");
-        kwail.add("Kwail Airport Diagram");
-        childrenMap.put(groupsList.get(9), kwail);
-
-        groupsList.add("Manp`o Airbase");
-        manpo.add("Manp`o Airport Diagram");
-        childrenMap.put(groupsList.get(10), manpo);
-
-        groupsList.add("Mirim Airbase");
-        mirim.add("Mirim Airport Diagram");
-        childrenMap.put(groupsList.get(11), mirim);
-
-        groupsList.add("Onch`on Airbase");
-        onchon.add("Onch`on Airport Diagram");
-        childrenMap.put(groupsList.get(12), onchon);
-
-        groupsList.add("Ongjin Airbase");
-        ongjin.add("Ongjin Airport Diagram");
-        childrenMap.put(groupsList.get(13), ongjin);
-
-        groupsList.add("Orang Airbase");
-        orang.add("Orang Airport Diagram");
-        childrenMap.put(groupsList.get(14), orang);
-
-        groupsList.add("Panghyon Airbase");
-        panghyon.add("Panghyon Airport Diagram");
-        childrenMap.put(groupsList.get(15), panghyon);
-
-        groupsList.add("Pukch`ang-up Airbase");
-        pukchangup.add("Pukch`ang-up Airport Diagram");
-        childrenMap.put(groupsList.get(16), pukchangup);
-
-        groupsList.add("Samjiyon-up Airbase");
-        samjiyonup.add("Samjiyon-up Airport Diagram");
-        childrenMap.put(groupsList.get(17), samjiyonup);
-
-        groupsList.add("Sondok Airbase");
-        sondok.add("Sondok Airport Diagram");
-        childrenMap.put(groupsList.get(18), sondok);
-
-        groupsList.add("Sunan (Pyongyang) Airbase");
-        sunan.add("Sunan (Pyongyang) Airport Diagram");
-        sunan.add("Sunan (Pyongyang) ILS RWY 18");
-        childrenMap.put(groupsList.get(19), sunan);
-
-        groupsList.add("Sunch`on Airbase");
-        sunchon.add("Sunch`on Airport Diagram");
-        childrenMap.put(groupsList.get(20), sunchon);
-
-        groupsList.add("T`aech`on Airbase");
-        taechon.add("T`aech`on Airport Diagram");
-        childrenMap.put(groupsList.get(21), taechon);
-
-        groupsList.add("Taetan Airbase");
-        taetan.add("Taetan Airport Diagram");
-        childrenMap.put(groupsList.get(22), taetan);
-
-        groupsList.add("Toksan Airbase");
-        toksan.add("Toksan Airport Diagram");
-        childrenMap.put(groupsList.get(23), toksan);
-
-        groupsList.add("Uiju Airbase");
-        uiju.add("Uiju Airport Diagram");
-        childrenMap.put(groupsList.get(24), uiju);
-
-        groupsList.add("Wonsan Airbase");
-        wonsan.add("Wonsan Airport Diagram");
-        childrenMap.put(groupsList.get(25), wonsan);*/
     }
 }

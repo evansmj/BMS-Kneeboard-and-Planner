@@ -34,6 +34,8 @@ public class NavigationChartsExpandableListAdapter extends BaseExpandableListAda
     private HashMap<String, ArrayList<NavigationChartsTuple<String, Integer>>> airbaseCharts;
     private SharedPreferences dataCardSharedPref;
 
+    private String country;
+
     /*****************************************************************
      * Constructor.
      *
@@ -42,11 +44,13 @@ public class NavigationChartsExpandableListAdapter extends BaseExpandableListAda
      * @param airbaseChartHashMap - an airbase:chart hash map.
      *****************************************************************/
     public NavigationChartsExpandableListAdapter(Context context, ArrayList<String> airbases,
-            HashMap<String, ArrayList<NavigationChartsTuple<String, Integer>>> airbaseChartHashMap)
+            HashMap<String, ArrayList<NavigationChartsTuple<String, Integer>>> airbaseChartHashMap,
+            String country)
     {
         this.context = context;
         this.airbases = airbases;
         this.airbaseCharts = airbaseChartHashMap;
+        this.country = country;
 
         dataCardSharedPref = context.getSharedPreferences(DATA_CARD_NAME, 0);
     }
@@ -64,7 +68,7 @@ public class NavigationChartsExpandableListAdapter extends BaseExpandableListAda
     public View getGroupView(int groupPosition, boolean isExpanded, View convertView,
                              ViewGroup parent)
     {
-        GroupViewHolder groupViewHolder;
+        final GroupViewHolder groupViewHolder;
 
         final String airbaseTitle = (String) getGroup(groupPosition);
 
@@ -117,7 +121,8 @@ public class NavigationChartsExpandableListAdapter extends BaseExpandableListAda
                     public void onClick(View v)
                     {
                         SharedPreferences.Editor editor = dataCardSharedPref.edit();
-                        editor.putString("favoriteHomePlate", airbaseTitle);
+                        editor.putString("home_plate_country", country);
+                        editor.putString("home_plate", airbaseTitle);
                         editor.apply();
                         dialog.dismiss();
                         Toast.makeText(context, "Set as Home Plate", Toast.LENGTH_LONG).show();
@@ -130,7 +135,8 @@ public class NavigationChartsExpandableListAdapter extends BaseExpandableListAda
                     public void onClick(View v)
                     {
                         SharedPreferences.Editor editor = dataCardSharedPref.edit();
-                        editor.putString("favoriteHomePlate", airbaseTitle);
+                        editor.putString("alternate_country", country);
+                        editor.putString("alternate", airbaseTitle);
                         editor.apply();
                         dialog.dismiss();
                         Toast.makeText(context, "Set as Alternate", Toast.LENGTH_LONG).show();
