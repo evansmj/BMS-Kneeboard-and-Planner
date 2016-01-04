@@ -5,13 +5,16 @@
               android:layout_height="match_parent"
               android:id="@+id/table_layout">
 
-    <LinearLayout
-        android:orientation="horizontal"
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
+        android:layout_alignParentTop="true">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:baselineAligned="false"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
         <LinearLayout
             android:orientation="vertical"
@@ -639,4 +642,6 @@
         </LinearLayout>
 
     </LinearLayout>
+
+    </ScrollView>
 </RelativeLayout>
