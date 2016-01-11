@@ -22,10 +22,9 @@ public class ReferenceFragment extends Fragment
 {
     Context CONTEXT;
 
-    private Dialog defaultFrequenciesDialog;
-    private Dialog navigationSteerpointsDialog;
-    private Dialog tacanIlsCheckListDialog;
+    private Dialog dialog;
     private Button brevityDictionaryStartButton;
+    private Button carrierFrequenciesButton;
     private Button defaultFrequenciesButton;
     private Button fuelCalculatorButton;
     private Button navigationSteerpointsButton;
@@ -42,6 +41,8 @@ public class ReferenceFragment extends Fragment
 
         brevityDictionaryStartButton = (Button) view.findViewById(
                 R.id.brevity_dictionary_select_button);
+        carrierFrequenciesButton = (Button) view.findViewById(
+                R.id.carrier_frequencies_select_button);
         defaultFrequenciesButton = (Button) view.findViewById(
                 R.id.default_frequencies_select_button);
         fuelCalculatorButton = (Button) view.findViewById(
@@ -56,9 +57,7 @@ public class ReferenceFragment extends Fragment
             CONTEXT = getActivity();
         }
 
-        navigationSteerpointsDialog = new Dialog(CONTEXT);
-        defaultFrequenciesDialog = new Dialog(CONTEXT);
-        tacanIlsCheckListDialog = new Dialog(CONTEXT);
+        dialog = new Dialog(CONTEXT);
 
         tacanIlsCheckListImageView = new ZoomImageView(CONTEXT);
 
@@ -71,14 +70,25 @@ public class ReferenceFragment extends Fragment
             }
         });
 
+        carrierFrequenciesButton.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                dialog.setContentView(R.layout.carrier_frequencies_dialog_layout);
+                dialog.setTitle("Carrier Frequencies");
+                dialog.show();
+            }
+        });
+
         defaultFrequenciesButton.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View view)
             {
-                defaultFrequenciesDialog.setContentView(R.layout.default_frequencies_view);
-                defaultFrequenciesDialog.setTitle("Default Frequencies");
-                defaultFrequenciesDialog.show();
+                dialog.setContentView(R.layout.default_frequencies_view);
+                dialog.setTitle("Default Frequencies");
+                dialog.show();
             }
         });
 
@@ -96,9 +106,9 @@ public class ReferenceFragment extends Fragment
             @Override
             public void onClick(View view)
             {
-                navigationSteerpointsDialog.setContentView(R.layout.navigation_steerpoints_view);
-                navigationSteerpointsDialog.setTitle(R.string.steerpoints);
-                navigationSteerpointsDialog.show();
+                dialog.setContentView(R.layout.navigation_steerpoints_view);
+                dialog.setTitle(R.string.steerpoints);
+                dialog.show();
             }
         });
 
@@ -108,9 +118,9 @@ public class ReferenceFragment extends Fragment
             public void onClick(View view)
             {
                 tacanIlsCheckListImageView.setImageResource(R.drawable.tacan_ils_checklist);
-                tacanIlsCheckListDialog.setContentView(tacanIlsCheckListImageView);
-                tacanIlsCheckListDialog.setTitle("Tacan ILS Checklist");
-                tacanIlsCheckListDialog.show();
+                dialog.setContentView(tacanIlsCheckListImageView);
+                dialog.setTitle("Tacan ILS Checklist");
+                dialog.show();
             }
         });
 

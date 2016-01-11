@@ -12,630 +12,452 @@
         android:orientation="horizontal">
 
         <LinearLayout
-            android:id="@+id/agency_linear_layout"
+            android:id="@+id/carrier_linear_layout"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="1"
+            android:layout_weight=".8"
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/agency_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="@string/agency"
+                android:text="@string/carrier"
                 android:textStyle="bold"/>
 
             <TextView
-                android:id="@+id/flight1_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="@string/flight_1"/>
+                android:text="@string/vinson"/>
 
             <TextView
-                android:id="@+id/flight2_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="@string/flight_2"/>
+                android:text="@string/roosevelt"/>
 
             <TextView
-                android:id="@+id/flight3_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="@string/flight_3"/>
+                android:text="@string/truman"/>
 
             <TextView
-                android:id="@+id/flight4_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="@string/flight_4"/>
+                android:text="@string/washington"/>
 
             <TextView
-                android:id="@+id/flight5_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="@string/flight_5"/>
+                android:text="@string/lincoln"/>
 
             <TextView
-                android:id="@+id/package1_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="@string/package_1"/>
+                android:text="@string/stennis"/>
 
             <TextView
-                android:id="@+id/package2_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="@string/package_2"/>
+                android:text="@string/ike"/>
 
             <TextView
-                android:id="@+id/package3_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="@string/package_3"/>
+                android:text="@string/kennedy"/>
 
             <TextView
-                android:id="@+id/package4_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="@string/package_4"/>
+                android:text="@string/kitty_hawk"/>
 
             <TextView
-                android:id="@+id/package5_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="@string/package_5"/>
+                android:text="@string/connie"/>
 
             <TextView
-                android:id="@+id/from_package_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="@string/from_package"/>
+                android:text="@string/america"/>
 
             <TextView
-                android:id="@+id/proximity_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="@string/proximity"/>
+                android:text="@string/midway"/>
 
             <TextView
-                android:id="@+id/team_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="@string/team"/>
+                android:text="@string/independence"/>
 
             <TextView
-                android:id="@+id/guard_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="@string/guard"/>
+                android:text="@string/ranger"/>
 
             <TextView
-                android:id="@+id/open1_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="@string/open"/>
+                android:text="@string/saratoga"/>
 
             <TextView
-                android:id="@+id/open2_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="@string/open"/>
-
-            <TextView
-                android:id="@+id/open3_text_view"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:text="@string/open"/>
-
-            <TextView
-                android:id="@+id/open4_text_view"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:text="@string/open"/>
-
-            <TextView
-                android:id="@+id/open5_text_view"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:text="@string/open"/>
-
-            <TextView
-                android:id="@+id/open6_text_view"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:text="@string/open"/>
+                android:text="@string/enterprise"/>
 
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/uhf_linear_layout"
+            android:id="@+id/carrier_tcn_linear_layout"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/uhf_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="@string/uhf"
+                android:text="@string/tcn_label"
                 android:textStyle="bold"/>
 
             <TextView
-                android:id="@+id/flight1_uhf_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="@string/flight_1_uhf"/>
+                android:text="@string/vinson_tcn"/>
 
             <TextView
-                android:id="@+id/flight2_uhf_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="@string/flight_2_uhf"/>
+                android:text="@string/roosevelt_tcn"/>
 
             <TextView
-                android:id="@+id/flight3_uhf_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="@string/flight_3_uhf"/>
+                android:text="@string/truman_tcn"/>
 
             <TextView
-                android:id="@+id/flight4_uhf_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="@string/flight_4_uhf"/>
+                android:text="@string/washington_tcn"/>
 
             <TextView
-                android:id="@+id/flight5_uhf_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="@string/flight_5_uhf"/>
+                android:text="@string/lincoln_tcn"/>
 
             <TextView
-                android:id="@+id/package1_uhf_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="@string/package_1_uhf"/>
+                android:text="@string/stennis_tcn"/>
 
             <TextView
-                android:id="@+id/package2_uhf_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="@string/package_2_uhf"/>
+                android:text="@string/ike_tcn"/>
 
             <TextView
-                android:id="@+id/package3_uhf_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="@string/package_3_uhf"/>
+                android:text="@string/kennedy_tcn"/>
 
             <TextView
-                android:id="@+id/package4_uhf_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="@string/package_4_uhf"/>
+                android:text="@string/kitty_hawk_tcn"/>
 
             <TextView
-                android:id="@+id/package5_uhf_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="@string/package_5_uhf"/>
+                android:text="@string/connie_tcn"/>
 
             <TextView
-                android:id="@+id/from_package_uhf_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="@string/from_package_uhf"/>
+                android:text="@string/america_tcn"/>
 
             <TextView
-                android:id="@+id/proximity_uhf_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="@string/proximity_uhf"/>
+                android:text="@string/midway_tcn"/>
 
             <TextView
-                android:id="@+id/team_uhf_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="@string/team_uhf"/>
+                android:text="@string/independence_tcn"/>
 
             <TextView
-                android:id="@+id/guard_uhf_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="@string/guard_uhf"/>
+                android:text="@string/ranger_tcn"/>
 
             <TextView
-                android:id="@+id/open_1_uhf_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="@string/open_1_uhf"/>
+                android:text="@string/saratoga_tcn"/>
 
             <TextView
-                android:id="@+id/open_2_uhf_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="@string/open_2_uhf"/>
+                android:text="@string/enterprise_tcn"/>
 
-            <TextView
-                android:id="@+id/open_3_uhf_text_view"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:text="@string/open_3_uhf"/>
-
-            <TextView
-                android:id="@+id/open_4_uhf_text_view"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:text="@string/open_4_uhf"/>
-
-            <TextView
-                android:id="@+id/open_5_uhf_text_view"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:text="@string/open_5_uhf"/>
-
-            <TextView
-                android:id="@+id/open_6_uhf_text_view"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:text="@string/open_6_uhf"/>
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/preset_linear_layout"
+            android:id="@+id/carrier_uhf_linear_layout"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/preset_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textStyle="bold"
                 android:layout_gravity="center_horizontal"
-                android:text="@string/preset"
-                android:textStyle="bold"/>
+                android:text="@string/uhf"/>
 
             <TextView
-                android:id="@+id/flight1_preset_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="@string/flight_1_preset"/>
+                android:text="@string/vinson_uhf"/>
 
             <TextView
-                android:id="@+id/flight2_preset_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="@string/flight_2_preset"/>
+                android:text="@string/roosevelt_uhf"/>
 
             <TextView
-                android:id="@+id/flight3_preset_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="@string/flight_3_preset"/>
+                android:text="@string/truman_uhf"/>
 
             <TextView
-                android:id="@+id/flight4_preset_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="@string/flight_4_preset"/>
+                android:text="@string/washington_uhf"/>
 
             <TextView
-                android:id="@+id/flight5_preset_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="@string/flight_5_preset"/>
+                android:text="@string/lincoln_uhf"/>
 
             <TextView
-                android:id="@+id/package1_preset_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="@string/package_1_preset"/>
+                android:text="@string/stennis_uhf"/>
 
             <TextView
-                android:id="@+id/package2_preset_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="@string/package_2_preset"/>
+                android:text="@string/ike_uhf"/>
 
             <TextView
-                android:id="@+id/package3_preset_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="@string/package_3_preset"/>
+                android:text="@string/kennedy_uhf"/>
 
             <TextView
-                android:id="@+id/package4_preset_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="@string/package_4_preset"/>
+                android:text="@string/kitty_hawk_uhf"/>
 
             <TextView
-                android:id="@+id/package5_preset_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="@string/package_5_preset"/>
+                android:text="@string/connie_uhf"/>
 
             <TextView
-                android:id="@+id/from_package_preset_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="@string/from_package_preset"/>
+                android:text="@string/america_uhf"/>
 
             <TextView
-                android:id="@+id/proximity_preset_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="@string/proximity_preset"/>
+                android:text="@string/midway_uhf"/>
 
             <TextView
-                android:id="@+id/team_preset_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="@string/team_preset"/>
+                android:text="@string/independence_uhf"/>
 
             <TextView
-                android:id="@+id/guard_preset_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="@string/guard_preset"/>
+                android:text="@string/ranger_uhf"/>
 
             <TextView
-                android:id="@+id/open_1_preset_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="@string/open_1_preset"/>
+                android:text="@string/saratoga_uhf"/>
 
             <TextView
-                android:id="@+id/open_2_preset_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="@string/open_2_preset"/>
+                android:text="@string/enterprise_uhf"/>
 
-            <TextView
-                android:id="@+id/open_3_preset_text_view"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:text="@string/open_3_preset"/>
-
-            <TextView
-                android:id="@+id/open_4_preset_text_view"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:text="@string/open_4_preset"/>
-
-            <TextView
-                android:id="@+id/open_5_preset_text_view"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:text="@string/open_5_preset"/>
-
-            <TextView
-                android:id="@+id/open_6_preset_text_view"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:text="@string/open_6_preset"/>
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/vhf_linear_layout"
+            android:id="@+id/carrier_vhf_linear_layout"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/vhf_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textStyle="bold"
                 android:layout_gravity="center_horizontal"
-                android:text="@string/vhf"
-                android:textStyle="bold"/>
+                android:text="@string/vhf"/>
 
             <TextView
-                android:id="@+id/flight1_vhf_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="@string/flight_1_vhf"/>
+                android:text="@string/vinson_vhf"/>
 
             <TextView
-                android:id="@+id/flight2_vhf_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="@string/flight_2_vhf"/>
+                android:text="@string/roosevelt_vhf"/>
 
             <TextView
-                android:id="@+id/flight3_vhf_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="@string/flight_3_vhf"/>
+                android:text="@string/truman_vhf"/>
 
             <TextView
-                android:id="@+id/flight4_vhf_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="@string/flight_4_vhf"/>
+                android:text="@string/washington_vhf"/>
 
             <TextView
-                android:id="@+id/flight5_vhf_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="@string/flight_5_vhf"/>
+                android:text="@string/lincoln_vhf"/>
 
             <TextView
-                android:id="@+id/package1_vhf_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="@string/package_1_vhf"/>
+                android:text="@string/stennis_vhf"/>
 
             <TextView
-                android:id="@+id/package2_vhf_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="@string/package_2_vhf"/>
+                android:text="@string/ike_vhf"/>
 
             <TextView
-                android:id="@+id/package3_vhf_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="@string/package_3_vhf"/>
+                android:text="@string/kennedy_vhf"/>
 
             <TextView
-                android:id="@+id/package4_vhf_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="@string/package_4_vhf"/>
+                android:text="@string/kitty_hawk_vhf"/>
 
             <TextView
-                android:id="@+id/package5_vhf_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="@string/package_5_vhf"/>
+                android:text="@string/connie_vhf"/>
 
             <TextView
-                android:id="@+id/from_package_vhf_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="@string/from_package_vhf"/>
+                android:text="@string/america_vhf"/>
 
             <TextView
-                android:id="@+id/proximity_vhf_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="@string/proximity_vhf"/>
+                android:text="@string/midway_vhf"/>
 
             <TextView
-                android:id="@+id/team_vhf_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="@string/team_vhf"/>
+                android:text="@string/independence_vhf"/>
 
             <TextView
-                android:id="@+id/guard_vhf_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="@string/guard_vhf"/>
+                android:text="@string/ranger_vhf"/>
 
             <TextView
-                android:id="@+id/open_1_vhf_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="@string/open_1_vhf"/>
+                android:text="@string/saratoga_vhf"/>
 
             <TextView
-                android:id="@+id/open_2_vhf_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="@string/open_2_vhf"/>
+                android:text="@string/enterprise_vhf"/>
 
-            <TextView
-                android:id="@+id/open_3_vhf_text_view"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:text="@string/open_3_vhf"/>
-
-            <TextView
-                android:id="@+id/open_4_vhf_text_view"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:text="@string/open_4_vhf"/>
-
-            <TextView
-                android:id="@+id/open_5_vhf_text_view"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:text="@string/open_5_vhf"/>
-
-            <TextView
-                android:id="@+id/open_6_vhf_text_view"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:text="@string/open_6_vhf"/>
         </LinearLayout>
 
     </LinearLayout>
-
 </ScrollView>
