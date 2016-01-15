@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_centerVertical="true"
+    android:layout_gravity="center"
+    android:fillViewport="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/takeoff_calculator_rotate_text_view"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:padding="5dp"
+            android:text="@string/rotate_colon"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/takeoff_calculator_takeoff_speed_text_view"
+            android:padding="5dp"
+            android:layout_below="@id/takeoff_calculator_rotate_text_view"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/takeoff_colon"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/takeoff_calculator_rotate_result_text_view"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_centerHorizontal="true"
+            android:layout_alignBaseline="@id/takeoff_calculator_rotate_text_view"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/takeoff_calculator_takeoff_speed_result_text_view"
+            android:layout_centerHorizontal="true"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_alignBaseline="@id/takeoff_calculator_takeoff_speed_text_view"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/takeoff_calculator_select_takeoff_power_text_view"
+            android:text="@string/select_to_power"
+            android:layout_centerHorizontal="true"
+            android:paddingTop="20dp"
+            android:layout_below="@id/takeoff_calculator_takeoff_speed_text_view"
+            android:textAppearance="?android:textAppearanceLarge"/>
+
+        <RadioGroup
+            android:id="@+id/takeoff_calculator_takeoff_power_radio_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/takeoff_calculator_select_takeoff_power_text_view">
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/takeoff_calculator_mil_power_radio_button"
+                android:text="@string/mil"/>
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="@string/max_ab"
+                android:id="@+id/takeoff_calculator_max_ab_power_radio_button"/>
+
+        </RadioGroup>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="20dp"
+            android:id="@+id/takeoff_calculator_gross_weight_text_view"
+            android:text="@string/gross_weight"
+            android:layout_below="@id/takeoff_calculator_takeoff_power_radio_group"
+            android:textAppearance="?android:textAppearanceLarge"
+            android:layout_centerHorizontal="true"/>
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/takeoff_calculator_gross_weight_edit_text"
+            android:inputType="number"
+            android:ems="10"
+            android:layout_below="@id/takeoff_calculator_gross_weight_text_view"
+            android:layout_centerHorizontal="true"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/takeoff_calculator_saved_status_text_view"
+            android:visibility="gone"
+            android:layout_centerHorizontal="true"
+            android:textStyle="bold"
+            android:layout_below="@id/takeoff_calculator_gross_weight_edit_text"
+            android:textAppearance="?android:textAppearanceLarge"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/takeoff_calculator_save_to_data_card_button"
+            android:text="@string/save_to_data_card"
+            android:layout_below="@id/takeoff_calculator_saved_status_text_view"
+            android:layout_centerHorizontal="true"/>
+
+    </RelativeLayout>
+
+</ScrollView>

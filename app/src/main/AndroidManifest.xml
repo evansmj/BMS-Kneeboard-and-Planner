@@ -75,6 +75,11 @@
             </meta-data>
         </activity>
 
+        <activity android:name=".reference.TakeoffCalculatorActivity"
+                  android:label="@string/takeoff_calculator"
+                  android:theme="@style/BlueTheme">
+        </activity>
+
         <activity
             android:name="com.oldgoat5.bmstacticalreference.SettingsActivity"
             android:label="@string/settings_title"

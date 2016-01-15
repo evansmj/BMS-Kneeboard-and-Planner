@@ -339,6 +339,16 @@
     <string name="open_6_preset">20</string>
     <string name="open_6_vhf">121.70</string>
 
+    <!-- Takeoff speed calculator-->
+    <string name="takeoff_calculator">Takeoff Calculator</string>
+    <string name="rotate_colon">Rotate:</string>
+    <string name="takeoff_colon">Takeoff:</string>
+    <string name="select_to_power">Takeoff Power</string>
+    <string name="max_ab">Max AB</string>
+    <string name="mil">Mil</string>
+    <string name="gross_weight">Gross Weight</string>
+    <string name="takeoff_speed_result">%d KCAS</string>
+
     <!-- Tactical Reference -->
     <string name="surface_type">Threat Type</string>
     <string name="load_type">Load Type</string>

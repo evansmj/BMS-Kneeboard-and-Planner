@@ -20,8 +20,6 @@ import com.oldgoat5.bmstacticalreference.navigation.NavigationChartsMapProvider;
 import com.oldgoat5.bmstacticalreference.navigation.NavigationChartsTuple;
 import com.oldgoat5.bmstacticalreference.tools.views.ZoomImageView;
 
-import org.apache.commons.math3.distribution.EnumeratedRealDistribution;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 

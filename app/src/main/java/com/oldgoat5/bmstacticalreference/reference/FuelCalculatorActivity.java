@@ -41,7 +41,7 @@ public class FuelCalculatorActivity extends Activity
     private int weatherConditions;
 
     @Override
-    public void onCreate(final Bundle savedInstanceState)
+    public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fuel_calculator_activity_layout);

@@ -28,6 +28,7 @@ public class ReferenceFragment extends Fragment
     private Button defaultFrequenciesButton;
     private Button fuelCalculatorButton;
     private Button navigationSteerpointsButton;
+    private Button takeoffCalculatorButton;
     private Button tacanIlsCheckListButton;
     private ZoomImageView tacanIlsCheckListImageView;
     private View view;
@@ -49,6 +50,7 @@ public class ReferenceFragment extends Fragment
                 R.id.fuel_calculator_select_button);
         navigationSteerpointsButton = (Button) view.findViewById(
                 R.id.navigation_steerpoints_select_button);
+        takeoffCalculatorButton = (Button) view.findViewById(R.id.takeoff_calculator_select_button);
         tacanIlsCheckListButton = (Button) view.findViewById(
                 R.id.tacan_ils_checklist_select_button);
 
@@ -112,6 +114,15 @@ public class ReferenceFragment extends Fragment
             }
         });
 
+        takeoffCalculatorButton.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                startTakeoffCalculatorActivity();
+            }
+        });
+
         tacanIlsCheckListButton.setOnClickListener(new View.OnClickListener()
         {
             @Override
@@ -139,6 +150,12 @@ public class ReferenceFragment extends Fragment
     private void startFuelCalculatorActivity()
     {
         Intent intent = new Intent(getActivity(), FuelCalculatorActivity.class);
+        startActivity(intent);
+    }
+
+    private void startTakeoffCalculatorActivity()
+    {
+        Intent intent = new Intent(getActivity(), TakeoffCalculatorActivity.class);
         startActivity(intent);
     }
 }
