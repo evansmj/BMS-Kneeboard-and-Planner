@@ -170,6 +170,17 @@ public class TakeoffCalculatorActivity extends Activity
                     editor.putString("aircraft_to_speed",
                             takeoffSpeedResultTextView.getText().toString());
 
+                    switch (selectedPowerSetting)
+                    {
+                        case MIL:
+                            editor.putString("aircraft_to_power", "MIL");
+                            break;
+
+                        case MAXAB:
+                            editor.putString("aircraft_to_power", "Max AB");
+                            break;
+                    }
+
                     editor.apply();
 
                     savedStatusTextView.setText(
