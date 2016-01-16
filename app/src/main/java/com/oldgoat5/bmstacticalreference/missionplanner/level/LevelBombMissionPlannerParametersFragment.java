@@ -6,6 +6,7 @@ import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -973,14 +974,15 @@ public class LevelBombMissionPlannerParametersFragment extends Fragment
             editor.apply();
             //apply
             //show status
-            savedStatusTextView.setText("Saved OK");
-            savedStatusTextView.setTextColor(getResources().getColor(R.color.green));
+            savedStatusTextView.setText(getContext().getString(R.string.saved_ok));
+            savedStatusTextView.setTextColor(ContextCompat.getColor(getContext(), R.color.green));
             savedStatusTextView.setVisibility(View.VISIBLE);
         }
         else
         {
-            savedStatusTextView.setText("Invalid input");
-            savedStatusTextView.setTextColor(getResources().getColor(R.color.dark_red));
+            savedStatusTextView.setText(getContext().getString(R.string.invalid_input));
+            savedStatusTextView.setTextColor(
+                    ContextCompat.getColor(getContext(), R.color.dark_red));
             savedStatusTextView.setVisibility(View.VISIBLE);
         }
     }

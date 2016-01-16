@@ -1,7 +1,9 @@
 package com.oldgoat5.bmstacticalreference.reference;
 
 import android.app.Activity;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
@@ -159,10 +161,31 @@ public class TakeoffCalculatorActivity extends Activity
             public void onClick(View v)
             {
                 //check if valid
+                if (selectedGrossWeight != 0)
+                {
+                    SharedPreferences dataCardSharedPref = getSharedPreferences("DataCard", 0);
+                    SharedPreferences.Editor editor = dataCardSharedPref.edit();
 
-                //save to data card
+                    editor.putString("aircraft_rotate", rotateResultTextView.getText().toString());
+                    editor.putString("aircraft_to_speed",
+                            takeoffSpeedResultTextView.getText().toString());
 
-                //set status text view
+                    editor.apply();
+
+                    savedStatusTextView.setText(
+                            getApplicationContext().getString(R.string.saved_ok));
+                    savedStatusTextView.setTextColor(
+                            ContextCompat.getColor(getApplicationContext(), R.color.green));
+                    savedStatusTextView.setVisibility(View.VISIBLE);
+                }
+                else
+                {
+                    savedStatusTextView.setText(
+                            getApplicationContext().getString(R.string.invalid_input));
+                    savedStatusTextView.setTextColor(
+                            ContextCompat.getColor(getApplicationContext(), R.color.dark_red));
+                    savedStatusTextView.setVisibility(View.VISIBLE);
+                }
             }
         });
 

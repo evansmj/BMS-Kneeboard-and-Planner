@@ -39,6 +39,9 @@
     <string name="math_used">Apache Commons Math3 used under Apache 2.0 License</string>
 
     <!-- Data Card Fragment todo organize-->
+    <string name="saved_ok">Saved OK</string>
+    <string name="invalid_input">Invalid input</string>
+
     <string name="callsign_label">Callsign</string>
     <string name="flight_label">Flight</string>
     <string name="pos_label">Pos</string>
@@ -348,6 +351,7 @@
     <string name="mil">Mil</string>
     <string name="gross_weight">Gross Weight</string>
     <string name="takeoff_speed_result">%d KCAS</string>
+    <string name="weight_limit_description">(Enter weight between 17,900 and 48,000)</string>
 
     <!-- Tactical Reference -->
     <string name="surface_type">Threat Type</string>
