@@ -1,8 +1,10 @@
 package com.oldgoat5.bmstacticalreference;
 
 import android.app.Dialog;
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -207,13 +209,13 @@ public class LoadCardFragment extends Fragment
             if (grandchild.toString().contains("text_view"))
             {
                 TextView grandchildTextView = (TextView) grandchild;
-                grandchildTextView.setTextAppearance(this.getActivity(), size);
+                setVersionedTextAppearance(grandchildTextView, size, getContext());
                 grandchildTextView.setTextColor(Color.BLACK);
             }
             if (grandchild.toString().contains("edit_text"))
             {
                 EditText grandchildEditText = (EditText) grandchild;
-                grandchildEditText.setTextAppearance(this.getActivity(), size);
+                setVersionedTextAppearance(grandchildEditText, size, getContext());
                 grandchildEditText.setTextColor(Color.BLACK);
             }
 
@@ -228,13 +230,13 @@ public class LoadCardFragment extends Fragment
                     if (greatgrandchild.toString().contains("text_view"))
                     {
                         TextView greatgrandchildTextView = (TextView) greatgrandchild;
-                        greatgrandchildTextView.setTextAppearance(this.getActivity(), size);
+                        setVersionedTextAppearance(greatgrandchildTextView, size, getContext());
                         greatgrandchildTextView.setTextColor(Color.BLACK);
                     }
                     if (greatgrandchild.toString().contains("edit_text"))
                     {
                         EditText greatgrandchildEditText = (EditText) greatgrandchild;
-                        greatgrandchildEditText.setTextAppearance(this.getActivity(), size);
+                        setVersionedTextAppearance(greatgrandchildEditText, size, getContext());
                         greatgrandchildEditText.setTextColor(Color.BLACK);
                     }
                 }
@@ -853,5 +855,23 @@ public class LoadCardFragment extends Fragment
                 dialog.show();
             }
         });
+    }
+
+    /*****************************************************************
+     * Set versioned text appearance for a given text view
+     *
+     * @param textView - The text view to set.
+     * @param size - The text appearance size to set.
+     * @param context - The context.
+     *****************************************************************/
+    private void setVersionedTextAppearance(TextView textView, int size, Context context)
+    {
+        if (Build.VERSION.SDK_INT < 23)
+        {
+            textView.setTextAppearance(context, size);
+        } else
+        {
+            textView.setTextAppearance(size);
+        }
     }
 }
