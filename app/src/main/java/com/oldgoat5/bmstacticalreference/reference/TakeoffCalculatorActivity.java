@@ -219,6 +219,8 @@ public class TakeoffCalculatorActivity extends Activity
                         selectedPowerSetting = PowerSettingEnum.MAXAB;
                         break;
                 }
+
+                calculateTakeoffSpeeds();
             }
         });
     }

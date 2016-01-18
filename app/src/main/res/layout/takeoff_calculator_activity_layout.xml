@@ -93,6 +93,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/takeoff_calculator_gross_weight_description"
             android:text="@string/weight_limit_description"
+            android:textStyle="italic"
             android:layout_below="@id/takeoff_calculator_gross_weight_text_view"
             android:textColor="@color/gray"
             android:layout_centerHorizontal="true"/>
@@ -102,7 +103,6 @@
             android:layout_height="wrap_content"
             android:id="@+id/takeoff_calculator_gross_weight_edit_text"
             android:inputType="number"
-            android:textStyle="italic"
             android:ems="10"
             android:layout_below="@id/takeoff_calculator_gross_weight_description"
             android:layout_centerHorizontal="true"/>
