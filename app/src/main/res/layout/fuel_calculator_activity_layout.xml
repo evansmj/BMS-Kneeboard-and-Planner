@@ -9,7 +9,9 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
 
         <TextView
             android:id="@+id/joker_text_view"
@@ -62,6 +64,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/trip_nm_text_view"
+            android:textStyle="italic"
             android:text="@string/nautical_miles"
             android:layout_centerHorizontal="true"
             android:textAppearance="?android:textAppearanceSmall"
@@ -81,6 +84,7 @@
             android:id="@+id/distance_to_alternate_label_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textStyle="italic"
             android:layout_centerHorizontal="true"
             android:layout_below="@+id/distance_to_alternate_text_view"
             android:text="@string/nautical_miles"

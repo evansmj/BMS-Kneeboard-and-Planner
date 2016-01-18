@@ -9,7 +9,9 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
 
         <TextView
             android:layout_width="wrap_content"
@@ -100,6 +102,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/takeoff_calculator_gross_weight_edit_text"
             android:inputType="number"
+            android:textStyle="italic"
             android:ems="10"
             android:layout_below="@id/takeoff_calculator_gross_weight_description"
             android:layout_centerHorizontal="true"/>
