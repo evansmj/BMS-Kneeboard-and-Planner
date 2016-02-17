@@ -45,6 +45,14 @@
             android:text="@string/steerpoints"/>
 
         <Button
+            android:id="@+id/takeoff_calculator_select_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:visibility="gone"
+            android:text="@string/takeoff_calculator"/>
+
+        <Button
             android:id="@+id/tacan_ils_checklist_select_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
