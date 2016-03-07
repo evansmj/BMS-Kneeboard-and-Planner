@@ -344,7 +344,7 @@
 
     <!-- Takeoff speed calculator-->
     <string name="takeoff_calculator">Takeoff Calculator</string>
-    <string name="rotate_colon">Rotate:</string>
+    <string name="rotate_colon">Rotate 10°:</string>
     <string name="takeoff_colon">Takeoff:</string>
     <string name="select_to_power">Takeoff Power</string>
     <string name="max_ab">Max AB</string>
