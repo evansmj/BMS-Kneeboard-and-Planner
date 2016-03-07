@@ -27,11 +27,19 @@ public class KoreaInteractiveMapActivity extends Activity
         instantiateResources();
     }
 
+    @Override
+    public void onBackPressed()
+    {
+        webView.goBack();
+    }
+
     private void instantiateResources()
     {
         webView = (WebView) findViewById(R.id.korea_interactive_map_web_view);
 
         webView.getSettings().setBuiltInZoomControls(true);
+        webView.getSettings().setUseWideViewPort(true);
+        webView.setInitialScale(45);
         webView.getSettings().setJavaScriptEnabled(true);
         webView.loadUrl("file:///android_asset/korea_interactive_map/Interactive Map for" +
                 " Korea (BMS 4.33).html");
