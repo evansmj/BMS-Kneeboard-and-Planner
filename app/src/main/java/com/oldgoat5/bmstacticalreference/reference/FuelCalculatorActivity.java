@@ -3,6 +3,7 @@ package com.oldgoat5.bmstacticalreference.reference;
 import android.app.Activity;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
@@ -69,9 +70,6 @@ public class FuelCalculatorActivity extends Activity
             @Override
             public void afterTextChanged(Editable editable)
             {
-                //Log.d("fuelcalc", "homeAlt.changed");
-                //Log.d("fuelCAlc", "homealt = " + editable.toString());
-
                 if (editable.toString().length() > 0)
                 {
                     try
@@ -81,7 +79,7 @@ public class FuelCalculatorActivity extends Activity
                     }
                     catch (NumberFormatException e)
                     {
-                        //Log.d("fuelCalc", "invalid float homeAlt");
+                        //
                     }
                 }
                 else
@@ -115,7 +113,7 @@ public class FuelCalculatorActivity extends Activity
                     }
                     catch (NumberFormatException e)
                     {
-                        //Log.d("fuelcalc", "invalid float in trip");
+                        //
                     }
                 }
                 else
@@ -134,8 +132,6 @@ public class FuelCalculatorActivity extends Activity
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i)
             {
-                //Log.d("fuelCalc", "radioG.changed");
-                //Log.d("fuelCalc", "i = " + Integer.toString(i));
                 switch (i)
                 {
                     case R.id.low_radio_button:
@@ -151,7 +147,6 @@ public class FuelCalculatorActivity extends Activity
                         selectedAltitude = 1;
                         break;
                 }
-                //Log.d("fuelCalc", "radioGChanged selAlt = " + Integer.toString(selectedAltitude));
                 calculateFuel();
             }
         });
@@ -215,7 +210,18 @@ public class FuelCalculatorActivity extends Activity
             @Override
             public void onClick(View view)
             {
-                saveToSharedPreferences();
+                if (returnLegEditText.getText().toString().length() != 0 ||
+                        homeAltEditText.getText().toString().length() != 0)
+                {
+                    saveToSharedPreferences();
+                }
+                else
+                {
+                    savedStatusTextView.setText(R.string.invalid_input);
+                    savedStatusTextView.setTextColor(
+                            ContextCompat.getColor(getApplicationContext(), R.color.dark_red));
+                    savedStatusTextView.setVisibility(View.VISIBLE);
+                }
             }
         });
     }
@@ -223,11 +229,6 @@ public class FuelCalculatorActivity extends Activity
     private void calculateFuel()
     {
         int total;
-
-        //Log.d("fuelCalc", "calcFuel called");
-        //Log.d("fuelCalc", "tripFuel = " + Integer.toString(returnLegMiles));
-        //Log.d("fuelCalc", "homeAltFuel = " + Integer.toString(returnLegMiles));
-        //Log.d("fuelCalc", "selectedAltitude= " + Integer.toString(selectedAltitude));
 
         switch (selectedAltitude)
         {
@@ -248,8 +249,12 @@ public class FuelCalculatorActivity extends Activity
                 break;
         }
 
-        bingoFuelResultTextView.setText(Integer.toString(total) + " lbs");
-        jokerFuelResultTextView.setText(Integer.toString(total + selectedJokerOffset) + " lbs");
+        if (returnLegEditText.getText().toString().length() != 0 &&
+                homeAltEditText.getText().toString().length() != 0)
+        {
+            bingoFuelResultTextView.setText(Integer.toString(total) + " lbs");
+            jokerFuelResultTextView.setText(Integer.toString(total + selectedJokerOffset) + " lbs");
+        }
     }
 
     private void instantiateResources()
@@ -286,14 +291,16 @@ public class FuelCalculatorActivity extends Activity
 
             editor.apply();
 
-            savedStatusTextView.setText("Saved OK");
-            savedStatusTextView.setTextColor(getResources().getColor(R.color.green));
+            savedStatusTextView.setText(R.string.saved_ok);
+            savedStatusTextView.setTextColor(
+                    ContextCompat.getColor(getApplicationContext(), R.color.green));
             savedStatusTextView.setVisibility(View.VISIBLE);
         }
         catch (NumberFormatException e)
         {
-            savedStatusTextView.setText("Invalid values");
-            savedStatusTextView.setTextColor(getResources().getColor(R.color.dark_red));
+            savedStatusTextView.setText(R.string.invalid_input);
+            savedStatusTextView.setTextColor(
+                    ContextCompat.getColor(getApplicationContext(), R.color.dark_red));
             savedStatusTextView.setVisibility(View.VISIBLE);
         }
     }
