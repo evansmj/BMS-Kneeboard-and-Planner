@@ -45,6 +45,7 @@ public class KoreaInteractiveMapActivity extends Activity
         webView = (WebView) findViewById(R.id.korea_interactive_map_web_view);
 
         webView.getSettings().setBuiltInZoomControls(true);
+        webView.getSettings().setDisplayZoomControls(false);
         webView.getSettings().setUseWideViewPort(true);
         webView.setInitialScale(45);
         webView.getSettings().setJavaScriptEnabled(true);
