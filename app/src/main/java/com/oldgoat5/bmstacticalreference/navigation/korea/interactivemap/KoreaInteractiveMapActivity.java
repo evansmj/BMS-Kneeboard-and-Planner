@@ -16,6 +16,9 @@ import com.oldgoat5.bmstacticalreference.R;
  *********************************************************************/
 public class KoreaInteractiveMapActivity extends Activity
 {
+    private final String vfrMap = "file:///android_asset/korea_interactive_map/" +
+            "Interactive Map for Korea (BMS 4.33).html";
+
     private WebView webView;
 
     @Override
@@ -47,9 +50,9 @@ public class KoreaInteractiveMapActivity extends Activity
         webView.getSettings().setBuiltInZoomControls(true);
         webView.getSettings().setDisplayZoomControls(false);
         webView.getSettings().setUseWideViewPort(true);
-        webView.setInitialScale(45);
+        webView.getSettings().setLoadWithOverviewMode(true);
+        webView.setInitialScale(1);
         webView.getSettings().setJavaScriptEnabled(true);
-        webView.loadUrl("file:///android_asset/korea_interactive_map/Interactive Map for" +
-                " Korea (BMS 4.33).html");
+        webView.loadUrl(vfrMap);
     }
 }
