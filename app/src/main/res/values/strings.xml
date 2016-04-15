@@ -125,8 +125,11 @@
 
     <!-- Navigation Activity -->
     <string name="aegean_theater_title">Aegean Theater of Operations</string>
-    <string name="balkans">Balkan Theater of Operation</string>
+    <string name="balkans">Balkan Theater of Operations</string>
     <string name="korea_theater_title">Korean Theater of Operations</string>
+    <string name="korea_interactive_map">Korea Interactive Map</string>
+
+
     <string name="china">China</string>
     <string name="china_fragment_title">Chinese Bases - Korean Theater of Operations</string>
     <string name="japan">Japan</string>
