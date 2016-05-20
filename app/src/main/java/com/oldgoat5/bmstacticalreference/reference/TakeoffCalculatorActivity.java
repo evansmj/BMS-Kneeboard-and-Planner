@@ -198,6 +198,8 @@ public class TakeoffCalculatorActivity extends Activity
                     editor.putString("aircraft_rotate", rotateResultTextView.getText().toString());
                     editor.putString("aircraft_to_speed",
                             takeoffSpeedResultTextView.getText().toString());
+                    editor.putString("aircraft_weight", Integer.toString(
+                            selectedGrossWeight)+ " lbs");
 
                     switch (selectedPowerSetting)
                     {

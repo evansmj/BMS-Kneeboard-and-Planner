@@ -352,6 +352,14 @@
     <string name="gross_weight">Gross Weight</string>
     <string name="takeoff_speed_result">%d KCAS</string>
     <string name="weight_limit_description">(Enter weight between 17,900 and 48,000)</string>
+    <string name="configuration">Configuration:</string>
+    <string name="all_drag_indexes">All drag indexes</string>
+    <string name="cg_35_mac">CG = 35% MAC</string>
+    <string name="zero_roll_trim">Zero roll trim</string>
+    <string name="conditions">Conditions:</string>
+    <string name="all_altitudes">All altitudes</string>
+    <string name="all_temperatures">All temperatures</string>
+    <string name="degree_10_pitch_attitude">10 degrees pitch attitude</string>
 
     <!-- Tactical Reference -->
     <string name="surface_type">Threat Type</string>
