@@ -71,6 +71,7 @@ public class FuelCalculatorActivity extends Activity
             @Override
             public void afterTextChanged(Editable editable)
             {
+                savedStatusTextView.setVisibility(View.GONE);
                 if (editable.toString().length() > 0)
                 {
                     try
@@ -80,7 +81,7 @@ public class FuelCalculatorActivity extends Activity
                     }
                     catch (NumberFormatException e)
                     {
-                        //
+                        //Log.d("fuelCalc", "invalid float homeAlt");
                     }
                 }
                 else
@@ -105,6 +106,7 @@ public class FuelCalculatorActivity extends Activity
             @Override
             public void afterTextChanged(Editable editable)
             {
+                savedStatusTextView.setVisibility(View.GONE);
                 if (editable.toString().length() > 0)
                 {
                     try
@@ -114,7 +116,7 @@ public class FuelCalculatorActivity extends Activity
                     }
                     catch (NumberFormatException e)
                     {
-                        //
+                        //Log.d("fuelcalc", "invalid float in trip");
                     }
                 }
                 else
