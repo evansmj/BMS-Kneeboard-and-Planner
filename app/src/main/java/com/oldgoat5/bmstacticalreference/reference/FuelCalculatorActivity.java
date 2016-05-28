@@ -69,9 +69,7 @@ public class FuelCalculatorActivity extends Activity
             @Override
             public void afterTextChanged(Editable editable)
             {
-                //Log.d("fuelcalc", "homeAlt.changed");
-                //Log.d("fuelCAlc", "homealt = " + editable.toString());
-
+                savedStatusTextView.setVisibility(View.GONE);
                 if (editable.toString().length() > 0)
                 {
                     try
@@ -106,6 +104,7 @@ public class FuelCalculatorActivity extends Activity
             @Override
             public void afterTextChanged(Editable editable)
             {
+                savedStatusTextView.setVisibility(View.GONE);
                 if (editable.toString().length() > 0)
                 {
                     try
@@ -134,8 +133,6 @@ public class FuelCalculatorActivity extends Activity
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i)
             {
-                //Log.d("fuelCalc", "radioG.changed");
-                //Log.d("fuelCalc", "i = " + Integer.toString(i));
                 switch (i)
                 {
                     case R.id.low_radio_button:
@@ -151,7 +148,6 @@ public class FuelCalculatorActivity extends Activity
                         selectedAltitude = 1;
                         break;
                 }
-                //Log.d("fuelCalc", "radioGChanged selAlt = " + Integer.toString(selectedAltitude));
                 calculateFuel();
             }
         });
@@ -224,11 +220,6 @@ public class FuelCalculatorActivity extends Activity
     {
         int total;
 
-        //Log.d("fuelCalc", "calcFuel called");
-        //Log.d("fuelCalc", "tripFuel = " + Integer.toString(returnLegMiles));
-        //Log.d("fuelCalc", "homeAltFuel = " + Integer.toString(returnLegMiles));
-        //Log.d("fuelCalc", "selectedAltitude= " + Integer.toString(selectedAltitude));
-
         switch (selectedAltitude)
         {
             case 0:
@@ -286,13 +277,13 @@ public class FuelCalculatorActivity extends Activity
 
             editor.apply();
 
-            savedStatusTextView.setText("Saved OK");
+            savedStatusTextView.setText(getApplicationContext().getString(R.string.saved_ok));
             savedStatusTextView.setTextColor(getResources().getColor(R.color.green));
             savedStatusTextView.setVisibility(View.VISIBLE);
         }
         catch (NumberFormatException e)
         {
-            savedStatusTextView.setText("Invalid values");
+            savedStatusTextView.setText(getApplicationContext().getString(R.string.invalid_input));
             savedStatusTextView.setTextColor(getResources().getColor(R.color.dark_red));
             savedStatusTextView.setVisibility(View.VISIBLE);
         }
