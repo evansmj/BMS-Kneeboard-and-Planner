@@ -131,7 +131,8 @@
             android:layout_height="match_parent"
             android:layout_below="@id/takeoff_calculator_save_to_data_card_button"
             android:orientation="horizontal"
-            android:paddingTop="20dp">
+            android:paddingTop="20dp"
+            android:baselineAligned="false">
 
             <LinearLayout
                 android:layout_width="wrap_content"

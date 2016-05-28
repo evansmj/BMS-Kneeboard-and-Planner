@@ -26,8 +26,8 @@
             android:id="@+id/bingo_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="5dp"
             android:layout_below="@id/joker_text_view"
+            android:padding="5dp"
             android:text="@string/bingo"
             android:textAppearance="?android:attr/textAppearanceLarge"/>
 
@@ -36,8 +36,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignBaseline="@id/joker_text_view"
-            android:padding="10dp"
             android:layout_centerHorizontal="true"
+            android:padding="10dp"
             android:textAppearance="?android:attr/textAppearanceMedium"/>
 
         <TextView
@@ -45,173 +45,212 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignBaseline="@id/bingo_text_view"
-            android:padding="10dp"
             android:layout_centerHorizontal="true"
+            android:padding="10dp"
             android:textAppearance="?android:attr/textAppearanceMedium"/>
 
-        <TextView
-            android:id="@+id/trip_nm_text_view"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/fuel_calculator_inputs_linear_layout"
             android:layout_below="@id/bingo_text_view"
-            android:paddingTop="20dp"
-            android:layout_centerHorizontal="true"
-            android:text="@string/trip_nm_text_view"
-            android:textAppearance="?android:attr/textAppearanceLarge"/>
+            android:baselineAligned="false"
+            android:gravity="center_horizontal">
 
-        <TextView
-            android:id="@+id/trip_nm_label_text_view"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/trip_nm_text_view"
-            android:textStyle="italic"
-            android:text="@string/nautical_miles"
-            android:layout_centerHorizontal="true"
-            android:textAppearance="?android:textAppearanceSmall"
-            android:textColor="#D3D3D3"/>
-
-        <TextView
-            android:id="@+id/distance_to_alternate_text_view"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/trip_nm_edit_text"
-            android:paddingTop="20dp"
-            android:layout_centerHorizontal="true"
-            android:text="@string/distance_to_alternate"
-            android:textAppearance="?android:attr/textAppearanceLarge"/>
-
-        <TextView
-            android:id="@+id/distance_to_alternate_label_text_view"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textStyle="italic"
-            android:layout_centerHorizontal="true"
-            android:layout_below="@+id/distance_to_alternate_text_view"
-            android:text="@string/nautical_miles"
-            android:textAppearance="?android:textAppearanceSmall"
-            android:textColor="#D3D3D3"/>
-
-        <EditText
-            android:id="@+id/trip_nm_edit_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_below="@+id/trip_nm_label_text_view"
-            android:ems="10"
-            android:inputType="number"/>
-
-        <EditText
-            android:id="@+id/distance_to_alternate_edit_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/distance_to_alternate_label_text_view"
-            android:ems="10"
-            android:layout_centerHorizontal="true"
-            android:inputType="number"/>
-
-        <TextView
-            android:id="@+id/altitude_text_view"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingTop="20dp"
-            android:layout_centerHorizontal="true"
-            android:layout_below="@+id/distance_to_alternate_edit_text"
-            android:text="@string/altitude"
-            android:textAppearance="?android:attr/textAppearanceLarge"/>
-
-        <RadioGroup
-            android:id="@+id/alt_radio_group"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_below="@+id/altitude_text_view">
-
-            <RadioButton
-                android:id="@+id/low_radio_button"
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/low_level"/>
+                android:orientation="vertical"
+                android:layout_weight="1">
 
-            <RadioButton
-                android:id="@+id/med_radio_button"
+                <TextView
+                    android:id="@+id/trip_nm_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:paddingTop="20dp"
+                    android:text="@string/trip_nm_text_view"
+                    android:textAppearance="?android:attr/textAppearanceLarge"/>
+
+                <TextView
+                    android:id="@+id/trip_nm_label_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="@string/nautical_miles"
+                    android:textAppearance="?android:textAppearanceSmall"
+                    android:textColor="#D3D3D3"
+                    android:textStyle="italic"/>
+
+                <EditText
+                    android:id="@+id/trip_nm_edit_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:ems="10"
+                    android:inputType="number"/>
+
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/med_level"/>
+                android:orientation="vertical"
+                android:layout_weight="1">
 
-            <RadioButton
-                android:id="@+id/hi_radio_button"
+                <TextView
+                    android:id="@+id/distance_to_alternate_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:paddingTop="20dp"
+                    android:text="@string/distance_to_alternate"
+                    android:textAppearance="?android:attr/textAppearanceLarge"/>
+
+                <TextView
+                    android:id="@+id/distance_to_alternate_label_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="@string/nautical_miles"
+                    android:textAppearance="?android:textAppearanceSmall"
+                    android:textColor="#D3D3D3"
+                    android:textStyle="italic"/>
+
+                <EditText
+                    android:id="@+id/distance_to_alternate_edit_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:ems="10"
+                    android:inputType="number"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/fuel_calculator_altitude_weather_linear_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/fuel_calculator_inputs_linear_layout"
+            android:baselineAligned="false"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/fuel_calculator_altitude_linear_layout"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/hi_level"/>
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
 
-        </RadioGroup>
+                <TextView
+                    android:id="@+id/altitude_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:paddingTop="20dp"
+                    android:text="@string/altitude"
+                    android:textAppearance="?android:attr/textAppearanceLarge"/>
+
+                <RadioGroup
+                    android:id="@+id/alt_radio_group"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal">
+
+                    <RadioButton
+                        android:id="@+id/low_radio_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/low_level"/>
+
+                    <RadioButton
+                        android:id="@+id/med_radio_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/med_level"/>
+
+                    <RadioButton
+                        android:id="@+id/hi_radio_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/hi_level"/>
+
+                </RadioGroup>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/weather_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:paddingTop="20dp"
+                    android:text="@string/weather"
+                    android:textAppearance="?android:attr/textAppearanceLarge"/>
+
+                <RadioGroup
+                    android:id="@+id/weather_radio_group"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal">
+
+                    <RadioButton
+                        android:id="@+id/vmc_radio_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/vmc"/>
+
+                    <RadioButton
+                        android:id="@+id/imc_radio_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/imc"/>
+                </RadioGroup>
+            </LinearLayout>
+        </LinearLayout>
 
         <TextView
-            android:id="@+id/weather_text_view"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/alt_radio_group"
-            android:layout_centerHorizontal="true"
-            android:paddingTop="20dp"
-            android:text="@string/weather"
-            android:textAppearance="?android:attr/textAppearanceLarge"/>
-
-        <RadioGroup
-            android:id="@+id/weather_radio_group"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_below="@+id/weather_text_view">
-
-            <RadioButton
-                android:id="@+id/vmc_radio_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/vmc"/>
-
-            <RadioButton
-                android:id="@+id/imc_radio_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/imc"/>
-        </RadioGroup>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:id="@+id/joker_offset_text_view"
-            android:textAppearance="?android:textAppearanceLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/fuel_calculator_altitude_weather_linear_layout"
             android:layout_centerHorizontal="true"
             android:paddingTop="20dp"
             android:text="@string/joker_offset"
-            android:layout_below="@+id/weather_radio_group"/>
+            android:textAppearance="?android:textAppearanceLarge"/>
 
         <EditText
+            android:id="@+id/joker_offset_edit_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/joker_offset_edit_text"
+            android:layout_below="@id/joker_offset_text_view"
             android:layout_centerHorizontal="true"
             android:ems="10"
-            android:layout_below="@id/joker_offset_text_view"
             android:inputType="number"/>
 
         <TextView
+            android:id="@+id/fuel_calculator_saved_status_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/fuel_calculator_saved_status_text_view"
             android:layout_below="@+id/joker_offset_edit_text"
-            android:visibility="gone"
-            android:textStyle="bold"
+            android:layout_centerHorizontal="true"
             android:textAppearance="?android:textAppearanceLarge"
-            android:layout_centerHorizontal="true"/>
+            android:textStyle="bold"
+            android:visibility="gone"/>
 
         <Button
+            android:id="@+id/fuel_calculator_save_results_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/fuel_calculator_save_results_button"
-            android:text="@string/save_to_data_card"
             android:layout_below="@+id/fuel_calculator_saved_status_text_view"
-            android:layout_centerHorizontal="true"/>
+            android:layout_centerHorizontal="true"
+            android:text="@string/save_to_data_card"/>
 
     </RelativeLayout>
 

@@ -158,7 +158,7 @@
     <string name="trip_nm_text_view">Return Leg</string>
     <string name="nautical_miles">(Nautical Miles)</string>
     <string name="distance_to_alternate">Home to Alternate</string>
-    <string name="altitude">Altitude</string>
+    <string name="altitude">Altitude:</string>
     <string name="low_level">Low Alt (&lt; 5,000ft)</string>
     <string name="med_level">Med Alt</string>
     <string name="hi_level">Hi Alt (&gt; 25,000ft)</string>
@@ -166,9 +166,9 @@
     <string name="bingo">Bingo: </string>
     <string name="total">Trip Fuel Burn</string>
     <string name="result">Result</string>
-    <string name="weather">Weather</string>
-    <string name="vmc">Visual Meteorological Conditions</string>
-    <string name="imc">Instrument Meteorological Conditions</string>
+    <string name="weather">Weather:</string>
+    <string name="vmc">VMC</string>
+    <string name="imc">IMC</string>
     <string name="joker_offset">Joker Offset</string>
 
     <!-- Reference Fragment -->
