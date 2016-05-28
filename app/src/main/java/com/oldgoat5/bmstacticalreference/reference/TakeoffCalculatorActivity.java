@@ -97,6 +97,7 @@ public class TakeoffCalculatorActivity extends Activity
                                 R.string.takeoff_speed_result),
                         (int) calculatedTakeoffSpeed));
 
+        savedStatusTextView.setVisibility(View.GONE);
     }
 
     /*****************************************************************
