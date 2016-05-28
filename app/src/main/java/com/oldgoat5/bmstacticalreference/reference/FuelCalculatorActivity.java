@@ -71,7 +71,6 @@ public class FuelCalculatorActivity extends Activity
             @Override
             public void afterTextChanged(Editable editable)
             {
-                savedStatusTextView.setVisibility(View.GONE);
                 if (editable.toString().length() > 0)
                 {
                     try
@@ -106,7 +105,6 @@ public class FuelCalculatorActivity extends Activity
             @Override
             public void afterTextChanged(Editable editable)
             {
-                savedStatusTextView.setVisibility(View.GONE);
                 if (editable.toString().length() > 0)
                 {
                     try
@@ -258,6 +256,7 @@ public class FuelCalculatorActivity extends Activity
             bingoFuelResultTextView.setText(Integer.toString(total) + " lbs");
             jokerFuelResultTextView.setText(Integer.toString(total + selectedJokerOffset) + " lbs");
         }
+        savedStatusTextView.setVisibility(View.GONE);
     }
 
     private void instantiateResources()
