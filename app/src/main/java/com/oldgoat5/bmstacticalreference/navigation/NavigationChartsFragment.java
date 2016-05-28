@@ -12,6 +12,7 @@ import com.oldgoat5.bmstacticalreference.R;
 import com.oldgoat5.bmstacticalreference.navigation.aegean.AegeanNavigationActivity;
 import com.oldgoat5.bmstacticalreference.navigation.balkans.BattleForBalkansNavigationActivity;
 import com.oldgoat5.bmstacticalreference.navigation.korea.KoreaNavigationActivity;
+import com.oldgoat5.bmstacticalreference.navigation.korea.interactivemap.KoreaInteractiveMapActivity;
 
 /*********************************************************************
  * Copyright © Michael Evans - All Rights Reserved.
@@ -25,6 +26,7 @@ public class NavigationChartsFragment extends Fragment
 {
     private Button aegeanSelectButton;
     private Button battleForBalkansSelectButton;
+    private Button koreaInteractiveMapButton;
     private Button koreaSelectButton;
     private View view;
 
@@ -35,12 +37,12 @@ public class NavigationChartsFragment extends Fragment
         view = inflater.inflate(
                 R.layout.navigation_chart_fragment_layout, container, false);
 
-        //Log.d("NavChartsFragment", "inside onCreateView()");
-
         aegeanSelectButton = (Button) view.findViewById(R.id.aegean_navigation_select_button);
         battleForBalkansSelectButton = (Button) view.findViewById(
                 R.id.battle_for_balkans_navigation_select_button);
         koreaSelectButton = (Button) view.findViewById(R.id.korea_navigation_select_button);
+        koreaInteractiveMapButton = (Button) view.findViewById(
+                R.id.korea_interactive_map_select_button);
 
         aegeanSelectButton.setOnClickListener(new View.OnClickListener()
         {
@@ -69,6 +71,15 @@ public class NavigationChartsFragment extends Fragment
             }
         });
 
+        koreaInteractiveMapButton.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                showKoreaInteractiveMap();
+            }
+        });
+
         return view;
     }
 
@@ -93,6 +104,15 @@ public class NavigationChartsFragment extends Fragment
     private void showKoreaNavigation()
     {
         Intent intent = new Intent(getActivity(), KoreaNavigationActivity.class);
+        startActivity(intent);
+    }
+
+    /*****************************************************************
+     * Starts the korea interactive map activity.
+     *****************************************************************/
+    private void showKoreaInteractiveMap()
+    {
+        Intent intent = new Intent(getActivity(), KoreaInteractiveMapActivity.class);
         startActivity(intent);
     }
 }
