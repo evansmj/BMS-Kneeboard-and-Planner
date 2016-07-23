@@ -9,7 +9,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.oldgoat5.bmstacticalreference.R;
-import com.oldgoat5.bmstacticalreference.navigation.aegean.AegeanNavigationActivity;
 import com.oldgoat5.bmstacticalreference.navigation.balkans.BattleForBalkansNavigationActivity;
 import com.oldgoat5.bmstacticalreference.navigation.korea.KoreaNavigationActivity;
 import com.oldgoat5.bmstacticalreference.navigation.korea.interactivemap.KoreaInteractiveMapActivity;
@@ -24,7 +23,6 @@ import com.oldgoat5.bmstacticalreference.navigation.korea.interactivemap.KoreaIn
  *********************************************************************/
 public class NavigationChartsFragment extends Fragment
 {
-    private Button aegeanSelectButton;
     private Button battleForBalkansSelectButton;
     private Button koreaInteractiveMapButton;
     private Button koreaSelectButton;
@@ -37,21 +35,11 @@ public class NavigationChartsFragment extends Fragment
         view = inflater.inflate(
                 R.layout.navigation_chart_fragment_layout, container, false);
 
-        aegeanSelectButton = (Button) view.findViewById(R.id.aegean_navigation_select_button);
         battleForBalkansSelectButton = (Button) view.findViewById(
                 R.id.battle_for_balkans_navigation_select_button);
         koreaSelectButton = (Button) view.findViewById(R.id.korea_navigation_select_button);
         koreaInteractiveMapButton = (Button) view.findViewById(
                 R.id.korea_interactive_map_select_button);
-
-        aegeanSelectButton.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View view)
-            {
-                showAegeanNavigation();
-            }
-        });
 
         battleForBalkansSelectButton.setOnClickListener(new View.OnClickListener()
         {
@@ -81,12 +69,6 @@ public class NavigationChartsFragment extends Fragment
         });
 
         return view;
-    }
-
-    private void showAegeanNavigation()
-    {
-        Intent intent = new Intent(getActivity(), AegeanNavigationActivity.class);
-        startActivity(intent);
     }
 
     /*****************************************************************
