@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:focusable="true"
         android:focusableInTouchMode="true"
-        android:id="@+id/takeoff_calculator_calculator_relative_layout">
+        >
 
         <TextView
             android:layout_width="wrap_content"
@@ -142,7 +142,6 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/takeoff_calculator_configuration_text_view"
                     android:text="@string/configuration"
                     android:layout_gravity="center_horizontal"
                     android:textAppearance="?android:attr/textAppearanceLarge"/>

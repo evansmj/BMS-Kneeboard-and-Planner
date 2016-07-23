@@ -226,7 +226,6 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="@string/usage_81_99"
-        android:id="@+id/usage_81_99_text_view"
         android:gravity="center"
         android:maxLines="1"
         android:layout_alignBottom="@+id/stpt_81_95_text_view"
