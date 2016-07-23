@@ -7,7 +7,6 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/aegean_navigation_select_button"
         android:text="@string/aegean_theater_title"
         android:visibility="gone"
         android:layout_gravity="center_horizontal"/>

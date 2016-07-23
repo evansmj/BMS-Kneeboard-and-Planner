@@ -65,7 +65,6 @@
                 android:layout_weight="1">
 
                 <TextView
-                    android:id="@+id/trip_nm_text_view"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
@@ -74,7 +73,6 @@
                     android:textAppearance="?android:attr/textAppearanceLarge"/>
 
                 <TextView
-                    android:id="@+id/trip_nm_label_text_view"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
@@ -100,7 +98,6 @@
                 android:layout_weight="1">
 
                 <TextView
-                    android:id="@+id/distance_to_alternate_text_view"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
@@ -109,7 +106,6 @@
                     android:textAppearance="?android:attr/textAppearanceLarge"/>
 
                 <TextView
-                    android:id="@+id/distance_to_alternate_label_text_view"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
@@ -137,14 +133,12 @@
             android:orientation="horizontal">
 
             <LinearLayout
-                android:id="@+id/fuel_calculator_altitude_linear_layout"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/altitude_text_view"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
@@ -186,7 +180,6 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/weather_text_view"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
