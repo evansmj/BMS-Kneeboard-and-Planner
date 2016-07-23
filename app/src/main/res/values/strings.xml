@@ -53,8 +53,6 @@
     <string name="idm_label">IDM</string>
     <string name="tcn_label">TCN</string>
     <string name="package_label">Package</string>
-    <string name="loadcard_gross_weight">Gross Weight: </string>
-    <string name="loadcard_drag">Drag: </string>
     <string name="save_to_data_card">Save To Data Card</string>
     <string name="notes">Notes:</string>
     <string name="tasking">Tasking</string>
@@ -130,17 +128,6 @@
     <string name="korea_interactive_map">Korea Interactive Map</string>
 
 
-    <string name="china">China</string>
-    <string name="china_fragment_title">Chinese Bases - Korean Theater of Operations</string>
-    <string name="japan">Japan</string>
-    <string name="japan_fragment_title">Japanese Bases - Korean Theater of Operations</string>
-    <string name="north_korea">North Korea</string>
-    <string name="north_korea_fragment_title">North Korean Bases - Korean Theater of Operations</string>
-    <string name="south_korea">South Korea</string>
-    <string name="south_korea_fragment_title">South Korea Bases - Korean Theater of Operations</string>
-    <string name="russia">Russia</string>
-    <string name="russia_fragment_title">Russian Bases - Korean Theater of Operations</string>
-
     <string name="set_as">Set As&#8230;</string>
     <string name="home_plate">Home Plate</string>
     <string name="alternate">Alternate</string>
@@ -148,10 +135,8 @@
     <!-- Brevity Dictionary Activity -->
     <string name="brevity_dictionary_title">Brevity Dictionary</string>
     <string name="menu_search">Search</string>
-    <string name="no_results">No Results Found.</string>
 
     <!-- Tactical Formation Reference Activity -->
-    <string name="tactical_formation_reference_title">Tactical Formation Reference</string>
 
     <!-- Fuel Calculator Activity -->
     <string name="fuel_calculator">Bingo Fuel Calculator</string>
@@ -164,8 +149,6 @@
     <string name="hi_level">Hi Alt (&gt; 25,000ft)</string>
     <string name="joker">Joker: </string>
     <string name="bingo">Bingo: </string>
-    <string name="total">Trip Fuel Burn</string>
-    <string name="result">Result</string>
     <string name="weather">Weather:</string>
     <string name="vmc">VMC</string>
     <string name="imc">IMC</string>
@@ -394,9 +377,6 @@
 
     <!-- Mission Planner Fragment-->
     <string name="level_bomb_mission_planner">Level Bomb Mission Planner</string>
-    <string name="dive_bomb_mission_planner">Dive Bomb Mission Planner</string>
-    <string name="loft_bomb_mission_planner">Loft Bomb Mission Planner</string>
-    <string name="popup_bomb_mission_planner">Pop-up Mission Planner</string>
 
     <string name="expected_weather">Expected Weather at Time on Target</string>
     <string name="situation">Situation: </string>
@@ -404,16 +384,12 @@
     <string name="temperature">Temp: </string>
     <string name="cloud_base">Cloud Base: </string>
     <string name="con_layer">Condensation Layer: </string>
-    <string name="local_tot">Local Time On Target: </string>
     <string name="select_bomb">Select Bomb</string>
-    <string name="at_symbol_text_view">At</string>
     <string name="next_page">Next Page</string>
     
     <string name="select_bomb_type">Select Bomb Type:</string>
     <string name="select_bomb_id">Select Bomb:</string>
-    <string name="ok">OK</string>
     <string name="select">Select</string>
-    <string name="cancel">Cancel</string>
     <string name="altimeter">Altimeter:</string>
     <string name="view_bomb_info">View Bomb Info</string>
     <string name="no_weapon_selected">(No Weapon Selected)</string>
