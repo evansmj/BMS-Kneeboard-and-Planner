@@ -5,6 +5,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
+import android.support.v7.widget.Toolbar;
 
 import com.oldgoat5.bmstacticalreference.tools.slidingtabs.PagerItem;
 import com.oldgoat5.bmstacticalreference.tools.slidingtabs.SlidingTabLayout;
@@ -22,6 +23,7 @@ public class MainActivity extends FragmentActivity
     private ArrayList<PagerItem> tabsList;
     private MainFragmentPageAdapter fragmentPageAdapter;
     private SlidingTabLayout slidingTabLayout;
+    private Toolbar toolbar;
     private ViewPager viewPager;
 
     @Override
@@ -30,7 +32,7 @@ public class MainActivity extends FragmentActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //Log.d("MainActivity", "begin onCreate()");
+        toolbar = (Toolbar) findViewById(R.id.main_activity_toolbar);
 
         tabsList = new ArrayList<PagerItem>();
 
