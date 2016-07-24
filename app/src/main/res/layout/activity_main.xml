@@ -7,9 +7,15 @@
     android:orientation="vertical"
     android:keepScreenOn="true">
 
+    <include
+        android:id="@+id/main_activity_toolbar"
+        layout="@layout/view_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
     <com.oldgoat5.bmstacticalreference.tools.slidingtabs.SlidingTabLayout
         android:id="@+id/main_sliding_tabs"
-        android:background="@color/tab_blue"
+        android:background="@color/dark_blue"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 

@@ -5,9 +5,6 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 
 import com.oldgoat5.bmstacticalreference.tools.slidingtabs.PagerItem;
 import com.oldgoat5.bmstacticalreference.tools.slidingtabs.SlidingTabLayout;
@@ -74,20 +71,21 @@ public class MainActivity extends FragmentActivity
         });
     }
 
-    @Override
+    /*@Override
     public boolean onCreateOptionsMenu(Menu menu)
     {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.main_activity_actions, menu);
 
         return super.onCreateOptionsMenu(menu);
-    }
+    }*/
 
-    @Override
+    /*@Override
     public boolean onOptionsItemSelected(MenuItem item)
     {
         switch (item.getItemId())
         {
+        todo
             case R.id.action_settings:
                 startSettingsActivity();
                 return true;
@@ -99,7 +97,7 @@ public class MainActivity extends FragmentActivity
             default:
                 return super.onOptionsItemSelected(item);
         }
-    }
+    }*/
 
     private void startAboutActivity()
     {
