@@ -9,7 +9,7 @@
 
     <include
         android:id="@+id/main_activity_toolbar"
-        layout="@layout/view_toolbar"
+        layout="@layout/view_main_tab_activity_toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
