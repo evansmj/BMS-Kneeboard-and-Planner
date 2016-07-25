@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.Toolbar;
+import android.view.View;
+import android.widget.ImageView;
 
 import com.oldgoat5.bmstacticalreference.tools.slidingtabs.PagerItem;
 import com.oldgoat5.bmstacticalreference.tools.slidingtabs.SlidingTabLayout;
@@ -21,6 +23,8 @@ public class MainActivity extends FragmentActivity
     int totalDrag;
 
     private ArrayList<PagerItem> tabsList;
+    private ImageView settingsImageView;
+    private ImageView aboutImageView;
     private MainFragmentPageAdapter fragmentPageAdapter;
     private SlidingTabLayout slidingTabLayout;
     private Toolbar toolbar;
@@ -71,26 +75,33 @@ public class MainActivity extends FragmentActivity
                 return tabsList.get(position).getDividerColor();
             }
         });
+
+        setListeners();
     }
 
-    /*@Override
-    public boolean onOptionsItemSelected(MenuItem item)
+    private void setListeners()
     {
-        switch (item.getItemId())
+        aboutImageView = (ImageView) findViewById(R.id.about_icon);
+        settingsImageView = (ImageView) findViewById(R.id.settings_icon);
+
+        aboutImageView.setOnClickListener(new View.OnClickListener()
         {
-        todo
-            case R.id.action_settings:
-                startSettingsActivity();
-                return true;
-
-            case R.id.action_about:
+            @Override
+            public void onClick(View v)
+            {
                 startAboutActivity();
-                return true;
+            }
+        });
 
-            default:
-                return super.onOptionsItemSelected(item);
-        }
-    }*/
+        settingsImageView.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                startSettingsActivity();
+            }
+        });
+    }
 
     private void startAboutActivity()
     {
