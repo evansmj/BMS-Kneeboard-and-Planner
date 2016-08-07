@@ -3,7 +3,7 @@
 
     <!-- the theme applied to the application or activity -->
     <style name="BlueTheme"
-           parent="android:Theme.Material.Light.NoActionBar">
+           parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:actionBarStyle">@style/BlueActionBar</item>
         <!-- Support library compatibility -->
         <item name="actionBarStyle">@style/BlueActionBar</item>

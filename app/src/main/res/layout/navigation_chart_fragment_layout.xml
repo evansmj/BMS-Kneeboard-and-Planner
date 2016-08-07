@@ -1,36 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent">
+<android.support.v4.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/aegean_navigation_select_button"
-        android:text="@string/aegean_theater_title"
-        android:visibility="gone"
-        android:layout_gravity="center_horizontal"/>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent"
+                  android:orientation="vertical">
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/balkans"
-        android:id="@+id/battle_for_balkans_navigation_select_button"
-        android:layout_gravity="center_horizontal"/>
+        <Button
+            android:id="@+id/aegean_navigation_select_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/aegean_theater_title"
+            android:visibility="gone"/>
 
-    <Button
-        android:id="@+id/korea_navigation_select_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/korea_theater_title"
-        android:layout_gravity="center_horizontal"/>
+        <Button
+            android:id="@+id/battle_for_balkans_navigation_select_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/balkans"/>
 
-    <Button
-        android:id="@+id/korea_interactive_map_select_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/korea_interactive_map"
-        android:layout_gravity="center_horizontal"/>
+        <Button
+            android:id="@+id/korea_navigation_select_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/korea_theater_title"/>
 
-</LinearLayout>
+        <Button
+            android:id="@+id/korea_interactive_map_select_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/korea_interactive_map"/>
+
+    </LinearLayout>
+</android.support.v4.widget.NestedScrollView>
