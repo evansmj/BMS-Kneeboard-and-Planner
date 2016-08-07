@@ -13,3 +13,7 @@ allprojects {
         jcenter()
     }
 }
+
+ext {
+    supportLibVersion = '24.1.1'
+}
