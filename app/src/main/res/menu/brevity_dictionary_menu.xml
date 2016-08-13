@@ -6,6 +6,6 @@
           android:title="@string/menu_search"
           android:showAsAction="always"
           bms:showAsAction="always"
-          android:actionViewClass="android.widget.SearchView" />
+          bms:actionViewClass="android.support.v7.widget.SearchView" />
 
 </menu>

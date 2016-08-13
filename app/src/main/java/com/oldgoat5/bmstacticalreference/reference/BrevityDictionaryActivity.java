@@ -1,15 +1,15 @@
 package com.oldgoat5.bmstacticalreference.reference;
 
-import android.app.Activity;
 import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.widget.ListView;
-import android.widget.SearchView;
 import android.widget.Toast;
 
 import com.oldgoat5.bmstacticalreference.R;
@@ -24,7 +24,7 @@ import java.util.ArrayList;
  * @author Michael Evans
  * @since 5/11/2015
  *********************************************************************/
-public class BrevityDictionaryActivity extends Activity
+public class BrevityDictionaryActivity extends AppCompatActivity
 {
     // http://fas.org/man/dod-101/usaf/docs/mcm3-1-a1.htm
 
@@ -32,6 +32,7 @@ public class BrevityDictionaryActivity extends Activity
     private BrevityDictionaryTable database;
     private DictionaryItemAdapter adapter;
     private ListView listView;
+    private Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -42,7 +43,9 @@ public class BrevityDictionaryActivity extends Activity
         database = new BrevityDictionaryTable(this);
         listView = (ListView) findViewById(R.id.brevity_dictionary_list_view);
         rowsArrayList = new ArrayList<WordDefinitionObject>();
+        toolbar = (Toolbar) findViewById(R.id.brevity_dictionary_tool_bar);
 
+        setSupportActionBar(toolbar);
         generateAllRows();
 
         handleIntent(getIntent());
@@ -59,7 +62,8 @@ public class BrevityDictionaryActivity extends Activity
         inflater.inflate(R.menu.brevity_dictionary_menu, menu);
 
         SearchManager manager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
-        SearchView searchView = (SearchView) menu.findItem(R.id.search).getActionView();
+        android.support.v7.widget.SearchView searchView = (android.support.v7.widget.SearchView)
+                menu.findItem(R.id.search).getActionView();
 
         searchView.setSearchableInfo(manager.getSearchableInfo(getComponentName()));
         searchView.setIconifiedByDefault(true);

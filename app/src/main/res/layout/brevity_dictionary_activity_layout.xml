@@ -4,11 +4,12 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent">
 
-    <include
-        android:id="@+id/brevity_dictionary_activity_toolbar"
-        layout="@layout/view_brevity_dictionary_activity_toolbar"
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/brevity_dictionary_tool_bar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="?attr/actionBarSize"
+        style="@style/BlueActionbar">
+    </android.support.v7.widget.Toolbar>
 
     <ListView
         android:layout_width="match_parent"
