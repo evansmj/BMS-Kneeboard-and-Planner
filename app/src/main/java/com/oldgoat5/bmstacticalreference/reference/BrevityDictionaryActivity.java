@@ -5,10 +5,12 @@ import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -45,6 +47,7 @@ public class BrevityDictionaryActivity extends AppCompatActivity
         rowsArrayList = new ArrayList<WordDefinitionObject>();
         toolbar = (Toolbar) findViewById(R.id.brevity_dictionary_tool_bar);
 
+        toolbar.setTitleTextColor(ContextCompat.getColor(getApplicationContext(), R.color.silver));
         setSupportActionBar(toolbar);
         generateAllRows();
 
@@ -67,6 +70,11 @@ public class BrevityDictionaryActivity extends AppCompatActivity
 
         searchView.setSearchableInfo(manager.getSearchableInfo(getComponentName()));
         searchView.setIconifiedByDefault(true);
+
+        ((EditText) searchView.findViewById(android.support.v7.appcompat.R.id.search_src_text))
+                .setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.silver));
+        ((EditText)searchView.findViewById(android.support.v7.appcompat.R.id.search_src_text))
+                .setHintTextColor(ContextCompat.getColor(getApplicationContext(), R.color.silver));
 
         return true;
     }
