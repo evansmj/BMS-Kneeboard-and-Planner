@@ -7,26 +7,12 @@
         <item name="android:actionBarStyle">@style/BlueActionBar</item>
         <!-- Support library compatibility -->
         <item name="actionBarStyle">@style/BlueActionBar</item>
+        <item name="android:statusBarColor">@color/status_bar_color</item>
     </style>
-    <!-- ActionBar styles -->
-    <style name="BlueActionBar"
-           parent="android:Widget.Holo.Light.ActionBar">
+    <!-- Tool bar -->
+    <style name="BlueActionbar"
+           parent="android:Widget.Material.Toolbar">
         <item name="android:background">@color/dark_blue</item>
-        <item name="android:titleTextStyle">@style/BlueTheme.BlueActionBar.TitleTextStyle</item>
-        <!-- Support library compatibility -->
-        <item name="background">@color/dark_blue</item>
-        <item name="titleTextStyle">@style/BlueTheme.BlueActionBar.TitleTextStyle</item>
-    </style>
-    <!-- TitleTextStyle for MyActionBar -->
-    <style name="BlueTheme.BlueActionBar.TitleTextStyle"
-           parent="@android:style/TextAppearance">
-        <item name="android:textColor">@color/silver</item>
-        <item name="android:textSize">15sp</item>
-        <item name="android:textStyle">bold</item>
-        <!-- Support library compatibility-->
-        <item name="textColor">@color/silver</item>
-        <item name="textSize">15sp</item>
-        <!--item name="typeFace">bold</item-->
     </style>
 
     <!-- Dark Red -->

@@ -5,9 +5,8 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageView;
 
 import com.oldgoat5.bmstacticalreference.tools.slidingtabs.PagerItem;
 import com.oldgoat5.bmstacticalreference.tools.slidingtabs.SlidingTabLayout;
@@ -23,6 +22,8 @@ public class MainActivity extends FragmentActivity
     int totalDrag;
 
     private ArrayList<PagerItem> tabsList;
+    private ImageView settingsImageView;
+    private ImageView aboutImageView;
     private MainFragmentPageAdapter fragmentPageAdapter;
     private SlidingTabLayout slidingTabLayout;
     private ViewPager viewPager;
@@ -32,8 +33,6 @@ public class MainActivity extends FragmentActivity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        //Log.d("MainActivity", "begin onCreate()");
 
         tabsList = new ArrayList<PagerItem>();
 
@@ -72,33 +71,32 @@ public class MainActivity extends FragmentActivity
                 return tabsList.get(position).getDividerColor();
             }
         });
+
+        setListeners();
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu)
+    private void setListeners()
     {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.main_activity_actions, menu);
+        aboutImageView = (ImageView) findViewById(R.id.about_icon);
+        settingsImageView = (ImageView) findViewById(R.id.settings_icon);
 
-        return super.onCreateOptionsMenu(menu);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item)
-    {
-        switch (item.getItemId())
+        aboutImageView.setOnClickListener(new View.OnClickListener()
         {
-            case R.id.action_settings:
-                startSettingsActivity();
-                return true;
-
-            case R.id.action_about:
+            @Override
+            public void onClick(View v)
+            {
                 startAboutActivity();
-                return true;
+            }
+        });
 
-            default:
-                return super.onOptionsItemSelected(item);
-        }
+        settingsImageView.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                startSettingsActivity();
+            }
+        });
     }
 
     private void startAboutActivity()

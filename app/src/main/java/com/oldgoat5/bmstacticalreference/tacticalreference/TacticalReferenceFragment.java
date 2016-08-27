@@ -4,6 +4,7 @@ import android.app.Dialog;
 import android.content.Context;
 import android.database.sqlite.SQLiteException;
 import android.os.Bundle;
+import android.support.design.widget.AppBarLayout;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -41,6 +42,7 @@ public class TacticalReferenceFragment extends Fragment
 
     private enum DialogViewType {NONE, WEAPON, SURFACE, STORE};
 
+    private AppBarLayout appBarLayout;
     private DBTools dbTools;
     private Dialog listDialog;
     private DialogViewType dialogViewType;
@@ -48,7 +50,6 @@ public class TacticalReferenceFragment extends Fragment
     private ArrayAdapter<String> referenceTypeArrayAdapter;
     private ArrayAdapter<String> surfaceTypeArrayAdapter;
     private ArrayAdapter<String> weaponTypeArrayAdapter;
-    //private ListItemAdapter databaseAdapter;
     private ListView listView;
     private Spinner loadTypeSpinner;
     private Spinner referenceTypeSpinner;
@@ -74,6 +75,8 @@ public class TacticalReferenceFragment extends Fragment
         {
             CONTEXT = getActivity();
         }
+
+        appBarLayout = (AppBarLayout) getActivity().findViewById(R.id.app_bar_layout);
 
         loadTypeTextView = (TextView) view.findViewById(R.id.load_type_text_view);
         surfaceTypeTextView = (TextView) view.findViewById(R.id.surface_type_text_view);
@@ -354,6 +357,15 @@ public class TacticalReferenceFragment extends Fragment
         //listView.setAdapter(databaseAdapter);
 
         return view;
+    }
+
+    @Override
+    public void setUserVisibleHint(boolean visible)
+    {
+        if (visible && appBarLayout != null)
+        {
+            appBarLayout.setExpanded(false, true);
+        }
     }
     
     /*****************************************************************

@@ -134,15 +134,11 @@ public class LoadCardFragment extends Fragment
         view = inflater.inflate(
                 R.layout.loadcard_fragment_layout, container, false);
 
-        //Log.d("LoadCardFragment", "on Create View()");
-
         instantiateResources();
         setListeners();
         loadDataCard();
         dataCardTextSize = getSelectedCardSize();
         changeTextAppearance(dataCardTextSize);
-
-        //Log.d("LoadCardFragment", "onCreate() dataTextSize = " + dataCardTextSize);
 
         return view;
     }
@@ -152,11 +148,8 @@ public class LoadCardFragment extends Fragment
     {
         super.onResume();
 
-        //Log.d("LoadCardFragment", "on Resume()");
-        //Log.d("LoadCardFragment", "on Resume() dataCardTextSize = " + dataCardTextSize);
         loadDataCard();
         changeTextAppearance(dataCardTextSize);
-        //Log.d("LoadCardFragment", "on Resume end textSize = " + dataCardTextSize);
     }
 
     @Override
@@ -164,8 +157,6 @@ public class LoadCardFragment extends Fragment
     {
         super.onPause();
 
-        //Log.d("LoadCardFragment", "on Pause()");
-        //Log.d("LoadCardFragment", "on Pause() dataCardTextSize = " + dataCardTextSize);
         saveDataCard();
     }
 

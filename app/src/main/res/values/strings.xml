@@ -2,6 +2,7 @@
 <resources>
 
     <string name="app_name">BMS Kneeboard and Mission Planner</string>
+    <string name="app_name_short">BMS Kneeboard</string>
     <string name="settings_title">Settings</string>
     <string name="about_title">About</string>
 
