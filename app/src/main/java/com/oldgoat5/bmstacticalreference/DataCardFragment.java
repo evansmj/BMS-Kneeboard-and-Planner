@@ -73,7 +73,10 @@ public class DataCardFragment extends Fragment
     private EditText flightWing4IdmEditText;
     private EditText flightWing4TcnEditText;
     private EditText flightJokerEditText;
-    private EditText flightNotesEditText;
+    private EditText flightLeadWpnCodeEditText;
+    private EditText flightWing2WpnCodeEditText;
+    private EditText flightElementWpnCodeEditText;
+    private EditText flightWing4WpnCodeEditText;
     private EditText packageEditText;
     private EditText package1NameEditText;
     private EditText package1UhfEditText;
@@ -308,7 +311,14 @@ public class DataCardFragment extends Fragment
         flightWing4IdmEditText = (EditText) view.findViewById(R.id.data_card_wing4_idm_edit_text);
         flightWing4TcnEditText = (EditText) view.findViewById(R.id.data_card_wing4_tcn_edit_text);
 
-        flightNotesEditText = (EditText) view.findViewById(R.id.data_card_flight_notes_edit_text);
+        flightLeadWpnCodeEditText = (EditText)
+                view.findViewById(R.id.data_card_flight_lead_wpn_code_edit_text);
+        flightWing2WpnCodeEditText = (EditText)
+                view.findViewById(R.id.data_card_flight_2_wpn_code_edit_text);
+        flightElementWpnCodeEditText = (EditText)
+                view.findViewById(R.id.data_card_flight_element_wpn_code_edit_text);
+        flightWing4WpnCodeEditText = (EditText)
+                view.findViewById(R.id.data_card_flight_4_wpn_code_edit_text);
 
         //package section
         package1NameEditText = (EditText) view.findViewById(R.id.data_card_package1_edit_text);
@@ -437,7 +447,10 @@ public class DataCardFragment extends Fragment
         flightWing4IdmEditText.setText(dataCardSharedPref.getString("wing4_idm", ""));
         flightWing4TcnEditText.setText(dataCardSharedPref.getString("wing4_tcn", ""));
 
-        flightNotesEditText.setText(dataCardSharedPref.getString("flight_notes", ""));
+        flightLeadWpnCodeEditText.setText(dataCardSharedPref.getString("lead_wpn_code", ""));
+        flightWing2WpnCodeEditText.setText(dataCardSharedPref.getString("wing2_wpn_code", ""));
+        flightElementWpnCodeEditText.setText(dataCardSharedPref.getString("element_wpn_code", ""));
+        flightWing4WpnCodeEditText.setText(dataCardSharedPref.getString("wing4_wpn_code", ""));
 
         //package section
         package1NameEditText.setText(dataCardSharedPref.getString("package1_name", ""));
@@ -550,7 +563,10 @@ public class DataCardFragment extends Fragment
         editor.putString("wing4_idm", flightWing4IdmEditText.getText().toString());
         editor.putString("wing4_tcn", flightWing4TcnEditText.getText().toString());
 
-        editor.putString("flight_notes", flightNotesEditText.getText().toString());
+        editor.putString("lead_wpn_code", flightLeadWpnCodeEditText.getText().toString());
+        editor.putString("wing2_wpn_code", flightWing2WpnCodeEditText.getText().toString());
+        editor.putString("element_wpn_code", flightElementWpnCodeEditText.getText().toString());
+        editor.putString("wing4_wpn_code", flightWing4WpnCodeEditText.getText().toString());
 
         //package section
         editor.putString("package1_name", package1NameEditText.getText().toString());

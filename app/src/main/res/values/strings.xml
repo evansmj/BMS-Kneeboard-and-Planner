@@ -123,6 +123,7 @@
     <string name="clear_data">Clear Data</string>
     <string name="weapon">Weapon</string>
     <string name="laser_code">Lsr Code</string>
+    <string name="weapon_code">Wpn Code</string>
 
     <!-- Navigation Activity -->
     <string name="aegean_theater_title">Aegean Theater of Operations</string>
