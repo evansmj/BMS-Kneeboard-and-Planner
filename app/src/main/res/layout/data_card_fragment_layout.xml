@@ -859,7 +859,7 @@
             android:background="@drawable/card_dark_background"
             android:textAppearance="?android:textAppearanceMedium"
             android:text="@string/agency_label"
-            android:layout_below="@id/data_card_package5_edit_text"
+            android:layout_below="@+id/data_card_weapon_cbu_pattern_width_label_text_view"
             android:layout_alignLeft="@id/data_card_pos_label_text_view"
             android:layout_alignRight="@id/data_card_pos_label_text_view"/>
 
@@ -871,7 +871,7 @@
             android:background="@drawable/card_dark_background"
             android:textAppearance="?android:textAppearanceMedium"
             android:text="@string/callsign_label"
-            android:layout_below="@id/data_card_package5_edit_text"
+            android:layout_below="@+id/data_card_weapon_cbu_pattern_width_label_text_view"
             android:layout_alignLeft="@id/data_card_name_label_text_view"
             android:layout_alignRight="@id/data_card_name_label_text_view"/>
 
@@ -903,7 +903,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/data_card_support_station_time_label_text_view"
-            android:layout_below="@id/data_card_package5_idm_edit_text"
+            android:layout_below="@+id/data_card_weapon_cbu_pattern_width_label_text_view"
             android:padding="3dp"
             android:background="@drawable/card_dark_background"
             android:text="@string/station_time"
@@ -1036,7 +1036,7 @@
             android:layout_height="150dp"
             android:background="@drawable/card_dark_background"
             android:id="@+id/data_card_navigation_home_plate_button"
-            android:layout_below="@id/data_card_flight_tanker_label_text_view"
+            android:layout_below="@id/data_card_package5_edit_text"
             android:layout_alignLeft="@id/data_card_flight_tanker_label_text_view"
             android:layout_alignRight="@id/data_card_name_label_text_view"
             android:text="@string/navigation_home_plate_template"/>
@@ -1047,7 +1047,7 @@
             android:background="@drawable/card_dark_background"
             android:id="@+id/data_card_navigation_alternate_button"
             android:text="@string/navigation_alternate_template"
-            android:layout_below="@id/data_card_flight_tanker_label_text_view"
+            android:layout_below="@id/data_card_package5_edit_text"
             android:layout_alignLeft="@id/data_card_idm_label_text_view"
             android:layout_alignRight="@id/data_card_package_tasking_label_text_view"/>
 
@@ -1060,7 +1060,7 @@
             android:padding="3dp"
             android:text="@string/navigation"
             android:background="@drawable/card_dark_background"
-            android:layout_below="@id/data_card_flight_tanker_label_text_view"
+            android:layout_below="@id/data_card_package5_edit_text"
             android:layout_alignBottom="@id/data_card_navigation_home_plate_button"/>
 
         <TextView
@@ -1417,7 +1417,7 @@
             android:padding="3dp"
             android:text="@string/support"
             android:background="@drawable/card_dark_background"
-            android:layout_below="@id/data_card_package5_edit_text"
+            android:layout_below="@+id/data_card_weapon_cbu_pattern_width_label_text_view"
             android:layout_alignBottom="@id/data_card_flight_tanker_label_text_view"/>
 
         <com.oldgoat5.bmstacticalreference.tools.views.VerticalTextView
@@ -1949,9 +1949,30 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/data_card_clear_button"
-            android:layout_below="@id/data_card_weapon_cbu_pattern_width_label_text_view"
+            android:layout_below="@+id/data_card_notes_edit_text"
             android:layout_centerHorizontal="true"
             android:text="@string/clear_data"/>
+
+        <TextView
+            android:id="@+id/data_card_notes_label_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/notes"
+            android:layout_below="@id/data_card_flight_tanker_label_text_view"
+            android:background="@drawable/card_dark_background"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:padding="3dp"/>
+
+        <EditText
+            android:id="@+id/data_card_notes_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            style="@style/Card.EditText.Style"
+            android:layout_below="@id/data_card_notes_label_text_view"
+            android:padding="3dp"
+            android:scrollbars="vertical"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:inputType="textNoSuggestions|textMultiLine"/>
 
     </RelativeLayout>
 </android.support.v4.widget.NestedScrollView>
