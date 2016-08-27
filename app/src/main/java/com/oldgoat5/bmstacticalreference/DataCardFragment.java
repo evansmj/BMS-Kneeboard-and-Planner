@@ -30,7 +30,7 @@ import java.util.HashMap;
  *
  * @author Michael Evans
  ********************************************************************/
-public class LoadCardFragment extends Fragment
+public class DataCardFragment extends Fragment
 {
     private final String DATA_CARD_NAME = "DataCard";
     private final String SETTINGS_NAME = "Settings";
@@ -189,12 +189,12 @@ public class LoadCardFragment extends Fragment
     private void changeTextAppearance(int size)
     {
         View child = ((ViewGroup)view).getChildAt(0);
-        ////Log.d("LoadCardFragment", child.toString());
+        ////Log.d("DataCardFragment", child.toString());
 
         for (int i = 0; i < ((ViewGroup)child).getChildCount(); i++)
         {
             View grandchild = ((ViewGroup)child).getChildAt(i);
-            ////Log.d("LoadCardFragment", grandchild.toString());
+            ////Log.d("DataCardFragment", grandchild.toString());
             //if there is text view or edit text, change textappearance size.
 
             if (grandchild.toString().contains("text_view"))
@@ -212,7 +212,7 @@ public class LoadCardFragment extends Fragment
 
             if (grandchild.toString().contains("data_card_package_uhf_vhf_relative_layout"))
             {
-                ////Log.d("LoadCardFragment", "grandchild.tostring() = " + grandchild.toString());
+                ////Log.d("DataCardFragment", "grandchild.tostring() = " + grandchild.toString());
 
                 for (int x = 0; x < ((ViewGroup)grandchild).getChildCount(); x++)
                 {
@@ -631,11 +631,11 @@ public class LoadCardFragment extends Fragment
             public void onClick(View view)
             {
                 dataCardTextSize = getSelectedCardSize();
-                //Log.d("LoadCardFragment", "start button, dataCardTextSize = " + dataCardTextSize);
+                //Log.d("DataCardFragment", "start button, dataCardTextSize = " + dataCardTextSize);
 
                 dataCardSharedPref.edit().clear().apply();
                 loadDataCard();
-                //Log.d("LoadCardFragment", "end button, dataCardTextSize = " + dataCardTextSize);
+                //Log.d("DataCardFragment", "end button, dataCardTextSize = " + dataCardTextSize);
             }
         });
 
