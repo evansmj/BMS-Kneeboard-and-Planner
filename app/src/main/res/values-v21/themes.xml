@@ -7,7 +7,7 @@
         <item name="android:actionBarStyle">@style/BlueActionBar</item>
         <!-- Support library compatibility -->
         <item name="actionBarStyle">@style/BlueActionBar</item>
-        <item name="android:statusBarColor">@color/tab_blue</item>
+        <item name="android:statusBarColor">@color/status_bar_color</item>
     </style>
     <!-- Tool bar -->
     <style name="BlueActionbar"
