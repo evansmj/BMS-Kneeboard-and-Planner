@@ -132,7 +132,7 @@ public class DataCardFragment extends Fragment
             Bundle savedInstanceState)
     {
         view = inflater.inflate(
-                R.layout.loadcard_fragment_layout, container, false);
+                R.layout.data_card_fragment_layout, container, false);
 
         instantiateResources();
         setListeners();
