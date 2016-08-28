@@ -1,9 +1,10 @@
 package com.oldgoat5.bmstacticalreference.reference;
 
-import android.app.Activity;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
@@ -24,7 +25,7 @@ import com.oldgoat5.bmstacticalreference.tools.intdefs.IntDefs;
  * @author Michael Evans
  * @since 5/21/2015
  *********************************************************************/
-public class FuelCalculatorActivity extends Activity
+public class FuelCalculatorActivity extends AppCompatActivity
 {
     private Button saveToDataCardButton;
     private EditText homeAltEditText;
@@ -35,6 +36,7 @@ public class FuelCalculatorActivity extends Activity
     private TextView bingoFuelResultTextView;
     private TextView jokerFuelResultTextView;
     private TextView savedStatusTextView;
+    private Toolbar toolbar;
 
     private int homeAltMiles;
     private int returnLegMiles;
@@ -261,6 +263,10 @@ public class FuelCalculatorActivity extends Activity
 
     private void instantiateResources()
     {
+        toolbar = (Toolbar) findViewById(R.id.fuel_calculator_tool_bar);
+        toolbar.setTitleTextColor(ContextCompat.getColor(getApplicationContext(), R.color.silver));
+        setSupportActionBar(toolbar);
+
         saveToDataCardButton = (Button) findViewById(R.id.fuel_calculator_save_results_button);
 
         homeAltEditText = (EditText) findViewById(R.id.distance_to_alternate_edit_text);
