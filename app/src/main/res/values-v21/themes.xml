@@ -8,6 +8,7 @@
         <!-- Support library compatibility -->
         <item name="actionBarStyle">@style/BlueActionBar</item>
         <item name="android:statusBarColor">@color/status_bar_color</item>
+        <item name="android:dialogTheme">@style/CustomDialog</item>
     </style>
     <!-- Tool bar -->
     <style name="BlueActionbar"

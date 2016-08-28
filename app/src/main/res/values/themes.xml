@@ -7,6 +7,7 @@
         <item name="android:actionBarStyle">@style/BlueActionBar</item>
         <!-- Support library compatibility -->
         <item name="actionBarStyle">@style/BlueActionBar</item>
+        <item name="android:dialogTheme">@style/CustomDialog</item>
     </style>
     <!-- ActionBar styles -->
     <style name="BlueActionBar"

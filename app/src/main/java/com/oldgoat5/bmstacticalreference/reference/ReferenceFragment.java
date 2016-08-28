@@ -8,6 +8,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.Button;
 
 import com.oldgoat5.bmstacticalreference.R;
@@ -80,6 +81,8 @@ public class ReferenceFragment extends Fragment
                 dialog.setContentView(R.layout.carrier_frequencies_dialog_layout);
                 dialog.setTitle("Carrier Frequencies");
                 dialog.show();
+                dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                        WindowManager.LayoutParams.WRAP_CONTENT);
             }
         });
 
@@ -91,6 +94,8 @@ public class ReferenceFragment extends Fragment
                 dialog.setContentView(R.layout.default_frequencies_view);
                 dialog.setTitle("Default Frequencies");
                 dialog.show();
+                dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                        WindowManager.LayoutParams.WRAP_CONTENT);
             }
         });
 
@@ -110,6 +115,8 @@ public class ReferenceFragment extends Fragment
             {
                 dialog.setContentView(R.layout.navigation_steerpoints_view);
                 dialog.setTitle(R.string.steerpoints);
+                dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                        WindowManager.LayoutParams.WRAP_CONTENT);
                 dialog.show();
             }
         });
@@ -131,6 +138,8 @@ public class ReferenceFragment extends Fragment
                 tacanIlsCheckListImageView.setImageResource(R.drawable.tacan_ils_checklist);
                 dialog.setContentView(tacanIlsCheckListImageView);
                 dialog.setTitle("Tacan ILS Checklist");
+                dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                        WindowManager.LayoutParams.WRAP_CONTENT);
                 dialog.show();
             }
         });
