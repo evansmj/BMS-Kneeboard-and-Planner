@@ -18,6 +18,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.oldgoat5.bmstacticalreference.DataCardFragment;
 import com.oldgoat5.bmstacticalreference.R;
 import com.oldgoat5.bmstacticalreference.tools.database.DBTools;
 
@@ -903,7 +904,8 @@ public class LevelBombMissionPlannerParametersFragment extends Fragment
         if (inputIsValid())
         {
             //put all values to data card ?: cluster/stick
-            SharedPreferences dataCard = getActivity().getSharedPreferences("DataCard", 0);
+            SharedPreferences dataCard = getActivity().getSharedPreferences(
+                    DataCardFragment.DATA_CARD_NAME, 0);
             SharedPreferences.Editor editor = dataCard.edit();
 
             if (isCluster)

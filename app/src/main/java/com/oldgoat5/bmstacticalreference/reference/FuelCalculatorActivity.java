@@ -14,6 +14,7 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.oldgoat5.bmstacticalreference.DataCardFragment;
 import com.oldgoat5.bmstacticalreference.R;
 import com.oldgoat5.bmstacticalreference.tools.intdefs.IntDefs;
 
@@ -289,7 +290,7 @@ public class FuelCalculatorActivity extends AppCompatActivity
     {
         try
         {
-            SharedPreferences dataCard = getSharedPreferences("DataCard", 0);
+            SharedPreferences dataCard = getSharedPreferences(DataCardFragment.DATA_CARD_NAME, 0);
             SharedPreferences.Editor editor = dataCard.edit();
 
             editor.putString("joker", jokerFuelResultTextView.getText().toString());

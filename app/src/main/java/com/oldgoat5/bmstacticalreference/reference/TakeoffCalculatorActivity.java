@@ -14,6 +14,7 @@ import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
+import com.oldgoat5.bmstacticalreference.DataCardFragment;
 import com.oldgoat5.bmstacticalreference.R;
 
 import org.apache.commons.math3.analysis.interpolation.SplineInterpolator;
@@ -198,7 +199,8 @@ public class TakeoffCalculatorActivity extends AppCompatActivity
                 //check if valid
                 if (selectedGrossWeight != 0)
                 {
-                    SharedPreferences dataCardSharedPref = getSharedPreferences("DataCard", 0);
+                    SharedPreferences dataCardSharedPref = getSharedPreferences(
+                            DataCardFragment.DATA_CARD_NAME, 0);
                     SharedPreferences.Editor editor = dataCardSharedPref.edit();
 
                     editor.putString("aircraft_rotate", rotateResultTextView.getText().toString());

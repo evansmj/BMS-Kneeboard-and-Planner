@@ -902,11 +902,11 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/data_card_support_station_time_label_text_view"
+            android:id="@+id/data_card_support_notes_label_text_view"
             android:layout_below="@+id/data_card_weapon_cbu_pattern_width_label_text_view"
             android:padding="3dp"
             android:background="@drawable/card_dark_background"
-            android:text="@string/station_time"
+            android:text="@string/notes"
             android:textAppearance="?android:textAppearanceMedium"
             android:layout_alignLeft="@id/data_card_idm_label_text_view"
             android:layout_alignRight="@id/data_card_package_tasking_label_text_view"/>
@@ -918,9 +918,9 @@
             style="@style/Card.EditText.Style"
             android:padding="3dp"
             android:inputType="textNoSuggestions"
-            android:layout_below="@id/data_card_support_station_time_label_text_view"
+            android:layout_below="@id/data_card_support_notes_label_text_view"
             android:textAppearance="?android:textAppearanceMedium"
-            android:layout_alignLeft="@id/data_card_support_station_time_label_text_view"
+            android:layout_alignLeft="@id/data_card_support_notes_label_text_view"
             android:layout_alignParentRight="true"/>
 
         <TextView
@@ -956,7 +956,7 @@
             android:inputType="textNoSuggestions"
             android:textAppearance="?android:textAppearanceMedium"
             android:layout_below="@id/data_card_flight_awacs_tos_edit_text"
-            android:layout_alignLeft="@id/data_card_support_station_time_label_text_view"
+            android:layout_alignLeft="@id/data_card_support_notes_label_text_view"
             android:layout_alignParentRight="true"/>
 
         <TextView
@@ -992,7 +992,7 @@
             android:inputType="textNoSuggestions"
             android:textAppearance="?android:textAppearanceMedium"
             android:layout_below="@id/data_card_flight_jstars_tos_edit_text"
-            android:layout_alignLeft="@id/data_card_support_station_time_label_text_view"
+            android:layout_alignLeft="@id/data_card_support_notes_label_text_view"
             android:layout_alignParentRight="true"/>
 
         <TextView
@@ -1028,7 +1028,7 @@
             android:layout_below="@id/data_card_flight_fac_tos_edit_text"
             android:textAppearance="?android:textAppearanceMedium"
             android:padding="3dp"
-            android:layout_alignLeft="@id/data_card_support_station_time_label_text_view"
+            android:layout_alignLeft="@id/data_card_support_notes_label_text_view"
             android:layout_alignParentRight="true"/>
 
         <Button

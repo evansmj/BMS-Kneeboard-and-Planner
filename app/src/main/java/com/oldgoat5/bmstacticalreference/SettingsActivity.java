@@ -15,8 +15,6 @@ import android.widget.RadioGroup;
  *********************************************************************/
 public class SettingsActivity extends Activity
 {
-    private final String SETTINGS_NAME = "Settings";
-
     private Button applyButton;
     private RadioGroup cardRadioGroup;
     private SharedPreferences settingsSharedPref;
@@ -30,13 +28,11 @@ public class SettingsActivity extends Activity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.settings_activity_layout);
 
-        settingsSharedPref = getApplicationContext().getSharedPreferences(SETTINGS_NAME, 0);
+        settingsSharedPref = getApplicationContext().getSharedPreferences(
+                DataCardFragment.SETTINGS_NAME, 0);
 
-        //dataCardPref = getApplicationContext().getSharedPreferences("DataCard", 0);
         selectedCardSize = settingsSharedPref.getInt("card_size",
                 android.R.style.TextAppearance_Medium);
-
-        //Log.d("SettingsActivity", "onCreate Text Size = " + selectedCardSize);
 
         instantiateResources();
         checkRadioButton();
@@ -48,20 +44,14 @@ public class SettingsActivity extends Activity
     {
         super.onResume();
 
-        //Log.d("SettingsActivity", "onResume() text size = " + selectedCardSize);
-
         selectedCardSize = settingsSharedPref.getInt("card_size",
                 android.R.style.TextAppearance_Medium);
 
         checkRadioButton();
-
-        //Log.d("SettingsActivity", "onResume() end size = " + selectedCardSize);
     }
 
     private void checkRadioButton()
     {
-        //Log.d("SettingsActivity", "check radio button card size = " + selectedCardSize);
-
         switch(selectedCardSize)
         {
             case android.R.style.TextAppearance_Small:
@@ -91,8 +81,6 @@ public class SettingsActivity extends Activity
             @Override
             public void onClick(View view)
             {
-                //Log.d("SettingsActivity", "apply onclick textsize = " + selectedCardSize);
-
                 settingsSharedPref.edit().putInt("card_size", selectedCardSize).apply();
 
                 finish();
@@ -118,8 +106,6 @@ public class SettingsActivity extends Activity
                         selectedCardSize = android.R.style.TextAppearance_Large;
                         break;
                 }
-
-                //Log.d("SettingsActivity", "onCheckedChange textSize " + selectedCardSize);
             }
         });
     }

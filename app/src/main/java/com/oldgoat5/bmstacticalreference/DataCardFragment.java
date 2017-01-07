@@ -32,8 +32,8 @@ import java.util.HashMap;
  ********************************************************************/
 public class DataCardFragment extends Fragment
 {
-    private final String DATA_CARD_NAME = "DataCard";
-    private final String SETTINGS_NAME = "Settings";
+    public static final String DATA_CARD_NAME = "DataCard";
+    public static final String SETTINGS_NAME = "Settings";
 
     private Button clearDataButton;
     private Button homePlateButton;
