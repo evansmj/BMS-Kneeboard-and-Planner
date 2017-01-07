@@ -5,6 +5,7 @@
            parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:actionBarStyle">@style/BlueActionBar</item>
         <item name="actionBarStyle">@style/BlueActionBar</item>
+        <item name="android:dialogTheme">@style/CustomDialog</item>
     </style>
     <style name="BlueActionBar"
            parent="android:Widget.Holo.Light.ActionBar">

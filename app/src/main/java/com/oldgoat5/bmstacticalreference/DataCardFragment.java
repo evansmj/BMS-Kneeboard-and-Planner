@@ -30,7 +30,7 @@ import java.util.HashMap;
  *
  * @author Michael Evans
  ********************************************************************/
-public class LoadCardFragment extends Fragment
+public class DataCardFragment extends Fragment
 {
     private final String DATA_CARD_NAME = "DataCard";
     private final String SETTINGS_NAME = "Settings";
@@ -73,7 +73,11 @@ public class LoadCardFragment extends Fragment
     private EditText flightWing4IdmEditText;
     private EditText flightWing4TcnEditText;
     private EditText flightJokerEditText;
-    private EditText flightNotesEditText;
+    private EditText flightLeadWpnCodeEditText;
+    private EditText flightWing2WpnCodeEditText;
+    private EditText flightElementWpnCodeEditText;
+    private EditText flightWing4WpnCodeEditText;
+    private EditText notesEditText;
     private EditText packageEditText;
     private EditText package1NameEditText;
     private EditText package1UhfEditText;
@@ -132,7 +136,7 @@ public class LoadCardFragment extends Fragment
             Bundle savedInstanceState)
     {
         view = inflater.inflate(
-                R.layout.loadcard_fragment_layout, container, false);
+                R.layout.data_card_fragment_layout, container, false);
 
         instantiateResources();
         setListeners();
@@ -189,12 +193,12 @@ public class LoadCardFragment extends Fragment
     private void changeTextAppearance(int size)
     {
         View child = ((ViewGroup)view).getChildAt(0);
-        ////Log.d("LoadCardFragment", child.toString());
+        ////Log.d("DataCardFragment", child.toString());
 
         for (int i = 0; i < ((ViewGroup)child).getChildCount(); i++)
         {
             View grandchild = ((ViewGroup)child).getChildAt(i);
-            ////Log.d("LoadCardFragment", grandchild.toString());
+            ////Log.d("DataCardFragment", grandchild.toString());
             //if there is text view or edit text, change textappearance size.
 
             if (grandchild.toString().contains("text_view"))
@@ -212,7 +216,7 @@ public class LoadCardFragment extends Fragment
 
             if (grandchild.toString().contains("data_card_package_uhf_vhf_relative_layout"))
             {
-                ////Log.d("LoadCardFragment", "grandchild.tostring() = " + grandchild.toString());
+                ////Log.d("DataCardFragment", "grandchild.tostring() = " + grandchild.toString());
 
                 for (int x = 0; x < ((ViewGroup)grandchild).getChildCount(); x++)
                 {
@@ -308,7 +312,17 @@ public class LoadCardFragment extends Fragment
         flightWing4IdmEditText = (EditText) view.findViewById(R.id.data_card_wing4_idm_edit_text);
         flightWing4TcnEditText = (EditText) view.findViewById(R.id.data_card_wing4_tcn_edit_text);
 
-        flightNotesEditText = (EditText) view.findViewById(R.id.data_card_flight_notes_edit_text);
+        flightLeadWpnCodeEditText = (EditText)
+                view.findViewById(R.id.data_card_flight_lead_wpn_code_edit_text);
+        flightWing2WpnCodeEditText = (EditText)
+                view.findViewById(R.id.data_card_flight_2_wpn_code_edit_text);
+        flightElementWpnCodeEditText = (EditText)
+                view.findViewById(R.id.data_card_flight_element_wpn_code_edit_text);
+        flightWing4WpnCodeEditText = (EditText)
+                view.findViewById(R.id.data_card_flight_4_wpn_code_edit_text);
+
+        //notes
+        notesEditText = (EditText) view.findViewById(R.id.data_card_notes_edit_text);
 
         //package section
         package1NameEditText = (EditText) view.findViewById(R.id.data_card_package1_edit_text);
@@ -437,7 +451,13 @@ public class LoadCardFragment extends Fragment
         flightWing4IdmEditText.setText(dataCardSharedPref.getString("wing4_idm", ""));
         flightWing4TcnEditText.setText(dataCardSharedPref.getString("wing4_tcn", ""));
 
-        flightNotesEditText.setText(dataCardSharedPref.getString("flight_notes", ""));
+        flightLeadWpnCodeEditText.setText(dataCardSharedPref.getString("lead_wpn_code", ""));
+        flightWing2WpnCodeEditText.setText(dataCardSharedPref.getString("wing2_wpn_code", ""));
+        flightElementWpnCodeEditText.setText(dataCardSharedPref.getString("element_wpn_code", ""));
+        flightWing4WpnCodeEditText.setText(dataCardSharedPref.getString("wing4_wpn_code", ""));
+
+        //notes
+        notesEditText.setText(dataCardSharedPref.getString("notes", ""));
 
         //package section
         package1NameEditText.setText(dataCardSharedPref.getString("package1_name", ""));
@@ -550,7 +570,13 @@ public class LoadCardFragment extends Fragment
         editor.putString("wing4_idm", flightWing4IdmEditText.getText().toString());
         editor.putString("wing4_tcn", flightWing4TcnEditText.getText().toString());
 
-        editor.putString("flight_notes", flightNotesEditText.getText().toString());
+        editor.putString("lead_wpn_code", flightLeadWpnCodeEditText.getText().toString());
+        editor.putString("wing2_wpn_code", flightWing2WpnCodeEditText.getText().toString());
+        editor.putString("element_wpn_code", flightElementWpnCodeEditText.getText().toString());
+        editor.putString("wing4_wpn_code", flightWing4WpnCodeEditText.getText().toString());
+
+        //notes
+        editor.putString("notes", notesEditText.getText().toString());
 
         //package section
         editor.putString("package1_name", package1NameEditText.getText().toString());
@@ -631,11 +657,11 @@ public class LoadCardFragment extends Fragment
             public void onClick(View view)
             {
                 dataCardTextSize = getSelectedCardSize();
-                //Log.d("LoadCardFragment", "start button, dataCardTextSize = " + dataCardTextSize);
+                //Log.d("DataCardFragment", "start button, dataCardTextSize = " + dataCardTextSize);
 
                 dataCardSharedPref.edit().clear().apply();
                 loadDataCard();
-                //Log.d("LoadCardFragment", "end button, dataCardTextSize = " + dataCardTextSize);
+                //Log.d("DataCardFragment", "end button, dataCardTextSize = " + dataCardTextSize);
             }
         });
 
