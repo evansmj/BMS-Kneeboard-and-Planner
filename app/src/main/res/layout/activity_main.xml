@@ -24,11 +24,10 @@
 
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar_widget"
-            style="@style/BlueActionbar"
+            style="@style/BlueActionBar"
             xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:theme="@style/BlueActionbar"
             app:layout_collapseMode="pin"
             app:layout_scrollFlags="scroll|enterAlwaysCollapsed" >
 

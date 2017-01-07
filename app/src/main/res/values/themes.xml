@@ -1,29 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <!-- the theme applied to the application or activity -->
     <style name="BlueTheme"
            parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:actionBarStyle">@style/BlueActionBar</item>
-        <!-- Support library compatibility -->
         <item name="actionBarStyle">@style/BlueActionBar</item>
     </style>
-    <!-- ActionBar styles -->
     <style name="BlueActionBar"
            parent="android:Widget.Holo.Light.ActionBar">
         <item name="android:background">@color/dark_blue</item>
         <item name="android:titleTextStyle">@style/BlueTheme.BlueActionBar.TitleTextStyle</item>
-        <!-- Support library compatibility -->
         <item name="background">@color/dark_blue</item>
         <item name="titleTextStyle">@style/BlueTheme.BlueActionBar.TitleTextStyle</item>
     </style>
-    <!-- TitleTextStyle for MyActionBar -->
     <style name="BlueTheme.BlueActionBar.TitleTextStyle"
            parent="@android:style/TextAppearance">
         <item name="android:textColor">@color/silver</item>
         <item name="android:textSize">15sp</item>
         <item name="android:textStyle">bold</item>
-        <!-- Support library compatibility-->
         <item name="textColor">@color/silver</item>
         <item name="textSize">15sp</item>
         <!--item name="typeFace">bold</item-->

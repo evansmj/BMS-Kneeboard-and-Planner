@@ -15,5 +15,5 @@ allprojects {
 }
 
 ext {
-    supportLibVersion = '24.1.1'
+    supportLibVersion = '25.1.0'
 }

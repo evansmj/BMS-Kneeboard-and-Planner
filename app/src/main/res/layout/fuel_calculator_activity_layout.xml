@@ -7,7 +7,7 @@
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/fuel_calculator_tool_bar"
-        style="@style/BlueActionbar"
+        style="@style/BlueActionBar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize">
     </android.support.v7.widget.Toolbar>
