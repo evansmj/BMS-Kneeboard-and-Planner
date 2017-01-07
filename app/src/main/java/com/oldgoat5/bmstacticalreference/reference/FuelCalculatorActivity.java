@@ -36,7 +36,6 @@ public class FuelCalculatorActivity extends AppCompatActivity
     private TextView bingoFuelResultTextView;
     private TextView jokerFuelResultTextView;
     private TextView savedStatusTextView;
-    private Toolbar toolbar;
 
     private int homeAltMiles;
     private int returnLegMiles;
@@ -263,7 +262,7 @@ public class FuelCalculatorActivity extends AppCompatActivity
 
     private void instantiateResources()
     {
-        toolbar = (Toolbar) findViewById(R.id.fuel_calculator_tool_bar);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.fuel_calculator_tool_bar);
         toolbar.setTitleTextColor(ContextCompat.getColor(getApplicationContext(), R.color.silver));
         setSupportActionBar(toolbar);
 

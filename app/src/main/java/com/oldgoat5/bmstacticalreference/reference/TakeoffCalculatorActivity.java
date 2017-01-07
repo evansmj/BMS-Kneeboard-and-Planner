@@ -1,10 +1,11 @@
 package com.oldgoat5.bmstacticalreference.reference;
 
-import android.app.Activity;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
@@ -25,7 +26,7 @@ import org.apache.commons.math3.exception.OutOfRangeException;
  * @author Michael Evans
  * @since 1/12/2016
  ********************************************************************/
-public class TakeoffCalculatorActivity extends Activity
+public class TakeoffCalculatorActivity extends AppCompatActivity
 {
     private final double[] GROSS_WEIGHT_X = {17900, 18400, 19000, 20100, 20700, 21300, 21800, 22400,
         22900 ,23500, 24100, 24600, 25300, 25900, 26500, 27200, 27500, 28400, 29000, 29600, 30400,
@@ -118,6 +119,10 @@ public class TakeoffCalculatorActivity extends Activity
      *****************************************************************/
     private void instantiateResources()
     {
+        Toolbar toolbar = (Toolbar) findViewById(R.id.takeoff_calculator_tool_bar);
+        toolbar.setTitleTextColor(ContextCompat.getColor(getApplicationContext(), R.color.silver));
+        setSupportActionBar(toolbar);
+
         interpolator = new SplineInterpolator();
         takeoffSpeedFunction = interpolator.interpolate(GROSS_WEIGHT_X, TAKEOFF_SPEED_Y);
         selectedPowerSetting = PowerSettingEnum.MAXAB;
