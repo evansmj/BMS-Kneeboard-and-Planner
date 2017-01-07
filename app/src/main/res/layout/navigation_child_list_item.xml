@@ -7,6 +7,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="@color/black"
         android:id="@+id/navigation_child_list_item_name_text_view"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
