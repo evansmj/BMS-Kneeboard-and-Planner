@@ -245,8 +245,10 @@ public class DataCardFragment extends Fragment
         homePlateButton = (Button) view.findViewById(R.id.data_card_navigation_home_plate_button);
         alternateButton = (Button) view.findViewById(R.id.data_card_navigation_alternate_button);
 
-        dataCardSharedPref = getActivity().getSharedPreferences(DATA_CARD_NAME, 0);
-        settingsSharedPref = getActivity().getSharedPreferences(SETTINGS_NAME, 0);
+        dataCardSharedPref = getActivity().getSharedPreferences(
+                DATA_CARD_NAME, Context.MODE_PRIVATE);
+        settingsSharedPref = getActivity().getSharedPreferences(
+                SETTINGS_NAME, Context.MODE_PRIVATE);
 
         deliveryApproachCourseEditText = (EditText) view.findViewById(
                 R.id.data_card_delivery_approach_course_edit_text);
