@@ -17,6 +17,8 @@ import com.oldgoat5.bmstacticalreference.R;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import static com.oldgoat5.bmstacticalreference.DataCardFragment.DATA_CARD_NAME;
+
 /*********************************************************************
  * Copyright © Michael Evans - All Rights Reserved.
  *
@@ -27,8 +29,6 @@ import java.util.HashMap;
  *********************************************************************/
 public class NavigationChartsExpandableListAdapter extends BaseExpandableListAdapter
 {
-    private final String DATA_CARD_NAME = "DataCard";
-
     private Context context;
     private ArrayList<String> airbases;
     private HashMap<String, ArrayList<NavigationChartsTuple<String, Integer>>> airbaseCharts;
@@ -52,7 +52,7 @@ public class NavigationChartsExpandableListAdapter extends BaseExpandableListAda
         this.airbaseCharts = airbaseChartHashMap;
         this.country = country;
 
-        dataCardSharedPref = context.getSharedPreferences(DATA_CARD_NAME, 0);
+        dataCardSharedPref = context.getSharedPreferences(DATA_CARD_NAME, Context.MODE_PRIVATE);
     }
 
     /*****************************************************************

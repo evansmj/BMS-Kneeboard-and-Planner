@@ -61,7 +61,6 @@ public class TacticalReferenceFragment extends Fragment
     private TextView weaponTypeTextView;
     private ThreatListItemAdapter threatAdapter;
     private WeaponUseListItemAdapter weaponAdapter;
-    private View listDialogView;
     private View view;
 
     @Override

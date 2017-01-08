@@ -1,11 +1,13 @@
 package com.oldgoat5.bmstacticalreference;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 
 import com.oldgoat5.bmstacticalreference.tools.slidingtabs.PagerItem;
@@ -23,7 +25,7 @@ public class MainActivity extends FragmentActivity
 
     private ArrayList<PagerItem> tabsList;
     private ImageView settingsImageView;
-    private ImageView aboutImageView;
+    private ImageView uploadImageView;
     private MainFragmentPageAdapter fragmentPageAdapter;
     private SlidingTabLayout slidingTabLayout;
     private ViewPager viewPager;
@@ -77,32 +79,26 @@ public class MainActivity extends FragmentActivity
 
     private void setListeners()
     {
-        aboutImageView = (ImageView) findViewById(R.id.about_icon);
         settingsImageView = (ImageView) findViewById(R.id.settings_icon);
+        uploadImageView = (ImageView) findViewById(R.id.upload_icon);
 
-        aboutImageView.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View v)
-            {
-                startAboutActivity();
-            }
-        });
-
-        settingsImageView.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View v)
-            {
-                startSettingsActivity();
-            }
-        });
+        settingsImageView.setOnClickListener(v -> startSettingsActivity());
+        uploadImageView.setOnClickListener(v -> showUploadChoiceDialog());
     }
 
-    private void startAboutActivity()
+    private void showUploadChoiceDialog()
     {
-        Intent intent = new Intent(getApplicationContext(), AboutActivity.class);
-        startActivity(intent);
+        Dialog dialog = new Dialog(this);
+
+        View dialogView = View.inflate(
+                this, R.layout.data_card_upload_dialog_layout, null);
+
+        Button gallery = (Button) dialogView.findViewById(R.id.data_card_upload_gallery_button);
+        Button camera = (Button) dialogView.findViewById(R.id.data_card_upload_camera_button);
+
+        dialog.setTitle("Select DataCard Upload method");
+        dialog.setContentView(dialogView);
+        dialog.show();
     }
 
     private void startSettingsActivity()

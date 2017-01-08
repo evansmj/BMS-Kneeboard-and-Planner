@@ -5,6 +5,8 @@
     <string name="app_name_short">BMS Kneeboard</string>
     <string name="settings_title">Settings</string>
     <string name="about_title">About</string>
+    <string name="gallery">Gallery</string>
+    <string name="camera">Camera</string>
 
     <!-- Settings Activity -->
     <string name="data_card_size">Data Card Font Size:</string>
