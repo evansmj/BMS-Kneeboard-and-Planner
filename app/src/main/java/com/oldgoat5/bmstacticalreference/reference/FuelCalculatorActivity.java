@@ -14,6 +14,7 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.oldgoat5.bmstacticalreference.DataCardFragment;
 import com.oldgoat5.bmstacticalreference.R;
 import com.oldgoat5.bmstacticalreference.tools.intdefs.IntDefs;
 
@@ -36,7 +37,6 @@ public class FuelCalculatorActivity extends AppCompatActivity
     private TextView bingoFuelResultTextView;
     private TextView jokerFuelResultTextView;
     private TextView savedStatusTextView;
-    private Toolbar toolbar;
 
     private int homeAltMiles;
     private int returnLegMiles;
@@ -263,7 +263,7 @@ public class FuelCalculatorActivity extends AppCompatActivity
 
     private void instantiateResources()
     {
-        toolbar = (Toolbar) findViewById(R.id.fuel_calculator_tool_bar);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.fuel_calculator_tool_bar);
         toolbar.setTitleTextColor(ContextCompat.getColor(getApplicationContext(), R.color.silver));
         setSupportActionBar(toolbar);
 
@@ -290,7 +290,7 @@ public class FuelCalculatorActivity extends AppCompatActivity
     {
         try
         {
-            SharedPreferences dataCard = getSharedPreferences("DataCard", 0);
+            SharedPreferences dataCard = getSharedPreferences(DataCardFragment.DATA_CARD_NAME, 0);
             SharedPreferences.Editor editor = dataCard.edit();
 
             editor.putString("joker", jokerFuelResultTextView.getText().toString());
