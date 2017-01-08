@@ -4,13 +4,13 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.Button;
 
+import com.oldgoat5.bmstacticalreference.ColorFragment;
 import com.oldgoat5.bmstacticalreference.R;
 import com.oldgoat5.bmstacticalreference.tools.views.ZoomImageView;
 
@@ -19,7 +19,7 @@ import com.oldgoat5.bmstacticalreference.tools.views.ZoomImageView;
  *
  * @author Michael Evans
  ********************************************************************/
-public class ReferenceFragment extends Fragment
+public class ReferenceFragment extends ColorFragment
 {
     Context CONTEXT;
 
@@ -145,6 +145,12 @@ public class ReferenceFragment extends Fragment
         });
 
         return view;
+    }
+
+    @Override
+    public int getBackgroundColor()
+    {
+        return R.color.toolbar_yellow;
     }
 
     /*****************************************************************
