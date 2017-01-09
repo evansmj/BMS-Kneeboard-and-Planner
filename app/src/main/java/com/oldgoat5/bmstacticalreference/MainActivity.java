@@ -15,10 +15,8 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ImageView;
-import android.widget.ListView;
+import android.widget.RelativeLayout;
 
 import com.oldgoat5.bmstacticalreference.tools.slidingtabs.PagerItem;
 import com.oldgoat5.bmstacticalreference.tools.slidingtabs.SlidingTabLayout;
@@ -37,10 +35,9 @@ public class MainActivity extends FragmentActivity
     private DrawerLayout drawerLayout;
     private ImageView drawerToggle;
     private ImageView settingsImageView;
-    private ImageView aboutImageView;
-    private ListView drawerListView;
     private ImageView uploadImageView;
     private MainFragmentPageAdapter fragmentPageAdapter;
+    private RelativeLayout drawerChildLayout;
     private SlidingTabLayout slidingTabLayout;
     private ViewPager viewPager;
 
@@ -103,6 +100,10 @@ public class MainActivity extends FragmentActivity
                         positionOffset);
                 toolbarBackground.setColor(blendedToolbar);
                 sliderBackground.setColor(blendedToolbar);
+                if (drawerChildLayout != null)
+                {
+                    drawerChildLayout.setBackgroundColor(blendedToolbar);
+                }
 
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                     Window window = getWindow();
@@ -159,7 +160,7 @@ public class MainActivity extends FragmentActivity
     private void setListeners()
     {
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
-        drawerListView = (ListView) findViewById(R.id.left_drawer);
+        drawerChildLayout = (RelativeLayout) findViewById(R.id.left_drawer);
 
         drawerToggle = (ImageView) findViewById(R.id.drawer_toggle);
         settingsImageView = (ImageView) findViewById(R.id.settings_icon);
@@ -168,18 +169,7 @@ public class MainActivity extends FragmentActivity
         drawerLayout.setScrimColor(
                 ContextCompat.getColor(getApplicationContext(), R.color.steamed_glass));
 
-        drawerListView.setAdapter(new ArrayAdapter<String>(this,
-                android.R.layout.simple_list_item_1));
-        drawerListView.setOnItemClickListener(new DrawerItemClickListener());
-
-        drawerToggle.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View v)
-            {
-                toggleDrawer();
-            }
-        });
+        drawerToggle.setOnClickListener(v -> toggleDrawer());
         settingsImageView.setOnClickListener(v -> startSettingsActivity());
         uploadImageView.setOnClickListener(v -> showUploadChoiceDialog());
     }
@@ -210,12 +200,6 @@ public class MainActivity extends FragmentActivity
         }
     }
 
-    private void startAboutActivity()
-    {
-        Intent intent = new Intent(getApplicationContext(), AboutActivity.class);
-        startActivity(intent);
-    }
-
     private void startSettingsActivity()
     {
         Intent intent = new Intent(getApplicationContext(), SettingsActivity.class);
@@ -229,21 +213,14 @@ public class MainActivity extends FragmentActivity
             return;
         }
 
-        if (drawerLayout.isDrawerVisible(drawerListView))
+        if (drawerLayout.isDrawerVisible(drawerChildLayout))
         {
-            drawerLayout.closeDrawer(drawerListView);
+            drawerLayout.closeDrawer(drawerChildLayout);
         }
         else
         {
-            drawerLayout.openDrawer(drawerListView);
+            drawerLayout.openDrawer(drawerChildLayout);
         }
     }
 
-    private class DrawerItemClickListener implements ListView.OnItemClickListener {
-        @Override
-        public void onItemClick(AdapterView<?> parent, View view, int position, long id)
-        {
-            selectItem(position);
-        }
-    }
 }

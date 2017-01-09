@@ -92,13 +92,13 @@
         </android.support.design.widget.AppBarLayout>
     </android.support.design.widget.CoordinatorLayout>
 
-    <ListView android:id="@+id/left_drawer"
+    <RelativeLayout android:id="@+id/left_drawer"
               android:layout_width="240dp"
               android:layout_height="match_parent"
               android:elevation="2dp"
+              android:background="@color/dark_blue"
               android:paddingTop="?attr/actionBarSize"
               android:layout_gravity="start"
-              android:fitsSystemWindows="true"
               android:choiceMode="singleChoice"
               android:divider="@android:color/transparent"
               android:dividerHeight="0dp"/>
