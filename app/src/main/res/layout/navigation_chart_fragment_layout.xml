@@ -11,6 +11,7 @@
 
         <Button
             android:id="@+id/aegean_navigation_select_button"
+            android:layout_marginTop="4dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
@@ -19,6 +20,7 @@
 
         <Button
             android:id="@+id/battle_for_balkans_navigation_select_button"
+            android:layout_marginTop="4dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
@@ -26,6 +28,7 @@
 
         <Button
             android:id="@+id/korea_navigation_select_button"
+            android:layout_marginTop="4dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
@@ -33,6 +36,7 @@
 
         <Button
             android:id="@+id/korea_interactive_map_select_button"
+            android:layout_marginTop="4dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
