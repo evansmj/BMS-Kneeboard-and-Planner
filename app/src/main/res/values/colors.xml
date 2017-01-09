@@ -17,4 +17,5 @@
     <color name="transparent">#00000000</color>
     <color name="white">#FFFFFF</color>
     <color name="status_bar_color">#2C3F50</color>
+    <color name="steamed_glass">#88ffffff</color>
 </resources>

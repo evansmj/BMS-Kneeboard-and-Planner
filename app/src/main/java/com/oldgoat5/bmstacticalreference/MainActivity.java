@@ -4,9 +4,14 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
+import android.support.v4.widget.DrawerLayout;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.ListView;
 
 import com.oldgoat5.bmstacticalreference.tools.slidingtabs.PagerItem;
 import com.oldgoat5.bmstacticalreference.tools.slidingtabs.SlidingTabLayout;
@@ -22,8 +27,11 @@ public class MainActivity extends FragmentActivity
     int totalDrag;
 
     private ArrayList<PagerItem> tabsList;
+    private DrawerLayout drawerLayout;
+    private ImageView drawerToggle;
     private ImageView settingsImageView;
     private ImageView aboutImageView;
+    private ListView drawerListView;
     private MainFragmentPageAdapter fragmentPageAdapter;
     private SlidingTabLayout slidingTabLayout;
     private ViewPager viewPager;
@@ -34,7 +42,7 @@ public class MainActivity extends FragmentActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        tabsList = new ArrayList<PagerItem>();
+        tabsList = new ArrayList<>();
 
         tabsList.add(new PagerItem("Load Card",
                 getResources().getColor(R.color.silver), Color.GRAY));
@@ -77,8 +85,28 @@ public class MainActivity extends FragmentActivity
 
     private void setListeners()
     {
+        drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawerListView = (ListView) findViewById(R.id.left_drawer);
+
+        drawerToggle = (ImageView) findViewById(R.id.drawer_toggle);
         aboutImageView = (ImageView) findViewById(R.id.about_icon);
         settingsImageView = (ImageView) findViewById(R.id.settings_icon);
+
+        drawerLayout.setScrimColor(
+                ContextCompat.getColor(getApplicationContext(), R.color.steamed_glass));
+
+        drawerListView.setAdapter(new ArrayAdapter<String>(this,
+                android.R.layout.simple_list_item_1));
+        drawerListView.setOnItemClickListener(new DrawerItemClickListener());
+
+        drawerToggle.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                toggleDrawer();
+            }
+        });
 
         aboutImageView.setOnClickListener(new View.OnClickListener()
         {
@@ -99,6 +127,15 @@ public class MainActivity extends FragmentActivity
         });
     }
 
+    private void selectItem(int position) {
+        switch (position) {
+            case 0:
+                break;
+            case 1:
+                break;
+        }
+    }
+
     private void startAboutActivity()
     {
         Intent intent = new Intent(getApplicationContext(), AboutActivity.class);
@@ -109,5 +146,30 @@ public class MainActivity extends FragmentActivity
     {
         Intent intent = new Intent(getApplicationContext(), SettingsActivity.class);
         startActivity(intent);
+    }
+
+    private void toggleDrawer()
+    {
+        if (drawerLayout == null)
+        {
+            return;
+        }
+
+        if (drawerLayout.isDrawerVisible(drawerListView))
+        {
+            drawerLayout.closeDrawer(drawerListView);
+        }
+        else
+        {
+            drawerLayout.openDrawer(drawerListView);
+        }
+    }
+
+    private class DrawerItemClickListener implements ListView.OnItemClickListener {
+        @Override
+        public void onItemClick(AdapterView<?> parent, View view, int position, long id)
+        {
+            selectItem(position);
+        }
     }
 }
