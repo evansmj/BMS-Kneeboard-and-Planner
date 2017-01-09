@@ -19,7 +19,7 @@ android {
     defaultConfig {
         applicationId "com.oldgoat5.bmstacticalreference"
         minSdkVersion 14
-        targetSdkVersion 23
+        targetSdkVersion 23 //Leave this at 23 unless ready to fix interactive map crash on 7.0+
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
 
