@@ -90,6 +90,12 @@ public class NavigationChartsFragment extends ColorFragment
         return R.color.toolbar_brown;
     }
 
+    @Override
+    public int getStatusBarColor()
+    {
+        return R.color.statusbar_brown;
+    }
+
     /*****************************************************************
      * Starts the battle for balkans activity.
      *****************************************************************/

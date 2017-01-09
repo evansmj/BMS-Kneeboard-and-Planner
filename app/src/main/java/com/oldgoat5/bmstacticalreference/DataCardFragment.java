@@ -169,6 +169,12 @@ public class DataCardFragment extends ColorFragment
         return R.color.dark_blue;
     }
 
+    @Override
+    public int getStatusBarColor()
+    {
+        return R.color.statusbar_blue;
+    }
+
     private int getSelectedCardSize()
     {
         int selectedCardSize;

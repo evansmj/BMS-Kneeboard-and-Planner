@@ -56,8 +56,15 @@ public class MissionPlannerFragment extends ColorFragment
     }
 
     @Override
-    public int getBackgroundColor() {
+    public int getBackgroundColor()
+    {
         return R.color.toolbar_green;
+    }
+
+    @Override
+    public int getStatusBarColor()
+    {
+        return R.color.statusbar_green;
     }
 
     private void showLevelBombMissionPlanner()

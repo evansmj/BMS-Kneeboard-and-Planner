@@ -98,6 +98,12 @@ public class MainActivity extends FragmentActivity
                         ContextCompat.getColor(getApplicationContext(), to.getBackgroundColor()),
                         ContextCompat.getColor(getApplicationContext(), from.getBackgroundColor()),
                         positionOffset);
+
+                final int blendedStatusbar = blendColors(
+                        ContextCompat.getColor(getApplicationContext(), to.getStatusBarColor()),
+                        ContextCompat.getColor(getApplicationContext(), from.getStatusBarColor()),
+                        positionOffset);
+
                 toolbarBackground.setColor(blendedToolbar);
                 sliderBackground.setColor(blendedToolbar);
                 if (drawerChildLayout != null)
@@ -108,7 +114,7 @@ public class MainActivity extends FragmentActivity
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                     Window window = getWindow();
                     window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-                    window.setStatusBarColor(blendedToolbar);
+                    window.setStatusBarColor(blendedStatusbar);
                 }
             }
 

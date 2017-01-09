@@ -365,6 +365,12 @@ public class TacticalReferenceFragment extends ColorFragment
     }
 
     @Override
+    public int getStatusBarColor()
+    {
+        return R.color.statusbar_red;
+    }
+
+    @Override
     public void setUserVisibleHint(boolean visible)
     {
         if (visible && appBarLayout != null)

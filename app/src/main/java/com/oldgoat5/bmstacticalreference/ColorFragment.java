@@ -12,4 +12,9 @@ public class ColorFragment extends Fragment
     {
         return R.color.dark_blue;
     }
+
+    public int getStatusBarColor()
+    {
+        return R.color.statusbar_blue;
+    }
 }

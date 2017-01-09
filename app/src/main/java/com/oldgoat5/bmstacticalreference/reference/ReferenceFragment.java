@@ -166,6 +166,12 @@ public class ReferenceFragment extends ColorFragment
         return R.color.toolbar_yellow;
     }
 
+    @Override
+    public int getStatusBarColor()
+    {
+        return R.color.statusbar_yellow;
+    }
+
     /*****************************************************************
      * Starts the brevity dictionary activity.
      *****************************************************************/
