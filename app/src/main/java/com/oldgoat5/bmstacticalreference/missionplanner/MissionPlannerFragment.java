@@ -2,12 +2,12 @@ package com.oldgoat5.bmstacticalreference.missionplanner;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.oldgoat5.bmstacticalreference.ColorFragment;
 import com.oldgoat5.bmstacticalreference.R;
 import com.oldgoat5.bmstacticalreference.missionplanner.level.LevelBombMissionPlannerActivity;
 
@@ -17,7 +17,7 @@ import com.oldgoat5.bmstacticalreference.missionplanner.level.LevelBombMissionPl
  * @author Michael Evans
  * @version 7/17/2015
  *********************************************************************/
-public class MissionPlannerFragment extends Fragment
+public class MissionPlannerFragment extends ColorFragment
 {
     private Button levelBombSelectButton;
     private View view;
@@ -40,6 +40,11 @@ public class MissionPlannerFragment extends Fragment
         });
 
         return view;
+    }
+
+    @Override
+    public int getBackgroundColor() {
+        return R.color.toolbar_green;
     }
 
     private void showLevelBombMissionPlanner()

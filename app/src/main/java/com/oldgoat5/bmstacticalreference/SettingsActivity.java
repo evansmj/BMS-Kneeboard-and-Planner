@@ -1,10 +1,14 @@
 package com.oldgoat5.bmstacticalreference;
 
-import android.app.Activity;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.RadioGroup;
 
 /*********************************************************************
@@ -13,9 +17,10 @@ import android.widget.RadioGroup;
  * @author Michael Evans
  * @since 9/17/2015
  *********************************************************************/
-public class SettingsActivity extends Activity
+public class SettingsActivity extends AppCompatActivity
 {
     private Button applyButton;
+    private ImageView aboutButton;
     private RadioGroup cardRadioGroup;
     private SharedPreferences settingsSharedPref;
 
@@ -70,12 +75,24 @@ public class SettingsActivity extends Activity
 
     private void instantiateResources()
     {
+        aboutButton = (ImageView) findViewById(R.id.about_icon);
         applyButton = (Button) findViewById(R.id.settings_activity_apply_button);
         cardRadioGroup = (RadioGroup) findViewById(R.id.settings_activity_card_size_radio_group);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.settings_activity_toolbar);
+        toolbar.setTitleTextColor(ContextCompat.getColor(getApplicationContext(), R.color.silver));
+        setSupportActionBar(toolbar);
     }
 
     private void setListeners()
     {
+        aboutButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), AboutActivity.class);
+                startActivity(intent);
+            }
+        });
+
         applyButton.setOnClickListener(new View.OnClickListener()
         {
             @Override

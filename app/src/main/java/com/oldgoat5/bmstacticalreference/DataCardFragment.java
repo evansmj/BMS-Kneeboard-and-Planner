@@ -6,7 +6,6 @@ import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -30,7 +29,7 @@ import java.util.HashMap;
  *
  * @author Michael Evans
  ********************************************************************/
-public class DataCardFragment extends Fragment
+public class DataCardFragment extends ColorFragment
 {
     public static final String DATA_CARD_NAME = "DataCard";
     public static final String SETTINGS_NAME = "Settings";
@@ -162,6 +161,12 @@ public class DataCardFragment extends Fragment
         super.onPause();
 
         saveDataCard();
+    }
+
+    @Override
+    public int getBackgroundColor()
+    {
+        return R.color.dark_blue;
     }
 
     private int getSelectedCardSize()
