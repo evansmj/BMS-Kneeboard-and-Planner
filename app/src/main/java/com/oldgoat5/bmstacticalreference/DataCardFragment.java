@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.design.widget.AppBarLayout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -34,6 +35,7 @@ public class DataCardFragment extends ColorFragment
     public static final String DATA_CARD_NAME = "DataCard";
     public static final String SETTINGS_NAME = "Settings";
 
+    private AppBarLayout appBarLayout;
     private Button clearDataButton;
     private Button homePlateButton;
     private Button alternateButton;
@@ -164,6 +166,15 @@ public class DataCardFragment extends ColorFragment
     }
 
     @Override
+    public void setUserVisibleHint(boolean visible)
+    {
+        if (visible && appBarLayout != null)
+        {
+            appBarLayout.setExpanded(true, true);
+        }
+    }
+
+    @Override
     public int getBackgroundColor()
     {
         return R.color.dark_blue;
@@ -252,6 +263,8 @@ public class DataCardFragment extends ColorFragment
 
     private void instantiateResources()
     {
+        appBarLayout = (AppBarLayout) getActivity().findViewById(R.id.app_bar_layout);
+
         clearDataButton = (Button) view.findViewById(R.id.data_card_clear_button);
         homePlateButton = (Button) view.findViewById(R.id.data_card_navigation_home_plate_button);
         alternateButton = (Button) view.findViewById(R.id.data_card_navigation_alternate_button);
