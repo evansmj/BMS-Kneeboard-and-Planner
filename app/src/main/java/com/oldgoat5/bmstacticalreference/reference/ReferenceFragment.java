@@ -4,6 +4,7 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.AppBarLayout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,6 +24,7 @@ public class ReferenceFragment extends ColorFragment
 {
     Context CONTEXT;
 
+    private AppBarLayout appBarLayout;
     private Dialog dialog;
     private Button brevityDictionaryStartButton;
     private Button carrierFrequenciesButton;
@@ -40,6 +42,8 @@ public class ReferenceFragment extends ColorFragment
     {
         view = inflater.inflate(R.layout.reference_fragment_layout,
             container, false);
+
+        appBarLayout = (AppBarLayout) getActivity().findViewById(R.id.app_bar_layout);
 
         brevityDictionaryStartButton = (Button) view.findViewById(
                 R.id.brevity_dictionary_select_button);
@@ -145,6 +149,15 @@ public class ReferenceFragment extends ColorFragment
         });
 
         return view;
+    }
+
+    @Override
+    public void setUserVisibleHint(boolean visible)
+    {
+        if (visible && appBarLayout != null)
+        {
+            appBarLayout.setExpanded(true, true);
+        }
     }
 
     @Override

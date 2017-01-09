@@ -2,6 +2,7 @@ package com.oldgoat5.bmstacticalreference.missionplanner;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.AppBarLayout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,6 +20,7 @@ import com.oldgoat5.bmstacticalreference.missionplanner.level.LevelBombMissionPl
  *********************************************************************/
 public class MissionPlannerFragment extends ColorFragment
 {
+    private AppBarLayout appBarLayout;
     private Button levelBombSelectButton;
     private View view;
 
@@ -27,6 +29,8 @@ public class MissionPlannerFragment extends ColorFragment
     {
         view = inflater.inflate(
                 R.layout.mission_planner_fragment_layout, container, false);
+
+        appBarLayout = (AppBarLayout) getActivity().findViewById(R.id.app_bar_layout);
 
         levelBombSelectButton = (Button) view.findViewById(R.id.level_bomb_select_button);
 
@@ -40,6 +44,15 @@ public class MissionPlannerFragment extends ColorFragment
         });
 
         return view;
+    }
+
+    @Override
+    public void setUserVisibleHint(boolean visible)
+    {
+        if (visible && appBarLayout != null)
+        {
+            appBarLayout.setExpanded(true, true);
+        }
     }
 
     @Override
