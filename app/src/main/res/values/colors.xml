@@ -21,6 +21,8 @@
     <color name="statusbar_yellow">#8d8f1e</color>
     <color name="statusbar_blue">#1e4a80</color>
 
+    <color name="falcon_online_background">#1e1e1e</color>
+
     <color name="silver">#D5DADD</color>
     <color name="tab_blue">#345166</color>
     <color name="text_blue">#417394</color>

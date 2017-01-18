@@ -12,15 +12,25 @@ import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.oldgoat5.bmstacticalreference.tools.slidingtabs.PagerItem;
 import com.oldgoat5.bmstacticalreference.tools.slidingtabs.SlidingTabLayout;
+
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
 
 import java.util.ArrayList;
 
@@ -40,6 +50,7 @@ public class MainActivity extends FragmentActivity
     private ImageView uploadImageView;
     private MainFragmentPageAdapter fragmentPageAdapter;
     private RelativeLayout drawerChildLayout;
+    private RequestQueue requestQueue;
     private SlidingTabLayout slidingTabLayout;
     private ViewPager viewPager;
 
@@ -157,12 +168,58 @@ public class MainActivity extends FragmentActivity
         setListeners();
     }
 
+    @Override
+    public void onStop()
+    {
+        super.onStop();
+        if (requestQueue != null)
+        {
+            requestQueue.cancelAll(this);
+        }
+    }
+
    private int blendColors(int from, int to, float ratio) {
         final float inverseRation = 1f - ratio;
         final float r = Color.red(from) * ratio + Color.red(to) * inverseRation;
         final float g = Color.green(from) * ratio + Color.green(to) * inverseRation;
         final float b = Color.blue(from) * ratio + Color.blue(to) * inverseRation;
         return Color.rgb((int) r, (int) g, (int) b);
+    }
+
+    private void loadFOServerViewer()
+    {
+        //make http request, try and get falcon-online.org html.
+        final String url = "http://www.falcon-online.org/forum";
+        WebView webView = (WebView) findViewById(R.id.left_drawer_web_view);
+        webView.setBackgroundColor(ContextCompat.getColor(getApplicationContext(),
+                R.color.falcon_online_background));
+
+        requestQueue = Volley.newRequestQueue(this);
+        StringRequest request = new StringRequest(Request.Method.GET, url,
+                response -> {
+                    Document dom = Jsoup.parse(response);
+                    Element serverViewDiv = dom.getElementById("sp_block_25");
+                    serverViewDiv.attr("style", "background-color: 1e1e1e");
+
+                    webView.loadData(serverViewDiv.html(), "text/html", "UTF-8");
+
+                    int a = 0;
+                    //just show this in a small webview
+
+                    //get span of Force vs Force Server
+                    //get span of the round
+                    //get span of offline
+
+                    //get span of co-op server
+                    //get span of round
+                    //get span of offline
+
+
+                }, error -> {
+                    Log.e("drawer", "error: " + error);
+                });
+        request.setTag(this);
+        requestQueue.add(request);
     }
 
     private void setListeners()
@@ -200,17 +257,6 @@ public class MainActivity extends FragmentActivity
         dialog.show();
     }
 
-    private void selectItem(int position)
-    {
-        switch (position)
-        {
-            case 0:
-                break;
-            case 1:
-                break;
-        }
-    }
-
     private void startSettingsActivity()
     {
         Intent intent = new Intent(getApplicationContext(), SettingsActivity.class);
@@ -227,6 +273,10 @@ public class MainActivity extends FragmentActivity
         if (drawerLayout.isDrawerVisible(drawerChildLayout))
         {
             drawerLayout.closeDrawer(drawerChildLayout);
+            if (requestQueue != null)
+            {
+                requestQueue.cancelAll(this);
+            }
         }
         else
         {
@@ -235,7 +285,7 @@ public class MainActivity extends FragmentActivity
                 appBarLayout.setExpanded(true, true);
             }
             drawerLayout.openDrawer(drawerChildLayout);
+            loadFOServerViewer();
         }
     }
-
 }
