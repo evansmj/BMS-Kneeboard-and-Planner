@@ -6,6 +6,7 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.design.widget.AppBarLayout;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
@@ -31,6 +32,7 @@ public class MainActivity extends FragmentActivity
     final ColorDrawable toolbarBackground = new ColorDrawable();
     final ColorDrawable sliderBackground = new ColorDrawable();
 
+    private AppBarLayout appBarLayout;
     private ArrayList<PagerItem> tabsList;
     private DrawerLayout drawerLayout;
     private ImageView drawerToggle;
@@ -165,6 +167,8 @@ public class MainActivity extends FragmentActivity
 
     private void setListeners()
     {
+        appBarLayout = (AppBarLayout) findViewById(R.id.app_bar_layout);
+
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawerChildLayout = (RelativeLayout) findViewById(R.id.left_drawer);
 
@@ -176,6 +180,7 @@ public class MainActivity extends FragmentActivity
                 ContextCompat.getColor(getApplicationContext(), R.color.steamed_glass));
 
         drawerToggle.setOnClickListener(v -> toggleDrawer());
+
         settingsImageView.setOnClickListener(v -> startSettingsActivity());
         uploadImageView.setOnClickListener(v -> showUploadChoiceDialog());
     }
@@ -225,6 +230,10 @@ public class MainActivity extends FragmentActivity
         }
         else
         {
+            if (appBarLayout != null)
+            {
+                appBarLayout.setExpanded(true, true);
+            }
             drawerLayout.openDrawer(drawerChildLayout);
         }
     }

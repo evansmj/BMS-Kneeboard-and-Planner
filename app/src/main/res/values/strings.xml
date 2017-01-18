@@ -8,6 +8,9 @@
     <string name="gallery">Gallery</string>
     <string name="camera">Camera</string>
 
+    <!-- Drawer Activity -->
+    <string name="falcon_online">FALCON ONLINE</string>
+
     <!-- Settings Activity -->
     <string name="data_card_size">Data Card Font Size:</string>
     <string name="small">Small</string>

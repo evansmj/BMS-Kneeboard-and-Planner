@@ -94,12 +94,6 @@
         </android.support.design.widget.AppBarLayout>
     </android.support.design.widget.CoordinatorLayout>
 
-    <RelativeLayout android:id="@+id/left_drawer"
-              android:layout_width="240dp"
-              android:layout_height="match_parent"
-              android:elevation="2dp"
-              android:background="@color/dark_blue"
-              android:layout_marginTop="?attr/actionBarSize"
-              android:layout_gravity="start|bottom"/>
+    <include layout="@layout/left_drawer_layout"/>
 
 </android.support.v4.widget.DrawerLayout>
