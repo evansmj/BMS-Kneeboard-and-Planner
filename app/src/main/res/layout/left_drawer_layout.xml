@@ -26,4 +26,13 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/left_drawer_label_text_view"/>
 
+    <TextView
+        android:id="@+id/left_drawer_web_view_error_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/error_message_offline"
+        android:textColor="@color/dark_red"
+        android:visibility="gone"
+        android:background="@color/falcon_online_background"/>
+
 </RelativeLayout>

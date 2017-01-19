@@ -12,7 +12,6 @@ import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -20,6 +19,7 @@ import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -188,35 +188,26 @@ public class MainActivity extends FragmentActivity
 
     private void loadFOServerViewer()
     {
-        //make http request, try and get falcon-online.org html.
         final String url = "http://www.falcon-online.org/forum";
+        TextView errorTextView = (TextView) findViewById(R.id.left_drawer_web_view_error_text_view);
         WebView webView = (WebView) findViewById(R.id.left_drawer_web_view);
         webView.setBackgroundColor(ContextCompat.getColor(getApplicationContext(),
                 R.color.falcon_online_background));
 
         requestQueue = Volley.newRequestQueue(this);
         StringRequest request = new StringRequest(Request.Method.GET, url,
-                response -> {
+                response ->
+                {
+                    webView.setVisibility(View.VISIBLE);
+                    errorTextView.setVisibility(View.GONE);
                     Document dom = Jsoup.parse(response);
                     Element serverViewDiv = dom.getElementById("sp_block_25");
-                    serverViewDiv.attr("style", "background-color: 1e1e1e");
-
                     webView.loadData(serverViewDiv.html(), "text/html", "UTF-8");
-
-                    int a = 0;
-                    //just show this in a small webview
-
-                    //get span of Force vs Force Server
-                    //get span of the round
-                    //get span of offline
-
-                    //get span of co-op server
-                    //get span of round
-                    //get span of offline
-
-
-                }, error -> {
-                    Log.e("drawer", "error: " + error);
+                }, error ->
+                {
+                    webView.setVisibility(View.GONE);
+                    findViewById(R.id.left_drawer_web_view_error_text_view).setVisibility(
+                            View.VISIBLE);
                 });
         request.setTag(this);
         requestQueue.add(request);

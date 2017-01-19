@@ -10,6 +10,7 @@
 
     <!-- Drawer Activity -->
     <string name="falcon_online">FALCON ONLINE</string>
+    <string name="error_message_offline">Connection Error</string>
 
     <!-- Settings Activity -->
     <string name="data_card_size">Data Card Font Size:</string>
