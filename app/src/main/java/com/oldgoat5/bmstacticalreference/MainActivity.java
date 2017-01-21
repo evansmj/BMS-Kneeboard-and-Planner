@@ -2,8 +2,11 @@ package com.oldgoat5.bmstacticalreference;
 
 import android.app.Dialog;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.AppBarLayout;
@@ -32,6 +35,9 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.URL;
 import java.util.ArrayList;
 
 /********************************************************************
@@ -46,6 +52,7 @@ public class MainActivity extends FragmentActivity
     private ArrayList<PagerItem> tabsList;
     private DrawerLayout drawerLayout;
     private ImageView drawerToggle;
+    private ImageView serverImageView;
     private ImageView settingsImageView;
     private ImageView uploadImageView;
     private MainFragmentPageAdapter fragmentPageAdapter;
@@ -53,6 +60,7 @@ public class MainActivity extends FragmentActivity
     private RequestQueue requestQueue;
     private SlidingTabLayout slidingTabLayout;
     private ViewPager viewPager;
+    private WebView serverWebView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -189,28 +197,62 @@ public class MainActivity extends FragmentActivity
     private void loadFOServerViewer()
     {
         final String url = "http://www.falcon-online.org/forum";
+        ImageView serverImageView = (ImageView) findViewById(R.id.left_drawer_image_view);
         TextView errorTextView = (TextView) findViewById(R.id.left_drawer_web_view_error_text_view);
-        WebView webView = (WebView) findViewById(R.id.left_drawer_web_view);
-        webView.setBackgroundColor(ContextCompat.getColor(getApplicationContext(),
+        serverWebView.setBackgroundColor(ContextCompat.getColor(getApplicationContext(),
                 R.color.falcon_online_background));
 
         requestQueue = Volley.newRequestQueue(this);
         StringRequest request = new StringRequest(Request.Method.GET, url,
                 response ->
                 {
-                    webView.setVisibility(View.VISIBLE);
+                    serverWebView.setVisibility(View.VISIBLE);
                     errorTextView.setVisibility(View.GONE);
                     Document dom = Jsoup.parse(response);
                     Element serverViewDiv = dom.getElementById("sp_block_25");
-                    webView.loadData(serverViewDiv.html(), "text/html", "UTF-8");
+                    serverWebView.loadData(serverViewDiv.html(), "text/html", "UTF-8");
+                    downloadServerImage();
                 }, error ->
                 {
-                    webView.setVisibility(View.GONE);
-                    findViewById(R.id.left_drawer_web_view_error_text_view).setVisibility(
-                            View.VISIBLE);
+                    serverWebView.setVisibility(View.GONE);
+                    errorTextView.setVisibility(View.GONE);
+                    serverImageView.setVisibility(View.GONE);
                 });
         request.setTag(this);
         requestQueue.add(request);
+    }
+
+    public void downloadServerImage()
+    {
+        final Bitmap[] serverBitmap = {null};
+
+        new AsyncTask<Void, Void, Void>()
+        {
+            @Override
+            protected Void doInBackground(Void... params)
+            {
+                try
+                {
+                    InputStream is = (InputStream) new URL(
+                            "http://falcon-online.org/server/viewer/wincap.jpg").getContent();
+                    serverBitmap[0] = BitmapFactory.decodeStream(is);
+                } catch (IOException e)
+                {
+                    e.printStackTrace();
+                }
+                return null;
+            }
+
+            @Override
+            protected void onPostExecute(Void result)
+            {
+                if (serverBitmap != null)
+                {
+                    serverImageView.setVisibility(View.VISIBLE);
+                    serverImageView.setImageBitmap(serverBitmap[0]);
+                }
+            }
+        }.execute();
     }
 
     private void setListeners()
@@ -221,11 +263,14 @@ public class MainActivity extends FragmentActivity
         drawerChildLayout = (RelativeLayout) findViewById(R.id.left_drawer);
 
         drawerToggle = (ImageView) findViewById(R.id.drawer_toggle);
+        serverImageView = (ImageView) findViewById(R.id.left_drawer_image_view);
         settingsImageView = (ImageView) findViewById(R.id.settings_icon);
         uploadImageView = (ImageView) findViewById(R.id.upload_icon);
 
         drawerLayout.setScrimColor(
                 ContextCompat.getColor(getApplicationContext(), R.color.steamed_glass));
+
+        serverWebView = (WebView) findViewById(R.id.left_drawer_web_view);
 
         drawerToggle.setOnClickListener(v -> toggleDrawer());
 
@@ -267,6 +312,10 @@ public class MainActivity extends FragmentActivity
             if (requestQueue != null)
             {
                 requestQueue.cancelAll(this);
+                serverWebView.setVisibility(View.GONE);
+                serverImageView.setVisibility(View.GONE);
+                serverWebView.loadUrl("about:blank");
+                serverImageView.setImageBitmap(null);
             }
         }
         else
