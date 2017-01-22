@@ -211,7 +211,25 @@ public class MainActivity extends FragmentActivity
                     Document dom = Jsoup.parse(response);
                     Element serverViewDiv = dom.getElementById("sp_block_25");
                     serverWebView.loadData(serverViewDiv.html(), "text/html", "UTF-8");
-                    downloadServerImage();
+                    String divText = serverViewDiv.html();
+                    int tempIndex = 0;
+                    int offlineCount = 0;
+                    while (tempIndex != -1)
+                    {
+                        tempIndex = divText.indexOf("OFFLINE", tempIndex);
+                        if (tempIndex != -1)
+                        {
+                            offlineCount++;
+                            tempIndex += "OFFLINE".length();
+                        }
+                    }
+                    if (offlineCount < 2)
+                    {
+                        downloadServerImage();
+                    } else
+                    {
+                        serverImageView.setVisibility(View.GONE);
+                    }
                 }, error ->
                 {
                     serverWebView.setVisibility(View.GONE);
@@ -312,11 +330,11 @@ public class MainActivity extends FragmentActivity
             if (requestQueue != null)
             {
                 requestQueue.cancelAll(this);
-                serverWebView.setVisibility(View.GONE);
-                serverImageView.setVisibility(View.GONE);
-                serverWebView.loadUrl("about:blank");
-                serverImageView.setImageBitmap(null);
             }
+            serverWebView.setVisibility(View.GONE);
+            serverImageView.setVisibility(View.GONE);
+            serverWebView.loadUrl("about:blank");
+            serverImageView.setImageBitmap(null);
         }
         else
         {
