@@ -7,14 +7,20 @@
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
                   android:layout_width="match_parent"
                   android:layout_height="match_parent"
+                  android:paddingBottom="16dp"
+                  android:clipToPadding="false"
                   android:orientation="vertical">
 
         <Button
             android:id="@+id/level_bomb_select_button"
-            android:layout_marginTop="4dp"
-            android:layout_width="wrap_content"
+            android:layout_marginTop="20dp"
+            android:padding="3dp"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:background="@drawable/card_dark_background"
             android:layout_gravity="center_horizontal"
+            android:textColor="@color/black"
             android:text="@string/level_bomb_mission_planner"/>
     </LinearLayout>
 </android.support.v4.widget.NestedScrollView>
