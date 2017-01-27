@@ -2,12 +2,13 @@ package com.oldgoat5.bmstacticalreference.navigation;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
+import android.support.design.widget.AppBarLayout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.oldgoat5.bmstacticalreference.ColorFragment;
 import com.oldgoat5.bmstacticalreference.R;
 import com.oldgoat5.bmstacticalreference.navigation.balkans.BattleForBalkansNavigationActivity;
 import com.oldgoat5.bmstacticalreference.navigation.korea.KoreaNavigationActivity;
@@ -21,8 +22,9 @@ import com.oldgoat5.bmstacticalreference.navigation.korea.interactivemap.KoreaIn
  *
  * Contains charts for Korea.
  *********************************************************************/
-public class NavigationChartsFragment extends Fragment
+public class NavigationChartsFragment extends ColorFragment
 {
+    private AppBarLayout appBarLayout;
     private Button battleForBalkansSelectButton;
     private Button koreaInteractiveMapButton;
     private Button koreaSelectButton;
@@ -34,6 +36,8 @@ public class NavigationChartsFragment extends Fragment
     {
         view = inflater.inflate(
                 R.layout.navigation_chart_fragment_layout, container, false);
+
+        appBarLayout = (AppBarLayout) getActivity().findViewById(R.id.app_bar_layout);
 
         battleForBalkansSelectButton = (Button) view.findViewById(
                 R.id.battle_for_balkans_navigation_select_button);
@@ -69,6 +73,27 @@ public class NavigationChartsFragment extends Fragment
         });
 
         return view;
+    }
+
+    @Override
+    public void setUserVisibleHint(boolean visible)
+    {
+        if (visible && appBarLayout != null)
+        {
+            appBarLayout.setExpanded(true, true);
+        }
+    }
+
+    @Override
+    public int getBackgroundColor()
+    {
+        return R.color.toolbar_brown;
+    }
+
+    @Override
+    public int getStatusBarColor()
+    {
+        return R.color.statusbar_brown;
     }
 
     /*****************************************************************

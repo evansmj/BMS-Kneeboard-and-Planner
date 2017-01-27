@@ -7,8 +7,7 @@
     android:focusableInTouchMode="true"
     android:fillViewport="true"
     android:background="@drawable/card_dark_background"
-    android:theme="@style/BlueTheme"
-    >
+    android:theme="@style/BlueTheme">
 
     <!-- Do not support right to left layouts, use inputtype=text to disable wordwrap-->
 
@@ -235,13 +234,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/data_card_flight_blank_top_label_text_view"
-            android:layout_alignParentRight="true"
             android:padding="3dp"
-            android:layout_alignBaseline="@id/data_card_pos_label_text_view"
             android:text="@string/weapon_code"
             android:maxLines="1"
             android:layout_toRightOf="@id/data_card_tcn_label_text_view"
-            android:layout_alignRight="@id/data_card_tcn_label_text_view"
+            android:layout_alignLeft="@id/data_card_flight_blank_top_label_text_view"
+            android:layout_alignRight="@id/data_card_flight_blank_top_label_text_view"
             android:textAppearance="?android:textAppearanceMedium"
             android:background="@drawable/card_dark_background"/>
 

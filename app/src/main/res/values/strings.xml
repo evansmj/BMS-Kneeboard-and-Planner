@@ -5,6 +5,13 @@
     <string name="app_name_short">BMS Kneeboard</string>
     <string name="settings_title">Settings</string>
     <string name="about_title">About</string>
+    <string name="gallery">Gallery</string>
+    <string name="camera">Camera</string>
+
+    <!-- Drawer Activity -->
+    <string name="falcon_online">FALCON ONLINE</string>
+    <string name="force_server_image">Show server image anyway?</string>
+    <string name="error_message_offline">Connection Error</string>
 
     <!-- Settings Activity -->
     <string name="data_card_size">Data Card Font Size:</string>

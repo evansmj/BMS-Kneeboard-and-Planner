@@ -5,7 +5,6 @@ import android.content.Context;
 import android.database.sqlite.SQLiteException;
 import android.os.Bundle;
 import android.support.design.widget.AppBarLayout;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,6 +15,7 @@ import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.oldgoat5.bmstacticalreference.ColorFragment;
 import com.oldgoat5.bmstacticalreference.R;
 import com.oldgoat5.bmstacticalreference.tools.database.DBTools;
 
@@ -30,7 +30,7 @@ import java.util.ArrayList;
  *
  * Allows user to specify F-16CJ load out on selected hard points.  
  *********************************************************************/
-public class TacticalReferenceFragment extends Fragment
+public class TacticalReferenceFragment extends ColorFragment
 {
     private final String[] loadTypeItems = new String[] {"---", "Weapons", "Stores"};
     private final String[] referenceTypeItems = new String[] {"---", "Munitions", "Surface-Air Threats"};
@@ -61,7 +61,6 @@ public class TacticalReferenceFragment extends Fragment
     private TextView weaponTypeTextView;
     private ThreatListItemAdapter threatAdapter;
     private WeaponUseListItemAdapter weaponAdapter;
-    private View listDialogView;
     private View view;
 
     @Override
@@ -357,6 +356,18 @@ public class TacticalReferenceFragment extends Fragment
         //listView.setAdapter(databaseAdapter);
 
         return view;
+    }
+
+    @Override
+    public int getBackgroundColor()
+    {
+        return R.color.toolbar_red;
+    }
+
+    @Override
+    public int getStatusBarColor()
+    {
+        return R.color.statusbar_red;
     }
 
     @Override

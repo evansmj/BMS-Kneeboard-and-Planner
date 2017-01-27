@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="left_drawer_array">
+        <item>FO Server Viewer</item>
+        <item>FO Server Status</item>
+    </array>
+</resources>

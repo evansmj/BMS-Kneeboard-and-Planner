@@ -6,8 +6,23 @@
     <color name="card_yellow">#EEE8AA</color>
     <color name="brown">#B5651D</color>
     <color name="light_blue">#E8F2FE</color>
+
     <color name="medium_blue">#7A99AD</color>
-    <color name="dark_blue">#354d63</color>
+
+    <color name="toolbar_red">#ae1d1d</color>
+    <color name="toolbar_brown">#ba6822</color>
+    <color name="toolbar_green">#55a71b</color>
+    <color name="toolbar_yellow">#b7b71f</color>
+    <color name="dark_blue">#2066a6</color>
+
+    <color name="statusbar_red">#84141b</color>
+    <color name="statusbar_brown">#8c4b1d</color>
+    <color name="statusbar_green">#41831b</color>
+    <color name="statusbar_yellow">#8d8f1e</color>
+    <color name="statusbar_blue">#1e4a80</color>
+
+    <color name="falcon_online_background">#1e1e1e</color>
+
     <color name="silver">#D5DADD</color>
     <color name="tab_blue">#345166</color>
     <color name="text_blue">#417394</color>
@@ -17,4 +32,5 @@
     <color name="transparent">#00000000</color>
     <color name="white">#FFFFFF</color>
     <color name="status_bar_color">#2C3F50</color>
+    <color name="steamed_glass">#88ffffff</color>
 </resources>
