@@ -10,6 +10,7 @@
 
     <!-- Drawer Activity -->
     <string name="falcon_online">FALCON ONLINE</string>
+    <string name="force_server_image">Show server image anyway?</string>
     <string name="error_message_offline">Connection Error</string>
 
     <!-- Settings Activity -->

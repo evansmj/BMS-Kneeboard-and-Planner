@@ -198,10 +198,17 @@ public class MainActivity extends FragmentActivity
     {
         final String url = "http://www.falcon-online.org/forum";
         ImageView serverImageView = (ImageView) findViewById(R.id.left_drawer_image_view);
+        Button forceServerImageButton = (Button)
+                findViewById(R.id.left_drawer_force_server_image_button);
         TextView errorTextView = (TextView) findViewById(R.id.left_drawer_web_view_error_text_view);
         serverWebView.setBackgroundColor(ContextCompat.getColor(getApplicationContext(),
                 R.color.falcon_online_background));
 
+        forceServerImageButton.setOnClickListener(v ->
+        {
+            downloadServerImage();
+            forceServerImageButton.setVisibility(View.GONE);
+        });
         requestQueue = Volley.newRequestQueue(this);
         StringRequest request = new StringRequest(Request.Method.GET, url,
                 response ->
@@ -229,6 +236,7 @@ public class MainActivity extends FragmentActivity
                     } else
                     {
                         serverImageView.setVisibility(View.GONE);
+                        forceServerImageButton.setVisibility(View.VISIBLE);
                     }
                 }, error ->
                 {

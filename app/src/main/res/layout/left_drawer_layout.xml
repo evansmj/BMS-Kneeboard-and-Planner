@@ -30,6 +30,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:clipToPadding="false"
             android:padding="4dp">
 
             <WebView
@@ -46,6 +47,15 @@
                 android:background="@color/falcon_online_background"
                 android:text="@string/error_message_offline"
                 android:textColor="@color/dark_red"
+                android:visibility="gone"/>
+
+            <Button
+                android:id="@+id/left_drawer_force_server_image_button"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/card_dark_background"
+                android:layout_below="@id/left_drawer_web_view"
+                android:text="@string/force_server_image"
                 android:visibility="gone"/>
 
             <ImageView
