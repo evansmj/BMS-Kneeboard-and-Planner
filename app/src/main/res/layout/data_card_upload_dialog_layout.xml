@@ -2,22 +2,31 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:orientation="vertical"
               android:layout_width="wrap_content"
-              android:layout_height="wrap_content">
+              android:layout_height="wrap_content"
+              android:clipToPadding="false"
+              android:padding="32dp">
 
     <Button
         android:id="@+id/data_card_upload_gallery_button"
-        android:layout_width="wrap_content"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        style="?android:attr/buttonStyle"
+        android:background="@drawable/card_dark_background"
+        android:padding="3dp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/black"
         android:text="@string/gallery"/>
 
     <Button
         android:id="@+id/data_card_upload_camera_button"
-        android:layout_width="wrap_content"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        style="?android:attr/buttonStyle"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/card_dark_background"
+        android:padding="3dp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/black"
         android:text="@string/camera"/>
 
 </LinearLayout>

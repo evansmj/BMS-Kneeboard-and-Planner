@@ -314,7 +314,7 @@ public class MainActivity extends FragmentActivity
         Button gallery = (Button) dialogView.findViewById(R.id.data_card_upload_gallery_button);
         Button camera = (Button) dialogView.findViewById(R.id.data_card_upload_camera_button);
 
-        dialog.setTitle("Select DataCard Upload method");
+        dialog.setTitle("Upload a Card...");
         dialog.setContentView(dialogView);
         dialog.show();
     }
