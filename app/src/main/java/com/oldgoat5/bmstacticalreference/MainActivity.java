@@ -241,7 +241,7 @@ public class MainActivity extends FragmentActivity
                 }, error ->
                 {
                     serverWebView.setVisibility(View.GONE);
-                    errorTextView.setVisibility(View.GONE);
+                    errorTextView.setVisibility(View.VISIBLE);
                     serverImageView.setVisibility(View.GONE);
                 });
         request.setTag(this);
