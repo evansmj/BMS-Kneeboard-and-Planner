@@ -2,12 +2,13 @@ package com.oldgoat5.bmstacticalreference.missionplanner;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
+import android.support.design.widget.AppBarLayout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.oldgoat5.bmstacticalreference.ColorFragment;
 import com.oldgoat5.bmstacticalreference.R;
 import com.oldgoat5.bmstacticalreference.missionplanner.level.LevelBombMissionPlannerActivity;
 
@@ -17,8 +18,9 @@ import com.oldgoat5.bmstacticalreference.missionplanner.level.LevelBombMissionPl
  * @author Michael Evans
  * @version 7/17/2015
  *********************************************************************/
-public class MissionPlannerFragment extends Fragment
+public class MissionPlannerFragment extends ColorFragment
 {
+    private AppBarLayout appBarLayout;
     private Button levelBombSelectButton;
     private View view;
 
@@ -27,6 +29,8 @@ public class MissionPlannerFragment extends Fragment
     {
         view = inflater.inflate(
                 R.layout.mission_planner_fragment_layout, container, false);
+
+        appBarLayout = (AppBarLayout) getActivity().findViewById(R.id.app_bar_layout);
 
         levelBombSelectButton = (Button) view.findViewById(R.id.level_bomb_select_button);
 
@@ -40,6 +44,27 @@ public class MissionPlannerFragment extends Fragment
         });
 
         return view;
+    }
+
+    @Override
+    public void setUserVisibleHint(boolean visible)
+    {
+        if (visible && appBarLayout != null)
+        {
+            appBarLayout.setExpanded(true, true);
+        }
+    }
+
+    @Override
+    public int getBackgroundColor()
+    {
+        return R.color.toolbar_green;
+    }
+
+    @Override
+    public int getStatusBarColor()
+    {
+        return R.color.statusbar_green;
     }
 
     private void showLevelBombMissionPlanner()

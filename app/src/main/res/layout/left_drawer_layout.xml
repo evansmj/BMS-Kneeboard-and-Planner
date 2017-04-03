@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@+id/left_drawer"
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="240dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="start|bottom"
+                android:background="@color/toolbar_blue"
+                android:descendantFocusability="beforeDescendants"
+                android:elevation="2dp"
+                android:fitsSystemWindows="false">
+
+    <TextView
+        android:id="@+id/left_drawer_label_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:paddingBottom="8dp"
+        android:paddingTop="8dp"
+        android:text="@string/falcon_online"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/silver"/>
+
+    <ScrollView
+        android:paddingTop="8dp"
+        android:layout_below="@id/left_drawer_label_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:padding="4dp">
+
+            <WebView
+                android:id="@+id/left_drawer_web_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
+                android:layout_alignParentTop="true"/>
+
+            <TextView
+                android:id="@+id/left_drawer_web_view_error_text_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/falcon_online_background"
+                android:text="@string/error_message_offline"
+                android:textColor="@color/dark_red"
+                android:visibility="gone"/>
+
+            <Button
+                android:id="@+id/left_drawer_force_server_image_button"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/card_dark_background"
+                android:layout_below="@id/left_drawer_web_view"
+                android:text="@string/force_server_image"
+                android:visibility="gone"/>
+
+            <ImageView
+                android:id="@+id/left_drawer_image_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY"
+                android:layout_below="@id/left_drawer_web_view"
+                android:contentDescription="@string/falcon_online"/>
+
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>

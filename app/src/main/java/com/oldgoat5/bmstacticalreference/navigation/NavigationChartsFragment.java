@@ -2,16 +2,17 @@ package com.oldgoat5.bmstacticalreference.navigation;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
+import android.support.design.widget.AppBarLayout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.oldgoat5.bmstacticalreference.ColorFragment;
 import com.oldgoat5.bmstacticalreference.R;
-import com.oldgoat5.bmstacticalreference.navigation.aegean.AegeanNavigationActivity;
 import com.oldgoat5.bmstacticalreference.navigation.balkans.BattleForBalkansNavigationActivity;
 import com.oldgoat5.bmstacticalreference.navigation.korea.KoreaNavigationActivity;
+import com.oldgoat5.bmstacticalreference.navigation.korea.interactivemap.KoreaInteractiveMapActivity;
 
 /*********************************************************************
  * Copyright © Michael Evans - All Rights Reserved.
@@ -21,10 +22,11 @@ import com.oldgoat5.bmstacticalreference.navigation.korea.KoreaNavigationActivit
  *
  * Contains charts for Korea.
  *********************************************************************/
-public class NavigationChartsFragment extends Fragment
+public class NavigationChartsFragment extends ColorFragment
 {
-    private Button aegeanSelectButton;
+    private AppBarLayout appBarLayout;
     private Button battleForBalkansSelectButton;
+    private Button koreaInteractiveMapButton;
     private Button koreaSelectButton;
     private View view;
 
@@ -35,21 +37,13 @@ public class NavigationChartsFragment extends Fragment
         view = inflater.inflate(
                 R.layout.navigation_chart_fragment_layout, container, false);
 
-        //Log.d("NavChartsFragment", "inside onCreateView()");
+        appBarLayout = (AppBarLayout) getActivity().findViewById(R.id.app_bar_layout);
 
-        aegeanSelectButton = (Button) view.findViewById(R.id.aegean_navigation_select_button);
         battleForBalkansSelectButton = (Button) view.findViewById(
                 R.id.battle_for_balkans_navigation_select_button);
         koreaSelectButton = (Button) view.findViewById(R.id.korea_navigation_select_button);
-
-        aegeanSelectButton.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View view)
-            {
-                showAegeanNavigation();
-            }
-        });
+        koreaInteractiveMapButton = (Button) view.findViewById(
+                R.id.korea_interactive_map_select_button);
 
         battleForBalkansSelectButton.setOnClickListener(new View.OnClickListener()
         {
@@ -69,13 +63,37 @@ public class NavigationChartsFragment extends Fragment
             }
         });
 
+        koreaInteractiveMapButton.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                showKoreaInteractiveMap();
+            }
+        });
+
         return view;
     }
 
-    private void showAegeanNavigation()
+    @Override
+    public void setUserVisibleHint(boolean visible)
     {
-        Intent intent = new Intent(getActivity(), AegeanNavigationActivity.class);
-        startActivity(intent);
+        if (visible && appBarLayout != null)
+        {
+            appBarLayout.setExpanded(true, true);
+        }
+    }
+
+    @Override
+    public int getBackgroundColor()
+    {
+        return R.color.toolbar_brown;
+    }
+
+    @Override
+    public int getStatusBarColor()
+    {
+        return R.color.statusbar_brown;
     }
 
     /*****************************************************************
@@ -93,6 +111,15 @@ public class NavigationChartsFragment extends Fragment
     private void showKoreaNavigation()
     {
         Intent intent = new Intent(getActivity(), KoreaNavigationActivity.class);
+        startActivity(intent);
+    }
+
+    /*****************************************************************
+     * Starts the korea interactive map activity.
+     *****************************************************************/
+    private void showKoreaInteractiveMap()
+    {
+        Intent intent = new Intent(getActivity(), KoreaInteractiveMapActivity.class);
         startActivity(intent);
     }
 }

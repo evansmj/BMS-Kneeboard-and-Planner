@@ -1,13 +1,25 @@
 apply plugin: 'com.android.application'
+apply plugin: 'me.tatarka.retrolambda'
+
+buildscript {
+    repositories {
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+    }
+    dependencies {
+        classpath "net.ltgt.gradle:gradle-apt-plugin:0.9"
+    }
+}
 
 android {
     compileSdkVersion 23
-    buildToolsVersion "21.1.2"
+    buildToolsVersion "25.0.2"
 
     defaultConfig {
         applicationId "com.oldgoat5.bmstacticalreference"
         minSdkVersion 14
-        targetSdkVersion 23
+        targetSdkVersion 23 //Leave this at 23 unless ready to fix interactive map crash on 7.0+
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
 
@@ -17,16 +29,22 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
         }
     }
+
+    compileOptions {
+        targetCompatibility 1.8
+        sourceCompatibility 1.8
+    }
 }
 
 dependencies {
-    compile 'com.android.support:support-v4:23.1.0'
-    compile 'com.android.support:appcompat-v7:23.1.0'
+    compile "com.android.support:support-v4:${supportLibVersion}"
+    compile "com.android.support:appcompat-v7:${supportLibVersion}"
+    compile "com.android.support:design:${supportLibVersion}"
+    compile "com.android.support:support-annotations:${supportLibVersion}"
+    compile "com.android.support:percent:${supportLibVersion}"
+    compile "com.android.volley:volley:1.0.0"
+    compile "org.jsoup:jsoup:1.7.3"
     compile files('libs/commons-math3-3.5.jar')
     testCompile 'junit:junit:4.12'
-    compile 'com.android.support:support-annotations:23.1.0'
-    androidTestCompile 'com.android.support:support-annotations:23.1.0'
-    androidTestCompile 'com.android.support.test:runner:0.4.1'
-    androidTestCompile 'com.android.support.test:rules:0.4.1'
-    //androidTestCompile 'com.android.support.test.espresso:espresso-core:2.2.1'
+    androidTestCompile "com.android.support:support-annotations:${supportLibVersion}"
 }

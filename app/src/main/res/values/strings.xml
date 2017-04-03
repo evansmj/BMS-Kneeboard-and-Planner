@@ -2,8 +2,16 @@
 <resources>
 
     <string name="app_name">BMS Kneeboard and Mission Planner</string>
+    <string name="app_name_short">BMS Kneeboard</string>
     <string name="settings_title">Settings</string>
     <string name="about_title">About</string>
+    <string name="gallery">Gallery</string>
+    <string name="camera">Camera</string>
+
+    <!-- Drawer Activity -->
+    <string name="falcon_online">FALCON ONLINE</string>
+    <string name="force_server_image">Show server image anyway?</string>
+    <string name="error_message_offline">Connection Error</string>
 
     <!-- Settings Activity -->
     <string name="data_card_size">Data Card Font Size:</string>
@@ -122,11 +130,15 @@
     <string name="clear_data">Clear Data</string>
     <string name="weapon">Weapon</string>
     <string name="laser_code">Lsr Code</string>
+    <string name="weapon_code">Wpn Code</string>
 
     <!-- Navigation Activity -->
     <string name="aegean_theater_title">Aegean Theater of Operations</string>
-    <string name="balkans">Balkan Theater of Operation</string>
+    <string name="balkans">Balkan Theater of Operations</string>
     <string name="korea_theater_title">Korean Theater of Operations</string>
+    <string name="korea_interactive_map">Korea Interactive Map</string>
+
+
     <string name="china">China</string>
     <string name="china_fragment_title">Chinese Bases - Korean Theater of Operations</string>
     <string name="japan">Japan</string>
@@ -155,7 +167,7 @@
     <string name="trip_nm_text_view">Return Leg</string>
     <string name="nautical_miles">(Nautical Miles)</string>
     <string name="distance_to_alternate">Home to Alternate</string>
-    <string name="altitude">Altitude</string>
+    <string name="altitude">Altitude:</string>
     <string name="low_level">Low Alt (&lt; 5,000ft)</string>
     <string name="med_level">Med Alt</string>
     <string name="hi_level">Hi Alt (&gt; 25,000ft)</string>
@@ -163,9 +175,9 @@
     <string name="bingo">Bingo: </string>
     <string name="total">Trip Fuel Burn</string>
     <string name="result">Result</string>
-    <string name="weather">Weather</string>
-    <string name="vmc">Visual Meteorological Conditions</string>
-    <string name="imc">Instrument Meteorological Conditions</string>
+    <string name="weather">Weather:</string>
+    <string name="vmc">VMC</string>
+    <string name="imc">IMC</string>
     <string name="joker_offset">Joker Offset</string>
 
     <!-- Reference Fragment -->
@@ -344,7 +356,7 @@
 
     <!-- Takeoff speed calculator-->
     <string name="takeoff_calculator">Takeoff Calculator</string>
-    <string name="rotate_colon">Rotate:</string>
+    <string name="rotate_colon">Rotate 10°:</string>
     <string name="takeoff_colon">Takeoff:</string>
     <string name="select_to_power">Takeoff Power</string>
     <string name="max_ab">Max AB</string>
@@ -352,6 +364,14 @@
     <string name="gross_weight">Gross Weight</string>
     <string name="takeoff_speed_result">%d KCAS</string>
     <string name="weight_limit_description">(Enter weight between 17,900 and 48,000)</string>
+    <string name="configuration">Configuration:</string>
+    <string name="all_drag_indexes">All drag indexes</string>
+    <string name="cg_35_mac">CG = 35% MAC</string>
+    <string name="zero_roll_trim">Zero roll trim</string>
+    <string name="conditions">Conditions:</string>
+    <string name="all_altitudes">All altitudes</string>
+    <string name="all_temperatures">All temperatures</string>
+    <string name="degree_10_pitch_attitude">10 degrees pitch attitude</string>
 
     <!-- Tactical Reference -->
     <string name="surface_type">Threat Type</string>

@@ -1,8 +1,10 @@
 package com.oldgoat5.bmstacticalreference.reference;
 
-import android.app.Activity;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
@@ -12,7 +14,9 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.oldgoat5.bmstacticalreference.DataCardFragment;
 import com.oldgoat5.bmstacticalreference.R;
+import com.oldgoat5.bmstacticalreference.tools.intdefs.IntDefs;
 
 /*********************************************************************
  * Copyright © Michael Evans - All Rights Reserved.
@@ -22,7 +26,7 @@ import com.oldgoat5.bmstacticalreference.R;
  * @author Michael Evans
  * @since 5/21/2015
  *********************************************************************/
-public class FuelCalculatorActivity extends Activity
+public class FuelCalculatorActivity extends AppCompatActivity
 {
     private Button saveToDataCardButton;
     private EditText homeAltEditText;
@@ -69,9 +73,6 @@ public class FuelCalculatorActivity extends Activity
             @Override
             public void afterTextChanged(Editable editable)
             {
-                //Log.d("fuelcalc", "homeAlt.changed");
-                //Log.d("fuelCAlc", "homealt = " + editable.toString());
-
                 if (editable.toString().length() > 0)
                 {
                     try
@@ -134,8 +135,6 @@ public class FuelCalculatorActivity extends Activity
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i)
             {
-                //Log.d("fuelCalc", "radioG.changed");
-                //Log.d("fuelCalc", "i = " + Integer.toString(i));
                 switch (i)
                 {
                     case R.id.low_radio_button:
@@ -151,7 +150,6 @@ public class FuelCalculatorActivity extends Activity
                         selectedAltitude = 1;
                         break;
                 }
-                //Log.d("fuelCalc", "radioGChanged selAlt = " + Integer.toString(selectedAltitude));
                 calculateFuel();
             }
         });
@@ -215,7 +213,18 @@ public class FuelCalculatorActivity extends Activity
             @Override
             public void onClick(View view)
             {
-                saveToSharedPreferences();
+                if (returnLegEditText.getText().toString().length() != 0 ||
+                        homeAltEditText.getText().toString().length() != 0)
+                {
+                    saveToSharedPreferences();
+                }
+                else
+                {
+                    savedStatusTextView.setText(R.string.invalid_input);
+                    savedStatusTextView.setTextColor(
+                            ContextCompat.getColor(getApplicationContext(), R.color.dark_red));
+                    savedStatusTextView.setVisibility(View.VISIBLE);
+                }
             }
         });
     }
@@ -223,11 +232,6 @@ public class FuelCalculatorActivity extends Activity
     private void calculateFuel()
     {
         int total;
-
-        //Log.d("fuelCalc", "calcFuel called");
-        //Log.d("fuelCalc", "tripFuel = " + Integer.toString(returnLegMiles));
-        //Log.d("fuelCalc", "homeAltFuel = " + Integer.toString(returnLegMiles));
-        //Log.d("fuelCalc", "selectedAltitude= " + Integer.toString(selectedAltitude));
 
         switch (selectedAltitude)
         {
@@ -248,12 +252,21 @@ public class FuelCalculatorActivity extends Activity
                 break;
         }
 
-        bingoFuelResultTextView.setText(Integer.toString(total) + " lbs");
-        jokerFuelResultTextView.setText(Integer.toString(total + selectedJokerOffset) + " lbs");
+        if (returnLegEditText.getText().toString().length() != 0 &&
+                homeAltEditText.getText().toString().length() != 0)
+        {
+            bingoFuelResultTextView.setText(Integer.toString(total) + " lbs");
+            jokerFuelResultTextView.setText(Integer.toString(total + selectedJokerOffset) + " lbs");
+        }
+        savedStatusTextView.setVisibility(View.GONE);
     }
 
     private void instantiateResources()
     {
+        Toolbar toolbar = (Toolbar) findViewById(R.id.fuel_calculator_tool_bar);
+        toolbar.setTitleTextColor(ContextCompat.getColor(getApplicationContext(), R.color.silver));
+        setSupportActionBar(toolbar);
+
         saveToDataCardButton = (Button) findViewById(R.id.fuel_calculator_save_results_button);
 
         homeAltEditText = (EditText) findViewById(R.id.distance_to_alternate_edit_text);
@@ -277,24 +290,37 @@ public class FuelCalculatorActivity extends Activity
     {
         try
         {
-            SharedPreferences dataCard = getSharedPreferences("DataCard", 0);
+            SharedPreferences dataCard = getSharedPreferences(DataCardFragment.DATA_CARD_NAME, 0);
             SharedPreferences.Editor editor = dataCard.edit();
 
             editor.putString("joker", jokerFuelResultTextView.getText().toString());
-
             editor.putString("bingo", bingoFuelResultTextView.getText().toString());
 
             editor.apply();
-
-            savedStatusTextView.setText("Saved OK");
-            savedStatusTextView.setTextColor(getResources().getColor(R.color.green));
-            savedStatusTextView.setVisibility(View.VISIBLE);
+            updatedSavedStatusView(IntDefs.SAVED_OK);
         }
         catch (NumberFormatException e)
         {
-            savedStatusTextView.setText("Invalid values");
-            savedStatusTextView.setTextColor(getResources().getColor(R.color.dark_red));
-            savedStatusTextView.setVisibility(View.VISIBLE);
+            updatedSavedStatusView(IntDefs.INVALID_INPUT);
+        }
+    }
+
+    private void updatedSavedStatusView(@IntDefs.DataCardIntDefs int status)
+    {
+        switch (status)
+        {
+            case IntDefs.SAVED_OK:
+                savedStatusTextView.setText(R.string.saved_ok);
+                savedStatusTextView.setTextColor(
+                        ContextCompat.getColor(getApplicationContext(), R.color.green));
+                savedStatusTextView.setVisibility(View.VISIBLE);
+                break;
+            case IntDefs.INVALID_INPUT:
+                savedStatusTextView.setText(R.string.invalid_input);
+                savedStatusTextView.setTextColor(
+                        ContextCompat.getColor(getApplicationContext(), R.color.dark_red));
+                savedStatusTextView.setVisibility(View.VISIBLE);
+                break;
         }
     }
 }

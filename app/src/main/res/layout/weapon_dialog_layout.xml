@@ -11,6 +11,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="@string/weight"
+        android:textColor="@color/black"
         android:id="@+id/weight_dialog_text_view"/>
 
     <TextView
@@ -18,6 +19,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="@string/drag"
+        android:textColor="@color/black"
         android:id="@+id/drag_dialog_text_view"/>
 
     <TextView
@@ -25,6 +27,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="@string/blast_radius"
+        android:textColor="@color/black"
         android:id="@+id/blast_dialog_text_view"/>
 
     <TextView
@@ -32,6 +35,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="@string/range"
+        android:textColor="@color/black"
         android:id="@+id/range_dialog_text_view"/>
 
     <TextView
@@ -39,6 +43,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="@string/damage"
+        android:textColor="@color/black"
         android:id="@+id/damage_dialog_text_view"/>
 
     <TextView
@@ -46,6 +51,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="@string/guidance"
+        android:textColor="@color/black"
         android:id="@+id/guidance_dialog_text_view"/>
 
     <TextView
@@ -53,6 +59,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="@string/release_brevity"
+        android:textColor="@color/black"
         android:id="@+id/release_dialog_text_view"/>
 
     <TextView
@@ -60,6 +67,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="@string/type"
+        android:textColor="@color/black"
         android:id="@+id/type_dialog_text_view"/>
 
 </LinearLayout>

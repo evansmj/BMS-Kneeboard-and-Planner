@@ -522,6 +522,8 @@ public class NavigationChartsMapProvider
 
         groups.add("P`yong`taek Airbase");
         pyongtaek.add(new NavigationChartsTuple<String, Integer>(
+                "P`yong`taek Airport Diagram", R.drawable.pyongtaek_airport_diagram));
+        pyongtaek.add(new NavigationChartsTuple<String, Integer>(
                 "P`yong`taek Osan 1 Departure", R.drawable.pyongtaek_airport_diagram));
         pyongtaek.add(new NavigationChartsTuple<String, Integer>(
                 "P`yong`taek ILS RWY 34", R.drawable.pyongtaek_ils_rwy_34));

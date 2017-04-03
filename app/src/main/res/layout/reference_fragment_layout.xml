@@ -1,64 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.NestedScrollView
+            xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:paddingBottom="16dp"
             android:theme="@style/BlueTheme">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:paddingBottom="16dp"
+        android:clipToPadding="false"
         android:orientation="vertical">
 
         <Button
             android:id="@+id/fuel_calculator_select_button"
+            android:layout_marginTop="20dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/card_dark_background"
+            android:padding="3dp"
+            android:layout_centerHorizontal="true"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="@color/black"
             android:text="@string/fuel_calculator"/>
 
         <Button
             android:id="@+id/brevity_dictionary_select_button"
+            android:layout_marginTop="16dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
+            android:layout_below="@id/fuel_calculator_select_button"
+            android:background="@drawable/card_dark_background"
+            android:padding="3dp"
+            android:layout_centerHorizontal="true"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="@color/black"
             android:text="@string/brevity_dictionary_title"/>
 
         <Button
             android:id="@+id/carrier_frequencies_select_button"
+            android:layout_marginTop="16dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
+            android:layout_below="@id/brevity_dictionary_select_button"
+            android:background="@drawable/card_dark_background"
+            android:padding="3dp"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/black"
             android:text="@string/carrier_frequencies"/>
 
         <Button
             android:id="@+id/default_frequencies_select_button"
+            android:layout_marginTop="16dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
+            android:layout_below="@id/carrier_frequencies_select_button"
+            android:padding="3dp"
+            android:background="@drawable/card_dark_background"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/black"
             android:text="@string/default_frequencies"/>
 
         <Button
             android:id="@+id/navigation_steerpoints_select_button"
+            android:layout_marginTop="16dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
+            android:layout_below="@id/default_frequencies_select_button"
+            android:padding="3dp"
+            android:background="@drawable/card_dark_background"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/black"
             android:text="@string/steerpoints"/>
 
         <Button
             android:id="@+id/takeoff_calculator_select_button"
+            android:layout_marginTop="16dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:visibility="gone"
+            android:layout_below="@id/navigation_steerpoints_select_button"
+            android:padding="3dp"
+            android:background="@drawable/card_dark_background"
+            android:layout_centerHorizontal="true"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="@color/black"
             android:text="@string/takeoff_calculator"/>
 
         <Button
             android:id="@+id/tacan_ils_checklist_select_button"
+            android:layout_marginTop="16dp"
+            android:padding="3dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
+            android:layout_below="@id/takeoff_calculator_select_button"
+            android:background="@drawable/card_dark_background"
+            android:layout_centerHorizontal="true"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="@color/black"
             android:text="@string/tacan_ils_checklist"/>
 
-    </LinearLayout>
+    </RelativeLayout>
 
-</ScrollView>
+</android.support.v4.widget.NestedScrollView>

@@ -1,218 +1,272 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:layout_centerVertical="true"
-    android:layout_gravity="center"
-    android:fillViewport="true">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-    <RelativeLayout
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/fuel_calculator_tool_bar"
+        style="@style/BlueActionBar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:focusable="true"
-        android:focusableInTouchMode="true">
+        android:layout_height="?attr/actionBarSize">
+    </android.support.v7.widget.Toolbar>
 
-        <TextView
-            android:id="@+id/joker_text_view"
-            android:layout_width="wrap_content"
+    <ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_gravity="center"
+        android:fillViewport="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:padding="5dp"
-            android:text="@string/joker"
-            android:textAppearance="?android:attr/textAppearanceLarge"/>
+            android:focusable="true"
+            android:focusableInTouchMode="true">
 
-        <TextView
-            android:id="@+id/bingo_text_view"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="5dp"
-            android:layout_below="@id/joker_text_view"
-            android:text="@string/bingo"
-            android:textAppearance="?android:attr/textAppearanceLarge"/>
-
-        <TextView
-            android:id="@+id/joker_result_text_view"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBaseline="@id/joker_text_view"
-            android:padding="10dp"
-            android:layout_centerHorizontal="true"
-            android:textAppearance="?android:attr/textAppearanceMedium"/>
-
-        <TextView
-            android:id="@+id/bingo_result_text_view"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBaseline="@id/bingo_text_view"
-            android:padding="10dp"
-            android:layout_centerHorizontal="true"
-            android:textAppearance="?android:attr/textAppearanceMedium"/>
-
-        <TextView
-            android:id="@+id/trip_nm_text_view"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/bingo_text_view"
-            android:paddingTop="20dp"
-            android:layout_centerHorizontal="true"
-            android:text="@string/trip_nm_text_view"
-            android:textAppearance="?android:attr/textAppearanceLarge"/>
-
-        <TextView
-            android:id="@+id/trip_nm_label_text_view"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/trip_nm_text_view"
-            android:textStyle="italic"
-            android:text="@string/nautical_miles"
-            android:layout_centerHorizontal="true"
-            android:textAppearance="?android:textAppearanceSmall"
-            android:textColor="#D3D3D3"/>
-
-        <TextView
-            android:id="@+id/distance_to_alternate_text_view"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/trip_nm_edit_text"
-            android:paddingTop="20dp"
-            android:layout_centerHorizontal="true"
-            android:text="@string/distance_to_alternate"
-            android:textAppearance="?android:attr/textAppearanceLarge"/>
-
-        <TextView
-            android:id="@+id/distance_to_alternate_label_text_view"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textStyle="italic"
-            android:layout_centerHorizontal="true"
-            android:layout_below="@+id/distance_to_alternate_text_view"
-            android:text="@string/nautical_miles"
-            android:textAppearance="?android:textAppearanceSmall"
-            android:textColor="#D3D3D3"/>
-
-        <EditText
-            android:id="@+id/trip_nm_edit_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_below="@+id/trip_nm_label_text_view"
-            android:ems="10"
-            android:inputType="number"/>
-
-        <EditText
-            android:id="@+id/distance_to_alternate_edit_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/distance_to_alternate_label_text_view"
-            android:ems="10"
-            android:layout_centerHorizontal="true"
-            android:inputType="number"/>
-
-        <TextView
-            android:id="@+id/altitude_text_view"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingTop="20dp"
-            android:layout_centerHorizontal="true"
-            android:layout_below="@+id/distance_to_alternate_edit_text"
-            android:text="@string/altitude"
-            android:textAppearance="?android:attr/textAppearanceLarge"/>
-
-        <RadioGroup
-            android:id="@+id/alt_radio_group"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_below="@+id/altitude_text_view">
-
-            <RadioButton
-                android:id="@+id/low_radio_button"
+            <TextView
+                android:id="@+id/joker_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/low_level"/>
+                android:layout_alignParentTop="true"
+                android:padding="5dp"
+                android:text="@string/joker"
+                android:textAppearance="?android:attr/textAppearanceLarge"/>
 
-            <RadioButton
-                android:id="@+id/med_radio_button"
+            <TextView
+                android:id="@+id/bingo_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/med_level"/>
+                android:layout_below="@id/joker_text_view"
+                android:padding="5dp"
+                android:text="@string/bingo"
+                android:textAppearance="?android:attr/textAppearanceLarge"/>
 
-            <RadioButton
-                android:id="@+id/hi_radio_button"
+            <TextView
+                android:id="@+id/joker_result_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/hi_level"/>
+                android:layout_alignBaseline="@id/joker_text_view"
+                android:layout_centerHorizontal="true"
+                android:textColor="@color/dark_red"
+                android:padding="10dp"
+                android:textAppearance="?android:attr/textAppearanceLarge"/>
 
-        </RadioGroup>
-
-        <TextView
-            android:id="@+id/weather_text_view"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/alt_radio_group"
-            android:layout_centerHorizontal="true"
-            android:paddingTop="20dp"
-            android:text="@string/weather"
-            android:textAppearance="?android:attr/textAppearanceLarge"/>
-
-        <RadioGroup
-            android:id="@+id/weather_radio_group"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_below="@+id/weather_text_view">
-
-            <RadioButton
-                android:id="@+id/vmc_radio_button"
+            <TextView
+                android:id="@+id/bingo_result_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/vmc"/>
+                android:layout_alignBaseline="@id/bingo_text_view"
+                android:layout_centerHorizontal="true"
+                android:textColor="@color/dark_red"
+                android:padding="10dp"
+                android:textAppearance="?android:attr/textAppearanceLarge"/>
 
-            <RadioButton
-                android:id="@+id/imc_radio_button"
+            <LinearLayout
+                android:id="@+id/fuel_calculator_inputs_linear_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/bingo_text_view"
+                android:baselineAligned="false"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/trip_nm_text_view"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:paddingTop="20dp"
+                        android:text="@string/trip_nm_text_view"
+                        android:textAppearance="?android:attr/textAppearanceLarge"/>
+
+                    <TextView
+                        android:id="@+id/trip_nm_label_text_view"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text="@string/nautical_miles"
+                        android:textAppearance="?android:textAppearanceSmall"
+                        android:textColor="#D3D3D3"
+                        android:textStyle="italic"/>
+
+                    <EditText
+                        android:id="@+id/trip_nm_edit_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:ems="10"
+                        android:inputType="number"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/distance_to_alternate_text_view"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:paddingTop="20dp"
+                        android:text="@string/distance_to_alternate"
+                        android:textAppearance="?android:attr/textAppearanceLarge"/>
+
+                    <TextView
+                        android:id="@+id/distance_to_alternate_label_text_view"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text="@string/nautical_miles"
+                        android:textAppearance="?android:textAppearanceSmall"
+                        android:textColor="#D3D3D3"
+                        android:textStyle="italic"/>
+
+                    <EditText
+                        android:id="@+id/distance_to_alternate_edit_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:ems="10"
+                        android:inputType="number"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/fuel_calculator_altitude_weather_linear_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/fuel_calculator_inputs_linear_layout"
+                android:baselineAligned="false"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/fuel_calculator_altitude_linear_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/altitude_text_view"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:paddingTop="20dp"
+                        android:text="@string/altitude"
+                        android:textAppearance="?android:attr/textAppearanceLarge"/>
+
+                    <RadioGroup
+                        android:id="@+id/alt_radio_group"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal">
+
+                        <RadioButton
+                            android:id="@+id/low_radio_button"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/low_level"/>
+
+                        <RadioButton
+                            android:id="@+id/med_radio_button"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/med_level"/>
+
+                        <RadioButton
+                            android:id="@+id/hi_radio_button"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/hi_level"/>
+
+                    </RadioGroup>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/weather_text_view"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:paddingTop="20dp"
+                        android:text="@string/weather"
+                        android:textAppearance="?android:attr/textAppearanceLarge"/>
+
+                    <RadioGroup
+                        android:id="@+id/weather_radio_group"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal">
+
+                        <RadioButton
+                            android:id="@+id/vmc_radio_button"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/vmc"/>
+
+                        <RadioButton
+                            android:id="@+id/imc_radio_button"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/imc"/>
+                    </RadioGroup>
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/joker_offset_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/imc"/>
-        </RadioGroup>
+                android:layout_below="@+id/fuel_calculator_altitude_weather_linear_layout"
+                android:layout_centerHorizontal="true"
+                android:paddingTop="20dp"
+                android:text="@string/joker_offset"
+                android:textAppearance="?android:textAppearanceLarge"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/joker_offset_text_view"
-            android:textAppearance="?android:textAppearanceLarge"
-            android:layout_centerHorizontal="true"
-            android:paddingTop="20dp"
-            android:text="@string/joker_offset"
-            android:layout_below="@+id/weather_radio_group"/>
+            <EditText
+                android:id="@+id/joker_offset_edit_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/joker_offset_text_view"
+                android:layout_centerHorizontal="true"
+                android:ems="10"
+                android:inputType="number"/>
 
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/joker_offset_edit_text"
-            android:layout_centerHorizontal="true"
-            android:ems="10"
-            android:layout_below="@id/joker_offset_text_view"
-            android:inputType="number"/>
+            <TextView
+                android:id="@+id/fuel_calculator_saved_status_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/joker_offset_edit_text"
+                android:layout_centerHorizontal="true"
+                android:textAppearance="?android:textAppearanceLarge"
+                android:textStyle="bold"
+                android:visibility="gone"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/fuel_calculator_saved_status_text_view"
-            android:layout_below="@+id/joker_offset_edit_text"
-            android:visibility="gone"
-            android:textStyle="bold"
-            android:textAppearance="?android:textAppearanceLarge"
-            android:layout_centerHorizontal="true"/>
+            <Button
+                android:id="@+id/fuel_calculator_save_results_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/fuel_calculator_saved_status_text_view"
+                android:layout_centerHorizontal="true"
+                android:text="@string/save_to_data_card"/>
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/fuel_calculator_save_results_button"
-            android:text="@string/save_to_data_card"
-            android:layout_below="@+id/fuel_calculator_saved_status_text_view"
-            android:layout_centerHorizontal="true"/>
+        </RelativeLayout>
 
-    </RelativeLayout>
-
-</ScrollView>
+    </ScrollView>
+</LinearLayout>

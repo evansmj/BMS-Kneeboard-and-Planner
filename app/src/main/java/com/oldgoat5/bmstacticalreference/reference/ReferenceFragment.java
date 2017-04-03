@@ -4,12 +4,14 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
+import android.support.design.widget.AppBarLayout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.Button;
 
+import com.oldgoat5.bmstacticalreference.ColorFragment;
 import com.oldgoat5.bmstacticalreference.R;
 import com.oldgoat5.bmstacticalreference.tools.views.ZoomImageView;
 
@@ -18,10 +20,11 @@ import com.oldgoat5.bmstacticalreference.tools.views.ZoomImageView;
  *
  * @author Michael Evans
  ********************************************************************/
-public class ReferenceFragment extends Fragment
+public class ReferenceFragment extends ColorFragment
 {
     Context CONTEXT;
 
+    private AppBarLayout appBarLayout;
     private Dialog dialog;
     private Button brevityDictionaryStartButton;
     private Button carrierFrequenciesButton;
@@ -39,6 +42,8 @@ public class ReferenceFragment extends Fragment
     {
         view = inflater.inflate(R.layout.reference_fragment_layout,
             container, false);
+
+        appBarLayout = (AppBarLayout) getActivity().findViewById(R.id.app_bar_layout);
 
         brevityDictionaryStartButton = (Button) view.findViewById(
                 R.id.brevity_dictionary_select_button);
@@ -80,6 +85,8 @@ public class ReferenceFragment extends Fragment
                 dialog.setContentView(R.layout.carrier_frequencies_dialog_layout);
                 dialog.setTitle("Carrier Frequencies");
                 dialog.show();
+                dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                        WindowManager.LayoutParams.WRAP_CONTENT);
             }
         });
 
@@ -91,6 +98,8 @@ public class ReferenceFragment extends Fragment
                 dialog.setContentView(R.layout.default_frequencies_view);
                 dialog.setTitle("Default Frequencies");
                 dialog.show();
+                dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                        WindowManager.LayoutParams.WRAP_CONTENT);
             }
         });
 
@@ -110,6 +119,8 @@ public class ReferenceFragment extends Fragment
             {
                 dialog.setContentView(R.layout.navigation_steerpoints_view);
                 dialog.setTitle(R.string.steerpoints);
+                dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                        WindowManager.LayoutParams.WRAP_CONTENT);
                 dialog.show();
             }
         });
@@ -131,11 +142,34 @@ public class ReferenceFragment extends Fragment
                 tacanIlsCheckListImageView.setImageResource(R.drawable.tacan_ils_checklist);
                 dialog.setContentView(tacanIlsCheckListImageView);
                 dialog.setTitle("Tacan ILS Checklist");
+                dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                        WindowManager.LayoutParams.WRAP_CONTENT);
                 dialog.show();
             }
         });
 
         return view;
+    }
+
+    @Override
+    public void setUserVisibleHint(boolean visible)
+    {
+        if (visible && appBarLayout != null)
+        {
+            appBarLayout.setExpanded(true, true);
+        }
+    }
+
+    @Override
+    public int getBackgroundColor()
+    {
+        return R.color.toolbar_gray;
+    }
+
+    @Override
+    public int getStatusBarColor()
+    {
+        return R.color.statusbar_gray;
     }
 
     /*****************************************************************

@@ -1,22 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<android.support.v4.widget.DrawerLayout
+    android:id="@+id/drawer_layout"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/activity_main_linear_layout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:keepScreenOn="true">
+    android:layout_height="match_parent">
 
-    <com.oldgoat5.bmstacticalreference.tools.slidingtabs.SlidingTabLayout
-        android:id="@+id/main_sliding_tabs"
-        android:background="@color/tab_blue"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
-    <android.support.v4.view.ViewPager
+    <android.support.design.widget.CoordinatorLayout
+        android:id="@+id/activity_main_linear_layout"
         xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/main_pager"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:keepScreenOn="true"
+        android:orientation="vertical">
 
-</LinearLayout>
+        <android.support.v4.view.ViewPager
+            android:id="@+id/main_pager"
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/app_bar_layout"
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:elevation="0dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar_widget"
+                style="@style/BlueActionBar"
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:elevation="4dp"
+                app:layout_collapseMode="pin"
+                app:layout_scrollFlags="scroll|enterAlwaysCollapsed">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/drawer_toggle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:paddingRight="16dp"
+                        android:layout_alignParentLeft="true"
+                        android:src="@drawable/ic_action_drawer_toggle"/>
+
+                    <TextView
+                        android:id="@+id/toolbar_text"
+                        style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@id/drawer_toggle"
+                        android:layout_centerVertical="true"
+                        android:text="@string/app_name_short"
+                        android:textColor="@color/silver"/>
+
+                <ImageView
+                    android:id="@+id/settings_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="8dp"
+                    android:layout_alignParentRight="true"
+                    android:contentDescription="@string/settings_title"
+                    android:src="@drawable/ic_settings"/>
+
+                <!--ImageView
+                    android:id="@+id/upload_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="8dp"
+                    android:contentDescription="@string/about_title"
+                    android:src="@drawable/ic_upload"/-->
+
+                </RelativeLayout>
+            </android.support.v7.widget.Toolbar>
+
+            <com.oldgoat5.bmstacticalreference.tools.slidingtabs.SlidingTabLayout
+                android:id="@+id/main_sliding_tabs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/toolbar_blue"/>
+
+        </android.support.design.widget.AppBarLayout>
+    </android.support.design.widget.CoordinatorLayout>
+
+    <include layout="@layout/left_drawer_layout"/>
+
+</android.support.v4.widget.DrawerLayout>
