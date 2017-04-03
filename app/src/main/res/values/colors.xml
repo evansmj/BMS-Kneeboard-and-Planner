@@ -12,13 +12,13 @@
     <color name="toolbar_red">#ae1d1d</color>
     <color name="toolbar_brown">#ba6822</color>
     <color name="toolbar_green">#55a71b</color>
-    <color name="toolbar_yellow">#b7b71f</color>
+    <color name="toolbar_gray">#777b7b</color>
     <color name="toolbar_blue">#2066a6</color>
 
     <color name="statusbar_red">#84141b</color>
     <color name="statusbar_brown">#8c4b1d</color>
     <color name="statusbar_green">#41831b</color>
-    <color name="statusbar_yellow">#8d8f1e</color>
+    <color name="statusbar_gray">#5f6363</color>
     <color name="statusbar_blue">#1e4a80</color>
 
     <color name="falcon_online_background">#1e1e1e</color>

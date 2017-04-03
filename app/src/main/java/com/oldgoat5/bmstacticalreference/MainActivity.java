@@ -54,7 +54,7 @@ public class MainActivity extends FragmentActivity
     private ImageView drawerToggle;
     private ImageView serverImageView;
     private ImageView settingsImageView;
-    private ImageView uploadImageView;
+    //private ImageView uploadImageView; // TODO: 4/2/17
     private MainFragmentPageAdapter fragmentPageAdapter;
     private RelativeLayout drawerChildLayout;
     private RequestQueue requestQueue;
@@ -291,7 +291,7 @@ public class MainActivity extends FragmentActivity
         drawerToggle = (ImageView) findViewById(R.id.drawer_toggle);
         serverImageView = (ImageView) findViewById(R.id.left_drawer_image_view);
         settingsImageView = (ImageView) findViewById(R.id.settings_icon);
-        uploadImageView = (ImageView) findViewById(R.id.upload_icon);
+        //uploadImageView = (ImageView) findViewById(R.id.upload_icon);
 
         drawerLayout.setScrimColor(
                 ContextCompat.getColor(getApplicationContext(), R.color.steamed_glass));
@@ -301,7 +301,7 @@ public class MainActivity extends FragmentActivity
         drawerToggle.setOnClickListener(v -> toggleDrawer());
 
         settingsImageView.setOnClickListener(v -> startSettingsActivity());
-        uploadImageView.setOnClickListener(v -> showUploadChoiceDialog());
+        //uploadImageView.setOnClickListener(v -> showUploadChoiceDialog());
     }
 
     private void showUploadChoiceDialog()

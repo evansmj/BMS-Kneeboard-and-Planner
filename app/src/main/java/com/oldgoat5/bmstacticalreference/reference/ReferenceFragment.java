@@ -163,13 +163,13 @@ public class ReferenceFragment extends ColorFragment
     @Override
     public int getBackgroundColor()
     {
-        return R.color.toolbar_yellow;
+        return R.color.toolbar_gray;
     }
 
     @Override
     public int getStatusBarColor()
     {
-        return R.color.statusbar_yellow;
+        return R.color.statusbar_gray;
     }
 
     /*****************************************************************
