@@ -7,7 +7,6 @@
 
     <com.oldgoat5.bmstacticalreference.tools.slidingtabs.SlidingTabLayout
         android:id="@+id/battle_for_balkans_sliding_tabs"
-        android:background="@color/tab_blue"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 

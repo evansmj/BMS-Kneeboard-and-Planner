@@ -177,7 +177,7 @@ public class DataCardFragment extends ColorFragment
     @Override
     public int getBackgroundColor()
     {
-        return R.color.dark_blue;
+        return R.color.toolbar_blue;
     }
 
     @Override

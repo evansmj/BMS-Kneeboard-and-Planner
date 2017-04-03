@@ -10,7 +10,7 @@ public class ColorFragment extends Fragment
 {
     public int getBackgroundColor()
     {
-        return R.color.dark_blue;
+        return R.color.toolbar_blue;
     }
 
     public int getStatusBarColor()

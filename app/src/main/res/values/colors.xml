@@ -13,7 +13,7 @@
     <color name="toolbar_brown">#ba6822</color>
     <color name="toolbar_green">#55a71b</color>
     <color name="toolbar_yellow">#b7b71f</color>
-    <color name="dark_blue">#2066a6</color>
+    <color name="toolbar_blue">#2066a6</color>
 
     <color name="statusbar_red">#84141b</color>
     <color name="statusbar_brown">#8c4b1d</color>
@@ -24,13 +24,13 @@
     <color name="falcon_online_background">#1e1e1e</color>
 
     <color name="silver">#D5DADD</color>
-    <color name="tab_blue">#345166</color>
+    <!--color name="tab_blue">#345166</color-->
     <color name="text_blue">#417394</color>
     <color name="black">#000000</color>
     <color name="dark_red">#990000</color>
     <color name="gray">#C0C0C0</color>
     <color name="transparent">#00000000</color>
     <color name="white">#FFFFFF</color>
-    <color name="status_bar_color">#2C3F50</color>
+    <!--color name="status_bar_color">#2C3F50</color-->
     <color name="steamed_glass">#88ffffff</color>
 </resources>

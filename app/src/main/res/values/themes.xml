@@ -9,9 +9,9 @@
     </style>
     <style name="BlueActionBar"
            parent="android:Widget.Holo.Light.ActionBar">
-        <item name="android:background">@color/dark_blue</item>
+        <item name="android:background">@color/toolbar_blue</item>
         <item name="android:titleTextStyle">@style/BlueTheme.BlueActionBar.TitleTextStyle</item>
-        <item name="background">@color/dark_blue</item>
+        <item name="background">@color/toolbar_blue</item>
         <item name="titleTextStyle">@style/BlueTheme.BlueActionBar.TitleTextStyle</item>
     </style>
     <style name="BlueTheme.BlueActionBar.TitleTextStyle"

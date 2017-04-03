@@ -81,22 +81,22 @@ public class MainActivity extends FragmentActivity
 
         tabsList.add(new PagerItem("Load Card",
                 getResources().getColor(R.color.silver),
-                getResources().getColor(R.color.dark_blue)));
+                getResources().getColor(R.color.toolbar_blue)));
         tabsList.add(new PagerItem("Tactical Reference",
                 getResources().getColor(R.color.silver),
-                getResources().getColor(R.color.dark_blue)));
+                getResources().getColor(R.color.toolbar_blue)));
         tabsList.add(new PagerItem("Reference",
                 getResources().getColor(R.color.silver),
-                getResources().getColor(R.color.dark_blue)));
+                getResources().getColor(R.color.toolbar_blue)));
         tabsList.add(new PagerItem("Fuel Calculator",
                 getResources().getColor(R.color.silver),
-                getResources().getColor(R.color.dark_blue)));
+                getResources().getColor(R.color.toolbar_blue)));
         tabsList.add(new PagerItem("Navigation",
                 getResources().getColor(R.color.silver),
-                getResources().getColor(R.color.dark_blue)));
+                getResources().getColor(R.color.toolbar_blue)));
         tabsList.add(new PagerItem("Mission Planner",
                 getResources().getColor(R.color.silver),
-                getResources().getColor(R.color.dark_blue)));
+                getResources().getColor(R.color.toolbar_blue)));
 
         fragmentPageAdapter = new MainFragmentPageAdapter(getSupportFragmentManager(),
                 MainActivity.this);

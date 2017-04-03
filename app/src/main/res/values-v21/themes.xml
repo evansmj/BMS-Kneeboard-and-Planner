@@ -7,13 +7,13 @@
         <item name="android:actionBarStyle">@style/BlueActionBar</item>
         <!-- Support library compatibility -->
         <item name="actionBarStyle">@style/BlueActionBar</item>
-        <item name="android:statusBarColor">@color/status_bar_color</item>
+        <item name="android:statusBarColor">@color/statusbar_blue</item>
         <item name="android:dialogTheme">@style/CustomDialog</item>
     </style>
     <!-- Tool bar -->
     <style name="BlueActionBar"
            parent="android:Widget.Material.Toolbar">
-        <item name="android:background">@color/dark_blue</item>
+        <item name="android:background">@color/toolbar_blue</item>
     </style>
 
     <!-- Dark Red -->
