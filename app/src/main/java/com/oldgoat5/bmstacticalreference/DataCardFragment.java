@@ -190,7 +190,7 @@ public class DataCardFragment extends ColorFragment
     {
         int selectedCardSize;
 
-        switch (settingsSharedPref.getInt("card_size", 1))
+        switch (settingsSharedPref.getInt("card_size", 0))
         {
             case 0:
                 selectedCardSize = android.R.style.TextAppearance_Small;
@@ -202,7 +202,7 @@ public class DataCardFragment extends ColorFragment
                 selectedCardSize = android.R.style.TextAppearance_Large;
                 break;
             default:
-                selectedCardSize = android.R.style.TextAppearance_Medium;
+                selectedCardSize = android.R.style.TextAppearance_Small;
         }
 
         return selectedCardSize;
