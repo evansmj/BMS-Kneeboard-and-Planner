@@ -1,9 +1,9 @@
 package com.oldgoat5.bmstacticalreference.tools.intdefs;
 
-import android.support.annotation.IntDef;
-
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
+
+import androidx.annotation.IntDef;
 
 /*********************************************************************
  * Copyright © Michael Evans - All Rights Reserved.

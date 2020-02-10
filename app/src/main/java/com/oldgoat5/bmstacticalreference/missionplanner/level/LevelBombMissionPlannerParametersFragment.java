@@ -5,8 +5,6 @@ import android.database.sqlite.SQLiteException;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,6 +25,9 @@ import org.apache.commons.math3.analysis.polynomials.PolynomialSplineFunction;
 
 import java.io.IOException;
 import java.util.HashMap;
+
+import androidx.core.content.ContextCompat;
+import androidx.fragment.app.Fragment;
 
 /*********************************************************************
  * Copyright © Michael Evans - All Rights Reserved.

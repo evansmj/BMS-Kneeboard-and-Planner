@@ -1,14 +1,15 @@
 package com.oldgoat5.bmstacticalreference;
 
 import android.content.Context;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
 
 import com.oldgoat5.bmstacticalreference.missionplanner.MissionPlannerFragment;
 import com.oldgoat5.bmstacticalreference.navigation.NavigationChartsFragment;
 import com.oldgoat5.bmstacticalreference.reference.ReferenceFragment;
 import com.oldgoat5.bmstacticalreference.tacticalreference.TacticalReferenceFragment;
+
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentPagerAdapter;
 
 /*********************************************************************
  * Copyright © Michael Evans - All Rights Reserved.
