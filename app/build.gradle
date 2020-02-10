@@ -36,14 +36,14 @@ android {
 }
 
 dependencies {
-    compile 'androidx.legacy:legacy-support-v4:1.0.0'
-    compile 'androidx.appcompat:appcompat:1.0.0'
-    compile 'com.google.android.material:material:1.0.0'
-    compile 'androidx.annotation:annotation:1.0.0'
-    compile 'androidx.percentlayout:percentlayout:1.0.0'
-    compile "com.android.volley:volley:1.1.0"
-    compile "org.jsoup:jsoup:1.7.3"
-    compile files('libs/commons-math3-3.5.jar')
-    testCompile 'junit:junit:4.12'
-    androidTestCompile 'androidx.annotation:annotation:1.0.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'com.google.android.material:material:1.1.0'
+    implementation 'androidx.annotation:annotation:1.1.0'
+    implementation 'androidx.percentlayout:percentlayout:1.0.0'
+    implementation "com.android.volley:volley:1.1.0"
+    implementation "org.jsoup:jsoup:1.7.3"
+    implementation files('libs/commons-math3-3.5.jar')
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.annotation:annotation:1.1.0'
 }
