@@ -3,6 +3,7 @@ package com.oldgoat5.bmstacticalreference.navigation.korea.interactivemap;
 import android.app.Activity;
 import android.os.Bundle;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
 
 import com.oldgoat5.bmstacticalreference.R;
 
@@ -46,6 +47,14 @@ public class KoreaInteractiveMapActivity extends Activity
     private void instantiateResources()
     {
         webView = (WebView) findViewById(R.id.korea_interactive_map_web_view);
+
+        webView.setWebViewClient(new WebViewClient() {
+            @Override
+            public boolean shouldOverrideUrlLoading(WebView view, String url) {
+                view.loadUrl(url);
+                return true;
+            }
+        });
 
         webView.getSettings().setBuiltInZoomControls(true);
         webView.getSettings().setDisplayZoomControls(false);
