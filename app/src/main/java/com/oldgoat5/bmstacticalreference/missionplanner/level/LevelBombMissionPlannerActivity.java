@@ -1,10 +1,11 @@
 package com.oldgoat5.bmstacticalreference.missionplanner.level;
 
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentManager;
 
 import com.oldgoat5.bmstacticalreference.R;
+
+import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentManager;
 
 /*********************************************************************
  * Copyright © Michael Evans - All Rights Reserved.

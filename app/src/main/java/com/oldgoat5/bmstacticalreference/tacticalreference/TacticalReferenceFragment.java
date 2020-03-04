@@ -4,7 +4,6 @@ import android.app.Dialog;
 import android.content.Context;
 import android.database.sqlite.SQLiteException;
 import android.os.Bundle;
-import android.support.design.widget.AppBarLayout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +14,7 @@ import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.google.android.material.appbar.AppBarLayout;
 import com.oldgoat5.bmstacticalreference.ColorFragment;
 import com.oldgoat5.bmstacticalreference.R;
 import com.oldgoat5.bmstacticalreference.tools.database.DBTools;

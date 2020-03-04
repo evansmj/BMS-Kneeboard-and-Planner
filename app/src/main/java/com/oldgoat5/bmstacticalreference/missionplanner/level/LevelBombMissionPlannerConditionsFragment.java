@@ -2,7 +2,6 @@ package com.oldgoat5.bmstacticalreference.missionplanner.level;
 
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
@@ -22,6 +21,8 @@ import com.oldgoat5.bmstacticalreference.R;
 import com.oldgoat5.bmstacticalreference.missionplanner.BombSelectDialog;
 
 import java.util.HashMap;
+
+import androidx.fragment.app.Fragment;
 
 /*********************************************************************
  * Copyright © Michael Evans - All Rights Reserved.

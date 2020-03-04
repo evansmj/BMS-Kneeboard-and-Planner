@@ -3,7 +3,6 @@ package com.oldgoat5.bmstacticalreference.navigation.korea;
 import android.app.Dialog;
 import android.content.Context;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,6 +17,8 @@ import com.oldgoat5.bmstacticalreference.tools.views.ZoomImageView;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+
+import androidx.fragment.app.Fragment;
 
 /*********************************************************************
  * Copyright © Michael Evans - All Rights Reserved.

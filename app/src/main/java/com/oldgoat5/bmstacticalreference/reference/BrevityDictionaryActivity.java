@@ -5,9 +5,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.widget.EditText;
@@ -17,6 +14,11 @@ import android.widget.Toast;
 import com.oldgoat5.bmstacticalreference.R;
 
 import java.util.ArrayList;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.content.ContextCompat;
 
 /*********************************************************************
  * Copyright © Michael Evans - All Rights Reserved.
@@ -65,15 +67,15 @@ public class BrevityDictionaryActivity extends AppCompatActivity
         inflater.inflate(R.menu.brevity_dictionary_menu, menu);
 
         SearchManager manager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
-        android.support.v7.widget.SearchView searchView = (android.support.v7.widget.SearchView)
+        SearchView searchView = (SearchView)
                 menu.findItem(R.id.search).getActionView();
 
         searchView.setSearchableInfo(manager.getSearchableInfo(getComponentName()));
         searchView.setIconifiedByDefault(true);
 
-        ((EditText) searchView.findViewById(android.support.v7.appcompat.R.id.search_src_text))
+        ((EditText) searchView.findViewById(R.id.search_src_text)) //todo fix searchview
                 .setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.silver));
-        ((EditText)searchView.findViewById(android.support.v7.appcompat.R.id.search_src_text))
+        ((EditText)searchView.findViewById(R.id.search_src_text))
                 .setHintTextColor(ContextCompat.getColor(getApplicationContext(), R.color.silver));
 
         return true;

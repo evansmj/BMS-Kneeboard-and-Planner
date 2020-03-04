@@ -1,6 +1,5 @@
 package reference;
 
-import android.test.ActivityInstrumentationTestCase2;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioGroup;
