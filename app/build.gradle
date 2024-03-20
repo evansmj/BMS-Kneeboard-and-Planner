@@ -12,13 +12,12 @@ buildscript {
 }
 
 android {
-    compileSdkVersion 29
-    buildToolsVersion "29.0.2"
+    compileSdkVersion 33
 
     defaultConfig {
         applicationId "com.oldgoat5.bmstacticalreference"
         minSdkVersion 14
-        targetSdkVersion 29 //todo Leave this at 23 unless ready to fix interactive map crash on 7.0+
+        targetSdkVersion 33
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -33,6 +32,7 @@ android {
         targetCompatibility 1.8
         sourceCompatibility 1.8
     }
+    namespace 'com.oldgoat5.bmstacticalreference'
 }
 
 dependencies {

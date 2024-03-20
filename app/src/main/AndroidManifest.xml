@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.oldgoat5.bmstacticalreference"
-    android:versionCode="7"
-    android:versionName="2.0.1" >
+    android:versionCode="8"
+    android:versionName="2.0.2" >
 
     <uses-permission android:name="android.permission.INTERNET"/>
 
@@ -19,7 +18,8 @@
             android:name="com.oldgoat5.bmstacticalreference.MainActivity"
             android:windowSoftInputMode="adjustPan"
             android:theme="@style/BlueTheme"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+            android:exported="true">
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -27,7 +27,7 @@
             </intent-filter>
 
         </activity>
-        
+
         <activity
             android:name=".tacticalreference.ListViewPopulateDataBase"
             android:label="@string/app_name" >
@@ -67,7 +67,8 @@
             android:name=".reference.BrevityDictionaryActivity"
             android:label="@string/brevity_dictionary_title"
             android:noHistory="true"
-            android:theme="@style/BlueTheme" >
+            android:theme="@style/BlueTheme"
+            android:exported="false">
             <intent-filter>
                 <action android:name="android.intent.action.SEARCH" />
             </intent-filter>
